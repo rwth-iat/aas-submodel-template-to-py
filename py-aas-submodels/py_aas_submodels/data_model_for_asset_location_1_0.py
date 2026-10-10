@@ -17,17 +17,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"AddressLine1",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"address line 1", r"de": r"Adresszeile 1"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"address line 1", r"de": r"Adresszeile 1"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -44,6 +36,16 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"address line 1", r"de": r"Adresszeile 1"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"address line 1", r"de": r"Adresszeile 1"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -92,17 +94,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"AddressLine2",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"address line 2", r"de": r"Adresszeile 2"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"address line 2", r"de": r"Adresszeile 2"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -119,6 +113,16 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"address line 2", r"de": r"Adresszeile 2"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"address line 2", r"de": r"Adresszeile 2"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -167,17 +171,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"AddressLine3",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"address line 3", r"de": r"Adresszeile 3"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"address line 3", r"de": r"Adresszeile 3"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -194,6 +190,16 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"address line 3", r"de": r"Adresszeile 3"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"address line 3", r"de": r"Adresszeile 3"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -242,23 +248,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"AddressOfAdditionalLink",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"address of additional link",
-                            r"de": r"zusätzlicher Online-Verweis",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"address of additional link",
-                            r"de": r"zusätzlicher Online-Verweis",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -275,6 +267,22 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"address of additional link",
+                                r"de": r"zusätzlicher Online-Verweis",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"address of additional link",
+                                r"de": r"zusätzlicher Online-Verweis",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -323,23 +331,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"AddressRemarks",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"address remarks",
-                            r"de": r"Anmerkungen zur Adresse",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"address remarks",
-                            r"de": r"Anmerkungen zur Adresse",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -356,6 +350,22 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"address remarks",
+                                r"de": r"Anmerkungen zur Adresse",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"address remarks",
+                                r"de": r"Anmerkungen zur Adresse",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -404,17 +414,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"NationalCode",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"national code", r"de": r"Ländercode"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"national code", r"de": r"Ländercode"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -431,6 +433,16 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"national code", r"de": r"Ländercode"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"national code", r"de": r"Ländercode"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -479,17 +491,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"Statecounty",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"state/county", r"de": r"Bundesland"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"state/county", r"de": r"Bundesland"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -506,6 +510,16 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"state/county", r"de": r"Bundesland"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"state/county", r"de": r"Bundesland"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -554,17 +568,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"Citytown",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"city/town", r"de": r"Ort"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"city/town", r"de": r"Ort"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -581,6 +587,16 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"city/town", r"de": r"Ort"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"city/town", r"de": r"Ort"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -629,17 +645,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"Street",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"street", r"de": r"Straße"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"street", r"de": r"Straße"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -656,6 +664,16 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"street", r"de": r"Straße"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"street", r"de": r"Straße"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -704,17 +722,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"ZipCode",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"zip code", r"de": r"Postleitzahl"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"zip code", r"de": r"Postleitzahl"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -731,6 +741,16 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"zip code", r"de": r"Postleitzahl"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"zip code", r"de": r"Postleitzahl"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -788,14 +808,7 @@ class AssetLocation(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Postal addresses where an object has been located",
-                        r"de": r"Postadresse an der ein Objekt lokalisiert wurde",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -812,6 +825,14 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Postal addresses where an object has been located",
+                            r"de": r"Postadresse an der ein Objekt lokalisiert wurde",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -943,20 +964,9 @@ class AssetLocation(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Addresses", r"de": r"Adressen"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"List with postal addresses where an object has been located",
-                    r"de": r"Liste mit Postadressen, an denen sich ein Asset aufgehalten hat",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -973,6 +983,19 @@ class AssetLocation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Addresses", r"de": r"Adressen"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"List with postal addresses where an object has been located",
+                        r"de": r"Liste mit Postadressen, an denen sich ein Asset aufgehalten hat",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1110,14 +1133,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"CoordinateSystemName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"coordinate system name",
-                            r"de": r"Koordinatensystenbezeichnung",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1136,6 +1152,14 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"coordinate system name",
+                                r"de": r"Koordinatensystenbezeichnung",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1184,14 +1208,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"CoordinateSystemId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"coordinate system (ID)",
-                            r"de": r"Koordinatensystem (ID)",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1210,6 +1227,14 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"coordinate system (ID)",
+                                r"de": r"Koordinatensystem (ID)",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1258,14 +1283,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"CoordinateSystemType",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"coordinate system type",
-                            r"de": r"Koordinatensystemtyp",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1284,6 +1302,14 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"coordinate system type",
+                                r"de": r"Koordinatensystemtyp",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1332,14 +1358,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"ElevationReference",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"elevation reference",
-                            r"de": r"Referenz der Höhenangabe",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1358,6 +1377,14 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"elevation reference",
+                                r"de": r"Referenz der Höhenangabe",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1406,14 +1433,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"SeaLevelOfBaseHeight",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"sea level of base height",
-                            r"de": r"Seehöhe der Basishöhe",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1432,6 +1452,14 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"sea level of base height",
+                                r"de": r"Seehöhe der Basishöhe",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1488,9 +1516,7 @@ class AssetLocation(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"longitude", r"de": r"Längengrad"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
@@ -1511,6 +1537,14 @@ class AssetLocation(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"longitude",
+                                            r"de": r"Längengrad",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1561,9 +1595,7 @@ class AssetLocation(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"latitude", r"de": r"Breitengrad"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
@@ -1584,6 +1616,14 @@ class AssetLocation(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"latitude",
+                                            r"de": r"Breitengrad",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1629,14 +1669,7 @@ class AssetLocation(aas.Submodel):
                             longitude: Union[float, Longitude],
                             latitude: Union[float, Latitude],
                             id_short: Optional[str] = r"GeographicCoordinates",
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"geographic coordinates",
-                                    r"de": r"Geographische Koordinaten",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1657,6 +1690,14 @@ class AssetLocation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"geographic coordinates",
+                                        r"de": r"Geographische Koordinaten",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1737,12 +1778,7 @@ class AssetLocation(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"X-coordinate",
-                                        r"de": r"X-Koordinate",
-                                    }
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
@@ -1763,6 +1799,14 @@ class AssetLocation(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"X-coordinate",
+                                            r"de": r"X-Koordinate",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1813,12 +1857,7 @@ class AssetLocation(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Y-coordinate",
-                                        r"de": r"Y-Koordinate",
-                                    }
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
@@ -1839,6 +1878,14 @@ class AssetLocation(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"Y-coordinate",
+                                            r"de": r"Y-Koordinate",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1884,23 +1931,9 @@ class AssetLocation(aas.Submodel):
                             x: Union[xsd.Float, X],
                             y: Union[xsd.Float, Y],
                             id_short: Optional[str] = r"RelativeCoordinates",
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"relative coordinates",
-                                    r"de": r"relative Koordinaten",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Coordinates within a cartisian coordinate system",
-                                    r"de": r"Koordinaten in einem kartesischen Koordinatensystem",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1919,6 +1952,22 @@ class AssetLocation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"relative coordinates",
+                                        r"de": r"relative Koordinaten",
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Coordinates within a cartisian coordinate system",
+                                        r"de": r"Koordinaten in einem kartesischen Koordinatensystem",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1990,13 +2039,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"An array containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2013,6 +2056,13 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"An array containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -2067,23 +2117,9 @@ class AssetLocation(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"ground control points",
-                            r"de": r"Bodenkontrollpunkte",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Arrays containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)",
-                            r"de": r"Arrays, die ein Mapping von geographischen Koordinaten (Längengrad, Breitengrad) nach WGS84 (EPSG:4326) in relative Koordinaten (x,y) enthalten",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2100,6 +2136,22 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"ground control points",
+                                r"de": r"Bodenkontrollpunkte",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Arrays containing a mapping between geographic coordinates (longitude, latitude) in WGS84 (EPSG:4326) and relative coordinates (x,y)",
+                                r"de": r"Arrays, die ein Mapping von geographischen Koordinaten (Längengrad, Breitengrad) nach WGS84 (EPSG:4326) in relative Koordinaten (x,y) enthalten",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2246,14 +2298,7 @@ class AssetLocation(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Coordinate reference system (CRS) record",
-                        r"de": r"Listeneintrag für ein Koordinatenreferenzsystem (CRS)",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2270,6 +2315,14 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Coordinate reference system (CRS) record",
+                            r"de": r"Listeneintrag für ein Koordinatenreferenzsystem (CRS)",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -2383,20 +2436,9 @@ class AssetLocation(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"coordinate systems", r"de": r"Koordinatensysteme"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"List with information about different coordinate systems that have been used to determine the location of an asset",
-                    r"de": r"Liste mit Informationen zu Koordinatensystemen die verwendet wurden, um die Assetposition zu bestimmen",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2413,6 +2455,19 @@ class AssetLocation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"coordinate systems", r"de": r"Koordinatensysteme"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"List with information about different coordinate systems that have been used to determine the location of an asset",
+                        r"de": r"Liste mit Informationen zu Koordinatensystemen die verwendet wurden, um die Assetposition zu bestimmen",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2552,14 +2607,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"CoordinateSystemOfArea",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to a local coordinate reference system for an area",
-                            r"de": r"Referenz auf ein lokales Koordinatenreferenzsystem für ein Areal",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2576,6 +2624,14 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Reference to a local coordinate reference system for an area",
+                                r"de": r"Referenz auf ein lokales Koordinatenreferenzsystem für ein Areal",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2624,14 +2680,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to an address",
-                                r"de": r"Referenz zu einer Adresse",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = None,
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2640,6 +2689,14 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to an address",
+                                    r"de": r"Referenz zu einer Adresse",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -2682,14 +2739,7 @@ class AssetLocation(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"List with references to addresses for the area (area addresses)",
-                            r"de": r"Liste mit Referenzen zu Adressen für das Areal",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2706,6 +2756,14 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"List with references to addresses for the area (area addresses)",
+                                r"de": r"Liste mit Referenzen zu Adressen für das Areal",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2859,11 +2917,7 @@ class AssetLocation(aas.Submodel):
                             id_short: Optional[str] = r"X",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"X-coordinate", r"de": r"X-Koordinate"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -2884,6 +2938,14 @@ class AssetLocation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"X-coordinate",
+                                        r"de": r"X-Koordinate",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2932,11 +2994,7 @@ class AssetLocation(aas.Submodel):
                             id_short: Optional[str] = r"Y",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Y-coordinate", r"de": r"Y-Koordinate"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -2957,6 +3015,14 @@ class AssetLocation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Y-coordinate",
+                                        r"de": r"Y-Koordinate",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3004,13 +3070,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"One coordinate of coordinates forming a polygon that describes the region of the area within the coordinate reference system of the area"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3027,6 +3087,13 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"One coordinate of coordinates forming a polygon that describes the region of the area within the coordinate reference system of the area"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -3091,23 +3158,9 @@ class AssetLocation(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"area region coordinates",
-                            r"de": r"Arealgrenzkoordinaten",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Coordinates forming a polygon that describes the area within the coordinate reference system of the area",
-                            r"de": r"Koordinaten die ein Polygon formen, das die Grenzen eines Areals im Koordinatenrefernzsystem des Areals beschreibt",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3124,6 +3177,22 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"area region coordinates",
+                                r"de": r"Arealgrenzkoordinaten",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Coordinates forming a polygon that describes the area within the coordinate reference system of the area",
+                                r"de": r"Koordinaten die ein Polygon formen, das die Grenzen eines Areals im Koordinatenrefernzsystem des Areals beschreibt",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3262,11 +3331,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"KindOfArea",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"kind of area", r"de": r"Arealart"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3285,6 +3350,11 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"kind of area", r"de": r"Arealart"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3333,20 +3403,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"AreaName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Area name", r"de": r"Arealname"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Name of the area or building",
-                            r"de": r"Name des Areals oder Gebäudes",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3363,6 +3422,19 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Area name", r"de": r"Arealname"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Name of the area or building",
+                                r"de": r"Name des Areals oder Gebäudes",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3411,20 +3483,9 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"AreaId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"area (ID)", r"de": r"Areal (ID)"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identification of an area ",
-                            r"de": r"Ident einer Area ",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3441,6 +3502,19 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"area (ID)", r"de": r"Areal (ID)"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identification of an area ",
+                                r"de": r"Ident einer Area ",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3488,20 +3562,9 @@ class AssetLocation(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"AreaDesciption",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"area description", r"de": r"Arealbeschreibung"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Description of an area",
-                            r"de": r"Beschreibung eines Areals",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3518,6 +3581,22 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"area description",
+                                r"de": r"Arealbeschreibung",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Description of an area",
+                                r"de": r"Beschreibung eines Areals",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3592,20 +3671,9 @@ class AssetLocation(aas.Submodel):
                     value: str,
                     id_short: Optional[str] = r"AreaLayout",
                     content_type: Optional[str] = r"application/pdf",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"area layout", r"de": r"Areallayout"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"File with a layout (map) of the area (e.g., hall plan)",
-                            r"de": r"Datei mit einem Areallayout (z.B. Hallenplan)",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3622,6 +3690,19 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"area layout", r"de": r"Areallayout"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"File with a layout (map) of the area (e.g., hall plan)",
+                                r"de": r"Datei mit einem Areallayout (z.B. Hallenplan)",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3669,11 +3750,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = r"BuildingLevel",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"building level", r"de": r"Stockwerk"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3692,6 +3769,11 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"building level", r"de": r"Stockwerk"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3764,13 +3846,7 @@ class AssetLocation(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Areas (e.g., site, building, field warehouse) where an asset has been located or is located"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3787,6 +3863,13 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Areas (e.g., site, building, field warehouse) where an asset has been located or is located"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -3919,20 +4002,9 @@ class AssetLocation(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"visited areas", r"de": r"besuchte Areale"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"List with areas (e.g., sites, buildings, field warehouses) where an asset has been located or is located",
-                    r"de": r"Liste mit Arealen (z.B. Standort, Gebäude, Freilagerfläche) an denen sich ein Asset befunden hat oder sich befindet",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3949,6 +4021,19 @@ class AssetLocation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"visited areas", r"de": r"besuchte Areale"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"List with areas (e.g., sites, buildings, field warehouses) where an asset has been located or is located",
+                        r"de": r"Liste mit Arealen (z.B. Standort, Gebäude, Freilagerfläche) an denen sich ein Asset befunden hat oder sich befindet",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4084,14 +4169,7 @@ class AssetLocation(aas.Submodel):
                 id_short: Optional[str] = r"AreaEventTimeSeriesData",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to an AAS time series data Submodel instance of the same AAS with AreaRecords",
-                        r"de": r"Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten für AreaRecords",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4108,6 +4186,14 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Reference to an AAS time series data Submodel instance of the same AAS with AreaRecords",
+                            r"de": r"Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten für AreaRecords",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4154,14 +4240,7 @@ class AssetLocation(aas.Submodel):
                 id_short: Optional[str] = r"LocationEventTimeSeriesData",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to an AAS time series data Submodel instance of the same AAS with LocationRecords",
-                        r"de": r"Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten für FenceRecords",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4178,6 +4257,14 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Reference to an AAS time series data Submodel instance of the same AAS with LocationRecords",
+                            r"de": r"Referenz zu einer AAS Submodel-Instanz der gleichen AAS mit Zeitreihendaten für FenceRecords",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4228,14 +4315,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"AreaRef",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to the area where the event has been recorded for",
-                                r"de": r"Referenz auf das Areal, zu dem das Event erfasst wurde",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4252,6 +4332,14 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to the area where the event has been recorded for",
+                                    r"de": r"Referenz auf das Areal, zu dem das Event erfasst wurde",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4298,20 +4386,9 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"Time",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Time ", r"de": r"Zeitpunkt"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Time when the event occurred",
-                                r"de": r"Zeitpunkt an dem das Ereignis aufgetreten ist",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4328,6 +4405,19 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Time ", r"de": r"Zeitpunkt"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Time when the event occurred",
+                                    r"de": r"Zeitpunkt an dem das Ereignis aufgetreten ist",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4376,20 +4466,9 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"EventId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"event (ID)", r"de": r"Ereignis (ID)"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Identification of an event",
-                                r"de": r"Ident eines events",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4406,6 +4485,19 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"event (ID)", r"de": r"Ereignis (ID)"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Identification of an event",
+                                    r"de": r"Ident eines events",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4454,20 +4546,9 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"ProviderId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"provider (ID)", r"de": r"Lieferant (ID)"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Identifikation of the location provider which triggered the event ",
-                                r"de": r"Ident des Lieferenten der Positionsinformation, der das Event ausgelöst hat",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4484,6 +4565,22 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"provider (ID)",
+                                    r"de": r"Lieferant (ID)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Identifikation of the location provider which triggered the event ",
+                                    r"de": r"Ident des Lieferenten der Positionsinformation, der das Event ausgelöst hat",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4532,11 +4629,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"EventType",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"event type", r"de": r"Eventtyp"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4555,6 +4648,11 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"event type", r"de": r"Eventtyp"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4605,11 +4703,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Record of an area localization event"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4626,6 +4720,11 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Record of an area localization event"}
+                        )
 
                     if qualifier is None:
                         qualifier = ()
@@ -4715,14 +4814,7 @@ class AssetLocation(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List with records for area localization events",
-                        r"de": r"Liste mit Datensätzen für Areallokalisierungsereignisse",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4739,6 +4831,14 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List with records for area localization events",
+                            r"de": r"Liste mit Datensätzen für Areallokalisierungsereignisse",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4881,14 +4981,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"CoordinateSystemReference",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to a coordinate reference system for the position ",
-                                r"de": r"Referenz auf das Koordinatenreferenzsystem für die Position",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4905,6 +4998,14 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to a coordinate reference system for the position ",
+                                    r"de": r"Referenz auf das Koordinatenreferenzsystem für die Position",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5158,17 +5259,9 @@ class AssetLocation(aas.Submodel):
                         y: Union[xsd.Float, Y],
                         z: Union[xsd.Float, Z],
                         id_short: Optional[str] = r"Position",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"position", r"de": r"Position"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Position of the asset"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5185,6 +5278,16 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"position", r"de": r"Position"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Position of the asset"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5262,20 +5365,9 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"ProviderId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"provider (ID)", r"de": r"Lieferant (ID)"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Identifikation of the location provider which triggered the event ",
-                                r"de": r"Ident des Lieferenten der Positionsinformation, der das Event ausgelöst hat",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5292,6 +5384,22 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"provider (ID)",
+                                    r"de": r"Lieferant (ID)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Identifikation of the location provider which triggered the event ",
+                                    r"de": r"Ident des Lieferenten der Positionsinformation, der das Event ausgelöst hat",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5340,11 +5448,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"ProviderType",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"provider type", r"de": r"Versorgertyp"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5363,6 +5467,11 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"provider type", r"de": r"Versorgertyp"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5411,11 +5520,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"Accuracy",
                         value_type: aas.DataTypeDefXsd = float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Accuracy", r"de": r"Genauigkeit"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5434,6 +5539,11 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Accuracy", r"de": r"Genauigkeit"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5482,14 +5592,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"MagneticHeading",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"magnetic heading",
-                                r"de": r"magnetische Ausrichtung",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5508,6 +5611,14 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"magnetic heading",
+                                    r"de": r"magnetische Ausrichtung",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5556,11 +5667,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"TrueHeading",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"heading", r"de": r"Ausrichtung"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5579,6 +5686,11 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"heading", r"de": r"Ausrichtung"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5627,14 +5739,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"HeadingAccuracy",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"heading accuracy",
-                                r"de": r"Steuerkursgenauigkeit",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5653,6 +5758,14 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"heading accuracy",
+                                    r"de": r"Steuerkursgenauigkeit",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5701,20 +5814,9 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"Time",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"time", r"de": r"Zeitpunkt"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The time (timestamp) when the location data was generated (e.g., by a RTLS) ",
-                                r"de": r"Der Zeitpunkt (Zeitstempel) zu dem die Lokalisierung erfolgt ist (z.B. durch ein RTLS)",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5731,6 +5833,19 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"time", r"de": r"Zeitpunkt"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The time (timestamp) when the location data was generated (e.g., by a RTLS) ",
+                                    r"de": r"Der Zeitpunkt (Zeitstempel) zu dem die Lokalisierung erfolgt ist (z.B. durch ein RTLS)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5779,23 +5894,9 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"TransmissionTime",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"transmission time",
-                                r"de": r"Sendezeitpunkt",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Time (timestemp) when the location information has been updated",
-                                r"de": r"Zeitpunkt (Zeitstempel) an dem die Lokalisierungsinformation zuletzt geändert wurde",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5812,6 +5913,22 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"transmission time",
+                                    r"de": r"Sendezeitpunkt",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Time (timestemp) when the location information has been updated",
+                                    r"de": r"Zeitpunkt (Zeitstempel) an dem die Lokalisierungsinformation zuletzt geändert wurde",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5859,23 +5976,9 @@ class AssetLocation(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"LocationDescription",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"location description",
-                                r"de": r"Ortsbeschreibung",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Location description (meta information for the position) , it is recommended to refer to the origin of the CRS",
-                                r"de": r"Beschreibung des Orts (Metainformationen zur Position); es wird empfohlen, auf den Ursprung des Koordinatenreferenzsystems Bezug zu nehmen",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5892,6 +5995,22 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"location description",
+                                    r"de": r"Ortsbeschreibung",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Location description (meta information for the position) , it is recommended to refer to the origin of the CRS",
+                                    r"de": r"Beschreibung des Orts (Metainformationen zur Position); es wird empfohlen, auf den Ursprung des Koordinatenreferenzsystems Bezug zu nehmen",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5967,20 +6086,9 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"Speed",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"speed", r"de": r"Geschwindigkeit"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Speed of the asset at the time where the position was determined",
-                                r"de": r"Geschwindigkeit des Assets zum Zeitpunkt an dem die Position bestimmt wurde",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5997,6 +6105,19 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"speed", r"de": r"Geschwindigkeit"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Speed of the asset at the time where the position was determined",
+                                    r"de": r"Geschwindigkeit des Assets zum Zeitpunkt an dem die Position bestimmt wurde",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6045,11 +6166,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"Course",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"course", r"de": r"Kurs"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6068,6 +6185,11 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"course", r"de": r"Kurs"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6116,14 +6238,7 @@ class AssetLocation(aas.Submodel):
                         id_short: Optional[str] = r"ReferencePointId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"reference point (ID)",
-                                r"de": r"Referenzpunkt (ID)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6142,6 +6257,14 @@ class AssetLocation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"reference point (ID)",
+                                    r"de": r"Referenzpunkt (ID)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6207,13 +6330,7 @@ class AssetLocation(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Record of a location (position) localization event"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6230,6 +6347,13 @@ class AssetLocation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Record of a location (position) localization event"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = ()
@@ -6392,14 +6516,7 @@ class AssetLocation(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List with records for location (position) localization events",
-                        r"de": r"Liste mit Datensätzen für Ereignisse betreffend der Lokalisierung (Positionsbestimmung)",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6416,6 +6533,14 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List with records for location (position) localization events",
+                            r"de": r"Liste mit Datensätzen für Ereignisse betreffend der Lokalisierung (Positionsbestimmung)",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6561,20 +6686,9 @@ class AssetLocation(aas.Submodel):
                 Union[Iterable[LocationRecords.Locationrecords_item], LocationRecords]
             ] = None,
             id_short: Optional[str] = r"AssetTraces",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"asset traces", r"de": r"Assetverfolgung"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Collection of localization event records for sites, areas, fences and locations",
-                    r"de": r"Sammlung von Lokalisierungsevents für Standorte, Areale, Schranken und Positionen",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -6591,6 +6705,19 @@ class AssetLocation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"asset traces", r"de": r"Assetverfolgung"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection of localization event records for sites, areas, fences and locations",
+                        r"de": r"Sammlung von Lokalisierungsevents für Standorte, Areale, Schranken und Positionen",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -6700,11 +6827,7 @@ class AssetLocation(aas.Submodel):
                 id_short: Optional[str] = r"Localizable",
                 value_type: aas.DataTypeDefXsd = bool,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"localizable", r"de": r"lokalisierbar"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6723,6 +6846,11 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"localizable", r"de": r"lokalisierbar"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6770,23 +6898,9 @@ class AssetLocation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"AssetLocationServiceRealTimeCapability",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Realtime capability description",
-                        r"de": r"Beschreibung der Echtzeitfähigkeit",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Description of the extend and conditions for real time applications of the AAS",
-                        r"de": r"Beschreibung, inwieweit und unter welchen Bedingungen eine Echtzeitfähigkeit der AAS besteht",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6803,6 +6917,22 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Realtime capability description",
+                            r"de": r"Beschreibung der Echtzeitfähigkeit",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Description of the extend and conditions for real time applications of the AAS",
+                            r"de": r"Beschreibung, inwieweit und unter welchen Bedingungen eine Echtzeitfähigkeit der AAS besteht",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6878,14 +7008,7 @@ class AssetLocation(aas.Submodel):
                 id_short: Optional[str] = r"RealtimeLocationSourceType",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"real time location source type",
-                        r"de": r"Typ der Quelle für Echtzeitlokalisierung",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6904,6 +7027,14 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"real time location source type",
+                            r"de": r"Typ der Quelle für Echtzeitlokalisierung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6951,14 +7082,7 @@ class AssetLocation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"RealtimeLocationSource",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Real time location source",
-                        r"de": r"Quelle für Echtzeitlokalisierung",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6977,6 +7101,14 @@ class AssetLocation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Real time location source",
+                            r"de": r"Quelle für Echtzeitlokalisierung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -7059,14 +7191,7 @@ class AssetLocation(aas.Submodel):
             id_short: Optional[str] = r"AssetLocatingInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Collection with additional information concerning the localization of an asset",
-                    r"de": r"Sammlung mit zusätzlichen Informationen betreffend die Lokalisierung eines Assets",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -7083,6 +7208,14 @@ class AssetLocation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection with additional information concerning the localization of an asset",
+                        r"de": r"Sammlung mit zusätzlichen Informationen betreffend die Lokalisierung eines Assets",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -7193,37 +7326,10 @@ class AssetLocation(aas.Submodel):
         assetTraces: Optional[AssetTraces] = None,
         assetLocatingInformation: Optional[AssetLocatingInformation] = None,
         id_short: Optional[str] = r"AssetLocation",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={
-                r"en": r"Submodel asset location",
-                r"de": r"Teilmodell Assetstandort",
-            }
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"Submodel for tracking & tracing of the location of an assets",
-                r"de": r"Teilmodell für das Tracking & Tracing des Standortes eines Assets",
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=aas.ModelReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.SUBMODEL,
-                        value=r"https://admin-shell.io/idta/smt/assetlocation/1/0",
-                    ),
-                ),
-                type_=aas.Submodel,
-                referred_semantic_id=None,
-            ),
-            template_id=r"AssetLocation",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -7240,6 +7346,40 @@ class AssetLocation(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={
+                    r"en": r"Submodel asset location",
+                    r"de": r"Teilmodell Assetstandort",
+                }
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Submodel for tracking & tracing of the location of an assets",
+                    r"de": r"Teilmodell für das Tracking & Tracing des Standortes eines Assets",
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=aas.ModelReference(
+                    key=(
+                        aas.Key(
+                            type_=aas.KeyTypes.SUBMODEL,
+                            value=r"https://admin-shell.io/idta/smt/assetlocation/1/0",
+                        ),
+                    ),
+                    type_=aas.Submodel,
+                    referred_semantic_id=None,
+                ),
+                template_id=r"AssetLocation",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

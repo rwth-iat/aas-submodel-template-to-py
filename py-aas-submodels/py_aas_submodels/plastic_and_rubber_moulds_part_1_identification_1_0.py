@@ -15,13 +15,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The month in which the manufacturing process of the machine has been completed"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -38,6 +32,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The month in which the manufacturing process of the machine has been completed"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -80,13 +81,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The first time, the mould gets on the machine and switched on (dry cycle)"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -103,6 +98,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The first time, the mould gets on the machine and switched on (dry cycle)"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -145,13 +147,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The date, when the MouldItem was used in an IMM for the first time (FOT - first part out of tool)"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -168,6 +164,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The date, when the MouldItem was used in an IMM for the first time (FOT - first part out of tool)"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -210,13 +213,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The date, when the MouldItem was transfered to series production the first time"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -233,6 +230,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The date, when the MouldItem was transfered to series production the first time"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -275,13 +279,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"A globally unique identifier of the manufacturer of the MachineryItem."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -298,6 +296,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"A globally unique identifier of the manufacturer of the MachineryItem."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -340,13 +345,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"To be used by end users to store a unique identification in the context of their overall application."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -363,6 +362,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"To be used by end users to store a unique identification in the context of their overall application."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -405,11 +411,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"name of the machine controller as used in OPC 40083"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -426,6 +428,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"name of the machine controller as used in OPC 40083"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -468,13 +477,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"ID of the article (plastic part), which is produced with the mould. Given by the end user"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -491,6 +494,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"ID of the article (plastic part), which is produced with the mould. Given by the end user"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -533,13 +543,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Name of the plastic part, which is produced with the mould"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -556,6 +560,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Name of the plastic part, which is produced with the mould"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -600,13 +611,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"enumeration: 0173-1#07-AAS927#001 (administrativ contact), 0173-1#07-AAS928#001 (commercial contact), 0173-1#07-AAS929#001 (other contact), 0173-1#07-AAS930#001 (hazardous goods contact), 0173-1#07-AAS931#001 (technical contact). Note: the above mentioned ECLASS enumeration should be declared as “open” for further addition. ECLASS enumeration IRDI is preferable. If no IRDI available, custom input as String may also be accepted."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -623,6 +628,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"enumeration: 0173-1#07-AAS927#001 (administrativ contact), 0173-1#07-AAS928#001 (commercial contact), 0173-1#07-AAS929#001 (other contact), 0173-1#07-AAS930#001 (hazardous goods contact), 0173-1#07-AAS931#001 (technical contact). Note: the above mentioned ECLASS enumeration should be declared as “open” for further addition. ECLASS enumeration IRDI is preferable. If no IRDI available, custom input as String may also be accepted."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -664,13 +676,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: see also [IRDI] 0112/2///61360_4#ADA005#001 country code. country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -687,6 +693,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: see also [IRDI] 0112/2///61360_4#ADA005#001 country code. country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -728,13 +741,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: language codes defined accord. to ISO 639-1. Note: as per ECLASS definition, Expression and representation of thoughts, information, feelings, ideas through characters."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -751,6 +758,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: language codes defined accord. to ISO 639-1. Note: as per ECLASS definition, Expression and representation of thoughts, information, feelings, ideas through characters."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -793,13 +807,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: notation accord. to ISO 8601 Note: for time in UTC the zone designator “Z” is to be used"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -816,6 +824,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: notation accord. to ISO 8601 Note: for time in UTC the zone designator “Z” is to be used"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -857,13 +872,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: see also [IRDI] 0112/2///61987#ABA129#001 city/town. Mandatory property according to EU Machine Directive 2006/42/EC."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -880,6 +889,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: see also [IRDI] 0112/2///61987#ABA129#001 city/town. Mandatory property according to EU Machine Directive 2006/42/EC."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1036,13 +1052,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1059,6 +1069,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1100,13 +1117,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r" enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1123,6 +1134,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r" enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1315,13 +1333,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1338,6 +1350,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1379,13 +1398,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1402,6 +1415,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1588,13 +1608,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1611,6 +1625,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1652,13 +1673,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home)"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1675,6 +1690,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home)"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2155,13 +2177,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: see also [IRDI] 0112/2///61987#ABA286#001 street. Mandatory property according to EU Machine Directive 2006/42/EC"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2178,6 +2194,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: see also [IRDI] 0112/2///61987#ABA286#001 street. Mandatory property according to EU Machine Directive 2006/42/EC"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2218,13 +2241,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: see also [IRDI] 0112/2///61987#ABA281#001 ZIP/Postal code. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2241,6 +2258,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: see also [IRDI] 0112/2///61987#ABA281#001 ZIP/Postal code. Mandatory property according to EU Machine Directive 2006/42/EC. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2338,13 +2362,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2361,6 +2379,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2882,13 +2907,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             id_short: Optional[str] = r"Affiliation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r'The SMC "Affiliation" provides information about the owner of the mould. It has the same CD as "ContactInformation"'
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2905,6 +2924,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r'The SMC "Affiliation" provides information about the owner of the mould. It has the same CD as "ContactInformation"'
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3113,13 +3139,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"To be used by end users to store a human-readable localized text for the MachineryItem. The minimum number of locales supported for this property shall be two."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3136,6 +3156,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"To be used by end users to store a human-readable localized text for the MachineryItem. The minimum number of locales supported for this property shall be two."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3176,13 +3203,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"To be used by end users to store comments in a scheme specific to the end user."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3199,6 +3220,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"To be used by end users to store comments in a scheme specific to the end user."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3239,13 +3267,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"To be used by end users to store the location of the machine in a scheme specific to the end user."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3262,6 +3284,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"To be used by end users to store the location of the machine in a scheme specific to the end user."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3312,11 +3341,7 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
         id_short: Optional[str] = r"PlasticsAndRubberMouldsIdentification",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"The Submodel defines Identification parameters to be used in addition to the Digital Nameplate Submodel."
-            }
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
@@ -3333,6 +3358,13 @@ class PlasticsAndRubberMouldsIdentification(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"The Submodel defines Identification parameters to be used in addition to the Digital Nameplate Submodel."
+                }
+            )
 
         if qualifier is None:
             qualifier = ()

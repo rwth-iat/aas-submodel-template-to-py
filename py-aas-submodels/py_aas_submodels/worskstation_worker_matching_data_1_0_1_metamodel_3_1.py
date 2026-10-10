@@ -17,18 +17,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"WorkstationName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Workstation name",
-                            r"de": r"Name der Arbeitsstation",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(dict_={r"en": r"Workstation name"}),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -45,6 +36,19 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Workstation name",
+                                r"de": r"Name der Arbeitsstation",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Workstation name"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -93,11 +97,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"WorkstationId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Workstation ID", r"de": r"Arbeitsstation ID"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -117,6 +117,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Workstation ID",
+                                r"de": r"Arbeitsstation ID",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -164,14 +172,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"OrgName",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Organizational name",
-                            r"de": r"Organisationsname",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -191,6 +192,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Organizational name",
+                                r"de": r"Organisationsname",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -237,11 +246,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"TypeOfWorkstation",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Workstation type", r"de": r"Arbeitsstationsart"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -261,6 +266,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Workstation type",
+                                r"de": r"Arbeitsstationsart",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -307,20 +320,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"WorkerAssistanceInformation",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Worker assistance information",
-                            r"de": r"Informationen zur Werkerassistenz",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Worker assistance information"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -337,6 +339,19 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Worker assistance information",
+                                r"de": r"Informationen zur Werkerassistenz",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Worker assistance information"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -383,20 +398,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"RequiredPersonalSafetyEquipment",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Required personal safety equipment",
-                            r"de": r"Erforderliche persönliche Schutzausrüstung",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Required personal safety equipment"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -414,6 +418,19 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Required personal safety equipment",
+                                r"de": r"Erforderliche persönliche Schutzausrüstung",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Required personal safety equipment"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -460,14 +477,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"NecessaryPersonalTools",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Necessary personal tools",
-                            r"de": r"Notwendige persönliche Werkzeuge",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -487,6 +497,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Necessary personal tools",
+                                r"de": r"Notwendige persönliche Werkzeuge",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -533,14 +551,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"PersonalDataProcessing",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Personal data processing ",
-                            r"de": r"Verarbeitung persönlicher Daten",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -559,6 +570,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Personal data processing ",
+                                r"de": r"Verarbeitung persönlicher Daten",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -605,14 +624,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"LocationDescription",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Location description",
-                            r"de": r"Ortsbeschreibung",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -632,6 +644,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Location description",
+                                r"de": r"Ortsbeschreibung",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -678,11 +698,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"Directions",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Directions", r"de": r"Wegbeschreibung"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -702,6 +718,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Directions", r"de": r"Wegbeschreibung"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -766,23 +787,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 ] = None,
                 directions: Optional[Union[aas.LangStringSet, Directions]] = None,
                 id_short: Optional[str] = r"WorkstationInformation",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"General workstation information",
-                        r"de": r"Allgemeine Arbeitsstationsinformationen",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"General information about the workstation in respect of worker deployment",
-                        r"de": r"Allgemeine Informationen zur Arbeitsstation mit Relevanz für die Mitarbeitereinsatzplanung",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -799,6 +806,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"General workstation information",
+                            r"de": r"Allgemeine Arbeitsstationsinformationen",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"General information about the workstation in respect of worker deployment",
+                            r"de": r"Allgemeine Informationen zur Arbeitsstation mit Relevanz für die Mitarbeitereinsatzplanung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -954,14 +977,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = r"QualificationClassificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Qualification classification (ID)",
-                                r"de": r"Qualifikationsklassifizierung (ID)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -981,6 +997,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Qualification classification (ID)",
+                                    r"de": r"Qualifikationsklassifizierung (ID)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1029,14 +1053,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = r"QualificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Qualification (ID)",
-                                r"de": r"Qualifikation (ID)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -1056,6 +1073,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Qualification (ID)",
+                                    r"de": r"Qualifikation (ID)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1103,14 +1128,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"ExceptionRules",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Exception rules",
-                                r"de": r"Ausnahmeregelungen",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -1130,6 +1148,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Exception rules",
+                                    r"de": r"Ausnahmeregelungen",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1179,21 +1205,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         Union[aas.LangStringSet, ExceptionRules]
                     ] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Worker qualification that is required to work at the workstation"
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Worker qualification that is required to work at the workstation"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1210,6 +1224,20 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Worker qualification that is required to work at the workstation"
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Worker qualification that is required to work at the workstation"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1303,23 +1331,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"General qualification demand",
-                        r"de": r"Allgemeine Qualifikationsanforderungen",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Worker qualifications that are required in order to work at the workstation",
-                        r"de": r"Mitarbeiterqualifikationen die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1336,6 +1350,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"General qualification demand",
+                            r"de": r"Allgemeine Qualifikationsanforderungen",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Worker qualifications that are required in order to work at the workstation",
+                            r"de": r"Mitarbeiterqualifikationen die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1478,14 +1508,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = r"SkillClassificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Skill classification (ID)",
-                                r"de": r"Fähigkeitenklassifizierung (ID)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -1505,6 +1528,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Skill classification (ID)",
+                                    r"de": r"Fähigkeitenklassifizierung (ID)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1553,14 +1584,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = r"SkillLevelClassificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Skill level classification (ID)",
-                                r"de": r"Fähigkeitenklassifizierung (ID)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -1580,6 +1604,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Skill level classification (ID)",
+                                    r"de": r"Fähigkeitenklassifizierung (ID)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1628,14 +1660,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = r"SkillLevelId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Skill level (ID)",
-                                r"de": r"Fähigkeitenstufe (ID)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -1655,6 +1680,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Skill level (ID)",
+                                    r"de": r"Fähigkeitenstufe (ID)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1703,11 +1736,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = r"SkillId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Skill (ID)", r"de": r"Fähigkeit (ID)"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -1727,6 +1756,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Skill (ID)", r"de": r"Fähigkeit (ID)"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1774,14 +1808,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"ExceptionRules",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Exception rules",
-                                r"de": r"Ausnahmeregelungen",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1800,6 +1827,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Exception rules",
+                                    r"de": r"Ausnahmeregelungen",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1853,13 +1888,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Worker skill that is required in order to work at the workstation"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1876,6 +1905,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Worker skill that is required in order to work at the workstation"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1985,23 +2021,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"General skill demand",
-                        r"de": r"Allgemeine Fähigkeitsanforderungen",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Worker skills that are required in order to work at the workstation",
-                        r"de": r"Mitarbeiterfähigkeiten die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2018,6 +2040,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"General skill demand",
+                            r"de": r"Allgemeine Fähigkeitsanforderungen",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Worker skills that are required in order to work at the workstation",
+                            r"de": r"Mitarbeiterfähigkeiten die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2168,14 +2206,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             id_short: Optional[str] = r"GeneralWorkstationData",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"General workstation data, which are relevant for worker deployment control and deployment planning",
-                    r"de": r"Allgemeine Arbeitsstationsdaten, die für die Mitarbeitereinsatzsteuerung und -planung relevant sind",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2192,6 +2223,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"General workstation data, which are relevant for worker deployment control and deployment planning",
+                        r"de": r"Allgemeine Arbeitsstationsdaten, die für die Mitarbeitereinsatzsteuerung und -planung relevant sind",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2286,11 +2325,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 id_short: Optional[str] = r"MaxLiftingWeight",
                 value_type: aas.DataTypeDefXsd = int,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Max. lifting weight", r"de": r"Max. Hebegewicht"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -2310,6 +2345,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Max. lifting weight",
+                            r"de": r"Max. Hebegewicht",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2358,14 +2401,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 id_short: Optional[str] = r"MinWorkerHeight",
                 value_type: aas.DataTypeDefXsd = int,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Minimum worker height ",
-                        r"de": r"Minimale Mitarbeitergröße ",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -2385,6 +2421,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Minimum worker height ",
+                            r"de": r"Minimale Mitarbeitergröße ",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2437,14 +2481,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = r"LimitationClassificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Limitation classification (ID)",
-                                r"de": r"Einschränkungsklassifizierung (ID)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2463,6 +2500,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Limitation classification (ID)",
+                                    r"de": r"Einschränkungsklassifizierung (ID)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2511,14 +2556,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = r"PersonalLimitationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Personal limitation (ID)",
-                                r"de": r"Persönliche Einschränkung (ID)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -2538,6 +2576,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Personal limitation (ID)",
+                                    r"de": r"Persönliche Einschränkung (ID)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2585,13 +2631,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Personal limitation that is accepted for working at the workstation, e.g., special measures have been implemented"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2608,6 +2648,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Personal limitation that is accepted for working at the workstation, e.g., special measures have been implemented"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = ()
@@ -2672,23 +2719,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Allowed personal limitations",
-                        r"de": r"Akzeptierte Mitarbeitereinschränkungen",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List of all personal limitations that are accepted for working at the workstation, e.g., special measures have been implemented",
-                        r"de": r"Liste von persönlichen Einschränkungen, die an der Arbeitsstation zugelassen sind. Zum Beispiel weil bestimmte Arbeitsgestaltungsmaßnahmen getroffen wurden.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2705,6 +2738,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Allowed personal limitations",
+                            r"de": r"Akzeptierte Mitarbeitereinschränkungen",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List of all personal limitations that are accepted for working at the workstation, e.g., special measures have been implemented",
+                            r"de": r"Liste von persönlichen Einschränkungen, die an der Arbeitsstation zugelassen sind. Zum Beispiel weil bestimmte Arbeitsgestaltungsmaßnahmen getroffen wurden.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2848,23 +2897,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 ]
             ] = None,
             id_short: Optional[str] = r"ErgonomicWorkstationProfile",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Ergonomic workstation profile",
-                    r"de": r"Ergonomisches Arbeitsplatzprofil",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Ergonomic characteristics of the workstation which might influence the worker deployment",
-                    r"de": r"Ergonomische Arbeitsplatzeigenschaften, die einen Einfluss auf den Mitarbeitereinsatz haben",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2881,6 +2916,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Ergonomic workstation profile",
+                        r"de": r"Ergonomisches Arbeitsplatzprofil",
+                    }
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Ergonomic characteristics of the workstation which might influence the worker deployment",
+                        r"de": r"Ergonomische Arbeitsplatzeigenschaften, die einen Einfluss auf den Mitarbeitereinsatz haben",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2980,11 +3031,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"WorkerId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Worker (ID)", r"de": r"Werker (ID)"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -3004,6 +3051,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Worker (ID)", r"de": r"Werker (ID)"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3052,11 +3104,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"AccessStart",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Access start ", r"de": r"Zugriffsstart"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3075,6 +3123,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Access start ", r"de": r"Zugriffsstart"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3123,11 +3176,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"AccessEnd",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Access end", r"de": r"Zugriffsende"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -3147,6 +3196,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Access end", r"de": r"Zugriffsende"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3195,11 +3249,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"PreferredHeight",
                     value_type: aas.DataTypeDefXsd = int,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Preferred height", r"de": r"Bevorzugte Höhe"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3218,6 +3268,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Preferred height",
+                                r"de": r"Bevorzugte Höhe",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3270,14 +3328,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"ConfigurationName",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Configuation name",
-                                    r"de": r"Konfigurationsname",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -3297,6 +3348,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Configuation name",
+                                        r"de": r"Konfigurationsname",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3345,14 +3404,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"ConfigurationValue",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Configuration value",
-                                    r"de": r"Konfigurationswert",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -3372,6 +3424,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Configuration value",
+                                        r"de": r"Konfigurationswert",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3419,11 +3479,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Proprietary worker-depending configuration"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3440,6 +3496,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Proprietary worker-depending configuration"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -3504,23 +3567,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     semantic_id_list_element: Optional[aas.Reference] = None,
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Proprietary configurations",
-                            r"de": r"Proprietäre Konfigurationen",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Proprietary worker-depending configurations ",
-                            r"de": r"Proprietäre werkerindividuelle Konfigurationsmerkmale",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3537,6 +3586,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Proprietary configurations",
+                                r"de": r"Proprietäre Konfigurationen",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Proprietary worker-depending configurations ",
+                                r"de": r"Proprietäre werkerindividuelle Konfigurationsmerkmale",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3684,13 +3749,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Worker specific configuration options of a workstation"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3707,6 +3766,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Worker specific configuration options of a workstation"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -3802,23 +3868,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Workstation configuration records ",
-                    r"de": r"Arbeitsstationskonfigurationseinträge",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Worker specific configuration options of a workstation",
-                    r"de": r"Arbeitsstationskonfigurationsoptionen für einen Mitarbeiter",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3835,6 +3887,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Workstation configuration records ",
+                        r"de": r"Arbeitsstationskonfigurationseinträge",
+                    }
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Worker specific configuration options of a workstation",
+                        r"de": r"Arbeitsstationskonfigurationsoptionen für einen Mitarbeiter",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3973,14 +4041,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"IntervalDescription",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Interval description",
-                            r"de": r"Intervallbeschreibung",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -4000,6 +4061,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Interval description",
+                                r"de": r"Intervallbeschreibung",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4047,11 +4116,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"IntervalStart",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Interval start", r"de": r"Intervallstart"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -4071,6 +4136,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Interval start", r"de": r"Intervallstart"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4119,11 +4189,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"IntervalEnd",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Interval end", r"de": r"Intervallende"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -4143,6 +4209,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Interval end", r"de": r"Intervallende"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4195,14 +4266,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"QualificationClassificationId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Qualification classification (ID)",
-                                    r"de": r"Qualifikationsklassifizierung (ID)",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -4223,6 +4287,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Qualification classification (ID)",
+                                        r"de": r"Qualifikationsklassifizierung (ID)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4271,14 +4343,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"QualificationId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Qualification (ID)",
-                                    r"de": r"Qualifikation (ID)",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -4299,6 +4364,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Qualification (ID)",
+                                        r"de": r"Qualifikation (ID)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4346,14 +4419,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"ExceptionRules",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Exception rules",
-                                    r"de": r"Ausnahmeregelungen",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -4374,6 +4440,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Exception rules",
+                                        r"de": r"Ausnahmeregelungen",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4437,11 +4511,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Demand kind", r"de": r"Bedarfsquelle"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -4462,6 +4532,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Demand kind",
+                                        r"de": r"Bedarfsquelle",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4510,11 +4588,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"StartTime",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Start time", r"de": r"Startzeit"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -4534,6 +4608,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Start time", r"de": r"Startzeit"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4582,11 +4661,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"EndTime",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"End time", r"de": r"Endzeit"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -4606,6 +4681,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"End time", r"de": r"Endzeit"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4654,11 +4734,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"ProcessTime",
                             value_type: aas.DataTypeDefXsd = int,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Process time", r"de": r"Prozesszeit"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -4678,6 +4754,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Process time",
+                                        r"de": r"Prozesszeit",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4734,13 +4818,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Worker qualification that is required to work at the workstation"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4757,6 +4835,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Worker qualification that is required to work at the workstation"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -4869,14 +4954,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Worker qualifications that are required in order to work at the workstation",
-                            r"de": r"Mitarbeiterqualifikationen die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4893,6 +4971,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Worker qualifications that are required in order to work at the workstation",
+                                r"de": r"Mitarbeiterqualifikationen die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5041,13 +5127,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Production plan depending planned qualification demand at a workstation"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5064,6 +5144,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Production plan depending planned qualification demand at a workstation"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5169,23 +5256,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Planned qualification demand",
-                    r"de": r"Geplanter Qualifikationsbedarf",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Production plan depending planned qualification demand at a workstation",
-                    r"de": r"Vom Produktionsplan abhängiger und geplanter Qualifikationsbedarf an einer Arbeitsstation",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -5202,6 +5275,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Planned qualification demand",
+                        r"de": r"Geplanter Qualifikationsbedarf",
+                    }
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Production plan depending planned qualification demand at a workstation",
+                        r"de": r"Vom Produktionsplan abhängiger und geplanter Qualifikationsbedarf an einer Arbeitsstation",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -5340,14 +5429,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"IntervalDescription",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Interval description",
-                            r"de": r"Intervallbeschreibung",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -5367,6 +5449,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Interval description",
+                                r"de": r"Intervallbeschreibung",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5414,11 +5504,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"IntervalStart",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Interval start", r"de": r"Intervallstart"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -5438,6 +5524,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Interval start", r"de": r"Intervallstart"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5486,11 +5577,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     id_short: Optional[str] = r"IntervalEnd",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Interval end", r"de": r"Intervallende"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -5510,6 +5597,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Interval end", r"de": r"Intervallende"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5562,14 +5654,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"SkillClassificationId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Skill classification (ID)",
-                                    r"de": r"Fähigkeitenklassifizierung (ID)",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -5590,6 +5675,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Skill classification (ID)",
+                                        r"de": r"Fähigkeitenklassifizierung (ID)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5638,14 +5731,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"SkillLevelClassificationId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Skill level classification (ID)",
-                                    r"de": r"Fähigkeitenklassifizierung (ID)",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -5666,6 +5752,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Skill level classification (ID)",
+                                        r"de": r"Fähigkeitenklassifizierung (ID)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5714,14 +5808,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"SkillLevelId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Skill level (ID)",
-                                    r"de": r"Fähigkeitenstufe (ID)",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -5742,6 +5829,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Skill level (ID)",
+                                        r"de": r"Fähigkeitenstufe (ID)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5790,11 +5885,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"SkillId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Skill (ID)", r"de": r"Fähigkeit (ID)"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -5815,6 +5906,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Skill (ID)",
+                                        r"de": r"Fähigkeit (ID)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5862,14 +5961,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"ExceptionRules",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Exception rules",
-                                    r"de": r"Ausnahmeregelungen",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -5890,6 +5982,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Exception rules",
+                                        r"de": r"Ausnahmeregelungen",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5953,11 +6053,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Demand kind", r"de": r"Bedarfsquelle"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -5978,6 +6074,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Demand kind",
+                                        r"de": r"Bedarfsquelle",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6026,11 +6130,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"StartTime",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Start time", r"de": r"Startzeit"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -6050,6 +6150,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Start time", r"de": r"Startzeit"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6098,11 +6203,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"EndTime",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"End time", r"de": r"Endzeit"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -6122,6 +6223,11 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"End time", r"de": r"Endzeit"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6170,11 +6276,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             id_short: Optional[str] = r"ProcessTime",
                             value_type: aas.DataTypeDefXsd = int,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Process time", r"de": r"Prozesszeit"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
@@ -6194,6 +6296,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Process time",
+                                        r"de": r"Prozesszeit",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6252,13 +6362,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Worker skill that is required in order to work at the workstation"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6275,6 +6379,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Worker skill that is required in order to work at the workstation"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -6400,14 +6511,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Worker skills that are required in order to work at the workstation",
-                            r"de": r"Mitarbeiterfähigkeiten die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6424,6 +6528,14 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Worker skills that are required in order to work at the workstation",
+                                r"de": r"Mitarbeiterfähigkeiten die vorhanden sein müssen, um an der Arbeitsstation eingesetzt werden zu können",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = ()
@@ -6550,13 +6662,7 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Production plan depending planned skill demand at a workstation"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6573,6 +6679,13 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Production plan depending planned skill demand at a workstation"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6676,23 +6789,9 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Planned skill demand",
-                    r"de": r"Geplanter Fähigkeitenbedarf",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Production plan depending planned skill demand at a workstation",
-                    r"de": r"Vom Produktionsplan abhängiger und geplanter Qualifikationsbedarf an einer Arbeitsstation",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -6709,6 +6808,22 @@ class WorkstationWorkerMatchingData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Planned skill demand",
+                        r"de": r"Geplanter Fähigkeitenbedarf",
+                    }
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Production plan depending planned skill demand at a workstation",
+                        r"de": r"Vom Produktionsplan abhängiger und geplanter Qualifikationsbedarf an einer Arbeitsstation",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -6859,28 +6974,10 @@ class WorkstationWorkerMatchingData(aas.Submodel):
             ]
         ] = None,
         id_short: Optional[str] = r"WorkstationWorkerMatchingData",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={
-                r"en": r"Workstation Worker Matching Data",
-                r"de": r"Daten für die Mitarbeitereinsatzplanung",
-            }
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"Submodel containing workstation data in order to match and deploy workers to workstations",
-                r"de": r"Teilmodell mit Arbeitsstationsdaten für die Mitarbeitereinsatzplanung",
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=None,
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -6897,6 +6994,31 @@ class WorkstationWorkerMatchingData(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={
+                    r"en": r"Workstation Worker Matching Data",
+                    r"de": r"Daten für die Mitarbeitereinsatzplanung",
+                }
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Submodel containing workstation data in order to match and deploy workers to workstations",
+                    r"de": r"Teilmodell mit Arbeitsstationsdaten für die Mitarbeitereinsatzplanung",
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=None,
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

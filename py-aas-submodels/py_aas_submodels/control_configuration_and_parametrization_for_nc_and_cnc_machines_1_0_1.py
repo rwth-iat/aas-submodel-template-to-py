@@ -13,11 +13,7 @@ class ControlConfig(aas.Submodel):
             id_short: Optional[str] = r"DigitalNameplate",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Reference to the digital nameplate of the controller."}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -34,6 +30,13 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Reference to the digital nameplate of the controller."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -92,11 +95,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"The Controller Type describes the type of controller"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -113,6 +112,13 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The Controller Type describes the type of controller"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -182,9 +188,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"VARIABLE",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(dict_={r"en": r"Time unit of the control"}),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -201,6 +205,11 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Time unit of the control"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -261,9 +270,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(dict_={r"en": r"Length Unit of the control"}),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -280,6 +287,11 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Length Unit of the control"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -340,11 +352,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Fieldbus Type of the control"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -361,6 +369,11 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Fieldbus Type of the control"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -421,11 +434,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"VARIABLE",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Defines the cycle time of the CNC control"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -442,6 +451,11 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Defines the cycle time of the CNC control"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -502,11 +516,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"VARIABLE",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Defines the cycle time of the PLC control"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -523,6 +533,11 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Defines the cycle time of the PLC control"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -583,11 +598,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"VARIABLE",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Defines the cycle time of the fieldbus control"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -604,6 +615,11 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Defines the cycle time of the fieldbus control"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -664,11 +680,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Defines the velocity unit of the CNC control "}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -685,6 +697,11 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Defines the velocity unit of the CNC control "}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -745,11 +762,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Defines the acceleration unit unit of the CNC control"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -766,6 +779,13 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Defines the acceleration unit unit of the CNC control"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -826,11 +846,7 @@ class ControlConfig(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Defines the jerk unit of the CNC control "}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -847,6 +863,11 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Defines the jerk unit of the CNC control "}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -909,11 +930,7 @@ class ControlConfig(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Name of the control configuration file"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -930,6 +947,11 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Name of the control configuration file"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -989,11 +1011,7 @@ class ControlConfig(aas.Submodel):
                 content_type: Optional[str] = r"application/json",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"File to configure the control"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1010,6 +1028,11 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"File to configure the control"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1066,14 +1089,7 @@ class ControlConfig(aas.Submodel):
             id_short: Optional[str] = r"ControlConfigData",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Control configuration data",
-                    r"de": r"Steuerungskonfigurationsdaten",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1090,6 +1106,14 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Control configuration data",
+                        r"de": r"Steuerungskonfigurationsdaten",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1177,13 +1201,7 @@ class ControlConfig(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"VARIABLE",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"This describes the unique channel identification of the specific channel"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1200,6 +1218,13 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"This describes the unique channel identification of the specific channel"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1262,11 +1287,7 @@ class ControlConfig(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Unique axis name"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1283,6 +1304,11 @@ class ControlConfig(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Unique axis name"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1349,11 +1375,7 @@ class ControlConfig(aas.Submodel):
                         id_short: Optional[str] = r"ReferenceToAxis",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Reference to the axis"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1370,6 +1392,11 @@ class ControlConfig(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Reference to the axis"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1433,13 +1460,7 @@ class ControlConfig(aas.Submodel):
                     id_short: Optional[str] = r"AxesReference",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The SMC “AxesReference” is a collection of referenced axes for the specific channel."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1456,6 +1477,13 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The SMC “AxesReference” is a collection of referenced axes for the specific channel."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1549,11 +1577,7 @@ class ControlConfig(aas.Submodel):
                 id_short: Optional[str] = r"Channel",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Configuration information of a specific channel"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1570,6 +1594,13 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Configuration information of a specific channel"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1653,11 +1684,7 @@ class ControlConfig(aas.Submodel):
             id_short: Optional[str] = r"Channels",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Collection of channels of the control"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1674,6 +1701,11 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Collection of channels of the control"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1752,9 +1784,7 @@ class ControlConfig(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(dict_={r"en": r"Name of the axis"}),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1771,6 +1801,11 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Name of the axis"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1831,9 +1866,7 @@ class ControlConfig(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(dict_={r"en": r"Type of the axis"}),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1850,6 +1883,11 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Type of the axis"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1910,11 +1948,7 @@ class ControlConfig(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Axis is a simulated or real one"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1931,6 +1965,11 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Axis is a simulated or real one"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1991,11 +2030,7 @@ class ControlConfig(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Positive software limit switch"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2012,6 +2047,11 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Positive software limit switch"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2072,11 +2112,7 @@ class ControlConfig(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Negative software limit switch"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2093,6 +2129,11 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Negative software limit switch"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2153,11 +2194,7 @@ class ControlConfig(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Velocity limit of the axis"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2174,6 +2211,11 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Velocity limit of the axis"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2234,11 +2276,7 @@ class ControlConfig(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Accelerationlimit of the axis"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2255,6 +2293,11 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Accelerationlimit of the axis"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2315,11 +2358,7 @@ class ControlConfig(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Jerk limit of the axis"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2336,6 +2375,11 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Jerk limit of the axis"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2398,11 +2442,7 @@ class ControlConfig(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Axis configuration file name"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2419,6 +2459,11 @@ class ControlConfig(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Axis configuration file name"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2478,11 +2523,7 @@ class ControlConfig(aas.Submodel):
                         content_type: Optional[str] = r"application/json",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Configuration file of the axis"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2499,6 +2540,11 @@ class ControlConfig(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Configuration file of the axis"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2555,13 +2601,7 @@ class ControlConfig(aas.Submodel):
                     id_short: Optional[str] = r"AxisConfigData",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The SMC “AxisConfigData” is a collection of axis configuration data."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2578,6 +2618,13 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The SMC “AxisConfigData” is a collection of axis configuration data."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2660,11 +2707,7 @@ class ControlConfig(aas.Submodel):
                         content_type: Optional[str] = r"application/json",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"The manual file of the drive "}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2681,6 +2724,11 @@ class ControlConfig(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"The manual file of the drive "}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2738,13 +2786,7 @@ class ControlConfig(aas.Submodel):
                         id_short: Optional[str] = r"TechnicalData",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to the Submodel Technical Specification of the axis to gather more information"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2761,6 +2803,13 @@ class ControlConfig(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to the Submodel Technical Specification of the axis to gather more information"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2821,13 +2870,7 @@ class ControlConfig(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Name of the configuration file of the drive "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2846,6 +2889,13 @@ class ControlConfig(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Name of the configuration file of the drive "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2905,11 +2955,7 @@ class ControlConfig(aas.Submodel):
                             content_type: Optional[str] = r"application/json",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Configuration File of the drive"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2928,6 +2974,11 @@ class ControlConfig(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Configuration File of the drive"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2986,13 +3037,7 @@ class ControlConfig(aas.Submodel):
                         id_short: Optional[str] = r"DriveConfigData",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The SMC “DriveConfigData” is a collection of drive configuration data."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3009,6 +3054,13 @@ class ControlConfig(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The SMC “DriveConfigData” is a collection of drive configuration data."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3090,13 +3142,7 @@ class ControlConfig(aas.Submodel):
                     id_short: Optional[str] = r"Drive",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The SMC “Drive” is a collection of drive configuration information."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3113,6 +3159,13 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The SMC “Drive” is a collection of drive configuration information."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3199,13 +3252,7 @@ class ControlConfig(aas.Submodel):
                 id_short: Optional[str] = r"Axis",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The SMC “Axis” is a collection of axis configuration information."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3222,6 +3269,13 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The SMC “Axis” is a collection of axis configuration information."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3359,13 +3413,7 @@ class ControlConfig(aas.Submodel):
             id_short: Optional[str] = r"Axes",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The SMC “Axes” is a collection of axes of the CNC controller."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3382,6 +3430,13 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The SMC “Axes” is a collection of axes of the CNC controller."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3458,13 +3513,7 @@ class ControlConfig(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"NC program file type, which the CNC control can work with"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3481,6 +3530,13 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"NC program file type, which the CNC control can work with"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3541,9 +3597,7 @@ class ControlConfig(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(dict_={r"en": r"NC program syntax type"}),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3560,6 +3614,11 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"NC program syntax type"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3619,11 +3678,7 @@ class ControlConfig(aas.Submodel):
                 content_type: Optional[str] = r"application/json",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Manual file of the syntax of the NC program"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3640,6 +3695,11 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Manual file of the syntax of the NC program"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3697,13 +3757,7 @@ class ControlConfig(aas.Submodel):
             id_short: Optional[str] = r"NCProgramConfig",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The SMC “NCProgramConfig” is a collection of NC program configuration information."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3720,6 +3774,13 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The SMC “NCProgramConfig” is a collection of NC program configuration information."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3820,11 +3881,7 @@ class ControlConfig(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Type of communication to the control"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3841,6 +3898,11 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Type of communication to the control"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3901,11 +3963,7 @@ class ControlConfig(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Communication address into the control"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3922,6 +3980,11 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Communication address into the control"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3982,13 +4045,7 @@ class ControlConfig(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Communication information model if ones exist like OPCUA"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4005,6 +4062,13 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Communication information model if ones exist like OPCUA"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4063,11 +4127,7 @@ class ControlConfig(aas.Submodel):
                 id_short: Optional[str] = r"OPCUAServerDataSheet",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Reference to the OPCUA server datasheet Submodel"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4084,6 +4144,13 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Reference to the OPCUA server datasheet Submodel"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4153,13 +4220,7 @@ class ControlConfig(aas.Submodel):
             id_short: Optional[str] = r"CommunicationConfig",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The SMC “CommunicationConfig” is a collection of communication configuration information."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -4176,6 +4237,13 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The SMC “CommunicationConfig” is a collection of communication configuration information."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4287,13 +4355,7 @@ class ControlConfig(aas.Submodel):
                     id_short: Optional[str] = r"ToolDescription",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to the tool description Submodel of the specific tool."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4310,6 +4372,13 @@ class ControlConfig(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Reference to the tool description Submodel of the specific tool."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4372,13 +4441,7 @@ class ControlConfig(aas.Submodel):
                 id_short: Optional[str] = r"Tool",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The SMC “Tool” is a collection of tool configuration information."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4395,6 +4458,13 @@ class ControlConfig(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The SMC “Tool” is a collection of tool configuration information."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4472,13 +4542,7 @@ class ControlConfig(aas.Submodel):
             id_short: Optional[str] = r"Tools",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Explanation: The SMC “Tools” is a collection of tools of the CNC controller."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -4495,6 +4559,13 @@ class ControlConfig(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Explanation: The SMC “Tools” is a collection of tools of the CNC controller."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4586,20 +4657,8 @@ class ControlConfig(aas.Submodel):
         id_short: Optional[str] = r"ControlConfig",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"The Submodel “ControlConfig” is the collection for various parametrizations for the control of CNC machines "
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02053-1-0",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -4616,6 +4675,22 @@ class ControlConfig(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"The Submodel “ControlConfig” is the collection for various parametrizations for the control of CNC machines "
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02053-1-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

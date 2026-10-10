@@ -15,11 +15,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"EnergyThroughputValue",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"energy throughput value"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -48,6 +44,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"energy throughput value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -96,9 +97,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -127,6 +126,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -172,9 +176,7 @@ class ProductCondition(aas.Submodel):
             energyThroughputValue: Union[xsd.Float, EnergyThroughputValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"EnergyThroughput",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"energy throughput"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -203,6 +205,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"energy throughput"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -283,11 +290,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"CapacityThroughputValue",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"capacity throughput value"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -316,6 +319,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"capacity throughput value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -364,9 +372,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -395,6 +401,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -440,9 +451,7 @@ class ProductCondition(aas.Submodel):
             capacityThroughputValue: Union[xsd.Float, CapacityThroughputValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"CapacityThroughput",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"capacity throughput"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -471,6 +480,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"capacity throughput"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -551,11 +565,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"NumberOfFullCyclesValue",
                 value_type: aas.DataTypeDefXsd = xsd.UnsignedInt,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"number of full cycles value"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -584,6 +594,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"number of full cycles value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -632,9 +647,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -663,6 +676,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -708,9 +726,7 @@ class ProductCondition(aas.Submodel):
             numberOfFullCyclesValue: Union[xsd.UnsignedInt, NumberOfFullCyclesValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"NumberOfFullCycles",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"number of full cycles"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -739,6 +755,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"number of full cycles"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -819,11 +840,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"StateOfCertifiedEnergyValue",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"state of certified energy value"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -852,6 +869,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"state of certified energy value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -900,9 +922,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -931,6 +951,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -976,9 +1001,7 @@ class ProductCondition(aas.Submodel):
             stateOfCertifiedEnergyValue: Union[xsd.Float, StateOfCertifiedEnergyValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"StateOfCertifiedEnergy",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"state of certified energy"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1007,6 +1030,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"state of certified energy"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1087,9 +1115,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"RemainingEnergyValue",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"remaining energy value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1118,6 +1144,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"remaining energy value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1166,9 +1197,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1197,6 +1226,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1242,9 +1276,7 @@ class ProductCondition(aas.Submodel):
             remainingEnergyValue: Union[xsd.Float, RemainingEnergyValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"RemainingEnergy",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"remaining energy"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1273,6 +1305,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"remaining energy"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1351,11 +1388,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"RemainingCapacityValue",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"remaining capacity value"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1384,6 +1417,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"remaining capacity value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1432,9 +1470,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1463,6 +1499,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1508,9 +1549,7 @@ class ProductCondition(aas.Submodel):
             remainingCapacityValue: Union[xsd.Float, RemainingCapacityValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"RemainingCapacity",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"remaining capacity"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1539,6 +1578,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"remaining capacity"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1621,11 +1665,7 @@ class ProductCondition(aas.Submodel):
                     id_short: Optional[str] = r"NegativeEventValue",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"negative event value"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1644,6 +1684,11 @@ class ProductCondition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"negative event value"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1692,9 +1737,7 @@ class ProductCondition(aas.Submodel):
                     id_short: Optional[str] = r"LastUpdate",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1723,6 +1766,11 @@ class ProductCondition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"last update"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1768,17 +1816,9 @@ class ProductCondition(aas.Submodel):
                 negativeEventValue: Union[str, NegativeEventValue],
                 lastUpdate: Union[xsd.DateTime, LastUpdate],
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"negative event"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1795,6 +1835,18 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"negative event"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "The battery passport must contain information and data resulting from its use such as accidents. \n\nDIN DKE Spec 99100 chapter reference: 6.7.8.4"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1871,9 +1923,7 @@ class ProductCondition(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"negative events"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1892,6 +1942,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"negative events"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2029,9 +2084,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2050,6 +2103,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"document identifier"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2100,9 +2158,7 @@ class ProductCondition(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"information on accidents"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2140,6 +2196,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"information on accidents"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2288,9 +2349,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"TimeExtremeHighTemp",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"time extreme high temp"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2319,6 +2378,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"time extreme high temp"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2367,9 +2431,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"TimeExtremeLowTemp",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"time extreme low temp"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2398,6 +2460,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"time extreme low temp"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2446,11 +2513,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"TimeExtremeHighTempCharging",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"time extreme high temp charging"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2479,6 +2542,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"time extreme high temp charging"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2527,11 +2595,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"TimeExtremeLowTempCharging",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"time extreme low temp charging"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2560,6 +2624,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"time extreme low temp charging"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2608,9 +2677,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2639,6 +2706,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2691,9 +2763,7 @@ class ProductCondition(aas.Submodel):
                 Union[xsd.Float, TimeExtremeLowTempCharging]
             ] = None,
             id_short: Optional[str] = r"TemperatureInformation",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"temperature information"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2712,6 +2782,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"temperature information"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2823,9 +2898,7 @@ class ProductCondition(aas.Submodel):
                     id_short: Optional[str] = r"RPCLastUpdated",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"RPC last updated"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2844,6 +2917,11 @@ class ProductCondition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"RPC last updated"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2892,9 +2970,7 @@ class ProductCondition(aas.Submodel):
                     id_short: Optional[str] = r"AtSoC",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"at so c"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2923,6 +2999,11 @@ class ProductCondition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"at so c"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2971,11 +3052,7 @@ class ProductCondition(aas.Submodel):
                     id_short: Optional[str] = r"PowerCapabilityAt",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"power capability at"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2994,6 +3071,11 @@ class ProductCondition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"power capability at"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3040,11 +3122,7 @@ class ProductCondition(aas.Submodel):
                 atSoC: Union[xsd.Float, AtSoC],
                 powerCapabilityAt: Union[xsd.Float, PowerCapabilityAt],
                 id_short: Optional[str] = r"RemainingPowerCapabilityDynamicAt",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"remaining power capability dynamic at"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3073,6 +3151,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"remaining power capability dynamic at"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3154,9 +3237,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3185,6 +3266,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3230,9 +3316,7 @@ class ProductCondition(aas.Submodel):
             remainingPowerCapabilityDynamicAt: RemainingPowerCapabilityDynamicAt,
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"RemainingPowerCapability",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"remaining power capability"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3261,6 +3345,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"remaining power capability"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3332,11 +3421,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"EvolutionOfSelfDischargeValue",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"evolution of self discharge value"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3365,6 +3450,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"evolution of self discharge value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3413,9 +3503,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3444,6 +3532,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3491,11 +3584,7 @@ class ProductCondition(aas.Submodel):
             ],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"EvolutionOfSelfDischarge",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"evolution of self discharge"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3514,6 +3603,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"evolution of self discharge"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3594,11 +3688,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"CurrentSelfDischargingRateValue",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"current self discharging rate value"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3627,6 +3717,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"current self discharging rate value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3675,9 +3770,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3706,6 +3799,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3753,11 +3851,7 @@ class ProductCondition(aas.Submodel):
             ],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"CurrentSelfDischargingRate",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"current self discharging rate"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3776,6 +3870,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"current self discharging rate"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3856,11 +3955,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"RemainingRoundTripEnergyEfficiencyValue",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"remaining round trip energy efficiency value"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3889,6 +3984,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"remaining round trip energy efficiency value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3937,9 +4037,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3968,6 +4066,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4015,11 +4118,7 @@ class ProductCondition(aas.Submodel):
             ],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"RemainingRoundTripEnergyEfficiency",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"remaining round trip energy efficiency"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4038,6 +4137,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"remaining round trip energy efficiency"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4120,9 +4224,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"StateOfChargeValue",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"state of charge value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4151,6 +4253,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"state of charge value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4199,9 +4306,7 @@ class ProductCondition(aas.Submodel):
                 id_short: Optional[str] = r"LastUpdate",
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"last update"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4230,6 +4335,11 @@ class ProductCondition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"last update"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4275,9 +4385,7 @@ class ProductCondition(aas.Submodel):
             stateOfChargeValue: Union[xsd.Float, StateOfChargeValue],
             lastUpdate: Union[xsd.DateTime, LastUpdate],
             id_short: Optional[str] = r"StateOfCharge",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"state of charge"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4296,6 +4404,11 @@ class ProductCondition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"state of charge"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4389,22 +4502,10 @@ class ProductCondition(aas.Submodel):
             RemainingRoundTripEnergyEfficiency
         ] = None,
         id_short: Optional[str] = r"ProductCondition",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"product condition"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={r"en": r"Covers all battery lifetime relevant properties."}
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02035-5",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
@@ -4420,6 +4521,25 @@ class ProductCondition(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={r"en": r"product condition"}
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={r"en": r"Covers all battery lifetime relevant properties."}
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02035-5",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

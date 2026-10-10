@@ -3620,100 +3620,8 @@ class TimeSeries(aas.Submodel):
         def __init__(
             self,
             id_short: Optional[str] = r"DeriveSegment",
-            input_variable: Iterable[aas.SubmodelElement] = (
-                aas.Range(
-                    id_short=r"Timespan",
-                    value_type=xsd.DateTime,
-                    min=xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime),
-                    max=xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime),
-                    display_name=None,
-                    category=None,
-                    description=aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The valueType of the given timespan must match the valueType of the time properties of the segments."
-                        }
-                    ),
-                    semantic_id=aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/TimeSeries/Timespan/1/1",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    qualifier=(),
-                    extension=(),
-                    supplemental_semantic_id=(),
-                    embedded_data_specifications=[],
-                ),
-                aas.Property(
-                    id_short=r"SamplingInterval",
-                    value_type=str,
-                    value=None,
-                    value_id=None,
-                    display_name=None,
-                    category=None,
-                    description=None,
-                    semantic_id=aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/TimeSeries/Segment/SamplingInterval/1/1",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    qualifier=(),
-                    extension=(),
-                    supplemental_semantic_id=(),
-                    embedded_data_specifications=[],
-                ),
-                aas.Property(
-                    id_short=r"AggregationMethod",
-                    value_type=str,
-                    value=None,
-                    value_id=None,
-                    display_name=None,
-                    category=None,
-                    description=None,
-                    semantic_id=aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/TimeSeries/AggregationMethod/1/1",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    qualifier=(),
-                    extension=(),
-                    supplemental_semantic_id=(),
-                    embedded_data_specifications=[],
-                ),
-            ),
-            output_variable: Iterable[aas.SubmodelElement] = (
-                aas.SubmodelElementCollection(
-                    id_short=r"Segments",
-                    value=(),
-                    display_name=None,
-                    category=None,
-                    description=None,
-                    semantic_id=aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/TimeSeries/AggregationMethod/1/1",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    qualifier=(),
-                    extension=(),
-                    supplemental_semantic_id=(),
-                    embedded_data_specifications=[],
-                ),
-            ),
+            input_variable: Iterable[aas.SubmodelElement] = None,
+            output_variable: Iterable[aas.SubmodelElement] = None,
             in_output_variable: Iterable[aas.SubmodelElement] = (),
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -3734,6 +3642,104 @@ class TimeSeries(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if input_variable is None:
+                input_variable = (
+                    aas.Range(
+                        id_short=r"Timespan",
+                        value_type=xsd.DateTime,
+                        min=xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime),
+                        max=xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime),
+                        display_name=None,
+                        category=None,
+                        description=aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The valueType of the given timespan must match the valueType of the time properties of the segments."
+                            }
+                        ),
+                        semantic_id=aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/TimeSeries/Timespan/1/1",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier=(),
+                        extension=(),
+                        supplemental_semantic_id=(),
+                        embedded_data_specifications=[],
+                    ),
+                    aas.Property(
+                        id_short=r"SamplingInterval",
+                        value_type=str,
+                        value=None,
+                        value_id=None,
+                        display_name=None,
+                        category=None,
+                        description=None,
+                        semantic_id=aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/TimeSeries/Segment/SamplingInterval/1/1",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier=(),
+                        extension=(),
+                        supplemental_semantic_id=(),
+                        embedded_data_specifications=[],
+                    ),
+                    aas.Property(
+                        id_short=r"AggregationMethod",
+                        value_type=str,
+                        value=None,
+                        value_id=None,
+                        display_name=None,
+                        category=None,
+                        description=None,
+                        semantic_id=aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/TimeSeries/AggregationMethod/1/1",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier=(),
+                        extension=(),
+                        supplemental_semantic_id=(),
+                        embedded_data_specifications=[],
+                    ),
+                )
+
+            if output_variable is None:
+                output_variable = (
+                    aas.SubmodelElementCollection(
+                        id_short=r"Segments",
+                        value=(),
+                        display_name=None,
+                        category=None,
+                        description=None,
+                        semantic_id=aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/TimeSeries/AggregationMethod/1/1",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier=(),
+                        extension=(),
+                        supplemental_semantic_id=(),
+                        embedded_data_specifications=[],
+                    ),
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3771,48 +3777,8 @@ class TimeSeries(aas.Submodel):
         def __init__(
             self,
             id_short: Optional[str] = r"ReadSegments",
-            input_variable: Iterable[aas.SubmodelElement] = (
-                aas.Range(
-                    id_short=r"Timespan",
-                    value_type=xsd.DateTime,
-                    min=xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime),
-                    max=xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime),
-                    display_name=None,
-                    category=None,
-                    description=aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The valueType of the given timespan must match the valueType of the time properties of the segments."
-                        }
-                    ),
-                    semantic_id=aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/TimeSeries/Timespan/1/1",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    qualifier=(),
-                    extension=(),
-                    supplemental_semantic_id=(),
-                    embedded_data_specifications=[],
-                ),
-            ),
-            output_variable: Iterable[aas.SubmodelElement] = (
-                aas.SubmodelElementCollection(
-                    id_short=r"Segment",
-                    value=(),
-                    display_name=None,
-                    category=None,
-                    description=None,
-                    semantic_id=None,
-                    qualifier=(),
-                    extension=(),
-                    supplemental_semantic_id=(),
-                    embedded_data_specifications=[],
-                ),
-            ),
+            input_variable: Iterable[aas.SubmodelElement] = None,
+            output_variable: Iterable[aas.SubmodelElement] = None,
             in_output_variable: Iterable[aas.SubmodelElement] = (),
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -3833,6 +3799,52 @@ class TimeSeries(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if input_variable is None:
+                input_variable = (
+                    aas.Range(
+                        id_short=r"Timespan",
+                        value_type=xsd.DateTime,
+                        min=xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime),
+                        max=xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime),
+                        display_name=None,
+                        category=None,
+                        description=aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The valueType of the given timespan must match the valueType of the time properties of the segments."
+                            }
+                        ),
+                        semantic_id=aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/TimeSeries/Timespan/1/1",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier=(),
+                        extension=(),
+                        supplemental_semantic_id=(),
+                        embedded_data_specifications=[],
+                    ),
+                )
+
+            if output_variable is None:
+                output_variable = (
+                    aas.SubmodelElementCollection(
+                        id_short=r"Segment",
+                        value=(),
+                        display_name=None,
+                        category=None,
+                        description=None,
+                        semantic_id=None,
+                        qualifier=(),
+                        extension=(),
+                        supplemental_semantic_id=(),
+                        embedded_data_specifications=[],
+                    ),
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3870,48 +3882,8 @@ class TimeSeries(aas.Submodel):
         def __init__(
             self,
             id_short: Optional[str] = r"ReadRecords",
-            input_variable: Iterable[aas.SubmodelElement] = (
-                aas.Range(
-                    id_short=r"Timespan",
-                    value_type=xsd.DateTime,
-                    min=xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime),
-                    max=xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime),
-                    display_name=None,
-                    category=None,
-                    description=aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The valueType of the given timespan must match the valueType of the time properties of the segments."
-                        }
-                    ),
-                    semantic_id=aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/TimeSeries/Timespan/1/1",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    qualifier=(),
-                    extension=(),
-                    supplemental_semantic_id=(),
-                    embedded_data_specifications=[],
-                ),
-            ),
-            output_variable: Iterable[aas.SubmodelElement] = (
-                aas.SubmodelElementCollection(
-                    id_short=r"Records",
-                    value=(),
-                    display_name=None,
-                    category=None,
-                    description=None,
-                    semantic_id=None,
-                    qualifier=(),
-                    extension=(),
-                    supplemental_semantic_id=(),
-                    embedded_data_specifications=[],
-                ),
-            ),
+            input_variable: Iterable[aas.SubmodelElement] = None,
+            output_variable: Iterable[aas.SubmodelElement] = None,
             in_output_variable: Iterable[aas.SubmodelElement] = (),
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
@@ -3932,6 +3904,52 @@ class TimeSeries(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if input_variable is None:
+                input_variable = (
+                    aas.Range(
+                        id_short=r"Timespan",
+                        value_type=xsd.DateTime,
+                        min=xsd.from_xsd(r"0001-01-01T00:00:00+00:00", xsd.DateTime),
+                        max=xsd.from_xsd(r"9999-12-31T23:59:59+00:00", xsd.DateTime),
+                        display_name=None,
+                        category=None,
+                        description=aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The valueType of the given timespan must match the valueType of the time properties of the segments."
+                            }
+                        ),
+                        semantic_id=aas.ExternalReference(
+                            key=(
+                                aas.Key(
+                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                    value=r"https://admin-shell.io/idta/TimeSeries/Timespan/1/1",
+                                ),
+                            ),
+                            referred_semantic_id=None,
+                        ),
+                        qualifier=(),
+                        extension=(),
+                        supplemental_semantic_id=(),
+                        embedded_data_specifications=[],
+                    ),
+                )
+
+            if output_variable is None:
+                output_variable = (
+                    aas.SubmodelElementCollection(
+                        id_short=r"Records",
+                        value=(),
+                        display_name=None,
+                        category=None,
+                        description=None,
+                        semantic_id=None,
+                        qualifier=(),
+                        extension=(),
+                        supplemental_semantic_id=(),
+                        embedded_data_specifications=[],
+                    ),
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3975,21 +3993,8 @@ class TimeSeries(aas.Submodel):
         id_short: Optional[str] = r"TimeSeries",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"de": r"Enthält Zeitreihendaten und Referenzen auf Zeitreihendaten, um diese entlang des Asset Lebenszyklus aufzufinden und semantisch zu beschreiben.",
-                r"en": r"Contains time series data and references to time series data to discover and semantically describe them along the asset lifecycle.",
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"1",
-            creator=None,
-            template_id=None,
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -4006,6 +4011,23 @@ class TimeSeries(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"de": r"Enthält Zeitreihendaten und Referenzen auf Zeitreihendaten, um diese entlang des Asset Lebenszyklus aufzufinden und semantisch zu beschreiben.",
+                    r"en": r"Contains time series data and references to time series data to discover and semantically describe them along the asset lifecycle.",
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"1",
+                creator=None,
+                template_id=None,
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

@@ -478,14 +478,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Name der Version",
-                        r"en": r"the name this particular version is given",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -502,6 +495,14 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Name der Version",
+                            r"en": r"the name this particular version is given",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -550,13 +551,7 @@ class SoftwareNameplate(aas.Submodel):
                 ),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides a textual description of most relevant characteristics of the version of the software"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -573,6 +568,13 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides a textual description of most relevant characteristics of the version of the software"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -672,13 +674,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides a textual description of most relevant characteristics of the version of the software"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -695,6 +691,13 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides a textual description of most relevant characteristics of the version of the software"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -736,9 +739,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(dict_={r"en": r"EMPTY", r"de": r"EMPTY"}),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -755,6 +756,11 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"EMPTY", r"de": r"EMPTY"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -856,13 +862,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Indicates the resource, where the software is being provided by the manufacturer."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -879,6 +879,13 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Indicates the resource, where the software is being provided by the manufacturer."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -921,9 +928,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(dict_={r"en": r"EMPTY", r"de": r"EMPTY"}),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -940,6 +945,11 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"EMPTY", r"de": r"EMPTY"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -982,11 +992,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Indicates the type of installation package."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1003,6 +1009,11 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Indicates the type of installation package."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1045,14 +1056,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"provides the checksum for the software available at InstallationURI",
-                        r"de": r"beinhaltet die Prüfsumme für die Software, die über InstallationURI angegeben ist",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1069,6 +1073,14 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"provides the checksum for the software available at InstallationURI",
+                            r"de": r"beinhaltet die Prüfsumme für die Software, die über InstallationURI angegeben ist",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1415,11 +1427,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"contains inventory information of the user"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1436,6 +1444,11 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"contains inventory information of the user"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1478,11 +1491,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"de": r"Der Name der konkreten Instanz"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1499,6 +1508,11 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"de": r"Der Name der konkreten Instanz"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1541,11 +1555,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"indicates the actual version of the instance"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1562,6 +1572,11 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"indicates the actual version of the instance"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1604,13 +1619,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"containes the time of installation of this instance"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1627,6 +1636,13 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"containes the time of installation of this instance"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1669,14 +1685,7 @@ class SoftwareNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Indicates the path to the installed instance of the software.",
-                        r"de": r"gibt den Pfad an, an dem diese Instanz der Software installiert wurde.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1693,6 +1702,14 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Indicates the path to the installed instance of the software.",
+                            r"de": r"gibt den Pfad an, an dem diese Instanz der Software installiert wurde.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2458,13 +2475,7 @@ class SoftwareNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"enumeration: 0173-1#07-AAS927#001 (administrativ contact), 0173-1#07-AAS928#001 (commercial contact), 0173-1#07-AAS929#001 (other contact), 0173-1#07-AAS930#001 (hazardous goods contact), 0173-1#07-AAS931#001 (technical contact). Note: the above mentioned ECLASS enumeration should be declared as “open” for further addition. ECLASS enumeration IRDI is preferable. If no IRDI available, custom input as String may also be accepted."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2481,6 +2492,13 @@ class SoftwareNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"enumeration: 0173-1#07-AAS927#001 (administrativ contact), 0173-1#07-AAS928#001 (commercial contact), 0173-1#07-AAS929#001 (other contact), 0173-1#07-AAS930#001 (hazardous goods contact), 0173-1#07-AAS931#001 (technical contact). Note: the above mentioned ECLASS enumeration should be declared as “open” for further addition. ECLASS enumeration IRDI is preferable. If no IRDI available, custom input as String may also be accepted."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2522,13 +2540,7 @@ class SoftwareNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r" Note: country codes defined accord. to ISO 3166-1. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2545,6 +2557,13 @@ class SoftwareNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r" Note: country codes defined accord. to ISO 3166-1. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2586,13 +2605,7 @@ class SoftwareNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: language codes defined accord. to ISO 639-1. Note: as per ECLASS definition, Expression and representation of thoughts, information, feelings, ideas through characters."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2609,6 +2622,13 @@ class SoftwareNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: language codes defined accord. to ISO 639-1. Note: as per ECLASS definition, Expression and representation of thoughts, information, feelings, ideas through characters."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2651,13 +2671,7 @@ class SoftwareNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: notation accord. to ISO 8601 Note: for time in UTC the zone designator “Z” is to be used"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2674,6 +2688,13 @@ class SoftwareNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: notation accord. to ISO 8601 Note: for time in UTC the zone designator “Z” is to be used"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2888,13 +2909,7 @@ class SoftwareNameplate(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2911,6 +2926,13 @@ class SoftwareNameplate(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2952,13 +2974,7 @@ class SoftwareNameplate(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r" enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2975,6 +2991,13 @@ class SoftwareNameplate(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r" enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS755#001 (office mobile), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home), 0173-1#07-AAS759#001 (private mobile)"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3169,13 +3192,7 @@ class SoftwareNameplate(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3192,6 +3209,13 @@ class SoftwareNameplate(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3233,13 +3257,7 @@ class SoftwareNameplate(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3256,6 +3274,13 @@ class SoftwareNameplate(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS758#001 (home)"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3442,13 +3467,7 @@ class SoftwareNameplate(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3465,6 +3484,13 @@ class SoftwareNameplate(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3506,13 +3532,7 @@ class SoftwareNameplate(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home)"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3529,6 +3549,13 @@ class SoftwareNameplate(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"enumeration: 0173-1#07-AAS754#001 (office), 0173-1#07-AAS756#001 (secretary), 0173-1#07-AAS757#001 (substitute), 0173-1#07-AAS758#001 (home)"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4072,13 +4099,7 @@ class SoftwareNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4095,6 +4116,13 @@ class SoftwareNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4192,13 +4220,7 @@ class SoftwareNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4215,6 +4237,13 @@ class SoftwareNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4738,13 +4767,7 @@ class SoftwareNameplate(aas.Submodel):
                 id_short: Optional[str] = r"Contact",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The SMC “ContactInformation” contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4761,6 +4784,13 @@ class SoftwareNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The SMC “ContactInformation” contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5156,20 +5186,8 @@ class SoftwareNameplate(aas.Submodel):
         id_short: Optional[str] = r"SoftwareNameplate",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"Contains the nameplate information attached to the software product"
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"0",
-            revision=r"15",
-            creator=None,
-            template_id=None,
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -5186,6 +5204,22 @@ class SoftwareNameplate(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Contains the nameplate information attached to the software product"
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"0",
+                revision=r"15",
+                creator=None,
+                template_id=None,
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = (

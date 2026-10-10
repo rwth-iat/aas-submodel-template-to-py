@@ -12,17 +12,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             value: str,
             id_short: Optional[str] = r"AutomationMLData",
             content_type: Optional[str] = r"text/plain",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Data"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Reference to the AutomationML project file that contains the engineering information of the asset."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -39,6 +31,18 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"AutomationML Data"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Reference to the AutomationML project file that contains the engineering information of the asset."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -86,17 +90,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             id_short: Optional[str] = r"AutomationMLVersion",
             value_type: aas.DataTypeDefXsd = xsd.PositiveInteger,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"AutomationML Version"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The AML version that the included AML file follows. This should be either 1 (i.e. CAEX 2.15) or 2 (i.e. CAEX 3.0)."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -113,6 +109,18 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"AutomationML Version"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The AML version that the included AML file follows. This should be either 1 (i.e. CAEX 2.15) or 2 (i.e. CAEX 3.0)."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -159,19 +167,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             self,
             value: aas.Reference,
             id_short: Optional[str] = r"AutomationMLElementReference",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"AutomationML Element Reference"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Reference to the AutomationML element hosting the engineering information of the asset."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -188,6 +186,18 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"AutomationML Element Reference"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Reference to the AutomationML element hosting the engineering information of the asset."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -238,17 +248,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                     id_short: Optional[str] = r"onOff",
                     value_type: aas.DataTypeDefXsd = bool,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"On/Off"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "On/Off is a binary state with only two possible values: 'On' (true/active) or 'Off' (false/inactive)."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -265,6 +267,18 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"On/Off"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "On/Off is a binary state with only two possible values: 'On' (true/active) or 'Off' (false/inactive)."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -344,19 +358,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                         type_=aas.Property,
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Relation Between Property and Attribute"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Relation between related property SubmodelElements and corresponding AutomationML attribute."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -373,6 +377,18 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Relation Between Property and Attribute"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Relation between related property SubmodelElements and corresponding AutomationML attribute."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -417,17 +433,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                 onOff: Union[bool, OnOff],
                 relationBetweenPropertyAndAttribute: RelationBetweenPropertyAndAttribute,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"On/Off"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of AutomationML Attributes to be published as properties"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -454,6 +462,16 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"On/Off"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Collection of AutomationML Attributes to be published as properties"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -531,17 +549,9 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"AutomationML Attribute and Interface List"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"List of AutomationML attributes to be published."}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -558,6 +568,16 @@ class FactoryAutomationDataForPlant(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"AutomationML Attribute and Interface List"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"List of AutomationML attributes to be published."}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -700,20 +720,10 @@ class FactoryAutomationDataForPlant(aas.Submodel):
             AutomationMLAttributeAndInterfaceList,
         ],
         id_short: Optional[str] = r"FactoryAutomationDataForPlant",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"Factory Automation Data For Plant"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02075",
-            embedded_data_specifications=[],
-        ),
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -730,6 +740,20 @@ class FactoryAutomationDataForPlant(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={r"en": r"Factory Automation Data For Plant"}
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02075",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

@@ -15,11 +15,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"ManufacturerName",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Manufacturer name", r"de": r"Herstellername"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -48,6 +44,11 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Manufacturer name", r"de": r"Herstellername"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -95,11 +96,7 @@ class TechnicalData(aas.Submodel):
                 value: str,
                 id_short: Optional[str] = r"CompanyLogo",
                 content_type: Optional[str] = r"image/png",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Company logo", r"de": r"Firmenlogo"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -128,6 +125,11 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Company logo", r"de": r"Firmenlogo"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -174,14 +176,7 @@ class TechnicalData(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"ManufacturerProductDesignation",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Manufacturer product designation",
-                        r"de": r"Herstellerproduktbezeichnung",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -210,6 +205,14 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Manufacturer product designation",
+                            r"de": r"Herstellerproduktbezeichnung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -257,14 +260,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"ManufacturerArticleNumber",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Manufacturer article number",
-                        r"de": r"Herstellerartikelnummer",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -293,6 +289,14 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Manufacturer article number",
+                            r"de": r"Herstellerartikelnummer",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -341,14 +345,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"ManufacturerOrderCode",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Manufacturer order code",
-                        r"de": r"Bestellcode des Herstellers",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -377,6 +374,14 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Manufacturer order code",
+                            r"de": r"Bestellcode des Herstellers",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -428,14 +433,7 @@ class TechnicalData(aas.Submodel):
                         value: str,
                         id_short: Optional[str] = r"ImageFile",
                         content_type: Optional[str] = r"image/png",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Product image",
-                                r"de": r"Bildname Sachaufnahme",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -454,6 +452,14 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Product image",
+                                    r"de": r"Bildname Sachaufnahme",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -500,11 +506,7 @@ class TechnicalData(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"ImageNote",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Image note", r"de": r"Bildhinweis"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -533,6 +535,11 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Image note", r"de": r"Bildhinweis"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -577,11 +584,7 @@ class TechnicalData(aas.Submodel):
                     imageFile: ImageFile,
                     imageNote: Optional[Union[aas.LangStringSet, ImageNote]] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Product image", r"de": r"Produktbild"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -614,6 +617,11 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Product image", r"de": r"Produktbild"}
+                        )
 
                     if qualifier is None:
                         qualifier = ()
@@ -675,11 +683,7 @@ class TechnicalData(aas.Submodel):
                 ),
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Product images", r"de": r"Produktbilder"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -708,6 +712,11 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Product images", r"de": r"Produktbilder"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -851,14 +860,7 @@ class TechnicalData(aas.Submodel):
                 Union[Iterable[ProductImages.Productimages_item], ProductImages]
             ] = None,
             id_short: Optional[str] = r"GeneralInformation",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"General information",
-                    r"de": r"Allgemeine Informationen",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -887,6 +889,14 @@ class TechnicalData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"General information",
+                        r"de": r"Allgemeine Informationen",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1005,14 +1015,7 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"ClassificationSystem",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Classification system",
-                            r"de": r"Klassifikationssystem",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1041,6 +1044,14 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Classification system",
+                                r"de": r"Klassifikationssystem",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1205,14 +1216,7 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"ClassificationSystemVersion",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Classification system version",
-                            r"de": r"Version der Klassifikationssystem",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1241,6 +1245,14 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Classification system version",
+                                r"de": r"Version der Klassifikationssystem",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1289,14 +1301,7 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"ClassificationSystemUrl",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Classification system URL",
-                            r"de": r"URL des Klassifikationssystems",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1315,6 +1320,14 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Classification system URL",
+                                r"de": r"URL des Klassifikationssystems",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1363,11 +1376,7 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"ProductClassId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Product class ID", r"de": r"Produktklassen ID"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1396,6 +1405,14 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Product class ID",
+                                r"de": r"Produktklassen ID",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1444,14 +1461,7 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"ProductClassCodedName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Product Class Coded Name",
-                            r"de": r"Produktklasse Coded Name",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1480,6 +1490,14 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Product Class Coded Name",
+                                r"de": r"Produktklasse Coded Name",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1527,14 +1545,7 @@ class TechnicalData(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"ProductClassName",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Product class name",
-                            r"de": r"Produktklasse Name",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1563,6 +1574,14 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Product class name",
+                                r"de": r"Produktklasse Name",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1608,14 +1627,7 @@ class TechnicalData(aas.Submodel):
                     self,
                     value: aas.Reference,
                     id_short: Optional[str] = r"ReferenceToTechnicalPropertyArea",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Reference to technical property area",
-                            r"de": r"Referenz auf einen technsichen Merkmalsbereich",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1644,6 +1656,14 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Reference to technical property area",
+                                r"de": r"Referenz auf einen technsichen Merkmalsbereich",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1700,14 +1720,7 @@ class TechnicalData(aas.Submodel):
                     Union[aas.Reference, ReferenceToTechnicalPropertyArea]
                 ] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Produkt classification",
-                        r"de": r"Produktklassifikation",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1740,6 +1753,14 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Produkt classification",
+                            r"de": r"Produktklassifikation",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -1861,14 +1882,7 @@ class TechnicalData(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Product classifications",
-                    r"de": r"Produktklassifikationen",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1897,6 +1911,14 @@ class TechnicalData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Product classifications",
+                        r"de": r"Produktklassifikationen",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2115,13 +2137,7 @@ class TechnicalData(aas.Submodel):
                         id_short: Optional[str] = r"ArbitrarySMC",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2138,6 +2154,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2206,13 +2229,7 @@ class TechnicalData(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2229,6 +2246,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2577,13 +2601,7 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"Section",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: The idShort is arbitrary. Note: Using displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2600,6 +2618,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: The idShort is arbitrary. Note: Using displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2822,13 +2847,7 @@ class TechnicalData(aas.Submodel):
                         id_short: Optional[str] = r"ArbitrarySMC",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2845,6 +2864,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2913,13 +2939,7 @@ class TechnicalData(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2936,6 +2956,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3284,13 +3311,7 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"ArbitrarySMC",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3307,6 +3328,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3454,13 +3482,7 @@ class TechnicalData(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every SML with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3477,6 +3499,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every SML with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3617,13 +3646,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3640,6 +3663,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3689,13 +3719,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3712,6 +3736,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3761,13 +3792,7 @@ class TechnicalData(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = str,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every range property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3784,6 +3809,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every range property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3841,14 +3873,7 @@ class TechnicalData(aas.Submodel):
                     Iterable[Union[Tuple[str, str], ArbitraryRange]]
                 ] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Technical property area",
-                        r"de": r"Technischer Merkmalsbereich",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3881,6 +3906,14 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Technical property area",
+                            r"de": r"Technischer Merkmalsbereich",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -4006,14 +4039,7 @@ class TechnicalData(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Technical property areas",
-                    r"de": r"Technsiche Merkmalsbereiche",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4042,6 +4068,14 @@ class TechnicalData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Technical property areas",
+                        r"de": r"Technsiche Merkmalsbereiche",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4178,11 +4212,7 @@ class TechnicalData(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"TextStatement",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Text statement", r"de": r"Anweisung im Text"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4211,6 +4241,11 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Text statement", r"de": r"Anweisung im Text"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4258,11 +4293,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"ValidDate",
                 value_type: aas.DataTypeDefXsd = xsd.Date,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Validity date", r"de": r"Verfallsdatum"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4291,6 +4322,11 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Validity date", r"de": r"Verfallsdatum"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4338,11 +4374,7 @@ class TechnicalData(aas.Submodel):
                 Iterable[Union[aas.LangStringSet, TextStatement]]
             ] = None,
             id_short: Optional[str] = r"FurtherInformation",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Further information", r"de": r"Weitere Informationen"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4371,6 +4403,14 @@ class TechnicalData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Further information",
+                        r"de": r"Weitere Informationen",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4454,13 +4494,7 @@ class TechnicalData(aas.Submodel):
                         id_short: Optional[str] = r"Section",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4477,6 +4511,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4538,13 +4579,7 @@ class TechnicalData(aas.Submodel):
                         id_short: Optional[str] = r"ArbitrarySMC",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4561,6 +4596,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4629,13 +4671,7 @@ class TechnicalData(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4652,6 +4688,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4792,13 +4835,7 @@ class TechnicalData(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4815,6 +4852,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4864,13 +4908,7 @@ class TechnicalData(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4887,6 +4925,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4936,13 +4981,7 @@ class TechnicalData(aas.Submodel):
                         value_type: aas.DataTypeDefXsd = str,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every range property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4959,6 +4998,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every range property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5018,13 +5064,7 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"Section",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: The idShort is arbitrary. Note: Using displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5041,6 +5081,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: The idShort is arbitrary. Note: Using displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5185,13 +5232,7 @@ class TechnicalData(aas.Submodel):
                         id_short: Optional[str] = r"Section",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5208,6 +5249,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5269,13 +5317,7 @@ class TechnicalData(aas.Submodel):
                         id_short: Optional[str] = r"ArbitrarySMC",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5292,6 +5334,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5360,13 +5409,7 @@ class TechnicalData(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5383,6 +5426,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5523,13 +5573,7 @@ class TechnicalData(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5546,6 +5590,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5595,13 +5646,7 @@ class TechnicalData(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5618,6 +5663,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5667,13 +5719,7 @@ class TechnicalData(aas.Submodel):
                         value_type: aas.DataTypeDefXsd = str,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every range property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5690,6 +5736,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every range property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5749,13 +5802,7 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"ArbitrarySMC",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5772,6 +5819,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every SMC with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5919,13 +5973,7 @@ class TechnicalData(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every SML with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5942,6 +5990,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every SML with a specific semanticId can serve as a section. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6082,13 +6137,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6105,6 +6154,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6154,13 +6210,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6177,6 +6227,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6226,13 +6283,7 @@ class TechnicalData(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = str,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Every range property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6249,6 +6300,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Every range property can be used. Note: The idShort is arbitrary. Note: The use of a displayName is recommended."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6306,14 +6364,7 @@ class TechnicalData(aas.Submodel):
                     Iterable[Union[Tuple[str, str], ArbitraryRange]]
                 ] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Specific description",
-                        r"de": r"Spezifische Beschreibung",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6346,6 +6397,14 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Specific description",
+                            r"de": r"Spezifische Beschreibung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6489,14 +6548,7 @@ class TechnicalData(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Specific description",
-                    r"de": r"Spezifische Beschreibung",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6525,6 +6577,14 @@ class TechnicalData(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Specific description",
+                        r"de": r"Spezifische Beschreibung",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -6678,21 +6738,8 @@ class TechnicalData(aas.Submodel):
         id_short: Optional[str] = r"TechnicalData",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"Submodel containing technical data of the asset and associated product classificatons",
-                r"de": r"Teilmodell, das die technischen Daten des Assets und die zugehörigen Produktklassifizierungen enthält",
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"2",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02003-2-0",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#01-AHX837#002"),),
             type_=aas.Submodel,
@@ -6714,6 +6761,23 @@ class TechnicalData(aas.Submodel):
         ),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Submodel containing technical data of the asset and associated product classificatons",
+                    r"de": r"Teilmodell, das die technischen Daten des Assets und die zugehörigen Produktklassifizierungen enthält",
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"2",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02003-2-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

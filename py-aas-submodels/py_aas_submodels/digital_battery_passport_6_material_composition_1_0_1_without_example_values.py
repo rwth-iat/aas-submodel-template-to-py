@@ -15,9 +15,7 @@ class MaterialComposition(aas.Submodel):
                 id_short: Optional[str] = r"ShortName",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"short name"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -36,6 +34,11 @@ class MaterialComposition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"short name"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -84,9 +87,7 @@ class MaterialComposition(aas.Submodel):
                 id_short: Optional[str] = r"ClearName",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"clear name"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -105,6 +106,11 @@ class MaterialComposition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"clear name"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -150,9 +156,7 @@ class MaterialComposition(aas.Submodel):
             shortName: Union[str, ShortName],
             clearName: Union[str, ClearName],
             id_short: Optional[str] = r"BatteryChemistry",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"battery chemistry"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -171,6 +175,11 @@ class MaterialComposition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"battery chemistry"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -249,9 +258,7 @@ class MaterialComposition(aas.Submodel):
                         id_short: Optional[str] = r"ComponentName",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"component name"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -270,6 +277,11 @@ class MaterialComposition(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"component name"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -335,9 +347,7 @@ class MaterialComposition(aas.Submodel):
                         id_short: Optional[str] = r"ComponentId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"component ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -356,6 +366,11 @@ class MaterialComposition(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"component ID"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -418,11 +433,7 @@ class MaterialComposition(aas.Submodel):
                     componentName: Optional[Union[str, ComponentName]] = None,
                     componentId: Optional[Union[str, ComponentId]] = None,
                     id_short: Optional[str] = r"BatteryMaterialLocation",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"battery material location"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -441,6 +452,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"battery material location"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -517,11 +533,7 @@ class MaterialComposition(aas.Submodel):
                     id_short: Optional[str] = r"BatteryMaterialIdentifier",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"battery material identifier"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -559,6 +571,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"battery material identifier"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -607,11 +624,7 @@ class MaterialComposition(aas.Submodel):
                     id_short: Optional[str] = r"BatteryMaterialName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"battery material name"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -640,6 +653,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"battery material name"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -688,11 +706,7 @@ class MaterialComposition(aas.Submodel):
                     id_short: Optional[str] = r"BatteryMaterialMass",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"battery material mass"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -711,6 +725,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"battery material mass"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -776,11 +795,7 @@ class MaterialComposition(aas.Submodel):
                     id_short: Optional[str] = r"IsCriticalRawMaterial",
                     value_type: aas.DataTypeDefXsd = bool,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"is critical raw material"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -799,6 +814,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"is critical raw material"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -849,9 +869,7 @@ class MaterialComposition(aas.Submodel):
                     Union[xsd.Float, BatteryMaterialMass]
                 ] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"battery material"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -870,6 +888,11 @@ class MaterialComposition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"battery material"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -970,9 +993,7 @@ class MaterialComposition(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"battery materials"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -991,6 +1012,11 @@ class MaterialComposition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"battery materials"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1130,11 +1156,7 @@ class MaterialComposition(aas.Submodel):
                     id_short: Optional[str] = r"HazardousSubstanceClass",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazardous substance class"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1153,6 +1175,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"hazardous substance class"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1218,11 +1245,7 @@ class MaterialComposition(aas.Submodel):
                     id_short: Optional[str] = r"HazardousSubstanceName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazardous substance name"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1241,6 +1264,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"hazardous substance name"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1289,11 +1317,7 @@ class MaterialComposition(aas.Submodel):
                     id_short: Optional[str] = r"HazardousSubstanceConcentration",
                     value_type: aas.DataTypeDefXsd = float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazardous substance concentration"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1312,6 +1336,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"hazardous substance concentration"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1379,9 +1408,7 @@ class MaterialComposition(aas.Submodel):
                         id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"impact"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1400,6 +1427,11 @@ class MaterialComposition(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"impact"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1467,11 +1499,7 @@ class MaterialComposition(aas.Submodel):
                     semantic_id_list_element: Optional[aas.Reference] = None,
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                     order_relevant: bool = False,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazardous substance impact"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1490,6 +1518,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"hazardous substance impact"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1641,9 +1674,7 @@ class MaterialComposition(aas.Submodel):
                         id_short: Optional[str] = r"ComponentName",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"component name"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1662,6 +1693,11 @@ class MaterialComposition(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"component name"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1727,9 +1763,7 @@ class MaterialComposition(aas.Submodel):
                         id_short: Optional[str] = r"ComponentId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"component ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1748,6 +1782,11 @@ class MaterialComposition(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"component ID"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1810,11 +1849,7 @@ class MaterialComposition(aas.Submodel):
                     componentName: Optional[Union[str, ComponentName]] = None,
                     componentId: Optional[Union[str, ComponentId]] = None,
                     id_short: Optional[str] = r"HazardousSubstanceLocation",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazardous substance location"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1833,6 +1868,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"hazardous substance location"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1909,11 +1949,7 @@ class MaterialComposition(aas.Submodel):
                     id_short: Optional[str] = r"HazardousSubstanceIdentifier",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"hazardous substance identifier"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1942,6 +1978,11 @@ class MaterialComposition(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"hazardous substance identifier"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2005,9 +2046,7 @@ class MaterialComposition(aas.Submodel):
                 ] = None,
                 hazardousSubstanceLocation: Optional[HazardousSubstanceLocation] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substance"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2026,6 +2065,11 @@ class MaterialComposition(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"hazardous substance"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2150,9 +2194,7 @@ class MaterialComposition(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"hazardous substances"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2171,6 +2213,11 @@ class MaterialComposition(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"hazardous substances"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2309,24 +2356,10 @@ class MaterialComposition(aas.Submodel):
             Iterable[HazardousSubstances.Hazardoussubstances_item], HazardousSubstances
         ],
         id_short: Optional[str] = r"MaterialComposition",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"material composition"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": "Mandatory data: Battery chemistry; critical raw materials; materials used in the cathode, anode, and \nelectrolyte; hazardous substances; impact of substances on the environment and on human health or \nsafety."
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02035-6",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
@@ -2342,6 +2375,27 @@ class MaterialComposition(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={r"en": r"material composition"}
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": "Mandatory data: Battery chemistry; critical raw materials; materials used in the cathode, anode, and \nelectrolyte; hazardous substances; impact of substances on the environment and on human health or \nsafety."
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02035-6",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

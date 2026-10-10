@@ -17,13 +17,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"This parameter describes the cycle with which the communication stack executes requests from the application and the wireless medium in ms."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -40,6 +34,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"This parameter describes the cycle with which the communication stack executes requests from the application and the wireless medium in ms."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -82,13 +83,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It includes the name of the technology, the release/version and other informaton."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -105,6 +100,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It includes the name of the technology, the release/version and other informaton."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -149,13 +151,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"It describes which technique is used for accesing the rado medium. It can be for example CSMA or TDMA. It highly depends on the Technology."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -172,6 +168,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"It describes which technique is used for accesing the rado medium. It can be for example CSMA or TDMA. It highly depends on the Technology."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -216,13 +219,7 @@ class WirelessCommunication(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Number of timeslots reserved for downlink communication."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -239,6 +236,13 @@ class WirelessCommunication(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Number of timeslots reserved for downlink communication."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -281,13 +285,7 @@ class WirelessCommunication(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Number of timeslots reserved for uplink communication."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -304,6 +302,13 @@ class WirelessCommunication(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Number of timeslots reserved for uplink communication."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -346,13 +351,7 @@ class WirelessCommunication(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Number of timeslots that are reserved for downlink and uplink communication."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -369,6 +368,13 @@ class WirelessCommunication(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Number of timeslots that are reserved for downlink and uplink communication."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -409,13 +415,7 @@ class WirelessCommunication(aas.Submodel):
                     id_short: Optional[str] = r"SlotConfiguration",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Depending on the mediung access type, the  slot configuration can be descrided as number of slots for downlink, uplink and shared slots."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -432,6 +432,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Depending on the mediung access type, the  slot configuration can be descrided as number of slots for downlink, uplink and shared slots."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -516,13 +523,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"MediumAccess",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The media access control ensures for example that a communication request is served as far as the medium is free (CSMA) or it allocates the request to well defined time slots (TDMA). Combinations of these two as well as other access mechanisms are possible."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -539,6 +540,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The media access control ensures for example that a communication request is served as far as the medium is free (CSMA) or it allocates the request to well defined time slots (TDMA). Combinations of these two as well as other access mechanisms are possible."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -602,13 +610,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"This parameter specifies how the security objectives of the application are met by the implemented security mechanisms"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -625,6 +627,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"This parameter specifies how the security objectives of the application are met by the implemented security mechanisms"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -668,13 +677,7 @@ class WirelessCommunication(aas.Submodel):
             id_short: Optional[str] = r"WirelessCommunicationFunction",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"hardware and software implementation of algorithms for wireless communication (VDI/VDE 2185 Part-4, 2019).  Describes the parameters of the wireless communication function. This includes parameters of the transmitter and receiver. Moreover information about intances that implement the communication function (e.g. modules) can also be descrebed here."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -691,6 +694,13 @@ class WirelessCommunication(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"hardware and software implementation of algorithms for wireless communication (VDI/VDE 2185 Part-4, 2019).  Describes the parameters of the wireless communication function. This includes parameters of the transmitter and receiver. Moreover information about intances that implement the communication function (e.g. modules) can also be descrebed here."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -793,13 +803,7 @@ class WirelessCommunication(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"It describes the role of the asset has in the network: accespoint, end node, repeater. It could also be an immaterial asset as an heatmap, or a wireless communication manager"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -816,6 +820,13 @@ class WirelessCommunication(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"It describes the role of the asset has in the network: accespoint, end node, repeater. It could also be an immaterial asset as an heatmap, or a wireless communication manager"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -862,13 +873,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"List of bands that can be configured on the asset. "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -885,6 +890,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"List of bands that can be configured on the asset. "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -927,11 +939,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"ID of current configured band."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -948,6 +956,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"ID of current configured band."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -990,13 +1003,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Center frequency in MHz of the current configured band."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1013,6 +1020,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Center frequency in MHz of the current configured band."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1055,13 +1069,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Bandwidth in MHz of current configured band. Bandwidth is the difference between upper cut-off frequency and lower cut-off frequency. The bandwidth is the range of frequencies occupied by a modulated carrier signal."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1079,6 +1087,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Bandwidth in MHz of current configured band. Bandwidth is the difference between upper cut-off frequency and lower cut-off frequency. The bandwidth is the range of frequencies occupied by a modulated carrier signal."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1120,13 +1135,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"FrequencyBand",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Contains information related with the frequency band used by the asset. It refers to a range of frequencies within the electromagnetic spectrum, which includes all frequencies of electromagnetic radiation. Different technologies and applications often use specific frequency bands for communication."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1143,6 +1152,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Contains information related with the frequency band used by the asset. It refers to a range of frequencies within the electromagnetic spectrum, which includes all frequencies of electromagnetic radiation. Different technologies and applications often use specific frequency bands for communication."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1233,13 +1249,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Most wireless technologies assign numbers to the specified radio channels. This parameter lists the specified numbers.  It may be used for some technologies (e.g bluetooth). Blacklisting can be considered."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1256,6 +1266,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Most wireless technologies assign numbers to the specified radio channels. This parameter lists the specified numbers.  It may be used for some technologies (e.g bluetooth). Blacklisting can be considered."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1298,13 +1315,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Centre frequency is the geometric mean of lower cut-off frequency   and upper cut-off frequency of a radio channel. This parameter assigns the centre frequencies to the radio channels. It serves to specify the utilized frequency, crucial for systems like Wi-Fi. However, in instances of channel-hopping technologies like BLE, IOLW, and WirelessHART, where channels dynamically change, it's recommended to leave this property empty."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1322,6 +1333,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Centre frequency is the geometric mean of lower cut-off frequency   and upper cut-off frequency of a radio channel. This parameter assigns the centre frequencies to the radio channels. It serves to specify the utilized frequency, crucial for systems like Wi-Fi. However, in instances of channel-hopping technologies like BLE, IOLW, and WirelessHART, where channels dynamically change, it's recommended to leave this property empty."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1364,13 +1382,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Bandwidth is the difference between upper cut-off frequency and lower cut-off frequency. The bandwidth is the range of frequencies occupied by a modulated carrier signal. The data rate of reliable communication is directly proportional to the bandwidth of the signal used for the communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1388,6 +1400,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Bandwidth is the difference between upper cut-off frequency and lower cut-off frequency. The bandwidth is the range of frequencies occupied by a modulated carrier signal. The data rate of reliable communication is directly proportional to the bandwidth of the signal used for the communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1432,13 +1451,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"RadioFrequencyChannel",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Refers to a specific channel of frequencies used for wireless communication. Radio communication technologies divide the spectrum into channels."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1455,6 +1468,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Refers to a specific channel of frequencies used for wireless communication. Radio communication technologies divide the spectrum into channels."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1547,13 +1567,7 @@ class WirelessCommunication(aas.Submodel):
             id_short: Optional[str] = r"RadioFrequency",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"It describes the characteristics of radio channel as frequency, band, bandwidth."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1570,6 +1584,13 @@ class WirelessCommunication(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"It describes the characteristics of radio channel as frequency, band, bandwidth."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1628,13 +1649,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It is a string that describes the parameter type depending on the technology."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1651,6 +1666,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It is a string that describes the parameter type depending on the technology."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1693,13 +1715,7 @@ class WirelessCommunication(aas.Submodel):
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The range delimits the limits that define the extent of acceptable values or conditions for the parameter. In the context of a reception quality indicator, one of the thresholds can typically be defined by the reception sensitivity parameter of some wireless modules. "
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1716,6 +1732,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The range delimits the limits that define the extent of acceptable values or conditions for the parameter. In the context of a reception quality indicator, one of the thresholds can typically be defined by the reception sensitivity parameter of some wireless modules. "
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1758,11 +1781,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"It is the value specified during the desing phase."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1779,6 +1798,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It is the value specified during the desing phase."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1821,13 +1847,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It is the value configured In the commissioning phase."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1844,6 +1864,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It is the value configured In the commissioning phase."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1886,13 +1913,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"VARIABLE",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It is the last received signal strength value stored by the communication module."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1909,6 +1930,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It is the last received signal strength value stored by the communication module."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1951,13 +1979,7 @@ class WirelessCommunication(aas.Submodel):
             id_short: Optional[str] = r"ReceptionQualityIndicator",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Set of parameters that describe the quality of reception. The availabitly of these parameter depends on the technology and implementations."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1974,6 +1996,13 @@ class WirelessCommunication(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Set of parameters that describe the quality of reception. The availabitly of these parameter depends on the technology and implementations."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2071,13 +2100,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It is a string that describes the parameter type depending on the technology."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2094,6 +2117,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It is a string that describes the parameter type depending on the technology."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2136,13 +2166,7 @@ class WirelessCommunication(aas.Submodel):
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The range delimits the limits that define the extent of acceptable values or conditions for the parameter. In the context of output power, it is typically defined by the maximum transmit power of the transceiver. "
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2159,6 +2183,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The range delimits the limits that define the extent of acceptable values or conditions for the parameter. In the context of output power, it is typically defined by the maximum transmit power of the transceiver. "
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2201,11 +2232,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"It is the value specified during the desing phase."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2222,6 +2249,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It is the value specified during the desing phase."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2280,13 +2314,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It is the value configured In the commissioning phase."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -2304,6 +2332,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It is the value configured In the commissioning phase."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2346,13 +2381,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"VARIABLE",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It is the last received signal strength value stored by the communication module."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -2370,6 +2399,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It is the last received signal strength value stored by the communication module."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2412,13 +2448,7 @@ class WirelessCommunication(aas.Submodel):
             id_short: Optional[str] = r"OutputPower",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The transmit power is determined by the RF schematic of the wireless module. Depending on the wireless technology, standard or implementation it is fixed, adjustable in steps or free configurable. (VID/VDE 2185 Part4)"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2435,6 +2465,13 @@ class WirelessCommunication(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The transmit power is determined by the RF schematic of the wireless module. Depending on the wireless technology, standard or implementation it is fixed, adjustable in steps or free configurable. (VID/VDE 2185 Part4)"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2534,13 +2571,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Official name of the applying/responsible company"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2557,6 +2588,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Official name of the applying/responsible company"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2599,11 +2637,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Name of the responsible person"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2620,6 +2654,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Name of the responsible person"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2662,11 +2701,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"First name of the responsible"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2683,6 +2718,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"First name of the responsible"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2725,11 +2765,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Official company address"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2746,6 +2782,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Official company address"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2788,9 +2829,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(dict_={r"en": r"Phone number"}),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2807,6 +2846,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Phone number"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2849,11 +2893,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Fax number (optional parameter)."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2870,6 +2910,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Fax number (optional parameter)."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2912,11 +2957,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Contact mail address (optional parameter)"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2933,6 +2974,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Contact mail address (optional parameter)"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2975,13 +3021,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Description of the intended use (Aproximately one page)."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2998,6 +3038,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Description of the intended use (Aproximately one page)."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3040,13 +3087,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Type of license: trial operation, normal operation."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3063,6 +3104,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Type of license: trial operation, normal operation."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3109,13 +3157,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"Applicant",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"A set of parameters that include the information about the license holder as well as the contact person."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3132,6 +3174,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"A set of parameters that include the information about the license holder as well as the contact person."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3255,13 +3304,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Frequency for operation in the radio spectrum, subject to license application."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3278,6 +3321,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Frequency for operation in the radio spectrum, subject to license application."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3320,13 +3370,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Frequencies for operation in the radio spectrum, subject to license application."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -3344,6 +3388,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Frequencies for operation in the radio spectrum, subject to license application."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3386,13 +3437,7 @@ class WirelessCommunication(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"List with “start frequency” and “stop frequency” for operation in the radio spectrum, subject to license application."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3409,6 +3454,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"List with “start frequency” and “stop frequency” for operation in the radio spectrum, subject to license application."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3449,13 +3501,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"Frequency",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"This list contains information about the used frequency or frequency ranges. Only one of the three fields must be filled in."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3472,6 +3518,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"This list contains information about the used frequency or frequency ranges. Only one of the three fields must be filled in."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3553,11 +3606,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Begin of operation Day"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3574,6 +3623,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Begin of operation Day"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3616,11 +3670,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Begin of operation Month."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3637,6 +3687,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Begin of operation Month."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3679,11 +3734,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Begin of operation year"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3700,6 +3751,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Begin of operation year"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3742,11 +3798,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Duration of operation in Days"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3763,6 +3815,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Duration of operation in Days"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3804,13 +3861,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"Operation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"This list contains information on the period of use of the frequency ranges applied for."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3827,6 +3878,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"This list contains information on the period of use of the frequency ranges applied for."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3907,11 +3965,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Address of the location."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3928,6 +3982,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Address of the location."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3970,13 +4029,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Geographic Position in East and North degree, minute and second"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3993,6 +4046,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Geographic Position in East and North degree, minute and second"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4035,11 +4095,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Altitide above sea level."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4056,6 +4112,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Altitide above sea level."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4098,11 +4159,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "Altitude above earth's surface."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4119,6 +4176,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": "Altitude above earth's surface."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4161,11 +4223,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"FixedStations/NumberOfStations/1/0"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4182,6 +4240,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"FixedStations/NumberOfStations/1/0"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4224,13 +4287,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"FixedStation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"This list contains the geographical information of the fixed stations. Information must include both the postal and geographic address, as well as the height of the antennas."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4247,6 +4304,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"This list contains the geographical information of the fixed stations. Information must include both the postal and geographic address, as well as the height of the antennas."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4346,11 +4410,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Region in which the mobile should be used."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4367,6 +4427,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Region in which the mobile should be used."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4409,11 +4474,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Number of mobile stations."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4430,6 +4491,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Number of mobile stations."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4472,11 +4538,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"One way or two way communication."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4493,6 +4555,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"One way or two way communication."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4533,13 +4600,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"MobileStation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"This list contains the information about the mobile station (used geographical area, number of mobile stations and kind of operation)."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4556,6 +4617,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"This list contains the information about the mobile station (used geographical area, number of mobile stations and kind of operation)."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4633,11 +4701,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Name or code of the equipment."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4654,6 +4718,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Name or code of the equipment."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4696,11 +4765,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Manufacturer of the equipment."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4717,6 +4782,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Manufacturer of the equipment."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4759,11 +4829,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Duplex Mode (FDD or TDD)."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4780,6 +4846,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Duplex Mode (FDD or TDD)."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4822,11 +4893,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Access Mode e.g. FDMA"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4843,6 +4910,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Access Mode e.g. FDMA"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4885,11 +4957,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Type of Modulation e.g. FM"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4906,6 +4974,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Type of Modulation e.g. FM"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4948,11 +5021,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Used Bandwith in MHz."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -4970,6 +5039,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Used Bandwith in MHz."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5012,11 +5086,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Transmitter output power in dBm e.g. 10dBm"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -5034,6 +5104,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Transmitter output power in dBm e.g. 10dBm"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5076,13 +5151,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Antenna Gain in dBi respectively antenna pattern."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5099,6 +5168,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Antenna Gain in dBi respectively antenna pattern."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5141,13 +5217,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Polarisation of the antenna e.g. horizontal, vertical, …"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5164,6 +5234,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Polarisation of the antenna e.g. horizontal, vertical, …"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5206,11 +5283,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Azimut of the antenna."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5227,6 +5300,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Azimut of the antenna."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5269,11 +5347,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Elevation of the antenna."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5290,6 +5364,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Elevation of the antenna."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5332,13 +5411,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Connection between radio system and other telecommunication systems."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5355,6 +5428,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Connection between radio system and other telecommunication systems."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5404,13 +5484,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"LicenseAcquisitionTechnicalData",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"This list contains the technical parameters of the network."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5427,6 +5501,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"This list contains the technical parameters of the network."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5582,11 +5663,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Date of application submission."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5603,6 +5680,11 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Date of application submission."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5645,11 +5727,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Date of response from regulatory authority."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5666,6 +5744,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Date of response from regulatory authority."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5708,13 +5793,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Response from the regulatory authority. Application approved/Application approved subject to compliance with conditions/Application rejected"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5731,6 +5810,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Response from the regulatory authority. Application approved/Application approved subject to compliance with conditions/Application rejected"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5773,13 +5859,7 @@ class WirelessCommunication(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Conditions so that the license application is accepted. e.g. restriction of transmission power, alignment of the antenna"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5796,6 +5876,13 @@ class WirelessCommunication(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Conditions so that the license application is accepted. e.g. restriction of transmission power, alignment of the antenna"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5837,13 +5924,7 @@ class WirelessCommunication(aas.Submodel):
                 id_short: Optional[str] = r"Allocation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Information about the time and status of application"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5860,6 +5941,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Information about the time and status of application"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6035,13 +6123,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It describes the antenna used for the wireless asset. (Monopole antenna, directional antenna, dipole antenna, special antenna). It defines also the antenna connector."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6058,6 +6140,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It describes the antenna used for the wireless asset. (Monopole antenna, directional antenna, dipole antenna, special antenna). It defines also the antenna connector."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6100,11 +6189,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"It defines how many antennas the asset has."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6121,6 +6206,11 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"It defines how many antennas the asset has."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6163,11 +6253,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Connector type of the antenna."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6184,6 +6270,11 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Connector type of the antenna."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6226,9 +6317,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(dict_={r"en": r"Height of the antenna."}),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6245,6 +6334,11 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Height of the antenna."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6287,13 +6381,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"It describes the interfaces that the asset has: Ethernet, USB, Wireless, Digital IO, etc.."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6310,6 +6398,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"It describes the interfaces that the asset has: Ethernet, USB, Wireless, Digital IO, etc.."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6354,13 +6449,7 @@ class WirelessCommunication(aas.Submodel):
             id_short: Optional[str] = r"Hardware",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Set of parameters that describe hardware aspects of the asset such as antenna type, connectors and interfaces during different life cycle phases."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -6377,6 +6466,13 @@ class WirelessCommunication(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Set of parameters that describe hardware aspects of the asset such as antenna type, connectors and interfaces during different life cycle phases."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -6500,13 +6596,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": 'It is a parameter for device authentication in networks. It varies across wireless technologies, serving as a unique data piece presented during authentication, such as 5G\'s "Access Point Name," Bluetooth\'s "Master ID," and Wi-Fi\'s "SSID."'
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6523,6 +6613,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": 'It is a parameter for device authentication in networks. It varies across wireless technologies, serving as a unique data piece presented during authentication, such as 5G\'s "Access Point Name," Bluetooth\'s "Master ID," and Wi-Fi\'s "SSID."'
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6565,13 +6662,7 @@ class WirelessCommunication(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Cryptographic codes or credentials used alongside the Authentication Identifier. "
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6588,6 +6679,13 @@ class WirelessCommunication(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Cryptographic codes or credentials used alongside the Authentication Identifier. "
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6629,13 +6727,7 @@ class WirelessCommunication(aas.Submodel):
             id_short: Optional[str] = r"Authentication",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"It contains information needed for device authentication. It is required to verify the legitimacy of devices and ensuring secure network access. "
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -6652,6 +6744,13 @@ class WirelessCommunication(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"It contains information needed for device authentication. It is required to verify the legitimacy of devices and ensuring secure network access. "
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -6728,18 +6827,8 @@ class WirelessCommunication(aas.Submodel):
         id_short: Optional[str] = r"WirelessCommunication",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = r"PARAMETER",
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={r"en": r"Contains the wireless communication aspects of the asset."}
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=None,
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -6756,6 +6845,22 @@ class WirelessCommunication(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Contains the wireless communication aspects of the asset."
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=None,
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

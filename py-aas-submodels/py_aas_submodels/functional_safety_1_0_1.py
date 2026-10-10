@@ -15,14 +15,7 @@ class FunctionalSafety(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"number of functional safety sets of characteristics",
-                    r"fr": "nombre d'ensembles de caractéristiques de sécurité fonctionnelle",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -39,6 +32,14 @@ class FunctionalSafety(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"number of functional safety sets of characteristics",
+                        r"fr": "nombre d'ensembles de caractéristiques de sécurité fonctionnelle",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -101,15 +102,7 @@ class FunctionalSafety(aas.Submodel):
                 ),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"type of voltage",
-                        r"fr": r"type de tension",
-                        r"de": r"Spannungsart",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -126,6 +119,15 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"type of voltage",
+                            r"fr": r"type de tension",
+                            r"de": r"Spannungsart",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -168,15 +170,7 @@ class FunctionalSafety(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"rated voltage",
-                        r"fr": r"tension assignée",
-                        r"de": r"Bemessungsspannung",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -193,6 +187,15 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"rated voltage",
+                            r"fr": r"tension assignée",
+                            r"de": r"Bemessungsspannung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -235,15 +238,7 @@ class FunctionalSafety(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"minimum rated voltage",
-                        r"fr": r"tension assignée minimale",
-                        r"de": r"minimale Bemessungsspannung",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -260,6 +255,15 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"minimum rated voltage",
+                            r"fr": r"tension assignée minimale",
+                            r"de": r"minimale Bemessungsspannung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -302,15 +306,7 @@ class FunctionalSafety(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"maximum rated voltage",
-                        r"fr": r"tension assignée maximale",
-                        r"de": r"maximale Bemessungsspannung",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -327,6 +323,15 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"maximum rated voltage",
+                            r"fr": r"tension assignée maximale",
+                            r"de": r"maximale Bemessungsspannung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -369,11 +374,7 @@ class FunctionalSafety(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"rated operational current"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -390,6 +391,11 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"rated operational current"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -452,14 +458,7 @@ class FunctionalSafety(aas.Submodel):
                 ),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"type of interlocking device",
-                        r"fr": r"type de dispositif de verrouillage",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -476,6 +475,14 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"type of interlocking device",
+                            r"fr": r"type de dispositif de verrouillage",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -518,14 +525,7 @@ class FunctionalSafety(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"other operating conditions",
-                        r"fr": r"autres conditions de fonctionnement",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -542,6 +542,14 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"other operating conditions",
+                            r"fr": r"autres conditions de fonctionnement",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -584,14 +592,7 @@ class FunctionalSafety(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"useful life in number of operations",
-                        r"fr": r"durée de vie utile en cycle de fonctionnement",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -608,6 +609,14 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"useful life in number of operations",
+                            r"fr": r"durée de vie utile en cycle de fonctionnement",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -650,14 +659,7 @@ class FunctionalSafety(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"useful life in time interval",
-                        r"fr": r"durée de vie utile en intervalle de temps",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -674,6 +676,14 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"useful life in time interval",
+                            r"fr": r"durée de vie utile en intervalle de temps",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -732,14 +742,7 @@ class FunctionalSafety(aas.Submodel):
             ] = r"OperatingConditionsOfFunctionalSafetyCharacteristics",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"operating conditions of functional safety characteristics",
-                    r"fr": r"conditions de fonctionnement des caractéristiques de sécurité fonctionnelle",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -756,6 +759,14 @@ class FunctionalSafety(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"operating conditions of functional safety characteristics",
+                        r"fr": r"conditions de fonctionnement des caractéristiques de sécurité fonctionnelle",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -917,14 +928,7 @@ class FunctionalSafety(aas.Submodel):
                 ),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"functional safety device type",
-                        r"fr": r"type de dispositif de sécurité fonctionnelle",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -941,6 +945,14 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"functional safety device type",
+                            r"fr": r"type de dispositif de sécurité fonctionnelle",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1001,14 +1013,7 @@ class FunctionalSafety(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"safety integrity level",
-                            r"fr": "niveau d'intégrité de sécurité",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1025,6 +1030,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"safety integrity level",
+                                r"fr": "niveau d'intégrité de sécurité",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1067,14 +1080,7 @@ class FunctionalSafety(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"probability of dangerous failure within one hour",
-                            r"fr": r"fréquence de défaillance dangereuse par heure",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1091,6 +1097,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"probability of dangerous failure within one hour",
+                                r"fr": r"fréquence de défaillance dangereuse par heure",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1133,14 +1147,7 @@ class FunctionalSafety(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"proof test interval",
-                            r"fr": r"intervalle entre essai périodique",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1157,6 +1164,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"proof test interval",
+                                r"fr": r"intervalle entre essai périodique",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1223,14 +1238,7 @@ class FunctionalSafety(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"performance level",
-                            r"fr": r"niveau de performance",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1247,6 +1255,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"performance level",
+                                r"fr": r"niveau de performance",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1313,11 +1329,7 @@ class FunctionalSafety(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"category", r"fr": r"catégory"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1334,6 +1346,11 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"category", r"fr": r"catégory"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1376,14 +1393,7 @@ class FunctionalSafety(aas.Submodel):
                 id_short: Optional[str] = r"SafetySubsystem",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Safety subsystem",
-                        r"fr": r"Sous-système de sécurité",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1400,6 +1410,14 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Safety subsystem",
+                            r"fr": r"Sous-système de sécurité",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1487,14 +1505,7 @@ class FunctionalSafety(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"mean time to dangerous failure",
-                            r"fr": r"durée moyenne de fonctionnement avant défaillance dangereuse",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1511,6 +1522,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"mean time to dangerous failure",
+                                r"fr": r"durée moyenne de fonctionnement avant défaillance dangereuse",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1553,11 +1572,7 @@ class FunctionalSafety(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"ratio of dangerous failure"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1574,6 +1589,11 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"ratio of dangerous failure"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1616,14 +1636,7 @@ class FunctionalSafety(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"proof test interval",
-                            r"fr": r"intervalle entre essai périodique",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1640,6 +1653,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"proof test interval",
+                                r"fr": r"intervalle entre essai périodique",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1680,11 +1701,7 @@ class FunctionalSafety(aas.Submodel):
                 id_short: Optional[str] = r"ElectronicElement",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Electronic element", r"fr": r"Elément électronique"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1701,6 +1718,14 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Electronic element",
+                            r"fr": r"Elément électronique",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1776,14 +1801,7 @@ class FunctionalSafety(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"number of operations until ten percent dangerous failure",
-                            r"fr": "nombre de cycles jusqu'à dix pour cent de défaillances dangereuses",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1800,6 +1818,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"number of operations until ten percent dangerous failure",
+                                r"fr": "nombre de cycles jusqu'à dix pour cent de défaillances dangereuses",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1842,14 +1868,7 @@ class FunctionalSafety(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"proof test interval",
-                            r"fr": r"intervalle entre essai périodique",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1866,6 +1885,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"proof test interval",
+                                r"fr": r"intervalle entre essai périodique",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1905,14 +1932,7 @@ class FunctionalSafety(aas.Submodel):
                 id_short: Optional[str] = r"ElectromechanicalElement",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Electromechanical element",
-                        r"fr": r"Elément électromécanique de sous-système",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1929,6 +1949,14 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Electromechanical element",
+                            r"fr": r"Elément électromécanique de sous-système",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2015,14 +2043,7 @@ class FunctionalSafety(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"safety integrity level",
-                            r"fr": "niveau d'intégrité de sécurité",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2039,6 +2060,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"safety integrity level",
+                                r"fr": "niveau d'intégrité de sécurité",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2081,14 +2110,7 @@ class FunctionalSafety(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"proof test interval",
-                            r"fr": r"intervalle entre essai périodique",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2105,6 +2127,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"proof test interval",
+                                r"fr": r"intervalle entre essai périodique",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2171,14 +2201,7 @@ class FunctionalSafety(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"performance level",
-                            r"fr": r"niveau de performance",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2195,6 +2218,14 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"performance level",
+                                r"fr": r"niveau de performance",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2261,11 +2292,7 @@ class FunctionalSafety(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"category", r"fr": r"catégory"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2282,6 +2309,11 @@ class FunctionalSafety(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"category", r"fr": r"catégory"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2323,14 +2355,7 @@ class FunctionalSafety(aas.Submodel):
                 id_short: Optional[str] = r"InherentlySafeSubsystem",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Inherently safe subsystem",
-                        r"fr": r"Sous-système intrinsèquement sûr",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2347,6 +2372,14 @@ class FunctionalSafety(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Inherently safe subsystem",
+                            r"fr": r"Sous-système intrinsèquement sûr",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2427,11 +2460,7 @@ class FunctionalSafety(aas.Submodel):
             id_short: Optional[str] = r"SafetyDeviceTypes",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"safety device", r"fr": r"dispositif de sécurité"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2448,6 +2477,11 @@ class FunctionalSafety(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"safety device", r"fr": r"dispositif de sécurité"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2523,15 +2557,7 @@ class FunctionalSafety(aas.Submodel):
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=None,
-            embedded_data_specifications=[],
-        ),
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -2548,6 +2574,15 @@ class FunctionalSafety(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=None,
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

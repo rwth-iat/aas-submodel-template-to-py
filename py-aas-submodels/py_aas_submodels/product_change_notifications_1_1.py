@@ -44,13 +44,7 @@ class ProductChangeNotifications(aas.Submodel):
             max_interval: Optional[xsd.Duration] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Note: Industrial users will subscribe to this event by different implementation technologies."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -67,6 +61,13 @@ class ProductChangeNotifications(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Note: Industrial users will subscribe to this event by different implementation technologies."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -190,13 +191,7 @@ class ProductChangeNotifications(aas.Submodel):
                         id_short: Optional[str] = r"PhysicalAddress__0__",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Note: This set of information is defined by SMT drop-in "Contact Information" in (current) version 1.0, given by the SMT for Contact and Address Information V1.0. The ECLASS IRDI reserved for the SMC was added as supplementalSemanticId.  Note: Use this set of information, until version 1.1 of the SMT drop-in "Contact Information" is published. Note: The idShort shall go without the index "__0__".'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -232,6 +227,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Note: This set of information is defined by SMT drop-in "Contact Information" in (current) version 1.0, given by the SMT for Contact and Address Information V1.0. The ECLASS IRDI reserved for the SMC was added as supplementalSemanticId.  Note: Use this set of information, until version 1.1 of the SMT drop-in "Contact Information" is published. Note: The idShort shall go without the index "__0__".'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -293,13 +295,7 @@ class ProductChangeNotifications(aas.Submodel):
                         id_short: Optional[str] = r"PhysicalAddress__1__",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Note: this set of information is defined by SMT drop-in "Contact Information" in upcoming version 1.1, given by the SMT for Contact and Address Information V1.1. The ECLASS IRDI reserved for the SMC was added as supplementalSemanticId.  Note: Use this set of information, if version 1.1 of the SMT drop-in "Contact Information" is published. Note: The idShort shall go without the index "__1__".'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -335,6 +331,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Note: this set of information is defined by SMT drop-in "Contact Information" in upcoming version 1.1, given by the SMT for Contact and Address Information V1.1. The ECLASS IRDI reserved for the SMC was added as supplementalSemanticId.  Note: Use this set of information, if version 1.1 of the SMT drop-in "Contact Information" is published. Note: The idShort shall go without the index "__1__".'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -565,13 +568,7 @@ class ProductChangeNotifications(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Following the VDMA 24903, this mandatory global flag distincts between a PCN and PDN. Use either value PCN or PDN with valueId 0173-1#07-ABU000#003 (PCN) or 0173-1#07-ABU001#003 (PDN). Note: According this global flag, the PCN milestone (173-1#07-ABU000#003) communicates the effective date of the PCN and the EOP milestone (EOP milestone (0173-1#07-ABU003#003) communicates the end of production date for the PDN in the life-cycle data."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -588,6 +585,13 @@ class ProductChangeNotifications(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Following the VDMA 24903, this mandatory global flag distincts between a PCN and PDN. Use either value PCN or PDN with valueId 0173-1#07-ABU000#003 (PCN) or 0173-1#07-ABU001#003 (PDN). Note: According this global flag, the PCN milestone (173-1#07-ABU000#003) communicates the effective date of the PCN and the EOP milestone (EOP milestone (0173-1#07-ABU003#003) communicates the end of production date for the PDN in the life-cycle data."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -651,13 +655,7 @@ class ProductChangeNotifications(aas.Submodel):
                             ),
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: defined point in time with a specific meaning for life-cycle management (IEC 62890:2020). Note: Set value and valueId with one of these: SOP (0173-1#07-ABT998#003),  NRND (0173-1#07-ABT999#003),  PCN (0173-1#07-ABU000#003),  EOS (0173-1#07-ABU002#003),  EOP (0173-1#07-ABU003#003),  LTD (0173-1#07-ABU004#003),  EOSR (0173-1#07-ABU087#003) Note: The PDN milestone is not to be used for this classification. Instead, the global flag PcnType is set with value=PCN and valueId=0173-1#07-ABU000#003."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -676,6 +674,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: defined point in time with a specific meaning for life-cycle management (IEC 62890:2020). Note: Set value and valueId with one of these: SOP (0173-1#07-ABT998#003),  NRND (0173-1#07-ABT999#003),  PCN (0173-1#07-ABU000#003),  EOS (0173-1#07-ABU002#003),  EOP (0173-1#07-ABU003#003),  LTD (0173-1#07-ABU004#003),  EOSR (0173-1#07-ABU087#003) Note: The PDN milestone is not to be used for this classification. Instead, the global flag PcnType is set with value=PCN and valueId=0173-1#07-ABU000#003."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -726,13 +731,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: Date is in UTC (coordinated universal time). Typically, time is given, as well."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -751,6 +750,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: Date is in UTC (coordinated universal time). Typically, time is given, as well."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1066,13 +1072,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r'Note: Examples for common names for classification systems are "VDMA24903" or "ECLASS".'
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1091,6 +1091,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r'Note: Examples for common names for classification systems are "VDMA24903" or "ECLASS".'
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1141,14 +1148,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored.",
-                                    r"de": r"Note: 4 digit year of publication date of classifcation standard can serve as version.",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1167,6 +1167,14 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored.",
+                                        r"de": r"Note: 4 digit year of publication date of classifcation standard can serve as version.",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1217,13 +1225,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1242,6 +1244,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1421,13 +1430,7 @@ class ProductChangeNotifications(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Multiple classification systems might be used. Constraint: At least one reason according VDM24903 shall be given."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1444,6 +1447,13 @@ class ProductChangeNotifications(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Multiple classification systems might be used. Constraint: At least one reason according VDM24903 shall be given."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1588,13 +1598,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r'Note: Examples for common names for classification systems are "VDMA24903".'
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1613,6 +1617,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r'Note: Examples for common names for classification systems are "VDMA24903".'
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1663,14 +1674,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored.",
-                                    r"de": r"Note: 4 digit year of publication data of classifcation standard can serve as version.",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1689,6 +1693,14 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored.",
+                                        r"de": r"Note: 4 digit year of publication data of classifcation standard can serve as version.",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1739,13 +1751,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1764,6 +1770,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1939,13 +1952,7 @@ class ProductChangeNotifications(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Multiple classification systems might be used. Constraint: At least one item category according VDM24903 shall be given."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1962,6 +1969,13 @@ class ProductChangeNotifications(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Multiple classification systems might be used. Constraint: At least one item category according VDM24903 shall be given."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2104,13 +2118,7 @@ class ProductChangeNotifications(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "Note: This Property codes only part number (\"12345\"), a set of part numbers (\"12345;23456;34567\"), a range of part numbers(\"10000-19999\"). For each of these, wildcards like asterix (\"1*8\", all numbers starting with '1' and ending with '8') or question mark (\"1?3?8\", all 5 digit numbers starting with '1' and ending with '8' and middle as '5') are allowed."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2127,6 +2135,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": "Note: This Property codes only part number (\"12345\"), a set of part numbers (\"12345;23456;34567\"), a range of part numbers(\"10000-19999\"). For each of these, wildcards like asterix (\"1*8\", all numbers starting with '1' and ending with '8') or question mark (\"1?3?8\", all 5 digit numbers starting with '1' and ending with '8' and middle as '5') are allowed."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2189,13 +2204,7 @@ class ProductChangeNotifications(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Constraint: Affected part numbers shall only be listed, if not the full range of part numbers produced for this item (product family and designation) is affected. Note: Multiple single part numbers with wildcards or ranges of part numbers are listed."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2212,6 +2221,13 @@ class ProductChangeNotifications(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Constraint: Affected part numbers shall only be listed, if not the full range of part numbers produced for this item (product family and designation) is affected. Note: Multiple single part numbers with wildcards or ranges of part numbers are listed."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2362,13 +2378,7 @@ class ProductChangeNotifications(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: May be substituted by PcnChangeInformation"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2385,6 +2395,13 @@ class ProductChangeNotifications(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: May be substituted by PcnChangeInformation"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2659,13 +2676,7 @@ class ProductChangeNotifications(aas.Submodel):
                         content_type: Optional[str] = r"application/octet-stream",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Note: This File element can be used to attach the conventional "product change information" already provided by many suppliers or e.g. some detail geometry information.'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2682,6 +2693,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Note: This File element can be used to attach the conventional "product change information" already provided by many suppliers or e.g. some detail geometry information.'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2743,13 +2761,7 @@ class ProductChangeNotifications(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r'Note: Suppliers are encouraged to add the conventional "product change information" documents and further details, e.g. photo-based or geometric change information to the PCN record.'
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2766,6 +2778,13 @@ class ProductChangeNotifications(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r'Note: Suppliers are encouraged to add the conventional "product change information" documents and further details, e.g. photo-based or geometric change information to the PCN record.'
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2906,13 +2925,7 @@ class ProductChangeNotifications(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Date is in UTC (coordinated universal time). Typically, time is given, as well."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2929,6 +2942,13 @@ class ProductChangeNotifications(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Date is in UTC (coordinated universal time). Typically, time is given, as well."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2980,13 +3000,7 @@ class ProductChangeNotifications(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3003,6 +3017,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3051,13 +3072,7 @@ class ProductChangeNotifications(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3074,6 +3089,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3122,13 +3144,7 @@ class ProductChangeNotifications(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Optional, as it might not exist for long term used items."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3145,6 +3161,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Optional, as it might not exist for long term used items."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3192,13 +3215,7 @@ class ProductChangeNotifications(aas.Submodel):
                         id_short: Optional[str] = r"ManufacturerAssetID",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: This can be used to easily retrieve further information on the described item, such as full technical data, documentation, MCAD or ECAD models."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3215,6 +3232,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: This can be used to easily retrieve further information on the described item, such as full technical data, documentation, MCAD or ECAD models."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3342,13 +3366,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r'Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ClassificationSystemVersion/1/1'
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -3367,6 +3385,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r'Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ClassificationSystemVersion/1/1'
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -3419,13 +3444,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r'Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the product class. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ProductClassId/1/1'
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -3444,6 +3463,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r'Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the product class. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ProductClassId/1/1'
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -3623,13 +3649,7 @@ class ProductChangeNotifications(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: It is encouraged to provide the actual product classficiation, e.g. by ECLASS, in order to ease the identification of relevant items by the industrial user."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3646,6 +3666,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: It is encouraged to provide the actual product classficiation, e.g. by ECLASS, in order to ease the identification of relevant items by the industrial user."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3853,13 +3880,7 @@ class ProductChangeNotifications(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: This is an indicative figure; the manufacturer/ supplier may use a heuristical model to distribute available stock to a forecasted number of industrial users. Useful for industrial users to assess individual need of products against assumed availability."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3876,6 +3897,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: This is an indicative figure; the manufacturer/ supplier may use a heuristical model to distribute available stock to a forecasted number of industrial users. Useful for industrial users to assess individual need of products against assumed availability."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3932,13 +3960,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": "Note: An arbitrary Property, MLP, Range-element can be placed in this structure with arbitrary semanticId. It is marked by the supplementalSemanticId for 'new value'."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -3967,6 +3989,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": "Note: An arbitrary Property, MLP, Range-element can be placed in this structure with arbitrary semanticId. It is marked by the supplementalSemanticId for 'new value'."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -4017,13 +4046,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: The set of technical data in the definition refers to the Submodel for technical data in the AAS."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -4043,6 +4066,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Note: The set of technical data in the definition refers to the Submodel for technical data in the AAS."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -4093,13 +4123,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -4118,6 +4142,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the reason id given by ECLASS."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -4168,13 +4199,7 @@ class ProductChangeNotifications(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: This SMC can be added to annotate changes in DataElements of existing Submodels (e.g. for technical data) and to provide more specific information to reason and items of a VDMA 24903 change."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -4193,6 +4218,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: This SMC can be added to annotate changes in DataElements of existing Submodels (e.g. for technical data) and to provide more specific information to reason and items of a VDMA 24903 change."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4449,13 +4481,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: Each DataElement represents a change of a technical data element. DataElements such as Property, MultiLanguageProperty and Range are applicable. To bring about the information, both idShort and semanticId can be set to the resepctive {arbitrary} attribute of the corresponding  technical data element."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -4474,6 +4500,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: Each DataElement represents a change of a technical data element. DataElements such as Property, MultiLanguageProperty and Range are applicable. To bring about the information, both idShort and semanticId can be set to the resepctive {arbitrary} attribute of the corresponding  technical data element."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4520,13 +4553,7 @@ class ProductChangeNotifications(aas.Submodel):
                         id_short: Optional[str] = r"TechnicalData_CurrentState",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: For the recommended items, the technical data elements are individually grouped in fit, form, function, other. As different alternatives might engange different groupings, the respective technical data elements of the item of change are not grouped, at all. Note: If possible, technical data elements in the recommended items should find its counterparts here (that is: DataElement with identical semanticId)."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -4544,6 +4571,13 @@ class ProductChangeNotifications(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: For the recommended items, the technical data elements are individually grouped in fit, form, function, other. As different alternatives might engange different groupings, the respective technical data elements of the item of change are not grouped, at all. Note: If possible, technical data elements in the recommended items should find its counterparts here (that is: DataElement with identical semanticId)."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4831,13 +4865,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -4856,6 +4884,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4904,13 +4939,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -4929,6 +4958,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: mandatory property according to EU Machine Directive 2006/42/EC."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4977,11 +5013,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Note: Mandatory, as required to order."}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5000,6 +5032,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: Mandatory, as required to order."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5118,11 +5157,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r'Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ClassificationSystemVersion/1/1'
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -5143,6 +5178,13 @@ class ProductChangeNotifications(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r'Common version identifier of the used classification system, in order to distinguish different version of the property dictionary.  Note: Casing is to be ignored. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ClassificationSystemVersion/1/1'
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = ()
@@ -5179,11 +5221,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r'Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the product class. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ProductClassId/1/1'
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -5204,6 +5242,13 @@ class ProductChangeNotifications(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r'Note: Ideally, the Property/valueId is used to reference the IRI/ IRDI of the product class. Note: the SMT "Technical Data" refers to this as: [IRI] https://admin-shell.io/ZVEI/TechnicalData/ProductClassId/1/1'
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = ()
@@ -5534,13 +5579,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -5559,6 +5598,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -5611,13 +5657,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -5636,6 +5676,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -5667,13 +5714,7 @@ class ProductChangeNotifications(aas.Submodel):
                             id_short: Optional[str] = r"TechnicalData_Fit",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5692,6 +5733,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5774,13 +5822,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -5799,6 +5841,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -5851,13 +5900,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -5876,6 +5919,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -5907,13 +5957,7 @@ class ProductChangeNotifications(aas.Submodel):
                             id_short: Optional[str] = r"TechnicalData_Form",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5932,6 +5976,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6014,13 +6065,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6039,6 +6084,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -6091,13 +6143,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6116,6 +6162,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -6147,13 +6200,7 @@ class ProductChangeNotifications(aas.Submodel):
                             id_short: Optional[str] = r"TechnicalData_Function",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6172,6 +6219,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: it is recommended that the selected property types for the recommended items are matching to the provided properties if the item of change to allow a one-by-one comparison of items. Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6254,13 +6308,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6279,6 +6327,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Note: It is the suppliers role to assess the provided technical data elements of the recommended item with respect to the actual item of change. A percentage is given between 0% (totally not suitable at all) and 100% (equal performance to the actual item of change)."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -6331,13 +6386,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6356,6 +6405,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Arbitrary Property, MLP or Range elements with specific semanticIds might be added."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -6387,13 +6443,7 @@ class ProductChangeNotifications(aas.Submodel):
                             id_short: Optional[str] = r"TechnicalData_Other",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information. Note: the SMC TechnicalData_Other is supposed to comprise meaningful property instances, which do not fit into the categorries fit, form, function."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6412,6 +6462,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: the manufacturers are recommended to select only those property types, which support a meaningful comparison of the recommendation with the item of change. To many property types are considered to increase the signal/ noise ratio of information. Note: the SMC TechnicalData_Other is supposed to comprise meaningful property instances, which do not fit into the categorries fit, form, function."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6490,13 +6547,7 @@ class ProductChangeNotifications(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Note: see https://en.wikipedia.org/wiki/Incoterms"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6515,6 +6566,13 @@ class ProductChangeNotifications(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Note: see https://en.wikipedia.org/wiki/Incoterms"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6707,13 +6765,7 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Arbitrary SubmodelElements with specific semanticIds might be added."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6732,6 +6784,13 @@ class ProductChangeNotifications(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Arbitrary SubmodelElements with specific semanticIds might be added."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -7056,13 +7115,7 @@ class ProductChangeNotifications(aas.Submodel):
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: The supplier is encoraged to provide recommended items."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7079,6 +7132,13 @@ class ProductChangeNotifications(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: The supplier is encoraged to provide recommended items."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7457,13 +7517,7 @@ class ProductChangeNotifications(aas.Submodel):
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Note: Newer records shall be added by adding a new highest index to the list."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -7480,6 +7534,13 @@ class ProductChangeNotifications(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Note: Newer records shall be added by adding a new highest index to the list."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -7614,15 +7675,7 @@ class ProductChangeNotifications(aas.Submodel):
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta_02036",
-            embedded_data_specifications=[],
-        ),
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
@@ -7637,6 +7690,15 @@ class ProductChangeNotifications(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta_02036",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

@@ -14,17 +14,9 @@ class CapabilityDescription(aas.Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"Capability",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Capability"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"[A capability is a] implementation-independent specification of a function in industrial production to achieve an effect in the physical or virtual world. "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -41,6 +33,18 @@ class CapabilityDescription(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Capability"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"[A capability is a] implementation-independent specification of a function in industrial production to achieve an effect in the physical or virtual world. "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -145,15 +149,9 @@ class CapabilityDescription(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"CapabilityComment",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Capability Comment"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Individual comment of the capability."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -170,6 +168,16 @@ class CapabilityDescription(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Capability Comment"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Individual comment of the capability."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -236,19 +244,9 @@ class CapabilityDescription(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Same Property"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Relationship of the Property described in the Property container as first element and the identical property as second element in another Submodel or an external information source."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -267,6 +265,18 @@ class CapabilityDescription(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Same Property"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Relationship of the Property described in the Property container as first element and the identical property as second element in another Submodel or an external information source."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -314,19 +324,9 @@ class CapabilityDescription(aas.Submodel):
                             max: str,
                             id_short: Optional[str] = r"PropertyRange",
                             value_type: aas.DataTypeDefXsd = str,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Property Range"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -345,6 +345,18 @@ class CapabilityDescription(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Property Range"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Range made of min and max values forming an interval. A valueId shall be set to define the semantic for the values."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -402,19 +414,9 @@ class CapabilityDescription(aas.Submodel):
                             id_short: Optional[str] = r"PropertyProperty",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Property Property"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Property with a value describing an information data point. A valueId shall be set to define the semantic for the value."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -433,6 +435,18 @@ class CapabilityDescription(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Property Property"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Property with a value describing an information data point. A valueId shall be set to define the semantic for the value."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -489,19 +503,9 @@ class CapabilityDescription(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"PropertyMultiLanguageProperty",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Property Multi Language Property"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Property with a value for one or more language entries with corresponding text describing an information data point. A valueId shall be set to define the semantic for the value."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -520,6 +524,18 @@ class CapabilityDescription(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Property Multi Language Property"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Property with a value for one or more language entries with corresponding text describing an information data point. A valueId shall be set to define the semantic for the value."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -575,17 +591,9 @@ class CapabilityDescription(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"PropertyComment",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Property Comment"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"General description of the property."}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -604,6 +612,18 @@ class CapabilityDescription(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Property Comment"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"General description of the property."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -661,19 +681,9 @@ class CapabilityDescription(aas.Submodel):
                             Union[aas.LangStringSet, PropertyComment]
                         ] = None,
                         id_short: Optional[str] = r"PropertyContainer",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Property Container"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information for a certain property as defined by CapabilityPropertyType and its descriptive elements."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -690,6 +700,18 @@ class CapabilityDescription(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Property Container"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information for a certain property as defined by CapabilityPropertyType and its descriptive elements."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -827,17 +849,9 @@ class CapabilityDescription(aas.Submodel):
                     self,
                     propertyContainer: Iterable[PropertyContainer],
                     id_short: Optional[str] = r"PropertySet",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Property Set"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Set of properties describing the capability in more detail, if existing."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -854,6 +868,18 @@ class CapabilityDescription(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Property Set"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Set of properties describing the capability in more detail, if existing."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -960,19 +986,9 @@ class CapabilityDescription(aas.Submodel):
                             ),
                             referred_semantic_id=None,
                         ),
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Capability Realized By"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Relationship between the Capability element in the CapabilityContainer as first element and a Skill implementation, not defined in this Submodel template, as second element."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -989,6 +1005,18 @@ class CapabilityDescription(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Capability Realized By"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Relationship between the Capability element in the CapabilityContainer as first element and a Skill implementation, not defined in this Submodel template, as second element."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1092,17 +1120,9 @@ class CapabilityDescription(aas.Submodel):
                                 ),
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Capability Composed Of"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Relationship between a composed capability as first element and one of its minimum two subordinate capabilities as second element."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1121,6 +1141,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Capability Composed Of"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Relationship between a composed capability as first element and one of its minimum two subordinate capabilities as second element."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1178,17 +1210,9 @@ class CapabilityDescription(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Composed Of Comment"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Comment to describe the composition in human readable form."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1207,6 +1231,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Composed Of Comment"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Comment to describe the composition in human readable form."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1253,19 +1289,9 @@ class CapabilityDescription(aas.Submodel):
                                 Union[aas.LangStringSet, ComposedOfComment]
                             ] = None,
                             id_short: Optional[str] = r"ComposedOfContainer",
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Composed Of Container"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Container corresponding to one composition for the Capability in the CapabilityContainer."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1284,6 +1310,18 @@ class CapabilityDescription(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Composed Of Container"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Container corresponding to one composition for the Capability in the CapabilityContainer."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1366,19 +1404,9 @@ class CapabilityDescription(aas.Submodel):
                         self,
                         composedOfContainer: Iterable[ComposedOfContainer],
                         id_short: Optional[str] = r"ComposedOfSet",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Composed Of Set"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"If composition(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1395,6 +1423,18 @@ class CapabilityDescription(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Composed Of Set"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"If composition(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1506,19 +1546,9 @@ class CapabilityDescription(aas.Submodel):
                                 type_=aas.Capability,
                                 referred_semantic_id=None,
                             ),
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Capability Generalized By"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Relationship between the Capability as first element, described in the CapabilityContainer, and a more general Capability as second element."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1537,6 +1567,18 @@ class CapabilityDescription(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Capability Generalized By"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Relationship between the Capability as first element, described in the CapabilityContainer, and a more general Capability as second element."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1589,19 +1631,9 @@ class CapabilityDescription(aas.Submodel):
                         self,
                         capabilityGeneralizedBy: Iterable[CapabilityGeneralizedBy],
                         id_short: Optional[str] = r"GeneralizedBySet",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Generalized By Set"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"If generalization(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1618,6 +1650,18 @@ class CapabilityDescription(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Generalized By Set"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"If generalization(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1701,17 +1745,9 @@ class CapabilityDescription(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Basic Constraint"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Property element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1730,6 +1766,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Basic Constraint"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Property element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1786,17 +1834,9 @@ class CapabilityDescription(aas.Submodel):
                                 id_short: Optional[str] = r"CustomConstraint",
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Custom Constraint"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"SubmodelElement which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties. This can be freely defined for the purpose of constraining a property and is not specified in this Submodel Template."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1815,6 +1855,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Custom Constraint"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"SubmodelElement which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties. This can be freely defined for the purpose of constraining a property and is not specified in this Submodel Template."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1878,17 +1930,9 @@ class CapabilityDescription(aas.Submodel):
                                 content_type: Optional[str] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"OCL Constraint"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Object Contraint Language (OCL) as File element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1907,6 +1951,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"OCL Constraint"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Object Contraint Language (OCL) as File element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1954,17 +2010,9 @@ class CapabilityDescription(aas.Submodel):
                                 id_short: Optional[str] = r"OperationConstraint",
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Operation Constraint"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Reference to an (external) Operation element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1983,6 +2031,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Operation Constraint"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Reference to an (external) Operation element which can be used to validate the constraint for the considered Properties in this PropertyConstraintContainer against other properties."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -2031,17 +2091,9 @@ class CapabilityDescription(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Constraint Type"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Abstract Enum type of allowed SubmodelElements for these Properties constraints. Exactly one of the SubmodelElements below must be instanciated, e.g., similar to SubmodelElementList with exactly one element."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -2060,6 +2112,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Constraint Type"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Abstract Enum type of allowed SubmodelElements for these Properties constraints. Exactly one of the SubmodelElements below must be instanciated, e.g., similar to SubmodelElementList with exactly one element."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -2119,17 +2183,9 @@ class CapabilityDescription(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Property Conditional Type"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Defines the type of the property conditions as defined in the ConceptDescription with the same name (PropertyConditionalType)."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -2148,6 +2204,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Property Conditional Type"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Defines the type of the property conditions as defined in the ConceptDescription with the same name (PropertyConditionalType)."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -2265,17 +2333,11 @@ class CapabilityDescription(aas.Submodel):
                                     ),
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Constraint Has Property"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Relates the PropertyConstraint as first element to a Property from a PropertyContainer as second element."
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -2296,6 +2358,18 @@ class CapabilityDescription(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Constraint Has Property"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Relates the PropertyConstraint as first element to a Property from a PropertyContainer as second element."
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -2352,17 +2426,9 @@ class CapabilityDescription(aas.Submodel):
                                 ] = r"ConstraintPropertyRelations",
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Constraint Property Relations"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Contains all relationships for the constraint in the PropertyConstraintContainer."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -2381,6 +2447,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Constraint Property Relations"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Contains all relationships for the constraint in the PropertyConstraintContainer."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -2455,19 +2533,9 @@ class CapabilityDescription(aas.Submodel):
                             ],
                             constraintPropertyRelations: ConstraintPropertyRelations,
                             id_short: Optional[str] = r"PropertyConstraintContainer",
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Property Constraint Container"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"If one or more constraints exist for a Capability Property, then for every constraint a PropertyConstraintContainer has to be created."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2486,6 +2554,18 @@ class CapabilityDescription(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Property Constraint Container"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"If one or more constraints exist for a Capability Property, then for every constraint a PropertyConstraintContainer has to be created."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2642,17 +2722,9 @@ class CapabilityDescription(aas.Submodel):
                                 ),
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Transition Constrained By"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Relates the constrained Capability as first element to a constraining Capability from another CapabilityContainer as second element."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -2671,6 +2743,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Transition Constrained By"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Relates the constrained Capability as first element to a constraining Capability from another CapabilityContainer as second element."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -2720,17 +2804,9 @@ class CapabilityDescription(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Transition Conditional Type"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Defines the element TransitionConstrainedBy of TransitionConstraintType."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -2749,6 +2825,18 @@ class CapabilityDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Transition Conditional Type"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Defines the element TransitionConstrainedBy of TransitionConstraintType."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -2796,19 +2884,9 @@ class CapabilityDescription(aas.Submodel):
                                 str, TransitionConditionalType
                             ],
                             id_short: Optional[str] = r"TransitionConstraintContainer",
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Transition Constraint Container"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"If one or more constraints exist for a Capability, then for every transitional constraint a TransitionConstraintContainer has to be created."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2827,6 +2905,18 @@ class CapabilityDescription(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Transition Constraint Container"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"If one or more constraints exist for a Capability, then for every transitional constraint a TransitionConstraintContainer has to be created."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2916,17 +3006,9 @@ class CapabilityDescription(aas.Submodel):
                             Iterable[TransitionConstraintContainer]
                         ] = None,
                         id_short: Optional[str] = r"ConstraintSet",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Constraint Set"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"If constraint(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2943,6 +3025,18 @@ class CapabilityDescription(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Constraint Set"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"If constraint(s) for the Capability element in the CapabilityContainer exists, this set has to be created."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3021,19 +3115,9 @@ class CapabilityDescription(aas.Submodel):
                     generalizedBySet: Optional[Iterable[GeneralizedBySet]] = None,
                     constraintSet: Optional[Iterable[ConstraintSet]] = None,
                     id_short: Optional[str] = r"CapabilityRelations",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Capability Relations"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection of relationships for the capability, if existing."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3050,6 +3134,18 @@ class CapabilityDescription(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Capability Relations"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Collection of relationships for the capability, if existing."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3136,17 +3232,9 @@ class CapabilityDescription(aas.Submodel):
                 propertySet: Optional[Iterable[PropertySet]] = None,
                 capabilityRelations: Optional[CapabilityRelations] = None,
                 id_short: Optional[str] = r"CapabilityContainer",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Capability Container"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"A Container for one capability and all its additional descriptive elements."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3163,6 +3251,18 @@ class CapabilityDescription(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Capability Container"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"A Container for one capability and all its additional descriptive elements."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3246,17 +3346,9 @@ class CapabilityDescription(aas.Submodel):
             self,
             capabilityContainer: Iterable[CapabilityContainer],
             id_short: Optional[str] = r"CapabilitySet",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Capability Set"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"A Set of CapabilityContainer for a Use Case for the asset."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3273,6 +3365,18 @@ class CapabilityDescription(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Capability Set"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"A Set of CapabilityContainer for a Use Case for the asset."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3345,15 +3449,9 @@ class CapabilityDescription(aas.Submodel):
         id_: str,
         capabilitySet: Iterable[CapabilitySet],
         id_short: Optional[str] = r"CapabilityDescription",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"Submodel Template Capability Description"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"Definition of the Submodel CapabilityDescription identified by its semanticId. The Submodel idShort can be picked freely."
-            }
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
@@ -3371,6 +3469,18 @@ class CapabilityDescription(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={r"en": r"Submodel Template Capability Description"}
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Definition of the Submodel CapabilityDescription identified by its semanticId. The Submodel idShort can be picked freely."
+                }
+            )
 
         if qualifier is None:
             qualifier = ()

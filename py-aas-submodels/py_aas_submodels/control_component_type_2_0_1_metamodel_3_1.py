@@ -19,13 +19,7 @@ class ControlComponentType(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The profile according to which the referred control interface operates."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -42,6 +36,13 @@ class ControlComponentType(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The profile according to which the referred control interface operates."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -92,13 +93,7 @@ class ControlComponentType(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Supplemental information to further specify the interface."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -115,6 +110,13 @@ class ControlComponentType(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Supplemental information to further specify the interface."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -163,13 +165,7 @@ class ControlComponentType(aas.Submodel):
                     id_short: Optional[str] = r"InterfaceReference",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"A reference to a control interface supported by the component type and described by the interfaceProfile and the optional supplement"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -186,6 +182,13 @@ class ControlComponentType(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"A reference to a control interface supported by the component type and described by the interfaceProfile and the optional supplement"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -236,11 +239,7 @@ class ControlComponentType(aas.Submodel):
                 id_short: Optional[str] = r"Interface",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"An interface description"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -257,6 +256,11 @@ class ControlComponentType(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"An interface description"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -362,13 +366,7 @@ class ControlComponentType(aas.Submodel):
             id_short: Optional[str] = r"Interfaces",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Collection of references to control interfaces supported by the component type, e.g. to elements of the Interface Metadata SMC of the Asset Interface Description submodel, the MTP submodel or OPC UA Server Datasheet submodel."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -385,6 +383,13 @@ class ControlComponentType(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection of references to control interfaces supported by the component type, e.g. to elements of the Interface Metadata SMC of the Asset Interface Description submodel, the MTP submodel or OPC UA Server Datasheet submodel."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -457,9 +462,7 @@ class ControlComponentType(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(dict_={r"en": r"The error code."}),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -476,6 +479,11 @@ class ControlComponentType(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"The error code."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -522,11 +530,7 @@ class ControlComponentType(aas.Submodel):
                 id_short: Optional[str] = r"Error",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"A container representing an error."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -543,6 +547,11 @@ class ControlComponentType(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"A container representing an error."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -637,13 +646,7 @@ class ControlComponentType(aas.Submodel):
             id_short: Optional[str] = r"Errors",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Collection of all possible error codes that may appear in components of this type."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -660,6 +663,13 @@ class ControlComponentType(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection of all possible error codes that may appear in components of this type."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -732,13 +742,7 @@ class ControlComponentType(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Boolean property that defines if the skill is (currently) disabled, e.g. not licensed, tested, suitable."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -755,6 +759,13 @@ class ControlComponentType(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Boolean property that defines if the skill is (currently) disabled, e.g. not licensed, tested, suitable."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -816,13 +827,7 @@ class ControlComponentType(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Name of the operation, operating, operational or execution modes (depending on the standard), in which the skill is available/allowed to execute."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -839,6 +844,13 @@ class ControlComponentType(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Name of the operation, operating, operational or execution modes (depending on the standard), in which the skill is available/allowed to execute."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -894,13 +906,7 @@ class ControlComponentType(aas.Submodel):
                     id_short: Optional[str] = r"Modes",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection of operation, operating, operational or execution modes (depending on the standard), in which the skill is available/allowed to execute."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -917,6 +923,13 @@ class ControlComponentType(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Collection of operation, operating, operational or execution modes (depending on the standard), in which the skill is available/allowed to execute."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -996,13 +1009,7 @@ class ControlComponentType(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Indicates whether the parameter is an input (In) or an output (Out) of the skill. An InOut parameter can be set from outside and can also be changed from skill itself. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1021,6 +1028,13 @@ class ControlComponentType(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Indicates whether the parameter is an input (In) or an output (Out) of the skill. An InOut parameter can be set from outside and can also be changed from skill itself. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1080,13 +1094,7 @@ class ControlComponentType(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Data type as string used to interpret the parameter. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1105,6 +1113,13 @@ class ControlComponentType(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Data type as string used to interpret the parameter. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1152,13 +1167,7 @@ class ControlComponentType(aas.Submodel):
                             id_short: Optional[str] = r"Values",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Collection of properties of the accepted values that the parameter may take."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1177,6 +1186,13 @@ class ControlComponentType(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Collection of properties of the accepted values that the parameter may take."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1239,13 +1255,7 @@ class ControlComponentType(aas.Submodel):
                         id_short: Optional[str] = r"Parameter",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Parameter used for the configuration of the skill."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1262,6 +1272,13 @@ class ControlComponentType(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Parameter used for the configuration of the skill."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1363,13 +1380,7 @@ class ControlComponentType(aas.Submodel):
                     id_short: Optional[str] = r"Parameters",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection of parameters used for the configuration of the skill."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1386,6 +1397,13 @@ class ControlComponentType(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Collection of parameters used for the configuration of the skill."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1454,13 +1472,7 @@ class ControlComponentType(aas.Submodel):
                         id_short: Optional[str] = r"ErrorReference",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"A reference to an SMC “Error” (Table 5) that that can be "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1477,6 +1489,13 @@ class ControlComponentType(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"A reference to an SMC “Error” (Table 5) that that can be "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1550,13 +1569,7 @@ class ControlComponentType(aas.Submodel):
                     id_short: Optional[str] = r"Errors",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection of references to the error codes of the component that may be raised by this skill."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1573,6 +1586,13 @@ class ControlComponentType(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Collection of references to the error codes of the component that may be raised by this skill."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1654,13 +1674,7 @@ class ControlComponentType(aas.Submodel):
                         id_short: Optional[str] = r"SkillReference",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"A reference to an SMC “Skill” (Table 7) of this or another "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1677,6 +1691,13 @@ class ControlComponentType(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"A reference to an SMC “Skill” (Table 7) of this or another "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1750,13 +1771,7 @@ class ControlComponentType(aas.Submodel):
                     id_short: Optional[str] = r"Uses",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection of references to other skills, that this skill uses."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1773,6 +1788,13 @@ class ControlComponentType(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Collection of references to other skills, that this skill uses."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1854,13 +1876,7 @@ class ControlComponentType(aas.Submodel):
                 id_short: Optional[str] = r"Skill",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Contains the basic information to call (request the execution of) a skill, e.g. its signature"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1877,6 +1893,13 @@ class ControlComponentType(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Contains the basic information to call (request the execution of) a skill, e.g. its signature"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1971,11 +1994,7 @@ class ControlComponentType(aas.Submodel):
             id_short: Optional[str] = r"Skills",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Collection of skills offered by the component type"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1992,6 +2011,11 @@ class ControlComponentType(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Collection of skills offered by the component type"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2060,15 +2084,7 @@ class ControlComponentType(aas.Submodel):
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"2",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/IDTA 02015-2-0",
-            embedded_data_specifications=[],
-        ),
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -2085,6 +2101,15 @@ class ControlComponentType(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"2",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/IDTA 02015-2-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = (

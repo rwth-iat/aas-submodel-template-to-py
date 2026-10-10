@@ -21,14 +21,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"DocumentDomainId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"document domain identificator",
-                                    r"de": r"Document Domain Identifikator",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -59,6 +52,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"document domain identificator",
+                                        r"de": r"Document Domain Identifikator",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -124,14 +125,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"DocumentIdentifier",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Document Identifyer",
-                                    r"de": r"Dokumentennummer",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -162,6 +156,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Document Identifyer",
+                                        r"de": r"Dokumentennummer",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -227,14 +229,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"DocumentIsPrimary",
                             value_type: aas.DataTypeDefXsd = bool,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Document is primary",
-                                    r"de": r"Dokument ist primär",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -265,6 +260,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Document is primary",
+                                        r"de": r"Dokument ist primär",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -330,22 +333,9 @@ class HandoverDocumentation(aas.Submodel):
                             Union[bool, DocumentIsPrimary]
                         ] = None,
                         id_short: Optional[str] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Document identificator",
-                                r"de": r"Dokumentidentifikator",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -376,6 +366,21 @@ class HandoverDocumentation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Document identificator",
+                                    r"de": r"Dokumentidentifikator",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -477,14 +482,7 @@ class HandoverDocumentation(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Document identifyers",
-                            r"de": r"Dokumentidentifikatoren",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -513,6 +511,14 @@ class HandoverDocumentation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Document identifyers",
+                                r"de": r"Dokumentidentifikatoren",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -655,14 +661,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"ClassId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Class identificator",
-                                    r"de": r"Klassenidentifikator",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -693,6 +692,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Class identificator",
+                                        r"de": r"Klassenidentifikator",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -757,11 +764,7 @@ class HandoverDocumentation(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"ClassName",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Klassenname"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -792,6 +795,11 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Klassenname"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -856,14 +864,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"ClassificationSystem",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Classification system",
-                                    r"de": r"Klassifizierungssystem",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -894,6 +895,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Classification system",
+                                        r"de": r"Klassifizierungssystem",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -957,22 +966,9 @@ class HandoverDocumentation(aas.Submodel):
                         className: Union[aas.LangStringSet, ClassName],
                         classificationSystem: Union[str, ClassificationSystem],
                         id_short: Optional[str] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Document classification",
-                                r"de": r"Dokumentklassifikation",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Set of information for describing the classification of the Document according to a ClassificationSystem"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1003,6 +999,21 @@ class HandoverDocumentation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Document classification",
+                                    r"de": r"Dokumentklassifikation",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Set of information for describing the classification of the Document according to a ClassificationSystem"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1100,14 +1111,7 @@ class HandoverDocumentation(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Document classifications",
-                            r"de": r"Dokumentklassifikationen",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1136,6 +1140,14 @@ class HandoverDocumentation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Document classifications",
+                                r"de": r"Dokumentklassifikationen",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1292,12 +1304,7 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"en (English)",
-                                        r"de": r"en (Englisch)",
-                                    }
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
@@ -1318,6 +1325,14 @@ class HandoverDocumentation(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"en (English)",
+                                            r"de": r"en (Englisch)",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1383,11 +1398,7 @@ class HandoverDocumentation(aas.Submodel):
                             semantic_id_list_element: Optional[aas.Reference] = None,
                             value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                             order_relevant: bool = True,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Language", r"de": r"Sprache"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1418,6 +1429,11 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Language", r"de": r"Sprache"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1568,14 +1584,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"Version",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Document version",
-                                    r"de": r"Dokumentenversion",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1606,6 +1615,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Document version",
+                                        r"de": r"Dokumentenversion",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1670,14 +1687,7 @@ class HandoverDocumentation(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"Title",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Document title",
-                                    r"de": r"Dokumententitel",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1708,6 +1718,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Document title",
+                                        r"de": r"Dokumententitel",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1771,11 +1789,7 @@ class HandoverDocumentation(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"Subtitle",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Subtitle", r"de": r"Untertitel"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1806,6 +1820,11 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Subtitle", r"de": r"Untertitel"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1869,14 +1888,7 @@ class HandoverDocumentation(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"Description",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Document description",
-                                    r"de": r"Dokumentenbeschreibung",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1907,6 +1919,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Document description",
+                                        r"de": r"Dokumentenbeschreibung",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1970,11 +1990,7 @@ class HandoverDocumentation(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"KeyWords",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Keywords", r"de": r"Stichworte"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -2005,6 +2021,11 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Keywords", r"de": r"Stichworte"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2069,14 +2090,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"StatusSetDate",
                             value_type: aas.DataTypeDefXsd = xsd.Date,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Document status set date",
-                                    r"de": r"Datum der Einstellung des Dokumentenstatus",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -2107,6 +2121,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Document status set date",
+                                        r"de": r"Datum der Einstellung des Dokumentenstatus",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2172,14 +2194,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"StatusValue",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Document status",
-                                    r"de": r"Dokumentstatus",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -2210,6 +2225,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Document status",
+                                        r"de": r"Dokumentstatus",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2275,14 +2298,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"OrganizationShortName",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Organization short name",
-                                    r"de": r"Kurzname der Organisation",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -2303,6 +2319,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Organization short name",
+                                        r"de": r"Kurzname der Organisation",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2368,14 +2392,7 @@ class HandoverDocumentation(aas.Submodel):
                             id_short: Optional[str] = r"OrganizationOfficialName",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Organization official name",
-                                    r"de": r"Offizieller Name der Organisation",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -2406,6 +2423,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Organization official name",
+                                        r"de": r"Offizieller Name der Organisation",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2561,14 +2586,7 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.DataTypeDefXsd
                             ] = None,
                             order_relevant: bool = True,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Reference to other documents",
-                                    r"de": r"Referenz zu anderen Dokumenten",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -2599,6 +2617,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Reference to other documents",
+                                        r"de": r"Referenz zu anderen Dokumenten",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2839,14 +2865,7 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.DataTypeDefXsd
                             ] = None,
                             order_relevant: bool = True,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Based on other documents",
-                                    r"de": r"Basiert auf anderen Dokumenten",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -2877,6 +2896,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Based on other documents",
+                                        r"de": r"Basiert auf anderen Dokumenten",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3029,12 +3056,7 @@ class HandoverDocumentation(aas.Submodel):
                                 id_short: Optional[str] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Translation of documents",
-                                        r"de": r"Übersetzung von anderen Elementen",
-                                    }
-                                ),
+                                ] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
@@ -3055,6 +3077,14 @@ class HandoverDocumentation(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"Translation of documents",
+                                            r"de": r"Übersetzung von anderen Elementen",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -3122,14 +3152,7 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.DataTypeDefXsd
                             ] = None,
                             order_relevant: bool = True,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Translation of other documents",
-                                    r"de": r"Übersetzung von anderen Elementen",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -3160,6 +3183,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Translation of other documents",
+                                        r"de": r"Übersetzung von anderen Elementen",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3313,12 +3344,7 @@ class HandoverDocumentation(aas.Submodel):
                                 content_type: Optional[str] = r"application/pdf",
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Name of the specific digital file@en",
-                                        r"de": r"Name der spezifischen digitalen Datei@de",
-                                    }
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
@@ -3339,6 +3365,14 @@ class HandoverDocumentation(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"Name of the specific digital file@en",
+                                            r"de": r"Name der spezifischen digitalen Datei@de",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -3422,14 +3456,7 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.DataTypeDefXsd
                             ] = None,
                             order_relevant: bool = True,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Digital files",
-                                    r"de": r"Digitale Dateien",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -3460,6 +3487,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Digital files",
+                                        r"de": r"Digitale Dateien",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3598,11 +3633,7 @@ class HandoverDocumentation(aas.Submodel):
                             value: str,
                             id_short: Optional[str] = r"PreviewFile",
                             content_type: Optional[str] = r"image/jpeg",
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Preview file", r"de": r"Vorschaudatei"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -3633,6 +3664,14 @@ class HandoverDocumentation(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Preview file",
+                                        r"de": r"Vorschaudatei",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3758,14 +3797,7 @@ class HandoverDocumentation(aas.Submodel):
                         ] = None,
                         previewFile: Optional[PreviewFile] = None,
                         id_short: Optional[str] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Document version",
-                                r"de": r"Document version",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3798,6 +3830,14 @@ class HandoverDocumentation(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Document version",
+                                    r"de": r"Document version",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4022,14 +4062,7 @@ class HandoverDocumentation(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Document versions",
-                            r"de": r"Dokumentenversionen",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4058,6 +4091,14 @@ class HandoverDocumentation(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Document versions",
+                                r"de": r"Dokumentenversionen",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4447,13 +4488,7 @@ class HandoverDocumentation(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4484,6 +4519,13 @@ class HandoverDocumentation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"This SubmodelElementCollection holds the information for a VDI 2770 Document entity"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4611,14 +4653,7 @@ class HandoverDocumentation(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Documents (handover documentation)",
-                    r"de": r"Dokumente (Übergabedokumentation)",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4647,6 +4682,14 @@ class HandoverDocumentation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Documents (handover documentation)",
+                        r"de": r"Dokumente (Übergabedokumentation)",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -5005,20 +5048,8 @@ class HandoverDocumentation(aas.Submodel):
         id_short: Optional[str] = r"HandoverDocumentation",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"The Submodel defines a set meta data for the handover of documentation from the manufacturer to the operator for industrial equipment"
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"2",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02004-2-0",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#01-AHF578#003"),),
             type_=aas.Submodel,
@@ -5040,6 +5071,22 @@ class HandoverDocumentation(aas.Submodel):
         ),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"The Submodel defines a set meta data for the handover of documentation from the manufacturer to the operator for industrial equipment"
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"2",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02004-2-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

@@ -17,17 +17,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"instanceId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -45,6 +37,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Instance ID"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -92,15 +96,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"comment",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Free text to comment the EFDM object."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -117,6 +115,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Comment"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Free text to comment the EFDM object."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -166,15 +174,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"versionNumber",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -191,6 +193,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Version Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -239,15 +251,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"schemaLink",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"hyperlink to the corresponding scheme"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -264,6 +270,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Schema Link"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"hyperlink to the corresponding scheme"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -309,17 +325,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     versionNumber: Union[str, VersionNumber],
                     schemaLink: Union[str, SchemaLink],
                     id_short: Optional[str] = r"efdmVersion",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -336,6 +344,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"EFDM Version"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -414,17 +434,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"originId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the creating service and point in time of creation"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -441,6 +453,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Origin ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the creating service and point in time of creation"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -489,15 +513,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"timestamp of the creating service"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -515,6 +533,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"timestamp of the creating service"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -560,17 +588,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     originId: Union[str, OriginId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -587,6 +607,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Origin"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -665,19 +697,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"modificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the service instance that last processed this object "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -694,6 +716,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Modification ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the service instance that last processed this object "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -742,17 +776,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"timestamp of of last processing Its value should be provided by service provider, who creates SMC flexibilitySpace of the EFDM instance"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -770,6 +796,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"timestamp of of last processing Its value should be provided by service provider, who creates SMC flexibilitySpace of the EFDM instance"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -815,17 +853,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     modificationId: Union[str, ModificationId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Modification"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -842,6 +872,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Modification"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -918,17 +960,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 modification: Modification,
                 comment: Optional[Union[aas.LangStringSet, Comment]] = None,
                 id_short: Optional[str] = r"metadata",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -946,6 +980,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1024,19 +1068,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"flexibleLoadMeasureId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load Measure ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of the load measure for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1053,6 +1087,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Flexible Load Measure ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of the load measure for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1101,17 +1147,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"status",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Status"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"enum: draft, toExecute, inExecution, executed, partiallyExecuted, failed, canceled. The status of a Flexible-Load Measure indicates its current progress within the process of providing energy flexiblity. The goal is to enable clear tracking of each measure across defined phases."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -1129,6 +1167,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Status"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"enum: draft, toExecute, inExecution, executed, partiallyExecuted, failed, canceled. The status of a Flexible-Load Measure indicates its current progress within the process of providing energy flexiblity. The goal is to enable clear tracking of each measure across defined phases."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1177,19 +1227,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"flexibleLoadId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of the Flexible Load to which the Flexible-Load Measure is directed."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1206,6 +1246,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Flexible Load ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of the Flexible Load to which the Flexible-Load Measure is directed."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1254,17 +1306,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"reward",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Reward"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Total revenue received by a company for executing the Flexible-Load Measure."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1281,6 +1325,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Reward"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Total revenue received by a company for executing the Flexible-Load Measure."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1335,15 +1391,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(dict_={r"en": r"Power"}),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Positive power states mean that the Flexible-Load Measure requests an increase in power consumption from the Flexible Load. Negative power states require a decrease in power consumption. Interpolation between Power States is linear; a step change in power can be mapped by specifying two equal timestamps with different power values."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -1363,6 +1413,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Power"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Positive power states mean that the Flexible-Load Measure requests an increase in power consumption from the Flexible Load. Negative power states require a decrease in power consumption. Interpolation between Power States is linear; a step change in power can be mapped by specifying two equal timestamps with different power values."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1413,15 +1475,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Timestamp"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"timestamp of a power state"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -1441,6 +1497,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Timestamp"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"timestamp of a power state"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1486,19 +1552,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             power: Union[xsd.Float, Power],
                             timestamp: Union[xsd.DateTime, Timestamp],
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Load Change Profile"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Load profile that represents the power reduction or increase of the Flexible Load. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1517,6 +1573,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Load Change Profile"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Load profile that represents the power reduction or increase of the Flexible Load. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1593,19 +1661,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Load Change Profiles"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"loadChangeProfiles may contain multiple loadChangeProfile. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1622,6 +1680,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Load Change Profiles"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"loadChangeProfiles may contain multiple loadChangeProfile. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1763,19 +1833,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     ],
                     reward: Optional[Union[str, Reward]] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Flexible Load Measure"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Each flexibleLoadMeasure describes a specific load change profile of a dedicated Flexible Load within an Flexibility Space. In addition, the revenue resulting from the execution of the flexibleLoadMeasure is specified in this class."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1792,6 +1852,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Flexible Load Measure"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Each flexibleLoadMeasure describes a specific load change profile of a dedicated Flexible Load within an Flexibility Space. In addition, the revenue resulting from the execution of the flexibleLoadMeasure is specified in this class."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1903,17 +1975,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load Measures"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"flexibleLoadMeasuresmay contain multiple flexibleLoadMeasure. "
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1930,6 +1994,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Flexible Load Measures"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"flexibleLoadMeasuresmay contain multiple flexibleLoadMeasure. "
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2068,19 +2144,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 FlexibleLoadMeasures,
             ],
             id_short: Optional[str] = r"flexibleLoadMeasuresPackage",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Flexible Load Measures Package"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The flexibleLoadMeasuresPackage contains one or more Flexible-Load Measures that describe a specific change in the performance of a dedicated Flexible Load"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2097,6 +2163,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Flexible Load Measures Package"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The flexibleLoadMeasuresPackage contains one or more Flexible-Load Measures that describe a specific change in the performance of a dedicated Flexible Load"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2176,17 +2254,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"instanceId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -2204,6 +2274,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Instance ID"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2251,15 +2333,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"comment",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Free text to comment the EFDM object."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2276,6 +2352,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Comment"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Free text to comment the EFDM object."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2325,15 +2411,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"versionNumber",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2350,6 +2430,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Version Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2398,15 +2488,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"schemaLink",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"hyperlink to the corresponding scheme"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2423,6 +2507,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Schema Link"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"hyperlink to the corresponding scheme"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2468,17 +2562,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     versionNumber: Union[str, VersionNumber],
                     schemaLink: Union[str, SchemaLink],
                     id_short: Optional[str] = r"efdmVersion",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2495,6 +2581,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"EFDM Version"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2573,17 +2671,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"originId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the creating service and point in time of creation"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2600,6 +2690,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Origin ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the creating service and point in time of creation"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2648,15 +2750,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"timestamp of the creating service"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -2674,6 +2770,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"timestamp of the creating service"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2719,17 +2825,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     originId: Union[str, OriginId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2746,6 +2844,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Origin"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2824,19 +2934,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"modificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the service instance that last processed this object "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2853,6 +2953,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Modification ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the service instance that last processed this object "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2901,15 +3013,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"timestamp of of last processing"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -2927,6 +3033,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"timestamp of of last processing"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2972,17 +3088,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     modificationId: Union[str, ModificationId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Modification"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2999,6 +3107,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Modification"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3075,17 +3195,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 modification: Modification,
                 comment: Optional[Union[aas.LangStringSet, Comment]] = None,
                 id_short: Optional[str] = r"metadata",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -3103,6 +3215,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3179,17 +3301,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"status",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Status"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"enum: draft, available, offered, reserved, measuresRequest, finalized. The status of a Flexibility Space describes its current condition within the overall process of applying energy-flexible measures. The objctive is to make the progession and individual phases of each Flexibility Space transparently traceable."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -3207,6 +3321,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Status"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"enum: draft, available, offered, reserved, measuresRequest, finalized. The status of a Flexibility Space describes its current condition within the overall process of applying energy-flexible measures. The objctive is to make the progession and individual phases of each Flexibility Space transparently traceable."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3255,17 +3381,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"modellingScope",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Modelling Scope"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"enum: generalTechnicalPotential, operationalPotential, applicationTailoredPotential. The modelling scope places individual EFDM instances and their key figures into context. generalTechnicalPotential: The modelling of flexibility includes universally valid technical characteristics and restrictions; the model does not contain operational strategies, production plans, or other plant-specific limitations. The energy flexibility potential is not directly implementable. operationalPotential: Flexibility is fully considered within the production environment; the model describes the maximum feasible potential, independent of the specific use case. applicationTailoredPotential: The model describes a potential tailored to a specific application (e.g. energy market may allow only Flexible Load with 15-min holding durations); storage and dependencies may need to be transformed to be represented as Flexible Load."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3282,6 +3400,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Modelling Scope"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"enum: generalTechnicalPotential, operationalPotential, applicationTailoredPotential. The modelling scope places individual EFDM instances and their key figures into context. generalTechnicalPotential: The modelling of flexibility includes universally valid technical characteristics and restrictions; the model does not contain operational strategies, production plans, or other plant-specific limitations. The energy flexibility potential is not directly implementable. operationalPotential: Flexibility is fully considered within the production environment; the model describes the maximum feasible potential, independent of the specific use case. applicationTailoredPotential: The model describes a potential tailored to a specific application (e.g. energy market may allow only Flexible Load with 15-min holding durations); storage and dependencies may need to be transformed to be represented as Flexible Load."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3332,19 +3462,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"externallyTradeable",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Externally Tradeable"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r" Indicates whether the Flexibility Space is intended to participate in external energy markets (true) or is to be used exclusively for internal optimization purposes (false)."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3361,6 +3481,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Externally Tradeable"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r" Indicates whether the Flexibility Space is intended to participate in external energy markets (true) or is to be used exclusively for internal optimization purposes (false)."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3409,17 +3541,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"autoTradeable",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Auto Tradeable"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r" Specifies whether the trading process can be executed automatically (true) or if additional manual preparations or reviews and verification procedures are required (false)."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3436,6 +3560,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Auto Tradeable"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r" Specifies whether the trading process can be executed automatically (true) or if additional manual preparations or reviews and verification procedures are required (false)."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3481,17 +3617,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     externallyTradeable: Union[str, ExternallyTradeable],
                     autoTradeable: Union[str, AutoTradeable],
                     id_short: Optional[str] = r"trading",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Trading"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The Trading of a Flexibility Space comprises configurable properties that determine its feasibility and operational implementation"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3508,6 +3636,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Trading"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The Trading of a Flexibility Space comprises configurable properties that determine its feasibility and operational implementation"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3584,17 +3724,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 modellingScope: Union[str, ModellingScope],
                 trading: Trading,
                 id_short: Optional[str] = r"utilizationContext",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Utilization Context"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Containing metainformation, describing the model status and scope"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3611,6 +3743,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Utilization Context"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Containing metainformation, describing the model status and scope"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3689,19 +3833,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"flexibleLoadId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services. String Format: UUID"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3718,6 +3852,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Flexible Load ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services. String Format: UUID"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3766,19 +3912,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"reactionDuration",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Reaction Duration"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Time (seconds) required by a technical system between the receipt of a call-up and the initiation of a Flexible-Load Measure within the enterprise. The call must be issued with at least this lead time before the Flexible-Load Measure starts."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3795,6 +3931,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Reaction Duration"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Time (seconds) required by a technical system between the receipt of a call-up and the initiation of a Flexible-Load Measure within the enterprise. The call must be issued with at least this lead time before the Flexible-Load Measure starts."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3845,17 +3993,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"from",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"From"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"from time. If this period is not specified, continuous availability of the Flexible Load  is assumed. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -3874,6 +4014,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"From"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"from time. If this period is not specified, continuous availability of the Flexible Load  is assumed. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3922,17 +4074,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"until",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Until"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"until time. If this period is not specified, continuous availability of the Flexible Load  is assumed. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -3951,6 +4095,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Until"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"until time. If this period is not specified, continuous availability of the Flexible Load  is assumed. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3999,19 +4155,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"temporalType",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Temporal Type"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"enum: start, total, end. The temporalType start specifies that the start of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period. end specifies that the end of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period. total specifies that the total duration of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -4030,6 +4176,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Temporal Type"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"enum: start, total, end. The temporalType start specifies that the start of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period. end specifies that the end of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period. total specifies that the total duration of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4076,17 +4234,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         until: Optional[Union[xsd.DateTime, Until]] = None,
                         temporalType: Optional[Union[str, TemporalType]] = None,
                         id_short: Optional[str] = r"validity",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Validity"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Subset of the company-internal planning horizon in which the Flexible Load is available. The beginning and end of this validity period are specified with the attributes from and until. If this period is not specified, continuous availability of the Flexible Load is assumed. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4103,6 +4253,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Validity"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Subset of the company-internal planning horizon in which the Flexible Load is available. The beginning and end of this validity period are specified with the attributes from and until. If this period is not specified, continuous availability of the Flexible Load is assumed. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4192,15 +4354,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(dict_={r"en": r"Power"}),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"A positive sign means that the Flexible Load can increase its power consumption. Negative Power States represent a possible decrease in power consumption. Uncertainty can be represented by specifying a range."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -4219,6 +4375,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Power"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"A positive sign means that the Flexible Load can increase its power consumption. Negative Power States represent a possible decrease in power consumption. Uncertainty can be represented by specifying a range."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -4269,17 +4437,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Duration"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"The time period during which the Flexible Load can run in its corresponding Power States. Uncertainty can be represented by specifying a range."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -4298,6 +4458,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Duration"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"The time period during which the Flexible Load can run in its corresponding Power States. Uncertainty can be represented by specifying a range."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -4348,15 +4520,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Reference Point"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"the scheduled baseline load"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -4375,6 +4541,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Reference Point"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"the scheduled baseline load"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -4425,17 +4601,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Duration Type"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"enum: deliveryDuration, holdingDuration. Duration either corresponds to the time of a constant Power State (holdingDuration) OR a constant Power State WITH initial power modulation (deliveryDuration)."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -4455,6 +4623,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Duration Type"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"enum: deliveryDuration, holdingDuration. Duration either corresponds to the time of a constant Power State (holdingDuration) OR a constant Power State WITH initial power modulation (deliveryDuration)."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -4506,19 +4686,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             ] = None,
                             durationType: Optional[Union[str, DurationType]] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Power State"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"A power state with which the Flexible Load can run during the corresponding holding periods. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -4536,6 +4706,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Power State"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"A power state with which the Flexible Load can run during the corresponding holding periods. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4633,17 +4815,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Power States"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"a set of Power States with which the Flexible Load can run during each of the (number of changes + 1) holding periods. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -4661,6 +4835,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Power States"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"a set of Power States with which the Flexible Load can run during each of the (number of changes + 1) holding periods. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4799,17 +4985,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.PositiveInteger,
                         id_short: Optional[str] = r"usageNumber",
                         value_type: aas.DataTypeDefXsd = xsd.PositiveInteger,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Usage Number"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The permitted number of activations of the Flexible Load within the Validity Period. A specified minimum value of the range defines a required number of activations; a specified maximum value sets an upper limit on activation frequency."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4826,6 +5004,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Usage Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The permitted number of activations of the Flexible Load within the Validity Period. A specified minimum value of the range defines a required number of activations; a specified maximum value sets an upper limit on activation frequency."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4874,19 +5064,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.NonNegativeInteger,
                         id_short: Optional[str] = r"modulationNumber",
                         value_type: aas.DataTypeDefXsd = xsd.NonNegativeInteger,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modulation Number"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The maximum number of Power State changes (modulations) allowed within one use of a Flexible Load. The two modulations corresponding to the initial activation and the final deactivation are not counted."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4903,6 +5083,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Modulation Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The maximum number of Power State changes (modulations) allowed within one use of a Flexible Load. The two modulations corresponding to the initial activation and the final deactivation are not counted."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4953,19 +5145,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             max: xsd.Float,
                             id_short: Optional[str] = r"activationGradient",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Activation Gradient"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Actication Gradient specifies the power gradient applicable during the initial activation of the Flexibl Load."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -4983,6 +5165,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Activation Gradient"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Actication Gradient specifies the power gradient applicable during the initial activation of the Flexibl Load."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5031,19 +5225,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             max: xsd.Float,
                             id_short: Optional[str] = r"modulationGradient",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modulation Gradient"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Modulation Gradient specifies the power gradient during transitions between Power States."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -5061,6 +5245,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Modulation Gradient"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Modulation Gradient specifies the power gradient during transitions between Power States."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5109,19 +5305,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             max: xsd.Float,
                             id_short: Optional[str] = r"deactivationGradient",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Deactivation Gradient"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Deactivation Gradient specifies the power gradient during the final deactivation phase"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -5139,6 +5325,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Deactivation Gradient"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Deactivation Gradient specifies the power gradient during the final deactivation phase"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5191,19 +5389,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             Union[Tuple[xsd.Float, xsd.Float], DeactivationGradient]
                         ] = None,
                         id_short: Optional[str] = r"powerGradients",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Power Gradients"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The absolute value of the power gradient of a Flexible Load indicates how fast the power can be increased or decreased."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5220,6 +5408,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Power Gradients"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The absolute value of the power gradient of a Flexible Load indicates how fast the power can be increased or decreased."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5313,19 +5513,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"regenerationDuration",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Regeneration Duration"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The required regeneration time during which no other measure of the same Flexible Load may be activated following the deactivation of a previous measure. This time constraint applies only if an actual deactivation occurs. If another measure follows without interruption, no deactivation takes place between them; this does not constitute a violation of the defined regerneration period."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5342,6 +5532,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Regeneration Duration"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The required regeneration time during which no other measure of the same Flexible Load may be activated following the deactivation of a previous measure. This time constraint applies only if an actual deactivation occurs. If another measure follows without interruption, no deactivation takes place between them; this does not constitute a violation of the defined regerneration period."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5409,19 +5611,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"variableCost",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Variable Cost"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Variable costs refer to the total amount of energy converted. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5440,6 +5632,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Variable Cost"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Variable costs refer to the total amount of energy converted. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5488,19 +5692,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"costPerUsage",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Cost Per Usage"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Usage costs are incurred per use of a Flexible-Load."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5519,6 +5713,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Cost Per Usage"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Usage costs are incurred per use of a Flexible-Load."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5567,17 +5773,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"fixedCost",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Cost"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Fixed costs incurred during the Validity Period regardless of the call of a Flexible Load (example: standby costs of a power generation plant)."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5596,6 +5794,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Fixed Cost"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Fixed costs incurred during the Validity Period regardless of the call of a Flexible Load (example: standby costs of a power generation plant)."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5642,19 +5852,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         costPerUsage: Optional[Union[xsd.Float, CostPerUsage]] = None,
                         fixedCost: Optional[Union[xsd.Float, FixedCost]] = None,
                         id_short: Optional[str] = r"flexibleLoadCosts",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load Costs"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The costs associated with the use of the Flexible Load, excluding electricity costs. The Costs of a Flexible Load consist of variable cost, usage cost and fixed cost."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5671,6 +5871,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Flexible Load Costs"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The costs associated with the use of the Flexible Load, excluding electricity costs. The Costs of a Flexible Load consist of variable cost, usage cost and fixed cost."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5758,17 +5970,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             ] = r"orderConfirmationDeadlineAbsolute",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Order Confirmation Deadline Absolute"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"absolute deadline"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -5786,6 +5990,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Order Confirmation Deadline Absolute"
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"absolute deadline"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5836,19 +6052,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             ] = r"orderConfirmationDeadlineRelative",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Order Confirmation Deadline Relative"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"relative to the start time of the Flexible-Load Measure (e.g. 100 seconds before the start of a FLM)"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -5866,6 +6072,20 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Order Confirmation Deadline Relative"
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"relative to the start time of the Flexible-Load Measure (e.g. 100 seconds before the start of a FLM)"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5915,19 +6135,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             Union[str, OrderConfirmationDeadlineRelative]
                         ] = None,
                         id_short: Optional[str] = r"orderConfirmationDeadline",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Order Confirmation Deadline"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Latest possible time by which confirmation of an accepted offer of the Flexible Load must have been received. By this time, the flexibility provider needs to know whether the Flexible Load must be held ready. After the Booking Confirmation Deadline is exceeded, the Flexible Load offer is removed from the market. The Order Confirmation Deadline can be specified EITHER absolutely with a fixed time OR relative to the start time of the Flexible-Load Measure (e.g. 100 seconds before the start of a FLM). If no value is specified, constant availability for offering is assumed until the latest possible start time within the Validity Period minus the Reaction Duration."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5944,6 +6154,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Order Confirmation Deadline"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Latest possible time by which confirmation of an accepted offer of the Flexible Load must have been received. By this time, the flexibility provider needs to know whether the Flexible Load must be held ready. After the Booking Confirmation Deadline is exceeded, the Flexible Load offer is removed from the market. The Order Confirmation Deadline can be specified EITHER absolutely with a fixed time OR relative to the start time of the Flexible-Load Measure (e.g. 100 seconds before the start of a FLM). If no value is specified, constant availability for offering is assumed until the latest possible start time within the Validity Period minus the Reaction Duration."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6056,19 +6278,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"variablePrice",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Variable Price"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Variable price refer to the total amount of energy converted. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6087,6 +6299,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Variable Price"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Variable price refer to the total amount of energy converted. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6135,19 +6359,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"pricePerUsage",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Price Per Usage"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Usage price are incurred per use of a Flexible-Load."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6166,6 +6380,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Price Per Usage"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Usage price are incurred per use of a Flexible-Load."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6214,17 +6440,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"fixedPrice",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Fixed Price"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Fixed price"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6243,6 +6461,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Fixed Price"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Fixed price"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6289,17 +6517,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         pricePerUsage: Optional[Union[str, PricePerUsage]] = None,
                         fixedPrice: Optional[Union[str, FixedPrice]] = None,
                         id_short: Optional[str] = r"prices",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Prices"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Prices to be realized on the market as a minimum for offering the Flexible Load. The Prices of a Flexible Load are composed of a variable price, a usage price and a fixed price analogous to the Costs. Prices are only needed if the Flexible Load is to be actively offered on the market."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6316,6 +6536,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Prices"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Prices to be realized on the market as a minimum for offering the Flexible Load. The Prices of a Flexible Load are composed of a variable price, a usage price and a fixed price analogous to the Costs. Prices are only needed if the Flexible Load is to be actively offered on the market."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6401,19 +6633,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"meterLocation",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Meter Location"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The unambiguous allocation is made by means of the meter point designation known in the energy industry / in market communication. In Germany, it corresponds to a 33-digit alphanumeric code number."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6432,6 +6654,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Meter Location"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"The unambiguous allocation is made by means of the meter point designation known in the energy industry / in market communication. In Germany, it corresponds to a 33-digit alphanumeric code number."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6480,19 +6714,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"voltageLevel",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Voltage Level"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The specification of the Grid Voltage Level to which the Flexible Load is connected. The voltage level at the grid connection point is to be used, independent of deviating voltage levels in any company grid."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6511,6 +6735,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Voltage Level"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"The specification of the Grid Voltage Level to which the Flexible Load is connected. The voltage level at the grid connection point is to be used, independent of deviating voltage levels in any company grid."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6573,17 +6809,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         meterLocation: Optional[Union[str, MeterLocation]] = None,
                         voltageLevel: Optional[Union[str, VoltageLevel]] = None,
                         id_short: Optional[str] = r"location",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Location"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Meter point designation for the geographical and power grid topological location of a Flexible Load. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6600,6 +6828,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Location"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Meter point designation for the geographical and power grid topological location of a Flexible Load. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6700,17 +6940,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     prices: Optional[Prices] = None,
                     location: Optional[Location] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r" Each flexibleLoad describes the energy flexibility of a technical system (i.e. controllable unit) or a combination of systems (i.e. an ensemble of controllable units) that can adjust its power consumption or generation in response to external conditions or requirements. It focuses on the limitations and possibilities (degrees of freedom) of changing power outputs of a technical system."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -6728,6 +6960,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Flexible Load"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r" Each flexibleLoad describes the energy flexibility of a technical system (i.e. controllable unit) or a combination of systems (i.e. an ensemble of controllable units) that can adjust its power consumption or generation in response to external conditions or requirements. It focuses on the limitations and possibilities (degrees of freedom) of changing power outputs of a technical system."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6857,15 +7101,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Loads"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"flexibleLoads may contain multiple flexibleLoad."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6882,6 +7120,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Flexible Loads"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"flexibleLoads may contain multiple flexibleLoad."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -7024,17 +7274,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"storageId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of a storage for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7051,6 +7293,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Storage ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of a storage for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7101,19 +7355,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"variableCost",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Variable Cost"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Variable costs refer to the total amount of energy converted."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -7131,6 +7375,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Variable Cost"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Variable costs refer to the total amount of energy converted."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -7179,19 +7435,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"costPerUsage",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Cost Per Usage"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Usage costs arise per use of a storage tank."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -7209,6 +7455,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Cost Per Usage"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Usage costs arise per use of a storage tank."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -7257,17 +7515,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"fixedCost",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Cost"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Fixed costs arise from keeping a storage facility on standby."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -7285,6 +7535,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Fixed Cost"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Fixed costs arise from keeping a storage facility on standby."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -7331,17 +7593,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         costPerUsage: Optional[Union[str, CostPerUsage]] = None,
                         fixedCost: Optional[Union[str, FixedCost]] = None,
                         id_short: Optional[str] = r"storageCosts",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage Costs"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The costs associated with the use of the energy storage. The Costs of a storage facility consist of variable cost, usage cost and fixed cost. Variable costs refer to the total amount of energy converted. Usage costs arise per use of a storage tank. Fixed costs arise from keeping a storage facility on standby."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7358,6 +7612,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Storage Costs"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The costs associated with the use of the energy storage. The Costs of a storage facility consist of variable cost, usage cost and fixed cost. Variable costs refer to the total amount of energy converted. Usage costs arise per use of a storage tank. Fixed costs arise from keeping a storage facility on standby."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7441,19 +7707,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"usableCapacity",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Usable Capacity"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Lower and upper limit of the storage energy content. These limits must never be exceeded or fallen short of. Depending on the choice of reference point, it is also possible to specify negative storage capacities, e.g. if it needs to be possible to either exceed or fall below storage limits."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7470,6 +7726,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Usable Capacity"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Lower and upper limit of the storage energy content. These limits must never be exceeded or fallen short of. Depending on the choice of reference point, it is also possible to specify negative storage capacities, e.g. if it needs to be possible to either exceed or fall below storage limits."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7518,19 +7786,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"initialEnergyContent",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Initial Energy Content"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Energy content of the storage at the start time of the Validity Period of the associated Flexible Load (Suppliers). If the storage is connected to several Flexible Loads, the Initial Energy Content refers to the earliest start time of the Validity Periods of all Flexible Loads. If the initial energy content cannot be quantified exactly, the predicted range can be specified via min and max."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7547,6 +7805,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Initial Energy Content"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Energy content of the storage at the start time of the Validity Period of the associated Flexible Load (Suppliers). If the storage is connected to several Flexible Loads, the Initial Energy Content refers to the earliest start time of the Validity Periods of all Flexible Loads. If the initial energy content cannot be quantified exactly, the predicted range can be specified via min and max."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7595,19 +7865,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"targetEnergyContent",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Target Energy Content"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Energy content that the storage must have at the end time of the Validity Period of the associated Flexible Loads (Suppliers). If the storage is connected to several Flexible Loads, the Target Energy Content refers to the latest end time of the Validity Periods of all Flexible Loads. If the target energy content is flexible, the desired target range is specified can be specified via min and max."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7624,6 +7884,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Target Energy Content"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Energy content that the storage must have at the end time of the Validity Period of the associated Flexible Loads (Suppliers). If the storage is connected to several Flexible Loads, the Target Energy Content refers to the latest end time of the Validity Periods of all Flexible Loads. If the target energy content is flexible, the desired target range is specified can be specified via min and max."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7672,17 +7944,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"energyLoss",
                         value_type: aas.DataTypeDefXsd = xsd.UnsignedShort,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Energy Loss"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Proportion of the energy content that is continuously lost, e.g. through exchange with the environment. The percentage refers to the actual energy content and not to the storage capacity."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7699,6 +7963,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Energy Loss"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Proportion of the energy content that is continuously lost, e.g. through exchange with the environment. The percentage refers to the actual energy content and not to the storage capacity."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7770,17 +8046,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Flexible Load ID"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"This ID identifies the Flexible Load supplying the storage. The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -7799,6 +8067,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Flexible Load ID"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"This ID identifies the Flexible Load supplying the storage. The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -7849,17 +8129,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Conversion Efficiency"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Energy conversion efficiency of the suppiler"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -7878,6 +8150,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Conversion Efficiency"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Energy conversion efficiency of the suppiler"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -7925,15 +8209,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 Union[xsd.Float, ConversionEfficiency]
                             ] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Supplier"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Indicating a single supply"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -7952,6 +8230,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Supplier"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Indicating a single supply"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -8030,17 +8318,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Suppliers"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"One or more Flexible Loads supplying the storage. The Flexible Loads must be defined in the same Flexibility Space. The conversion efficiency is specified for each supply system."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8057,6 +8337,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Suppliers"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"One or more Flexible Loads supplying the storage. The Flexible Loads must be defined in the same Flexibility Space. The conversion efficiency is specified for each supply system."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8201,13 +8493,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(dict_={r"en": r"Power"}),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"power drained"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -8227,6 +8515,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Power"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"power drained"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -8277,15 +8575,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Timestamp"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"timestamp of power drain"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -8305,6 +8597,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Timestamp"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"timestamp of power drain"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -8350,17 +8652,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             power: Optional[Union[str, Power]] = None,
                             timestamp: Optional[Union[xsd.DateTime, Timestamp]] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Drain"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Indicating a single non-influenceable energy demand"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -8379,6 +8673,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Drain"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Indicating a single non-influenceable energy demand"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -8455,17 +8761,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Drains"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Non-influenceable energy demands in the form of a load profile that must be met. The interpolation between the Power States is linear."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8482,6 +8780,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Drains"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Non-influenceable energy demands in the form of a load profile that must be met. The interpolation between the Power States is linear."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8631,17 +8941,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         Union[Iterable[Drains.Drains_item], Drains]
                     ] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"A storage represents a technical system or a combination of systems that has the potential to store energy"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -8659,6 +8961,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Storage"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"A storage represents a technical system or a combination of systems that has the potential to store energy"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8793,17 +9107,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Storages"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Storages may contain multiple storages, each of which represents a technical system or a combination of systems that has the potential to store energy"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -8821,6 +9127,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storages"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Storages may contain multiple storages, each of which represents a technical system or a combination of systems that has the potential to store energy"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -8961,17 +9277,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"dependencyId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Dependency ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of a dependency for unique identification. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8988,6 +9296,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Dependency ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of a dependency for unique identification. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -9036,19 +9356,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"applicabilityDuration",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Applicability Duration"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The time period following the activation of theTriggering Flexible-Load during which the Target Flexible-Load must be activated at least once (Logical Type: implies) or must not be activated at all (Logical Type: excludes). The values specified for min and max define the Applicability duration relative to: "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -9065,6 +9375,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Applicability Duration"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The time period following the activation of theTriggering Flexible-Load during which the Target Flexible-Load must be activated at least once (Logical Type: implies) or must not be activated at all (Logical Type: excludes). The values specified for min and max define the Applicability duration relative to: "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -9119,17 +9441,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Comparator"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"enum: equals, less, lessEqual, greater, greaterEqual."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -9148,6 +9462,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Comparator"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"enum: equals, less, lessEqual, greater, greaterEqual."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -9198,17 +9524,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Formula Right"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"The Target Flexible-Load metrics are incorporated on the right side."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -9227,6 +9545,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Formula Right"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"The Target Flexible-Load metrics are incorporated on the right side."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -9277,17 +9607,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Formula Left"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"The Triggering Flexible-Load metrics are incorporated on the left side of the formula."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -9306,6 +9628,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Formula Left"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"The Triggering Flexible-Load metrics are incorporated on the left side of the formula."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -9352,17 +9686,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             formulaRight: Optional[Union[str, FormulaRight]] = None,
                             formulaLeft: Optional[Union[str, FormulaLeft]] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Applicability Condition"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Indicating a single condition"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9381,6 +9707,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Applicability Condition"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Indicating a single condition"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9466,19 +9802,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Applicability Conditions"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Additional conditions that must be met for the dependency to be considered fulfilled. In other words, an activation of the Triggering Flexible-Load implies or excludes a corresponding activation of the Target Flexible-Load in a configuration (measure), so that the applicability conditions are fulfilled. The Triggering Flexible-Load metrics are incorporated on the left side of the formula. The Target Flexible-Load metrics are incorporated on the right side."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -9495,6 +9821,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Applicability Conditions"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Additional conditions that must be met for the dependency to be considered fulfilled. In other words, an activation of the Triggering Flexible-Load implies or excludes a corresponding activation of the Target Flexible-Load in a configuration (measure), so that the applicability conditions are fulfilled. The Triggering Flexible-Load metrics are incorporated on the left side of the formula. The Target Flexible-Load metrics are incorporated on the right side."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -9635,19 +9973,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"temporalType",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Temporal Type"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r'enum: start, total, end. The temporalType start specifies that with the activation of a Flexible-Load Measure belonging to this Flexible Load, the dependency Applicability Duration" of the Target Flexible-Load begins.  end specifies that at the deactivation end of a Flexible-Load Measure belonging to this Flexible Load, the dependency Appicability Duration of the "Target Flexible-Load begins.  total specifies that during a Flexible-Load Measure belonging to this Flexible Load, the dependency Applicability Duration of the Target Flexible-Load is valid.'
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -9665,6 +9993,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Temporal Type"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r'enum: start, total, end. The temporalType start specifies that with the activation of a Flexible-Load Measure belonging to this Flexible Load, the dependency Applicability Duration" of the Target Flexible-Load begins.  end specifies that at the deactivation end of a Flexible-Load Measure belonging to this Flexible Load, the dependency Appicability Duration of the "Target Flexible-Load begins.  total specifies that during a Flexible-Load Measure belonging to this Flexible Load, the dependency Applicability Duration of the Target Flexible-Load is valid.'
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9713,19 +10053,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"triggeringFlexibleLoadId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Triggering Flexible Load ID"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The ID of the Flexible Load that is affected by the Triggering Flexible-Load. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9744,6 +10074,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Triggering Flexible Load ID"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"The ID of the Flexible Load that is affected by the Triggering Flexible-Load. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9789,19 +10131,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         temporalType: Union[str, TemporalType],
                         triggeringFlexibleLoadId: Union[str, TriggeringFlexibleLoadId],
                         id_short: Optional[str] = r"triggeringFlexibleLoad",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Triggering Flexible Load"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The Flexible Load that triggers the dependency. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID. In addition, one time parameter (start, total or end) of the Triggering Flexible-Load affected by the dependency is to be indicated."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -9818,6 +10150,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Triggering Flexible Load"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The Flexible Load that triggers the dependency. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID. In addition, one time parameter (start, total or end) of the Triggering Flexible-Load affected by the dependency is to be indicated."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -9898,19 +10242,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"temporalType",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Temporal Type"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"enum: start, total, end. The temporalType start specifies that the start of a Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration. end specifies that the deactivation end of a Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration. total specifies that the Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration starting at activation until the end of deactivation"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -9928,6 +10262,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Temporal Type"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"enum: start, total, end. The temporalType start specifies that the start of a Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration. end specifies that the deactivation end of a Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration. total specifies that the Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration starting at activation until the end of deactivation"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9976,19 +10322,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"targetFlexibleLoadId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Target Flexible Load ID"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the Flexible Load that is affected by the Triggering Flexible-Load. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -10006,6 +10342,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Target Flexible Load ID"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"UUID of the Flexible Load that is affected by the Triggering Flexible-Load. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10051,17 +10399,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         temporalType: Union[str, TemporalType],
                         targetFlexibleLoadId: Union[str, TargetFlexibleLoadId],
                         id_short: Optional[str] = r"targetFlexibleLoad",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Target Flexible Load"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"target flexible load"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = None,
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -10070,6 +10410,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Target Flexible Load"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"target flexible load"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -10148,17 +10498,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"logicalType",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Logical Type"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"enum: implies, excludes. Specifies whether a use of the Triggering Flexible-Load requires (implies) or prevents (excludes) the activation of the Target Flexible-Load within the Applicability Duration."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -10175,6 +10517,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Logical Type"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"enum: implies, excludes. Specifies whether a use of the Triggering Flexible-Load requires (implies) or prevents (excludes) the activation of the Target Flexible-Load within the Applicability Duration."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -10233,17 +10587,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         ]
                     ] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Dependency"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Each dependency can be used to describe a restriction or dependency for the interaction of several Flexible Loads within an Flexibility Space. This allows the permissible operating options of an overall system to be mapped in greater detail so that Flexible-Load Measures do not have a negative impact on the system, the production processes or the product quality."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -10261,6 +10607,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Dependency"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Each dependency can be used to describe a restriction or dependency for the interaction of several Flexible Loads within an Flexibility Space. This allows the permissible operating options of an overall system to be mapped in greater detail so that Flexible-Load Measures do not have a negative impact on the system, the production processes or the product quality."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10368,17 +10726,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Dependencies"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"dependenciesmay contain multiple dependencies, each of which can be used to describe a restriction or dependency for the interaction of several Flexible Loads within an Flexibility Space. This allows the permissible operating options of an overall system to be mapped in greater detail so that Flexible-Load Measures do not have a negative impact on the system, the production processes or the product quality."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -10396,6 +10746,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Dependencies"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"dependenciesmay contain multiple dependencies, each of which can be used to describe a restriction or dependency for the interaction of several Flexible Loads within an Flexibility Space. This allows the permissible operating options of an overall system to be mapped in greater detail so that Flexible-Load Measures do not have a negative impact on the system, the production processes or the product quality."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10540,19 +10902,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 Union[Iterable[Dependencies.Dependencies_item], Dependencies]
             ] = None,
             id_short: Optional[str] = r"flexibilitySpace_operationalPotential",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Flexibility Space Operational Potential"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"This SMC describes the degrees of freedom of an energy-flexible system within its actual operational environment. It includes all relevant conditions, resources, and constraints of the production context, enabling a realistic representation of the maximum feasible flexibility potential, regardless of a specific application."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -10569,6 +10921,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Flexibility Space Operational Potential"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"This SMC describes the degrees of freedom of an energy-flexible system within its actual operational environment. It includes all relevant conditions, resources, and constraints of the production context, enabling a realistic representation of the maximum feasible flexibility potential, regardless of a specific application."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -10672,17 +11036,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"instanceId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -10700,6 +11056,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Instance ID"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10747,15 +11115,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"comment",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Free text to comment the EFDM object."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -10772,6 +11134,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Comment"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Free text to comment the EFDM object."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10821,15 +11193,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"versionNumber",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -10846,6 +11212,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Version Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -10894,15 +11270,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"schemaLink",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"hyperlink to the corresponding scheme"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -10919,6 +11289,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Schema Link"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"hyperlink to the corresponding scheme"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -10964,17 +11344,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     versionNumber: Union[str, VersionNumber],
                     schemaLink: Union[str, SchemaLink],
                     id_short: Optional[str] = r"efdmVersion",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -10991,6 +11363,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"EFDM Version"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11069,17 +11453,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"originId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the creating service and point in time of creation"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -11096,6 +11472,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Origin ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the creating service and point in time of creation"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -11144,15 +11532,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"timestamp of the creating service"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -11170,6 +11552,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"timestamp of the creating service"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -11215,17 +11607,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     originId: Union[str, OriginId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11242,6 +11626,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Origin"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11320,19 +11716,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"modificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the service instance that last processed this object "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -11349,6 +11735,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Modification ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the service instance that last processed this object "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -11397,17 +11795,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"timestamp of of last processing Its value should be provided by service provider, who creates SMC flexibilitySpace of the EFDM instance"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -11425,6 +11815,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"timestamp of of last processing Its value should be provided by service provider, who creates SMC flexibilitySpace of the EFDM instance"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -11470,17 +11872,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     modificationId: Union[str, ModificationId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Modification"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11497,6 +11891,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Modification"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11573,17 +11979,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 modification: Modification,
                 comment: Optional[Union[aas.LangStringSet, Comment]] = None,
                 id_short: Optional[str] = r"metadata",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -11601,6 +11999,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -11677,17 +12085,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"status",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Status"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"enum: draft, available, offered, reserved, measuresRequest, finalized. The status of a Flexibility Space describes its current condition within the overall process of applying energy-flexible measures. The objctive is to make the progession and individual phases of each Flexibility Space transparently traceable."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -11705,6 +12105,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Status"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"enum: draft, available, offered, reserved, measuresRequest, finalized. The status of a Flexibility Space describes its current condition within the overall process of applying energy-flexible measures. The objctive is to make the progession and individual phases of each Flexibility Space transparently traceable."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11753,17 +12165,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"modellingScope",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Modelling Scope"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"enum: generalTechnicalPotential, operationalPotential, applicationTailoredPotential. The modelling scope places individual EFDM instances and their key figures into context. generalTechnicalPotential: The modelling of flexibility includes universally valid technical characteristics and restrictions; the model does not contain operational strategies, production plans, or other plant-specific limitations. The energy flexibility potential is not directly implementable. operationalPotential: Flexibility is fully considered within the production environment; the model describes the maximum feasible potential, independent of the specific use case. applicationTailoredPotential: The model describes a potential tailored to a specific application (e.g. energy market may allow only Flexible Load with 15-min holding durations); storage and dependencies may need to be transformed to be represented as Flexible Load."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11780,6 +12184,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Modelling Scope"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"enum: generalTechnicalPotential, operationalPotential, applicationTailoredPotential. The modelling scope places individual EFDM instances and their key figures into context. generalTechnicalPotential: The modelling of flexibility includes universally valid technical characteristics and restrictions; the model does not contain operational strategies, production plans, or other plant-specific limitations. The energy flexibility potential is not directly implementable. operationalPotential: Flexibility is fully considered within the production environment; the model describes the maximum feasible potential, independent of the specific use case. applicationTailoredPotential: The model describes a potential tailored to a specific application (e.g. energy market may allow only Flexible Load with 15-min holding durations); storage and dependencies may need to be transformed to be represented as Flexible Load."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11830,19 +12246,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"externallyTradeable",
                         value_type: aas.DataTypeDefXsd = bool,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Externally Tradeable"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r" Indicates whether the Flexibility Space is intended to participate in external energy markets (true) or is to be used exclusively for internal optimization purposes (false)."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -11859,6 +12265,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Externally Tradeable"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r" Indicates whether the Flexibility Space is intended to participate in external energy markets (true) or is to be used exclusively for internal optimization purposes (false)."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -11907,17 +12325,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"autoTradeable",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Auto Tradeable"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r" Specifies whether the trading process can be executed automatically (true) or if additional manual preparations or reviews and verification procedures are required (false)."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -11934,6 +12344,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Auto Tradeable"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r" Specifies whether the trading process can be executed automatically (true) or if additional manual preparations or reviews and verification procedures are required (false)."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -11979,17 +12401,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     externallyTradeable: Union[bool, ExternallyTradeable],
                     autoTradeable: Union[str, AutoTradeable],
                     id_short: Optional[str] = r"trading",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Trading"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The Trading of a Flexibility Space comprises configurable properties that determine its feasibility and operational implementation"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12006,6 +12420,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Trading"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The Trading of a Flexibility Space comprises configurable properties that determine its feasibility and operational implementation"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12082,17 +12508,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 modellingScope: Union[str, ModellingScope],
                 trading: Trading,
                 id_short: Optional[str] = r"utilizationContext",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Utilization Context"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Containing metainformation, describing the model status and scope"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -12109,6 +12527,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Utilization Context"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Containing metainformation, describing the model status and scope"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -12187,19 +12617,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"flexibleLoadId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services. String Format: UUID"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -12216,6 +12636,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Flexible Load ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services. String Format: UUID"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -12264,19 +12696,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"reactionDuration",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Reaction Duration"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Time (seconds) required by a technical system between the receipt of a call-up and the initiation of a Flexible-Load Measure within the enterprise. The call must be issued with at least this lead time before the Flexible-Load Measure starts."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -12293,6 +12715,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Reaction Duration"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Time (seconds) required by a technical system between the receipt of a call-up and the initiation of a Flexible-Load Measure within the enterprise. The call must be issued with at least this lead time before the Flexible-Load Measure starts."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -12343,17 +12777,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"from",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"From"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"from time. If this period is not specified, continuous availability of the Flexible Load  is assumed. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -12372,6 +12798,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"From"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"from time. If this period is not specified, continuous availability of the Flexible Load  is assumed. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -12420,17 +12858,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"until",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Until"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"until time. If this period is not specified, continuous availability of the Flexible Load  is assumed. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -12449,6 +12879,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Until"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"until time. If this period is not specified, continuous availability of the Flexible Load  is assumed. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -12497,19 +12939,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"temporalType",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Temporal Type"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"enum: start, total, end. The temporalType start specifies that the start of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period. end specifies that the end of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period. total specifies that the total duration of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -12528,6 +12960,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Temporal Type"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"enum: start, total, end. The temporalType start specifies that the start of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period. end specifies that the end of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period. total specifies that the total duration of each Flexible-Load Measure belonging to this Flexible Load must lie within the Validity Period."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -12574,17 +13018,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         until: Optional[Union[xsd.DateTime, Until]] = None,
                         temporalType: Optional[Union[str, TemporalType]] = None,
                         id_short: Optional[str] = r"validity",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Validity"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Subset of the company-internal planning horizon in which the Flexible Load is available. The beginning and end of this validity period are specified with the attributes from and until. If this period is not specified, continuous availability of the Flexible Load is assumed. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -12601,6 +13037,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Validity"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Subset of the company-internal planning horizon in which the Flexible Load is available. The beginning and end of this validity period are specified with the attributes from and until. If this period is not specified, continuous availability of the Flexible Load is assumed. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -12690,15 +13138,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(dict_={r"en": r"Power"}),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"A positive sign means that the Flexible Load can increase its power consumption. Negative Power States represent a possible decrease in power consumption. Uncertainty can be represented by specifying a range."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -12717,6 +13159,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Power"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"A positive sign means that the Flexible Load can increase its power consumption. Negative Power States represent a possible decrease in power consumption. Uncertainty can be represented by specifying a range."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -12767,17 +13221,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Duration"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"The time period during which the Flexible Load can run in its corresponding Power States. Uncertainty can be represented by specifying a range."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -12796,6 +13242,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Duration"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"The time period during which the Flexible Load can run in its corresponding Power States. Uncertainty can be represented by specifying a range."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -12846,17 +13304,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Duration Type"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"enum: deliveryDuration, holdingDuration. Duration either corresponds to the time of a constant Power State (holdingDuration) OR a constant Power State WITH initial power modulation (deliveryDuration)."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -12876,6 +13326,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Duration Type"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"enum: deliveryDuration, holdingDuration. Duration either corresponds to the time of a constant Power State (holdingDuration) OR a constant Power State WITH initial power modulation (deliveryDuration)."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -12926,15 +13388,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Reference Point"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"the scheduled baseline load"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -12953,6 +13409,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Reference Point"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"the scheduled baseline load"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -13004,19 +13470,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 Union[xsd.Float, ReferencePoint]
                             ] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Power State"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"A power state with which the Flexible Load can run during the corresponding holding periods. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -13034,6 +13490,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Power State"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"A power state with which the Flexible Load can run during the corresponding holding periods. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -13131,17 +13599,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Power States"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"a set of Power States with which the Flexible Load can run during each of the (number of changes + 1) holding periods. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -13159,6 +13619,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Power States"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"a set of Power States with which the Flexible Load can run during each of the (number of changes + 1) holding periods. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -13297,17 +13769,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.PositiveInteger,
                         id_short: Optional[str] = r"usageNumber",
                         value_type: aas.DataTypeDefXsd = xsd.PositiveInteger,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Usage Number"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The permitted number of activations of the Flexible Load within the Validity Period. A specified minimum value of the range defines a required number of activations; a specified maximum value sets an upper limit on activation frequency."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -13324,6 +13788,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Usage Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The permitted number of activations of the Flexible Load within the Validity Period. A specified minimum value of the range defines a required number of activations; a specified maximum value sets an upper limit on activation frequency."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -13372,19 +13848,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.NonNegativeInteger,
                         id_short: Optional[str] = r"modulationNumber",
                         value_type: aas.DataTypeDefXsd = xsd.NonNegativeInteger,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modulation Number"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The maximum number of Power State changes (modulations) allowed within one use of a Flexible Load. The two modulations corresponding to the initial activation and the final deactivation are not counted."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -13401,6 +13867,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Modulation Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The maximum number of Power State changes (modulations) allowed within one use of a Flexible Load. The two modulations corresponding to the initial activation and the final deactivation are not counted."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -13451,19 +13929,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             max: xsd.Float,
                             id_short: Optional[str] = r"activationGradient",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Activation Gradient"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Actication Gradient specifies the power gradient applicable during the initial activation of the Flexibl Load."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -13481,6 +13949,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Activation Gradient"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Actication Gradient specifies the power gradient applicable during the initial activation of the Flexibl Load."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -13529,19 +14009,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             max: xsd.Float,
                             id_short: Optional[str] = r"modulationGradient",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modulation Gradient"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Modulation Gradient specifies the power gradient during transitions between Power States."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -13559,6 +14029,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Modulation Gradient"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Modulation Gradient specifies the power gradient during transitions between Power States."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -13607,19 +14089,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             max: xsd.Float,
                             id_short: Optional[str] = r"deactivationGradient",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Deactivation Gradient"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Deactivation Gradient specifies the power gradient during the final deactivation phase"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -13637,6 +14109,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Deactivation Gradient"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Deactivation Gradient specifies the power gradient during the final deactivation phase"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -13689,19 +14173,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             Union[Tuple[xsd.Float, xsd.Float], DeactivationGradient]
                         ] = None,
                         id_short: Optional[str] = r"powerGradients",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Power Gradients"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The absolute value of the power gradient of a Flexible Load indicates how fast the power can be increased or decreased."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -13718,6 +14192,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Power Gradients"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The absolute value of the power gradient of a Flexible Load indicates how fast the power can be increased or decreased."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -13811,19 +14297,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"regenerationDuration",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Regeneration Duration"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The required regeneration time during which no other measure of the same Flexible Load may be activated following the deactivation of a previous measure. This time constraint applies only if an actual deactivation occurs. If another measure follows without interruption, no deactivation takes place between them; this does not constitute a violation of the defined regerneration period."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -13840,6 +14316,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Regeneration Duration"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The required regeneration time during which no other measure of the same Flexible Load may be activated following the deactivation of a previous measure. This time constraint applies only if an actual deactivation occurs. If another measure follows without interruption, no deactivation takes place between them; this does not constitute a violation of the defined regerneration period."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -13907,19 +14395,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"variableCost",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Variable Cost"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Variable costs refer to the total amount of energy converted. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -13938,6 +14416,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Variable Cost"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Variable costs refer to the total amount of energy converted. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -13986,19 +14476,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"costPerUsage",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Cost Per Usage"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Usage costs are incurred per use of a Flexible-Load."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -14017,6 +14497,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Cost Per Usage"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Usage costs are incurred per use of a Flexible-Load."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -14065,17 +14557,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"fixedCost",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Cost"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Fixed costs incurred during the Validity Period regardless of the call of a Flexible Load (example: standby costs of a power generation plant)."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -14094,6 +14578,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Fixed Cost"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Fixed costs incurred during the Validity Period regardless of the call of a Flexible Load (example: standby costs of a power generation plant)."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -14140,19 +14636,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         costPerUsage: Optional[Union[xsd.Float, CostPerUsage]] = None,
                         fixedCost: Optional[Union[xsd.Float, FixedCost]] = None,
                         id_short: Optional[str] = r"flexibleLoadCosts",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load Costs"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The costs associated with the use of the Flexible Load, excluding electricity costs. The Costs of a Flexible Load consist of variable cost, usage cost and fixed cost."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -14169,6 +14655,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Flexible Load Costs"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The costs associated with the use of the Flexible Load, excluding electricity costs. The Costs of a Flexible Load consist of variable cost, usage cost and fixed cost."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -14256,17 +14754,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             ] = r"orderConfirmationDeadlineAbsolute",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Order Confirmation Deadline Absolute"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"absolute deadline"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -14284,6 +14774,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Order Confirmation Deadline Absolute"
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"absolute deadline"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -14334,19 +14836,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             ] = r"orderConfirmationDeadlineRelative",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Order Confirmation Deadline Relative"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"relative to the start time of the Flexible-Load Measure (e.g. 100 seconds before the start of a FLM)"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -14364,6 +14856,20 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Order Confirmation Deadline Relative"
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"relative to the start time of the Flexible-Load Measure (e.g. 100 seconds before the start of a FLM)"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -14413,19 +14919,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             Union[str, OrderConfirmationDeadlineRelative]
                         ] = None,
                         id_short: Optional[str] = r"orderConfirmationDeadline",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Order Confirmation Deadline"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Latest possible time by which confirmation of an accepted offer of the Flexible Load must have been received. By this time, the flexibility provider needs to know whether the Flexible Load must be held ready. After the Booking Confirmation Deadline is exceeded, the Flexible Load offer is removed from the market. The Order Confirmation Deadline can be specified EITHER absolutely with a fixed time OR relative to the start time of the Flexible-Load Measure (e.g. 100 seconds before the start of a FLM). If no value is specified, constant availability for offering is assumed until the latest possible start time within the Validity Period minus the Reaction Duration."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -14442,6 +14938,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Order Confirmation Deadline"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Latest possible time by which confirmation of an accepted offer of the Flexible Load must have been received. By this time, the flexibility provider needs to know whether the Flexible Load must be held ready. After the Booking Confirmation Deadline is exceeded, the Flexible Load offer is removed from the market. The Order Confirmation Deadline can be specified EITHER absolutely with a fixed time OR relative to the start time of the Flexible-Load Measure (e.g. 100 seconds before the start of a FLM). If no value is specified, constant availability for offering is assumed until the latest possible start time within the Validity Period minus the Reaction Duration."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -14554,19 +15062,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"variablePrice",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Variable Price"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Variable price refer to the total amount of energy converted. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -14585,6 +15083,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Variable Price"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Variable price refer to the total amount of energy converted. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -14633,19 +15143,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"pricePerUsage",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Price Per Usage"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Usage price are incurred per use of a Flexible-Load."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -14664,6 +15164,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Price Per Usage"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Usage price are incurred per use of a Flexible-Load."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -14712,17 +15224,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"fixedPrice",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Fixed Price"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Fixed price"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -14741,6 +15245,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Fixed Price"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Fixed price"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -14787,17 +15301,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         pricePerUsage: Optional[Union[str, PricePerUsage]] = None,
                         fixedPrice: Optional[Union[str, FixedPrice]] = None,
                         id_short: Optional[str] = r"prices",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Prices"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Prices to be realized on the market as a minimum for offering the Flexible Load. The Prices of a Flexible Load are composed of a variable price, a usage price and a fixed price analogous to the Costs. Prices are only needed if the Flexible Load is to be actively offered on the market."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -14814,6 +15320,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Prices"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Prices to be realized on the market as a minimum for offering the Flexible Load. The Prices of a Flexible Load are composed of a variable price, a usage price and a fixed price analogous to the Costs. Prices are only needed if the Flexible Load is to be actively offered on the market."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -14899,19 +15417,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"meterLocation",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Meter Location"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The unambiguous allocation is made by means of the meter point designation known in the energy industry / in market communication. In Germany, it corresponds to a 33-digit alphanumeric code number."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -14930,6 +15438,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Meter Location"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"The unambiguous allocation is made by means of the meter point designation known in the energy industry / in market communication. In Germany, it corresponds to a 33-digit alphanumeric code number."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -14978,19 +15498,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"voltageLevel",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Voltage Level"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The specification of the Grid Voltage Level to which the Flexible Load is connected. The voltage level at the grid connection point is to be used, independent of deviating voltage levels in any company grid."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -15009,6 +15519,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Voltage Level"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"The specification of the Grid Voltage Level to which the Flexible Load is connected. The voltage level at the grid connection point is to be used, independent of deviating voltage levels in any company grid."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -15071,17 +15593,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         meterLocation: Optional[Union[str, MeterLocation]] = None,
                         voltageLevel: Optional[Union[xsd.Float, VoltageLevel]] = None,
                         id_short: Optional[str] = r"location",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Location"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Meter point designation for the geographical and power grid topological location of a Flexible Load. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -15098,6 +15612,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Location"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Meter point designation for the geographical and power grid topological location of a Flexible Load. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -15198,17 +15724,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     prices: Optional[Prices] = None,
                     location: Optional[Location] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r" Each flexibleLoad describes the energy flexibility of a technical system (i.e. controllable unit) or a combination of systems (i.e. an ensemble of controllable units) that can adjust its power consumption or generation in response to external conditions or requirements. It focuses on the limitations and possibilities (degrees of freedom) of changing power outputs of a technical system."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -15226,6 +15744,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Flexible Load"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r" Each flexibleLoad describes the energy flexibility of a technical system (i.e. controllable unit) or a combination of systems (i.e. an ensemble of controllable units) that can adjust its power consumption or generation in response to external conditions or requirements. It focuses on the limitations and possibilities (degrees of freedom) of changing power outputs of a technical system."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -15355,15 +15885,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Loads"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"flexibleLoads may contain multiple flexibleLoad."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -15380,6 +15904,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Flexible Loads"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"flexibleLoads may contain multiple flexibleLoad."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -15522,17 +16058,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"storageId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of a storage for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -15549,6 +16077,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Storage ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of a storage for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -15599,19 +16139,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"variableCost",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Variable Cost"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Variable costs refer to the total amount of energy converted."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -15629,6 +16159,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Variable Cost"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Variable costs refer to the total amount of energy converted."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -15677,19 +16219,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"costPerUsage",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Cost Per Usage"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Usage costs arise per use of a storage tank."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -15707,6 +16239,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Cost Per Usage"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Usage costs arise per use of a storage tank."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -15755,17 +16299,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"fixedCost",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Fixed Cost"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Fixed costs arise from keeping a storage facility on standby."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -15783,6 +16319,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Fixed Cost"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Fixed costs arise from keeping a storage facility on standby."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -15829,17 +16377,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         costPerUsage: Optional[Union[str, CostPerUsage]] = None,
                         fixedCost: Optional[Union[str, FixedCost]] = None,
                         id_short: Optional[str] = r"storageCosts",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage Costs"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The costs associated with the use of the energy storage. The Costs of a storage facility consist of variable cost, usage cost and fixed cost. Variable costs refer to the total amount of energy converted. Usage costs arise per use of a storage tank. Fixed costs arise from keeping a storage facility on standby."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -15856,6 +16396,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Storage Costs"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The costs associated with the use of the energy storage. The Costs of a storage facility consist of variable cost, usage cost and fixed cost. Variable costs refer to the total amount of energy converted. Usage costs arise per use of a storage tank. Fixed costs arise from keeping a storage facility on standby."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -15939,19 +16491,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"usableCapacity",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Usable Capacity"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Lower and upper limit of the storage energy content. These limits must never be exceeded or fallen short of. Depending on the choice of reference point, it is also possible to specify negative storage capacities, e.g. if it needs to be possible to either exceed or fall below storage limits."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -15968,6 +16510,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Usable Capacity"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Lower and upper limit of the storage energy content. These limits must never be exceeded or fallen short of. Depending on the choice of reference point, it is also possible to specify negative storage capacities, e.g. if it needs to be possible to either exceed or fall below storage limits."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16016,19 +16570,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"initialEnergyContent",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Initial Energy Content"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Energy content of the storage at the start time of the Validity Period of the associated Flexible Load (Suppliers). If the storage is connected to several Flexible Loads, the Initial Energy Content refers to the earliest start time of the Validity Periods of all Flexible Loads. If the initial energy content cannot be quantified exactly, the predicted range can be specified via min and max."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16045,6 +16589,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Initial Energy Content"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Energy content of the storage at the start time of the Validity Period of the associated Flexible Load (Suppliers). If the storage is connected to several Flexible Loads, the Initial Energy Content refers to the earliest start time of the Validity Periods of all Flexible Loads. If the initial energy content cannot be quantified exactly, the predicted range can be specified via min and max."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16093,19 +16649,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"targetEnergyContent",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Target Energy Content"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Energy content that the storage must have at the end time of the Validity Period of the associated Flexible Loads (Suppliers). If the storage is connected to several Flexible Loads, the Target Energy Content refers to the latest end time of the Validity Periods of all Flexible Loads. If the target energy content is flexible, the desired target range is specified can be specified via min and max."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16122,6 +16668,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Target Energy Content"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Energy content that the storage must have at the end time of the Validity Period of the associated Flexible Loads (Suppliers). If the storage is connected to several Flexible Loads, the Target Energy Content refers to the latest end time of the Validity Periods of all Flexible Loads. If the target energy content is flexible, the desired target range is specified can be specified via min and max."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16170,17 +16728,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"energyLoss",
                         value_type: aas.DataTypeDefXsd = xsd.UnsignedShort,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Energy Loss"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Proportion of the energy content that is continuously lost, e.g. through exchange with the environment. The percentage refers to the actual energy content and not to the storage capacity."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16197,6 +16747,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Energy Loss"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Proportion of the energy content that is continuously lost, e.g. through exchange with the environment. The percentage refers to the actual energy content and not to the storage capacity."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16268,17 +16830,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Flexible Load ID"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"This ID identifies the Flexible Load supplying the storage. The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -16297,6 +16851,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Flexible Load ID"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"This ID identifies the Flexible Load supplying the storage. The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -16347,17 +16913,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Conversion Efficiency"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Energy conversion efficiency of the suppiler"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -16376,6 +16934,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Conversion Efficiency"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Energy conversion efficiency of the suppiler"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -16423,15 +16993,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 Union[xsd.Float, ConversionEfficiency]
                             ] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Supplier"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Indicating a single supply"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -16450,6 +17014,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Supplier"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Indicating a single supply"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -16528,17 +17102,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Suppliers"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"One or more Flexible Loads supplying the storage. The Flexible Loads must be defined in the same Flexibility Space. The conversion efficiency is specified for each supply system."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16555,6 +17121,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Suppliers"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"One or more Flexible Loads supplying the storage. The Flexible Loads must be defined in the same Flexibility Space. The conversion efficiency is specified for each supply system."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16699,13 +17277,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(dict_={r"en": r"Power"}),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"power drained"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -16725,6 +17299,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Power"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"power drained"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -16775,15 +17359,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Timestamp"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"timestamp of power drain"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -16803,6 +17381,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Timestamp"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"timestamp of power drain"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -16848,17 +17436,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             power: Optional[Union[xsd.Float, Power]] = None,
                             timestamp: Optional[Union[xsd.DateTime, Timestamp]] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Drain"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Indicating a single non-influenceable energy demand"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -16877,6 +17457,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Drain"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Indicating a single non-influenceable energy demand"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -16953,17 +17545,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Drains"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Non-influenceable energy demands in the form of a load profile that must be met. The interpolation between the Power States is linear."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16980,6 +17564,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Drains"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Non-influenceable energy demands in the form of a load profile that must be met. The interpolation between the Power States is linear."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -17129,17 +17725,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         Union[Iterable[Drains.Drains_item], Drains]
                     ] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"A storage represents a technical system or a combination of systems that has the potential to store energy"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -17157,6 +17745,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Storage"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"A storage represents a technical system or a combination of systems that has the potential to store energy"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -17291,17 +17891,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Storages"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Storages may contain multiple storages, each of which represents a technical system or a combination of systems that has the potential to store energy"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -17319,6 +17911,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storages"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Storages may contain multiple storages, each of which represents a technical system or a combination of systems that has the potential to store energy"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -17459,17 +18061,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"dependencyId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Dependency ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of a dependency for unique identification. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -17486,6 +18080,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Dependency ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of a dependency for unique identification. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -17534,19 +18140,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"applicabilityDuration",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Applicability Duration"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The time period following the activation of theTriggering Flexible-Load during which the Target Flexible-Load must be activated at least once (Logical Type: implies) or must not be activated at all (Logical Type: excludes). The values specified for min and max define the Applicability duration relative to: "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -17563,6 +18159,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Applicability Duration"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The time period following the activation of theTriggering Flexible-Load during which the Target Flexible-Load must be activated at least once (Logical Type: implies) or must not be activated at all (Logical Type: excludes). The values specified for min and max define the Applicability duration relative to: "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -17617,17 +18225,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Comparator"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"enum: equals, less, lessEqual, greater, greaterEqual."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -17646,6 +18246,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Comparator"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"enum: equals, less, lessEqual, greater, greaterEqual."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -17696,17 +18308,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Formula Right"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"The Target Flexible-Load metrics are incorporated on the right side."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -17725,6 +18329,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Formula Right"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"The Target Flexible-Load metrics are incorporated on the right side."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -17775,17 +18391,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Formula Left"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"The Triggering Flexible-Load metrics are incorporated on the left side of the formula."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -17804,6 +18412,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Formula Left"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"The Triggering Flexible-Load metrics are incorporated on the left side of the formula."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -17850,17 +18470,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             formulaRight: Optional[Union[str, FormulaRight]] = None,
                             formulaLeft: Optional[Union[str, FormulaLeft]] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Applicability Condition"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Indicating a single condition"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -17879,6 +18491,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Applicability Condition"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Indicating a single condition"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -17964,19 +18586,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Applicability Conditions"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Additional conditions that must be met for the dependency to be considered fulfilled. In other words, an activation of the Triggering Flexible-Load implies or excludes a corresponding activation of the Target Flexible-Load in a configuration (measure), so that the applicability conditions are fulfilled. The Triggering Flexible-Load metrics are incorporated on the left side of the formula. The Target Flexible-Load metrics are incorporated on the right side."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -17993,6 +18605,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Applicability Conditions"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Additional conditions that must be met for the dependency to be considered fulfilled. In other words, an activation of the Triggering Flexible-Load implies or excludes a corresponding activation of the Target Flexible-Load in a configuration (measure), so that the applicability conditions are fulfilled. The Triggering Flexible-Load metrics are incorporated on the left side of the formula. The Target Flexible-Load metrics are incorporated on the right side."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -18133,19 +18757,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"temporalType",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Temporal Type"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r'enum: start, total, end. The temporalType start specifies that with the activation of a Flexible-Load Measure belonging to this Flexible Load, the dependency Applicability Duration" of the Target Flexible-Load begins.  end specifies that at the deactivation end of a Flexible-Load Measure belonging to this Flexible Load, the dependency Appicability Duration of the "Target Flexible-Load begins.  total specifies that during a Flexible-Load Measure belonging to this Flexible Load, the dependency Applicability Duration of the Target Flexible-Load is valid.'
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -18163,6 +18777,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Temporal Type"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r'enum: start, total, end. The temporalType start specifies that with the activation of a Flexible-Load Measure belonging to this Flexible Load, the dependency Applicability Duration" of the Target Flexible-Load begins.  end specifies that at the deactivation end of a Flexible-Load Measure belonging to this Flexible Load, the dependency Appicability Duration of the "Target Flexible-Load begins.  total specifies that during a Flexible-Load Measure belonging to this Flexible Load, the dependency Applicability Duration of the Target Flexible-Load is valid.'
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -18211,19 +18837,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"triggeringFlexibleLoadId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Triggering Flexible Load ID"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"The ID of the Flexible Load that is affected by the Triggering Flexible-Load. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -18242,6 +18858,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Triggering Flexible Load ID"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"The ID of the Flexible Load that is affected by the Triggering Flexible-Load. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -18287,19 +18915,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         temporalType: Union[str, TemporalType],
                         triggeringFlexibleLoadId: Union[str, TriggeringFlexibleLoadId],
                         id_short: Optional[str] = r"triggeringFlexibleLoad",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Triggering Flexible Load"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The Flexible Load that triggers the dependency. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID. In addition, one time parameter (start, total or end) of the Triggering Flexible-Load affected by the dependency is to be indicated."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -18316,6 +18934,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Triggering Flexible Load"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The Flexible Load that triggers the dependency. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID. In addition, one time parameter (start, total or end) of the Triggering Flexible-Load affected by the dependency is to be indicated."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -18396,19 +19026,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"temporalType",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Temporal Type"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"enum: start, total, end. The temporalType start specifies that the start of a Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration. end specifies that the deactivation end of a Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration. total specifies that the Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration starting at activation until the end of deactivation"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -18426,6 +19046,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Temporal Type"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"enum: start, total, end. The temporalType start specifies that the start of a Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration. end specifies that the deactivation end of a Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration. total specifies that the Flexible-Load Measure of the Target Flexible-Load is affected by the dependency Applicability Duration starting at activation until the end of deactivation"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -18474,19 +19106,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             id_short: Optional[str] = r"targetFlexibleLoadId",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Target Flexible Load ID"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"UUID of the Flexible Load that is affected by the Triggering Flexible-Load. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -18504,6 +19126,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Target Flexible Load ID"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"UUID of the Flexible Load that is affected by the Triggering Flexible-Load. The Flexible Load must be defined in the same Flexibility Space, and is referenced by its ID."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -18549,17 +19183,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         temporalType: Union[str, TemporalType],
                         targetFlexibleLoadId: Union[str, TargetFlexibleLoadId],
                         id_short: Optional[str] = r"targetFlexibleLoad",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Target Flexible Load"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"target flexible load"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = None,
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -18568,6 +19194,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Target Flexible Load"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"target flexible load"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -18646,17 +19282,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"logicalType",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Logical Type"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"enum: implies, excludes. Specifies whether a use of the Triggering Flexible-Load requires (implies) or prevents (excludes) the activation of the Target Flexible-Load within the Applicability Duration."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -18673,6 +19301,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Logical Type"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"enum: implies, excludes. Specifies whether a use of the Triggering Flexible-Load requires (implies) or prevents (excludes) the activation of the Target Flexible-Load within the Applicability Duration."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -18731,17 +19371,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         ]
                     ] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Dependency"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Each dependency can be used to describe a restriction or dependency for the interaction of several Flexible Loads within an Flexibility Space. This allows the permissible operating options of an overall system to be mapped in greater detail so that Flexible-Load Measures do not have a negative impact on the system, the production processes or the product quality."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -18759,6 +19391,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Dependency"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Each dependency can be used to describe a restriction or dependency for the interaction of several Flexible Loads within an Flexibility Space. This allows the permissible operating options of an overall system to be mapped in greater detail so that Flexible-Load Measures do not have a negative impact on the system, the production processes or the product quality."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -18866,17 +19510,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Dependencies"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"dependenciesmay contain multiple dependencies, each of which can be used to describe a restriction or dependency for the interaction of several Flexible Loads within an Flexibility Space. This allows the permissible operating options of an overall system to be mapped in greater detail so that Flexible-Load Measures do not have a negative impact on the system, the production processes or the product quality."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -18894,6 +19530,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Dependencies"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"dependenciesmay contain multiple dependencies, each of which can be used to describe a restriction or dependency for the interaction of several Flexible Loads within an Flexibility Space. This allows the permissible operating options of an overall system to be mapped in greater detail so that Flexible-Load Measures do not have a negative impact on the system, the production processes or the product quality."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -19038,19 +19686,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 Union[Iterable[Dependencies.Dependencies_item], Dependencies]
             ] = None,
             id_short: Optional[str] = r"flexibilitySpace_applicationTailoredPotential",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Flexibility Space Application Tailored Potential"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"This SMC describes the degrees of freedom of an energy-flexible system tailored to the requirements and restrictions of a specific application or market. Property values are derived from the operational potential but adjusted to meet the defined application conditions, such as market rules, technical standards, or contractual obligations."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -19067,6 +19705,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Flexibility Space Application Tailored Potential"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"This SMC describes the degrees of freedom of an energy-flexible system tailored to the requirements and restrictions of a specific application or market. Property values are derived from the operational potential but adjusted to meet the defined application conditions, such as market rules, technical standards, or contractual obligations."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -19170,17 +19820,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"instanceId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -19198,6 +19840,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Instance ID"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -19245,15 +19899,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"comment",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Free text to comment the EFDM object."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -19270,6 +19918,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Comment"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Free text to comment the EFDM object."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -19319,15 +19977,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"versionNumber",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -19344,6 +19996,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Version Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -19392,15 +20054,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"schemaLink",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"hyperlink to the corresponding scheme"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -19417,6 +20073,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Schema Link"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"hyperlink to the corresponding scheme"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -19462,17 +20128,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     versionNumber: Union[str, VersionNumber],
                     schemaLink: Union[str, SchemaLink],
                     id_short: Optional[str] = r"efdmVersion",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -19489,6 +20147,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"EFDM Version"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -19567,17 +20237,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"originId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the creating service and point in time of creation"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -19594,6 +20256,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Origin ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the creating service and point in time of creation"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -19642,15 +20316,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"timestamp of the creating service"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -19668,6 +20336,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"timestamp of the creating service"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -19713,17 +20391,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     originId: Union[str, OriginId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -19740,6 +20410,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Origin"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -19818,19 +20500,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"modificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the service instance that last processed this object "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -19847,6 +20519,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Modification ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the service instance that last processed this object "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -19895,15 +20579,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"timestamp of of last processing"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -19921,6 +20599,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"timestamp of of last processing"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -19966,17 +20654,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     modificationId: Union[str, ModificationId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Modification"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -19993,6 +20673,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Modification"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -20069,17 +20761,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 modification: Modification,
                 comment: Optional[Union[aas.LangStringSet, Comment]] = None,
                 id_short: Optional[str] = r"metadata",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -20097,6 +20781,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -20173,17 +20867,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"status",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Status"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r'Status of the model instance in case of generalTechnicalPotential should be "draft"'
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -20201,6 +20887,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Status"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r'Status of the model instance in case of generalTechnicalPotential should be "draft"'
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -20249,17 +20947,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"modellingScope",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Modelling Scope"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"generalTechnicalPotential: modelling of flexibility includes universally valid technical characteristics and restrictions. The model does not contain information on operational strategies, production plans, or other limitations arising from the specific use of the plant or system. In this case, the energy flexibility potential is not directly implementable."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -20276,6 +20966,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Modelling Scope"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"generalTechnicalPotential: modelling of flexibility includes universally valid technical characteristics and restrictions. The model does not contain information on operational strategies, production plans, or other limitations arising from the specific use of the plant or system. In this case, the energy flexibility potential is not directly implementable."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -20321,17 +21023,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 status: Union[str, Status],
                 modellingScope: Union[str, ModellingScope],
                 id_short: Optional[str] = r"utilizationContext",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Utilization Context"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Containing metainformation, describing the model status and scope"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -20348,6 +21042,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Utilization Context"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Containing metainformation, describing the model status and scope"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -20426,19 +21132,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"flexibleLoadId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services. String Format: UUID"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -20455,6 +21151,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Flexible Load ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services. String Format: UUID"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -20503,19 +21211,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"reactionDuration",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Reaction Duration"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Time (seconds) required by a technical system between the receipt of a call-up and the initiation of a Flexible-Load Measure within the enterprise. The call must be issued with at least this lead time before the Flexible-Load Measure starts."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -20532,6 +21230,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Reaction Duration"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Time (seconds) required by a technical system between the receipt of a call-up and the initiation of a Flexible-Load Measure within the enterprise. The call must be issued with at least this lead time before the Flexible-Load Measure starts."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -20580,19 +21290,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"regenerationDuration",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Regeneration Duration"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The required regeneration time during which no other measure of the same Flexible Load may be activated following the deactivation of a previous measure. This time constraint applies only if an actual deactivation occurs. If another measure follows without interruption, no deactivation takes place between them; this does not constitute a violation of the defined regerneration period."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -20609,6 +21309,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Regeneration Duration"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The required regeneration time during which no other measure of the same Flexible Load may be activated following the deactivation of a previous measure. This time constraint applies only if an actual deactivation occurs. If another measure follows without interruption, no deactivation takes place between them; this does not constitute a violation of the defined regerneration period."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -20676,19 +21388,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             max: xsd.Float,
                             id_short: Optional[str] = r"activationGradient",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Activation Gradient"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Actication Gradient specifies the power gradient applicable during the initial activation of the Flexibl Load."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -20706,6 +21408,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Activation Gradient"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Actication Gradient specifies the power gradient applicable during the initial activation of the Flexibl Load."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -20754,19 +21468,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             max: xsd.Float,
                             id_short: Optional[str] = r"modulationGradient",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Modulation Gradient"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Modulation Gradient specifies the power gradient during transitions between Power States."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -20784,6 +21488,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Modulation Gradient"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Modulation Gradient specifies the power gradient during transitions between Power States."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -20832,19 +21548,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             max: xsd.Float,
                             id_short: Optional[str] = r"deactivationGradient",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Deactivation Gradient"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Deactivation Gradient specifies the power gradient during the final deactivation phase"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -20862,6 +21568,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Deactivation Gradient"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Deactivation Gradient specifies the power gradient during the final deactivation phase"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -20914,19 +21632,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             Union[Tuple[xsd.Float, xsd.Float], DeactivationGradient]
                         ] = None,
                         id_short: Optional[str] = r"powerGradients",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Power Gradients"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The absolute value of the power gradient of a Flexible Load indicates how fast the power can be increased or decreased."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -20943,6 +21651,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Power Gradients"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The absolute value of the power gradient of a Flexible Load indicates how fast the power can be increased or decreased."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -21036,19 +21756,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.NonNegativeInteger,
                         id_short: Optional[str] = r"modulationNumber",
                         value_type: aas.DataTypeDefXsd = xsd.NonNegativeInteger,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modulation Number"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The maximum number of Power State changes (modulations) allowed within one use of a Flexible Load. The two modulations corresponding to the initial activation and the final deactivation are not counted."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -21065,6 +21775,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Modulation Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The maximum number of Power State changes (modulations) allowed within one use of a Flexible Load. The two modulations corresponding to the initial activation and the final deactivation are not counted."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -21119,15 +21841,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_type: aas.DataTypeDefXsd = xsd.Float,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(dict_={r"en": r"Power"}),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"A positive sign means that the Flexible Load can increase its power consumption. Negative Power States represent a possible decrease in power consumption. Uncertainty can be represented by specifying a range."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -21146,6 +21862,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Power"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"A positive sign means that the Flexible Load can increase its power consumption. Negative Power States represent a possible decrease in power consumption. Uncertainty can be represented by specifying a range."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -21190,19 +21918,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             self,
                             power: Union[Tuple[xsd.Float, xsd.Float], Power],
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Power State"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"A power state with which the Flexible Load can run during the corresponding holding periods. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = aas.ModelReference(
                                 key=(
                                     aas.Key(
@@ -21220,6 +21938,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Power State"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"A power state with which the Flexible Load can run during the corresponding holding periods. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -21289,17 +22019,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Power States"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"a set of Power States with which the Flexible Load can run during each of the (number of changes + 1) holding periods. "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -21317,6 +22039,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Power States"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"a set of Power States with which the Flexible Load can run during each of the (number of changes + 1) holding periods. "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -21465,17 +22199,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         ]
                     ] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Load"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r" Each flexibleLoad describes the energy flexibility of a technical system (i.e. controllable unit) or a combination of systems (i.e. an ensemble of controllable units) that can adjust its power consumption or generation in response to external conditions or requirements. It focuses on the limitations and possibilities (degrees of freedom) of changing power outputs of a technical system."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -21493,6 +22219,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Flexible Load"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r" Each flexibleLoad describes the energy flexibility of a technical system (i.e. controllable unit) or a combination of systems (i.e. an ensemble of controllable units) that can adjust its power consumption or generation in response to external conditions or requirements. It focuses on the limitations and possibilities (degrees of freedom) of changing power outputs of a technical system."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -21607,15 +22345,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Flexible Loads"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"flexibleLoads may contain multiple flexibleLoad."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -21632,6 +22364,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Flexible Loads"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"flexibleLoads may contain multiple flexibleLoad."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -21774,17 +22518,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"storageId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of a storage for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -21801,6 +22537,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Storage ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of a storage for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -21849,19 +22597,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"usableCapacity",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Usable Capacity"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Lower and upper limit of the storage energy content. These limits must never be exceeded or fallen short of. Depending on the choice of reference point, it is also possible to specify negative storage capacities, e.g. if it needs to be possible to either exceed or fall below storage limits."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -21878,6 +22616,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Usable Capacity"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Lower and upper limit of the storage energy content. These limits must never be exceeded or fallen short of. Depending on the choice of reference point, it is also possible to specify negative storage capacities, e.g. if it needs to be possible to either exceed or fall below storage limits."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -21926,19 +22676,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         max: xsd.Float,
                         id_short: Optional[str] = r"initialEnergyContent",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Initial Energy Content"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Energy content of the storage at the start time of the Validity Period of the associated Flexible Load (Suppliers). If the storage is connected to several Flexible Loads, the Initial Energy Content refers to the earliest start time of the Validity Periods of all Flexible Loads. If the initial energy content cannot be quantified exactly, the predicted range can be specified via min and max."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -21955,6 +22695,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Initial Energy Content"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Energy content of the storage at the start time of the Validity Period of the associated Flexible Load (Suppliers). If the storage is connected to several Flexible Loads, the Initial Energy Content refers to the earliest start time of the Validity Periods of all Flexible Loads. If the initial energy content cannot be quantified exactly, the predicted range can be specified via min and max."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -22003,17 +22755,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"energyLoss",
                         value_type: aas.DataTypeDefXsd = xsd.UnsignedShort,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Energy Loss"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Proportion of the energy content that is continuously lost, e.g. through exchange with the environment. The percentage refers to the actual energy content and not to the storage capacity."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -22030,6 +22774,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Energy Loss"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Proportion of the energy content that is continuously lost, e.g. through exchange with the environment. The percentage refers to the actual energy content and not to the storage capacity."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -22101,17 +22857,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Flexible Load ID"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"This ID identifies the Flexible Load supplying the storage. The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -22130,6 +22878,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Flexible Load ID"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"This ID identifies the Flexible Load supplying the storage. The ID of a Flexible Load for unique identification. The Universally Unique Identifier (UUID) is generated automatically and is used for identification and assignment within an IT system in a company and for further processing by external, market-side services."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -22180,17 +22940,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Conversion Efficiency"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Energy conversion efficiency of the suppiler"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -22209,6 +22961,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Conversion Efficiency"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Energy conversion efficiency of the suppiler"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -22256,15 +23020,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 Union[xsd.Float, ConversionEfficiency]
                             ] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Supplier"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Indicating a single supply"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -22283,6 +23041,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Supplier"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Indicating a single supply"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -22361,17 +23129,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Suppliers"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"One or more Flexible Loads supplying the storage. The Flexible Loads must be defined in the same Flexibility Space. The conversion efficiency is specified for each supply system."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -22388,6 +23148,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Suppliers"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"One or more Flexible Loads supplying the storage. The Flexible Loads must be defined in the same Flexibility Space. The conversion efficiency is specified for each supply system."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -22530,17 +23302,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         Union[Iterable[Suppliers.Suppliers_item], Suppliers]
                     ] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Storage"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"A storage represents a technical system or a combination of systems that has the potential to store energy"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -22558,6 +23322,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Storage"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"A storage represents a technical system or a combination of systems that has the potential to store energy"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -22669,17 +23445,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Storages"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Storages may contain multiple storages, each of which represents a technical system or a combination of systems that has the potential to store energy"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -22697,6 +23465,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Storages"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Storages may contain multiple storages, each of which represents a technical system or a combination of systems that has the potential to store energy"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -22836,19 +23614,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 Union[Iterable[Storages.Storages_item], Storages]
             ] = None,
             id_short: Optional[str] = r"flexibilitySpace_generalTechnicalPotential",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Flexibility Space General Technical Potential"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"This SMC describes the degrees of freedom of an energy-flexible system based solely on its general technical characteristics. It focuses on the inherent flexibility potential of the system, independent of any operational strategies, specific conditions, or application-related constraints."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -22865,6 +23633,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Flexibility Space General Technical Potential"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"This SMC describes the degrees of freedom of an energy-flexible system based solely on its general technical characteristics. It focuses on the inherent flexibility potential of the system, independent of any operational strategies, specific conditions, or application-related constraints."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -22951,17 +23731,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     id_short: Optional[str] = r"instanceId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Instance ID"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -22979,6 +23751,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Instance ID"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The ID of a Flexibility Space or Flexible-Load Measure Package for unique identification"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -23026,15 +23810,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"comment",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Free text to comment the EFDM object."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -23051,6 +23829,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Comment"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Free text to comment the EFDM object."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -23100,15 +23888,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"versionNumber",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Version Number"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"the EFDM version (e.g. 0.3)"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -23125,6 +23907,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Version Number"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"the EFDM version (e.g. 0.3)"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -23173,15 +23965,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"schemaLink",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Schema Link"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"hyperlink to the corresponding scheme"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -23198,6 +23984,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Schema Link"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"hyperlink to the corresponding scheme"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -23243,17 +24039,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     versionNumber: Union[str, VersionNumber],
                     schemaLink: Union[str, SchemaLink],
                     id_short: Optional[str] = r"efdmVersion",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"EFDM Version"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -23270,6 +24058,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"EFDM Version"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specification of the EFDM version and hyperlink to the corresponding scheme."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -23348,17 +24148,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"originId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin ID"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the creating service and point in time of creation"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -23375,6 +24167,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Origin ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the creating service and point in time of creation"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -23423,15 +24227,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"timestamp of the creating service"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -23449,6 +24247,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"timestamp of the creating service"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -23494,17 +24302,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     originId: Union[str, OriginId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"origin",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -23521,6 +24321,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Origin"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the creating service and point in time of creation. By means of the automated filling in of the Element, conclusions about the origin and an allocation to executing agencies are made possible. In the case of communication with external services, this Element is replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -23599,19 +24411,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"modificationId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Modification ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"UUID of the service instance that last processed this object "
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -23628,6 +24430,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Modification ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"UUID of the service instance that last processed this object "
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -23676,15 +24490,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"timestamp",
                         value_type: aas.DataTypeDefXsd = xsd.DateTime,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Timestamp"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"timestamp of of last processing"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ModelReference(
                             key=(
                                 aas.Key(
@@ -23702,6 +24510,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Timestamp"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"timestamp of of last processing"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -23747,17 +24565,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     modificationId: Union[str, ModificationId],
                     timestamp: Union[xsd.DateTime, Timestamp],
                     id_short: Optional[str] = r"modification",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Modification"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -23774,6 +24584,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Modification"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Containing UUID of the service instance that last processed this object and point in time of last processing. In the case of communication with external services, this Element can be replaced by an ID that is intended for external communication."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -23850,17 +24672,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 modification: Modification,
                 comment: Optional[Union[aas.LangStringSet, Comment]] = None,
                 id_short: Optional[str] = r"metadata",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ModelReference(
                     key=(
                         aas.Key(
@@ -23878,6 +24692,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Metadata"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The metadata provides essential information for tracking and tracing of the model instances."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -23956,19 +24780,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"flexibleLoadMeasureId",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Flexible Load Measure ID"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"The ID of the Flexible-Load Measure for which the log entry is created."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -23985,6 +24799,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Flexible Load Measure ID"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"The ID of the Flexible-Load Measure for which the log entry is created."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -24033,17 +24859,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"reward",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Reward"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Realized revenue from implementing the Flexible-Load Measure. The sign indicates the direction of the cash flow, while the referencePoint specifies whether the value represents a cost saving or the total amount."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -24060,6 +24878,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Reward"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Realized revenue from implementing the Flexible-Load Measure. The sign indicates the direction of the cash flow, while the referencePoint specifies whether the value represents a cost saving or the total amount."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -24108,17 +24938,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         id_short: Optional[str] = r"exceptions",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Exceptions"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Error objects that occurred during the execution of the Flexible-Load Measure."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -24135,6 +24957,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Exceptions"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Error objects that occurred during the execution of the Flexible-Load Measure."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -24189,15 +25023,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(dict_={r"en": r"Power"}),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Positive power states mean that the Flexible-Load Measure requests an increase in power consumption from the Flexible Load. Negative power states require a decrease in power consumption. Interpolation between Power States is linear; a step change in power can be mapped by specifying two equal timestamps with different power values."
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -24217,6 +25045,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Power"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Positive power states mean that the Flexible-Load Measure requests an increase in power consumption from the Flexible Load. Negative power states require a decrease in power consumption. Interpolation between Power States is linear; a step change in power can be mapped by specifying two equal timestamps with different power values."
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -24267,15 +25107,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Timestamp"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"timestamp of a power state"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ModelReference(
@@ -24295,6 +25129,16 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Timestamp"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"timestamp of a power state"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -24343,17 +25187,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 id_short: Optional[str] = r"referencePoint",
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Reference Point"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Refers to the associated Flexible-Load Measure as planed value"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -24372,6 +25208,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Reference Point"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Refers to the associated Flexible-Load Measure as planed value"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -24416,19 +25264,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             timestamp: Union[xsd.DateTime, Timestamp],
                             referencePoint: Union[aas.Reference, ReferencePoint],
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Load Change Profile"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"A single Load profile that records the actual power reduction or increase of the Flexible load during execution. "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -24447,6 +25285,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Load Change Profile"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"A single Load profile that records the actual power reduction or increase of the Flexible load during execution. "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -24530,19 +25380,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Load Change Profiles"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Load profiles that record the actual power reduction or increase of the Flexible load during execution. The Power values are refer to the same referencePoint as the associated Flexible-Load Measure."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -24559,6 +25399,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Load Change Profiles"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Load profiles that record the actual power reduction or increase of the Flexible load during execution. The Power values are refer to the same referencePoint as the associated Flexible-Load Measure."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -24699,19 +25551,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     reward: Optional[Union[str, Reward]] = None,
                     exceptions: Optional[Union[str, Exceptions]] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Execution Log Entry"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Each executionLogEntry describes an implemented flexibleLoadMeasure."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -24728,6 +25570,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Execution Log Entry"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Each executionLogEntry describes an implemented flexibleLoadMeasure."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = ()
@@ -24813,17 +25667,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Execution Log Entries"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"executionLogEntries contains one or more executionLogEntry, each of which describes an implemented flexibleLoadMeasure."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -24840,6 +25686,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Execution Log Entries"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"executionLogEntries contains one or more executionLogEntry, each of which describes an implemented flexibleLoadMeasure."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -24978,19 +25836,9 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 ExecutionLogEntries,
             ],
             id_short: Optional[str] = r"flexibleLoadMeasureExecutionLog",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Flexible Load Measure Execution Log"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The flexibleLoadMeasureExecutionLog contains one or more Execution Log-Entry that records an implemented flexible load measure."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -25007,6 +25855,18 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Flexible Load Measure Execution Log"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The flexibleLoadMeasureExecutionLog contains one or more Execution Log-Entry that records an implemented flexible load measure."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -25091,11 +25951,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
         id_short: Optional[str] = r"EnergyFlexibilityDataModel",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"The Submodel Energy Flexibility Data Model (EFDM) provides a unified framework for describing energy flexibility"
-            }
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = None,
         qualifier: Iterable[aas.Qualifier] = None,
@@ -25104,6 +25960,13 @@ class EnergyFlexibilityDataModel(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"The Submodel Energy Flexibility Data Model (EFDM) provides a unified framework for describing energy flexibility"
+                }
+            )
 
         if qualifier is None:
             qualifier = ()

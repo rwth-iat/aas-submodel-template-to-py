@@ -21,14 +21,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Name or ID of the quality feature",
-                                r"de": r"Name oder ID des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -45,6 +38,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Name or ID of the quality feature",
+                                    r"de": r"Name oder ID des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -95,14 +96,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the quality feature",
-                                r"de": r"Beschreibung des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -119,6 +113,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the quality feature",
+                                    r"de": r"Beschreibung des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -169,14 +171,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the measurement procedure, e.g. series measurements have to be averaged",
-                                r"de": r"Beschreibung der Messmethode, z. B. Werte der Messserie müssen gemittelt werden.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -193,6 +188,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the measurement procedure, e.g. series measurements have to be averaged",
+                                    r"de": r"Beschreibung der Messmethode, z. B. Werte der Messserie müssen gemittelt werden.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -243,14 +246,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Is the measurement relevant as a test measure for quality assurance? True means yes, false means no",
-                                r"de": r"Ist das Maß als Prüfmaß für die Qualiätssicherung relevant? True bedeutet ja, false nein",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -267,6 +263,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Is the measurement relevant as a test measure for quality assurance? True means yes, false means no",
+                                    r"de": r"Ist das Maß als Prüfmaß für die Qualiätssicherung relevant? True bedeutet ja, false nein",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -317,14 +321,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to one or more norms and guidelines in which the code for the used tolerance is defined",
-                                r"de": r"Verweis auf eine oder mehrere Normen und Richtlinien, in denen der Code für die verwendete Toleranz festgelegt ist",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -351,6 +348,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to one or more norms and guidelines in which the code for the used tolerance is defined",
+                                    r"de": r"Verweis auf eine oder mehrere Normen und Richtlinien, in denen der Code für die verwendete Toleranz festgelegt ist",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -401,14 +406,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Value for physical quantities that may be expressed as the nominal value of the quantity together with deviations from that nominal value as percentages or absolute values",
-                                r"de": r"Wert für physikalische Größen, der als Nominalwert der Größe zusammen mit Abweichungen von diesem Nominalwert als Prozentsätze oder absolute Werte ausgedrückt werden kann",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -435,6 +433,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Value for physical quantities that may be expressed as the nominal value of the quantity together with deviations from that nominal value as percentages or absolute values",
+                                    r"de": r"Wert für physikalische Größen, der als Nominalwert der Größe zusammen mit Abweichungen von diesem Nominalwert als Prozentsätze oder absolute Werte ausgedrückt werden kann",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -485,14 +491,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Upper tolerance limit of the feature as an absolute value.If there is a one-sided tolerance, only one tolerance limit is specified.",
-                                r"de": r"Obere Toranzgrenze des Merkmals als absoluter Wert. Wenn eine einseitige Tolerierung vorliegt, wird entsprechend nur eine Toleranzgrenze angegeben.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -509,6 +508,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Upper tolerance limit of the feature as an absolute value.If there is a one-sided tolerance, only one tolerance limit is specified.",
+                                    r"de": r"Obere Toranzgrenze des Merkmals als absoluter Wert. Wenn eine einseitige Tolerierung vorliegt, wird entsprechend nur eine Toleranzgrenze angegeben.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -559,14 +566,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Lower tolerance limit of the feature as an absolute value. If there is a one-sided tolerance, only one tolerance limit is specified.",
-                                r"de": r"Untere Toranzgrenze des Merkmals als absoluter Wert. Wenn eine einseitige Tolerierung vorliegt, wird entsprechend nur eine Toleranzgrenze angegeben.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -583,6 +583,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Lower tolerance limit of the feature as an absolute value. If there is a one-sided tolerance, only one tolerance limit is specified.",
+                                    r"de": r"Untere Toranzgrenze des Merkmals als absoluter Wert. Wenn eine einseitige Tolerierung vorliegt, wird entsprechend nur eine Toleranzgrenze angegeben.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -633,14 +641,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Is the measure tolerated one-sidedly? True means yes, false means no. If there is a one-sided tolerance, only one tolerance limit is specified",
-                                r"de": r"Ist das Maß einseitig toleriert? True bedeutet ja, false nein. Wenn eine einseitige Tolerierung vorliegt, wird entsprechend nur eine Toleranzgrenze angegeben",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -657,6 +658,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Is the measure tolerated one-sidedly? True means yes, false means no. If there is a one-sided tolerance, only one tolerance limit is specified",
+                                    r"de": r"Ist das Maß einseitig toleriert? True bedeutet ja, false nein. Wenn eine einseitige Tolerierung vorliegt, wird entsprechend nur eine Toleranzgrenze angegeben",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -707,14 +716,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Physical unit of feature",
-                                r"de": r"Physikalische Einheit des Merkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -731,6 +733,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Physical unit of feature",
+                                    r"de": r"Physikalische Einheit des Merkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -781,14 +791,7 @@ class QualityControlForMachining(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Reference to a Geometry element described by a SMC Geometry in the Submodel Provision of 3D Models",
-                                    r"de": r"Referenz zu einer Geometrie, beschrieben durch eine SMC Geometry innerhalb des Teilmodells Provision of 3D Models",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -807,6 +810,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Reference to a Geometry element described by a SMC Geometry in the Submodel Provision of 3D Models",
+                                        r"de": r"Referenz zu einer Geometrie, beschrieben durch eine SMC Geometry innerhalb des Teilmodells Provision of 3D Models",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -857,14 +868,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Geomtery Reference List in Submodel Provision of 3D Models",
-                                r"de": r"Geometriereferenzliste im Teilmodell Provision of 3D Models",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -881,6 +885,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Geomtery Reference List in Submodel Provision of 3D Models",
+                                    r"de": r"Geometriereferenzliste im Teilmodell Provision of 3D Models",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1034,14 +1046,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"One element ID which relates to the quality feature",
-                                    r"de": r"Eine Element ID, auf das sich das Qualitätsmerkmal bezieht",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1060,6 +1065,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"One element ID which relates to the quality feature",
+                                        r"de": r"Eine Element ID, auf das sich das Qualitätsmerkmal bezieht",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1112,14 +1125,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of IDs in 3D Model which relate to the quality feature",
-                                r"de": r"Liste von IDs im 3D Modell, die sich auf das Qualitätsmerkmal beziehen",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1136,6 +1142,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of IDs in 3D Model which relate to the quality feature",
+                                    r"de": r"Liste von IDs im 3D Modell, die sich auf das Qualitätsmerkmal beziehen",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1293,14 +1307,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Page in the 2D document where the quality feature is illustrated",
-                                        r"de": r"Seite im 2D Dokument, auf der das Qualitätsmerkmal dargestellt ist",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1319,6 +1326,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Page in the 2D document where the quality feature is illustrated",
+                                            r"de": r"Seite im 2D Dokument, auf der das Qualitätsmerkmal dargestellt ist",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1371,14 +1386,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Coordinate of the quality feature in a 2D document, e.g., 1B",
-                                        r"de": r"Koordinate des Qualitätsmerkmals in 2D Dokument, z.B. 1B",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1397,6 +1405,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Coordinate of the quality feature in a 2D document, e.g., 1B",
+                                            r"de": r"Koordinate des Qualitätsmerkmals in 2D Dokument, z.B. 1B",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1444,14 +1460,7 @@ class QualityControlForMachining(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Reference to an element in a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
-                                    r"de": r"Referenz zu einem Element in einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1470,6 +1479,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Reference to an element in a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
+                                        r"de": r"Referenz zu einem Element in einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1550,14 +1567,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of references to a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
-                                r"de": r"Liste mit Referenzen zu einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1574,6 +1584,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of references to a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
+                                    r"de": r"Liste mit Referenzen zu einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1744,14 +1762,7 @@ class QualityControlForMachining(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Description of the definition of a linear quality characteristic such as length, weight, angle, according to DIN EN ISO 14405-1: Dimensional tolerancing - Part 1: Linear size dimensions",
-                            r"de": r"Beschreibung der Definition eines linearen Qualitätsmerkmals wie z.B. Länge, Gewicht, Winkel, gemäß DIN EN ISO 14405-1: Dimensionelle Tolerierung – Teil 1: Lineare Größenmaße",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1768,6 +1779,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Description of the definition of a linear quality characteristic such as length, weight, angle, according to DIN EN ISO 14405-1: Dimensional tolerancing - Part 1: Linear size dimensions",
+                                r"de": r"Beschreibung der Definition eines linearen Qualitätsmerkmals wie z.B. Länge, Gewicht, Winkel, gemäß DIN EN ISO 14405-1: Dimensionelle Tolerierung – Teil 1: Lineare Größenmaße",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1973,14 +1992,7 @@ class QualityControlForMachining(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List of linear quality characteristics, such as dimensions, weight, angles",
-                        r"de": r"Liste linearer Qualitätsmerkmale, wie Dimensionen, Gewicht, Winkel",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1997,6 +2009,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List of linear quality characteristics, such as dimensions, weight, angles",
+                            r"de": r"Liste linearer Qualitätsmerkmale, wie Dimensionen, Gewicht, Winkel",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2141,14 +2161,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Name or ID of the quality feature",
-                                r"de": r"Name oder ID des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2165,6 +2178,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Name or ID of the quality feature",
+                                    r"de": r"Name oder ID des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2215,14 +2236,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the quality feature",
-                                r"de": r"Beschreibung des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2239,6 +2253,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the quality feature",
+                                    r"de": r"Beschreibung des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2289,14 +2311,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the measurement procedure, e.g. series measurements have to be averaged",
-                                r"de": r"Beschreibung der Messmethode, z. B. Werte der Messserie müssen gemittelt werden.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2313,6 +2328,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the measurement procedure, e.g. series measurements have to be averaged",
+                                    r"de": r"Beschreibung der Messmethode, z. B. Werte der Messserie müssen gemittelt werden.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2363,14 +2386,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to one or more norms and guidelines in which the code for the used tolerance is defined",
-                                r"de": r"Verweis auf eine oder mehrere Normen und Richtlinien, in denen der Code für die verwendete Toleranz festgelegt ist",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2397,6 +2413,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to one or more norms and guidelines in which the code for the used tolerance is defined",
+                                    r"de": r"Verweis auf eine oder mehrere Normen und Richtlinien, in denen der Code für die verwendete Toleranz festgelegt ist",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2447,14 +2471,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Is the measurement relevant as a test measure for quality assurance? True means yes, false means no",
-                                r"de": r"Ist das Maß als Prüfmaß für die Qualiätssicherung relevant? True bedeutet ja, false nein",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2471,6 +2488,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Is the measurement relevant as a test measure for quality assurance? True means yes, false means no",
+                                    r"de": r"Ist das Maß als Prüfmaß für die Qualiätssicherung relevant? True bedeutet ja, false nein",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2521,14 +2546,7 @@ class QualityControlForMachining(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Reference to a Geomatry element described by a SMC Geometry in the Submodel Provision of 3D Models",
-                                    r"de": r"Referenz zu einer Geometry beschrieben durch eine SMC Geometry innerhalb des Teilmodells Provision of 3D Models",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2547,6 +2565,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Reference to a Geomatry element described by a SMC Geometry in the Submodel Provision of 3D Models",
+                                        r"de": r"Referenz zu einer Geometry beschrieben durch eine SMC Geometry innerhalb des Teilmodells Provision of 3D Models",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2597,14 +2623,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Geomtery Reference List in Submodel Provision of 3D Models",
-                                r"de": r"Geometriereferenzliste im Teilmodell Provision of 3D Models",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2621,6 +2640,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Geomtery Reference List in Submodel Provision of 3D Models",
+                                    r"de": r"Geometriereferenzliste im Teilmodell Provision of 3D Models",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2774,14 +2801,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"One element ID which relates to the quality feature",
-                                    r"de": r"Eine Element ID, auf das sich das Qualitätsmerkmal bezieht",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2800,6 +2820,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"One element ID which relates to the quality feature",
+                                        r"de": r"Eine Element ID, auf das sich das Qualitätsmerkmal bezieht",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2852,14 +2880,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of IDs in 3D Model which relate to the quality feature",
-                                r"de": r"Liste von IDs im 3D Modell, die sich auf das Qualitätsmerkmal beziehen",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2876,6 +2897,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of IDs in 3D Model which relate to the quality feature",
+                                    r"de": r"Liste von IDs im 3D Modell, die sich auf das Qualitätsmerkmal beziehen",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3033,14 +3062,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Page in the 2D document where the quality feature is illustrated",
-                                        r"de": r"Seite im 2D Dokument, auf der das Qualitätsmerkmal dargestellt ist",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -3059,6 +3081,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Page in the 2D document where the quality feature is illustrated",
+                                            r"de": r"Seite im 2D Dokument, auf der das Qualitätsmerkmal dargestellt ist",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -3111,14 +3141,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Coordinate of the quality feature in a 2D document, e.g., 1B",
-                                        r"de": r"Koordinate des Qualitätsmerkmals in 2D Dokument, z.B. 1B",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -3137,6 +3160,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Coordinate of the quality feature in a 2D document, e.g., 1B",
+                                            r"de": r"Koordinate des Qualitätsmerkmals in 2D Dokument, z.B. 1B",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -3184,14 +3215,7 @@ class QualityControlForMachining(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Reference to an element in a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
-                                    r"de": r"Referenz zu einem Element in einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -3210,6 +3234,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Reference to an element in a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
+                                        r"de": r"Referenz zu einem Element in einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3290,14 +3322,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of references to a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
-                                r"de": r"Liste mit Referenzen zu einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3314,6 +3339,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of references to a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
+                                    r"de": r"Liste mit Referenzen zu einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3456,14 +3489,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Name of an attribute that is accepted or tolerable in terms of quality assurance (OK attribute)",
-                                    r"de": r"Bezeichnung eines Attributs, das akzeptiert bzw. im Sinne der Qualitätssicherung tolerabel ist (i.O.-Attribut)",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -3482,6 +3508,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Name of an attribute that is accepted or tolerable in terms of quality assurance (OK attribute)",
+                                        r"de": r"Bezeichnung eines Attributs, das akzeptiert bzw. im Sinne der Qualitätssicherung tolerabel ist (i.O.-Attribut)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3534,14 +3568,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of attributes that are accepted or tolerable in terms of quality assurance (OK attributes)",
-                                r"de": r"Liste der Attribute, die akzeptiert bzw. im Sinne der Qualitätssicherung tolerabel sind (i.O.-Attribute)",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3558,6 +3585,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of attributes that are accepted or tolerable in terms of quality assurance (OK attributes)",
+                                    r"de": r"Liste der Attribute, die akzeptiert bzw. im Sinne der Qualitätssicherung tolerabel sind (i.O.-Attribute)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3711,14 +3746,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Name of an attribute that is not accepted or intolerable in terms of quality assurance (not OK attribute)",
-                                    r"de": r"Bezeichnung eines Attributs, das nicht akzeptiert bzw. im Sinne der Qualitätssicherung intolerabel ist (n.i.O.-Attribut)",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -3737,6 +3765,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Name of an attribute that is not accepted or intolerable in terms of quality assurance (not OK attribute)",
+                                        r"de": r"Bezeichnung eines Attributs, das nicht akzeptiert bzw. im Sinne der Qualitätssicherung intolerabel ist (n.i.O.-Attribut)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3789,14 +3825,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of attributes that are not accepted or intolerable in terms of quality assurance (not OK attributes)",
-                                r"de": r"Liste der Attribute, die nicht akzeptiert bzw. im Sinne der Qualitätssicherung intolerabel sind (n.i.O.-Attribute)",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3813,6 +3842,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of attributes that are not accepted or intolerable in terms of quality assurance (not OK attributes)",
+                                    r"de": r"Liste der Attribute, die nicht akzeptiert bzw. im Sinne der Qualitätssicherung intolerabel sind (n.i.O.-Attribute)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3997,14 +4034,7 @@ class QualityControlForMachining(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Information about an attributive quality feature",
-                            r"de": r"Informationen zu einem attributiven Qualitätsmerkmal",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4021,6 +4051,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Information about an attributive quality feature",
+                                r"de": r"Informationen zu einem attributiven Qualitätsmerkmal",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4218,14 +4256,7 @@ class QualityControlForMachining(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List of attributive quality characteristics",
-                        r"de": r"Liste attributiver Qualtätsmerkmale",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4242,6 +4273,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List of attributive quality characteristics",
+                            r"de": r"Liste attributiver Qualtätsmerkmale",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4386,14 +4425,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Name or ID of the quality feature",
-                                r"de": r"Name oder ID des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4410,6 +4442,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Name or ID of the quality feature",
+                                    r"de": r"Name oder ID des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4460,14 +4500,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the quality feature",
-                                r"de": r"Beschreibung des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4484,6 +4517,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the quality feature",
+                                    r"de": r"Beschreibung des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4534,14 +4575,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the measurement procedure, e.g. series measurements have to be averaged",
-                                r"de": r"Beschreibung der Messmethode, z. B. Werte der Messserie müssen gemittelt werden.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4558,6 +4592,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the measurement procedure, e.g. series measurements have to be averaged",
+                                    r"de": r"Beschreibung der Messmethode, z. B. Werte der Messserie müssen gemittelt werden.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4608,14 +4650,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to one or more norms and guidelines in which the code for the used tolerance is defined",
-                                r"de": r"Verweis auf eine oder mehrere Normen und Richtlinien, in denen der Code für die verwendete Toleranz festgelegt ist",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4642,6 +4677,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to one or more norms and guidelines in which the code for the used tolerance is defined",
+                                    r"de": r"Verweis auf eine oder mehrere Normen und Richtlinien, in denen der Code für die verwendete Toleranz festgelegt ist",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4692,14 +4735,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Is the measurement relevant as a test measure for quality assurance? True means yes, false means no",
-                                r"de": r"Ist das Maß als Prüfmaß für die Qualiätssicherung relevant? True bedeutet ja, false nein",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4716,6 +4752,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Is the measurement relevant as a test measure for quality assurance? True means yes, false means no",
+                                    r"de": r"Ist das Maß als Prüfmaß für die Qualiätssicherung relevant? True bedeutet ja, false nein",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4766,14 +4810,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"ValueList (straightness, flatness, roundness, cylindricity, line shape, surface shape, parallelism, perpendicularity, inclination, line profile direction, surface profile direction, position, coaxiality, concentricity, symmetry, line profile location, surface profile location, concentricity, axial runout, total concentricity, overall plan run)",
-                                r"de": r"ValueList (Geradheit, Ebenheit, Rundheit, Zylindrizität, Linienform, Flächenform, Parallelität, Rechtwinkligkeit, Neigung, Linienprofil-Richtung, Flächenprofil-Richtung, Position, Koaxialität, Konzentrizität, Symmetrie, Linienprofil-Ort, Flächenprofil-Ort, Rundlauf, Planlauf, Gesamtrundlauf, Gesamtplanlauf)",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4790,6 +4827,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"ValueList (straightness, flatness, roundness, cylindricity, line shape, surface shape, parallelism, perpendicularity, inclination, line profile direction, surface profile direction, position, coaxiality, concentricity, symmetry, line profile location, surface profile location, concentricity, axial runout, total concentricity, overall plan run)",
+                                    r"de": r"ValueList (Geradheit, Ebenheit, Rundheit, Zylindrizität, Linienform, Flächenform, Parallelität, Rechtwinkligkeit, Neigung, Linienprofil-Richtung, Flächenprofil-Richtung, Position, Koaxialität, Konzentrizität, Symmetrie, Linienprofil-Ort, Flächenprofil-Ort, Rundlauf, Planlauf, Gesamtrundlauf, Gesamtplanlauf)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4840,14 +4885,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Does a geometric reference have to be specified to make the feature unique? true corresponds to yes, false no",
-                                r"de": r"Muss zur Eindeutigkeit des Merkmals ein geometrischer Bezug angegeben werden? true entspricht ja, false nein",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4864,6 +4902,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Does a geometric reference have to be specified to make the feature unique? true corresponds to yes, false no",
+                                    r"de": r"Muss zur Eindeutigkeit des Merkmals ein geometrischer Bezug angegeben werden? true entspricht ja, false nein",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4916,14 +4962,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Shape of the tolerance zone according to DIN EN ISO 1101",
-                                    r"de": r"Gestalt der Toreanzzone gemäß DIN EN ISO 1101",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -4942,6 +4981,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Shape of the tolerance zone according to DIN EN ISO 1101",
+                                        r"de": r"Gestalt der Toreanzzone gemäß DIN EN ISO 1101",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4992,14 +5039,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information on the partition based on the deviation from the ideal value within a certain area",
-                                    r"de": r"Angaben zur Toleranzzone anhand der Abweichung vom Sollwert innerhalb eines bestimmten Bereichs",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5028,6 +5068,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Information on the partition based on the deviation from the ideal value within a certain area",
+                                        r"de": r"Angaben zur Toleranzzone anhand der Abweichung vom Sollwert innerhalb eines bestimmten Bereichs",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5078,14 +5126,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Specification modifier according to DIN EN ISO 14405-1: LP, LS, GG, GX, GN, GC, CC, CA, CV, SX, SN, SA, SM, SD, SR, SQ)",
-                                    r"de": r"Spezifikationsmodifikator gemäß DIN EN ISO 14405-1: LP, LS, GG, GX, GN, GC, CC, CA, CV, SX, SN, SA, SM, SD, SR, SQ)",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5104,6 +5145,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Specification modifier according to DIN EN ISO 14405-1: LP, LS, GG, GX, GN, GC, CC, CA, CV, SX, SN, SA, SM, SD, SR, SQ)",
+                                        r"de": r"Spezifikationsmodifikator gemäß DIN EN ISO 14405-1: LP, LS, GG, GX, GN, GC, CC, CA, CV, SX, SN, SA, SM, SD, SR, SQ)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5154,14 +5203,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Value for the width or extent of the tolerance zone according to DIN EN ISO 1101",
-                                    r"de": r"Wert für Weite bzw.  Ausdehnung der Toleranzzone gemäß DIN EN ISO 1101",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5180,6 +5222,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Value for the width or extent of the tolerance zone according to DIN EN ISO 1101",
+                                        r"de": r"Wert für Weite bzw.  Ausdehnung der Toleranzzone gemäß DIN EN ISO 1101",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5230,14 +5280,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Tolerated deviation",
-                                    r"de": r"TolerierteAbweichung",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5256,6 +5299,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Tolerated deviation",
+                                        r"de": r"TolerierteAbweichung",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5306,14 +5357,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Sign of tolerance (p, m, pm)",
-                                    r"de": r"Vorzeichen der Tolerienung (p, m, pm)",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5332,6 +5376,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Sign of tolerance (p, m, pm)",
+                                        r"de": r"Vorzeichen der Tolerienung (p, m, pm)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5382,14 +5434,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Tolerated deviation",
-                                    r"de": r"TolerierteAbweichung",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5408,6 +5453,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Tolerated deviation",
+                                        r"de": r"TolerierteAbweichung",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5458,14 +5511,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Sign of tolerance (p, m, pm)",
-                                    r"de": r"Vorzeichen der Tolerienung (p, m, pm)",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5484,6 +5530,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Sign of tolerance (p, m, pm)",
+                                        r"de": r"Vorzeichen der Tolerienung (p, m, pm)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5534,14 +5588,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Physical unit of feature",
-                                    r"de": r"Physikalische Einheit des Merkmals",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5560,6 +5607,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Physical unit of feature",
+                                        r"de": r"Physikalische Einheit des Merkmals",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5622,14 +5677,7 @@ class QualityControlForMachining(aas.Submodel):
                         id_short: Optional[str] = r"GPS_ToleranceZone",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Tolerance zone according to DIN EN ISO 1101. The tolerance zone must be arranged symmetrically around the reference geometry element, unless otherwise stated.",
-                                r"de": r"Toleranzzone gemäß DIN EN ISO 1101. Die Toleranzzone muss symmetrisch um das Referenzgeometrieelement herum angeordnet werden, soweit nichts anderes angegeben ist.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5646,6 +5694,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Tolerance zone according to DIN EN ISO 1101. The tolerance zone must be arranged symmetrically around the reference geometry element, unless otherwise stated.",
+                                    r"de": r"Toleranzzone gemäß DIN EN ISO 1101. Die Toleranzzone muss symmetrisch um das Referenzgeometrieelement herum angeordnet werden, soweit nichts anderes angegeben ist.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5809,14 +5865,7 @@ class QualityControlForMachining(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Reference to a Geomatry element described by a SMC Geometry in the Submodel Provision of 3D Models",
-                                    r"de": r"Referenz zu einer Geometry beschrieben durch eine SMC Geometry innerhalb des Teilmodells Provision of 3D Models",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5835,6 +5884,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Reference to a Geomatry element described by a SMC Geometry in the Submodel Provision of 3D Models",
+                                        r"de": r"Referenz zu einer Geometry beschrieben durch eine SMC Geometry innerhalb des Teilmodells Provision of 3D Models",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5885,14 +5942,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Geomtery Reference List in Submodel Provision of 3D Models",
-                                r"de": r"Geometriereferenzliste im Teilmodell Provision of 3D Models",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5909,6 +5959,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Geomtery Reference List in Submodel Provision of 3D Models",
+                                    r"de": r"Geometriereferenzliste im Teilmodell Provision of 3D Models",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6062,14 +6120,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"One element ID which relates to the quality feature",
-                                    r"de": r"Eine Element ID, auf das sich das Qualitätsmerkmal bezieht",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6088,6 +6139,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"One element ID which relates to the quality feature",
+                                        r"de": r"Eine Element ID, auf das sich das Qualitätsmerkmal bezieht",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6140,14 +6199,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of IDs in 3D Model which relate to the quality feature",
-                                r"de": r"Liste von IDs im 3D Modell, die sich auf das Qualitätsmerkmal beziehen",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6164,6 +6216,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of IDs in 3D Model which relate to the quality feature",
+                                    r"de": r"Liste von IDs im 3D Modell, die sich auf das Qualitätsmerkmal beziehen",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6321,14 +6381,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Page in the 2D document where the quality feature is illustrated",
-                                        r"de": r"Seite im 2D Dokument, auf der das Qualitätsmerkmal dargestellt ist",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6347,6 +6400,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Page in the 2D document where the quality feature is illustrated",
+                                            r"de": r"Seite im 2D Dokument, auf der das Qualitätsmerkmal dargestellt ist",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -6399,14 +6460,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Coordinate of the quality feature in a 2D document, e.g., 1B",
-                                        r"de": r"Koordinate des Qualitätsmerkmals in 2D Dokument, z.B. 1B",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6425,6 +6479,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Coordinate of the quality feature in a 2D document, e.g., 1B",
+                                            r"de": r"Koordinate des Qualitätsmerkmals in 2D Dokument, z.B. 1B",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -6472,14 +6534,7 @@ class QualityControlForMachining(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Reference to an element in a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
-                                    r"de": r"Referenz zu einem Element in einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6498,6 +6553,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Reference to an element in a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
+                                        r"de": r"Referenz zu einem Element in einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6578,14 +6641,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of references to a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
-                                r"de": r"Liste mit Referenzen zu einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6602,6 +6658,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of references to a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
+                                    r"de": r"Liste mit Referenzen zu einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6742,14 +6806,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about a geometric reference that is required to define the feature",
-                                r"de": r"Angaben zu einem geometrischen Bezug der für die Definition des Merkmals benötigt wird",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6766,6 +6823,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about a geometric reference that is required to define the feature",
+                                    r"de": r"Angaben zu einem geometrischen Bezug der für die Definition des Merkmals benötigt wird",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6816,14 +6881,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about a geometric reference that is required to define the feature",
-                                r"de": r"Angaben zu einem geometrischen Bezug der für die Definition des Merkmals benötigt wird",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6840,6 +6898,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about a geometric reference that is required to define the feature",
+                                    r"de": r"Angaben zu einem geometrischen Bezug der für die Definition des Merkmals benötigt wird",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6890,14 +6956,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about a geometric reference that is required to define the feature",
-                                r"de": r"Angaben zu einem geometrischen Bezug der für die Definition des Merkmals benötigt wird",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6914,6 +6973,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about a geometric reference that is required to define the feature",
+                                    r"de": r"Angaben zu einem geometrischen Bezug der für die Definition des Merkmals benötigt wird",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6970,14 +7037,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Identifier of additional GPS field information according to DIN EN 1101",
-                                        r"de": r"Bezeichner einer zusätzlichen GPS Feldinformationen gemäß DIN EN 1101",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6996,6 +7056,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Identifier of additional GPS field information according to DIN EN 1101",
+                                            r"de": r"Bezeichner einer zusätzlichen GPS Feldinformationen gemäß DIN EN 1101",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -7048,14 +7116,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Value of additional GPS field information according to DIN EN 1101",
-                                        r"de": r"Wert einer zusätzlichen GPS Feldinformation gemäß DIN EN 1101",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -7074,6 +7135,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Value of additional GPS field information according to DIN EN 1101",
+                                            r"de": r"Wert einer zusätzlichen GPS Feldinformation gemäß DIN EN 1101",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -7123,14 +7192,7 @@ class QualityControlForMachining(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Informationen zu weiteren GPS-Feldern gemäß DIN EN 1101",
-                                    r"de": r"Informationen zu weiteren GPS-Feldern gemäß DIN EN 1101",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -7149,6 +7211,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Informationen zu weiteren GPS-Feldern gemäß DIN EN 1101",
+                                        r"de": r"Informationen zu weiteren GPS-Feldern gemäß DIN EN 1101",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -7249,14 +7319,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List with information on other GPS fields in accordance with DIN EN 1101",
-                                r"de": r"Liste mit Informationen zu weiteren GPS-Feldern gemäß DIN EN 1101",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7273,6 +7336,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List with information on other GPS fields in accordance with DIN EN 1101",
+                                    r"de": r"Liste mit Informationen zu weiteren GPS-Feldern gemäß DIN EN 1101",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7450,14 +7521,7 @@ class QualityControlForMachining(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Information on a geometric quality feature according to DIN EN ISO 1101",
-                            r"de": r"Angaben zu einem geometrischen Qualitätsmerkmal nach DIN EN ISO 1101",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7474,6 +7538,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Information on a geometric quality feature according to DIN EN ISO 1101",
+                                r"de": r"Angaben zu einem geometrischen Qualitätsmerkmal nach DIN EN ISO 1101",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7702,14 +7774,7 @@ class QualityControlForMachining(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List of geometric quality characteristics according to DIN EN ISO 1101",
-                        r"de": r"Liste geometrischer Qualitätsmerkmale gemäß DIN EN ISO 1101",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -7726,6 +7791,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List of geometric quality characteristics according to DIN EN ISO 1101",
+                            r"de": r"Liste geometrischer Qualitätsmerkmale gemäß DIN EN ISO 1101",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -7870,14 +7943,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Name or ID of the quality feature",
-                                r"de": r"Name oder ID des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7894,6 +7960,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Name or ID of the quality feature",
+                                    r"de": r"Name oder ID des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7944,14 +8018,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the quality feature",
-                                r"de": r"Beschreibung des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7968,6 +8035,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the quality feature",
+                                    r"de": r"Beschreibung des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8018,14 +8093,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the measurement procedure, e.g. series measurements have to be averaged",
-                                r"de": r"Beschreibung der Messmethode, z. B. Werte der Messserie müssen gemittelt werden.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8042,6 +8110,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the measurement procedure, e.g. series measurements have to be averaged",
+                                    r"de": r"Beschreibung der Messmethode, z. B. Werte der Messserie müssen gemittelt werden.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8092,14 +8168,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to one or more norms and guidelines in which the code for the used tolerance is defined",
-                                r"de": r"Verweis auf eine oder mehrere Normen und Richtlinien, in denen der Code für die verwendete Toleranz festgelegt ist",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8126,6 +8195,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to one or more norms and guidelines in which the code for the used tolerance is defined",
+                                    r"de": r"Verweis auf eine oder mehrere Normen und Richtlinien, in denen der Code für die verwendete Toleranz festgelegt ist",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8176,14 +8253,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Is the measurement relevant as a test measure for quality assurance? True means yes, false means no",
-                                r"de": r"Ist das Maß als Prüfmaß für die Qualiätssicherung relevant? True bedeutet ja, false nein",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8200,6 +8270,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Is the measurement relevant as a test measure for quality assurance? True means yes, false means no",
+                                    r"de": r"Ist das Maß als Prüfmaß für die Qualiätssicherung relevant? True bedeutet ja, false nein",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8250,14 +8328,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Type of surface feature according to DIN EN ISO 25178-1(Value List "S-L" or "S-F")',
-                                r"de": r'Typ der Oberflächenbeschaffenheit gemäß DIN EN ISO 25178-1 (Value-List "S-L" oder "S-F")',
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8274,6 +8345,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Type of surface feature according to DIN EN ISO 25178-1(Value List "S-L" or "S-F")',
+                                    r"de": r'Typ der Oberflächenbeschaffenheit gemäß DIN EN ISO 25178-1 (Value-List "S-L" oder "S-F")',
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8324,14 +8403,7 @@ class QualityControlForMachining(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Reference to a Geomatry element described by a SMC Geometry in the Submodel Provision of 3D Models",
-                                    r"de": r"Referenz zu einer Geometry beschrieben durch eine SMC Geometry innerhalb des Teilmodells Provision of 3D Models",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -8350,6 +8422,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Reference to a Geomatry element described by a SMC Geometry in the Submodel Provision of 3D Models",
+                                        r"de": r"Referenz zu einer Geometry beschrieben durch eine SMC Geometry innerhalb des Teilmodells Provision of 3D Models",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -8400,14 +8480,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Geomtery Reference List in Submodel Provision of 3D Models",
-                                r"de": r"Geometriereferenzliste im Teilmodell Provision of 3D Models",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8424,6 +8497,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Geomtery Reference List in Submodel Provision of 3D Models",
+                                    r"de": r"Geometriereferenzliste im Teilmodell Provision of 3D Models",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8577,14 +8658,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"One element ID which relates to the quality feature",
-                                    r"de": r"Eine Element ID, auf das sich das Qualitätsmerkmal bezieht",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -8603,6 +8677,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"One element ID which relates to the quality feature",
+                                        r"de": r"Eine Element ID, auf das sich das Qualitätsmerkmal bezieht",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -8655,14 +8737,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of IDs in 3D Model which relate to the quality feature",
-                                r"de": r"Liste von IDs im 3D Modell, die sich auf das Qualitätsmerkmal beziehen",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8679,6 +8754,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of IDs in 3D Model which relate to the quality feature",
+                                    r"de": r"Liste von IDs im 3D Modell, die sich auf das Qualitätsmerkmal beziehen",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8836,14 +8919,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Page in the 2D document where the quality feature is illustrated",
-                                        r"de": r"Seite im 2D Dokument, auf der das Qualitätsmerkmal dargestellt ist",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -8862,6 +8938,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Page in the 2D document where the quality feature is illustrated",
+                                            r"de": r"Seite im 2D Dokument, auf der das Qualitätsmerkmal dargestellt ist",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -8914,14 +8998,7 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Coordinate of the quality feature in a 2D document, e.g., 1B",
-                                        r"de": r"Koordinate des Qualitätsmerkmals in 2D Dokument, z.B. 1B",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -8940,6 +9017,14 @@ class QualityControlForMachining(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Coordinate of the quality feature in a 2D document, e.g., 1B",
+                                            r"de": r"Koordinate des Qualitätsmerkmals in 2D Dokument, z.B. 1B",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -8987,14 +9072,7 @@ class QualityControlForMachining(aas.Submodel):
                             id_short: Optional[str] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Reference to an element in a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
-                                    r"de": r"Referenz zu einem Element in einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9013,6 +9091,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Reference to an element in a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
+                                        r"de": r"Referenz zu einem Element in einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9093,14 +9179,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List of references to a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
-                                r"de": r"Liste mit Referenzen zu einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -9117,6 +9196,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List of references to a 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed",
+                                    r"de": r"Liste mit Referenzen zu einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -9259,14 +9346,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Either U (upper) or L (lower) specification limit according to ISO 25178-1",
-                                    r"de": r"Entweder U (obere) oder L (untere) Spezifikationsgrenze gemäß ISO 25178-1",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9285,6 +9365,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Either U (upper) or L (lower) specification limit according to ISO 25178-1",
+                                        r"de": r"Entweder U (obere) oder L (untere) Spezifikationsgrenze gemäß ISO 25178-1",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9335,14 +9423,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Filter type of S-filter",
-                                    r"de": r"Filtertyp des S-Filters",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9361,6 +9442,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Filter type of S-filter",
+                                        r"de": r"Filtertyp des S-Filters",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9411,14 +9500,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Nesting index of the S-filter",
-                                    r"de": r"Nesting-Index des S-Filters",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9437,6 +9519,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Nesting index of the S-filter",
+                                        r"de": r"Nesting-Index des S-Filters",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9487,14 +9577,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Filter type of L-filter",
-                                    r"de": r"Filtertyp des L-Filters",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9513,6 +9596,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Filter type of L-filter",
+                                        r"de": r"Filtertyp des L-Filters",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9563,14 +9654,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Nesting index of the L-filter",
-                                    r"de": r"Nesting-Index des L-Filters",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9589,6 +9673,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Nesting index of the L-filter",
+                                        r"de": r"Nesting-Index des L-Filters",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9639,14 +9731,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Type of association operator and nesting index",
-                                    r"de": r"Typ des Assoziationsoperators und des Nesting-Indexes",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9665,6 +9750,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Type of association operator and nesting index",
+                                        r"de": r"Typ des Assoziationsoperators und des Nesting-Indexes",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9715,14 +9808,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Name of the areal parameter. See also ISO 25178-2:2012, 3.2",
-                                    r"de": r"Bezeichnung der flächenhaften Kenngröße. Siehe auch ISO 25178-2:2012, 3.2",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9741,6 +9827,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Name of the areal parameter. See also ISO 25178-2:2012, 3.2",
+                                        r"de": r"Bezeichnung der flächenhaften Kenngröße. Siehe auch ISO 25178-2:2012, 3.2",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9791,14 +9885,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Specified limit value of the parameter",
-                                    r"de": r"Festgelegter Grenzwert der Kenngröße",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9817,6 +9904,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Specified limit value of the parameter",
+                                        r"de": r"Festgelegter Grenzwert der Kenngröße",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9867,14 +9962,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Unit of the parameter value, if it is not the default unit",
-                                    r"de": r"Einheit des Kenngrößenwertes, sofern es nicht die defaultmäßige Einheit ist.",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9893,6 +9981,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Unit of the parameter value, if it is not the default unit",
+                                        r"de": r"Einheit des Kenngrößenwertes, sofern es nicht die defaultmäßige Einheit ist.",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -9943,14 +10039,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Symbol for the option to choose other requirements according to DIN EN ISO ISO 25178-2. Additional requirements are specified here.",
-                                    r"de": r"Symbol für die Wahlmöglichkeit sonstige Anforderungen gemäß DIN EN ISO 25178-2. An dieser Stelle werden zusätzliche Anforderungen angegeben.",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -9969,6 +10058,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Symbol for the option to choose other requirements according to DIN EN ISO ISO 25178-2. Additional requirements are specified here.",
+                                        r"de": r"Symbol für die Wahlmöglichkeit sonstige Anforderungen gemäß DIN EN ISO 25178-2. An dieser Stelle werden zusätzliche Anforderungen angegeben.",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10028,14 +10125,7 @@ class QualityControlForMachining(aas.Submodel):
                         id_short: Optional[str] = r"SL_Parameters",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Specification of an S-L surface finish according to DIN EN ISO 25178-1",
-                                r"de": r"Spezifikation einer S-L-Oberflächenbeschaffenheit gemäß DIN EN ISO 25178-1",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -10052,6 +10142,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Specification of an S-L surface finish according to DIN EN ISO 25178-1",
+                                    r"de": r"Spezifikation einer S-L-Oberflächenbeschaffenheit gemäß DIN EN ISO 25178-1",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -10213,14 +10311,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Either U (upper) or L (lower) specification limit according to ISO 25178-1",
-                                    r"de": r"Entweder U (obere) oder L (untere) Spezifikationsgrenze gemäß ISO 25178-1",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -10239,6 +10330,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Either U (upper) or L (lower) specification limit according to ISO 25178-1",
+                                        r"de": r"Entweder U (obere) oder L (untere) Spezifikationsgrenze gemäß ISO 25178-1",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10289,14 +10388,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Filter type of S-filter",
-                                    r"de": r"Filtertyp des S-Filters",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -10315,6 +10407,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Filter type of S-filter",
+                                        r"de": r"Filtertyp des S-Filters",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10365,14 +10465,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Nesting index of the S-filter",
-                                    r"de": r"Nesting-Index des S-Filters",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -10391,6 +10484,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Nesting index of the S-filter",
+                                        r"de": r"Nesting-Index des S-Filters",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10441,14 +10542,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Type of association operator and nesting index",
-                                    r"de": r"Typ des Assoziationsoperators und des Nesting-Indexes",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -10467,6 +10561,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Type of association operator and nesting index",
+                                        r"de": r"Typ des Assoziationsoperators und des Nesting-Indexes",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10517,14 +10619,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Name of the areal parameter. See also ISO 25178-2:2012, 3.2",
-                                    r"de": r"Bezeichnung der flächenhaften Kenngröße. Siehe auch ISO 25178-2:2012, 3.2",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -10543,6 +10638,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Name of the areal parameter. See also ISO 25178-2:2012, 3.2",
+                                        r"de": r"Bezeichnung der flächenhaften Kenngröße. Siehe auch ISO 25178-2:2012, 3.2",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10593,14 +10696,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Specified limit value of the parameter",
-                                    r"de": r"Festgelegter Grenzwert der Kenngröße",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -10619,6 +10715,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Specified limit value of the parameter",
+                                        r"de": r"Festgelegter Grenzwert der Kenngröße",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10669,14 +10773,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Unit of the parameter value, if it is not the default unit (the default unit µm does not need to be specified)",
-                                    r"de": r"Einheit des Kenngrößenwertes, sofern es nicht die defaultmäßige Einheit ist (die defaultmäßige Einheit µm braucht nicht angegeben zu werden)",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -10695,6 +10792,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Unit of the parameter value, if it is not the default unit (the default unit µm does not need to be specified)",
+                                        r"de": r"Einheit des Kenngrößenwertes, sofern es nicht die defaultmäßige Einheit ist (die defaultmäßige Einheit µm braucht nicht angegeben zu werden)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10745,14 +10850,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Choice of electromagnetic surface, according to DIN EN 25178-2",
-                                    r"de": r"Wahlmöglichkeit elektromagnetische Oberfläche gemäß DIN EN ISO 25178-2",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -10771,6 +10869,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Choice of electromagnetic surface, according to DIN EN 25178-2",
+                                        r"de": r"Wahlmöglichkeit elektromagnetische Oberfläche gemäß DIN EN ISO 25178-2",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10821,14 +10927,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Symbol for the option to choose other requirements according to DIN EN ISO 25178-2. Additional requirements are specified here.",
-                                    r"de": r"Symbol für die Wahlmöglichkeit sonstige Anforderungen gemäß DIN EN ISO 25178-2. An dieser Stelle werden zusätzliche Anforderungen angegeben.",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -10847,6 +10946,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Symbol for the option to choose other requirements according to DIN EN ISO 25178-2. Additional requirements are specified here.",
+                                        r"de": r"Symbol für die Wahlmöglichkeit sonstige Anforderungen gemäß DIN EN ISO 25178-2. An dieser Stelle werden zusätzliche Anforderungen angegeben.",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -10903,14 +11010,7 @@ class QualityControlForMachining(aas.Submodel):
                         id_short: Optional[str] = r"SF_Parameters",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Specification of an S-F surface finish, see ISO 25178-2:2012, 3.1.6",
-                                r"de": r"Spezifikation einer S-F-Oberflächenbeschaffenheit, siehe ISO 25178-2:2012, 3.1.6",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -10927,6 +11027,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Specification of an S-F surface finish, see ISO 25178-2:2012, 3.1.6",
+                                    r"de": r"Spezifikation einer S-F-Oberflächenbeschaffenheit, siehe ISO 25178-2:2012, 3.1.6",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -11074,14 +11182,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Specification of the reference level as a percentage of the material proportion curve, see ISO 25178-2:2012, 4.4.3. The default reference is the highest point 0% of the material proportion curve and does not need to be specified.",
-                                    r"de": "Spezifikation des Bezugsniveaus als prozentualer Anteil der Materialanteilskurve, siehe\nISO 25178-2:2012, 4.4.3. Der Default-Bezug ist der höchste Punkt 0 % der Materialanteilskurve und braucht nicht angegeben zu werden.",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -11100,6 +11201,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Specification of the reference level as a percentage of the material proportion curve, see ISO 25178-2:2012, 4.4.3. The default reference is the highest point 0% of the material proportion curve and does not need to be specified.",
+                                        r"de": "Spezifikation des Bezugsniveaus als prozentualer Anteil der Materialanteilskurve, siehe\nISO 25178-2:2012, 4.4.3. Der Default-Bezug ist der höchste Punkt 0 % der Materialanteilskurve und braucht nicht angegeben zu werden.",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -11150,14 +11259,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Set height distance in relation to the reference c value in µm, see ISO 25178-2:2012, 4.4.2. The c-value is negative if it is below the reference c-value and is positive if it is is above the reference c value",
-                                    r"de": "Festgelegter Höhenabstand im Verhältnis zum Bezugs-c-Wert in µm, siehe\nISO 25178-2:2012, 4.4.2.\nDer c-Wert ist negativ, wenn er unter dem Bezugs-c-Wert liegt, und ist positiv, wenn er\nüber dem Bezugs-c-Wert liegt",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -11176,6 +11278,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Set height distance in relation to the reference c value in µm, see ISO 25178-2:2012, 4.4.2. The c-value is negative if it is below the reference c-value and is positive if it is is above the reference c value",
+                                        r"de": "Festgelegter Höhenabstand im Verhältnis zum Bezugs-c-Wert in µm, siehe\nISO 25178-2:2012, 4.4.2.\nDer c-Wert ist negativ, wenn er unter dem Bezugs-c-Wert liegt, und ist positiv, wenn er\nüber dem Bezugs-c-Wert liegt",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -11226,14 +11336,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Specified limit value of the parameter",
-                                    r"de": r"Festgelegter Grenzwert der Kenngröße",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -11252,6 +11355,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Specified limit value of the parameter",
+                                        r"de": r"Festgelegter Grenzwert der Kenngröße",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -11302,14 +11413,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Unit, default: %, must always be specified",
-                                    r"de": r"Einhheit, default: %, muss immer angegeben werden",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -11328,6 +11432,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Unit, default: %, must always be specified",
+                                        r"de": r"Einhheit, default: %, muss immer angegeben werden",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -11377,14 +11489,7 @@ class QualityControlForMachining(aas.Submodel):
                         id_short: Optional[str] = r"Smr_Parameters",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Control elements for specifying the parameter value Smr for the material ratio in technical drawings, applies to both S-L and S-F surface finishes, see also ISO 25178-2:2012, 3.1.6",
-                                r"de": r"Steuerelemente für die Angabe des Kenngrößenwertes Smr für das Materialverhältnis in technischen Zeichnungen, gilt sowohl für S-L als auch für S-F Oberflächenbeschaffenheiten, siehe auch ISO 25178-2:2012, 3.1.6",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -11401,6 +11506,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Control elements for specifying the parameter value Smr for the material ratio in technical drawings, applies to both S-L and S-F surface finishes, see also ISO 25178-2:2012, 3.1.6",
+                                    r"de": r"Steuerelemente für die Angabe des Kenngrößenwertes Smr für das Materialverhältnis in technischen Zeichnungen, gilt sowohl für S-L als auch für S-F Oberflächenbeschaffenheiten, siehe auch ISO 25178-2:2012, 3.1.6",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -11520,14 +11633,7 @@ class QualityControlForMachining(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Definition of an areal surface parameter according to DIN EN ISO 25178-1",
-                            r"de": r"Definition einer flächenhaften Oberflächenkenngröße gemäß DIN EN ISO 25178-1",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11544,6 +11650,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Definition of an areal surface parameter according to DIN EN ISO 25178-1",
+                                r"de": r"Definition einer flächenhaften Oberflächenkenngröße gemäß DIN EN ISO 25178-1",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11732,14 +11846,7 @@ class QualityControlForMachining(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List of areal surface parameters according to EN ISO 25178-1",
-                        r"de": r"Liste flächenhafter Oberflächenkenngrößen gemäß EN ISO 25178-1",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -11756,6 +11863,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List of areal surface parameters according to EN ISO 25178-1",
+                            r"de": r"Liste flächenhafter Oberflächenkenngrößen gemäß EN ISO 25178-1",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -11915,14 +12030,7 @@ class QualityControlForMachining(aas.Submodel):
             id_short: Optional[str] = r"QualityFeatures",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Quality criteria of the item and their properties",
-                    r"de": r"Qualitätskriterien des Artikels und deren Eigenschaften",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -11939,6 +12047,14 @@ class QualityControlForMachining(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Quality criteria of the item and their properties",
+                        r"de": r"Qualitätskriterien des Artikels und deren Eigenschaften",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -12064,14 +12180,7 @@ class QualityControlForMachining(aas.Submodel):
                 id_short: Optional[str] = r"TechnicalData",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Reference to the AAS Submodel Technical Data for Industrial\nEquipment in Manufacturing",
-                        r"de": 'Referenz auf das AAS Submodel Technical Data for Industrial\nEquipment in Manufacturing"',
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -12088,6 +12197,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Reference to the AAS Submodel Technical Data for Industrial\nEquipment in Manufacturing",
+                            r"de": 'Referenz auf das AAS Submodel Technical Data for Industrial\nEquipment in Manufacturing"',
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -12138,14 +12255,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Date and time when production started for the production order",
-                            r"de": r"Datum und Uhrzeit des Starts der Produktion für den Produktionsauftrag",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12172,6 +12282,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Date and time when production started for the production order",
+                                r"de": r"Datum und Uhrzeit des Starts der Produktion für den Produktionsauftrag",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12222,14 +12340,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Date and time when production ended for the production order",
-                            r"de": r"Datum und Uhrzeit des Endes der Produktion für den Produktionsauftrag",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12256,6 +12367,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Date and time when production ended for the production order",
+                                r"de": r"Datum und Uhrzeit des Endes der Produktion für den Produktionsauftrag",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12306,14 +12425,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Human readable name of the job. Array shall always contain the same text, potentially in different languages.",
-                            r"de": r"Für Menschen lesbarer Name des Jobs. Das Array muss immer denselben Text enthalten, möglicherweise in verschiedenen Sprachen.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12330,6 +12442,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Human readable name of the job. Array shall always contain the same text, potentially in different languages.",
+                                r"de": r"Für Menschen lesbarer Name des Jobs. Das Array muss immer denselben Text enthalten, möglicherweise in verschiedenen Sprachen.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12380,14 +12500,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The OrderNumbers are used to reference company internal ERP orders the job order belongs to. Shall be provided in JobOrderParameters if any planned produced material uses OrderNumber as Identification and shall contain all those OrderNumbers.",
-                            r"de": r"Die Bestellnummern werden verwendet, um unternehmensinterne ERP-Bestellungen zu referenzieren, zu denen der Auftrag gehört. Wird in JobOrderParameters angegeben, wenn ein geplantes produziertes Material die Bestellnummer als Identifikation verwendet, und muss alle diese Bestellnummern enthalten.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12404,6 +12517,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The OrderNumbers are used to reference company internal ERP orders the job order belongs to. Shall be provided in JobOrderParameters if any planned produced material uses OrderNumber as Identification and shall contain all those OrderNumbers.",
+                                r"de": r"Die Bestellnummern werden verwendet, um unternehmensinterne ERP-Bestellungen zu referenzieren, zu denen der Auftrag gehört. Wird in JobOrderParameters angegeben, wenn ein geplantes produziertes Material die Bestellnummer als Identifikation verwendet, und muss alle diese Bestellnummern enthalten.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12454,14 +12575,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The number of parts produced by one run",
-                            r"de": r"Die Anzahl der Teile, die in einem Lauf produziert werden",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12478,6 +12592,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The number of parts produced by one run",
+                                r"de": r"Die Anzahl der Teile, die in einem Lauf produziert werden",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12528,14 +12650,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The planned order quantity shall be the planned quantity of products for a production order (lot size, production order quantity). [Source: ISO 22400]",
-                            r"de": r"Die geplante Auftragsmenge ist die geplante Produktmenge für einen Produktionsauftrag (Losgröße, Produktionsauftragsmenge). [Quelle: ISO 22400]",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12552,6 +12667,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The planned order quantity shall be the planned quantity of products for a production order (lot size, production order quantity). [Source: ISO 22400]",
+                                r"de": r"Die geplante Auftragsmenge ist die geplante Produktmenge für einen Produktionsauftrag (Losgröße, Produktionsauftragsmenge). [Quelle: ISO 22400]",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12602,14 +12725,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The number of parts actually measuerd by one run",
-                            r"de": r"Die Anzahl der Teile, die in einem Lauf tatsächlich gemessen werden",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12626,6 +12742,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The number of parts actually measuerd by one run",
+                                r"de": r"Die Anzahl der Teile, die in einem Lauf tatsächlich gemessen werden",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12676,14 +12800,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Status order completed. True: yes, false: no",
-                            r"de": r"Status Auftrag beendet. True: ja, false: nein",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12700,6 +12817,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Status order completed. True: yes, false: no",
+                                r"de": r"Status Auftrag beendet. True: ja, false: nein",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12753,14 +12878,7 @@ class QualityControlForMachining(aas.Submodel):
                 id_short: Optional[str] = r"ProductionJobOrderParameters",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Production order information",
-                        r"de": r"Informationen zum Produktionsauftrag",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -12777,6 +12895,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Production order information",
+                            r"de": r"Informationen zum Produktionsauftrag",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -12911,14 +13037,7 @@ class QualityControlForMachining(aas.Submodel):
             id_short: Optional[str] = r"ProductionCriteria",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Information on production-relevant criteria in connection with the production of a specific component",
-                    r"de": r"Informationen zu produktionsrevelvanten Kriterien im Zusammenhang mit der Fertigung eines konkreten Bauteils",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -12935,6 +13054,14 @@ class QualityControlForMachining(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Information on production-relevant criteria in connection with the production of a specific component",
+                        r"de": r"Informationen zu produktionsrevelvanten Kriterien im Zusammenhang mit der Fertigung eines konkreten Bauteils",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -13006,14 +13133,7 @@ class QualityControlForMachining(aas.Submodel):
                 id_short: Optional[str] = r"DigitalNameplate",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to the component’s Digital Nameplate submodel, including details such as serial number, product family, product type, and manufacturer.",
-                        r"de": r"Referenz zum Submodel Digital Nameplate des Bauteils, mit Informationen zur Seriennummer, Produktfamilie, Produkttyp und Hersteller",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13030,6 +13150,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Reference to the component’s Digital Nameplate submodel, including details such as serial number, product family, product type, and manufacturer.",
+                            r"de": r"Referenz zum Submodel Digital Nameplate des Bauteils, mit Informationen zur Seriennummer, Produktfamilie, Produkttyp und Hersteller",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13078,14 +13206,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to the AAS of the component: IRDI of the management shell of the component, which is carried in the machine to assign the manufacturing data for the component",
-                        r"de": r"Referenz auf die AAS des Bauteils: IRDI der Verwaltungschale des Bauteils, die in der Maschine zur Zuordnung der Fertigungsdaten für das Bauteil mitgeführt wird",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13102,6 +13223,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Reference to the AAS of the component: IRDI of the management shell of the component, which is carried in the machine to assign the manufacturing data for the component",
+                            r"de": r"Referenz auf die AAS des Bauteils: IRDI der Verwaltungschale des Bauteils, die in der Maschine zur Zuordnung der Fertigungsdaten für das Bauteil mitgeführt wird",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13152,14 +13281,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Consecutive number of the manufactured component in the batch from the CNC",
-                        r"de": r"Fortlaufende Nummer des gefertigten Bauteil im Los aus der CNC",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13186,6 +13308,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Consecutive number of the manufactured component in the batch from the CNC",
+                            r"de": r"Fortlaufende Nummer des gefertigten Bauteil im Los aus der CNC",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13236,14 +13366,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Identifier to identify the order. Shall be provided if defined in OutputInfo.",
-                        r"de": r"Bezeichner zur Identifizierung der Bestellung. Wird bereitgestellt, wenn in Output Info definiert.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13260,6 +13383,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Identifier to identify the order. Shall be provided if defined in OutputInfo.",
+                            r"de": r"Bezeichner zur Identifizierung der Bestellung. Wird bereitgestellt, wenn in Output Info definiert.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13310,14 +13441,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Identifier to identify the production lot. Shall be provided if defined in OutputInfo.",
-                        r"de": r"Bezeichner zur Identifizierung des Fertigungsloses. Wird bereitgestellt, wenn in Output Info definiert.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13334,6 +13458,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Identifier to identify the production lot. Shall be provided if defined in OutputInfo.",
+                            r"de": r"Bezeichner zur Identifizierung des Fertigungsloses. Wird bereitgestellt, wenn in Output Info definiert.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13382,14 +13514,7 @@ class QualityControlForMachining(aas.Submodel):
                 id_short: Optional[str] = r"SubmodelReference3D",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to IDTA Submodel Provision of 3D Models",
-                        r"de": r"Reference auf IDTA Submodel Provision of 3D Models",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13406,6 +13531,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Reference to IDTA Submodel Provision of 3D Models",
+                            r"de": r"Reference auf IDTA Submodel Provision of 3D Models",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13454,14 +13587,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to a pdf-file containing the 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed. All drawings referenced in the submodel have to be included in a single PDF document.",
-                        r"de": r"Referenz zum pdf-Dokument einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann. Es wird vorausgesetzt, dass alle im Submodel referenzierten Zeichnungen in einem pdf Dokument enthalten sind.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13478,6 +13604,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Reference to a pdf-file containing the 2D drawing intended as a reference for humans, not for automation, as unambiguous interpretation cannot be guaranteed. All drawings referenced in the submodel have to be included in a single PDF document.",
+                            r"de": r"Referenz zum pdf-Dokument einer 2D Zeichnung als Nachschlagewerk für Menschen, nicht für Automatisierung gedacht, da Eindeutigkeit nicht gewährleistet werden kann. Es wird vorausgesetzt, dass alle im Submodel referenzierten Zeichnungen in einem pdf Dokument enthalten sind.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13528,14 +13662,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to a file which contains a §D CAD  model, elg. STL-file",
-                        r"de": r"Referenz auf eine Datei die ein §D CAD Modell enthält, z.B. STL-file",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13552,6 +13679,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Reference to a file which contains a §D CAD  model, elg. STL-file",
+                            r"de": r"Referenz auf eine Datei die ein §D CAD Modell enthält, z.B. STL-file",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13607,14 +13742,7 @@ class QualityControlForMachining(aas.Submodel):
             id_short: Optional[str] = r"PartInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Production information about the component",
-                    r"de": r"Produktionsinformationen zu dem Bauteil",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -13631,6 +13759,14 @@ class QualityControlForMachining(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Production information about the component",
+                        r"de": r"Produktionsinformationen zu dem Bauteil",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -13762,14 +13898,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Name of the institution/testing body",
-                            r"de": r"Bezeichnung der Institution/Prüfstelle",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13786,6 +13915,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Name of the institution/testing body",
+                                r"de": r"Bezeichnung der Institution/Prüfstelle",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13836,14 +13973,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Role of the QS testing body (e.g. external quality testing laboratory)",
-                            r"de": r"Rolle der QS-Prüfstelle (z.B. externes Qualitätsprüflabor)",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13860,6 +13990,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Role of the QS testing body (e.g. external quality testing laboratory)",
+                                r"de": r"Rolle der QS-Prüfstelle (z.B. externes Qualitätsprüflabor)",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13908,14 +14046,7 @@ class QualityControlForMachining(aas.Submodel):
                     id_short: Optional[str] = r"ContactInformation",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to the AAS submodel “Contact Information”",
-                            r"de": r'Referenz auf das AAS Submodel "Contact Information"',
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13932,6 +14063,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Reference to the AAS submodel “Contact Information”",
+                                r"de": r'Referenz auf das AAS Submodel "Contact Information"',
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13980,14 +14119,7 @@ class QualityControlForMachining(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Information about an organizational unit responsible for quality assurance",
-                        r"de": r"Informationen zu einer für Qualitätssicherung verantwortlichen Organisationseinheiten",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -14004,6 +14136,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Information about an organizational unit responsible for quality assurance",
+                            r"de": r"Informationen zu einer für Qualitätssicherung verantwortlichen Organisationseinheiten",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -14089,14 +14229,7 @@ class QualityControlForMachining(aas.Submodel):
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"List of organizational units responsible for quality assurance",
-                    r"de": r"Liste der für die Qualitätssicherung verantwortlichen Organisationseinheiten",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -14113,6 +14246,14 @@ class QualityControlForMachining(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"List of organizational units responsible for quality assurance",
+                        r"de": r"Liste der für die Qualitätssicherung verantwortlichen Organisationseinheiten",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -14252,14 +14393,7 @@ class QualityControlForMachining(aas.Submodel):
                     id_short: Optional[str] = r"Responsibility",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to SMC QualityResponsibility",
-                            r"de": r"Referenz auf SMC QualityResponsibility",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14276,6 +14410,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Reference to SMC QualityResponsibility",
+                                r"de": r"Referenz auf SMC QualityResponsibility",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14322,14 +14464,7 @@ class QualityControlForMachining(aas.Submodel):
                     id_short: Optional[str] = r"DigitalNameplateTestingDevice",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to the testing device’s Digital Nameplate submodel, including details such as serial number, product family, product type, and manufacturer.",
-                            r"de": r"Referenz zum Submodel Digital Nameplate des Prüfgeräts, mit Informationen zur Seriennummer, Produktfamilie, Produkttyp und Hersteller",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14346,6 +14481,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Reference to the testing device’s Digital Nameplate submodel, including details such as serial number, product family, product type, and manufacturer.",
+                                r"de": r"Referenz zum Submodel Digital Nameplate des Prüfgeräts, mit Informationen zur Seriennummer, Produktfamilie, Produkttyp und Hersteller",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14394,14 +14537,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Name of the test device",
-                            r"de": r"Bezeichnung des Prüfgeräts",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14418,6 +14554,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Name of the test device",
+                                r"de": r"Bezeichnung des Prüfgeräts",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14468,14 +14612,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Type of measurement method, e.g. according to DIN EN ISO 25178-6, DIN EN ISO 25178-601, DIN EN ISO 25178-602",
-                            r"de": r"Art der Messmethode, z.B. nach DIN EN ISO 25178-6, DIN EN ISO 25178-601, DIN EN ISO 25178-602",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14492,6 +14629,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Type of measurement method, e.g. according to DIN EN ISO 25178-6, DIN EN ISO 25178-601, DIN EN ISO 25178-602",
+                                r"de": r"Art der Messmethode, z.B. nach DIN EN ISO 25178-6, DIN EN ISO 25178-601, DIN EN ISO 25178-602",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14542,14 +14687,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Unit in which the information on the measuring range and resolution is given",
-                            r"de": r"Einheit, in der die Angaben zum Messbereich und Auflösung erfolgen",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14566,6 +14704,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Unit in which the information on the measuring range and resolution is given",
+                                r"de": r"Einheit, in der die Angaben zum Messbereich und Auflösung erfolgen",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14616,14 +14762,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_type: aas.DataTypeDefXsd = float,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"range defined by two values of the measurand, or quantity to be supplied, within which the limits of uncertainty of the measuring instrument are specified",
-                            r"de": r"Bereich in dem die Messabweichungen oder Messgeräteabweichungen innerhalb festgelegter Grenzen bleiben",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14650,6 +14789,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"range defined by two values of the measurand, or quantity to be supplied, within which the limits of uncertainty of the measuring instrument are specified",
+                                r"de": r"Bereich in dem die Messabweichungen oder Messgeräteabweichungen innerhalb festgelegter Grenzen bleiben",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14700,14 +14847,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Physical resolution of the measuring instrument",
-                            r"de": r"Physikalische Auflösung des Messinstruments",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14724,6 +14864,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Physical resolution of the measuring instrument",
+                                r"de": r"Physikalische Auflösung des Messinstruments",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14774,14 +14922,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Accuracy expressed as a percentage. Containing the parameters referring to percentage measuring accuracy",
-                            r"de": r"Genauigkeit ausgedrückt in Prozent. Enthält die Parameter, die sich auf die prozentuale Messgenauigkeit beziehen",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14808,6 +14949,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Accuracy expressed as a percentage. Containing the parameters referring to percentage measuring accuracy",
+                                r"de": r"Genauigkeit ausgedrückt in Prozent. Enthält die Parameter, die sich auf die prozentuale Messgenauigkeit beziehen",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14858,14 +15007,7 @@ class QualityControlForMachining(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to the relevant standard in which the measuring method is described, e.g. DIN EN ISO 25178-601",
-                            r"de": r"Verweis auf entsprechende Norm in der die Messmethode beschrieben ist, z.B. DIN EN ISO 25178-601",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14882,6 +15024,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Reference to the relevant standard in which the measuring method is described, e.g. DIN EN ISO 25178-601",
+                                r"de": r"Verweis auf entsprechende Norm in der die Messmethode beschrieben ist, z.B. DIN EN ISO 25178-601",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14930,14 +15080,7 @@ class QualityControlForMachining(aas.Submodel):
                     id_short: Optional[str] = r"CalibrationCertificate",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to AAS Submodel Digital Quality Document",
-                            r"de": r"Referenz auf AAS Submodel Digital Quality Document",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14954,6 +15097,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Reference to AAS Submodel Digital Quality Document",
+                                r"de": r"Referenz auf AAS Submodel Digital Quality Document",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -15011,14 +15162,7 @@ class QualityControlForMachining(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"QS relevant information about the test device",
-                        r"de": r"QS relelvante Informationen über das Prüfgerät",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -15035,6 +15179,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"QS relevant information about the test device",
+                            r"de": r"QS relelvante Informationen über das Prüfgerät",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -15192,14 +15344,7 @@ class QualityControlForMachining(aas.Submodel):
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"List of testing devices used",
-                    r"de": r"Liste der verwendeten Prüfgeräte",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -15216,6 +15361,14 @@ class QualityControlForMachining(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"List of testing devices used",
+                        r"de": r"Liste der verwendeten Prüfgeräte",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -15355,14 +15508,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Date time of job start",
-                        r"de": r"Datum und Zeit des Starts des Auftrags",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -15379,6 +15525,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Date time of job start",
+                            r"de": r"Datum und Zeit des Starts des Auftrags",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -15429,14 +15583,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Date time of job end",
-                        r"de": r"Datum und Zeit des Endes des Auftrags",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -15453,6 +15600,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Date time of job end",
+                            r"de": r"Datum und Zeit des Endes des Auftrags",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -15503,14 +15658,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Human readable name of the job. Array shall always contain the same text, potentially in different languages.",
-                        r"de": r"Für Menschen lesbarer Name des Jobs. Das Array muss immer denselben Text enthalten, möglicherweise in verschiedenen Sprachen.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -15527,6 +15675,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Human readable name of the job. Array shall always contain the same text, potentially in different languages.",
+                            r"de": r"Für Menschen lesbarer Name des Jobs. Das Array muss immer denselben Text enthalten, möglicherweise in verschiedenen Sprachen.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -15577,14 +15733,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The OrderNumbers are used to reference company internal ERP orders the job order belongs to. Shall be provided in JobOrderParameters if any planned produced material uses OrderNumber as Identification and shall contain all those OrderNumbers.",
-                        r"de": r"Die Bestellnummern werden verwendet, um unternehmensinterne ERP-Bestellungen zu referenzieren, zu denen der Auftrag gehört. Wird in JobOrderParameters angegeben, wenn ein geplantes produziertes Material die Bestellnummer als Identifikation verwendet, und muss alle diese Bestellnummern enthalten.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -15601,6 +15750,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The OrderNumbers are used to reference company internal ERP orders the job order belongs to. Shall be provided in JobOrderParameters if any planned produced material uses OrderNumber as Identification and shall contain all those OrderNumbers.",
+                            r"de": r"Die Bestellnummern werden verwendet, um unternehmensinterne ERP-Bestellungen zu referenzieren, zu denen der Auftrag gehört. Wird in JobOrderParameters angegeben, wenn ein geplantes produziertes Material die Bestellnummer als Identifikation verwendet, und muss alle diese Bestellnummern enthalten.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -15651,14 +15808,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The number of parts planned to be measured by one run",
-                        r"de": r"Die Anzahl der Teile, die in einem Lauf gemessen werden sollen",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -15675,6 +15825,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The number of parts planned to be measured by one run",
+                            r"de": r"Die Anzahl der Teile, die in einem Lauf gemessen werden sollen",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -15725,14 +15883,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The number of parts actually measuerd by one run",
-                        r"de": r"Die Anzahl der Teile, die in einem Lauf tatsächlich gemessen werden",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -15749,6 +15900,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The number of parts actually measuerd by one run",
+                            r"de": r"Die Anzahl der Teile, die in einem Lauf tatsächlich gemessen werden",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -15799,14 +15958,7 @@ class QualityControlForMachining(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Status order completed. True: yes, false: no",
-                        r"de": r"Status Auftrag beendet. True: ja, false: nein",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -15823,6 +15975,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Status order completed. True: yes, false: no",
+                            r"de": r"Status Auftrag beendet. True: ja, false: nein",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -15875,14 +16035,7 @@ class QualityControlForMachining(aas.Submodel):
                         id_short: Optional[str] = r"QualityFeatureReference",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to QualityFeature in SMC QualityFeaturesList",
-                                r"de": r"Referenz auf QualityFeature in SMC QualityFeaturesList",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -15899,6 +16052,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to QualityFeature in SMC QualityFeaturesList",
+                                    r"de": r"Referenz auf QualityFeature in SMC QualityFeaturesList",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -15945,14 +16106,7 @@ class QualityControlForMachining(aas.Submodel):
                         id_short: Optional[str] = r"TestingDeviceReference",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to the test device used in SMC TestingDeviceList",
-                                r"de": r"Referenz auf das verwendete Prüfgerät in SMC TestingDeviceList",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -15969,6 +16123,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to the test device used in SMC TestingDeviceList",
+                                    r"de": r"Referenz auf das verwendete Prüfgerät in SMC TestingDeviceList",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16015,14 +16177,7 @@ class QualityControlForMachining(aas.Submodel):
                         id_short: Optional[str] = r"PartReference",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Reference to the AAS of the component if the SMC MetrologyData is not within this AAS",
-                                r"de": r"Referenz auf die AAS des Bauteils, falls sich die SMC MetrologyData nicht innerhalb dieser AAS befindet",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16039,6 +16194,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Reference to the AAS of the component if the SMC MetrologyData is not within this AAS",
+                                    r"de": r"Referenz auf die AAS des Bauteils, falls sich die SMC MetrologyData nicht innerhalb dieser AAS befindet",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16087,14 +16250,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Name or ID of the quality feature",
-                                r"de": r"Name oder ID des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16111,6 +16267,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Name or ID of the quality feature",
+                                    r"de": r"Name oder ID des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16161,14 +16325,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the quality feature",
-                                r"de": r"Beschreibung des Qualitätsmerkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16185,6 +16342,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the quality feature",
+                                    r"de": r"Beschreibung des Qualitätsmerkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16235,14 +16400,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Physical unit of feature",
-                                r"de": r"Physikalische Einheit des Merkmals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16259,6 +16417,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Physical unit of feature",
+                                    r"de": r"Physikalische Einheit des Merkmals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16309,14 +16475,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Value or values (with several repeated measurements) for the specific quality feature of the component",
-                                r"de": r"Wert oder Werte (bei mehreren Wiederholungsmessungen) für das bestimmte Qualitätsmerkmal des Bauteils",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16333,6 +16492,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Value or values (with several repeated measurements) for the specific quality feature of the component",
+                                    r"de": r"Wert oder Werte (bei mehreren Wiederholungsmessungen) für das bestimmte Qualitätsmerkmal des Bauteils",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16383,14 +16550,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"For attributive characteristics: attribute or attributes in the case of several repeat determinations) for the specific quality characteristic of the component",
-                                r"de": r"Bei attributiven Qualitätsmerkmalen: Attribut oder Attibute bei mehreren Wiederholungsbestimmungen für das bestimmte Qualitätsmerkmal des Bauteils",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16407,6 +16567,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"For attributive characteristics: attribute or attributes in the case of several repeat determinations) for the specific quality characteristic of the component",
+                                    r"de": r"Bei attributiven Qualitätsmerkmalen: Attribut oder Attibute bei mehreren Wiederholungsbestimmungen für das bestimmte Qualitätsmerkmal des Bauteils",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16457,14 +16625,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Indication whether the feature is within the tolerance, i.e. OK.",
-                                r"de": r"Angabe, ob das Merkmal innerhalb der Toleranz liegt, also i.O. ist.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16481,6 +16642,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Indication whether the feature is within the tolerance, i.e. OK.",
+                                    r"de": r"Angabe, ob das Merkmal innerhalb der Toleranz liegt, also i.O. ist.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16531,14 +16700,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Deviation from nominal value",
-                                r"de": r"Abweichung vom Sollwert",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16555,6 +16717,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Deviation from nominal value",
+                                    r"de": r"Abweichung vom Sollwert",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16605,14 +16775,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Average value, if several values ​​are measured when determining the characteristic",
-                                r"de": r"Arithmetischer Mittelwert, wenn bei Bestimmung des Merkmals mehrere Werte gemessen werden",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16629,6 +16792,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Average value, if several values ​​are measured when determining the characteristic",
+                                    r"de": r"Arithmetischer Mittelwert, wenn bei Bestimmung des Merkmals mehrere Werte gemessen werden",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16679,14 +16850,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Minimum value if several values ​​are measured when determining the characteristic",
-                                r"de": r"Minimaler Wert, wenn bei Bestimmung des Merkmals mehrere Werte gemessen werden",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16703,6 +16867,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Minimum value if several values ​​are measured when determining the characteristic",
+                                    r"de": r"Minimaler Wert, wenn bei Bestimmung des Merkmals mehrere Werte gemessen werden",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16753,14 +16925,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum value if several values ​​are measured when determining the characteristic",
-                                r"de": r"Maximaler Wert, wenn bei Bestimmung des Merkmals mehrere Werte gemessen werden",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16777,6 +16942,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum value if several values ​​are measured when determining the characteristic",
+                                    r"de": r"Maximaler Wert, wenn bei Bestimmung des Merkmals mehrere Werte gemessen werden",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16827,14 +17000,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Standarddeviation of measuring results if several values ​​are measured when determining the characteristic",
-                                r"de": r"Standardabweichung der Messergebnisse, wenn bei Bestimmung des Merkmals mehrere Werte gemessen werden",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16851,6 +17017,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Standarddeviation of measuring results if several values ​​are measured when determining the characteristic",
+                                    r"de": r"Standardabweichung der Messergebnisse, wenn bei Bestimmung des Merkmals mehrere Werte gemessen werden",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16901,14 +17075,7 @@ class QualityControlForMachining(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Boolean variable which indicates that the measured quality data is provided as aggregated value for a series of parts (e.g. as an average value for a lot or batch). Has to be set on false, if the measuring data is provided part specific.",
-                                r"de": r"Boolesche Variable, die angibt, dass die gemessenen Qualitätsdaten als aggregierter Wert, z.B. als Mittelwert für eine Reihe von Teilen (z. B. Los oder Charge) bereitgestellt werden. Muss auf false gesetzt werden, wenn die Messdaten teilespezifisch bereitgestellt werden.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -16925,6 +17092,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Boolean variable which indicates that the measured quality data is provided as aggregated value for a series of parts (e.g. as an average value for a lot or batch). Has to be set on false, if the measuring data is provided part specific.",
+                                    r"de": r"Boolesche Variable, die angibt, dass die gemessenen Qualitätsdaten als aggregierter Wert, z.B. als Mittelwert für eine Reihe von Teilen (z. B. Los oder Charge) bereitgestellt werden. Muss auf false gesetzt werden, wenn die Messdaten teilespezifisch bereitgestellt werden.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -16977,14 +17152,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Measured value",
-                                    r"de": r"Gemessener Wert",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -17003,6 +17171,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Measured value",
+                                        r"de": r"Gemessener Wert",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -17055,14 +17231,7 @@ class QualityControlForMachining(aas.Submodel):
                         order_relevant: bool = True,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Optional list of measured values",
-                                r"de": r"Optionale Liste gemessener Werte",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -17079,6 +17248,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Optional list of measured values",
+                                    r"de": r"Optionale Liste gemessener Werte",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -17232,14 +17409,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Link to the file",
-                                    r"de": r"Link zu der Datei",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -17268,6 +17438,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Link to the file",
+                                        r"de": r"Link zu der Datei",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -17318,14 +17496,7 @@ class QualityControlForMachining(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"MIME type of the file",
-                                    r"de": r"MIME-typ der Datei",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -17354,6 +17525,14 @@ class QualityControlForMachining(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"MIME type of the file",
+                                        r"de": r"MIME-typ der Datei",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -17401,14 +17580,7 @@ class QualityControlForMachining(aas.Submodel):
                         id_short: Optional[str] = r"MetrologyDataFile",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Optional measurement data file with the original measurement protocol",
-                                r"de": r"Optionale Messdatendatei mit dem original Messprotokoll",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -17425,6 +17597,14 @@ class QualityControlForMachining(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Optional measurement data file with the original measurement protocol",
+                                    r"de": r"Optionale Messdatendatei mit dem original Messprotokoll",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -17530,14 +17710,7 @@ class QualityControlForMachining(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Measurement results a quality feature",
-                            r"de": r"Messergebnisse einem Qualitätsmerkmal",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -17554,6 +17727,14 @@ class QualityControlForMachining(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Measurement results a quality feature",
+                                r"de": r"Messergebnisse einem Qualitätsmerkmal",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -17778,14 +17959,7 @@ class QualityControlForMachining(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List of measurement results for the quality characteristics",
-                        r"de": r"Liste der Messergebnisse zu den Qualitätsmerkmalen",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -17802,6 +17976,14 @@ class QualityControlForMachining(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List of measurement results for the quality characteristics",
+                            r"de": r"Liste der Messergebnisse zu den Qualitätsmerkmalen",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -17948,14 +18130,7 @@ class QualityControlForMachining(aas.Submodel):
             id_short: Optional[str] = r"MetrologyJobResults",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Information and measurements on the results of a quality assessment order",
-                    r"de": r"Informationen und Messwerte zu Ergebnissen eines Qualitätsbewertungsauftrag",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -17972,6 +18147,14 @@ class QualityControlForMachining(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Information and measurements on the results of a quality assessment order",
+                        r"de": r"Informationen und Messwerte zu Ergebnissen eines Qualitätsbewertungsauftrag",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -18114,21 +18297,8 @@ class QualityControlForMachining(aas.Submodel):
         id_short: Optional[str] = r"QualityControlForMachining",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"The Submodel Quality Control for Machining allows the collection of quality relevant information about parts produced in cyclical manufacturing processes. The focus is on looking at the production result and on machining manufacturing processes of milling, turning and drilling. However, the Submodel can also be used for other manufacturing processes.",
-                r"de": r"Das Teilmodell Quality Control for Machining erlaubt die Erfassung von qualitätsrelevanten Informationen über in zyklischen Fertigungsprozessen produzierte Bauteile. Der Fokus liegt auf der Betrachtung des Produktionsresultats und auf den zerspanenden Fertigungsverfahren Fräsen, Drehen, Bohren. Das Teilmodell kann jedoch auch für andere Fertigungsverfahren verwendet werden.",
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02049",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = None,
         qualifier: Iterable[aas.Qualifier] = None,
         kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
@@ -18136,6 +18306,23 @@ class QualityControlForMachining(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"The Submodel Quality Control for Machining allows the collection of quality relevant information about parts produced in cyclical manufacturing processes. The focus is on looking at the production result and on machining manufacturing processes of milling, turning and drilling. However, the Submodel can also be used for other manufacturing processes.",
+                    r"de": r"Das Teilmodell Quality Control for Machining erlaubt die Erfassung von qualitätsrelevanten Informationen über in zyklischen Fertigungsprozessen produzierte Bauteile. Der Fokus liegt auf der Betrachtung des Produktionsresultats und auf den zerspanenden Fertigungsverfahren Fräsen, Drehen, Bohren. Das Teilmodell kann jedoch auch für andere Fertigungsverfahren verwendet werden.",
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02049",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

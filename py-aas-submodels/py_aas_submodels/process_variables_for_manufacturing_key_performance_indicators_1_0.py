@@ -15,18 +15,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -43,6 +34,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -91,18 +93,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -119,6 +112,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -166,17 +172,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual personnel work time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -193,6 +191,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual personnel work time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -247,17 +255,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualPersonnelWorkTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Actual Personnel Work Time"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual personnel work time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -274,6 +274,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Personnel Work Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual personnel work time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -355,18 +367,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -383,6 +386,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -431,18 +445,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -459,6 +464,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -506,17 +524,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual unit processing time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -533,6 +543,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual unit processing time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -587,19 +607,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitProcessingTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Actual Unit Processing Time"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual unit processing time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -616,6 +626,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Unit Processing Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual unit processing time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -697,18 +719,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -725,6 +738,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -773,18 +797,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -801,6 +816,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -848,17 +876,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual unit busy time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -875,6 +895,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual unit busy time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -929,17 +959,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitBusyTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Actual Unit Busy Time"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual unit busy time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -956,6 +978,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Unit Busy Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual unit busy time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1037,18 +1071,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1065,6 +1090,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1113,18 +1149,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1141,6 +1168,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1188,17 +1228,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual order execution time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1215,6 +1247,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual order execution time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1269,19 +1311,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualOrderExecutionTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Actual Order Execution Time"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual order execution time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1298,6 +1330,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Order Execution Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual order execution time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1379,18 +1423,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1407,6 +1442,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1455,18 +1501,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1483,6 +1520,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1530,17 +1580,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual personnel attendance time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1557,6 +1599,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual personnel attendance time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1611,19 +1663,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualPersonnelAttendanceTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Actual Personnel Attendance Time"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual personnel attendance time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1640,6 +1682,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Personnel Attendance Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual personnel attendance time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1721,18 +1775,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1749,6 +1794,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1797,18 +1853,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1825,6 +1872,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1872,17 +1932,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual production time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1899,6 +1951,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual production time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1953,17 +2015,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualProductionTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Actual Production Time"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual production time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1980,6 +2034,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Production Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual production time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2061,18 +2127,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2089,6 +2146,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2137,18 +2205,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2165,6 +2224,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2212,17 +2284,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual queuing time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2239,6 +2303,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual queuing time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2293,17 +2367,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualQueuingTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Actual Queuing Time"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual queuing time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2320,6 +2386,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Queuing Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual queuing time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2401,18 +2479,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2429,6 +2498,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2477,18 +2557,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2505,6 +2576,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2552,17 +2636,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual unit down time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2579,6 +2655,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual unit down time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2633,17 +2719,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitDownTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Actual Unit Down Time"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual unit down time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2660,6 +2738,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Unit Down Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual unit down time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2741,18 +2831,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2769,6 +2850,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2817,18 +2909,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2845,6 +2928,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2892,17 +2988,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual unit delay time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2919,6 +3007,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual unit delay time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2973,17 +3071,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitDelayTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Actual Unit Delay Time"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual unit delay time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3000,6 +3090,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Unit Delay Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual unit delay time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3081,18 +3183,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3109,6 +3202,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3157,18 +3261,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3185,6 +3280,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3232,17 +3340,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual unit setup time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3259,6 +3359,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual unit setup time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3313,17 +3423,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualUnitSetupTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Actual Unit Setup Time"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual unit setup time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3340,6 +3442,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Unit Setup Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual unit setup time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3421,18 +3535,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3449,6 +3554,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3497,18 +3613,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3525,6 +3632,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3572,17 +3692,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for actual transport time."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3599,6 +3711,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for actual transport time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3653,17 +3775,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ActualTransportTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Actual Transport Time"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for actual transport time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3680,6 +3794,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Actual Transport Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for actual transport time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3761,18 +3887,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3789,6 +3906,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3837,18 +3965,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Decimal,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3865,6 +3984,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3912,15 +4044,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Provides optional comments for good part."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3937,6 +4063,14 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Provides optional comments for good part."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3991,17 +4125,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Decimal, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"GoodPart",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Good Part"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for good part, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -4018,6 +4144,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Good Part"})
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for good part, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4099,18 +4235,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4127,6 +4254,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4175,18 +4313,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Decimal,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4203,6 +4332,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4250,15 +4392,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Provides optional comments for inspected part."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4275,6 +4411,14 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Provides optional comments for inspected part."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4329,17 +4473,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Decimal, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"InspectedPart",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Inspected Part"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for inspected part, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -4356,6 +4492,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Inspected Part"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for inspected part, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4437,18 +4585,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4465,6 +4604,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4513,18 +4663,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Decimal,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4541,6 +4682,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4588,15 +4742,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Provides optional comments for scrap quantity."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4613,6 +4761,14 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Provides optional comments for scrap quantity."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4667,17 +4823,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Decimal, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ScrapQuantity",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Scrap Quantity"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for scrap quantity, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -4694,6 +4842,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Scrap Quantity"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for scrap quantity, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -4775,18 +4935,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4803,6 +4954,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4851,18 +5013,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Decimal,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4879,6 +5032,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4926,15 +5092,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Provides optional comments for good quantity."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4951,6 +5111,14 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Provides optional comments for good quantity."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5005,17 +5173,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Decimal, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"GoodQuantity",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Good Quantity"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for good quantity, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -5032,6 +5192,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Good Quantity"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for good quantity, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -5113,18 +5285,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5141,6 +5304,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5189,18 +5363,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Decimal,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5217,6 +5382,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5264,15 +5442,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Provides optional comments for rework quantity."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5289,6 +5461,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for rework quantity."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5343,17 +5525,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Decimal, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ReworkQuantity",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Rework Quantity"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for rework quantity, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -5370,6 +5544,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Rework Quantity"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for rework quantity, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -5451,18 +5637,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5479,6 +5656,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5527,18 +5715,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Decimal,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5555,6 +5734,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5602,15 +5794,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Provides optional comments for produced quantity."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5627,6 +5813,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for produced quantity."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5681,17 +5877,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Decimal, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"ProducedQuantity",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Produced Quantity"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for produced quantity, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -5708,6 +5896,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Produced Quantity"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for produced quantity, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -5789,18 +5989,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5817,6 +6008,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5865,18 +6067,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5893,6 +6086,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5940,15 +6146,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Provides optional comments for planned busy time."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5965,6 +6165,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for planned busy time."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6019,17 +6229,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"PlannedBusyTime",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Planned Busy Time"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for planned busy time, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -6046,6 +6248,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Planned Busy Time"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for planned busy time, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -6127,18 +6341,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"key",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Key"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Bezeichner aus ISO 22400-2:2014.",
-                        r"en": r"Identifier from ISO 22400-2:2014.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6155,6 +6360,17 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Key"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Bezeichner aus ISO 22400-2:2014.",
+                            r"en": r"Identifier from ISO 22400-2:2014.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6203,18 +6419,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 id_short: Optional[str] = r"currentValue",
                 value_type: aas.DataTypeDefXsd = xsd.Duration,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Current Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Aktueller Wert der Prozessvariable.",
-                        r"en": r"Current value of process variable.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6231,6 +6438,19 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Current Value"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Aktueller Wert der Prozessvariable.",
+                            r"en": r"Current value of process variable.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6278,17 +6498,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"comment",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Comment"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Provides optional comments for planned runtime per item."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6305,6 +6517,16 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Comment"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Provides optional comments for planned runtime per item."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6359,17 +6581,9 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
             currentValue: Union[xsd.Duration, CurrentValue],
             comment: Union[aas.LangStringSet, Comment],
             id_short: Optional[str] = r"PlannedRuntimePerItem",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Planned Runtime Per Item"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Groups the data points for planned runtime per item, including key, current value, and comment."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -6386,6 +6600,18 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Planned Runtime Per Item"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Groups the data points for planned runtime per item, including key, current value, and comment."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -6480,24 +6706,10 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
         plannedBusyTime: Optional[PlannedBusyTime] = None,
         plannedRuntimePerItem: Optional[PlannedRuntimePerItem] = None,
         id_short: Optional[str] = r"ProcessVariablesForManufacturingKPICalculation",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"Process Variables For Manufacturing KPI Calculation"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"Defines the template submodel for process variables used in manufacturing KPI calculation."
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=None,
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -6514,6 +6726,27 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={r"en": r"Process Variables For Manufacturing KPI Calculation"}
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Defines the template submodel for process variables used in manufacturing KPI calculation."
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=None,
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

@@ -1,4 +1,6 @@
 import builtins
+import datetime
+import decimal
 import enum
 import keyword
 import pydoc
@@ -21,6 +23,9 @@ TYPING_IMPORTS = ("Any", "ForwardRef", "Iterable", "Optional", "Tuple", "Union")
 RESERVED_CLS_NAMES = frozenset(TYPING_IMPORTS) | frozenset(dir(builtins)) | frozenset(keyword.kwlist)
 # Init arguments must not shadow the module aliases used in the init body
 RESERVED_ARG_NAMES = frozenset((MODEL_ALIAS, DATATYPES_ALIAS)) | frozenset(keyword.kwlist)
+
+# Collections rendered as tuples in generated code (see StringHandler.reprify)
+TUPLE_TYPES = (tuple, NamespaceSet, ConstrainedList)
 
 # XSD types defined as aliases in basyx.aas.model.datatypes: their class names
 # (relativedelta, datetime, time) don't exist in basyx.aas.model.datatypes
@@ -244,7 +249,7 @@ class StringHandler:
             return f"{qualified_name(type(val))}.{val.name}"
         elif isinstance(val, List):
             return f"[{', '.join([cls.reprify(i) for i in val])}]"
-        elif isinstance(val, (tuple, NamespaceSet, ConstrainedList)):
+        elif isinstance(val, TUPLE_TYPES):
             res = f"({', '.join([cls.reprify(i) for i in val])})"
             if len(val) == 1:
                 res = f"{res[:-1]},)"
@@ -307,9 +312,15 @@ def get_typehints_for_args(obj, args):
     return args_typehints
 
 
-def is_mutable(obj):
-    mutable_types = (list, dict, set, bytearray, memoryview, Referable)
+# Values that can't be changed, so that instances can share them as default values
+# (BaSyx References and Keys are immutable)
+IMMUTABLE_TYPES = (type(None), bool, int, float, str, bytes, decimal.Decimal, datetime.date, datetime.time,
+                   enum.Enum, type, Reference, Key)
 
-    if isinstance(obj, mutable_types):
-        return True
-    return False
+
+def is_mutable(obj) -> bool:
+    """Return if `obj` can be changed or holds objects that can (e.g. a tuple of submodel elements),
+    so that it must be created for each instance instead of being shared as a default value"""
+    if isinstance(obj, TUPLE_TYPES):
+        return any(is_mutable(item) for item in obj)
+    return not isinstance(obj, IMMUTABLE_TYPES)

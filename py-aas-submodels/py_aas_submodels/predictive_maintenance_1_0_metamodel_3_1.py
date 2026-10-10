@@ -15,290 +15,12 @@ class PredictiveMaintenance(aas.Submodel):
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.CO_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = (
-                    aas.Property(
-                        id_short=r"IndicationType",
-                        value_type=str,
-                        value=None,
-                        value_id=None,
-                        display_name=None,
-                        category=None,
-                        description=aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Type of wear-relevant duration, e.g. time, cycles, distance, etc.",
-                                r"de": r"Art der verschleißrelevanten Dauer, z.B. Zeit, Zyklen, Wegstrecke, etc.",
-                            }
-                        ),
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PredictiveMaintenance/IndicationType/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        qualifier=(
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        ),
-                        extension=(),
-                        supplemental_semantic_id=(),
-                        embedded_data_specifications=[],
-                    ),
-                    aas.Property(
-                        id_short=r"DurationValue",
-                        value_type=float,
-                        value=None,
-                        value_id=None,
-                        display_name=None,
-                        category=None,
-                        description=aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Value of duration in the wear relevant unit, e.g. time, operation cycles, distance, etc.",
-                                r"de": r"Zahlenwert der Dauer in der verschleißrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
-                            }
-                        ),
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PredictiveMaintenance/DurationValue/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        qualifier=(
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        ),
-                        extension=(),
-                        supplemental_semantic_id=(),
-                        embedded_data_specifications=[],
-                    ),
-                    aas.Property(
-                        id_short=r"EngineeringUnit",
-                        value_type=str,
-                        value=None,
-                        value_id=None,
-                        display_name=None,
-                        category=None,
-                        description=aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Wear relevant physical unit, e.g. time, operation cycles, distance, etc.",
-                                r"de": r"Verschleißrelevante physikalische Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
-                            }
-                        ),
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PredictiveMaintenance/EngineeringUnit/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        qualifier=(
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        ),
-                        extension=(),
-                        supplemental_semantic_id=(),
-                        embedded_data_specifications=[],
-                    ),
-                    aas.Property(
-                        id_short=r"StartValue",
-                        value_type=float,
-                        value=None,
-                        value_id=None,
-                        display_name=None,
-                        category=None,
-                        description=aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Starting value from which the duration is measured in the wear-relevant unit, e.g. time, cycles, distance, etc.",
-                                r"de": r"Startwert, von dem ab die Dauer gemessen wird in der verschleißrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
-                            }
-                        ),
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PredictiveMaintenance/StartValue/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        qualifier=(
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        ),
-                        extension=(),
-                        supplemental_semantic_id=(),
-                        embedded_data_specifications=[],
-                    ),
-                    aas.Property(
-                        id_short=r"StartDateTime",
-                        value_type=xsd.DateTime,
-                        value=None,
-                        value_id=None,
-                        display_name=None,
-                        category=None,
-                        description=aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Start date and time from which the duration is measured",
-                                r"de": r"Startdatum und -zeit, von der ab die Dauer gemessen wird",
-                            }
-                        ),
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PredictiveMaintenance/StartDateTime/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        qualifier=(
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        ),
-                        extension=(),
-                        supplemental_semantic_id=(),
-                        embedded_data_specifications=[],
-                    ),
-                    aas.Property(
-                        id_short=r"Description",
-                        value_type=str,
-                        value=None,
-                        value_id=None,
-                        display_name=None,
-                        category=None,
-                        description=aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the wear duration information",
-                                r"de": r"Beschreibung der Angabe zur verschleißrelevanten Dauer",
-                            }
-                        ),
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PredictiveMaintenance/Description/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        qualifier=(
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        ),
-                        extension=(),
-                        supplemental_semantic_id=(),
-                        embedded_data_specifications=[],
-                    ),
-                ),
+                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Remaining useful life time, bades on Lifetime model of OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)",
-                        r"de": r"Verbleibende Betriebszeit in Anlehnung an Lifetime model der OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -315,6 +37,288 @@ class PredictiveMaintenance(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if statement is None:
+                    statement = (
+                        aas.Property(
+                            id_short=r"IndicationType",
+                            value_type=str,
+                            value=None,
+                            value_id=None,
+                            display_name=None,
+                            category=None,
+                            description=aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Type of wear-relevant duration, e.g. time, cycles, distance, etc.",
+                                    r"de": r"Art der verschleißrelevanten Dauer, z.B. Zeit, Zyklen, Wegstrecke, etc.",
+                                }
+                            ),
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/IndicationType/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier=(
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            ),
+                            extension=(),
+                            supplemental_semantic_id=(),
+                            embedded_data_specifications=[],
+                        ),
+                        aas.Property(
+                            id_short=r"DurationValue",
+                            value_type=float,
+                            value=None,
+                            value_id=None,
+                            display_name=None,
+                            category=None,
+                            description=aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Value of duration in the wear relevant unit, e.g. time, operation cycles, distance, etc.",
+                                    r"de": r"Zahlenwert der Dauer in der verschleißrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
+                                }
+                            ),
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/DurationValue/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier=(
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            ),
+                            extension=(),
+                            supplemental_semantic_id=(),
+                            embedded_data_specifications=[],
+                        ),
+                        aas.Property(
+                            id_short=r"EngineeringUnit",
+                            value_type=str,
+                            value=None,
+                            value_id=None,
+                            display_name=None,
+                            category=None,
+                            description=aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Wear relevant physical unit, e.g. time, operation cycles, distance, etc.",
+                                    r"de": r"Verschleißrelevante physikalische Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
+                                }
+                            ),
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/EngineeringUnit/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier=(
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            ),
+                            extension=(),
+                            supplemental_semantic_id=(),
+                            embedded_data_specifications=[],
+                        ),
+                        aas.Property(
+                            id_short=r"StartValue",
+                            value_type=float,
+                            value=None,
+                            value_id=None,
+                            display_name=None,
+                            category=None,
+                            description=aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Starting value from which the duration is measured in the wear-relevant unit, e.g. time, cycles, distance, etc.",
+                                    r"de": r"Startwert, von dem ab die Dauer gemessen wird in der verschleißrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
+                                }
+                            ),
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/StartValue/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier=(
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"One",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            ),
+                            extension=(),
+                            supplemental_semantic_id=(),
+                            embedded_data_specifications=[],
+                        ),
+                        aas.Property(
+                            id_short=r"StartDateTime",
+                            value_type=xsd.DateTime,
+                            value=None,
+                            value_id=None,
+                            display_name=None,
+                            category=None,
+                            description=aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Start date and time from which the duration is measured",
+                                    r"de": r"Startdatum und -zeit, von der ab die Dauer gemessen wird",
+                                }
+                            ),
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/StartDateTime/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier=(
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"ZeroToOne",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            ),
+                            extension=(),
+                            supplemental_semantic_id=(),
+                            embedded_data_specifications=[],
+                        ),
+                        aas.Property(
+                            id_short=r"Description",
+                            value_type=str,
+                            value=None,
+                            value_id=None,
+                            display_name=None,
+                            category=None,
+                            description=aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the wear duration information",
+                                    r"de": r"Beschreibung der Angabe zur verschleißrelevanten Dauer",
+                                }
+                            ),
+                            semantic_id=aas.ExternalReference(
+                                key=(
+                                    aas.Key(
+                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/Description/1/0",
+                                    ),
+                                ),
+                                referred_semantic_id=None,
+                            ),
+                            qualifier=(
+                                aas.Qualifier(
+                                    type_=r"SMT/Cardinality",
+                                    value_type=str,
+                                    value=r"ZeroToOne",
+                                    value_id=None,
+                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
+                                    semantic_id=aas.ExternalReference(
+                                        key=(
+                                            aas.Key(
+                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                            ),
+                                        ),
+                                        referred_semantic_id=None,
+                                    ),
+                                    supplemental_semantic_id=(),
+                                ),
+                            ),
+                            extension=(),
+                            supplemental_semantic_id=(),
+                            embedded_data_specifications=[],
+                        ),
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Remaining useful life time, bades on Lifetime model of OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)",
+                            r"de": r"Verbleibende Betriebszeit in Anlehnung an Lifetime model der OPC Foundation (https://reference.opcfoundation.org/DI/v104/docs/10)",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -366,14 +370,7 @@ class PredictiveMaintenance(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"mark attributed to an instant by means of a specified timescale, expressed as a date and a time",
-                        r"de": r"Markierung, zugeordnet zu einem Moment mittles einer spezifischen Zeitskala, ausgedrückt als Datum und Uhrzeit",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -390,6 +387,14 @@ class PredictiveMaintenance(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"mark attributed to an instant by means of a specified timescale, expressed as a date and a time",
+                            r"de": r"Markierung, zugeordnet zu einem Moment mittles einer spezifischen Zeitskala, ausgedrückt als Datum und Uhrzeit",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -440,14 +445,7 @@ class PredictiveMaintenance(aas.Submodel):
                 value_type: aas.DataTypeDefXsd = float,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"confidence interval, measured in the unit of the predicted value",
-                        r"de": r"Konfidenzintervall in der Einheit des prognositizierten Wertes",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -464,6 +462,14 @@ class PredictiveMaintenance(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"confidence interval, measured in the unit of the predicted value",
+                            r"de": r"Konfidenzintervall in der Einheit des prognositizierten Wertes",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -518,14 +524,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Name of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid.",
-                                r"de": r"Bezeichnung des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, für die die RUL-Vorhersage gültig ist.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -542,6 +541,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Name of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid.",
+                                    r"de": r"Bezeichnung des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, für die die RUL-Vorhersage gültig ist.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -592,14 +599,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"If this boundary condition is used in the model for RUL prediction true, else false",
-                                r"de": r"Wenn diese Randbedingung im Modell für die RUL Prognose verwendet true sonst false",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -616,6 +616,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"If this boundary condition is used in the model for RUL prediction true, else false",
+                                    r"de": r"Wenn diese Randbedingung im Modell für die RUL Prognose verwendet true sonst false",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -666,14 +674,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Value range of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid.",
-                                r"de": r"Wertebereich des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, für die die RUL-Vorhersage gültig ist.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -690,6 +691,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Value range of the indicator (process value, KPI, material property, asset property) describing a boundary condition for which RUL prediction is valid.",
+                                    r"de": r"Wertebereich des Indikators (Prozesswert, KPI, Materialeigenschaft, Anlageneigenschaft), der eine Randbedingung beschreibt, für die die RUL-Vorhersage gültig ist.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -740,14 +749,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Engineering Unit of the boundary condition indicator",
-                                r"de": r"Physikalische Einheit des Indikators, der die Randbedingung beschreibt",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -764,6 +766,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Engineering Unit of the boundary condition indicator",
+                                    r"de": r"Physikalische Einheit des Indikators, der die Randbedingung beschreibt",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -814,14 +824,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_type: aas.DataTypeDefXsd = float,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Drift information of AI model",
-                                r"de": r"Drift Information of AI Model",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -838,6 +841,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Drift information of AI model",
+                                    r"de": r"Drift Information of AI Model",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -888,14 +899,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Mean value of the distribution of indicator values",
-                                r"de": r"Mttelwert der Verteilung des Indikators",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -912,6 +916,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Mean value of the distribution of indicator values",
+                                    r"de": r"Mttelwert der Verteilung des Indikators",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -962,14 +974,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Standard deviation of the distribution of indicator values",
-                                r"de": r"Standardabweichung der Verteilung des Indikators",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -986,6 +991,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Standard deviation of the distribution of indicator values",
+                                    r"de": r"Standardabweichung der Verteilung des Indikators",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1036,14 +1049,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Skewness of the distribution of indicator values",
-                                r"de": r"Schiefe der Verteilung des Indikators",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1060,6 +1066,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Skewness of the distribution of indicator values",
+                                    r"de": r"Schiefe der Verteilung des Indikators",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1110,14 +1124,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the boundary of a RUL prediction condition",
-                                r"de": r"Beschreibung einer RUL Vorhersage-Randbedingung",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1134,6 +1141,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the boundary of a RUL prediction condition",
+                                    r"de": r"Beschreibung einer RUL Vorhersage-Randbedingung",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1194,14 +1209,7 @@ class PredictiveMaintenance(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Boundary condition for which remaining useful life has been predicted",
-                            r"de": r"Randbedingung unter der die nutzbare Restlebensdauer prognositiziert wurde",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1218,6 +1226,14 @@ class PredictiveMaintenance(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Boundary condition for which remaining useful life has been predicted",
+                                r"de": r"Randbedingung unter der die nutzbare Restlebensdauer prognositiziert wurde",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1367,14 +1383,7 @@ class PredictiveMaintenance(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List of boundary conditions for which remaining useful life has been predicted",
-                        r"de": r"Liste der Randbedingungen unter denen die nutzbare Restlebensdauer prognostiziert wurde",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1391,6 +1400,14 @@ class PredictiveMaintenance(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List of boundary conditions for which remaining useful life has been predicted",
+                            r"de": r"Liste der Randbedingungen unter denen die nutzbare Restlebensdauer prognostiziert wurde",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1533,14 +1550,7 @@ class PredictiveMaintenance(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Model type as an enumerated value: physical based methods, data-driven methods, hybrid methods",
-                            r"de": r"Modeltyp als enumerierter Wert: physical based methods, data-driven methods, hybrid methods",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1557,6 +1567,14 @@ class PredictiveMaintenance(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Model type as an enumerated value: physical based methods, data-driven methods, hybrid methods",
+                                r"de": r"Modeltyp als enumerierter Wert: physical based methods, data-driven methods, hybrid methods",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1607,14 +1625,7 @@ class PredictiveMaintenance(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"More detailed description of the model type used for RUL prediction (optional)",
-                            r"de": r"Detailliertere Beschreibung des Modelltyps, der für die RUL Prognose verwendet wird (optional)",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1631,6 +1642,14 @@ class PredictiveMaintenance(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"More detailed description of the model type used for RUL prediction (optional)",
+                                r"de": r"Detailliertere Beschreibung des Modelltyps, der für die RUL Prognose verwendet wird (optional)",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1679,14 +1698,7 @@ class PredictiveMaintenance(aas.Submodel):
                     id_short: Optional[str] = r"SMAIModelNamePlate",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to AIModelNameplate",
-                            r"de": r"Referenz auf AIModelNameplate",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1703,6 +1715,14 @@ class PredictiveMaintenance(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Reference to AIModelNameplate",
+                                r"de": r"Referenz auf AIModelNameplate",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1751,14 +1771,7 @@ class PredictiveMaintenance(aas.Submodel):
                 id_short: Optional[str] = r"PredictionModelInformation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Information about the model for RUL prediction relevant in the context of predictive maintenance",
-                        r"de": r"Informationen über das Modell zur Prognose der RUL im Kontext der vorausschauenden Wartung",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1775,6 +1788,14 @@ class PredictiveMaintenance(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Information about the model for RUL prediction relevant in the context of predictive maintenance",
+                            r"de": r"Informationen über das Modell zur Prognose der RUL im Kontext der vorausschauenden Wartung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1864,14 +1885,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Message to be displayed when alarm regarding predicted remaining useful life is raised",
-                                r"de": r"Nachricht, die bei Auslösen eines Alarms bezüglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1888,6 +1902,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Message to be displayed when alarm regarding predicted remaining useful life is raised",
+                                    r"de": r"Nachricht, die bei Auslösen eines Alarms bezüglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1938,14 +1960,7 @@ class PredictiveMaintenance(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Pre-warning duration in wear relevant unit before remaining useful life is exceeded",
-                                r"de": r"Vorwarndauer in verschleißrelevanter Einheit vor Eintritt der Überschreitung verbleibenden Restnutzungsdauer",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1962,6 +1977,14 @@ class PredictiveMaintenance(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Pre-warning duration in wear relevant unit before remaining useful life is exceeded",
+                                    r"de": r"Vorwarndauer in verschleißrelevanter Einheit vor Eintritt der Überschreitung verbleibenden Restnutzungsdauer",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2009,14 +2032,7 @@ class PredictiveMaintenance(aas.Submodel):
                     id_short: Optional[str] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Definition of a pre-alert which should be raised before remaining useful life is exceeded",
-                            r"de": r"Definition eiens Voralarms, der vor Erreichen der Restlebensdauer ausgelöst werden sollen",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2033,6 +2049,14 @@ class PredictiveMaintenance(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Definition of a pre-alert which should be raised before remaining useful life is exceeded",
+                                r"de": r"Definition eiens Voralarms, der vor Erreichen der Restlebensdauer ausgelöst werden sollen",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2111,14 +2135,7 @@ class PredictiveMaintenance(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List for defining pre-alerts which should be raised before remaining useful life is exceeded",
-                        r"de": r"Liste, um Voralarme zu definieren, die vor Erreichen der Restlebensdauer ausgelöst werden sollen",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2135,6 +2152,14 @@ class PredictiveMaintenance(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List for defining pre-alerts which should be raised before remaining useful life is exceeded",
+                            r"de": r"Liste, um Voralarme zu definieren, die vor Erreichen der Restlebensdauer ausgelöst werden sollen",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2277,14 +2302,7 @@ class PredictiveMaintenance(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Message to be displayed when alarm regarding predicted remaining useful life is raised",
-                            r"de": r"Nachricht, die bei Auslösen eines Alarms bezüglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2301,6 +2319,14 @@ class PredictiveMaintenance(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Message to be displayed when alarm regarding predicted remaining useful life is raised",
+                                r"de": r"Nachricht, die bei Auslösen eines Alarms bezüglich der vorhergesagten verbleibenden Restnutzungsdauer angezeigt wird",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2351,14 +2377,7 @@ class PredictiveMaintenance(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Maintenance required",
-                            r"de": r"Wartung erforderlich",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2375,6 +2394,14 @@ class PredictiveMaintenance(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Maintenance required",
+                                r"de": r"Wartung erforderlich",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2422,14 +2449,7 @@ class PredictiveMaintenance(aas.Submodel):
                 id_short: Optional[str] = r"AlertAfterExceedingRemainingUsableLife",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Alert information which should be triggered or displayed after exceeding remaining useful life",
-                        r"de": r"Alarminformationen die ausgelöst oder angezeigt werden sollen, wenn die Restlebensdauer überschritten wird",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2446,6 +2466,14 @@ class PredictiveMaintenance(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Alert information which should be triggered or displayed after exceeding remaining useful life",
+                            r"de": r"Alarminformationen die ausgelöst oder angezeigt werden sollen, wenn die Restlebensdauer überschritten wird",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2535,14 +2563,7 @@ class PredictiveMaintenance(aas.Submodel):
             id_short: Optional[str] = r"RemainingUsefulLifePrediction",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Information about remaining useful life (RUL) prediction in the context of predictive maintenance",
-                    r"de": r"Informationen über die Prognose der nutzbaren Restlebensdauer (RUL) im Kontext der vorausschauenden Wartung",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2559,6 +2580,14 @@ class PredictiveMaintenance(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Information about remaining useful life (RUL) prediction in the context of predictive maintenance",
+                        r"de": r"Informationen über die Prognose der nutzbaren Restlebensdauer (RUL) im Kontext der vorausschauenden Wartung",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2672,12 +2701,7 @@ class PredictiveMaintenance(aas.Submodel):
         id_short: Optional[str] = r"PredictiveMaintenance",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"The Submodel Predictive Maintenance is a collection of properties to provide information for predictive maintenance use cases. It is intended to use this submodel in sub-systems of production lines to describe predictive maintenance relevant topics for the sub-system, as well as to use this submodel in predictive maintenance software applications",
-                r"de": r"Das Teilmodell Predictive Maintenance stellt Informationen für Anwendungsfälle von Predictive Maintenance bereit. Dieses Teilmodell ist für Sub-Systeme von Produktionslinien vorgesehen, um Predictive Maintenance relevante Informationen für das Sub-System zu beschreiben sowie für Software-Anwendungen für vorausschauende Wartung",
-            }
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
@@ -2695,6 +2719,14 @@ class PredictiveMaintenance(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"The Submodel Predictive Maintenance is a collection of properties to provide information for predictive maintenance use cases. It is intended to use this submodel in sub-systems of production lines to describe predictive maintenance relevant topics for the sub-system, as well as to use this submodel in predictive maintenance software applications",
+                    r"de": r"Das Teilmodell Predictive Maintenance stellt Informationen für Anwendungsfälle von Predictive Maintenance bereit. Dieses Teilmodell ist für Sub-Systeme von Produktionslinien vorgesehen, um Predictive Maintenance relevante Informationen für das Sub-System zu beschreiben sowie für Software-Anwendungen für vorausschauende Wartung",
+                }
+            )
 
         if qualifier is None:
             qualifier = ()

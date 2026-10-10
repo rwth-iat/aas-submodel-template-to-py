@@ -15,11 +15,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"CompanyName",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Firmenname", r"en": r"Company Name"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -38,6 +34,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Firmenname", r"en": r"Company Name"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -86,11 +87,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"Street",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Straße", r"en": r"Street"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -109,6 +106,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Straße", r"en": r"Street"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -157,11 +159,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"ZIPCode",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Postleitzahl", r"en": r"ZIP Code"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -180,6 +178,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Postleitzahl", r"en": r"ZIP Code"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -228,9 +231,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"City",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"de": r"Stadt", r"en": r"City"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -249,6 +250,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Stadt", r"en": r"City"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -297,11 +303,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"NationalCode",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Ländercode", r"en": r"National Code"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -320,6 +322,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Ländercode", r"en": r"National Code"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -368,11 +375,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MailAddress",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Mailadresse", r"en": r"Mail Address"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -391,6 +394,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Mailadresse", r"en": r"Mail Address"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -440,11 +448,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             nationalCode: Union[str, NationalCode],
             mailAddress: Optional[Iterable[Union[str, MailAddress]]] = None,
             id_short: Optional[str] = r"Manufacturer",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"de": r"Hersteller", r"en": r"Manufacturer"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -463,6 +467,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"de": r"Hersteller", r"en": r"Manufacturer"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -574,11 +583,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"CompanyName",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Firmenname", r"en": r"Company Name"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -597,6 +602,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Firmenname", r"en": r"Company Name"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -645,11 +655,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"CustomerRole",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Kundenrolle", r"en": r"Customer Role"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -668,6 +674,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Kundenrolle", r"en": r"Customer Role"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -791,11 +802,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"Street",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Straße", r"en": r"Street"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -814,6 +821,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Straße", r"en": r"Street"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -862,11 +874,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"ZIPCode",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Postleitzahl", r"en": r"ZIP Code"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -885,6 +893,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Postleitzahl", r"en": r"ZIP Code"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -933,9 +946,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"City",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"de": r"Stadt", r"en": r"City"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -954,6 +965,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Stadt", r"en": r"City"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1002,11 +1018,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"NationalCode",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Ländercode", r"en": r"National Code"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1025,6 +1037,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Ländercode", r"en": r"National Code"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1073,11 +1090,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MailAddress",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Mailadresse", r"en": r"Mail Address"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1096,6 +1109,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Mailadresse", r"en": r"Mail Address"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1146,9 +1164,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             customerRole: Optional[Iterable[Union[str, CustomerRole]]] = None,
             mailAddress: Optional[Iterable[Union[str, MailAddress]]] = None,
             id_short: Optional[str] = r"Customer",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"de": r"Kunde", r"en": r"Customer"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1167,6 +1183,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"de": r"Kunde", r"en": r"Customer"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1296,14 +1317,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"TypeOfInspectionDocument",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Art der Prüfbescheinigung (DIN EN 10204)",
-                        r"en": r"Type Of Inspection Document (EN 10204)",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1332,6 +1346,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Art der Prüfbescheinigung (DIN EN 10204)",
+                            r"en": r"Type Of Inspection Document (EN 10204)",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1380,11 +1402,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"OrderDate",
                 value_type: aas.DataTypeDefXsd = xsd.Date,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Auftragsdatum", r"en": r"Order Date"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1403,6 +1421,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Auftragsdatum", r"en": r"Order Date"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1451,14 +1474,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"ManufacturerOrderNumber",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Werkauftragsnummer",
-                        r"en": r"Manufacturer Order Number",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1477,6 +1493,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Werkauftragsnummer",
+                            r"en": r"Manufacturer Order Number",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1525,14 +1549,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"PurchaserOrderNumber",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Kundenbestellnummer",
-                        r"en": r"Purchaser Order Number",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1551,6 +1568,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Kundenbestellnummer",
+                            r"en": r"Purchaser Order Number",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1599,11 +1624,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"DeliveryNoteNumber",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Lieferscheinnummer", r"en": r"Delivery Note Number"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1622,6 +1643,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Lieferscheinnummer",
+                            r"en": r"Delivery Note Number",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1672,11 +1701,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             purchaserOrderNumber: Optional[Union[str, PurchaserOrderNumber]] = None,
             deliveryNoteNumber: Optional[Union[str, DeliveryNoteNumber]] = None,
             id_short: Optional[str] = r"OrderData",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"de": r"Auftragsdaten", r"en": r"Order Data"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1695,6 +1720,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"de": r"Auftragsdaten", r"en": r"Order Data"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1802,14 +1832,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"ManufacturerProductNumber",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Produktnummer des Herstellers",
-                        r"en": r"Manufacturer Product Number",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1828,6 +1851,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Produktnummer des Herstellers",
+                            r"en": r"Manufacturer Product Number",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1876,14 +1907,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"PurchaserArticleNumber",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Artikelnummer des Kunden",
-                        r"en": r"Purchaser Article Number",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1902,6 +1926,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Artikelnummer des Kunden",
+                            r"en": r"Purchaser Article Number",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1949,14 +1981,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"ProductDescription",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Erzeugnisbeschreibung",
-                        r"en": r"Product Description",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1975,6 +2000,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Erzeugnisbeschreibung",
+                            r"en": r"Product Description",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2021,14 +2054,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"AdditionalProductRequirements",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Zusätzliche Produktanforderungen",
-                        r"en": r"Additional Product Requirements",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2047,6 +2073,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Zusätzliche Produktanforderungen",
+                            r"en": r"Additional Product Requirements",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2094,11 +2128,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"BatchNumber",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Chargennummer", r"en": r"Batch Number"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2117,6 +2147,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Chargennummer", r"en": r"Batch Number"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2165,11 +2200,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MaterialNumber",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Werkstoffnummer", r"en": r"Material Number"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2188,6 +2219,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Werkstoffnummer", r"en": r"Material Number"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2236,11 +2272,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MaterialShortName",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Materialkurzname", r"en": r"Material Short Name"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2259,6 +2291,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Materialkurzname",
+                            r"en": r"Material Short Name",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2306,14 +2346,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"MaterialAdditionalInformation",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Zusätzliche Informationen zum Material",
-                        r"en": r"Material Additional Information",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2332,6 +2365,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Zusätzliche Informationen zum Material",
+                            r"en": r"Material Additional Information",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2379,11 +2420,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"NumberOfPieces",
                 value_type: aas.DataTypeDefXsd = xsd.PositiveInteger,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Stückzahl", r"en": r"Number of Pieces"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2402,6 +2439,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Stückzahl", r"en": r"Number of Pieces"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2450,11 +2492,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"TheoreticalMass",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Theoretische Masse", r"en": r"Theoretical Mass"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2473,6 +2511,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Theoretische Masse", r"en": r"Theoretical Mass"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2521,11 +2564,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"ActualMass",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Ist-Masse", r"en": r"Actual Mass"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2544,6 +2583,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Ist-Masse", r"en": r"Actual Mass"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2596,11 +2640,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"WallThickness",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Wandstärke", r"en": r"Wall Thickness"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2619,6 +2659,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Wandstärke", r"en": r"Wall Thickness"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2667,11 +2712,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"OuterDiameter",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Außendurchmesser", r"en": r"Outer Diameter"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2690,6 +2731,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Außendurchmesser",
+                                    r"en": r"Outer Diameter",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2738,11 +2787,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Length",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Länge", r"en": r"Length"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2761,6 +2806,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Länge", r"en": r"Length"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2809,11 +2859,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"StandardReference",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2832,6 +2878,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Normreferenz",
+                                    r"en": r"Standard Reference",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2881,11 +2935,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         Iterable[Union[str, StandardReference]]
                     ] = None,
                     id_short: Optional[str] = r"Tube",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Rohr", r"en": r"Tube"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2904,6 +2954,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Rohr", r"en": r"Tube"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3028,11 +3083,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"WallThickness",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Wandstärke", r"en": r"Wall Thickness"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3051,6 +3102,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Wandstärke", r"en": r"Wall Thickness"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3099,11 +3155,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Height",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Höhe", r"en": r"Height"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3122,6 +3174,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Höhe", r"en": r"Height"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3170,11 +3227,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Width",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Breite", r"en": r"Width"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3193,6 +3246,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Breite", r"en": r"Width"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3241,11 +3299,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Length",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Länge", r"en": r"Length"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3264,6 +3318,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Länge", r"en": r"Length"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3312,11 +3371,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"StandardReference",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3335,6 +3390,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Normreferenz",
+                                    r"en": r"Standard Reference",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3385,11 +3448,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         Iterable[Union[str, StandardReference]]
                     ] = None,
                     id_short: Optional[str] = r"RectangularTube",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Rechteckrohr", r"en": r"Rectangular Tube"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3408,6 +3467,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Rechteckrohr", r"en": r"Rectangular Tube"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3538,11 +3602,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"OuterDiameter",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Außendurchmesser", r"en": r"Outer Diameter"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3561,6 +3621,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Außendurchmesser",
+                                    r"en": r"Outer Diameter",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3609,11 +3677,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Length",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Länge", r"en": r"Length"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3632,6 +3696,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Länge", r"en": r"Length"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3680,11 +3749,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"StandardReference",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3703,6 +3768,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Normreferenz",
+                                    r"en": r"Standard Reference",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3751,11 +3824,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         Iterable[Union[str, StandardReference]]
                     ] = None,
                     id_short: Optional[str] = r"RoundBar",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Rundstahl", r"en": r"Round Bar"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3774,6 +3843,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Rundstahl", r"en": r"Round Bar"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3886,14 +3960,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"WidthAcrossFlats",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Schlüsselweite",
-                                r"en": r"Width Across Flats",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3912,6 +3979,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Schlüsselweite",
+                                    r"en": r"Width Across Flats",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3960,11 +4035,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Length",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Länge", r"en": r"Length"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3983,6 +4054,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Länge", r"en": r"Length"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4031,11 +4107,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"StandardReference",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4054,6 +4126,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Normreferenz",
+                                    r"en": r"Standard Reference",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4102,11 +4182,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         Iterable[Union[str, StandardReference]]
                     ] = None,
                     id_short: Optional[str] = r"HexagonalBar",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Sechskantstahl", r"en": r"Hexagonal Bar"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4125,6 +4201,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Sechskantstahl", r"en": r"Hexagonal Bar"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4237,11 +4318,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Height",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Höhe", r"en": r"Height"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4260,6 +4337,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Höhe", r"en": r"Height"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4308,11 +4390,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Width",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Breite", r"en": r"Width"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4331,6 +4409,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Breite", r"en": r"Width"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4379,11 +4462,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Length",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Länge", r"en": r"Length"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4402,6 +4481,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Länge", r"en": r"Length"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4450,11 +4534,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"StandardReference",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4473,6 +4553,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Normreferenz",
+                                    r"en": r"Standard Reference",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4522,11 +4610,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         Iterable[Union[str, StandardReference]]
                     ] = None,
                     id_short: Optional[str] = r"RectangularBar",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Rechteckstab", r"en": r"RectangularBar"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4545,6 +4629,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Rechteckstab", r"en": r"RectangularBar"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4662,11 +4751,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Thickness",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Dicke", r"en": r"Thickness"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4685,6 +4770,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Dicke", r"en": r"Thickness"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4733,11 +4823,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Width",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Breite", r"en": r"Width"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4756,6 +4842,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Breite", r"en": r"Width"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4804,11 +4895,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Length",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Länge", r"en": r"Length"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4827,6 +4914,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Länge", r"en": r"Length"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4875,11 +4967,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"StandardReference",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4898,6 +4986,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Normreferenz",
+                                    r"en": r"Standard Reference",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4947,11 +5043,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         Iterable[Union[str, StandardReference]]
                     ] = None,
                     id_short: Optional[str] = r"SheetMetal",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Metallblech", r"en": r"Sheet Metal"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -4970,6 +5062,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Metallblech", r"en": r"Sheet Metal"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5087,14 +5184,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"ProfileSpecification",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Profilbezeichnung",
-                                r"en": r"Profile Specification",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5113,6 +5203,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Profilbezeichnung",
+                                    r"en": r"Profile Specification",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5161,11 +5259,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Height",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Höhe", r"en": r"Height"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5184,6 +5278,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Höhe", r"en": r"Height"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5232,11 +5331,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Width",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Breite", r"en": r"Width"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5255,6 +5350,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Breite", r"en": r"Width"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5303,11 +5403,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"Length",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Länge", r"en": r"Length"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5326,6 +5422,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Länge", r"en": r"Length"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5374,11 +5475,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         id_short: Optional[str] = r"StandardReference",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Normreferenz", r"en": r"Standard Reference"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5397,6 +5494,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Normreferenz",
+                                    r"en": r"Standard Reference",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5447,11 +5552,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         Iterable[Union[str, StandardReference]]
                     ] = None,
                     id_short: Optional[str] = r"Profile",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Profil", r"en": r"Profile"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5470,6 +5571,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Profil", r"en": r"Profile"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5602,14 +5708,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 sheetMetal: Optional[SheetMetal] = None,
                 profile: Optional[Profile] = None,
                 id_short: Optional[str] = r"SemiFinishedProductSpecification",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Halbzeugspezifikation",
-                        r"en": r"Specification of semi-finished Product",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5628,6 +5727,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Halbzeugspezifikation",
+                            r"en": r"Specification of semi-finished Product",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5697,11 +5804,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"Drawing",
                 content_type: Optional[str] = r"application/pdf",
                 value: Optional[bytes] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Zeichnung", r"en": r"Drawing"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5720,6 +5823,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Zeichnung", r"en": r"Drawing"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5785,11 +5893,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             ] = None,
             drawing: Optional[Iterable[Drawing]] = None,
             id_short: Optional[str] = r"ProductData",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"de": r"Produktdaten", r"en": r"Product Data"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -5808,6 +5912,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"de": r"Produktdaten", r"en": r"Product Data"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -5977,14 +6086,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"YieldOrProofStrengthMean",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Streck- oder Dehngrenze Mittelwert",
-                            r"en": r"Yield or Proof Strength Mean",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6003,6 +6105,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Streck- oder Dehngrenze Mittelwert",
+                                r"en": r"Yield or Proof Strength Mean",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6051,14 +6161,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"TensileStrengthMean",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Zugfestigkeit Mittelwert",
-                            r"en": r"Tensile Strength Mean",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6077,6 +6180,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Zugfestigkeit Mittelwert",
+                                r"en": r"Tensile Strength Mean",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6125,14 +6236,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"ElongationAfterFractureMean",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Bruchdehnung Mittelwert",
-                            r"en": r"Elongation after Fracture Mean",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6151,6 +6255,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Bruchdehnung Mittelwert",
+                                r"en": r"Elongation after Fracture Mean",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6213,14 +6325,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = xsd.Float,
                     order_relevant: bool = False,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Streck- oder Dehngrenze Einzelwerte",
-                            r"en": r"Yield or Proof Strength Individual Values",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6239,6 +6344,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Streck- oder Dehngrenze Einzelwerte",
+                                r"en": r"Yield or Proof Strength Individual Values",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6402,14 +6515,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = xsd.Float,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Zugfestigkeit Einzelwerte",
-                            r"en": r"Tensile Strength Individual Values",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6428,6 +6534,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Zugfestigkeit Einzelwerte",
+                                r"en": r"Tensile Strength Individual Values",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6593,14 +6707,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = xsd.Float,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Bruchdehnung Einzelwerte",
-                            r"en": r"Elongation after Fracture Individual Values",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6619,6 +6726,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Bruchdehnung Einzelwerte",
+                                r"en": r"Elongation after Fracture Individual Values",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6768,11 +6883,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"TestTemperature",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Prüftemperatur", r"en": r"Test Temperature"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6791,6 +6902,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Prüftemperatur", r"en": r"Test Temperature"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6838,11 +6954,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"SampleShape",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Probenform", r"en": r"Shape of the Test Piece"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6861,6 +6973,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Probenform",
+                                r"en": r"Shape of the Test Piece",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6907,14 +7027,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"LocationOfSample",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Lage des Probenabschnittes",
-                            r"en": r"Location of the Sample",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -6933,6 +7046,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Lage des Probenabschnittes",
+                                r"en": r"Location of the Sample",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6979,14 +7100,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"DirectionOfSample",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Probenrichtung",
-                            r"en": r"Direction of the Sample",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -7005,6 +7119,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Probenrichtung",
+                                r"en": r"Direction of the Sample",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7082,11 +7204,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     Iterable[Union[aas.LangStringSet, DirectionOfSample]]
                 ] = None,
                 id_short: Optional[str] = r"TensileTest",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Zugversuch", r"en": r"Tensile Test"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -7105,6 +7223,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Zugversuch", r"en": r"Tensile Test"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -7307,14 +7430,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"HardnessTestingMethod",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Härteprüfverfahren",
-                            r"en": r"Hardness Testing Method",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -7333,6 +7449,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Härteprüfverfahren",
+                                r"en": r"Hardness Testing Method",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7381,11 +7505,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"HardnessMean",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Härte Mittelwert", r"en": r"Hardness Mean"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -7404,6 +7524,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Härte Mittelwert", r"en": r"Hardness Mean"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7466,14 +7591,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Härte Einzelwerte",
-                            r"en": r"Hardness Individual Values",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -7492,6 +7610,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Härte Einzelwerte",
+                                r"en": r"Hardness Individual Values",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7641,11 +7767,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"TestTemperature",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Prüftemperatur", r"en": r"Test Temperature"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -7664,6 +7786,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Prüftemperatur", r"en": r"Test Temperature"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7711,14 +7838,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"LocationOfSample",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Lage des Probenabschnittes",
-                            r"en": r"Location of the Sample",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -7737,6 +7857,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Lage des Probenabschnittes",
+                                r"en": r"Location of the Sample",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7783,14 +7911,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"DirectionOfSample",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Probenrichtung",
-                            r"en": r"Direction of the Sample",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -7809,6 +7930,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Probenrichtung",
+                                r"en": r"Direction of the Sample",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7865,11 +7994,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     Iterable[Union[aas.LangStringSet, DirectionOfSample]]
                 ] = None,
                 id_short: Optional[str] = r"HardnessTest",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Härteprüfung", r"en": r"Hardness Test"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -7888,6 +8013,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Härteprüfung", r"en": r"Hardness Test"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -8031,14 +8161,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"NotchImpactStrengthMean",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Kerbschlagzähigkeit Mittelwert",
-                            r"en": r"Notch Impact Strength Mean",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8057,6 +8180,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Kerbschlagzähigkeit Mittelwert",
+                                r"en": r"Notch Impact Strength Mean",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8119,14 +8250,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = xsd.Float,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Kerbschlagzähigkeit Einzelwerte",
-                            r"en": r"Notch Impact Strength Individual Values",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8145,6 +8269,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Kerbschlagzähigkeit Einzelwerte",
+                                r"en": r"Notch Impact Strength Individual Values",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8294,14 +8426,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"NotchImpactWorkMean",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Notch Impact Work Mean",
-                            r"de": r"Kerbschlagbiegearbeit Mittelwert",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8320,6 +8445,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Notch Impact Work Mean",
+                                r"de": r"Kerbschlagbiegearbeit Mittelwert",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8382,14 +8515,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = xsd.Float,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Kerbschlagbiegearbeit Einzelwerte",
-                            r"en": r"Notch Impact Work Individual Values",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8408,6 +8534,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Kerbschlagbiegearbeit Einzelwerte",
+                                r"en": r"Notch Impact Work Individual Values",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8557,11 +8691,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"SampleType",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Probenform", r"en": r"Type of Test Piece"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8580,6 +8710,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Probenform", r"en": r"Type of Test Piece"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8628,11 +8763,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"SampleWidth",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Probenbreite", r"en": r"Width of Test Piece"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8651,6 +8782,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Probenbreite",
+                                r"en": r"Width of Test Piece",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8699,11 +8838,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"TestTemperature",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Prüftemperatur", r"en": r"Test Temperature"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8722,6 +8857,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Prüftemperatur", r"en": r"Test Temperature"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8770,14 +8910,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"LocationOfSample",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Lage des Probenabschnittes",
-                            r"en": r"Location of the Sample",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8796,6 +8929,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Lage des Probenabschnittes",
+                                r"en": r"Location of the Sample",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8844,14 +8985,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     id_short: Optional[str] = r"DirectionOfSample",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Probenrichtung",
-                            r"en": r"Direction of the Test Piece",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8870,6 +9004,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Probenrichtung",
+                                r"en": r"Direction of the Test Piece",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8938,14 +9080,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     Iterable[Union[str, DirectionOfSample]]
                 ] = None,
                 id_short: Optional[str] = r"NotchImpactTest",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Kerbschlagbiegeversuch",
-                        r"en": r"Notch Impact Test",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8964,6 +9099,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Kerbschlagbiegeversuch",
+                            r"en": r"Notch Impact Test",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9139,11 +9282,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             hardnessTest: Optional[Iterable[HardnessTest]] = None,
             notchImpactTest: Optional[Iterable[NotchImpactTest]] = None,
             id_short: Optional[str] = r"MechanicalTests",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"de": r"Mechanische Prüfungen", r"en": r"Mechanical Tests"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9162,6 +9301,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"de": r"Mechanische Prüfungen", r"en": r"Mechanical Tests"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -9238,11 +9382,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Al",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Al", r"en": r"Mass Fraction Al"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9261,6 +9401,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Al", r"en": r"Mass Fraction Al"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9309,11 +9454,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Be",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Be", r"en": r"Mass Fraction Be"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9332,6 +9473,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Be", r"en": r"Mass Fraction Be"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9380,11 +9526,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_C",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil C", r"en": r"Mass Fraction C"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9403,6 +9545,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil C", r"en": r"Mass Fraction C"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9451,11 +9598,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Cr",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Cr", r"en": r"Mass Fraction Cr"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9474,6 +9617,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Cr", r"en": r"Mass Fraction Cr"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9522,11 +9670,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Cu",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Cu", r"en": r"Mass Fraction Cu"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9545,6 +9689,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Cu", r"en": r"Mass Fraction Cu"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9593,11 +9742,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Mn",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Mn", r"en": r"Mass Fraction Mn"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9616,6 +9761,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Mn", r"en": r"Mass Fraction Mn"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9664,11 +9814,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Mo",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Mo", r"en": r"Mass Fraction Mo"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9687,6 +9833,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Mo", r"en": r"Mass Fraction Mo"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9735,11 +9886,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_N",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil N", r"en": r"Mass Fraction N"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9758,6 +9905,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil N", r"en": r"Mass Fraction N"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9806,11 +9958,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Nb",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Nb", r"en": r"Mass Fraction Nb"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9829,6 +9977,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Nb", r"en": r"Mass Fraction Nb"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9877,11 +10030,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Ni",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Ni", r"en": r"Mass Fraction Ni"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9900,6 +10049,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Ni", r"en": r"Mass Fraction Ni"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9948,11 +10102,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_P",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil P", r"en": r"Mass Fraction P"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -9971,6 +10121,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil P", r"en": r"Mass Fraction P"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10019,11 +10174,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Pb",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Pb", r"en": r"Mass Fraction Pb"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10042,6 +10193,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Pb", r"en": r"Mass Fraction Pb"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10090,11 +10246,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_S",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil S", r"en": r"Mass Fraction S"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10113,6 +10265,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil S", r"en": r"Mass Fraction S"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10161,11 +10318,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Si",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Si", r"en": r"Mass Fraction Si"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10184,6 +10337,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Si", r"en": r"Mass Fraction Si"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10232,11 +10390,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Ta",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Ta", r"en": r"Mass Fraction Ta"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10255,6 +10409,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Ta", r"en": r"Mass Fraction Ta"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10303,11 +10462,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_Ti",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil Ti", r"en": r"Mass Fraction Ti"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10326,6 +10481,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil Ti", r"en": r"Mass Fraction Ti"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10374,11 +10534,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_V",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil V", r"en": r"Mass Fraction V"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10397,6 +10553,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil V", r"en": r"Mass Fraction V"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10445,11 +10606,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"MassFraction_W",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Masseanteil W", r"en": r"Mass Fraction W"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10468,6 +10625,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Masseanteil W", r"en": r"Mass Fraction W"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10515,14 +10677,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"SteelmakingProcess",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Stahlherstellungsverfahren",
-                        r"en": r"Steelmaking Process",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10541,6 +10696,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Stahlherstellungsverfahren",
+                            r"en": r"Steelmaking Process",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10604,11 +10767,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 Union[aas.LangStringSet, SteelmakingProcess]
             ] = None,
             id_short: Optional[str] = r"ChemicalAnalysis",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"de": r"Chemische Analyse", r"en": r"Chemical Analysis"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10627,6 +10786,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"de": r"Chemische Analyse", r"en": r"Chemical Analysis"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -10844,14 +11008,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"StatementOfCompliance",
                 value_type: aas.DataTypeDefXsd = bool,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Konformitätserklärung",
-                        r"en": r"Statement of Compliance",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10870,6 +11027,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Konformitätserklärung",
+                            r"en": r"Statement of Compliance",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10918,11 +11083,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"DateOfIssue",
                 value_type: aas.DataTypeDefXsd = xsd.Date,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Ausstelldatum", r"en": r"Date of Issue"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -10941,6 +11102,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Ausstelldatum", r"en": r"Date of Issue"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10989,14 +11155,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 id_short: Optional[str] = r"OriginatorOfDocument",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Aussteller der Bescheinigung",
-                        r"en": r"Originator of the document",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -11015,6 +11174,14 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Aussteller der Bescheinigung",
+                            r"en": r"Originator of the document",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -11075,13 +11242,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: see also [IRDI] 0173-1#02-BAB392#015 certificate/approval valueId with ECLASS enumeration IRDI is preferable, e.g. [IRDI] 0173-1#07-DAA603#004 for CE. If no IRDI available, string value can also be accepted. Note: CE marking is declared as mandatory according to Blue Guide of the EU-Commission "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11098,6 +11259,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: see also [IRDI] 0173-1#02-BAB392#015 certificate/approval valueId with ECLASS enumeration IRDI is preferable, e.g. [IRDI] 0173-1#07-DAA603#004 for CE. If no IRDI available, string value can also be accepted. Note: CE marking is declared as mandatory according to Blue Guide of the EU-Commission "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11148,13 +11316,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Approval identifier, reference to the certificate number, to be entered without spaces "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11171,6 +11333,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Approval identifier, reference to the certificate number, to be entered without spaces "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11221,13 +11390,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11244,6 +11407,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11359,13 +11529,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: see also [IRDI] 0173-1#02-AAM954#002 details of other certificate "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11382,6 +11546,13 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: see also [IRDI] 0173-1#02-AAM954#002 details of other certificate "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11434,19 +11605,9 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     Iterable[Union[str, MarkingAdditionalText]]
                 ] = None,
                 id_short: Optional[str] = r"CEMarking",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"CE-Zeichen", r"en": r"CE Marking"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: see also [IRDI] 0112/2///61987#ABH515#003 Certificate or approval Note: CE marking is declared as mandatory according to the Blue Guide of the EU-Commission "
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -11463,6 +11624,18 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"CE-Zeichen", r"en": r"CE Marking"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: see also [IRDI] 0112/2///61987#ABH515#003 Certificate or approval Note: CE marking is declared as mandatory according to the Blue Guide of the EU-Commission "
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -11572,11 +11745,7 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
             originatorOfDocument: Union[str, OriginatorOfDocument],
             cEMarking: Optional[CEMarking] = None,
             id_short: Optional[str] = r"Validation",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"de": r"Bestätigung", r"en": r"Validation"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -11595,6 +11764,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"de": r"Bestätigung", r"en": r"Validation"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -11688,23 +11862,10 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
         mechanicalTests: Optional[MechanicalTests] = None,
         chemicalAnalysis: Optional[ChemicalAnalysis] = None,
         id_short: Optional[str] = r"InspectionDocumentsOfSteelProducts",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={
-                r"de": r"Prüfbescheinigung für Stahlprodukte",
-                r"en": r"Inspection Documents for Steel Products",
-            }
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta/02032-1-0",
-            embedded_data_specifications=[],
-        ),
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
@@ -11720,6 +11881,23 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={
+                    r"de": r"Prüfbescheinigung für Stahlprodukte",
+                    r"en": r"Inspection Documents for Steel Products",
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta/02032-1-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

@@ -15,14 +15,7 @@ class Reliability(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"number of reliability sets of characteristics",
-                    r"fr": "nombre d'ensembles de caractéristiques de fiabilité",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -39,6 +32,14 @@ class Reliability(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"number of reliability sets of characteristics",
+                        r"fr": "nombre d'ensembles de caractéristiques de fiabilité",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -101,15 +102,7 @@ class Reliability(aas.Submodel):
                 ),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"type of voltage",
-                        r"fr": r"type de tension",
-                        r"de": r"Spannungsart",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -126,6 +119,15 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"type of voltage",
+                            r"fr": r"type de tension",
+                            r"de": r"Spannungsart",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -168,15 +170,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"rated voltage",
-                        r"fr": r"tension assignée",
-                        r"de": r"Bemessungsspannung",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -193,6 +187,15 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"rated voltage",
+                            r"fr": r"tension assignée",
+                            r"de": r"Bemessungsspannung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -235,15 +238,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"minimum rated voltage",
-                        r"fr": r"tension assignée minimale",
-                        r"de": r"minimale Bemessungsspannung",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -260,6 +255,15 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"minimum rated voltage",
+                            r"fr": r"tension assignée minimale",
+                            r"de": r"minimale Bemessungsspannung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -302,15 +306,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"maximum rated voltage",
-                        r"fr": r"tension assignée maximale",
-                        r"de": r"maximale Bemessungsspannung",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -327,6 +323,15 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"maximum rated voltage",
+                            r"fr": r"tension assignée maximale",
+                            r"de": r"maximale Bemessungsspannung",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -369,11 +374,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"rated operational current"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -390,6 +391,11 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"rated operational current"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -452,14 +458,7 @@ class Reliability(aas.Submodel):
                 ),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"type of interlocking device",
-                        r"fr": r"type de dispositif de verrouillage",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -476,6 +475,14 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"type of interlocking device",
+                            r"fr": r"type de dispositif de verrouillage",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -518,14 +525,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"other operating conditions",
-                        r"fr": r"autres conditions de fonctionnement",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -542,6 +542,14 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"other operating conditions",
+                            r"fr": r"autres conditions de fonctionnement",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -584,14 +592,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"useful life in number of operations",
-                        r"fr": r"durée de vie utile en cycle de fonctionnement",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -608,6 +609,14 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"useful life in number of operations",
+                            r"fr": r"durée de vie utile en cycle de fonctionnement",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -650,14 +659,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"useful life in time interval",
-                        r"fr": r"durée de vie utile en intervalle de temps",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -674,6 +676,14 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"useful life in time interval",
+                            r"fr": r"durée de vie utile en intervalle de temps",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -736,14 +746,7 @@ class Reliability(aas.Submodel):
             ] = r"OperatingConditionsOfReliabilityCharacteristics",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"operating conditions of reliability characteristics",
-                    r"fr": r"conditions de fonctionnement des caractéristiques de fiabilité et de sécurité fonctionnelle",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -760,6 +763,14 @@ class Reliability(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"operating conditions of reliability characteristics",
+                        r"fr": r"conditions de fonctionnement des caractéristiques de fiabilité et de sécurité fonctionnelle",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -965,17 +976,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"mean operating time to failure",
-                        r"fr": r"durée moyenne de fonctionnement avant défaillance",
-                        r"de": r"mittlere Betriebszeit bis zum Ausfall",
-                        r"jp": r"平均故障間動作時間",
-                        r"cn": r"平均失效前工作时间",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -992,6 +993,17 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"mean operating time to failure",
+                            r"fr": r"durée moyenne de fonctionnement avant défaillance",
+                            r"de": r"mittlere Betriebszeit bis zum Ausfall",
+                            r"jp": r"平均故障間動作時間",
+                            r"cn": r"平均失效前工作时间",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1034,16 +1046,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"mean operating time between failure",
-                        r"fr": r"moyenne des temps de bon fonctionnement",
-                        r"de": r"mittlere Betriebszeit zwischen Ausfällen",
-                        r"cn": r"平均失效间隔工作时间",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1060,6 +1063,16 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"mean operating time between failure",
+                            r"fr": r"moyenne des temps de bon fonctionnement",
+                            r"de": r"mittlere Betriebszeit zwischen Ausfällen",
+                            r"cn": r"平均失效间隔工作时间",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1102,9 +1115,7 @@ class Reliability(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(dict_={r"en": r"B10"}),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1121,6 +1132,9 @@ class Reliability(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(dict_={r"en": r"B10"})
 
                 if qualifier is None:
                     qualifier = (
@@ -1161,14 +1175,7 @@ class Reliability(aas.Submodel):
             id_short: Optional[str] = r"ReliabilityCharacteristics",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Reliability characteristics",
-                    r"fr": r"Caractéristiques de fiabilité",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1185,6 +1192,14 @@ class Reliability(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Reliability characteristics",
+                        r"fr": r"Caractéristiques de fiabilité",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1275,15 +1290,7 @@ class Reliability(aas.Submodel):
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=None,
-            embedded_data_specifications=[],
-        ),
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -1300,6 +1307,15 @@ class Reliability(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=None,
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

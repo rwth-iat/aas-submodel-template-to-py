@@ -15,13 +15,7 @@ class IntelligentInformationforUse(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Identifies instances of the iirds:classes and subclasses"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -38,6 +32,13 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Identifies instances of the iirds:classes and subclasses"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -80,13 +81,7 @@ class IntelligentInformationforUse(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"restriction of media formats allowed in an iiRDS package"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -103,6 +98,13 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"restriction of media formats allowed in an iiRDS package"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -145,11 +147,7 @@ class IntelligentInformationforUse(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"iiRDS version with which the iiRDS package complies"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -166,6 +164,13 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"iiRDS version with which the iiRDS package complies"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -212,13 +217,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -235,6 +234,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -277,11 +283,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"name of the information unit"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -298,6 +300,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"name of the information unit"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -340,11 +347,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"date of creation of the resource"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -361,6 +364,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"date of creation of the resource"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -403,13 +411,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "date and time of an information unit's last change "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -426,6 +428,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "date and time of an information unit's last change "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -468,11 +477,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "identifier of the content's language"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -489,6 +494,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": "identifier of the content's language"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -531,11 +541,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"version of an information unit"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -552,6 +558,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"version of an information unit"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -593,13 +604,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"declaration of specific rights regarding the usage of the information"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -616,6 +621,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"declaration of specific rights regarding the usage of the information"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -691,13 +703,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its rendition"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -714,6 +720,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its rendition"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -789,13 +802,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its content lifecycle status"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -812,6 +819,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its content lifecycle status"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -853,13 +867,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing the information unit to be replaced"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -876,6 +884,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing the information unit to be replaced"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -962,13 +977,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its information object"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -985,6 +994,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its information object"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1061,13 +1077,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing an event"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1084,6 +1094,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing an event"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1160,13 +1177,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a supply"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1183,6 +1194,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a supply"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1259,13 +1277,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a qualification "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1282,6 +1294,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a qualification "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1357,13 +1376,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "iiRDS resource's property referencing an identifier"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1380,6 +1393,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing an identifier"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1456,11 +1476,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "iiRDS resource's property referencing a party"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1477,6 +1493,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing a party"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1544,13 +1567,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "document's property referencing its document type"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1567,6 +1584,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "document's property referencing its document type"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1643,13 +1667,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a component"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1666,6 +1684,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a component"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1733,13 +1758,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its subject"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1756,6 +1775,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its subject"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1832,13 +1858,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing an action"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1855,6 +1875,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing an action"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1931,13 +1958,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a product feature"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1954,6 +1975,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a product feature"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2123,13 +2151,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a product variant"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2146,6 +2168,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a product variant"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2310,13 +2339,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Document",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"information unit consisting of an ordered set of information intended by the sender to be regarded as an entity"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2333,6 +2356,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"information unit consisting of an ordered set of information intended by the sender to be regarded as an entity"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2552,13 +2582,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2575,6 +2599,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2643,13 +2674,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its topic type"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2666,6 +2691,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its topic type"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2742,13 +2774,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its information object"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2765,6 +2791,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its information object"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2841,13 +2874,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a qualification "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2864,6 +2891,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a qualification "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2940,13 +2974,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a product variant"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2963,6 +2991,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a product variant"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3004,11 +3039,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"name of the information unit"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3025,6 +3056,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"name of the information unit"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3067,11 +3103,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"date of creation of the resource"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3088,6 +3120,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"date of creation of the resource"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3130,13 +3167,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "date and time of an information unit's last change "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3153,6 +3184,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "date and time of an information unit's last change "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3195,11 +3233,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "identifier of the content's language"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3216,6 +3250,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": "identifier of the content's language"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3258,11 +3297,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"version of an information unit"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3279,6 +3314,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"version of an information unit"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3320,13 +3360,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"declaration of specific rights regarding the usage of the information"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3343,6 +3377,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"declaration of specific rights regarding the usage of the information"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3418,13 +3459,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its rendition"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3441,6 +3476,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its rendition"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3516,13 +3558,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its content lifecycle status"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3539,6 +3575,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its content lifecycle status"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3580,13 +3623,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing the information unit to be replaced"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3603,6 +3640,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing the information unit to be replaced"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3689,13 +3733,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing an event"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3712,6 +3750,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing an event"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3788,13 +3833,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a supply"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3811,6 +3850,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a supply"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3886,13 +3932,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "iiRDS resource's property referencing an identifier"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3909,6 +3949,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing an identifier"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3985,11 +4032,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "iiRDS resource's property referencing a party"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4006,6 +4049,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing a party"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4082,13 +4132,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a component"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4105,6 +4149,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a component"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4172,13 +4223,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its subject"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4195,6 +4240,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its subject"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4271,13 +4323,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing an action"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4294,6 +4340,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing an action"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4370,13 +4423,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a product feature"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4393,6 +4440,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a product feature"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4737,11 +4791,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Topic",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"information unit covering a single subject"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4758,6 +4808,11 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"information unit covering a single subject"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4984,13 +5039,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5007,6 +5056,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5084,13 +5140,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a product variant"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5107,6 +5157,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a product variant"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5148,11 +5205,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"name of the information unit"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5169,6 +5222,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"name of the information unit"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5211,11 +5269,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"date of creation of the resource"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5232,6 +5286,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"date of creation of the resource"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5274,13 +5333,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "date and time of an information unit's last change "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5297,6 +5350,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "date and time of an information unit's last change "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5339,11 +5399,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "identifier of the content's language"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5360,6 +5416,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": "identifier of the content's language"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5402,11 +5463,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"version of an information unit"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5423,6 +5480,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"version of an information unit"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5464,13 +5526,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"declaration of specific rights regarding the usage of the information"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5487,6 +5543,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"declaration of specific rights regarding the usage of the information"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5562,13 +5625,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its rendition"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5585,6 +5642,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its rendition"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5660,13 +5724,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its content lifecycle status"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5683,6 +5741,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its content lifecycle status"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5724,13 +5789,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing the information unit to be replaced"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5747,6 +5806,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing the information unit to be replaced"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5833,13 +5899,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its information object"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5856,6 +5916,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its information object"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5932,13 +5999,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing an event"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5955,6 +6016,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing an event"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6031,13 +6099,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a qualification "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6054,6 +6116,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a qualification "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6130,13 +6199,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a supply"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6153,6 +6216,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a supply"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6228,13 +6298,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "iiRDS resource's property referencing an identifier"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6251,6 +6315,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing an identifier"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6327,11 +6398,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "iiRDS resource's property referencing a party"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6348,6 +6415,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing a party"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6424,13 +6498,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a component"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6447,6 +6515,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a component"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6514,13 +6589,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing its subject"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6537,6 +6606,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing its subject"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6613,13 +6689,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing an action"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6636,6 +6706,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing an action"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6712,13 +6789,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "information unit's property referencing a product feature"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6735,6 +6806,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "information unit's property referencing a product feature"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6898,11 +6976,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Fragment",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"information unit that requires additional context"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6919,6 +6993,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"information unit that requires additional context"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -7124,13 +7205,7 @@ class IntelligentInformationforUse(aas.Submodel):
             id_short: Optional[str] = r"InformationUnitCollection",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"collection of instances of iirds:topic, iirds:document and iirds:fragment, which are subclasses of iirds:informationunit"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -7147,6 +7222,13 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"collection of instances of iirds:topic, iirds:document and iirds:fragment, which are subclasses of iirds:informationunit"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -7219,13 +7301,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7242,6 +7318,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7280,13 +7363,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"InformationObject",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"version- and language-independent abstraction of an information unit"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -7303,6 +7380,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"version- and language-independent abstraction of an information unit"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -7362,11 +7446,7 @@ class IntelligentInformationforUse(aas.Submodel):
             id_short: Optional[str] = r"InformationObjectCollection",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"collection of iirds:InformationObject instances"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -7383,6 +7463,11 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"collection of iirds:InformationObject instances"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -7447,13 +7532,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7470,6 +7549,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7547,13 +7633,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "directory node's property referencing the corresponding information unit"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7570,6 +7650,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "directory node's property referencing the corresponding information unit"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7608,13 +7695,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     id_short: Optional[str] = r"HasNextSibling",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "directory node's property referencing the following directory node on the same hierarchy level in a directory structure Verweist auf den folgenden Verzeichniseintrag einer Verzeichnisstruktur auf gleicher Ebene."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7631,6 +7712,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "directory node's property referencing the following directory node on the same hierarchy level in a directory structure Verweist auf den folgenden Verzeichniseintrag einer Verzeichnisstruktur auf gleicher Ebene."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7684,13 +7772,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     id_short: Optional[str] = r"HasFirstChild",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "directory node's property referencing the first directory node on the next subordinate level in a directory structure"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7707,6 +7789,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "directory node's property referencing the first directory node on the next subordinate level in a directory structure"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7789,13 +7878,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "directory node's property referencing its node type"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7812,6 +7895,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "directory node's property referencing its node type"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7852,13 +7942,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human- readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7875,6 +7959,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human- readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7917,11 +8008,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"DirectoryNode",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"node in a tree-like, ordered collection"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -7938,6 +8025,11 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"node in a tree-like, ordered collection"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -8009,11 +8101,7 @@ class IntelligentInformationforUse(aas.Submodel):
             id_short: Optional[str] = r"DirectoryNodeCollection",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"collection of iirds:DirectoryNode instances"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -8030,6 +8118,11 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"collection of iirds:DirectoryNode instances"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -8094,13 +8187,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8117,6 +8204,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8159,11 +8253,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"media type of the rendition"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8180,6 +8270,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"media type of the rendition"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8221,13 +8316,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     content_type: Optional[str] = r"text/plain",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"relative path of a file in the iiRDS package, containing the content of a rendition"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8244,6 +8333,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"relative path of a file in the iiRDS package, containing the content of a rendition"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8320,11 +8416,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "rendition's property referencing a selector"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8341,6 +8433,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": "rendition's property referencing a selector"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8384,13 +8481,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Identifies instances of the iirds:classes and subclasses"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8407,6 +8498,13 @@ class IntelligentInformationforUse(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Identifies instances of the iirds:classes and subclasses"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8488,13 +8586,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "range selector's property referencing the start of its range"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8511,6 +8603,13 @@ class IntelligentInformationforUse(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": "range selector's property referencing the start of its range"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8591,13 +8690,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         ),
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "range selector's property referencing the end of its range"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8614,6 +8707,13 @@ class IntelligentInformationforUse(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": "range selector's property referencing the end of its range"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8653,13 +8753,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     id_short: Optional[str] = r"RangeSelector",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"selector defining the start point and the end point of a part of content"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8676,6 +8770,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"selector defining the start point and the end point of a part of content"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8741,13 +8842,7 @@ class IntelligentInformationforUse(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Identifies instances of the iirds:classes and subclasses"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8764,6 +8859,13 @@ class IntelligentInformationforUse(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Identifies instances of the iirds:classes and subclasses"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8922,13 +9024,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     id_short: Optional[str] = r"FragmentSelector",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"selector defining a part of content by a single identifier"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8945,6 +9041,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"selector defining a part of content by a single identifier"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9023,13 +9126,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Rendition",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"content of an information unit in a specific format"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -9046,6 +9143,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"content of an information unit in a specific format"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9127,11 +9231,7 @@ class IntelligentInformationforUse(aas.Submodel):
             id_short: Optional[str] = r"RenditionCollection",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"collection of iirds:Rendition instances"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -9148,6 +9248,11 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"collection of iirds:Rendition instances"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -9212,13 +9317,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9235,6 +9334,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9277,11 +9383,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"date and time on which the given content"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9298,6 +9400,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"date and time on which the given content"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9340,13 +9447,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"date and time on which the given content lifecycle status becomes invalid"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9363,6 +9464,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"date and time on which the given content lifecycle status becomes invalid"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9405,13 +9513,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "date and time of a lifecycle status's last change"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9428,6 +9530,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "date and time of a lifecycle status's last change"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9470,11 +9579,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"note on a content lifecycle status"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9491,6 +9596,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"note on a content lifecycle status"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9533,13 +9643,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "reason for an information unit's lifecycle status"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9556,6 +9660,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "reason for an information unit's lifecycle status"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9624,13 +9735,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "content lifecycle status's property referencing its value"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9647,6 +9752,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "content lifecycle status's property referencing its value"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9723,11 +9835,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "iiRDS resource's property referencing a party"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9744,6 +9852,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing a party"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9920,13 +10035,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9943,6 +10052,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9985,13 +10101,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"unique name of the resource within a given domain"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -10008,6 +10118,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"unique name of the resource within a given domain"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10084,13 +10201,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "identifier's property referencing the domain in which it is unique"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -10107,6 +10218,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "identifier's property referencing the domain in which it is unique"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10146,13 +10264,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Identity",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"complex identifier of a resource in an external system"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -10169,6 +10281,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"complex identifier of a resource in an external system"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10241,13 +10360,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -10264,6 +10377,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10332,11 +10452,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "party's property referencing its role"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -10353,6 +10469,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": "party's property referencing its role"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10428,13 +10549,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "party's property referencing an organization or person"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -10451,6 +10566,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "party's property referencing an organization or person"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10490,11 +10612,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Party",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"person, organization or system"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -10511,6 +10629,11 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"person, organization or system"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10608,13 +10731,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"distinguished set of identifiers that are assigned to an iiRDS identity"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -10631,6 +10748,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"distinguished set of identifiers that are assigned to an iiRDS identity"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10707,11 +10831,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "iiRDS resource's property referencing a party"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -10728,6 +10848,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing a party"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -10766,13 +10893,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"IdentityDomain",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"organizational origin of an identifier that is assigned to an iiRDS identity"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -10789,6 +10910,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"organizational origin of an identifier that is assigned to an iiRDS identity"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10849,13 +10977,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"distinguished set of identifiers that are assigned to an iiRDS identity"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -10872,6 +10994,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"distinguished set of identifiers that are assigned to an iiRDS identity"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10911,13 +11040,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"VCard",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"vCard is a file format standard for electronic business cards"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -10934,6 +11057,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"vCard is a file format standard for electronic business cards"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -10991,13 +11121,7 @@ class IntelligentInformationforUse(aas.Submodel):
             id_short: Optional[str] = r"AdministrativeMetadataCollection",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"collection of instances of the subclasses of iirds:AdministrativeMetadata"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -11014,6 +11138,13 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"collection of instances of the subclasses of iirds:AdministrativeMetadata"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -11114,13 +11245,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11137,6 +11262,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11233,13 +11365,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Supply",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"physical object used by an actor performing work tasks described in technical documentation"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -11256,6 +11382,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"physical object used by an actor performing work tasks described in technical documentation"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -11326,13 +11459,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11349,6 +11476,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11425,11 +11559,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"property to identify an event"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11446,6 +11576,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"property to identify an event"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11521,11 +11656,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "event's property referencing its type"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11542,6 +11673,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": "event's property referencing its type"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11582,13 +11718,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11605,6 +11735,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11645,13 +11782,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Event",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"something noticeable that takes place at a given location and point in time"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -11668,6 +11799,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"something noticeable that takes place at a given location and point in time"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -11733,11 +11871,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"EventCode",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"property to identify an event"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -11754,6 +11888,11 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"property to identify an event"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -11807,11 +11946,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"EventType",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": "event's property referencing its type"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -11828,6 +11963,11 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": "event's property referencing its type"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -11886,13 +12026,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11909,6 +12043,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -11950,13 +12091,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -11973,6 +12108,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12011,13 +12153,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Role",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"set of connected behaviors, privileges and obligations associated with a party"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -12034,6 +12170,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"set of connected behaviors, privileges and obligations associated with a party"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -12104,13 +12247,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12127,6 +12264,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12168,13 +12312,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12191,6 +12329,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12229,11 +12374,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"SkillLevel",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"degree of qualification of an individual"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -12250,6 +12391,11 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"degree of qualification of an individual"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -12320,13 +12466,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12343,6 +12483,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12384,13 +12531,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12407,6 +12548,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12445,11 +12593,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Action",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"atomic manipulation of an object by a participant"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -12466,6 +12610,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"atomic manipulation of an object by a participant"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -12536,13 +12687,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12559,6 +12704,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12600,13 +12752,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12623,6 +12769,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12664,9 +12817,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(dict_={r"en": r"span of time"}),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12683,6 +12834,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"span of time"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12723,13 +12879,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"WorkingTime",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"period of time that is required for conducting a specific task"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -12746,6 +12896,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"period of time that is required for conducting a specific task"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -12823,13 +12980,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12846,6 +12997,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12887,13 +13045,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12910,6 +13062,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -12951,13 +13110,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"intended interval between recurring maintanance tasks"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -12974,6 +13127,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"intended interval between recurring maintanance tasks"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13016,9 +13176,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(dict_={r"en": r"span of time"}),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13035,6 +13193,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"span of time"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13076,13 +13239,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"MaintenanceInterval",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"period of time between scheduled maintenance operations"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13099,6 +13256,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"period of time between scheduled maintenance operations"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13183,13 +13347,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13206,6 +13364,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13247,13 +13412,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13270,6 +13429,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13311,9 +13477,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(dict_={r"en": r"span of time"}),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13330,6 +13494,11 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"span of time"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13370,13 +13539,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"DownTime",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"period of time during which an item is not in condition to perform its intended function"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13393,6 +13556,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"period of time during which an item is not in condition to perform its intended function"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13473,13 +13643,7 @@ class IntelligentInformationforUse(aas.Submodel):
             id_short: Optional[str] = r"FunctionalMetadataCollection",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"collection of instances of the subclasses of iirds:FunctionalMetadata"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -13496,6 +13660,13 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"collection of instances of the subclasses of iirds:FunctionalMetadata"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -13607,13 +13778,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13630,6 +13795,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13675,13 +13847,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Entity in terms of the asset administration shell"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = None,
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13690,6 +13856,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Entity in terms of the asset administration shell"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13732,13 +13905,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13755,6 +13922,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13831,11 +14005,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "iiRDS resource's property referencing a party"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -13852,6 +14022,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing a party"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -13892,13 +14069,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"Component",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"part used as a constituent in an assembled product, system or plant"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -13915,6 +14086,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"part used as a constituent in an assembled product, system or plant"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -13993,13 +14171,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14016,6 +14188,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14057,13 +14236,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14080,6 +14253,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14118,11 +14298,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"ProductFeature",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"product characteristics"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -14139,6 +14315,11 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"product characteristics"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -14209,13 +14390,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14232,6 +14407,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14328,13 +14510,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"ProductLifeCyclePhase",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Defined period in the evolution of a product from the conceptual idea to its ultimate disposal"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -14351,6 +14527,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Defined period in the evolution of a product from the conceptual idea to its ultimate disposal"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -14421,13 +14604,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identifies instances of the iirds:classes and subclasses"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14444,6 +14621,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identifies instances of the iirds:classes and subclasses"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14485,13 +14669,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "used to provide a human-readable version of a resource's name"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14508,6 +14686,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "used to provide a human-readable version of a resource's name"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14584,11 +14769,7 @@ class IntelligentInformationforUse(aas.Submodel):
                     ),
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "iiRDS resource's property referencing a party"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -14605,6 +14786,13 @@ class IntelligentInformationforUse(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "iiRDS resource's property referencing a party"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -14644,13 +14832,7 @@ class IntelligentInformationforUse(aas.Submodel):
                 id_short: Optional[str] = r"ProductVariant",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"item or service offered on the market and designed to meet the needs or wishes of customers"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -14667,6 +14849,13 @@ class IntelligentInformationforUse(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"item or service offered on the market and designed to meet the needs or wishes of customers"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -14738,13 +14927,7 @@ class IntelligentInformationforUse(aas.Submodel):
             id_short: Optional[str] = r"ProductMetadataCollection",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"collection of instances of the subclasses of iirds:ProductMetadata"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -14761,6 +14944,13 @@ class IntelligentInformationforUse(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"collection of instances of the subclasses of iirds:ProductMetadata"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -14848,20 +15038,8 @@ class IntelligentInformationforUse(aas.Submodel):
         id_short: Optional[str] = r"IntelligentInformationforUse",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"This Submodel template aims at interoperable provision of information describing the provisioning of “Intelligent Information for Use”, i.e. information of the Technical Documentation enriched by metadata based on the iiRDS"
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02063-1-0",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
@@ -14877,6 +15055,22 @@ class IntelligentInformationforUse(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"This Submodel template aims at interoperable provision of information describing the provisioning of “Intelligent Information for Use”, i.e. information of the Technical Documentation enriched by metadata based on the iiRDS"
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02063-1-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

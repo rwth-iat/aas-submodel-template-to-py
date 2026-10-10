@@ -15,14 +15,7 @@ class AIDataset(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"de": r"eindeutige globale Identifizierung der Produktinstanz unter Verwendung eines universellen Ressourcenbezeichners (URI)",
-                    r"en": r"unique global identification of the product instance using an universal resource identifier (URI)",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -39,6 +32,14 @@ class AIDataset(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"de": r"eindeutige globale Identifizierung der Produktinstanz unter Verwendung eines universellen Ressourcenbezeichners (URI)",
+                        r"en": r"unique global identification of the product instance using an universal resource identifier (URI)",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -81,14 +82,7 @@ class AIDataset(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"de": r"Version des Datensatzes",
-                    r"en": r"Version of the dataset",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -105,6 +99,14 @@ class AIDataset(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Version des Datensatzes",
+                        r"en": r"Version of the dataset",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -145,13 +147,7 @@ class AIDataset(aas.Submodel):
             id_short: Optional[str] = r"ContactInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Refernce to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -168,6 +164,13 @@ class AIDataset(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Refernce to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -208,11 +211,7 @@ class AIDataset(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Path to the dataset (e.g. local path, serverpath,...)"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -229,6 +228,13 @@ class AIDataset(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Path to the dataset (e.g. local path, serverpath,...)"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -275,11 +281,7 @@ class AIDataset(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Number of the different labels in the dataset"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -296,6 +298,13 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Number of the different labels in the dataset"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -342,11 +351,7 @@ class AIDataset(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Name of the class"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -365,6 +370,11 @@ class AIDataset(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Name of the class"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -407,13 +417,7 @@ class AIDataset(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Number of occurrences of the label in the dataset"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -432,6 +436,13 @@ class AIDataset(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Number of occurrences of the label in the dataset"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -471,11 +482,7 @@ class AIDataset(aas.Submodel):
                         id_short: Optional[str] = r"ExampleLabel",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Additional information about one label"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -492,6 +499,11 @@ class AIDataset(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Additional information about one label"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -558,13 +570,7 @@ class AIDataset(aas.Submodel):
                     id_short: Optional[str] = r"Labels",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Every label as a property and the number of samples"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -581,6 +587,13 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Every label as a property and the number of samples"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -647,11 +660,7 @@ class AIDataset(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Name of the file"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -670,6 +679,11 @@ class AIDataset(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Name of the file"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -716,13 +730,7 @@ class AIDataset(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = r"PARAMETER",
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Number of labels in this dataset element"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -741,6 +749,13 @@ class AIDataset(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Number of labels in this dataset element"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -785,13 +800,7 @@ class AIDataset(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = r"PARAMETER",
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Example label, this property should be existing for every label with the labelname as value"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -810,6 +819,13 @@ class AIDataset(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Example label, this property should be existing for every label with the labelname as value"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -849,13 +865,7 @@ class AIDataset(aas.Submodel):
                             id_short: Optional[str] = r"Labels",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Collection containing all the labels within the dataset element"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -874,6 +884,13 @@ class AIDataset(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Collection containing all the labels within the dataset element"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -954,11 +971,7 @@ class AIDataset(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Path to the dataset element"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -977,6 +990,11 @@ class AIDataset(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Path to the dataset element"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1018,13 +1036,7 @@ class AIDataset(aas.Submodel):
                             content_type: Optional[str] = r"application/json",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Annotation file with labeling information about the dataset element"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1043,6 +1055,13 @@ class AIDataset(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Annotation file with labeling information about the dataset element"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1088,13 +1107,7 @@ class AIDataset(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = r"PARAMETER",
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"additional information about the dataset element"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1113,6 +1126,13 @@ class AIDataset(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"additional information about the dataset element"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1153,13 +1173,7 @@ class AIDataset(aas.Submodel):
                             id_short: Optional[str] = r"SingleFileDetails",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Collection to add addtional information about the dataset element (e.g. speaker information for audio data)"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1178,6 +1192,13 @@ class AIDataset(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Collection to add addtional information about the dataset element (e.g. speaker information for audio data)"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1243,13 +1264,7 @@ class AIDataset(aas.Submodel):
                         id_short: Optional[str] = r"ExampleSingleFile",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Collection for features and the annotatin file for a single dataset element"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1266,6 +1281,13 @@ class AIDataset(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Collection for features and the annotatin file for a single dataset element"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1338,13 +1360,7 @@ class AIDataset(aas.Submodel):
                     id_short: Optional[str] = r"SingleFiles",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection containing every dataset element individuallly"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1361,6 +1377,13 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Collection containing every dataset element individuallly"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1423,11 +1446,7 @@ class AIDataset(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Balance between the classes"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1444,6 +1463,11 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Balance between the classes"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1485,13 +1509,7 @@ class AIDataset(aas.Submodel):
                     content_type: Optional[str] = r"application/json",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Annotation file of the dataset (e.g. CSV,JSON,Path...)"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1508,6 +1526,13 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Annotation file of the dataset (e.g. CSV,JSON,Path...)"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1549,11 +1574,7 @@ class AIDataset(aas.Submodel):
                 id_short: Optional[str] = r"Classification",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Information about labeled data for classification"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1570,6 +1591,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Information about labeled data for classification"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1645,11 +1673,7 @@ class AIDataset(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"The meaning of the label"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1666,6 +1690,11 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"The meaning of the label"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1706,11 +1735,7 @@ class AIDataset(aas.Submodel):
                     content_type: Optional[str] = r"text/plain",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Annotation file of the labeled data"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1727,6 +1752,11 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Annotation file of the labeled data"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1771,13 +1801,7 @@ class AIDataset(aas.Submodel):
                             content_type: Optional[str] = r"text/plain",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Annotation file with labeling information about the dataset element"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1796,6 +1820,13 @@ class AIDataset(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Annotation file with labeling information about the dataset element"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1841,13 +1872,7 @@ class AIDataset(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = r"PARAMETER",
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"This is a property for a specific metainformation for single regressionfiles"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -1866,6 +1891,13 @@ class AIDataset(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"This is a property for a specific metainformation for single regressionfiles"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -1906,13 +1938,7 @@ class AIDataset(aas.Submodel):
                             id_short: Optional[str] = r"SingleFileDetails",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Collection to add addtional information about the dataset element"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1931,6 +1957,13 @@ class AIDataset(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Collection to add addtional information about the dataset element"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2001,13 +2034,7 @@ class AIDataset(aas.Submodel):
                         id_short: Optional[str] = r"ExampleAnnotation",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Collection for a single annotation of a dataset element"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2024,6 +2051,13 @@ class AIDataset(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Collection for a single annotation of a dataset element"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2076,13 +2110,7 @@ class AIDataset(aas.Submodel):
                     id_short: Optional[str] = r"SingleFiles",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Collection containing every dataset element individually"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2099,6 +2127,13 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Collection containing every dataset element individually"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2159,11 +2194,7 @@ class AIDataset(aas.Submodel):
                 id_short: Optional[str] = r"Regression",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Information about labeled data for regression"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2180,6 +2211,11 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Information about labeled data for regression"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2240,11 +2276,7 @@ class AIDataset(aas.Submodel):
             id_short: Optional[str] = r"Labeled",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Additional Information typical for labeled datasets"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2261,6 +2293,13 @@ class AIDataset(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Additional Information typical for labeled datasets"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2327,11 +2366,7 @@ class AIDataset(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Number of all samples in the dataset"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2348,6 +2383,11 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Number of all samples in the dataset"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2390,13 +2430,7 @@ class AIDataset(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Number of all dataset elements in the training subset"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2413,6 +2447,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Number of all dataset elements in the training subset"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2455,13 +2496,7 @@ class AIDataset(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Number of all dataset elements in the validation subset"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2478,6 +2513,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Number of all dataset elements in the validation subset"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2520,11 +2562,7 @@ class AIDataset(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"VARIABLE",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Number of all dataset elements in the test subset"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2541,6 +2579,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Number of all dataset elements in the test subset"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2583,13 +2628,7 @@ class AIDataset(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Splitratio between the sets, notate as value1:value2:value3 if all three exist, else value1:value2"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2606,6 +2645,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Splitratio between the sets, notate as value1:value2:value3 if all three exist, else value1:value2"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2648,13 +2694,7 @@ class AIDataset(aas.Submodel):
             id_short: Optional[str] = r"SizeInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Collection about the number of dataset elements in the dataset and subsets"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2671,6 +2711,13 @@ class AIDataset(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection about the number of dataset elements in the dataset and subsets"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2758,13 +2805,7 @@ class AIDataset(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Data type of the dataset elements (e.g. .WAV, .JPEG, ... )"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2781,6 +2822,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Data type of the dataset elements (e.g. .WAV, .JPEG, ... )"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2825,11 +2873,7 @@ class AIDataset(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Meta data information of the dataset"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2846,6 +2890,11 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Meta data information of the dataset"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2884,13 +2933,7 @@ class AIDataset(aas.Submodel):
                 id_short: Optional[str] = r"AdditionalInformation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of additional meta information of the dataset"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2907,6 +2950,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Collection of additional meta information of the dataset"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2971,11 +3021,7 @@ class AIDataset(aas.Submodel):
             id_short: Optional[str] = r"MetaData",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Collection of meta data information about the dataset"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2992,6 +3038,13 @@ class AIDataset(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection of meta data information about the dataset"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3061,9 +3114,7 @@ class AIDataset(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(dict_={r"en": r"metric of the dataset"}),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3080,6 +3131,11 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"metric of the dataset"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3118,11 +3174,7 @@ class AIDataset(aas.Submodel):
             id_short: Optional[str] = r"Metrics",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Collection of different metrics"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3139,6 +3191,11 @@ class AIDataset(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Collection of different metrics"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3204,11 +3261,7 @@ class AIDataset(aas.Submodel):
                     id_short: Optional[str] = r"Collector",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Reference to the data collector"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3225,6 +3278,11 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Reference to the data collector"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3261,13 +3319,7 @@ class AIDataset(aas.Submodel):
                 id_short: Optional[str] = r"DataCollectors",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Information about the datacollector (e.g. a sensor)."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3284,6 +3336,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Information about the datacollector (e.g. a sensor)."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3353,11 +3412,7 @@ class AIDataset(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Condition about the enviroment"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3374,6 +3429,11 @@ class AIDataset(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Condition about the enviroment"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3412,13 +3472,7 @@ class AIDataset(aas.Submodel):
                 id_short: Optional[str] = r"EnviromentConditions",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection about environmental conditions the dataset was created with"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3435,6 +3489,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Collection about environmental conditions the dataset was created with"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3497,13 +3558,7 @@ class AIDataset(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Information, if the dataset is synthetic, real or mixed"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3520,6 +3575,13 @@ class AIDataset(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Information, if the dataset is synthetic, real or mixed"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3559,11 +3621,7 @@ class AIDataset(aas.Submodel):
             id_short: Optional[str] = r"BoundaryConditions",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Boundary conditions in which the dataset was created"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3580,6 +3638,13 @@ class AIDataset(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Boundary conditions in which the dataset was created"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3648,9 +3713,7 @@ class AIDataset(aas.Submodel):
         id_short: Optional[str] = r"AIDataset",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={r"en": r"Categories and Information of the aidataset@en "}
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
@@ -3667,6 +3730,11 @@ class AIDataset(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={r"en": r"Categories and Information of the aidataset@en "}
+            )
 
         if qualifier is None:
             qualifier = ()

@@ -15,14 +15,7 @@ class MaintenanceInstructions(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"de": r"Festlegung, ob ein Asset wartungsfrei ist, oder eine Wartung benötigt. Bei einem wartungsfreien Asset Wert =True . Wird eine Wartung benötig Wert = False. Somit kann ausgeschlossen werden, dass ein Hersteller vergessen hat das SM Maintenance zu erstellen und der Anwender hat die Sicherheit, dass das Asset wartungsfrei ist. ",
-                    r"en": r"Determines whether an asset is maintenance-free or requires maintenance. If an asset is maintenance-free, value = true. If maintenance is required, value = false. This excludes the possibility that a manufacturer has forgotten to create the SM Maintenance and the user has the certainty that the asset is maintenance-free. ",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -39,6 +32,14 @@ class MaintenanceInstructions(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Festlegung, ob ein Asset wartungsfrei ist, oder eine Wartung benötigt. Bei einem wartungsfreien Asset Wert =True . Wird eine Wartung benötig Wert = False. Somit kann ausgeschlossen werden, dass ein Hersteller vergessen hat das SM Maintenance zu erstellen und der Anwender hat die Sicherheit, dass das Asset wartungsfrei ist. ",
+                        r"en": r"Determines whether an asset is maintenance-free or requires maintenance. If an asset is maintenance-free, value = true. If maintenance is required, value = false. This excludes the possibility that a manufacturer has forgotten to create the SM Maintenance and the user has the certainty that the asset is maintenance-free. ",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -85,14 +86,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"ID für diese Wartung ",
-                            r"en": r"ID for this maintenance",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -109,6 +103,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"ID für diese Wartung ",
+                                r"en": r"ID for this maintenance",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -150,14 +152,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Name für diesen Wartung",
-                            r"en": r"Name for this maintenance ",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -174,6 +169,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Name für diesen Wartung",
+                                r"en": r"Name for this maintenance ",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -214,14 +217,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Herkunft der Wartungsinformationen - Beispiele: Komponentenhersteller, Maschinenbauer oder Anlagenbauer, Überwachungsbehörden",
-                            r"en": r"Origin of maintenance information - examples: Component manufacturers, machine or plant manufacturers, monitoring authorities",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -238,6 +234,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Herkunft der Wartungsinformationen - Beispiele: Komponentenhersteller, Maschinenbauer oder Anlagenbauer, Überwachungsbehörden",
+                                r"en": r"Origin of maintenance information - examples: Component manufacturers, machine or plant manufacturers, monitoring authorities",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -281,14 +285,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Wert des Wartungsintervalls",
-                                r"en": r"Value of the maintenance interval",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -305,6 +302,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Wert des Wartungsintervalls",
+                                    r"en": r"Value of the maintenance interval",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -347,11 +352,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"de": r"Interval Einheit", r"en": r"Interval Unit"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -368,6 +369,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Interval Einheit",
+                                    r"en": r"Interval Unit",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -411,14 +420,7 @@ class MaintenanceInstructions(aas.Submodel):
                     id_short: Optional[str] = r"IntervalSpecification",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Spezifikation des Wartungsintervals",
-                            r"en": r"Specification of the maintenance interval",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -435,6 +437,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Spezifikation des Wartungsintervals",
+                                r"en": r"Specification of the maintenance interval",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -512,14 +522,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Designation of the alarm.",
-                                    r"de": r"Benennung des Alarms. ",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -538,6 +541,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Designation of the alarm.",
+                                        r"de": r"Benennung des Alarms. ",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -579,14 +590,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Zur eindeutigen Definition des Alarmwertes wird der Alarmwert in % des Wartungsintervalls angegeben. ",
-                                    r"en": r"For a clear definition of the alarm value, the alarm value is entered as a % of the maintenance interval. ",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -605,6 +609,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Zur eindeutigen Definition des Alarmwertes wird der Alarmwert in % des Wartungsintervalls angegeben. ",
+                                        r"en": r"For a clear definition of the alarm value, the alarm value is entered as a % of the maintenance interval. ",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -647,14 +659,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Definition (Schweregrad) dessen, was der Alarm bedeutet oder welche Auswirkungen er haben soll. Info, Warnung, Alarm, Abschaltung",
-                                    r"en": r"Definition (severity) of what the alarm means or what effects it should have. Info, warning, alarm, shutdown",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -673,6 +678,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Definition (Schweregrad) dessen, was der Alarm bedeutet oder welche Auswirkungen er haben soll. Info, Warnung, Alarm, Abschaltung",
+                                        r"en": r"Definition (severity) of what the alarm means or what effects it should have. Info, warning, alarm, shutdown",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -717,14 +730,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"Alarm",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Collection zur Definition eines Alarms",
-                                r"en": r"Collection for the definition of an alarm",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -741,6 +747,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Collection zur Definition eines Alarms",
+                                    r"en": r"Collection for the definition of an alarm",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -822,14 +836,7 @@ class MaintenanceInstructions(aas.Submodel):
                     id_short: Optional[str] = r"AlarmValues",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Definition von Alarmen bei Erreichen von Grenzwerten Maintenance Limits",
-                            r"en": r"Alarm at reaching the maintenance limit",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -846,6 +853,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Definition von Alarmen bei Erreichen von Grenzwerten Maintenance Limits",
+                                r"en": r"Alarm at reaching the maintenance limit",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -905,14 +920,7 @@ class MaintenanceInstructions(aas.Submodel):
                     content_type: Optional[str] = r"application/pdf",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Flowchart einer Wartung z.B. als PDF Datei",
-                            r"en": r"Flowchart of a maintenance e.g. as a PDF file",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -929,6 +937,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Flowchart einer Wartung z.B. als PDF Datei",
+                                r"en": r"Flowchart of a maintenance e.g. as a PDF file",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -969,14 +985,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Normen, Gesetze und Verordnungen die bei der Wartung beachtet werden müssen",
-                            r"en": r"Standards, laws and regulations that must be observed during maintenance",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -993,6 +1002,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Normen, Gesetze und Verordnungen die bei der Wartung beachtet werden müssen",
+                                r"en": r"Standards, laws and regulations that must be observed during maintenance",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1035,11 +1052,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"name of the company"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1056,6 +1069,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"name of the company"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1096,13 +1114,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Administrative section within an organisation where a business partner is located"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1119,6 +1131,13 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Administrative section within an organisation where a business partner is located"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1160,11 +1179,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"function of a contact person in a process"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1181,6 +1196,13 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"function of a contact person in a process"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1222,13 +1244,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "common, formal, religious, or other title preceding a contact person's name"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1245,6 +1261,13 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": "common, formal, religious, or other title preceding a contact person's name"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1285,13 +1308,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "academic title preceding a contact person's name"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1308,6 +1325,13 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": "academic title preceding a contact person's name"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1348,11 +1372,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"surname of a contact person"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1369,6 +1389,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"surname of a contact person"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1409,11 +1434,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"first name of a contact person"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1430,6 +1451,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"first name of a contact person"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1470,11 +1496,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"middle names of contact person"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1491,6 +1513,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"middle names of contact person"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1534,13 +1561,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"electronic mail address of a business partner"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1559,6 +1580,13 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"electronic mail address of a business partner"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1600,13 +1628,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"public part of an unsymmetrical key pair to sign or encrypt text or messages"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1625,6 +1647,13 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"public part of an unsymmetrical key pair to sign or encrypt text or messages"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1666,13 +1695,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"characterization of an e-mail address according to its location or usage"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1691,6 +1714,13 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"characterization of an e-mail address according to its location or usage"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1732,13 +1762,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"characterization of a public key according to its encryption process"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1757,6 +1781,13 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"characterization of a public key according to its encryption process"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1801,11 +1832,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"Email",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"E-mail address and encryption method"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1822,6 +1849,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"E-mail address and encryption method"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1914,13 +1946,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"complete telephone number to be called to reach a business partner"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -1939,6 +1965,13 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"complete telephone number to be called to reach a business partner"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1980,13 +2013,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"characterization of a telephone according to its location or usage"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2005,6 +2032,13 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"characterization of a telephone according to its location or usage"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2046,13 +2080,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Specification of the available time window"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2071,6 +2099,13 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Specification of the available time window"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2114,11 +2149,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"Phone",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Phone number including type"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2135,6 +2166,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Phone number including type"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2213,13 +2249,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": "complete telephone number to be called to reach a business partner's fax machine"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2238,6 +2268,13 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": "complete telephone number to be called to reach a business partner's fax machine"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2279,13 +2316,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"characterization of the fax according its location or usage"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2304,6 +2335,13 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"characterization of the fax according its location or usage"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2343,11 +2381,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"Fax",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Fax number including type"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2364,6 +2398,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Fax number including type"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2433,11 +2472,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"street name and house number"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2454,6 +2489,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"street name and house number"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2494,11 +2534,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"ZIP code of address"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2515,6 +2551,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"ZIP code of address"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2555,9 +2596,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(dict_={r"en": r"town or city"}),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2574,6 +2613,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"town or city"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2614,13 +2658,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r" Note: country codes defined accord. to ISO 3166-1. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2637,6 +2675,13 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r" Note: country codes defined accord. to ISO 3166-1. Recommendation: property declaration as MLP is required by its semantic definition. As the property value is language independent, users are recommended to provide maximal 1 string in any language of the user’s choice."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2677,11 +2722,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"federal state a part of a state"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2698,6 +2739,11 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"federal state a part of a state"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2738,13 +2784,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"additional information of the contact person"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2761,6 +2801,13 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"additional information of the contact person"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2824,14 +2871,7 @@ class MaintenanceInstructions(aas.Submodel):
                     id_short: Optional[str] = r"ContactForMaintenanceAuthorization",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Sammlung der Kontaktdaten, zwecks Freigabe welche vor einer Wartung  - Beispiel eine Leitwarte in einem Werk",
-                            r"en": r"Collection of contact details for authorization before maintenance - example of a control room in a factory",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2848,6 +2888,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Sammlung der Kontaktdaten, zwecks Freigabe welche vor einer Wartung  - Beispiel eine Leitwarte in einem Werk",
+                                r"en": r"Collection of contact details for authorization before maintenance - example of a control room in a factory",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3021,14 +3069,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Sicherheitshinweise und Vorschriften, die bei der Wartung beachtet werden müssen",
-                            r"en": r"Safety instructions and regulations that must be observed during maintenance",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3045,6 +3086,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Sicherheitshinweise und Vorschriften, die bei der Wartung beachtet werden müssen",
+                                r"en": r"Safety instructions and regulations that must be observed during maintenance",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3102,14 +3151,7 @@ class MaintenanceInstructions(aas.Submodel):
                 id_short: Optional[str] = r"BasicMaintenanceInformation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Grundlegende Informationen für dieses Wartungsinterval",
-                        r"en": r"Basic information for this maintenance interval",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3126,6 +3168,14 @@ class MaintenanceInstructions(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Grundlegende Informationen für dieses Wartungsinterval",
+                            r"en": r"Basic information for this maintenance interval",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3259,14 +3309,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Anzahl der für die Wartung benötigten Techniker",
-                            r"en": r"Number of technicians needed for maintenance",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3283,6 +3326,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Anzahl der für die Wartung benötigten Techniker",
+                                r"en": r"Number of technicians needed for maintenance",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3324,14 +3375,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Anforderung an die Mindestqualifikation der Techniker",
-                            r"en": r"Requirement for the minimum qualification of technicians",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3348,6 +3392,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Anforderung an die Mindestqualifikation der Techniker",
+                                r"en": r"Requirement for the minimum qualification of technicians",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3391,14 +3443,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Wert für die Dauer der gesamten Wartung",
-                                r"en": r"Value for the duration of the entire maintenance",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3415,6 +3460,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Wert für die Dauer der gesamten Wartung",
+                                    r"en": r"Value for the duration of the entire maintenance",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3457,14 +3510,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Einheit für die Dauer der gesamten Wartung - Beispiel Stunden, Tage, Wochen",
-                                r"en": r"Unit for the duration of the entire maintenance - example hours, days, weeks",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3481,6 +3527,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Einheit für die Dauer der gesamten Wartung - Beispiel Stunden, Tage, Wochen",
+                                    r"en": r"Unit for the duration of the entire maintenance - example hours, days, weeks",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3524,14 +3578,7 @@ class MaintenanceInstructions(aas.Submodel):
                     id_short: Optional[str] = r"EstimatedTotalWorkingTime",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Sammlung, um den voraussichtlichen Zeitaufwand für die Durchführung der Wartung zu definieren",
-                            r"en": r"Collection to define the expected time needed to perform the maintenance",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3548,6 +3595,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Sammlung, um den voraussichtlichen Zeitaufwand für die Durchführung der Wartung zu definieren",
+                                r"en": r"Collection to define the expected time needed to perform the maintenance",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3634,14 +3689,7 @@ class MaintenanceInstructions(aas.Submodel):
                 id_short: Optional[str] = r"MaintenanceTechnicians",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Details zu den für die Wartung benötigten Technikern",
-                        r"en": r"Details of the technicians required for maintenance",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3658,6 +3706,14 @@ class MaintenanceInstructions(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Details zu den für die Wartung benötigten Technikern",
+                            r"en": r"Details of the technicians required for maintenance",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3748,14 +3804,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"ID oder Nummer des Wartungsschritts für eine klare Strukturierung der Wartung",
-                                r"en": r"ID or number of the maintenance step for a clear structuring of the maintenance",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3772,6 +3821,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"ID oder Nummer des Wartungsschritts für eine klare Strukturierung der Wartung",
+                                    r"en": r"ID or number of the maintenance step for a clear structuring of the maintenance",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3813,14 +3870,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Benennung des Wartungsschritt - Beispiel Wartungsstart",
-                                r"en": r"Naming of the maintenance step - example maintenance start",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3837,6 +3887,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Benennung des Wartungsschritt - Beispiel Wartungsstart",
+                                    r"en": r"Naming of the maintenance step - example maintenance start",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3877,14 +3935,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Angabe zur Lokalisierung des Wartungsschritts",
-                                r"en": r"Indication of the localization of the maintenance.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3901,6 +3952,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Angabe zur Lokalisierung des Wartungsschritts",
+                                    r"en": r"Indication of the localization of the maintenance.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3942,14 +4001,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ] = r"LinkSMMaintenanceComponentModuleMachine",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Link zu einem anderen SM Maintenance. Beispiel Link zum SM Maintenance eines Sensors in einer Maschine. Von hier kann somit in eine Wartungsinformation einer unterlagerten Komponente gesprungen werden.",
-                                r"en": r"Link to another SM Maintenance. Example Link to the SM Maintenance of a sensor in a machine. From here, it is possible to jump to the maintenance information of a subordinate component.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3966,6 +4018,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Link zu einem anderen SM Maintenance. Beispiel Link zum SM Maintenance eines Sensors in einer Maschine. Von hier kann somit in eine Wartungsinformation einer unterlagerten Komponente gesprungen werden.",
+                                    r"en": r"Link to another SM Maintenance. Example Link to the SM Maintenance of a sensor in a machine. From here, it is possible to jump to the maintenance information of a subordinate component.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4004,14 +4064,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"LinkAASComponentModuleMachine",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Link zu einer unterlagerten AAS. Beispiel Link zur Sensors in einer Maschine. Von hier kann somit zu den Inforamtionen einer unterlagerten Komponente gesprungen werden.",
-                                r"en": r"Link to a subordinate AAS. Example Link to the sensors in a machine. From here you can jump to the information of a subordinate component.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4028,6 +4081,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Link zu einer unterlagerten AAS. Beispiel Link zur Sensors in einer Maschine. Von hier kann somit zu den Inforamtionen einer unterlagerten Komponente gesprungen werden.",
+                                    r"en": r"Link to a subordinate AAS. Example Link to the sensors in a machine. From here you can jump to the information of a subordinate component.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4067,14 +4128,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Arbeitsanweisung/ Beschreibung eines Wartungsschritts als Alternative zu dem Sprung in eine Wartungsinformation von unterlagerten Komponenten.",
-                                r"en": r"Work instruction/ description of a maintenance step as an alternative to jumping to a maintenance information of subordinate components.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4091,6 +4145,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Arbeitsanweisung/ Beschreibung eines Wartungsschritts als Alternative zu dem Sprung in eine Wartungsinformation von unterlagerten Komponenten.",
+                                    r"en": r"Work instruction/ description of a maintenance step as an alternative to jumping to a maintenance information of subordinate components.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4133,14 +4195,7 @@ class MaintenanceInstructions(aas.Submodel):
                         content_type: Optional[str] = r"application/pdf",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Verknüpfung von unterstützenden Dokumenten die zu diesem Wartungsschritt gehören",
-                                r"en": r"Linking of supporting documents that belong to this maintenance step.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4157,6 +4212,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Verknüpfung von unterstützenden Dokumenten die zu diesem Wartungsschritt gehören",
+                                    r"en": r"Linking of supporting documents that belong to this maintenance step.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4196,14 +4259,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"SparePartForMaintenanceStep",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Link auf ein in diesem Wartungsschritt benötigtes Ersatzteils. Eine Liste aller benötigten Ersatzteile für eine Wartung befindet sich in der SMC SparePartList des SM Maintenance",
-                                r"en": r"Link to a spare part required in this maintenance step. A list of all the spare parts required for maintenance can be found in the SMC SparePartList of the SM Maintenance",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4220,6 +4276,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Link auf ein in diesem Wartungsschritt benötigtes Ersatzteils. Eine Liste aller benötigten Ersatzteile für eine Wartung befindet sich in der SMC SparePartList des SM Maintenance",
+                                    r"en": r"Link to a spare part required in this maintenance step. A list of all the spare parts required for maintenance can be found in the SMC SparePartList of the SM Maintenance",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4262,14 +4326,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Nummer des in diesem Wartungsschritt benötigten Ersatzteils.",
-                                r"en": r"Number of spare part required in this maintenance step.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4286,6 +4343,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Nummer des in diesem Wartungsschritt benötigten Ersatzteils.",
+                                    r"en": r"Number of spare part required in this maintenance step.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4326,14 +4391,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"ConsumablesForMaintenanceStep",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Link auf ein benötigtes Verbrauchsmaterial.",
-                                r"en": r"Link to a required consumable.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4350,6 +4408,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Link auf ein benötigtes Verbrauchsmaterial.",
+                                    r"en": r"Link to a required consumable.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4392,14 +4458,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Angabe zur benötigten Menge des unter ConsumablesForMaintenanceStep referenzierten Verbrauchmaterials für diesen Wartungsschritt",
-                                r"en": r"Indication of the required number of consumables referenced under ConsumablesForMaintenanceStep for this maintenance step.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4416,6 +4475,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Angabe zur benötigten Menge des unter ConsumablesForMaintenanceStep referenzierten Verbrauchmaterials für diesen Wartungsschritt",
+                                    r"en": r"Indication of the required number of consumables referenced under ConsumablesForMaintenanceStep for this maintenance step.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4460,14 +4527,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Einheit der benötigten Anzahl des unter ConsumablesForMaintenanceStep referenzierten Verbrauchmaterials für diesen Wartungsschritt. Beispiele: Blatt, Gramm, Milliliter",
-                                r"en": r"Unit of the required number of consumables referenced under ConsumablesForMaintenanceStep for this maintenance step. Examples: Sheet, gram, millilitre",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4484,6 +4544,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Einheit der benötigten Anzahl des unter ConsumablesForMaintenanceStep referenzierten Verbrauchmaterials für diesen Wartungsschritt. Beispiele: Blatt, Gramm, Milliliter",
+                                    r"en": r"Unit of the required number of consumables referenced under ConsumablesForMaintenanceStep for this maintenance step. Examples: Sheet, gram, millilitre",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4524,14 +4592,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"ToolsForMaintenanceStep",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Verweis auf ein benötigtes Werkzeug. Eine Liste aller benötigten Ersatzteile für eine Wartung befindet sich in der SMC MaintenanceToolList des SM Maintenance",
-                                r"en": r"Reference to a required tool. A list of all required spare parts for a maintenance can be found in the SMC MaintenanceToolList of the SM Maintenance",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4548,6 +4609,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Verweis auf ein benötigtes Werkzeug. Eine Liste aller benötigten Ersatzteile für eine Wartung befindet sich in der SMC MaintenanceToolList des SM Maintenance",
+                                    r"en": r"Reference to a required tool. A list of all required spare parts for a maintenance can be found in the SMC MaintenanceToolList of the SM Maintenance",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4588,14 +4657,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Angabe zur benötigten Anzahl des unter ToolsForMaintenanceStep referenzierten Werkzeugs für diesen Wartungsschritt",
-                                r"en": r"Indication of the required number of the tool referenced under ToolsForMaintenanceStep for this maintenance step.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4612,6 +4674,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Angabe zur benötigten Anzahl des unter ToolsForMaintenanceStep referenzierten Werkzeugs für diesen Wartungsschritt",
+                                    r"en": r"Indication of the required number of the tool referenced under ToolsForMaintenanceStep for this maintenance step.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4654,14 +4724,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Vorgabe, ob dieser Wartungsschritt dokumentiert werden muss. O entspricht keine Dokumentation notwendig, 1 entspricht Dokumentation notwendig",
-                                r"en": r"Specifies whether this maintenance step must be documented. O corresponds to no documentation necessary, 1 corresponds to documentation necessary",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4678,6 +4741,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Vorgabe, ob dieser Wartungsschritt dokumentiert werden muss. O entspricht keine Dokumentation notwendig, 1 entspricht Dokumentation notwendig",
+                                    r"en": r"Specifies whether this maintenance step must be documented. O corresponds to no documentation necessary, 1 corresponds to documentation necessary",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4726,14 +4797,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Angabe der Dauer für diesen Wartungsschritt (Wert)",
-                                    r"en": r"Indication of the duration for this maintenance step (value)",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -4752,6 +4816,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Angabe der Dauer für diesen Wartungsschritt (Wert)",
+                                        r"en": r"Indication of the duration for this maintenance step (value)",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4796,14 +4868,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Zeiteinheit für den Wert der Dauer für diesen wArtungsschritt - Beispiel Stunden, Tage, Wochen",
-                                    r"en": r"Time unit for the value of the duration for this wArting step - example hours, days, weeks",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -4822,6 +4887,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Zeiteinheit für den Wert der Dauer für diesen wArtungsschritt - Beispiel Stunden, Tage, Wochen",
+                                        r"en": r"Time unit for the value of the duration for this wArting step - example hours, days, weeks",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -4869,14 +4942,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ] = r"EstimatedDurationTimeMaintenanceStep",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Geschätzte Dauer für diesen Wartungsschritt",
-                                r"en": r"Estimated duration for this maintenance step",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4893,6 +4959,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Geschätzte Dauer für diesen Wartungsschritt",
+                                    r"en": r"Estimated duration for this maintenance step",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4981,14 +5055,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Bedinung für den nächsten Wartungsschritt ",
-                                r"en": r"Condition for the next maintenance step ",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5005,6 +5072,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Bedinung für den nächsten Wartungsschritt ",
+                                    r"en": r"Condition for the next maintenance step ",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5044,14 +5119,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"NextMaintenanceStep",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Referenz auf den folgenden Wartungsschritt, wenn die Bedingung erfüllt ist.",
-                                r"en": r"Reference to the following maintenance step if the condition is fulfilled.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5068,6 +5136,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Referenz auf den folgenden Wartungsschritt, wenn die Bedingung erfüllt ist.",
+                                    r"en": r"Reference to the following maintenance step if the condition is fulfilled.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5107,14 +5183,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Alternativer nächster Schritt, wenn die vorherige Bedingung nicht erfüllt ist. ",
-                                r"en": r"Alternative next step if the previous condition is not fulfilled. ",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5131,6 +5200,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Alternativer nächster Schritt, wenn die vorherige Bedingung nicht erfüllt ist. ",
+                                    r"en": r"Alternative next step if the previous condition is not fulfilled. ",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5170,14 +5247,7 @@ class MaintenanceInstructions(aas.Submodel):
                         id_short: Optional[str] = r"AlternativeNextMaintenanceStep",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Referenz auf den folgenden Wartungsschritt, wenn die Bedingung nicht erfüllt ist.",
-                                r"en": r"Reference to the following maintenance step if the condition is not fulfilled.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5194,6 +5264,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Referenz auf den folgenden Wartungsschritt, wenn die Bedingung nicht erfüllt ist.",
+                                    r"en": r"Reference to the following maintenance step if the condition is not fulfilled.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5234,14 +5312,7 @@ class MaintenanceInstructions(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Beendigung der Wartung, wenn dies der letzte Wartungsschritt war. 1 = Ende der Wartung erreicht",
-                                r"en": r"End of maintenance if this was the last maintenance step. 1 = End of maintenance reached",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5258,6 +5329,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Beendigung der Wartung, wenn dies der letzte Wartungsschritt war. 1 = Ende der Wartung erreicht",
+                                    r"en": r"End of maintenance if this was the last maintenance step. 1 = End of maintenance reached",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5358,14 +5437,7 @@ class MaintenanceInstructions(aas.Submodel):
                     id_short: Optional[str] = r"MaintenanceStep",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Sammlung aller Details und Informationen zu einem Wartungsschritt ",
-                            r"en": r"Collection of all details and information about a maintenance site",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5382,6 +5454,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Sammlung aller Details und Informationen zu einem Wartungsschritt ",
+                                r"en": r"Collection of all details and information about a maintenance site",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5704,14 +5784,7 @@ class MaintenanceInstructions(aas.Submodel):
                 id_short: Optional[str] = r"ListMaintenanceSteps",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Auflistung der einzelnen Wartungsschritte inkl. aller benötigten Details je Wartungsschritt",
-                        r"en": r"Listing of the individual maintenance steps incl. all required details per maintenance step",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5728,6 +5801,14 @@ class MaintenanceInstructions(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Auflistung der einzelnen Wartungsschritte inkl. aller benötigten Details je Wartungsschritt",
+                            r"en": r"Listing of the individual maintenance steps incl. all required details per maintenance step",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5786,14 +5867,7 @@ class MaintenanceInstructions(aas.Submodel):
             id_short: Optional[str] = r"MaintenanceInstructionsForSpecificInterval",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"de": r"Wartungsdetails für eine spezifischen Zeitinterval - Beispiel Wartung nach 6 Monaten",
-                    r"en": r"Collection that includes all the details of a maintenance interval. ",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -5810,6 +5884,14 @@ class MaintenanceInstructions(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Wartungsdetails für eine spezifischen Zeitinterval - Beispiel Wartung nach 6 Monaten",
+                        r"en": r"Collection that includes all the details of a maintenance interval. ",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -5874,14 +5956,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"ID des Werkzeugs",
-                            r"en": r"An ID can be assigned to uniquely identify a tool.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5898,6 +5973,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"ID des Werkzeugs",
+                                r"en": r"An ID can be assigned to uniquely identify a tool.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5939,14 +6022,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Ein Name für das Werkzeug kann gespeichert werden, um das Werkzeug für Menschen verständlicher zu machen.",
-                            r"en": r"A name for the tool can be stored to make the tool more understandable for humans.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5963,6 +6039,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Ein Name für das Werkzeug kann gespeichert werden, um das Werkzeug für Menschen verständlicher zu machen.",
+                                r"en": r"A name for the tool can be stored to make the tool more understandable for humans.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6010,14 +6094,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Benötigte Gesamtanzahl des Werkzeugs für einen Wartungsinterval",
-                                    r"en": r"Total number of tools required for specific maintenance interval",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6036,6 +6113,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Benötigte Gesamtanzahl des Werkzeugs für einen Wartungsinterval",
+                                        r"en": r"Total number of tools required for specific maintenance interval",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6076,14 +6161,7 @@ class MaintenanceInstructions(aas.Submodel):
                             id_short: Optional[str] = r"ReferenceToMaintenanceID",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
-                                    r"en": r"Reference to ID of specific maintenance interval",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6102,6 +6180,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
+                                        r"en": r"Reference to ID of specific maintenance interval",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6140,14 +6226,7 @@ class MaintenanceInstructions(aas.Submodel):
                             id_short: Optional[str] = r"ReferenceNameOfMaintenance",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
-                                    r"en": r"Reference to ID of specific maintenance interval",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6166,6 +6245,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
+                                        r"en": r"Reference to ID of specific maintenance interval",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6212,14 +6299,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ] = r"CollectionMaxQuantityOfToolForSpecificInterval",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Kollektion Benötige Anzahl des Werkzeugs für ein spezifisches Wartungsintervall.",
-                                r"en": r"Collection Total quantity of tools required for one specific maintenance intervals.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6236,6 +6316,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Kollektion Benötige Anzahl des Werkzeugs für ein spezifisches Wartungsintervall.",
+                                    r"en": r"Collection Total quantity of tools required for one specific maintenance intervals.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6323,14 +6411,7 @@ class MaintenanceInstructions(aas.Submodel):
                     id_short: Optional[str] = r"CollectionMaxQuantityOfTool",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Liste der Werkzeuge, die für alle Wartungsintervalle einer Anlage benötigt werden. Die Menge richtet sich nach den verschiedenen Wartungsintervallen. Jede Menge pro Wartungsintervall wird in einer eigenen SMC beschrieben/definiert.",
-                            r"en": r"List of tools required for all maintenance intervals of an asset. The quantity is devied by the different maintenance intervals. Each quantity per maintenance interval is described/ defined in an own SMC.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6347,6 +6428,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Liste der Werkzeuge, die für alle Wartungsintervalle einer Anlage benötigt werden. Die Menge richtet sich nach den verschiedenen Wartungsintervallen. Jede Menge pro Wartungsintervall wird in einer eigenen SMC beschrieben/definiert.",
+                                r"en": r"List of tools required for all maintenance intervals of an asset. The quantity is devied by the different maintenance intervals. Each quantity per maintenance interval is described/ defined in an own SMC.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6402,14 +6491,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Name des Werkzeugherstellers",
-                            r"en": r"Name of the tool manufacturer",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6426,6 +6508,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Name des Werkzeugherstellers",
+                                r"en": r"Name of the tool manufacturer",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6467,14 +6557,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Eine vom Hersteller vergebene eindeutige Kombination aus Zahlen und Buchstaben, die zur Identifizierung des Werkzeugs bei der Bestellung verwendet wird",
-                            r"en": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the tool for ordering",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6501,6 +6584,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Eine vom Hersteller vergebene eindeutige Kombination aus Zahlen und Buchstaben, die zur Identifizierung des Werkzeugs bei der Bestellung verwendet wird",
+                                r"en": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the tool for ordering",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6542,14 +6633,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Detaillierte Beschreibung des Werkzeugs",
-                            r"en": r"Detailed description of the tool",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6566,6 +6650,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Detaillierte Beschreibung des Werkzeugs",
+                                r"en": r"Detailed description of the tool",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6607,13 +6699,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Web site address where information about the tool is given, e.g. link to shop"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6630,6 +6716,13 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Web site address where information about the tool is given, e.g. link to shop"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6684,14 +6777,7 @@ class MaintenanceInstructions(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Werkzeug, das für die Wartung benötigt wird. Dazu gehören der Name, die Bestellnummer, der Hersteller und eine Beschreibung.",
-                        r"en": r"The collection contains all the information and details about a tool needed for maintenance. This includes the name, order number, manufacturer and a description.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6708,6 +6794,14 @@ class MaintenanceInstructions(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Werkzeug, das für die Wartung benötigt wird. Dazu gehören der Name, die Bestellnummer, der Hersteller und eine Beschreibung.",
+                            r"en": r"The collection contains all the information and details about a tool needed for maintenance. This includes the name, order number, manufacturer and a description.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6836,14 +6930,7 @@ class MaintenanceInstructions(aas.Submodel):
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"de": r"Gesamtliste der benötigten Werkzeuge für alle Wartungsintervalle eines Assets",
-                    r"en": r"Total list of tools required for all maintenance intervals of an asset",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -6860,6 +6947,14 @@ class MaintenanceInstructions(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Gesamtliste der benötigten Werkzeuge für alle Wartungsintervalle eines Assets",
+                        r"en": r"Total list of tools required for all maintenance intervals of an asset",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -6993,13 +7088,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"An ID can be assigned to uniquely identify a consumable, e.g. the globalAssetId of the tool."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7016,6 +7105,13 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"An ID can be assigned to uniquely identify a consumable, e.g. the globalAssetId of the tool."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7057,13 +7153,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"A name for the consumable can be stored to name the consumable more understandable for humans."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7080,6 +7170,13 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"A name for the consumable can be stored to name the consumable more understandable for humans."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7127,14 +7224,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Benötigte Gesamtanzahl des Verbrauchsmaterials für einen Wartungsinterval",
-                                    r"en": r"Total number of consumble required for specific maintenance interval",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -7153,6 +7243,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Benötigte Gesamtanzahl des Verbrauchsmaterials für einen Wartungsinterval",
+                                        r"en": r"Total number of consumble required for specific maintenance interval",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -7193,14 +7291,7 @@ class MaintenanceInstructions(aas.Submodel):
                             id_short: Optional[str] = r"ReferenceNameOfMaintenance",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Referenz zu Namen eines spezifischen Wartungsintervals",
-                                    r"en": r"Referenceto name of specific maintenance interval",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -7219,6 +7310,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Referenz zu Namen eines spezifischen Wartungsintervals",
+                                        r"en": r"Referenceto name of specific maintenance interval",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -7257,14 +7356,7 @@ class MaintenanceInstructions(aas.Submodel):
                             id_short: Optional[str] = r"ReferenceToMaintenanceID",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
-                                    r"en": r"Reference to ID of specific maintenance interval",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -7283,6 +7375,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
+                                        r"en": r"Reference to ID of specific maintenance interval",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -7329,14 +7429,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ] = r"QuantityOfConsumableForSpecificInterval",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Kollektion benötige Anzahl des Verbrauchmaterials für ein spezifisches Wartungsintervall",
-                                r"en": r"Collection total quantity of consumable required for a specific maintenance intervals",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7353,6 +7446,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Kollektion benötige Anzahl des Verbrauchmaterials für ein spezifisches Wartungsintervall",
+                                    r"en": r"Collection total quantity of consumable required for a specific maintenance intervals",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7440,14 +7541,7 @@ class MaintenanceInstructions(aas.Submodel):
                     id_short: Optional[str] = r"CollectionQuantityOfConsumable",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Sammelmenge des für die Wartungsintervalle benötigten Verbrauchsmaterials.",
-                            r"en": r"Collection quantity of consumable required for maintenance intervals.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7464,6 +7558,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Sammelmenge des für die Wartungsintervalle benötigten Verbrauchsmaterials.",
+                                r"en": r"Collection quantity of consumable required for maintenance intervals.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7520,14 +7622,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Einheit zur benötigten Gesamtmenge des Verbauchsmaterials. Beispiel: Blatt, Milliliter, Gramm, ...",
-                            r"en": r"Unit for the total quantity of consumable material required. Example: sheet, millilitre, gram, ...",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7544,6 +7639,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Einheit zur benötigten Gesamtmenge des Verbauchsmaterials. Beispiel: Blatt, Milliliter, Gramm, ...",
+                                r"en": r"Unit for the total quantity of consumable material required. Example: sheet, millilitre, gram, ...",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7585,14 +7688,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Name des Verbrauchsmaterialherstellers z.B. Max Mustermann GmbH",
-                            r"en": r"Name of the consumables manufacturer e.g. Max Mustermann GmbH",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7609,6 +7705,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Name des Verbrauchsmaterialherstellers z.B. Max Mustermann GmbH",
+                                r"en": r"Name of the consumables manufacturer e.g. Max Mustermann GmbH",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7650,13 +7754,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the consumable for ordering"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7683,6 +7781,13 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the consumable for ordering"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7724,14 +7829,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Beschreibung des Verbauchsmaterials. Beispiel: Reinigungspapier; Farbe blau; Blattgröße 380x 380 mm doppellagig.",
-                            r"en": r"Description of the consumables. Example: Cleaning paper; colour blue; sheet size 380x 380 mm double-ply.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7748,6 +7846,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Beschreibung des Verbauchsmaterials. Beispiel: Reinigungspapier; Farbe blau; Blattgröße 380x 380 mm doppellagig.",
+                                r"en": r"Description of the consumables. Example: Cleaning paper; colour blue; sheet size 380x 380 mm double-ply.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7788,14 +7894,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Angabe zur fachgerechten Entsorgung des Verbauchsmaterials.",
-                            r"en": r"Information on the proper disposal of the consumables.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7812,6 +7911,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Angabe zur fachgerechten Entsorgung des Verbauchsmaterials.",
+                                r"en": r"Information on the proper disposal of the consumables.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7853,13 +7960,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Web site address where information about the consumable is given, e.g. link to shop"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7876,6 +7977,13 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Web site address where information about the consumable is given, e.g. link to shop"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7940,14 +8048,7 @@ class MaintenanceInstructions(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Verbrauchsmaterial, das für die Wartung benötigt wird. Dazu gehören die Bezeichnung, die Bestellnummer, der Hersteller und eine Beschreibung.",
-                        r"en": r"The collection contains all information and details about a consumable required for maintenance. This includes the designation, order number, manufacturer and a description.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -7964,6 +8065,14 @@ class MaintenanceInstructions(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Verbrauchsmaterial, das für die Wartung benötigt wird. Dazu gehören die Bezeichnung, die Bestellnummer, der Hersteller und eine Beschreibung.",
+                            r"en": r"The collection contains all information and details about a consumable required for maintenance. This includes the designation, order number, manufacturer and a description.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -8126,14 +8235,7 @@ class MaintenanceInstructions(aas.Submodel):
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"de": r"Gesamtliste der benötigten Verbrauchsmaterialien für alle Wartungsintervalle",
-                    r"en": r"Total list of consumables required for all maintenance intervals of an asset. Each consumable is described/defined in its own SMC’s",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -8150,6 +8252,14 @@ class MaintenanceInstructions(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Gesamtliste der benötigten Verbrauchsmaterialien für alle Wartungsintervalle",
+                        r"en": r"Total list of consumables required for all maintenance intervals of an asset. Each consumable is described/defined in its own SMC’s",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -8283,13 +8393,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"An ID can be assigned to uniquely identify a spare part, e.g. the globalAssetId of the spare part."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8306,6 +8410,13 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"An ID can be assigned to uniquely identify a spare part, e.g. the globalAssetId of the spare part."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8347,14 +8458,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Eine Bezeichnung des Ersatzteils kann gespeichert werden, um das Ersatzteil für den Menschen verständlicher zu benennen.",
-                            r"en": r"A designation of the spare part can be stored to name the spare part more understandable for people.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8371,6 +8475,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Eine Bezeichnung des Ersatzteils kann gespeichert werden, um das Ersatzteil für den Menschen verständlicher zu benennen.",
+                                r"en": r"A designation of the spare part can be stored to name the spare part more understandable for people.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8418,14 +8530,7 @@ class MaintenanceInstructions(aas.Submodel):
                             value_id: Optional[aas.Reference] = None,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Benötigte Menge des Ersatzteils für einen spezifischen Wartungsintervall",
-                                    r"en": r"Quantity of spare part required for specific maintenance interval",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -8444,6 +8549,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Benötigte Menge des Ersatzteils für einen spezifischen Wartungsintervall",
+                                        r"en": r"Quantity of spare part required for specific maintenance interval",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -8484,14 +8597,7 @@ class MaintenanceInstructions(aas.Submodel):
                             id_short: Optional[str] = r"ReferenceNameOfMaintenance",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Referenz zu Namen eines spezifischen Wartungsintervals",
-                                    r"en": r"Referenceto name of specific maintenance interval",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -8510,6 +8616,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Referenz zu Namen eines spezifischen Wartungsintervals",
+                                        r"en": r"Referenceto name of specific maintenance interval",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -8548,14 +8662,7 @@ class MaintenanceInstructions(aas.Submodel):
                             id_short: Optional[str] = r"ReferenceToMaintenanceID",
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
-                                    r"en": r"Reference to ID of specific maintenance interval",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -8574,6 +8681,14 @@ class MaintenanceInstructions(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"de": r"Referenz zur ID eines spezifischen Wartungsintervals",
+                                        r"en": r"Reference to ID of specific maintenance interval",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -8620,14 +8735,7 @@ class MaintenanceInstructions(aas.Submodel):
                         ] = r"CollectionQuantityOfSparepartForSpecificInterval",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Kollektion benötige Anzahl der Ersatzteile für ein spezifisches Wartungsintervall",
-                                r"en": r"Collection quantity of spare parts required for a specific maintenance interval",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8644,6 +8752,14 @@ class MaintenanceInstructions(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Kollektion benötige Anzahl der Ersatzteile für ein spezifisches Wartungsintervall",
+                                    r"en": r"Collection quantity of spare parts required for a specific maintenance interval",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8731,14 +8847,7 @@ class MaintenanceInstructions(aas.Submodel):
                     id_short: Optional[str] = r"CollectionQuantityOfSparePart",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Kollektion benötige Anzahl des Ersatzteils für die Wartungsintervalle.",
-                            r"en": r"Collection quantity of spare part required for maintenance intervals.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8755,6 +8864,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Kollektion benötige Anzahl des Ersatzteils für die Wartungsintervalle.",
+                                r"en": r"Collection quantity of spare part required for maintenance intervals.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8810,14 +8927,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Name des Ersatzteilherstellers z.B. Max Mustermann GmbH",
-                            r"en": r"Name of the spare parts manufacturer e.g. Max Mustermann GmbH",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8834,6 +8944,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Name des Ersatzteilherstellers z.B. Max Mustermann GmbH",
+                                r"en": r"Name of the spare parts manufacturer e.g. Max Mustermann GmbH",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8875,13 +8993,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the spare part for ordering"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8898,6 +9010,13 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"unique combination of numbers and letters issued by the manufacturer that is used to identify the spare part for ordering"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8939,14 +9058,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Beschreibung des Ersatzteils.",
-                            r"en": r"Description of the spare part.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8963,6 +9075,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Beschreibung des Ersatzteils.",
+                                r"en": r"Description of the spare part.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9003,14 +9123,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Angabe zur fachgerechten Entsorgung des Ersatzteils.",
-                            r"en": r"Information on the proper disposal of the spare part.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9027,6 +9140,14 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Angabe zur fachgerechten Entsorgung des Ersatzteils.",
+                                r"en": r"Information on the proper disposal of the spare part.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9068,13 +9189,7 @@ class MaintenanceInstructions(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Web site address where information about the consumable is given, e.g. link to shop"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -9091,6 +9206,13 @@ class MaintenanceInstructions(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Web site address where information about the consumable is given, e.g. link to shop"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -9148,14 +9270,7 @@ class MaintenanceInstructions(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Verbrauchsmaterial, das für die Wartung benötigt wird. Dazu gehören die Bezeichnung, die Bestellnummer, der Hersteller und eine Beschreibung.",
-                        r"en": r"The collection contains all information and details about a consumable required for maintenance. This includes the designation, order number, manufacturer and a description.",
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -9172,6 +9287,14 @@ class MaintenanceInstructions(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"de": r"Die Sammlung enthält alle Informationen und Details zu einem Verbrauchsmaterial, das für die Wartung benötigt wird. Dazu gehören die Bezeichnung, die Bestellnummer, der Hersteller und eine Beschreibung.",
+                            r"en": r"The collection contains all information and details about a consumable required for maintenance. This includes the designation, order number, manufacturer and a description.",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -9324,14 +9447,7 @@ class MaintenanceInstructions(aas.Submodel):
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"de": r"Gesamtliste der benötigten Ersatzteile für alle Wartungsintervalle",
-                    r"en": r"Total list of required spare parts for all maintenance intervals of an asset. Each spare part is described/ defined in its own SMC.",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -9348,6 +9464,14 @@ class MaintenanceInstructions(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Gesamtliste der benötigten Ersatzteile für alle Wartungsintervalle",
+                        r"en": r"Total list of required spare parts for all maintenance intervals of an asset. Each spare part is described/ defined in its own SMC.",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -9495,21 +9619,8 @@ class MaintenanceInstructions(aas.Submodel):
         id_short: Optional[str] = r"MaintenanceInstructions",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"de": r"Submodell zur Übermittlung aller wartungsrelevanten Informatationen",
-                r"en": r"The Submodel defines a set of maintenance instructions and additional details, files or documents related to the maintenance of an asset",
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell-io/idta-02018",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -9526,6 +9637,23 @@ class MaintenanceInstructions(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"de": r"Submodell zur Übermittlung aller wartungsrelevanten Informatationen",
+                    r"en": r"The Submodel defines a set of maintenance instructions and additional details, files or documents related to the maintenance of an asset",
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell-io/idta-02018",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

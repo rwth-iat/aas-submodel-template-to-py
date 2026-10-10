@@ -15,9 +15,7 @@ class Circularity(aas.Submodel):
                 id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"document identifier"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -36,6 +34,11 @@ class Circularity(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"document identifier"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -86,11 +89,7 @@ class Circularity(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"dismantling and removal information"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -109,6 +108,11 @@ class Circularity(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"dismantling and removal information"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -258,9 +262,7 @@ class Circularity(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"NameOfSupplier",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"name of supplier"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -289,6 +291,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"name of supplier"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -337,11 +344,7 @@ class Circularity(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"NationalCode",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Länderkürzel", r"en": r"national code"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -370,6 +373,11 @@ class Circularity(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Länderkürzel", r"en": r"national code"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -416,9 +424,7 @@ class Circularity(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"PostalCode",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"postal code"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -456,6 +462,11 @@ class Circularity(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"postal code"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -502,11 +513,7 @@ class Circularity(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"Street",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"street", r"de": r"Straße"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -544,6 +551,11 @@ class Circularity(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"street", r"de": r"Straße"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -589,11 +601,7 @@ class Circularity(aas.Submodel):
                     postalCode: Union[aas.LangStringSet, PostalCode],
                     street: Union[aas.LangStringSet, Street],
                     id_short: Optional[str] = r"AddressOfSupplier",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"address of supplier"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -622,6 +630,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"address of supplier"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -707,9 +720,7 @@ class Circularity(aas.Submodel):
                         id_short: Optional[str] = r"EmailAddress",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"email address"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -738,6 +749,11 @@ class Circularity(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"email address"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -785,17 +801,9 @@ class Circularity(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"PublicKey",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"public key"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Public part of an unsymmetrical key pair to sign or encrypt text or messages."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -822,6 +830,18 @@ class Circularity(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"public key"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Public part of an unsymmetrical key pair to sign or encrypt text or messages."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -869,11 +889,7 @@ class Circularity(aas.Submodel):
                         id_short: Optional[str] = r"TypeOfEmailAddress",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"type of email address"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -902,6 +918,11 @@ class Circularity(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"type of email address"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -949,11 +970,7 @@ class Circularity(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"TypeOfPublicKey",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"type of public key"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -982,6 +999,11 @@ class Circularity(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"type of public key"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1030,11 +1052,7 @@ class Circularity(aas.Submodel):
                         Union[aas.LangStringSet, TypeOfPublicKey]
                     ] = None,
                     id_short: Optional[str] = r"EmailAddressOfSupplier",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"email address of supplier", r"de": r"Email"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1063,6 +1081,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"email address of supplier", r"de": r"Email"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1158,11 +1181,7 @@ class Circularity(aas.Submodel):
                     id_short: Optional[str] = r"SupplierWebAddress",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"supplier web address"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1191,6 +1210,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"supplier web address"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1243,9 +1267,7 @@ class Circularity(aas.Submodel):
                             id_short: Optional[str] = r"PartName",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"part name"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1266,6 +1288,11 @@ class Circularity(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"part name"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1314,11 +1341,7 @@ class Circularity(aas.Submodel):
                             id_short: Optional[str] = r"PartNumber",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"part number"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1339,6 +1362,11 @@ class Circularity(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"part number"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1384,15 +1412,9 @@ class Circularity(aas.Submodel):
                         partName: Union[str, PartName],
                         partNumber: Union[str, PartNumber],
                         id_short: Optional[str] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Component"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Components available at supplier"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1409,6 +1431,16 @@ class Circularity(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Component"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Components available at supplier"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1485,9 +1517,7 @@ class Circularity(aas.Submodel):
                     semantic_id_list_element: Optional[aas.Reference] = None,
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = False,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"components"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1506,6 +1536,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"components"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1644,9 +1679,7 @@ class Circularity(aas.Submodel):
                 supplierWebAddress: Union[str, SupplierWebAddress],
                 components: Union[Iterable[Components.Components_item], Components],
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"spare part supplier"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1665,6 +1698,11 @@ class Circularity(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"spare part supplier"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1758,9 +1796,7 @@ class Circularity(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"spare part sources"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1779,6 +1815,11 @@ class Circularity(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"spare part sources"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1918,9 +1959,7 @@ class Circularity(aas.Submodel):
                     id_short: Optional[str] = r"PreConsumerShare",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"pre consumer share"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1939,6 +1978,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"pre consumer share"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1987,9 +2031,7 @@ class Circularity(aas.Submodel):
                     id_short: Optional[str] = r"RecycledMaterial",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"recycled material"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2008,6 +2050,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"recycled material"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2056,11 +2103,7 @@ class Circularity(aas.Submodel):
                     id_short: Optional[str] = r"PostConsumerShare",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"post consumer share"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2079,6 +2122,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"post consumer share"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2125,9 +2173,7 @@ class Circularity(aas.Submodel):
                 preConsumerShare: Optional[Union[xsd.Float, PreConsumerShare]] = None,
                 postConsumerShare: Optional[Union[xsd.Float, PostConsumerShare]] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"recycled content"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2146,6 +2192,11 @@ class Circularity(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"recycled content"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2229,11 +2280,7 @@ class Circularity(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"recycled content information"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2252,6 +2299,11 @@ class Circularity(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"recycled content information"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2391,11 +2443,7 @@ class Circularity(aas.Submodel):
                     id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"document identifier"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2414,6 +2462,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"document identifier"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2462,9 +2515,7 @@ class Circularity(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"safety instructions"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2483,6 +2534,11 @@ class Circularity(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"safety instructions"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2634,11 +2690,7 @@ class Circularity(aas.Submodel):
                     id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"extinguishing agent"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2657,6 +2709,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"extinguishing agent"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2707,9 +2764,7 @@ class Circularity(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"extinguishing agents"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2728,6 +2783,11 @@ class Circularity(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"extinguishing agents"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2880,9 +2940,7 @@ class Circularity(aas.Submodel):
                 ExtinguishingAgents,
             ],
             id_short: Optional[str] = r"SafetyMeasures",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"safety measures"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2901,6 +2959,11 @@ class Circularity(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"safety measures"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2989,11 +3052,7 @@ class Circularity(aas.Submodel):
                     id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"document identifier"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3012,6 +3071,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"document identifier"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3060,9 +3124,7 @@ class Circularity(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"waste prevention"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3091,6 +3153,11 @@ class Circularity(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"waste prevention"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3242,11 +3309,7 @@ class Circularity(aas.Submodel):
                     id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"document identifier"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3265,6 +3328,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"document identifier"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3313,9 +3381,7 @@ class Circularity(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"separate collection"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3344,6 +3410,11 @@ class Circularity(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"separate collection"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3495,11 +3566,7 @@ class Circularity(aas.Submodel):
                     id_short: Optional[str] = None,
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"document identifier"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3518,6 +3585,11 @@ class Circularity(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"document identifier"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3568,11 +3640,7 @@ class Circularity(aas.Submodel):
                 semantic_id_list_element: Optional[aas.Reference] = None,
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                 order_relevant: bool = False,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"information on collection"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3601,6 +3669,11 @@ class Circularity(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"information on collection"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3759,9 +3832,7 @@ class Circularity(aas.Submodel):
                 InformationOnCollection,
             ],
             id_short: Optional[str] = r"EndOfLifeInformation",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"end of life information"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3780,6 +3851,11 @@ class Circularity(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"end of life information"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3883,9 +3959,7 @@ class Circularity(aas.Submodel):
             id_short: Optional[str] = r"RenewableContent",
             value_type: aas.DataTypeDefXsd = xsd.Float,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"renewable content"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3914,6 +3988,11 @@ class Circularity(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"renewable content"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3977,24 +4056,10 @@ class Circularity(aas.Submodel):
         endOfLifeInformation: EndOfLifeInformation,
         renewableContent: Union[xsd.Float, RenewableContent],
         id_short: Optional[str] = r"Circularity",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"Circularity"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": "Dismantling information (including at least: exploded diagrams of the battery system/pack showing the location of battery cells; disassembly sequences; type and number of fastening techniques to be unlocked; tools required for disassembly; warnings if risk of damaging parts exists; amount of cells used and layout); part numbers for components and contact details of sources for replacement spares; safety measures \n   \n   (Annex XIII (2b-d)); usable extinguishing agent (Annex VI, Part A(9))."
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02035-7",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
@@ -4010,6 +4075,25 @@ class Circularity(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(dict_={r"en": r"Circularity"})
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": "Dismantling information (including at least: exploded diagrams of the battery system/pack showing the location of battery cells; disassembly sequences; type and number of fastening techniques to be unlocked; tools required for disassembly; warnings if risk of damaging parts exists; amount of cells used and layout); part numbers for components and contact details of sources for replacement spares; safety measures \n   \n   (Annex XIII (2b-d)); usable extinguishing agent (Annex VI, Part A(9))."
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02035-7",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

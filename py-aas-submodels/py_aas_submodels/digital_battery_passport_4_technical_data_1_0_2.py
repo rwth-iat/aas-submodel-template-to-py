@@ -17,13 +17,7 @@ class TechnicalData(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Legally valid designation of the natural or judicial body which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into the market.\n\nDIN DKE Spec 99100 chapter reference: 6.1.2.4 c) "
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -59,6 +53,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Legally valid designation of the natural or judicial body which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into the market.\n\nDIN DKE Spec 99100 chapter reference: 6.1.2.4 c) "
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -125,13 +126,7 @@ class TechnicalData(aas.Submodel):
                 content_type: Optional[str] = r"image/png",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Imagefile for logo of manufacturer provided in common format (.png, .jpg)."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -167,6 +162,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Imagefile for logo of manufacturer provided in common format (.png, .jpg)."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -283,13 +285,7 @@ class TechnicalData(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": 'A battery passport must include the battery category.\n\nThe battery category must be provided on the battery label.\n\nThe battery must be categorised by its intended use in (string values):\n- "lmt"\n- "ev" \n- "industrial", or\n- "stationary"\n\nDIN DKE Spec 99100 chapter reference: 6.1.3.5\n\n'
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -316,6 +312,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": 'A battery passport must include the battery category.\n\nThe battery category must be provided on the battery label.\n\nThe battery must be categorised by its intended use in (string values):\n- "lmt"\n- "ev" \n- "industrial", or\n- "stationary"\n\nDIN DKE Spec 99100 chapter reference: 6.1.3.5\n\n'
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -445,13 +448,7 @@ class TechnicalData(aas.Submodel):
                     content_type: Optional[str] = r"image/png",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Image file for associated product provided in common format (.png, .jpg)."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -478,6 +475,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Image file for associated product provided in common format (.png, .jpg)."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -537,13 +541,7 @@ class TechnicalData(aas.Submodel):
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"List for image file(s) for associated product provided in common format (.png, .jpg)."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -579,6 +577,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List for image file(s) for associated product provided in common format (.png, .jpg)."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -721,9 +726,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(dict_={r"en": r"warranty period"}),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -750,6 +753,11 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"warranty period"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -796,9 +804,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"WarrantyInformation",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(dict_={r"en": r"warranty information"}),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -825,6 +831,11 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"warranty information"}
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -1026,13 +1037,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "voltage - NOM\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.11"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1060,6 +1065,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "voltage - NOM\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.11"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1110,13 +1122,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "voltage - MIN\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.9"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1144,6 +1150,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "voltage - MIN\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.9"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1194,13 +1207,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "voltage - MAX\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.10"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1228,6 +1235,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "voltage - MAX\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.10"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1278,13 +1292,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "rated capacity\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.2"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1312,6 +1320,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "rated capacity\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.2"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1362,13 +1377,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "capacity fade\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.4"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1396,6 +1405,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "capacity fade\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.4"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1446,13 +1462,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Certified usable battery energy (UBE certified)\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.5"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1480,6 +1490,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Certified usable battery energy (UBE certified)\n\nDIN DKE Spec 99100 chapter reference: 6.7.2.5"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1533,13 +1550,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"CapacityEnergyVoltage",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Information on battery capacity, energy and voltage.\n\nDIN DKE Spec 99100 chapter reference: 6.7.2"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1566,6 +1577,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Information on battery capacity, energy and voltage.\n\nDIN DKE Spec 99100 chapter reference: 6.7.2"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1683,13 +1701,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "initial round trip energy efficiency\n\nDIN DKE Spec 99100 chapter reference: 6.7.4.2"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1717,6 +1729,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "initial round trip energy efficiency\n\nDIN DKE Spec 99100 chapter reference: 6.7.4.2"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1769,13 +1788,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "round trip energy efficiency at 50% of cycle life\n\nDIN DKE Spec 99100 chapter reference:  6.7.4.3"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1803,6 +1816,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "round trip energy efficiency at 50% of cycle life\n\nDIN DKE Spec 99100 chapter reference:  6.7.4.3"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1853,13 +1873,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "round trip energy efficiency fade\n\nDIN DKE Spec 99100 chapter reference:  6.7.4.5"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1887,6 +1901,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "round trip energy efficiency fade\n\nDIN DKE Spec 99100 chapter reference:  6.7.4.5"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1937,13 +1958,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "initial self-discharging rate\n\nDIN DKE Spec 99100 chapter reference:  6.7.4.6"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -1971,6 +1986,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "initial self-discharging rate\n\nDIN DKE Spec 99100 chapter reference:  6.7.4.6"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2028,13 +2050,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"RoundTripEnergyEfficiency",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Information regarding round trip energy efficiency.\n\nDIN DKE Spec 99100 chapter reference: 6.7.4"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2061,6 +2077,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Information regarding round trip energy efficiency.\n\nDIN DKE Spec 99100 chapter reference: 6.7.4"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2178,13 +2201,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Internal battery cell and pack resistance - Internal resistance (in Ohm)\n\nDIN DKE Spec 99100 chapter reference: 6.7.5.2"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -2212,6 +2229,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Internal battery cell and pack resistance - Internal resistance (in Ohm)\n\nDIN DKE Spec 99100 chapter reference: 6.7.5.2"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2264,13 +2288,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Initial (Pre-Use) internal resistance on battery pack level. \n\nDIN DKE Spec 99100 chapter reference: 6.7.5.2"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -2298,6 +2316,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Initial (Pre-Use) internal resistance on battery pack level. \n\nDIN DKE Spec 99100 chapter reference: 6.7.5.2"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2350,13 +2375,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Initial internal resistance on battery module level\n\nDIN DKE Spec 99100 chapter reference: 6.7.5.2"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -2384,6 +2403,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Initial internal resistance on battery module level\n\nDIN DKE Spec 99100 chapter reference: 6.7.5.2"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2436,13 +2462,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "initial internal resistance on battery cell level\n\nDIN DKE Spec 99100 chapter reference: 6.7.5.3"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -2470,6 +2490,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "initial internal resistance on battery cell level\n\nDIN DKE Spec 99100 chapter reference: 6.7.5.3"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2522,13 +2549,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "initial internal resistance on battery pack level\n\nDIN DKE Spec 99100 chapter reference: 6.7.5.3"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2555,6 +2576,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "initial internal resistance on battery pack level\n\nDIN DKE Spec 99100 chapter reference: 6.7.5.3"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2697,13 +2725,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"Resistance",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Data elements regarding internal resistance and electrochemical impedance.\n\nDIN DKE Spec 99100 chapter reference: 6.7.5\n\n"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2730,6 +2752,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Data elements regarding internal resistance and electrochemical impedance.\n\nDIN DKE Spec 99100 chapter reference: 6.7.5\n\n"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2891,13 +2920,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "maximum permitted battery power\n\nDIN DKE Spec 99100 chapter reference:  6.7.3.5"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -2925,6 +2948,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "maximum permitted battery power\n\nDIN DKE Spec 99100 chapter reference:  6.7.3.5"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2975,13 +3005,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Power fade\n\nDIN DKE Spec 99100 chapter reference: 6.7.3.4"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -3009,6 +3033,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Power fade\n\nDIN DKE Spec 99100 chapter reference: 6.7.3.4"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3287,13 +3318,7 @@ class TechnicalData(aas.Submodel):
                         id_short: Optional[str] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": "Power capability measured at a reference condition, for example at 80% or 20% state of charge (SoC).\n\nDIN DKE Spec 99100 chapter reference: 6.7.3.2"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3310,6 +3335,13 @@ class TechnicalData(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": "Power capability measured at a reference condition, for example at 80% or 20% state of charge (SoC).\n\nDIN DKE Spec 99100 chapter reference: 6.7.3.2"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3575,13 +3607,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"PowerCapability",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Information regarding power capability.\n\nDIN DKE Spec 99100 chapter reference: 6.7.3"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3608,6 +3634,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Information regarding power capability.\n\nDIN DKE Spec 99100 chapter reference: 6.7.3"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3726,13 +3759,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "temperature range idle state (lower boundary)\n\nDIN DKE Spec 99100 chapter reference:  6.7.7.3"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -3760,6 +3787,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "temperature range idle state (lower boundary)\n\nDIN DKE Spec 99100 chapter reference:  6.7.7.3"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3812,13 +3846,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "temperature range idle state (upper boundary)\n\nDIN DKE Spec 99100 chapter reference: 6.7.7.4"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -3846,6 +3874,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "temperature range idle state (upper boundary)\n\nDIN DKE Spec 99100 chapter reference: 6.7.7.4"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3897,13 +3932,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"Temperature",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Information regarding temperature conditions.\n\nDIN DKE Spec 99100 chapter reference: 6.7.7"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3930,6 +3959,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Information regarding temperature conditions.\n\nDIN DKE Spec 99100 chapter reference: 6.7.7"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4169,19 +4205,9 @@ class TechnicalData(aas.Submodel):
                     id_short: Optional[str] = r"CapacityThresholdExhaustion",
                     value_type: aas.DataTypeDefXsd = xsd.Float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"capacity threshold for exhaustion"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "interpreted as minimum percentage of rated capacity, above which the battery is still considered operational as EV battery in its current life. The value has to be provided by the economic operator. This metric may serve as indicator for a necessary end of current life as EV and may be understood in the context of warranty.\n\nDIN DKE Spec 99100 chapter reference:  6.7.6.9"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ModelReference(
                         key=(
                             aas.Key(
@@ -4209,6 +4235,18 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"capacity threshold for exhaustion"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "interpreted as minimum percentage of rated capacity, above which the battery is still considered operational as EV battery in its current life. The value has to be provided by the economic operator. This metric may serve as indicator for a necessary end of current life as EV and may be understood in the context of warranty.\n\nDIN DKE Spec 99100 chapter reference:  6.7.6.9"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4259,13 +4297,7 @@ class TechnicalData(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "This data attribute is a measurement parameter for “Expected lifetime: Number of charge-discharge cycles”: Applied charge and discharge rate in terms of rated capacity (C-rate) of relevant cycle-life reference test.\n\nDIN DKE Spec 99100 chapter reference:  6.7.6.6"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4282,6 +4314,13 @@ class TechnicalData(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "This data attribute is a measurement parameter for “Expected lifetime: Number of charge-discharge cycles”: Applied charge and discharge rate in terms of rated capacity (C-rate) of relevant cycle-life reference test.\n\nDIN DKE Spec 99100 chapter reference:  6.7.6.6"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4337,13 +4376,7 @@ class TechnicalData(aas.Submodel):
                 id_short: Optional[str] = r"Lifetime",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Information regarding battery lifetime.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4370,6 +4403,13 @@ class TechnicalData(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Information regarding battery lifetime.\n\nDIN DKE Spec 99100 chapter reference: 6.7.6"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4581,22 +4621,10 @@ class TechnicalData(aas.Submodel):
         generalInformation: GeneralInformation,
         technicalPropertyAreas: TechnicalPropertyAreas,
         id_short: Optional[str] = r"TechnicalData",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"technical data"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={r"en": r"Technical data of the battery."}
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"IDTA-02003-2-0",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
@@ -4631,6 +4659,23 @@ class TechnicalData(aas.Submodel):
         ),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(dict_={r"en": r"technical data"})
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={r"en": r"Technical data of the battery."}
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"IDTA-02003-2-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

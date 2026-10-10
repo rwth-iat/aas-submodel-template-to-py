@@ -7544,15 +7544,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Current counter value",
-                                        r"de": r"Derzeitiger Zählerwert",
-                                        r"it": r"Valore attuale del contatore",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -7571,6 +7563,15 @@ class AssetInterfacesDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Current counter value",
+                                            r"de": r"Derzeitiger Zählerwert",
+                                            r"it": r"Valore attuale del contatore",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -8844,15 +8845,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         id_short: Optional[str] = r"property_name",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Current counter value",
-                                r"de": r"Derzeitiger Zählerwert",
-                                r"it": r"Valore attuale del contatore",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8879,6 +8872,15 @@ class AssetInterfacesDescription(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Current counter value",
+                                    r"de": r"Derzeitiger Zählerwert",
+                                    r"it": r"Valore attuale del contatore",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -17261,15 +17263,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Current counter value",
-                                        r"de": r"Derzeitiger Zählerwert",
-                                        r"it": r"Valore attuale del contatore",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -17288,6 +17282,15 @@ class AssetInterfacesDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Current counter value",
+                                            r"de": r"Derzeitiger Zählerwert",
+                                            r"it": r"Valore attuale del contatore",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -18717,15 +18720,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         id_short: Optional[str] = r"property_name",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Current counter value",
-                                r"de": r"Derzeitiger Zählerwert",
-                                r"it": r"Valore attuale del contatore",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -18752,6 +18747,15 @@ class AssetInterfacesDescription(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Current counter value",
+                                    r"de": r"Derzeitiger Zählerwert",
+                                    r"it": r"Valore attuale del contatore",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -26967,15 +26971,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     aas.MultiLanguageNameType
                                 ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Current counter value",
-                                        r"de": r"Derzeitiger Zählerwert",
-                                        r"it": r"Valore attuale del contatore",
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -26994,6 +26990,15 @@ class AssetInterfacesDescription(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Current counter value",
+                                            r"de": r"Derzeitiger Zählerwert",
+                                            r"it": r"Valore attuale del contatore",
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -28000,15 +28005,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         id_short: Optional[str] = r"property_name",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Current counter value",
-                                r"de": r"Derzeitiger Zählerwert",
-                                r"it": r"Valore attuale del contatore",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -28035,6 +28032,15 @@ class AssetInterfacesDescription(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Current counter value",
+                                    r"de": r"Derzeitiger Zählerwert",
+                                    r"it": r"Valore attuale del contatore",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -28722,9 +28728,7 @@ class AssetInterfacesDescription(aas.Submodel):
         id_short: Optional[str] = r"AssetInterfacesDescription",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={r"en": r"AID Template Sample"}
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
@@ -28741,6 +28745,11 @@ class AssetInterfacesDescription(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={r"en": r"AID Template Sample"}
+            )
 
         if qualifier is None:
             qualifier = ()

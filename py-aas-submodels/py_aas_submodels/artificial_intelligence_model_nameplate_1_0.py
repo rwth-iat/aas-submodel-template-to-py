@@ -15,14 +15,7 @@ class AIModelNameplate(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"de": r"eindeutige globale Identifizierung der Produktinstanz unter Verwendung eines universellen Ressourcenbezeichners (URI)",
-                    r"en": r"unique global identification of the product instance using an universal resource identifier (URI)",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -39,6 +32,14 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"de": r"eindeutige globale Identifizierung der Produktinstanz unter Verwendung eines universellen Ressourcenbezeichners (URI)",
+                        r"en": r"unique global identification of the product instance using an universal resource identifier (URI)",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -89,14 +90,7 @@ class AIModelNameplate(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"de": r"Version des Nameplates",
-                    r"en": r"Version of the nameplate",
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -113,6 +107,14 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"de": r"Version des Nameplates",
+                        r"en": r"Version of the nameplate",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -161,13 +163,7 @@ class AIModelNameplate(aas.Submodel):
             id_short: Optional[str] = r"ContactInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Reference to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -184,6 +180,13 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Reference to the Contact Information IDTA Submodel to describe the responsible person for the Submodel"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -232,11 +235,7 @@ class AIModelNameplate(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Path to the model (e.g. local path, serverpath,...)"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -253,6 +252,13 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Path to the model (e.g. local path, serverpath,...)"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -302,13 +308,7 @@ class AIModelNameplate(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"This property describes the learningmethod of the model (supervised, unsupervised, reinforcement, ....)"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -325,6 +325,13 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"This property describes the learningmethod of the model (supervised, unsupervised, reinforcement, ....)"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -376,11 +383,7 @@ class AIModelNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Type of data (e.g. Images, Audio)"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -397,6 +400,11 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Type of data (e.g. Images, Audio)"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -449,11 +457,7 @@ class AIModelNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Size of the output dimension"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -470,6 +474,11 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Size of the output dimension"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -520,11 +529,7 @@ class AIModelNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Information about the usage of this dimension"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -541,6 +546,13 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Information about the usage of this dimension"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -588,13 +600,7 @@ class AIModelNameplate(aas.Submodel):
                 id_short: Optional[str] = r"DimensionN",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of information about a single input dimension"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -611,6 +617,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Collection of information about a single input dimension"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -686,11 +699,7 @@ class AIModelNameplate(aas.Submodel):
                 content_type: Optional[str] = r"text/plain",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Preprocessing pipeline as a file"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -707,6 +716,11 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Preprocessing pipeline as a file"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -754,13 +768,7 @@ class AIModelNameplate(aas.Submodel):
             id_short: Optional[str] = r"Inputs",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Collection of necessary information about the model input"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -777,6 +785,13 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection of necessary information about the model input"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -856,11 +871,7 @@ class AIModelNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Size of the output dimension"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -877,6 +888,11 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Size of the output dimension"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -926,11 +942,7 @@ class AIModelNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Meaning of the output dimension (e.g. class)"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -947,6 +959,13 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Meaning of the output dimension (e.g. class)"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -993,13 +1012,7 @@ class AIModelNameplate(aas.Submodel):
                 id_short: Optional[str] = r"DimensionN",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of information about a single output dimension"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1016,6 +1029,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Collection of information about a single output dimension"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1086,13 +1106,7 @@ class AIModelNameplate(aas.Submodel):
             id_short: Optional[str] = r"Outputs",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Collection of necessary information about the model output"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1109,6 +1123,13 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection of necessary information about the model output"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1179,11 +1200,7 @@ class AIModelNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Result of the trained AI"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1200,6 +1217,11 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Result of the trained AI"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1246,11 +1268,7 @@ class AIModelNameplate(aas.Submodel):
             id_short: Optional[str] = r"TrainingResults",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Collection of different training results of the model"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1267,6 +1285,13 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection of different training results of the model"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1341,11 +1366,7 @@ class AIModelNameplate(aas.Submodel):
                     content_type: Optional[str] = r"image/jpeg",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Training or test result plot"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1362,6 +1383,11 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Training or test result plot"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1407,13 +1433,7 @@ class AIModelNameplate(aas.Submodel):
                 id_short: Optional[str] = r"TrainingTesting",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of plots about training results and test results"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1430,6 +1450,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Collection of plots about training results and test results"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1499,11 +1526,7 @@ class AIModelNameplate(aas.Submodel):
                     content_type: Optional[str] = r"image/jpeg",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Image of a model architecture"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1520,6 +1543,11 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Image of a model architecture"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1565,13 +1593,7 @@ class AIModelNameplate(aas.Submodel):
                 id_short: Optional[str] = r"Structure",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection describing the model architecture (e.g. of a neural net)"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1588,6 +1610,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Collection describing the model architecture (e.g. of a neural net)"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1659,11 +1688,7 @@ class AIModelNameplate(aas.Submodel):
                     content_type: Optional[str] = r"image/jpeg",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Image of an model related plot"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1680,6 +1705,11 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Image of an model related plot"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1725,13 +1755,7 @@ class AIModelNameplate(aas.Submodel):
                 id_short: Optional[str] = r"GeneralPlots",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection of plots not fitting in existing collections"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1748,6 +1772,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Collection of plots not fitting in existing collections"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1814,11 +1845,7 @@ class AIModelNameplate(aas.Submodel):
             id_short: Optional[str] = r"Plots",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Collection of different plots "}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1835,6 +1862,11 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Collection of different plots "}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1901,11 +1933,7 @@ class AIModelNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"File extension of the model (e.g. .pth)"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1922,6 +1950,11 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"File extension of the model (e.g. .pth)"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1972,11 +2005,7 @@ class AIModelNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"AI framework and its version (e.g. pytorch 11.3)"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1993,6 +2022,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"AI framework and its version (e.g. pytorch 11.3)"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2043,11 +2079,7 @@ class AIModelNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Programming language and version (e.g. python 3.9)"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2064,6 +2096,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Programming language and version (e.g. python 3.9)"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2113,13 +2152,7 @@ class AIModelNameplate(aas.Submodel):
                 content_type: Optional[str] = r"text/plain",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Requirements file containing the required software dependencies (e.g. Python Requirements.txt file)"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2136,6 +2169,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Requirements file containing the required software dependencies (e.g. Python Requirements.txt file)"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2184,11 +2224,7 @@ class AIModelNameplate(aas.Submodel):
             id_short: Optional[str] = r"Details",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Collection of additional details about the model"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2205,6 +2241,11 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Collection of additional details about the model"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2290,11 +2331,7 @@ class AIModelNameplate(aas.Submodel):
                 id_short: Optional[str] = r"AIDatasetReference",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Reference to the used AIDataset-Submodel"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2311,6 +2348,11 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Reference to the used AIDataset-Submodel"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2359,13 +2401,7 @@ class AIModelNameplate(aas.Submodel):
                 value_type: aas.DataTypeDefXsd = xsd.DateTime,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Determining the used data, when dataset differs over time"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2382,6 +2418,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Determining the used data, when dataset differs over time"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2431,11 +2474,7 @@ class AIModelNameplate(aas.Submodel):
             id_short: Optional[str] = r"AIDataset",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Collection of additional details about the model"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2452,6 +2491,11 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Collection of additional details about the model"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2532,13 +2576,7 @@ class AIModelNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Name of the origin neural network (e.g. resnet18)"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2555,6 +2593,13 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Name of the origin neural network (e.g. resnet18)"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2605,11 +2650,7 @@ class AIModelNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Date of access of the origin neural network"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2626,6 +2667,13 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Date of access of the origin neural network"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2675,13 +2723,7 @@ class AIModelNameplate(aas.Submodel):
                     content_type: Optional[str] = r"text/plain",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"File containing the weights of the origin model (e.g. .txt)"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2698,6 +2740,13 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"File containing the weights of the origin model (e.g. .txt)"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2745,13 +2794,7 @@ class AIModelNameplate(aas.Submodel):
                     id_short: Optional[str] = r"AIModelNameplate",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Reference to the AI Modelnameplate submodel of the origin neural network"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2768,6 +2811,13 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Reference to the AI Modelnameplate submodel of the origin neural network"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2817,13 +2867,7 @@ class AIModelNameplate(aas.Submodel):
                 id_short: Optional[str] = r"TransferLearning",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Collection containing information of the origin model, if the model is a result of transfer learning"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2840,6 +2884,13 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Collection containing information of the origin model, if the model is a result of transfer learning"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2925,13 +2976,7 @@ class AIModelNameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Example hyperparameter (e.g. learning rate of the model)"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2948,6 +2993,13 @@ class AIModelNameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Example hyperparameter (e.g. learning rate of the model)"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2994,11 +3046,7 @@ class AIModelNameplate(aas.Submodel):
                 id_short: Optional[str] = r"Hyperparameter",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Collection containing relevant hyperparamter"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3015,6 +3063,11 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Collection containing relevant hyperparamter"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3083,11 +3136,7 @@ class AIModelNameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Type of  the AI(e.g. CNN, RNN, LSTM, ...)"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3104,6 +3153,11 @@ class AIModelNameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Type of  the AI(e.g. CNN, RNN, LSTM, ...)"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3151,13 +3205,7 @@ class AIModelNameplate(aas.Submodel):
             id_short: Optional[str] = r"AITypeSpecificInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Collection containing different kinds of AI method specific parameters"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3174,6 +3222,13 @@ class AIModelNameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Collection containing different kinds of AI method specific parameters"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (

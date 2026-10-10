@@ -17,17 +17,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"DocumentDomainId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Document Domain Id"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Identification of the domain in which the given DocumentId is unique. The domain ID can, e.g., be the name or acronym of the providing organisation"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -54,6 +46,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Document Domain Id"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identification of the domain in which the given DocumentId is unique. The domain ID can, e.g., be the name or acronym of the providing organisation"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -94,19 +98,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"DocumentIdentifier",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Document Identifier"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Alphanumeric character sequence uniquely identifying a document"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -133,6 +127,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Document Identifier"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Alphanumeric character sequence uniquely identifying a document"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -173,19 +179,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"DocumentIsPrimary",
                     value_type: aas.DataTypeDefXsd = bool,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Document Is Primary"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Flag indicating whether a DocumentId within a collection of at least two DocumentIds is the ‘primary’ identifier for the document. This is the preferred ID of the document (commonly from the point of view of the owner of the asset)"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -212,6 +208,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Document Is Primary"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Flag indicating whether a DocumentId within a collection of at least two DocumentIds is the ‘primary’ identifier for the document. This is the preferred ID of the document (commonly from the point of view of the owner of the asset)"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -250,15 +258,9 @@ class DigitalQualityDocuments(aas.Submodel):
                 documentIdentifier: Union[str, DocumentIdentifier],
                 documentIsPrimary: Optional[Union[bool, DocumentIsPrimary]] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Document Id"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Information about a document identification entity"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -285,6 +287,18 @@ class DigitalQualityDocuments(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Document Id"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Information about a document identification entity"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -350,17 +364,9 @@ class DigitalQualityDocuments(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Document Ids"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Set of document identifiers for the document. One ID in this collection should be used as a preferred ID"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -387,6 +393,16 @@ class DigitalQualityDocuments(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Document Ids"})
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Set of document identifiers for the document. One ID in this collection should be used as a preferred ID"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -516,17 +532,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"ClassId",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Class Id"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Unique ID of the document class within a classficationsystem"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -553,6 +561,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Class Id"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Unique ID of the document class within a classficationsystem"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -592,15 +612,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"ClassName",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Class Name"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Name of the class in the classification system"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -627,6 +641,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Class Name"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Name of the class in the classification system"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -666,17 +692,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"ClassificationSystem",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Classification System"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Identification of the classification system "}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -703,6 +721,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Classification System"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Identification of the classification system "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -741,19 +771,9 @@ class DigitalQualityDocuments(aas.Submodel):
                 className: Union[aas.LangStringSet, ClassName],
                 classificationSystem: Union[str, ClassificationSystem],
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Document Classification"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Set of information for describing the classification of the Document according to a ClassificationSystem"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -770,6 +790,18 @@ class DigitalQualityDocuments(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Document Classification"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Set of information for describing the classification of the Document according to a ClassificationSystem"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -835,17 +867,9 @@ class DigitalQualityDocuments(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Document Classifications"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Set of information for describing the classification of the Document according to ClassificationSystems"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -872,6 +896,18 @@ class DigitalQualityDocuments(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Document Classifications"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Set of information for describing the classification of the Document according to ClassificationSystems"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1005,15 +1041,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Language"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Language of the document"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1030,6 +1060,16 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Language"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Language of the document"}
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -1060,15 +1100,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     semantic_id_list_element: Optional[aas.Reference] = None,
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Language"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Language of the document instance."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1085,6 +1119,16 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Language"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Language of the document instance."}
+                        )
 
                     if qualifier is None:
                         qualifier = ()
@@ -1216,15 +1260,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"Version",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Version"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Version of the document"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1251,6 +1289,16 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Version"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Version of the document"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1290,15 +1338,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"Title",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Title"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Name of the document"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1325,6 +1367,16 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Title"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Name of the document"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1363,17 +1415,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"Description",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Description"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Plain text characterizing the content of the document, e.g., the context of the quality document and its conformity statement."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1400,6 +1444,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Description"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Plain text characterizing the content of the document, e.g., the context of the quality document and its conformity statement."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1439,17 +1495,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"StatusSetDate",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Status Set Date"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Date when the document status was set. Usually, the date when the quality document was issued"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1476,6 +1524,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Status Set Date"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Date when the document status was set. Usually, the date when the quality document was issued"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1516,17 +1576,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"StatusValue",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Status Value"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Each document instance represents a point in time in the asset life cycle. This status value refers to the milestones in the asset life cycle. "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1553,6 +1605,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Status Value"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Each document instance represents a point in time in the asset life cycle. This status value refers to the milestones in the asset life cycle. "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1593,19 +1657,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"OrganizationShortName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Organization Short Name"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Short name of the organization that issued the quality document instance"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1622,6 +1676,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Organization Short Name"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Short name of the organization that issued the quality document instance"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1662,19 +1728,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     id_short: Optional[str] = r"OrganizationOfficialName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Organization Official Name"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Official name of the organization that issued the document"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1701,6 +1757,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Organization Official Name"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Official name of the organization that issued the document"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1741,19 +1809,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         self,
                         value: aas.Reference,
                         id_short: Optional[str] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Refers To Entity"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Forms a generic refers to-relationship to another document or document instance"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1770,6 +1828,18 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Refers To Entity"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Forms a generic refers to-relationship to another document or document instance"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -1800,17 +1870,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     semantic_id_list_element: Optional[aas.Reference] = None,
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Refers To Entities"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Forms a generic refers to-relationship to another document or document instance. "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1837,6 +1899,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Refers To Entities"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Forms a generic refers to-relationship to another document or document instance. "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1978,17 +2052,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         self,
                         value: aas.Reference,
                         id_short: Optional[str] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Based On Reference"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"BasedOnReference"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = None,
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1997,6 +2063,16 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Based On Reference"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"BasedOnReference"}
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -2027,19 +2103,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     semantic_id_list_element: Optional[aas.Reference] = None,
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Based On References"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Forms a based on-relationship to another document or document instance"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2066,6 +2132,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Based On References"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Forms a based on-relationship to another document or document instance"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2208,17 +2286,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         value: str,
                         id_short: Optional[str] = None,
                         content_type: Optional[str] = r"text/xml",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Digital File"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"MIME-Type, file name and file contents given by the file"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2235,6 +2305,18 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Digital File"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"MIME-Type, file name and file contents given by the file"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2274,17 +2356,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     semantic_id_list_element: Optional[aas.Reference] = None,
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Digital Files"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"MIME-Type, file name and file contents given by the file SubmodelElement. This holds the actual quality document, e.g., the DCC XML file."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2311,6 +2385,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Digital Files"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"MIME-Type, file name and file contents given by the file SubmodelElement. This holds the actual quality document, e.g., the DCC XML file."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2440,17 +2526,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     value: str,
                     id_short: Optional[str] = r"PreviewFile",
                     content_type: Optional[str] = r"application/pdf",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Preview File"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides a preview of the Document Instance, e.g., the human-readable PDF version of the XML file"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2477,6 +2555,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Preview File"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Provides a preview of the Document Instance, e.g., the human-readable PDF version of the XML file"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2520,19 +2610,9 @@ class DigitalQualityDocuments(aas.Submodel):
                             id_short: Optional[str] = r"UniqueIdentifier",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Unique Identifier"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"A worldwide unique identifier for the DQD (e.g., calibration certificate number) "
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -2551,6 +2631,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Unique Identifier"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"A worldwide unique identifier for the DQD (e.g., calibration certificate number) "
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -2596,15 +2688,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Identification Name"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"Name of the identification"}
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -2625,6 +2713,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Identification Name"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={r"en": r"Name of the identification"}
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -2666,17 +2764,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Identification Issuer"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Issuer of the identification to distinguish various categories of quality document"
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -2697,6 +2789,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Identification Issuer"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Issuer of the identification to distinguish various categories of quality document"
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -2739,17 +2843,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Identification Value"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Placeholder for the actual identification (e.g., serial number)"
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -2770,6 +2868,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Identification Value"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Placeholder for the actual identification (e.g., serial number)"
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -2812,15 +2922,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(dict_={r"en": r"ID"}),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Attribute for which the value is unique within the quality document"
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -2841,6 +2947,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"ID"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Attribute for which the value is unique within the quality document"
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -2883,17 +3001,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Ref ID"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Reference to an existing ID within the quality document"
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -2914,6 +3026,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Ref ID"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Reference to an existing ID within the quality document"
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -2956,17 +3080,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Ref Type"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r'Specification of a context defining identification. For instance, the temperature measurement can have as context "ambientTemperature"'
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -2987,6 +3105,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Ref Type"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r'Specification of a context defining identification. For instance, the temperature measurement can have as context "ambientTemperature"'
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -3036,15 +3166,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 id_short: Optional[str] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Identification"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Identification"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -3063,6 +3187,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Identification"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"Identification"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -3174,19 +3308,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.DataTypeDefXsd
                             ] = None,
                             order_relevant: bool = True,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Identifications"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Identifications contains identifiers which exactly describe the content of the parent element"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -3205,6 +3329,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Identifications"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Identifications contains identifiers which exactly describe the content of the parent element"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3336,17 +3472,9 @@ class DigitalQualityDocuments(aas.Submodel):
                             id_short: Optional[str] = r"IssueDate",
                             value_type: aas.DataTypeDefXsd = xsd.DateTime,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Issue Date"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Date when the document has been officially issued"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -3365,6 +3493,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Issue Date"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Date when the document has been officially issued"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -3408,17 +3548,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         ] = None,
                         issueDate: Optional[Union[xsd.DateTime, IssueDate]] = None,
                         id_short: Optional[str] = r"CoreData",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Core Data"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Contains essential administrative information for the quality document"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3435,6 +3567,18 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Core Data"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Contains essential administrative information for the quality document"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3523,15 +3667,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Identification Name"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={r"en": r"Name of the identification"}
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -3552,6 +3692,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Identification Name"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={r"en": r"Name of the identification"}
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -3593,17 +3743,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Identification Issuer"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Issuer of the identification to distinguish various categories of quality document"
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -3624,6 +3768,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Identification Issuer"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Issuer of the identification to distinguish various categories of quality document"
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -3666,17 +3822,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Identification Value"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Placeholder for the actual identification (e.g., serial number)"
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -3697,6 +3847,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Identification Value"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Placeholder for the actual identification (e.g., serial number)"
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -3739,15 +3901,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(dict_={r"en": r"ID"}),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Attribute for which the value is unique within the quality document"
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -3768,6 +3926,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"ID"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Attribute for which the value is unique within the quality document"
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -3810,17 +3980,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Ref ID"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Reference to an existing ID within the quality document"
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -3841,6 +4005,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Ref ID"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Reference to an existing ID within the quality document"
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -3883,17 +4059,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Ref Type"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r'Specification of a context defining identification. For instance, the temperature measurement can have as context "ambientTemperature"'
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -3914,6 +4084,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Ref Type"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r'Specification of a context defining identification. For instance, the temperature measurement can have as context "ambientTemperature"'
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = (
@@ -3963,15 +4145,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 id_short: Optional[str] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Identification"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Identification"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -3990,6 +4166,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Identification"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"Identification"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -4099,19 +4285,9 @@ class DigitalQualityDocuments(aas.Submodel):
                             semantic_id_list_element: Optional[aas.Reference] = None,
                             value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                             order_relevant: bool = True,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Identifications"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Identifications contains identifiers which exactly describe the content of the parent element."
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -4130,6 +4306,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Identifications"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Identifications contains identifiers which exactly describe the content of the parent element."
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = ()
@@ -4264,17 +4452,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                             value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
-                                            ] = aas.MultiLanguageNameType(
-                                                dict_={r"en": r"Identification Name"}
-                                            ),
+                                            ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
                                                 aas.MultiLanguageTextType
-                                            ] = aas.MultiLanguageTextType(
-                                                dict_={
-                                                    r"en": r"Name of the identification"
-                                                }
-                                            ),
+                                            ] = None,
                                             semantic_id: Optional[
                                                 aas.Reference
                                             ] = aas.ExternalReference(
@@ -4295,6 +4477,20 @@ class DigitalQualityDocuments(aas.Submodel):
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
+
+                                            if display_name is None:
+                                                display_name = aas.MultiLanguageNameType(
+                                                    dict_={
+                                                        r"en": r"Identification Name"
+                                                    }
+                                                )
+
+                                            if description is None:
+                                                description = aas.MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Name of the identification"
+                                                    }
+                                                )
 
                                             if qualifier is None:
                                                 qualifier = (
@@ -4338,17 +4534,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                             value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
-                                            ] = aas.MultiLanguageNameType(
-                                                dict_={r"en": r"Identification Issuer"}
-                                            ),
+                                            ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
                                                 aas.MultiLanguageTextType
-                                            ] = aas.MultiLanguageTextType(
-                                                dict_={
-                                                    r"en": r"Issuer of the identification to distinguish various categories of quality document"
-                                                }
-                                            ),
+                                            ] = None,
                                             semantic_id: Optional[
                                                 aas.Reference
                                             ] = aas.ExternalReference(
@@ -4369,6 +4559,20 @@ class DigitalQualityDocuments(aas.Submodel):
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
+
+                                            if display_name is None:
+                                                display_name = aas.MultiLanguageNameType(
+                                                    dict_={
+                                                        r"en": r"Identification Issuer"
+                                                    }
+                                                )
+
+                                            if description is None:
+                                                description = aas.MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Issuer of the identification to distinguish various categories of quality document"
+                                                    }
+                                                )
 
                                             if qualifier is None:
                                                 qualifier = (
@@ -4413,17 +4617,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                             value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
-                                            ] = aas.MultiLanguageNameType(
-                                                dict_={r"en": r"Identification Value"}
-                                            ),
+                                            ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
                                                 aas.MultiLanguageTextType
-                                            ] = aas.MultiLanguageTextType(
-                                                dict_={
-                                                    r"en": r"Placeholder for the actual identification (e.g., serial number)"
-                                                }
-                                            ),
+                                            ] = None,
                                             semantic_id: Optional[
                                                 aas.Reference
                                             ] = aas.ExternalReference(
@@ -4444,6 +4642,20 @@ class DigitalQualityDocuments(aas.Submodel):
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
+
+                                            if display_name is None:
+                                                display_name = aas.MultiLanguageNameType(
+                                                    dict_={
+                                                        r"en": r"Identification Value"
+                                                    }
+                                                )
+
+                                            if description is None:
+                                                description = aas.MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Placeholder for the actual identification (e.g., serial number)"
+                                                    }
+                                                )
 
                                             if qualifier is None:
                                                 qualifier = (
@@ -4486,17 +4698,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                             value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
-                                            ] = aas.MultiLanguageNameType(
-                                                dict_={r"en": r"ID"}
-                                            ),
+                                            ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
                                                 aas.MultiLanguageTextType
-                                            ] = aas.MultiLanguageTextType(
-                                                dict_={
-                                                    r"en": r"Attribute for which the value is unique within the quality document"
-                                                }
-                                            ),
+                                            ] = None,
                                             semantic_id: Optional[
                                                 aas.Reference
                                             ] = aas.ExternalReference(
@@ -4517,6 +4723,20 @@ class DigitalQualityDocuments(aas.Submodel):
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
+
+                                            if display_name is None:
+                                                display_name = (
+                                                    aas.MultiLanguageNameType(
+                                                        dict_={r"en": r"ID"}
+                                                    )
+                                                )
+
+                                            if description is None:
+                                                description = aas.MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Attribute for which the value is unique within the quality document"
+                                                    }
+                                                )
 
                                             if qualifier is None:
                                                 qualifier = (
@@ -4559,17 +4779,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                             value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
-                                            ] = aas.MultiLanguageNameType(
-                                                dict_={r"en": r"Ref ID"}
-                                            ),
+                                            ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
                                                 aas.MultiLanguageTextType
-                                            ] = aas.MultiLanguageTextType(
-                                                dict_={
-                                                    r"en": r"Reference to an existing ID within the quality document"
-                                                }
-                                            ),
+                                            ] = None,
                                             semantic_id: Optional[
                                                 aas.Reference
                                             ] = aas.ExternalReference(
@@ -4590,6 +4804,20 @@ class DigitalQualityDocuments(aas.Submodel):
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
+
+                                            if display_name is None:
+                                                display_name = (
+                                                    aas.MultiLanguageNameType(
+                                                        dict_={r"en": r"Ref ID"}
+                                                    )
+                                                )
+
+                                            if description is None:
+                                                description = aas.MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r"Reference to an existing ID within the quality document"
+                                                    }
+                                                )
 
                                             if qualifier is None:
                                                 qualifier = (
@@ -4632,17 +4860,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                             value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
                                                 aas.MultiLanguageNameType
-                                            ] = aas.MultiLanguageNameType(
-                                                dict_={r"en": r"Ref Type"}
-                                            ),
+                                            ] = None,
                                             category: Optional[str] = None,
                                             description: Optional[
                                                 aas.MultiLanguageTextType
-                                            ] = aas.MultiLanguageTextType(
-                                                dict_={
-                                                    r"en": r'Specification of a context defining identification. For instance, the temperature measurement can have as context "ambientTemperature"'
-                                                }
-                                            ),
+                                            ] = None,
                                             semantic_id: Optional[
                                                 aas.Reference
                                             ] = aas.ExternalReference(
@@ -4663,6 +4885,20 @@ class DigitalQualityDocuments(aas.Submodel):
                                                 aas.EmbeddedDataSpecification
                                             ] = None,
                                         ):
+
+                                            if display_name is None:
+                                                display_name = (
+                                                    aas.MultiLanguageNameType(
+                                                        dict_={r"en": r"Ref Type"}
+                                                    )
+                                                )
+
+                                            if description is None:
+                                                description = aas.MultiLanguageTextType(
+                                                    dict_={
+                                                        r"en": r'Specification of a context defining identification. For instance, the temperature measurement can have as context "ambientTemperature"'
+                                                    }
+                                                )
 
                                             if qualifier is None:
                                                 qualifier = (
@@ -4714,15 +4950,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                         id_short: Optional[str] = None,
                                         display_name: Optional[
                                             aas.MultiLanguageNameType
-                                        ] = aas.MultiLanguageNameType(
-                                            dict_={r"en": r"Identification"}
-                                        ),
+                                        ] = None,
                                         category: Optional[str] = None,
                                         description: Optional[
                                             aas.MultiLanguageTextType
-                                        ] = aas.MultiLanguageTextType(
-                                            dict_={r"en": r"Identification"}
-                                        ),
+                                        ] = None,
                                         semantic_id: Optional[
                                             aas.Reference
                                         ] = aas.ExternalReference(
@@ -4743,6 +4975,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                             aas.EmbeddedDataSpecification
                                         ] = None,
                                     ):
+
+                                        if display_name is None:
+                                            display_name = aas.MultiLanguageNameType(
+                                                dict_={r"en": r"Identification"}
+                                            )
+
+                                        if description is None:
+                                            description = aas.MultiLanguageTextType(
+                                                dict_={r"en": r"Identification"}
+                                            )
 
                                         if qualifier is None:
                                             qualifier = ()
@@ -4886,17 +5128,11 @@ class DigitalQualityDocuments(aas.Submodel):
                                     order_relevant: bool = True,
                                     display_name: Optional[
                                         aas.MultiLanguageNameType
-                                    ] = aas.MultiLanguageNameType(
-                                        dict_={r"en": r"Identifications"}
-                                    ),
+                                    ] = None,
                                     category: Optional[str] = None,
                                     description: Optional[
                                         aas.MultiLanguageTextType
-                                    ] = aas.MultiLanguageTextType(
-                                        dict_={
-                                            r"en": r"Identifications contains identifiers which exactly describe the content of the parent element."
-                                        }
-                                    ),
+                                    ] = None,
                                     semantic_id: Optional[
                                         aas.Reference
                                     ] = aas.ExternalReference(
@@ -4917,6 +5153,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                         aas.EmbeddedDataSpecification
                                     ] = None,
                                 ):
+
+                                    if display_name is None:
+                                        display_name = aas.MultiLanguageNameType(
+                                            dict_={r"en": r"Identifications"}
+                                        )
+
+                                    if description is None:
+                                        description = aas.MultiLanguageTextType(
+                                            dict_={
+                                                r"en": r"Identifications contains identifiers which exactly describe the content of the parent element."
+                                            }
+                                        )
 
                                     if qualifier is None:
                                         qualifier = ()
@@ -5043,11 +5291,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 id_short: Optional[str] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(dict_={r"en": r"Item"}),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(dict_={r"en": r"Item"}),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -5066,6 +5312,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Item"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"Item"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = ()
@@ -5127,17 +5383,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.DataTypeDefXsd
                             ] = None,
                             order_relevant: bool = True,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Item"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Item of calibration, conformity assessment or other"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5156,6 +5404,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Item"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Item of calibration, conformity assessment or other"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5287,17 +5547,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         ],
                         item: Union[Iterable[Item.Item_item], Item],
                         id_short: Optional[str] = r"Items",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Items"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Contains unique identification, description and if applicable, conditions of the item"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5314,6 +5566,18 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Items"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Contains unique identification, description and if applicable, conditions of the item"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5398,15 +5662,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Date Of Statement"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Date of statement"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -5425,6 +5683,16 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Date Of Statement"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={r"en": r"Date of statement"}
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -5467,17 +5735,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Statement Reference"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Normative or other reference in accordance which the statement is made"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -5496,6 +5756,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Statement Reference"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Normative or other reference in accordance which the statement is made"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -5537,17 +5809,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Declaration"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Additional information providing context for the statement"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -5566,6 +5830,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Declaration"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Additional information providing context for the statement"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -5607,17 +5883,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Conformity"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Statement of whether the asset is conform with requirements according to the quality document"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -5636,6 +5904,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Conformity"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Statement of whether the asset is conform with requirements according to the quality document"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -5690,17 +5970,9 @@ class DigitalQualityDocuments(aas.Submodel):
                             ] = None,
                             conformity: Optional[Union[str, Conformity]] = None,
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(dict_={r"en": r"Statement"}),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"statement records regarding the quality assessment"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[aas.Reference] = None,
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -5709,6 +5981,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Statement"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"statement records regarding the quality assessment"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = ()
@@ -5788,17 +6072,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         semantic_id_list_element: Optional[aas.Reference] = None,
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Statements"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Contains list of statement records regarding the quality assessment"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5815,6 +6091,18 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Statements"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Contains list of statement records regarding the quality assessment"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5945,19 +6233,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         Union[Iterable[Statements.Statements_item], Statements]
                     ] = None,
                     id_short: Optional[str] = r"AdministrativeData",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Administrative Data"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"This submodel element collection contains essential administrative information about the document."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5974,6 +6252,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Administrative Data"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"This submodel element collection contains essential administrative information about the document."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6043,19 +6333,9 @@ class DigitalQualityDocuments(aas.Submodel):
                             id_short: Optional[str] = r"CanonicalizationMethod",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Canonicalization Method"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information about the signature and the algorithms used"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6074,6 +6354,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Canonicalization Method"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Information about the signature and the algorithms used"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6114,19 +6406,9 @@ class DigitalQualityDocuments(aas.Submodel):
                             id_short: Optional[str] = r"SignatureMethod",
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Signature Method"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information about the method used for creating the signature"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6145,6 +6427,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Signature Method"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Information about the method used for creating the signature"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6189,17 +6483,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Transforms"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Contains the transformations applied to the resource prior to signing"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6218,6 +6504,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Transforms"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Contains the transformations applied to the resource prior to signing"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -6260,17 +6558,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Digest Method"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Specifies the hash algorithm before applying the hash"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6289,6 +6579,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Digest Method"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Specifies the hash algorithm before applying the hash"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -6331,17 +6633,9 @@ class DigitalQualityDocuments(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Digest Value"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Contains the Base64 encoded result of applying the hash algorithm to the transformed resource"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -6360,6 +6654,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={r"en": r"Digest Value"}
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Contains the Base64 encoded result of applying the hash algorithm to the transformed resource"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -6398,19 +6704,9 @@ class DigitalQualityDocuments(aas.Submodel):
                             digestMethod: Union[str, DigestMethod],
                             digestValue: Union[str, DigestValue],
                             id_short: Optional[str] = r"SignatureReference",
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Signature Reference"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Additional information for processing the signature"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6429,6 +6725,18 @@ class DigitalQualityDocuments(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Signature Reference"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Additional information for processing the signature"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6502,17 +6810,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         signatureMethod: Union[str, SignatureMethod],
                         signatureReference: Iterable[SignatureReference],
                         id_short: Optional[str] = r"SignedInfo",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Signed Info"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about the signature and the algorithms used"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6529,6 +6829,18 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Signed Info"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about the signature and the algorithms used"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6609,19 +6921,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         id_short: Optional[str] = r"SignatureValue",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Signature Value"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Contains the Base64 encoded result of the hash algorithm, i.e., the signature generated with the parameters specified in the SignatureMethod defined in SignedInfo after applying the algorithm specified by the CanonicalizationMethod"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6638,6 +6940,18 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Signature Value"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Contains the Base64 encoded result of the hash algorithm, i.e., the signature generated with the parameters specified in the SignatureMethod defined in SignedInfo after applying the algorithm specified by the CanonicalizationMethod"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6678,17 +6992,9 @@ class DigitalQualityDocuments(aas.Submodel):
                         id_short: Optional[str] = r"KeyInfo",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(dict_={r"en": r"Key Info"}),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information to allow the signer to provide recipients with the key that validates the signature, usually in the form of one or more X.509 digital certificates"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6705,6 +7011,18 @@ class DigitalQualityDocuments(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Key Info"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information to allow the signer to provide recipients with the key that validates the signature, usually in the form of one or more X.509 digital certificates"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6743,17 +7061,9 @@ class DigitalQualityDocuments(aas.Submodel):
                     signatureValue: Union[str, SignatureValue],
                     keyInfo: Union[str, KeyInfo],
                     id_short: Optional[str] = r"DocumentSignature",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(dict_={r"en": r"Document Signature"}),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Information about the electronic signature of the quality document. The semantic structure is based on the W3C schema xmldsig"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6780,6 +7090,18 @@ class DigitalQualityDocuments(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Document Signature"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Information about the electronic signature of the quality document. The semantic structure is based on the W3C schema xmldsig"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6875,17 +7197,9 @@ class DigitalQualityDocuments(aas.Submodel):
                 previewFile: Optional[PreviewFile] = None,
                 documentSignature: Optional[Iterable[DocumentSignature]] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Document Instance"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Information about a document instance. This SMC inherits from “DocumentVersion” of IDTA 02004-2-0 “Handover Documentation”"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6902,6 +7216,18 @@ class DigitalQualityDocuments(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Document Instance"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Information about a document instance. This SMC inherits from “DocumentVersion” of IDTA 02004-2-0 “Handover Documentation”"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -7064,17 +7390,9 @@ class DigitalQualityDocuments(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Document Instances"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Information elements of individual document instances, which can be different versions of each other"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -7101,6 +7419,18 @@ class DigitalQualityDocuments(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Document Instances"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Information elements of individual document instances, which can be different versions of each other"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -7232,13 +7562,9 @@ class DigitalQualityDocuments(aas.Submodel):
             Iterable[DocumentInstances.Documentinstances_item], DocumentInstances
         ],
         id_short: Optional[str] = r"DigitalQualityDocuments",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"Digital Quality Documents"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={r"en": r"Template submodel for Digital Quality Documents."}
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
@@ -7255,6 +7581,16 @@ class DigitalQualityDocuments(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={r"en": r"Digital Quality Documents"}
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={r"en": r"Template submodel for Digital Quality Documents."}
+            )
 
         if qualifier is None:
             qualifier = ()

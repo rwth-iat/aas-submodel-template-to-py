@@ -13,19 +13,9 @@ class DppMetadata(aas.Submodel):
             id_short: Optional[str] = r"digitalProductPassportId",
             value_type: aas.DataTypeDefXsd = str,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Unique Product Passport Identifier (DPP ID)"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Unique identifier of an instance of the digital product"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -42,6 +32,18 @@ class DppMetadata(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Unique Product Passport Identifier (DPP ID)"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Unique identifier of an instance of the digital product"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -107,17 +109,9 @@ class DppMetadata(aas.Submodel):
             id_short: Optional[str] = r"uniqueProductIdentifier",
             value_type: aas.DataTypeDefXsd = str,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Unique Product Identifier"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Unique string of characters for the identification of a product, that also enables a web link to the digital product passport."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -134,6 +128,18 @@ class DppMetadata(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Unique Product Identifier"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Unique string of characters for the identification of a product, that also enables a web link to the digital product passport."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -199,17 +205,9 @@ class DppMetadata(aas.Submodel):
             id_short: Optional[str] = r"granularity",
             value_type: aas.DataTypeDefXsd = str,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Granularity"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"The granularity of the Product. There are three values: ‘Model‘, ‘Item‘ and ‘Batch‘."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -236,6 +234,16 @@ class DppMetadata(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Granularity"})
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"The granularity of the Product. There are three values: ‘Model‘, ‘Item‘ and ‘Batch‘."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -301,15 +309,9 @@ class DppMetadata(aas.Submodel):
             id_short: Optional[str] = r"dppSchemaVersion",
             value_type: aas.DataTypeDefXsd = str,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"DPP Schema Version"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Reference standard the DPP instance schema refers to."}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -326,6 +328,18 @@ class DppMetadata(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"DPP Schema Version"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Reference standard the DPP instance schema refers to."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -391,15 +405,9 @@ class DppMetadata(aas.Submodel):
             id_short: Optional[str] = r"dppStatus",
             value_type: aas.DataTypeDefXsd = str,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"DPP Status"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Status of the DPP instance as digital resource."}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -416,6 +424,14 @@ class DppMetadata(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"DPP Status"})
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Status of the DPP instance as digital resource."}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -481,17 +497,9 @@ class DppMetadata(aas.Submodel):
             id_short: Optional[str] = r"lastUpdate",
             value_type: aas.DataTypeDefXsd = xsd.DateTime,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Last Update"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Date and time of the latest update to the DPP instance."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -518,6 +526,16 @@ class DppMetadata(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Last Update"})
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Date and time of the latest update to the DPP instance."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -583,17 +601,9 @@ class DppMetadata(aas.Submodel):
             id_short: Optional[str] = r"economicOperatorId",
             value_type: aas.DataTypeDefXsd = str,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Economic Operator ID"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Unique string of characters for the identification of an actor involved in a product’s life cycle."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -610,6 +620,18 @@ class DppMetadata(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Economic Operator ID"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Unique string of characters for the identification of an actor involved in a product’s life cycle."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -675,17 +697,9 @@ class DppMetadata(aas.Submodel):
             id_short: Optional[str] = r"facilityId",
             value_type: aas.DataTypeDefXsd = str,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Facility ID"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s life cycle."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -702,6 +716,16 @@ class DppMetadata(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Facility ID"})
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Unique string of characters for the identification of locations or buildings involved in a product’s value chain or used by actors involved in a product’s life cycle."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -769,11 +793,7 @@ class DppMetadata(aas.Submodel):
                 id_short: Optional[str] = None,
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Content Specification ID"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -792,6 +812,11 @@ class DppMetadata(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Content Specification ID"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -859,17 +884,9 @@ class DppMetadata(aas.Submodel):
             semantic_id_list_element: Optional[aas.Reference] = None,
             value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
             order_relevant: bool = False,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Content Specification IDs"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Reference to horizontal or product-type related content specifications for the DPP."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -886,6 +903,18 @@ class DppMetadata(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Content Specification IDs"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Reference to horizontal or product-type related content specifications for the DPP."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1046,20 +1075,8 @@ class DppMetadata(aas.Submodel):
         id_short: Optional[str] = r"DppMetadata",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": "\n   Digital record of product characteristics throughout its life cycle.\n   \n   SOURCE: FprEN 18223:2026(en)   \n   "
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=None,
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -1076,6 +1093,22 @@ class DppMetadata(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": "\n   Digital record of product characteristics throughout its life cycle.\n   \n   SOURCE: FprEN 18223:2026(en)   \n   "
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=None,
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

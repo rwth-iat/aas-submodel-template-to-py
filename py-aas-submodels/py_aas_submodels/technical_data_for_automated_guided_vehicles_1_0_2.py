@@ -17,13 +17,7 @@ class TechnicalDataAGV(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Legally valid designation of the natural or judicial body which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into the market."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -50,6 +44,13 @@ class TechnicalDataAGV(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Legally valid designation of the natural or judicial body which is directly responsible for the design, production, packaging and labeling of a product in respect to its being brought into the market."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -99,13 +100,7 @@ class TechnicalDataAGV(aas.Submodel):
                 content_type: Optional[str] = r"image/png",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Imagefile for logo of manufacturer provided in common format (.png, .jpg)."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -132,6 +127,13 @@ class TechnicalDataAGV(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Imagefile for logo of manufacturer provided in common format (.png, .jpg)."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -180,13 +182,7 @@ class TechnicalDataAGV(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Product designation as given by the mnaufacturer. Short description of the product, product group or function (short text) in common language."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -213,6 +209,13 @@ class TechnicalDataAGV(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Product designation as given by the mnaufacturer. Short description of the product, product group or function (short text) in common language."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -262,11 +265,7 @@ class TechnicalDataAGV(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"unique product identifier of the manufacturer "}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -293,6 +292,11 @@ class TechnicalDataAGV(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"unique product identifier of the manufacturer "}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -343,13 +347,7 @@ class TechnicalDataAGV(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"By manufactures issued unique combination of numbers and letters used to identify the device for ordering"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -376,6 +374,13 @@ class TechnicalDataAGV(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"By manufactures issued unique combination of numbers and letters used to identify the device for ordering"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -565,11 +570,7 @@ class TechnicalDataAGV(aas.Submodel):
                     imageFile: ImageFile,
                     imageNote: Optional[Union[aas.LangStringSet, ImageNote]] = None,
                     id_short: Optional[str] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Product image", r"de": r"Produktbild"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -602,6 +603,11 @@ class TechnicalDataAGV(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Product image", r"de": r"Produktbild"}
+                        )
 
                     if qualifier is None:
                         qualifier = ()
@@ -663,19 +669,9 @@ class TechnicalDataAGV(aas.Submodel):
                 ),
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Product images", r"de": r"Produktbilder"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Image file for associated product provided in common format (.png, .jpg)"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -702,6 +698,18 @@ class TechnicalDataAGV(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Product images", r"de": r"Produktbilder"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Image file for associated product provided in common format (.png, .jpg)"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -847,22 +855,9 @@ class TechnicalDataAGV(aas.Submodel):
                 Union[Iterable[ProductImages.Productimages_item], ProductImages]
             ] = None,
             id_short: Optional[str] = r"GeneralInformation",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"General information",
-                    r"de": r"Allgemeine Informationen",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"General information, for example ordering and manufacturer information."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -889,6 +884,21 @@ class TechnicalDataAGV(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"General information",
+                        r"de": r"Allgemeine Informationen",
+                    }
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"General information, for example ordering and manufacturer information."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1008,20 +1018,9 @@ class TechnicalDataAGV(aas.Submodel):
                     value: str,
                     id_short: Optional[str] = r"DataSheet",
                     content_type: Optional[str] = r"application/pdf",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Product datasheet", r"de": r"Produktdatenblatt"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Document with technical product data of the AGV provided by the manufacturer",
-                            r"de": r"Dokument mit technischen Produktdaten, das vom Hersteller bereitgestellt wird",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1038,6 +1037,22 @@ class TechnicalDataAGV(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Product datasheet",
+                                r"de": r"Produktdatenblatt",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Document with technical product data of the AGV provided by the manufacturer",
+                                r"de": r"Dokument mit technischen Produktdaten, das vom Hersteller bereitgestellt wird",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1087,22 +1102,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"AgvKinematic",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Kinematic of the AGV",
-                                r"de": r"Kinematik des AGV",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Type of Kinematic of the AGV. The enumerations according VDA5050 "DIFF", "OMNI", "THREEWHEEL", "OTHER" can be used.'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1119,6 +1121,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Kinematic of the AGV",
+                                    r"de": r"Kinematik des AGV",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Type of Kinematic of the AGV. The enumerations according VDA5050 "DIFF", "OMNI", "THREEWHEEL", "OTHER" can be used.'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1167,19 +1184,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"AgvClass",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Class of the AGV", r"de": r"Klasse des AGV"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Class of the AGV. The enumeration according VDA5050 with "FORKLIFT", "CONVEYER", "TUGGER", "CARRIER", "OTHER" can be used.'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1196,6 +1203,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Class of the AGV",
+                                    r"de": r"Klasse des AGV",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Class of the AGV. The enumeration according VDA5050 with "FORKLIFT", "CONVEYER", "TUGGER", "CARRIER", "OTHER" can be used.'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1244,19 +1266,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"TravelDirection",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Travel direction", r"de": r"Fahrtrichtung"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Direction of traveling of the AGV, the enumeration "FORWARD", "BACKWARD", "OMNI-DIRECTIONAL" can be used.'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1273,6 +1285,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Travel direction",
+                                    r"de": r"Fahrtrichtung",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Direction of traveling of the AGV, the enumeration "FORWARD", "BACKWARD", "OMNI-DIRECTIONAL" can be used.'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1321,22 +1348,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"TransportPrinciple",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Transportation principle",
-                                r"de": r"Transportprinzip",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Transportation pinciple of the AGV. The enumeration "LOADPULLING", "LOADCARRYING", "MIXED" can be used.'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1353,6 +1367,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Transportation principle",
+                                    r"de": r"Transportprinzip",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Transportation pinciple of the AGV. The enumeration "LOADPULLING", "LOADCARRYING", "MIXED" can be used.'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1401,22 +1430,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"LocalizationType",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Type of localization",
-                                r"de": r"Lokalisierungsart",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Type of the localization the AGV is using. The enumeration according VDA5050 with "NATURAL", "REFLECTOR", "RFID", "DMC", "SPOT", "GRID", "OTHER" can be used.'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1433,6 +1449,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Type of localization",
+                                    r"de": r"Lokalisierungsart",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Type of the localization the AGV is using. The enumeration according VDA5050 with "NATURAL", "REFLECTOR", "RFID", "DMC", "SPOT", "GRID", "OTHER" can be used.'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1481,22 +1512,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"NavigationType",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Type of navigation",
-                                r"de": r"Navigationsart",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Type of navigation the AGV uses. The enumeration according VDA5050 with "PHYSICAL_LINE_GUIDED", "VIRTUAL_LINE_GUIDED", "AUTONOMOUS" can be used.'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1513,6 +1531,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Type of navigation",
+                                    r"de": r"Navigationsart",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Type of navigation the AGV uses. The enumeration according VDA5050 with "PHYSICAL_LINE_GUIDED", "VIRTUAL_LINE_GUIDED", "AUTONOMOUS" can be used.'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1560,22 +1593,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"SpecialApplications",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Special applications",
-                                r"de": r"Besondere Anwendungsbereiche",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Special applications and usage sectors of the AGV, e.g. EMC environment, chemical industry, mining, clean rooms, refrigerated rooms, areas with explosion risk"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1592,6 +1612,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Special applications",
+                                    r"de": r"Besondere Anwendungsbereiche",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Special applications and usage sectors of the AGV, e.g. EMC environment, chemical industry, mining, clean rooms, refrigerated rooms, areas with explosion risk"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1638,22 +1673,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"SpecialCapabilities",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Special capabilities",
-                                r"de": r"Besondere Fähigkeiten",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Special capabilities and functions of the AGV"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1670,6 +1692,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Special capabilities",
+                                    r"de": r"Besondere Fähigkeiten",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Special capabilities and functions of the AGV"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1717,22 +1754,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"ProtectionClassIP",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"IP Protection Class",
-                                r"de": r"IP Schutzklasse",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Extent of protection provided by an enclosure against access to hazardous parts, against ingress of solid foreign objects and against ingress of water"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1749,6 +1773,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"IP Protection Class",
+                                    r"de": r"IP Schutzklasse",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Extent of protection provided by an enclosure against access to hazardous parts, against ingress of solid foreign objects and against ingress of water"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1799,14 +1838,7 @@ class TechnicalDataAGV(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Indicates wether the AGV can be used outdoors (true) or not (false)",
-                                r"de": r"Gib an, ob das AGV im Außenbereich (Outdoor) genutzt werden kann (true) oder nicht (false)",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1823,6 +1855,14 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Indicates wether the AGV can be used outdoors (true) or not (false)",
+                                    r"de": r"Gib an, ob das AGV im Außenbereich (Outdoor) genutzt werden kann (true) oder nicht (false)",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1870,22 +1910,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"RequiredEnvironmentalConditions",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Required environmental conditions",
-                                r"de": r"Erforderliche Umweltbedingungen",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of required environmental conditions that have to be fulfilled to use the AGV, e.g., floor condition or ambient temperature (min./max.)"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1902,6 +1929,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Required environmental conditions",
+                                    r"de": r"Erforderliche Umweltbedingungen",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of required environmental conditions that have to be fulfilled to use the AGV, e.g., floor condition or ambient temperature (min./max.)"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1948,22 +1990,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"SpecialQualificationDemand",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Special qualification demand",
-                                r"de": r"Besonderer Qualifikationsbedarf",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Demand for the special qualification required"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1980,6 +2009,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Special qualification demand",
+                                    r"de": r"Besonderer Qualifikationsbedarf",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Demand for the special qualification required"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2044,22 +2088,9 @@ class TechnicalDataAGV(aas.Submodel):
                         Union[aas.LangStringSet, SpecialQualificationDemand]
                     ] = None,
                     id_short: Optional[str] = r"TypeAndApplicationInformation",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Type and application information",
-                            r"de": r"Typ- und Anwendungsinformationen",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Information about the AGV type and the vehicle's applications"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2076,6 +2107,21 @@ class TechnicalDataAGV(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Type and application information",
+                                r"de": r"Typ- und Anwendungsinformationen",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Information about the AGV type and the vehicle's applications"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2249,23 +2295,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"MaxLateralInclinationMaxLoad",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Lateral inclination (max.)",
-                                r"de": r"Querneigung (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximal lateral inclination of the AGV when loaded with the maximum weight",
-                                r"de": r"Maximale Querneigung des AGV bei Beladung mit maximaler Last",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2282,6 +2314,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Lateral inclination (max.)",
+                                    r"de": r"Querneigung (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximal lateral inclination of the AGV when loaded with the maximum weight",
+                                    r"de": r"Maximale Querneigung des AGV bei Beladung mit maximaler Last",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2339,23 +2387,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"MaxLateralInclinationWithoutLoad",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Lateral inclination (max.)",
-                                r"de": r"Querneigung (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximal lateral inclination of the AGV when unloaded",
-                                r"de": r"Maximale Querneigung des AGV wenn ohne Last",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2372,6 +2406,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Lateral inclination (max.)",
+                                    r"de": r"Querneigung (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximal lateral inclination of the AGV when unloaded",
+                                    r"de": r"Maximale Querneigung des AGV wenn ohne Last",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2429,23 +2479,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"MaxClimbingInclinationMaxLoad",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Climbing inclination (max.)",
-                                r"de": r"Längsneigung (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximal climbing inclination of the AGV when loaded with the maximum weight",
-                                r"de": r"Maximale Längsneigung des AGV bei maximaler Last",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2462,6 +2498,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Climbing inclination (max.)",
+                                    r"de": r"Längsneigung (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximal climbing inclination of the AGV when loaded with the maximum weight",
+                                    r"de": r"Maximale Längsneigung des AGV bei maximaler Last",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2519,23 +2571,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"MaxClimbingInclinationWithoutLoad",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Climbing inclination (max.)",
-                                r"de": r"Längsneigung (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximal climbing inclination of the AGV when unloaded",
-                                r"de": r"Maximale Längsneigung des AGV wenn ohne Last",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2552,6 +2590,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Climbing inclination (max.)",
+                                    r"de": r"Längsneigung (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximal climbing inclination of the AGV when unloaded",
+                                    r"de": r"Maximale Längsneigung des AGV wenn ohne Last",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2608,22 +2662,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"LocalizationSensorDetails",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Localization sensor details",
-                                r"de": r"Details zur Lokalisierungssensorik",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"CONSTANT",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about used localization sensors by the AGV"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2640,6 +2681,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Localization sensor details",
+                                    r"de": r"Details zur Lokalisierungssensorik",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about used localization sensors by the AGV"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2687,22 +2743,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"LocalizationAccuracy",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Localization accuracy",
-                                r"de": r"Lokalisierungsgenauigkeit",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Accuracy of the determination of the current location of the AGV"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2719,6 +2762,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Localization accuracy",
+                                    r"de": r"Lokalisierungsgenauigkeit",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Accuracy of the determination of the current location of the AGV"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2767,20 +2825,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"PositioningAccuracy",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Positioning accuracy",
-                                r"de": r"Positionierungsgenauigkeit",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Positioning accuracy of the AGV"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2797,6 +2844,19 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Positioning accuracy",
+                                    r"de": r"Positionierungsgenauigkeit",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Positioning accuracy of the AGV"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2847,13 +2907,7 @@ class TechnicalDataAGV(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximal load on the AGV including attachments and load"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2870,6 +2924,13 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximal load on the AGV including attachments and load"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2917,22 +2978,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"InterfacesForAttachments",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Interfaces for attachments",
-                                r"de": r"Schnittstellen für Anbauten",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of the mechanical and electrical interfaces for load handling attachments and other attachments"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2949,6 +2997,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Interfaces for attachments",
+                                    r"de": r"Schnittstellen für Anbauten",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of the mechanical and electrical interfaces for load handling attachments and other attachments"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2996,23 +3059,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"SystemAvailability",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"System availability",
-                                r"de": r"Systemverfügbarkeit",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"System availability of the AGV ",
-                                r"de": r"Systemverfügbarkeit des AGV ",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3029,6 +3078,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"System availability",
+                                    r"de": r"Systemverfügbarkeit",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"System availability of the AGV ",
+                                    r"de": r"Systemverfügbarkeit des AGV ",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3077,20 +3142,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"MaxRunTimeAsSpecified",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Run time (max.)", r"de": r"Run time (max.)"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Max runtime as stated in the specification sheet of the AGV",
-                                r"de": r"Maximale Laufzeit wie für das AGV vom Hersteller spezifiziert",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3107,6 +3161,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Run time (max.)",
+                                    r"de": r"Run time (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Max runtime as stated in the specification sheet of the AGV",
+                                    r"de": r"Maximale Laufzeit wie für das AGV vom Hersteller spezifiziert",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3180,20 +3250,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"MaxRunTimeAsOperated",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Run time (max.)", r"de": r"Laufzeit (max.)"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Max runtime as the AGV is operated in the current environment",
-                                r"de": r"Maximale Laufzeit des AGV wie aktuell im Gesamtsystem implementiert",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3210,6 +3269,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Run time (max.)",
+                                    r"de": r"Laufzeit (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Max runtime as the AGV is operated in the current environment",
+                                    r"de": r"Maximale Laufzeit des AGV wie aktuell im Gesamtsystem implementiert",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3283,20 +3358,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"SpeedMin",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Speed (min.)",
-                                r"de": r"Geschwindigkeit (min.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Minimum controlled continuous speed"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3313,6 +3377,19 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Speed (min.)",
+                                    r"de": r"Geschwindigkeit (min.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Minimum controlled continuous speed"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3361,23 +3438,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"SpeedMaxEmptyAsSpecified",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Speed without load (max.)",
-                                r"de": r"Geschwindigkeit ohne Ladung (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum speed without load as specified by the manufacturer",
-                                r"de": r"Maximale Geschwindigkeit ohne Beladung wie durch den Hersteller spezifiziert",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3394,6 +3457,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Speed without load (max.)",
+                                    r"de": r"Geschwindigkeit ohne Ladung (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum speed without load as specified by the manufacturer",
+                                    r"de": r"Maximale Geschwindigkeit ohne Beladung wie durch den Hersteller spezifiziert",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3469,14 +3548,7 @@ class TechnicalDataAGV(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum speed without load as in the current system operated",
-                                r"de": r"Maximale Geschwindigkeit ohne Beladung wie im aktuellen System betrieben",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3493,6 +3565,14 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum speed without load as in the current system operated",
+                                    r"de": r"Maximale Geschwindigkeit ohne Beladung wie im aktuellen System betrieben",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3566,23 +3646,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"SpeedMaxWithMaxLoadAsSpecified",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Speed with maximum load (max.)",
-                                r"de": r"Geschwindigkeit mit maximaler Ladung (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum speed with maximal load as specified by the manufacturer",
-                                r"de": r"Maximale Geschwindigkeit bei maximal zulässiger Beladung wie durch den Hersteller vorgegeben",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3599,6 +3665,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Speed with maximum load (max.)",
+                                    r"de": r"Geschwindigkeit mit maximaler Ladung (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum speed with maximal load as specified by the manufacturer",
+                                    r"de": r"Maximale Geschwindigkeit bei maximal zulässiger Beladung wie durch den Hersteller vorgegeben",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3672,23 +3754,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"SpeedMaxWithMaxLoadAsOperated",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Speed with maximum load (max.)",
-                                r"de": r"Geschwindigkeit mit maximaler Ladung (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum speed with maximal load as operated in the current system",
-                                r"de": r"Maximale Geschwindigkeit bei maximal zulässiger Beladung wie im aktuellen System betrieben",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3705,6 +3773,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Speed with maximum load (max.)",
+                                    r"de": r"Geschwindigkeit mit maximaler Ladung (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum speed with maximal load as operated in the current system",
+                                    r"de": r"Maximale Geschwindigkeit bei maximal zulässiger Beladung wie im aktuellen System betrieben",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3778,23 +3862,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"AccelerationMax",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Acceleration (max.)",
-                                r"de": r"Beschleuniging (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum acceleration of the AGV with maximum load",
-                                r"de": r"Maximale Beschleunigung des AGV mit maximaler Last",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3811,6 +3881,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Acceleration (max.)",
+                                    r"de": r"Beschleuniging (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum acceleration of the AGV with maximum load",
+                                    r"de": r"Maximale Beschleunigung des AGV mit maximaler Last",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3859,23 +3945,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"DecelerationMax",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Maximum deceleration",
-                                r"de": r"Maximale Verzögerung",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum deceleration of the AGV with maximum load",
-                                r"de": r"Maximale Verzögerung des AGV mit maximaler Last",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3892,6 +3964,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Maximum deceleration",
+                                    r"de": r"Maximale Verzögerung",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum deceleration of the AGV with maximum load",
+                                    r"de": r"Maximale Verzögerung des AGV mit maximaler Last",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3940,23 +4028,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"VehicleHeightMax",
                         value_type: aas.DataTypeDefXsd = xsd.Float,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Vehicle height (max.)",
-                                r"de": r"Fahrzeughöhe (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum height of the AGV without attachments",
-                                r"de": r"Maximale Höhe des AGV ohne Anbauten",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -3973,6 +4047,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Vehicle height (max.)",
+                                    r"de": r"Fahrzeughöhe (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum height of the AGV without attachments",
+                                    r"de": r"Maximale Höhe des AGV ohne Anbauten",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4021,23 +4111,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"VehicleWidth",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Vehicle width (max.)",
-                                r"de": r"Fahrzeugbreite (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum vehicle width",
-                                r"de": r"Maximale Fahrzeugbreite",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4054,6 +4130,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Vehicle width (max.)",
+                                    r"de": r"Fahrzeugbreite (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum vehicle width",
+                                    r"de": r"Maximale Fahrzeugbreite",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4102,23 +4194,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"VehicleLength",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Vehicle length (max.)",
-                                r"de": r"Fahrzeuglänge (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum lengths of the AGV including outstanding components",
-                                r"de": r"Maximale Länge des AGV einschließlich überstehender Komponenten",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4135,6 +4213,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Vehicle length (max.)",
+                                    r"de": r"Fahrzeuglänge (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum lengths of the AGV including outstanding components",
+                                    r"de": r"Maximale Länge des AGV einschließlich überstehender Komponenten",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4183,23 +4277,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"VehicleWeight",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Vehicle weight (max.)",
-                                r"de": r"Fahrzeuggewicht (max.)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Maximum weight of the AGV without necessary weights",
-                                r"de": r"Maximales Gewicht des AGV ohne Gegengewichte",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4216,6 +4296,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Vehicle weight (max.)",
+                                    r"de": r"Fahrzeuggewicht (max.)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Maximum weight of the AGV without necessary weights",
+                                    r"de": r"Maximales Gewicht des AGV ohne Gegengewichte",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4263,19 +4359,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"Emissions",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"emissions", r"de": r"Emissionen"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Description of emissions of the AGV during operation, e.g. noise or exhaust"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4292,6 +4378,18 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"emissions", r"de": r"Emissionen"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Description of emissions of the AGV during operation, e.g. noise or exhaust"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4338,22 +4436,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"MapProcessingInformation",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Map processing information",
-                                r"de": r"Informationen zur Kartenverarbeitung",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about how the digital map is generated and processed by the AGV"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4370,6 +4455,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Map processing information",
+                                    r"de": r"Informationen zur Kartenverarbeitung",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about how the digital map is generated and processed by the AGV"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4416,22 +4516,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"ManualControllerInformation",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Manual controller information",
-                                r"de": r"Informationen zur manuellen Steuerung",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about the manual controllers of the AGV"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4448,6 +4535,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Manual controller information",
+                                    r"de": r"Informationen zur manuellen Steuerung",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about the manual controllers of the AGV"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4494,22 +4596,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"DigitalAnalogInterfaces",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Digital and analog interfaces",
-                                r"de": r"Digitale und analoge Schnittstellen",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about digital and analog interfaces of the AGV"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -4526,6 +4615,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Digital and analog interfaces",
+                                    r"de": r"Digitale und analoge Schnittstellen",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about digital and analog interfaces of the AGV"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -4633,20 +4737,9 @@ class TechnicalDataAGV(aas.Submodel):
                         Union[aas.LangStringSet, DigitalAnalogInterfaces]
                     ] = None,
                     id_short: Optional[str] = r"TechnicalParameters",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Technical parameters",
-                            r"de": r"Technische Parameter",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Technical parameters/properties of the AGV"}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4663,6 +4756,19 @@ class TechnicalDataAGV(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Technical parameters",
+                                r"de": r"Technische Parameter",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Technical parameters/properties of the AGV"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4992,23 +5098,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"TypeSpecification",
                         content_type: Optional[str] = r"application/json",
                         value: Optional[bytes] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"typeSpecification (JSON-object)",
-                                r"de": r"typeSpecification (JSON-Objekt)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'JSON-object "typeSpecification" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                                r"de": r'JSON-Objekt "typeSpecification" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5025,6 +5117,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"typeSpecification (JSON-object)",
+                                    r"de": r"typeSpecification (JSON-Objekt)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'JSON-object "typeSpecification" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                    r"de": r'JSON-Objekt "typeSpecification" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5071,23 +5179,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"PhysicalParameters",
                         content_type: Optional[str] = r"application/json",
                         value: Optional[bytes] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"physicalParameters (JSON-object)",
-                                r"de": r"physicalParameters (JSON-Objekt)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'JSON-object "physicalParameters" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                                r"de": r'JSON-Objekt "physicalParameters" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5104,6 +5198,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"physicalParameters (JSON-object)",
+                                    r"de": r"physicalParameters (JSON-Objekt)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'JSON-object "physicalParameters" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                    r"de": r'JSON-Objekt "physicalParameters" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5150,23 +5260,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"ProtocolLimits",
                         content_type: Optional[str] = r"application/json",
                         value: Optional[bytes] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"protocolLimits (JSON-object)",
-                                r"de": r"protocolLimits (JSON-Objekt)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'JSON-object "protocolLimits" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                                r"de": r'JSON-Objekt "protocolLimits" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5183,6 +5279,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"protocolLimits (JSON-object)",
+                                    r"de": r"protocolLimits (JSON-Objekt)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'JSON-object "protocolLimits" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                    r"de": r'JSON-Objekt "protocolLimits" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5229,23 +5341,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"ProtocolFeatures",
                         content_type: Optional[str] = r"application/json",
                         value: Optional[bytes] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"protocolFeatures (JSON-object)",
-                                r"de": r"protocolFeatures (JSON-Objekt)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'JSON-object "protocolFeatures" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                                r"de": r'JSON-Objekt "protocolFeatures" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5262,6 +5360,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"protocolFeatures (JSON-object)",
+                                    r"de": r"protocolFeatures (JSON-Objekt)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'JSON-object "protocolFeatures" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                    r"de": r'JSON-Objekt "protocolFeatures" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5308,23 +5422,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"AgvGeometry",
                         content_type: Optional[str] = r"application/json",
                         value: Optional[bytes] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"agvGeometry (JSON-object)",
-                                r"de": r"agvGeometry (JSON-Objekt)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'JSON-object "agvGeometry" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                                r"de": r'JSON-Objekt "agvGeometry" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5341,6 +5441,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"agvGeometry (JSON-object)",
+                                    r"de": r"agvGeometry (JSON-Objekt)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'JSON-object "agvGeometry" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                    r"de": r'JSON-Objekt "agvGeometry" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5387,23 +5503,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"LoadSpecification",
                         content_type: Optional[str] = r"application/json",
                         value: Optional[bytes] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"loadSpecification (JSON-object)",
-                                r"de": r"loadSpecification (JSON-Objekt)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'JSON-object "loadSpecification" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                                r"de": r'JSON-Objekt "loadSpecification" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5420,6 +5522,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"loadSpecification (JSON-object)",
+                                    r"de": r"loadSpecification (JSON-Objekt)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'JSON-object "loadSpecification" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                    r"de": r'JSON-Objekt "loadSpecification" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5466,23 +5584,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"LocalizationParameters",
                         content_type: Optional[str] = r"application/json",
                         value: Optional[bytes] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"localizationParameters (JSON-object)",
-                                r"de": r"localizationParameters (JSON-Objekt)",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'JSON-object "localizationParameters" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                                r"de": r'JSON-Objekt "localizationParameters" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5499,6 +5603,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"localizationParameters (JSON-object)",
+                                    r"de": r"localizationParameters (JSON-Objekt)",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'JSON-object "localizationParameters" according VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                    r"de": r'JSON-Objekt "localizationParameters" entsprechend VDA5050 Factsheet, Version 2.0.0, January 2022 ',
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5550,13 +5670,7 @@ class TechnicalDataAGV(aas.Submodel):
                     id_short: Optional[str] = r"VDA5050Factsheet",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Factsheet data according VDA 5050 MQTT communication protocol"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5573,6 +5687,13 @@ class TechnicalDataAGV(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Factsheet data according VDA 5050 MQTT communication protocol"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5645,19 +5766,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"EnergySource",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Energy source", r"de": r"Energiequelle"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Type of auxiliary energy the AGV is consuming, the enumeration "POWER", "DIESEL", "GAS", "HYDROGEN", "HYBRID", "SOLAR", "OTHER" can be used'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5674,6 +5785,18 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Energy source", r"de": r"Energiequelle"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Type of auxiliary energy the AGV is consuming, the enumeration "POWER", "DIESEL", "GAS", "HYDROGEN", "HYBRID", "SOLAR", "OTHER" can be used'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5722,22 +5845,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"EnergyAbsorption",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Energy absorption",
-                                r"de": r"Energieaufnahme",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Way to absorb auxiliary energy. The enumeration "INDUCTION", "CONDUCTORRAIL", "FLEXIBLECABLE", "CHARGINGCABLE", "FILLER", "OTHER" can be used'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5754,6 +5864,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Energy absorption",
+                                    r"de": r"Energieaufnahme",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Way to absorb auxiliary energy. The enumeration "INDUCTION", "CONDUCTORRAIL", "FLEXIBLECABLE", "CHARGINGCABLE", "FILLER", "OTHER" can be used'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5802,19 +5927,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"EnergyStorage",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Energy storage", r"de": r"Energiespeicher"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r'Type of storage the AGV is using. The enumeration "BATTERY", "TANK", "CARTRIDGE", "CAPACITOR", "OTHER" can be used.'
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -5831,6 +5946,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Energy storage",
+                                    r"de": r"Energiespeicher",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r'Type of storage the AGV is using. The enumeration "BATTERY", "TANK", "CARTRIDGE", "CAPACITOR", "OTHER" can be used.'
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -5880,22 +6010,9 @@ class TechnicalDataAGV(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"ChargingDeviceRequirements",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Charging device requirements",
-                                    r"de": r"Anforderungen an die Ladestation",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Requirements of the AGV for the charging station and infrastructure, e.g., voltage range or max. current"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5914,6 +6031,21 @@ class TechnicalDataAGV(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Charging device requirements",
+                                        r"de": r"Anforderungen an die Ladestation",
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Requirements of the AGV for the charging station and infrastructure, e.g., voltage range or max. current"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -5960,22 +6092,9 @@ class TechnicalDataAGV(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"BatteryInformation",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Battery information",
-                                    r"de": r"Informationen zur Batterie",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Information about the used battery of the AGV, for example type of battery (e.g., NiCd), capacity and max. charge cycles"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -5994,6 +6113,21 @@ class TechnicalDataAGV(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Battery information",
+                                        r"de": r"Informationen zur Batterie",
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Information about the used battery of the AGV, for example type of battery (e.g., NiCd), capacity and max. charge cycles"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6041,20 +6175,9 @@ class TechnicalDataAGV(aas.Submodel):
                             id_short: Optional[str] = r"ChargingTimeAsSpecified",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Charging time", r"de": r"Ladedauer"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Charging time of the AGV from empty to full capacity as specified by the manufacturer",
-                                    r"de": r"Ladedauer des AGV von leer nach voll wie vom Hersteller spezifiziert",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6073,6 +6196,19 @@ class TechnicalDataAGV(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Charging time", r"de": r"Ladedauer"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Charging time of the AGV from empty to full capacity as specified by the manufacturer",
+                                        r"de": r"Ladedauer des AGV von leer nach voll wie vom Hersteller spezifiziert",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6146,20 +6282,9 @@ class TechnicalDataAGV(aas.Submodel):
                             id_short: Optional[str] = r"ChargingTimeAsOperated",
                             value_type: aas.DataTypeDefXsd = xsd.Float,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Charging time", r"de": r"Ladedauer"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Charging time of the AGV from empty to full capacity as implemented in the current system",
-                                    r"de": r"Ladedauer des AGV von leer nach voll, wie im aktuellen System implementiert",
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6178,6 +6303,19 @@ class TechnicalDataAGV(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={r"en": r"Charging time", r"de": r"Ladedauer"}
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Charging time of the AGV from empty to full capacity as implemented in the current system",
+                                        r"de": r"Ladedauer des AGV von leer nach voll, wie im aktuellen System implementiert",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6251,22 +6389,9 @@ class TechnicalDataAGV(aas.Submodel):
                             id_short: Optional[str] = r"RemainingChargeCycles",
                             value_type: aas.DataTypeDefXsd = int,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Remaining charge cycles",
-                                    r"de": r"Verbleibende Ladezyklen",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Assumed remaining charge cycles of the battery"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -6285,6 +6410,21 @@ class TechnicalDataAGV(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Remaining charge cycles",
+                                        r"de": r"Verbleibende Ladezyklen",
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Assumed remaining charge cycles of the battery"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -6345,11 +6485,7 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"Battery",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Information about the battery of the AGV"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6366,6 +6502,13 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about the battery of the AGV"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = ()
@@ -6462,22 +6605,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"PowerTransmissionToExternal",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Power transmission to external",
-                                r"de": r"Energieübertragung nach extern",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about mechanical or electrical power transmission capabilities from the AGV to external devices"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6494,6 +6624,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Power transmission to external",
+                                    r"de": r"Energieübertragung nach extern",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about mechanical or electrical power transmission capabilities from the AGV to external devices"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6545,13 +6690,7 @@ class TechnicalDataAGV(aas.Submodel):
                     id_short: Optional[str] = r"Energy",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Technical properties related to the energy supply of the AGV"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6568,6 +6707,13 @@ class TechnicalDataAGV(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Technical properties related to the energy supply of the AGV"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6667,22 +6813,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"CommunicationProtocol",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Communication protocol",
-                                r"de": r"Kommunikationsprotokoll",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information regarding the supported communication protocols, like MQTT, HTTP, OPC UA or ROS2"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6699,6 +6832,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Communication protocol",
+                                    r"de": r"Kommunikationsprotokoll",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information regarding the supported communication protocols, like MQTT, HTTP, OPC UA or ROS2"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6745,22 +6893,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"CommunicationNetwork",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Communication network",
-                                r"de": r"Kommunikationsnetzwerk",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information regarding the supported communication networks, like WLAN, 5G or IrDA"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6777,6 +6912,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Communication network",
+                                    r"de": r"Kommunikationsnetzwerk",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information regarding the supported communication networks, like WLAN, 5G or IrDA"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6823,22 +6973,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"VDA5050InterfaceDescription",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"VDA5050 Interface Description",
-                                r"de": r"VDA5050 Schnittstellenbeschreibung",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about the MQTT communication according VDA 5050"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6855,6 +6992,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"VDA5050 Interface Description",
+                                    r"de": r"VDA5050 Schnittstellenbeschreibung",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about the MQTT communication according VDA 5050"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6901,22 +7053,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"AutomationInterface",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Automation interface",
-                                r"de": r"Automatisierungsschnittstellen",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about the supported automation interfaces and standards, like ROS1, ROS2, IO-Link or OPC UA"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -6933,6 +7072,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Automation interface",
+                                    r"de": r"Automatisierungsschnittstellen",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about the supported automation interfaces and standards, like ROS1, ROS2, IO-Link or OPC UA"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -6979,22 +7133,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"ControlSystemInformation",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Control system information",
-                                r"de": r"Informationen zur Steuerung",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information regarding the used control system for the vehicle, e.g., SPS"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7011,6 +7152,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Control system information",
+                                    r"de": r"Informationen zur Steuerung",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information regarding the used control system for the vehicle, e.g., SPS"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7070,13 +7226,7 @@ class TechnicalDataAGV(aas.Submodel):
                     id_short: Optional[str] = r"CommunicationAndControl",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Technical properties related to the communication and control of the AGV"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7093,6 +7243,13 @@ class TechnicalDataAGV(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Technical properties related to the communication and control of the AGV"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7207,22 +7364,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"ConformityToSafetyStandards",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Conformity to safety standards",
-                                r"de": r"Konformität zu Sicherheitsstandards",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information regarding the safety standards that are met by the vehicle and certifications"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7239,6 +7383,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Conformity to safety standards",
+                                    r"de": r"Konformität zu Sicherheitsstandards",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information regarding the safety standards that are met by the vehicle and certifications"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7285,22 +7444,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"ManualControlInformation",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Manual control information",
-                                r"de": r"Informationen zur manuellen Steuerung",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Safety information for manual control of the vehicle"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7317,6 +7463,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Manual control information",
+                                    r"de": r"Informationen zur manuellen Steuerung",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Safety information for manual control of the vehicle"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7363,22 +7524,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"SafetySensorTechnology",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Safety sensor technology",
-                                r"de": r"Sicherheitssensorik",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information about the sensor technology implemented to ensure vehicle safety"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7395,6 +7543,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Safety sensor technology",
+                                    r"de": r"Sicherheitssensorik",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information about the sensor technology implemented to ensure vehicle safety"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7441,22 +7604,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"SafetyMechanics",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Safety mechanics",
-                                r"de": r"Mechanische Sicherheitseinrichtungen",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Information regarding implemented mechanical measures to ensure safety"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7473,6 +7623,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Safety mechanics",
+                                    r"de": r"Mechanische Sicherheitseinrichtungen",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Information regarding implemented mechanical measures to ensure safety"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7529,13 +7694,7 @@ class TechnicalDataAGV(aas.Submodel):
                     id_short: Optional[str] = r"Safety",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Technical properties related to the safety of the AGV"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7552,6 +7711,13 @@ class TechnicalDataAGV(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Technical properties related to the safety of the AGV"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7655,20 +7821,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"CurrentWorkingSetupName",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Current working setup ",
-                                r"de": r"Aktuelle Arbeitskonfiguration",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={r"en": r"Name of the current working setup"}
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7685,6 +7840,19 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Current working setup ",
+                                    r"de": r"Aktuelle Arbeitskonfiguration",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={r"en": r"Name of the current working setup"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7733,19 +7901,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"ActiveLoading",
                         value_type: aas.DataTypeDefXsd = bool,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Active loading", r"de": r"Aktive Beladung"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Describes whether the AGV is currently able to load itself (true)"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7762,6 +7920,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Active loading",
+                                    r"de": r"Aktive Beladung",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Describes whether the AGV is currently able to load itself (true)"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7810,19 +7983,9 @@ class TechnicalDataAGV(aas.Submodel):
                         id_short: Optional[str] = r"LoadingType",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"en": r"Loading type", r"de": r"Beladungsart"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Way of loading of the AGV, the enumeration acc. VDI 2510 can be used"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7839,6 +8002,18 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"en": r"Loading type", r"de": r"Beladungsart"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Way of loading of the AGV, the enumeration acc. VDI 2510 can be used"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7886,22 +8061,9 @@ class TechnicalDataAGV(aas.Submodel):
                         value: aas.LangStringSet,
                         id_short: Optional[str] = r"LoadingRequirements",
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Loading requirements",
-                                r"de": r"Beladungsanforderungen",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Requirements and instructions when loading with the current setup, e.g., load floor to floor vs. height difference"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -7918,6 +8080,21 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Loading requirements",
+                                    r"de": r"Beladungsanforderungen",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Requirements and instructions when loading with the current setup, e.g., load floor to floor vs. height difference"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -7967,17 +8144,9 @@ class TechnicalDataAGV(aas.Submodel):
                             id_short: Optional[str] = None,
                             value_type: aas.DataTypeDefXsd = str,
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"en": r"Attachment (ID)", r"de": r"Anbau (ID)"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={r"en": r"Order not relevant"}
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -7996,6 +8165,19 @@ class TechnicalDataAGV(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Attachment (ID)",
+                                        r"de": r"Anbau (ID)",
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={r"en": r"Order not relevant"}
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -8056,23 +8238,9 @@ class TechnicalDataAGV(aas.Submodel):
                         ),
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Current attachments",
-                                r"de": r"Aktuelle Anbauten ",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List with the identification of current attachments on the AGV, e.g., for load handling",
-                                r"de": r"Liste mit Idents der aktuellen Anbauten am AGV, z.B. für die Ladungshandhabung",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8089,6 +8257,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Current attachments",
+                                    r"de": r"Aktuelle Anbauten ",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List with the identification of current attachments on the AGV, e.g., for load handling",
+                                    r"de": r"Liste mit Idents der aktuellen Anbauten am AGV, z.B. für die Ladungshandhabung",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8246,17 +8430,9 @@ class TechnicalDataAGV(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={r"en": r"Option name", r"de": r"Optionsname"}
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={
-                                        r"en": r"Name of the proprietary configuration option"
-                                    }
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -8275,6 +8451,21 @@ class TechnicalDataAGV(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"Option name",
+                                            r"de": r"Optionsname",
+                                        }
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Name of the proprietary configuration option"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -8325,18 +8516,9 @@ class TechnicalDataAGV(aas.Submodel):
                                 value_id: Optional[aas.Reference] = None,
                                 display_name: Optional[
                                     aas.MultiLanguageNameType
-                                ] = aas.MultiLanguageNameType(
-                                    dict_={
-                                        r"en": r"Option value",
-                                        r"de": r"Optionswert",
-                                    }
-                                ),
+                                ] = None,
                                 category: Optional[str] = None,
-                                description: Optional[
-                                    aas.MultiLanguageTextType
-                                ] = aas.MultiLanguageTextType(
-                                    dict_={r"en": r"Value of the proprietary option"}
-                                ),
+                                description: Optional[aas.MultiLanguageTextType] = None,
                                 semantic_id: Optional[
                                     aas.Reference
                                 ] = aas.ExternalReference(
@@ -8355,6 +8537,21 @@ class TechnicalDataAGV(aas.Submodel):
                                     aas.EmbeddedDataSpecification
                                 ] = None,
                             ):
+
+                                if display_name is None:
+                                    display_name = aas.MultiLanguageNameType(
+                                        dict_={
+                                            r"en": r"Option value",
+                                            r"de": r"Optionswert",
+                                        }
+                                    )
+
+                                if description is None:
+                                    description = aas.MultiLanguageTextType(
+                                        dict_={
+                                            r"en": r"Value of the proprietary option"
+                                        }
+                                    )
 
                                 if qualifier is None:
                                     qualifier = (
@@ -8400,22 +8597,9 @@ class TechnicalDataAGV(aas.Submodel):
                             optionName: Union[str, OptionName],
                             optionValue: Union[str, OptionValue],
                             id_short: Optional[str] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"en": r"Configuration option",
-                                    r"de": r"Konfigurationsoption",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
-                            description: Optional[
-                                aas.MultiLanguageTextType
-                            ] = aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Proprietary vehicle configuration setting"
-                                }
-                            ),
+                            description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
                                 aas.Reference
                             ] = aas.ExternalReference(
@@ -8434,6 +8618,21 @@ class TechnicalDataAGV(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"en": r"Configuration option",
+                                        r"de": r"Konfigurationsoption",
+                                    }
+                                )
+
+                            if description is None:
+                                description = aas.MultiLanguageTextType(
+                                    dict_={
+                                        r"en": r"Proprietary vehicle configuration setting"
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -8522,23 +8721,9 @@ class TechnicalDataAGV(aas.Submodel):
                         ),
                         value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                         order_relevant: bool = True,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"en": r"Proprietary configuration options",
-                                r"de": r"Herstellerspezifische Konfigurationsoptionen",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"List with proprietary vehicle configuration settings",
-                                r"de": r"Liste der herstellerspezifischen Konfigurationseinstellungen des Fahrzeugs",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -8555,6 +8740,22 @@ class TechnicalDataAGV(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"en": r"Proprietary configuration options",
+                                    r"de": r"Herstellerspezifische Konfigurationsoptionen",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"List with proprietary vehicle configuration settings",
+                                    r"de": r"Liste der herstellerspezifischen Konfigurationseinstellungen des Fahrzeugs",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -8712,13 +8913,7 @@ class TechnicalDataAGV(aas.Submodel):
                         ]
                     ] = None,
                     id_short: Optional[str] = r"TemporaryTechnicalData",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Temporary technical data depending on the implementation at the operator and current configuration"
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8737,6 +8932,13 @@ class TechnicalDataAGV(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Temporary technical data depending on the implementation at the operator and current configuration"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8873,14 +9075,7 @@ class TechnicalDataAGV(aas.Submodel):
                 safety: Optional[Safety] = None,
                 temporaryTechnicalData: Optional[TemporaryTechnicalData] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Specific description for a use case or area of ​​application",
-                        r"de": r"Spezifische Beschreibung für einen Anwendungsfall oder ein Einsatzgebiet",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -8913,6 +9108,14 @@ class TechnicalDataAGV(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Specific description for a use case or area of ​​application",
+                            r"de": r"Spezifische Beschreibung für einen Anwendungsfall oder ein Einsatzgebiet",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -8994,13 +9197,7 @@ class TechnicalDataAGV(aas.Submodel):
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Specific description for a use case or area of application"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -9027,6 +9224,13 @@ class TechnicalDataAGV(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Specific description for a use case or area of application"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -9165,28 +9369,10 @@ class TechnicalDataAGV(aas.Submodel):
             ]
         ] = None,
         id_short: Optional[str] = r"TechnicalDataAGV",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={
-                r"en": r"Technical Data for AGV in Intralogistics",
-                r"de": r"Technische Daten für AGV in der Intralogistik",
-            }
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"Submodel containing technical data for AGV in intralogistcis",
-                r"de": r"Teilmodell, das die technischen Daten von AGV (Fahrerlose Transportfahrzeuge) enthält",
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02047-1-0",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(
                 aas.Key(
@@ -9203,6 +9389,31 @@ class TechnicalDataAGV(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={
+                    r"en": r"Technical Data for AGV in Intralogistics",
+                    r"de": r"Technische Daten für AGV in der Intralogistik",
+                }
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Submodel containing technical data for AGV in intralogistcis",
+                    r"de": r"Teilmodell, das die technischen Daten von AGV (Fahrerlose Transportfahrzeuge) enthält",
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02047-1-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

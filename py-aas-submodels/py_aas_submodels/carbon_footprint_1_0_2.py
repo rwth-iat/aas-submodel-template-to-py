@@ -19,23 +19,9 @@ class CarbonFootprint(aas.Submodel):
                         id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Folgenabschätzungsmethode / Berechnungsmethode",
-                                r"en": r"impact assessment method / calculation method",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Standard, method for determining the greenhouse gas emissions of a product.",
-                                r"de": r"Norm, Standard, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -52,6 +38,22 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Folgenabschätzungsmethode / Berechnungsmethode",
+                                    r"en": r"impact assessment method / calculation method",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Standard, method for determining the greenhouse gas emissions of a product.",
+                                    r"de": r"Norm, Standard, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -104,23 +106,9 @@ class CarbonFootprint(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Folgenabschätzungsmethoden",
-                            r"en": r"impact assessment methods",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Normen, Standards, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts",
-                            r"en": r"Standards, methods for determining the greenhouse gas emissions of a product.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -137,6 +125,22 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Folgenabschätzungsmethoden",
+                                r"en": r"impact assessment methods",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Normen, Standards, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts",
+                                r"en": r"Standards, methods for determining the greenhouse gas emissions of a product.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -278,19 +282,9 @@ class CarbonFootprint(aas.Submodel):
                     id_short: Optional[str] = r"PcfCO2eq",
                     value_type: aas.DataTypeDefXsd = xsd.Decimal,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"CO2-Äquivalent", r"en": r"CO2 equivalent"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -307,6 +301,18 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"CO2-Äquivalent", r"en": r"CO2 equivalent"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Sum of all greenhouse gas emissions of a product according to the quantification requirements of the standard."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -347,22 +353,9 @@ class CarbonFootprint(aas.Submodel):
                     id_short: Optional[str] = r"ReferenceImpactUnitForCalculation",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Referenzeinheit für die Berechnung",
-                            r"en": r"Reference value for calculation",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Quantity unit of the product to which the PCF information on the CO2 footprint refers."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -379,6 +372,21 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Referenzeinheit für die Berechnung",
+                                r"en": r"Reference value for calculation",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Quantity unit of the product to which the PCF information on the CO2 footprint refers."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -419,22 +427,9 @@ class CarbonFootprint(aas.Submodel):
                     id_short: Optional[str] = r"QuantityOfMeasureForCalculation",
                     value_type: aas.DataTypeDefXsd = float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Mengenangabe für die Berechnung",
-                            r"en": r"quantity of measure for calculation",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"provides the quantity number of pieces or mass or volume to compute the impact of climate change or product carbon footprint."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -451,6 +446,21 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Mengenangabe für die Berechnung",
+                                r"en": r"quantity of measure for calculation",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"provides the quantity number of pieces or mass or volume to compute the impact of climate change or product carbon footprint."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -493,22 +503,9 @@ class CarbonFootprint(aas.Submodel):
                         id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Lebenszyklusphase",
-                                r"en": r"life cycle phase",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers"
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -525,6 +522,21 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Lebenszyklusphase",
+                                    r"en": r"life cycle phase",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers"
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -575,22 +587,9 @@ class CarbonFootprint(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Lebenszyklusphasen",
-                            r"en": r"life cycle phases",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"List of life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -607,6 +606,21 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Lebenszyklusphasen",
+                                r"en": r"life cycle phases",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"List of life cycle stages of the product according to the quantification requirements of the standard to which the PCF carbon footprint statement refers"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -747,19 +761,9 @@ class CarbonFootprint(aas.Submodel):
                     value: str,
                     id_short: Optional[str] = r"ExplanatoryStatement",
                     content_type: Optional[str] = r"application/pdf",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Erklärung", r"en": r"Explanatory statement"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Explanation required or provided to ensure that a footprint communication can be properly understood by a purchaser, potential purchaser, or user of the product."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -776,6 +780,18 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Erklärung", r"en": r"Explanatory statement"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Explanation required or provided to ensure that a footprint communication can be properly understood by a purchaser, potential purchaser, or user of the product."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -812,22 +828,9 @@ class CarbonFootprint(aas.Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"GoodsHandoverAddress",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Warenübergabeadresse",
-                            r"en": r"goods address hand-over",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Indicates the hand-over address of the goods transport"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -872,6 +875,21 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Warenübergabeadresse",
+                                r"en": r"goods address hand-over",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Indicates the hand-over address of the goods transport"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -926,22 +944,9 @@ class CarbonFootprint(aas.Submodel):
                     id_short: Optional[str] = r"PublicationDate",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Veröffentlichungsdatum",
-                            r"en": r"Publication date",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "The UTC timestamp on which a Product Carbon Footprint (PCF) - a calculation of a product's total greenhouse gas emissions - was created and published"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -958,6 +963,21 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Veröffentlichungsdatum",
+                                r"en": r"Publication date",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "The UTC timestamp on which a Product Carbon Footprint (PCF) - a calculation of a product's total greenhouse gas emissions - was created and published"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -998,19 +1018,9 @@ class CarbonFootprint(aas.Submodel):
                     id_short: Optional[str] = r"ExpirationDate",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Ablaufdatum", r"en": r"Expiration date"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"End date up to which a study or data collection for calculating an ecological footprint is considered current and valid before an update or new calculation is required."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1027,6 +1037,18 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Ablaufdatum", r"en": r"Expiration date"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"End date up to which a study or data collection for calculating an ecological footprint is considered current and valid before an update or new calculation is required."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1083,22 +1105,9 @@ class CarbonFootprint(aas.Submodel):
                 goodsHandoverAddress: Optional[GoodsHandoverAddress] = None,
                 expirationDate: Optional[Union[xsd.DateTime, ExpirationDate]] = None,
                 id_short: Optional[str] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Produkt CO2-Fußabdruck",
-                        r"en": r"Product carbon footprint",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1115,6 +1124,21 @@ class CarbonFootprint(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Produkt CO2-Fußabdruck",
+                            r"en": r"Product carbon footprint",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -1246,22 +1270,9 @@ class CarbonFootprint(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"de": r"Produkt CO2-Fußabdruck",
-                    r"en": r"Product carbon footprint",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1278,6 +1289,21 @@ class CarbonFootprint(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"de": r"Produkt CO2-Fußabdruck",
+                        r"en": r"Product carbon footprint",
+                    }
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Balance of greenhouse gas emissions along the entire life cycle of a product in a defined application and in relation to a defined unit of use."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1413,23 +1439,9 @@ class CarbonFootprint(aas.Submodel):
                         id_short: Optional[str] = None,
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Folgenabschätzungsmethode / Berechnungsmethode",
-                                r"en": r"impact assessment method / calculation method",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Standard, method for determining the greenhouse gas emissions of a product.",
-                                r"de": r"Norm, Standard, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1446,6 +1458,22 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Folgenabschätzungsmethode / Berechnungsmethode",
+                                    r"en": r"impact assessment method / calculation method",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Standard, method for determining the greenhouse gas emissions of a product.",
+                                    r"de": r"Norm, Standard, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1498,23 +1526,9 @@ class CarbonFootprint(aas.Submodel):
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                     order_relevant: bool = True,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Folgenabschätzungsmethoden",
-                            r"en": r"impact assessment methods",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Normen, Standards, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts",
-                            r"en": r"Standards, methods for determining the greenhouse gas emissions of a product.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1531,6 +1545,22 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Folgenabschätzungsmethoden",
+                                r"en": r"impact assessment methods",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Normen, Standards, Verfahren zur Ermittlung der Treibhausgas-Emissionen eines Produkts",
+                                r"en": r"Standards, methods for determining the greenhouse gas emissions of a product.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1674,23 +1704,9 @@ class CarbonFootprint(aas.Submodel):
                         id_short: Optional[str] = r"PcfRuleOperator",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Herausgeber der PCF Berechnungsmethode",
-                                r"en": r"Operator of the PCF calculation method",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Einrichtung, welche spezifische Anweisungen und Methoden zur Berechnung und Überwachung des CO2-Fußabdrucks eines Produkts oder Sektors definiert und umsetzt.",
-                                r"en": r"Organization that defines and implements specific instructions and methods for calculating and monitoring the carbon footprint of a product or sector.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1707,6 +1723,22 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Herausgeber der PCF Berechnungsmethode",
+                                    r"en": r"Operator of the PCF calculation method",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Einrichtung, welche spezifische Anweisungen und Methoden zur Berechnung und Überwachung des CO2-Fußabdrucks eines Produkts oder Sektors definiert und umsetzt.",
+                                    r"en": r"Organization that defines and implements specific instructions and methods for calculating and monitoring the carbon footprint of a product or sector.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1747,23 +1779,9 @@ class CarbonFootprint(aas.Submodel):
                         id_short: Optional[str] = r"PcfRuleName",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Name der PCF Berechnungsmethode",
-                                r"en": r"Name of the PCF calculation method",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Folgenabschätzungsmethode / Berechnungsmethode",
-                                r"en": r"Standard, method for determining the greenhouse gas emissions of a product",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1780,6 +1798,22 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Name der PCF Berechnungsmethode",
+                                    r"en": r"Name of the PCF calculation method",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Folgenabschätzungsmethode / Berechnungsmethode",
+                                    r"en": r"Standard, method for determining the greenhouse gas emissions of a product",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1820,23 +1854,9 @@ class CarbonFootprint(aas.Submodel):
                         id_short: Optional[str] = r"PcfRuleVersion",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Version der PCF Berechnungsmethode",
-                                r"en": r"Version of the PCF calculation method",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Spezifische Ausgabe oder Revision der Regel, die zur Berechnung des CO2-Fußabdrucks eines Produkts verwendet wird.",
-                                r"en": r"Specific version or revision of the rule used to calculate the carbon footprint of a product.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1853,6 +1873,22 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Version der PCF Berechnungsmethode",
+                                    r"en": r"Version of the PCF calculation method",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Spezifische Ausgabe oder Revision der Regel, die zur Berechnung des CO2-Fußabdrucks eines Produkts verwendet wird.",
+                                    r"en": r"Specific version or revision of the rule used to calculate the carbon footprint of a product.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1892,23 +1928,9 @@ class CarbonFootprint(aas.Submodel):
                         value: str,
                         id_short: Optional[str] = r"PcfRuleOnlineReference",
                         content_type: Optional[str] = r"application/pdf",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Online Referenz zur PCF Berechnungsmethode",
-                                r"en": r"Online reference to the PCF calculation method",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Online-Referenz zur PCF-Berechnungsmethodik, die detaillierte Anweisungen und Richtlinien zur Berechnung des CO2-Fußabdrucks eines Produkts bereitstellt.",
-                                r"en": "Online PCF calculation methodology reference that provides detailed instructions and guidelines for calculating a product's carbon footprint.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -1925,6 +1947,22 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Online Referenz zur PCF Berechnungsmethode",
+                                    r"en": r"Online reference to the PCF calculation method",
+                                }
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Online-Referenz zur PCF-Berechnungsmethodik, die detaillierte Anweisungen und Richtlinien zur Berechnung des CO2-Fußabdrucks eines Produkts bereitstellt.",
+                                    r"en": "Online PCF calculation methodology reference that provides detailed instructions and guidelines for calculating a product's carbon footprint.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1963,23 +2001,9 @@ class CarbonFootprint(aas.Submodel):
                     pcfRuleVersion: Optional[Union[str, PcfRuleVersion]] = None,
                     pcfRuleOnlineReference: Optional[PcfRuleOnlineReference] = None,
                     id_short: Optional[str] = r"ProductOrSectorSpecificRule",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Produktspezifische oder sektorspezifische Regel",
-                            r"en": r"Product or Sector Specific Rule",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Beinhaltet weiterführende Informationen zur produktspezifischen oder sektorspezifischen Regel, welche zur Berechnung des CO2-Fußabdrucks eingesetzt wird. ",
-                            r"en": r"Contains further information on the product-specific or sector-specific rule used to calculate the carbon footprint.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1996,6 +2020,22 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Produktspezifische oder sektorspezifische Regel",
+                                r"en": r"Product or Sector Specific Rule",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Beinhaltet weiterführende Informationen zur produktspezifischen oder sektorspezifischen Regel, welche zur Berechnung des CO2-Fußabdrucks eingesetzt wird. ",
+                                r"en": r"Contains further information on the product-specific or sector-specific rule used to calculate the carbon footprint.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2078,20 +2118,9 @@ class CarbonFootprint(aas.Submodel):
                         id_short: Optional[str] = r"PcfApiEndpoint",
                         value_type: aas.DataTypeDefXsd = xsd.AnyURI,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Endpunkt", r"en": r"Endpoint"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Spezifische URL oder Adresse, über die Daten zur Berechnung des CO2-Fußabdrucks eines Produkts von externen Quellen abgerufen werden können.",
-                                r"en": r"Specific URL or address that can be used to retrieve data from external sources to calculate the carbon footprint of a product.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2108,6 +2137,19 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Endpunkt", r"en": r"Endpoint"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Spezifische URL oder Adresse, über die Daten zur Berechnung des CO2-Fußabdrucks eines Produkts von externen Quellen abgerufen werden können.",
+                                    r"en": r"Specific URL or address that can be used to retrieve data from external sources to calculate the carbon footprint of a product.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2148,20 +2190,9 @@ class CarbonFootprint(aas.Submodel):
                         id_short: Optional[str] = r"PcfApiQuery",
                         value_type: aas.DataTypeDefXsd = str,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Abfrage", r"en": r"Query"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"de": r"Spezifische Abfrage, über die Daten zur Berechnung des CO2-Fußabdrucks eines Produkts von externen Quellen abgerufen werden können.",
-                                r"en": r"Specific query that can be used to retrieve data from external sources to calculate the carbon footprint of a product.",
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2178,6 +2209,19 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Abfrage", r"en": r"Query"}
+                            )
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"de": r"Spezifische Abfrage, über die Daten zur Berechnung des CO2-Fußabdrucks eines Produkts von externen Quellen abgerufen werden können.",
+                                    r"en": r"Specific query that can be used to retrieve data from external sources to calculate the carbon footprint of a product.",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2215,23 +2259,9 @@ class CarbonFootprint(aas.Submodel):
                     pcfApiEndpoint: Union[xsd.AnyURI, PcfApiEndpoint],
                     pcfApiQuery: Union[str, PcfApiQuery],
                     id_short: Optional[str] = r"ExternalPcfApi",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Externe API für PCF Informationen",
-                            r"en": r"External API for PCF information",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Ein externer Dienst, der über eine Schnittstelle Informationen zum CO2-Fußabdruck bereitstellt und den Abruf dieser Daten auf Abruf ermöglicht.",
-                            r"en": r"An external service that provides carbon footprint information via an interface, allowing on-demand retrieval of this data when required.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2248,6 +2278,22 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Externe API für PCF Informationen",
+                                r"en": r"External API for PCF information",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Ein externer Dienst, der über eine Schnittstelle Informationen zum CO2-Fußabdruck bereitstellt und den Abruf dieser Daten auf Abruf ermöglicht.",
+                                r"en": r"An external service that provides carbon footprint information via an interface, allowing on-demand retrieval of this data when required.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2320,13 +2366,7 @@ class CarbonFootprint(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Free area for structured collection of specific items of a specific PCF."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2343,6 +2383,13 @@ class CarbonFootprint(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Free area for structured collection of specific items of a specific PCF."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2383,14 +2430,7 @@ class CarbonFootprint(aas.Submodel):
                     id_short: Optional[str] = r"PcfInformation",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"de": r"Ein Abschnitt, in dem weitere Inhalte entsprechend der Berechnungsmethode zum Product Carbon Footprint aufgeführt werden.",
-                            r"en": r"A section in which further content is listed according to the calculation method for the Product Carbon Footprint.",
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2407,6 +2447,14 @@ class CarbonFootprint(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"de": r"Ein Abschnitt, in dem weitere Inhalte entsprechend der Berechnungsmethode zum Product Carbon Footprint aufgeführt werden.",
+                                r"en": r"A section in which further content is listed according to the calculation method for the Product Carbon Footprint.",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2484,13 +2532,7 @@ class CarbonFootprint(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Product Carbon Footprint, which is determined in accordance with sector or product group-specific rules or guidelines and covers the life cycle or parts of a product life cycle."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2507,6 +2549,13 @@ class CarbonFootprint(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Product Carbon Footprint, which is determined in accordance with sector or product group-specific rules or guidelines and covers the life cycle or parts of a product life cycle."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = ()
@@ -2581,19 +2630,9 @@ class CarbonFootprint(aas.Submodel):
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Product Or Sector Specific Carbon Footprints"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Product Carbon Footprints, which is determined in accordance with sector or product group-specific rules or guidelines and covers the life cycle or parts of a product life cycle."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2610,6 +2649,18 @@ class CarbonFootprint(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Product Or Sector Specific Carbon Footprints"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Product Carbon Footprints, which is determined in accordance with sector or product group-specific rules or guidelines and covers the life cycle or parts of a product life cycle."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2745,24 +2796,10 @@ class CarbonFootprint(aas.Submodel):
             ]
         ] = None,
         id_short: Optional[str] = r"CarbonFootprint",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"de": r"CO2 Footprint", r"en": r"Carbon Footprint"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"The Submodel provides the means to access the Carbon Footprint of the asset."
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/IDTA02023-1-0",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
@@ -2778,6 +2815,27 @@ class CarbonFootprint(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={r"de": r"CO2 Footprint", r"en": r"Carbon Footprint"}
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"The Submodel provides the means to access the Carbon Footprint of the asset."
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/IDTA02023-1-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

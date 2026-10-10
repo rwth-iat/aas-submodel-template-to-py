@@ -15,20 +15,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"PAMSpecificationSheetIdentification",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"PAM Specification Sheet Identification",
-                        r"de": r"PAM Spezifikationsbaltt Identification",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Unique identifier for the PAM specification sheet."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -45,6 +34,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"PAM Specification Sheet Identification",
+                            r"de": r"PAM Spezifikationsbaltt Identification",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Unique identifier for the PAM specification sheet."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -119,19 +123,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"AssetTypeClass",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Asset Type Class", r"de": r"Allgemeiner Asset-Typ"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Defines the general category of the asset described in the PAM specification sheet."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -148,6 +142,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Asset Type Class",
+                            r"de": r"Allgemeiner Asset-Typ",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Defines the general category of the asset described in the PAM specification sheet."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -222,22 +231,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"AssetTypeIdentification",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Asset Type Identification",
-                        r"de": r"Identifizierung des allgemeinen Asset-Typs",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Unique identifier for a general asset type's PAM specification sheet."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -254,6 +250,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Asset Type Identification",
+                            r"de": r"Identifizierung des allgemeinen Asset-Typs",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Unique identifier for a general asset type's PAM specification sheet."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -328,19 +339,9 @@ class PAMSpecificationSheet(aas.Submodel):
             assetTypeClass: Union[str, AssetTypeClass],
             assetTypeIdentification: Union[str, AssetTypeIdentification],
             id_short: Optional[str] = r"DocumentHeader",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Document Header", r"de": r"Dokumentenkopf"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Identifier for the asset type and associated PAM specification sheet."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -357,6 +358,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Document Header", r"de": r"Dokumentenkopf"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Identifier for the asset type and associated PAM specification sheet."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -470,19 +483,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"FunctionalLocation",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"FunctionalLocation", r"de": r"Technischer Platz"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Specifies the asset's logical position within a piping and instrumentation diagram."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -499,6 +502,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"FunctionalLocation",
+                            r"de": r"Technischer Platz",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Specifies the asset's logical position within a piping and instrumentation diagram."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -573,19 +591,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"TechnicalLocation",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Technical Location", r"de": r"Technischer Ort"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Specifies the actual location of the asset within the plant."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -602,6 +610,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Technical Location", r"de": r"Technischer Ort"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Specifies the actual location of the asset within the plant."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -676,19 +696,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"Description",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Offers a concise explanation of the asset's primary function."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -705,6 +715,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Description", r"de": r"Beschreibung"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Offers a concise explanation of the asset's primary function."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -779,17 +801,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"AssetSubtype",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Asset Subtype", r"de": r"Asset-Typ"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Defines the specific subtype of the asset."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -806,6 +820,16 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Asset Subtype", r"de": r"Asset-Typ"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Defines the specific subtype of the asset."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -880,22 +904,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"SpecificationSheetReference",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Specification Sheet Reference",
-                        r"de": r"Link zum technischen Spezifikationsblatt",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Reference to the technical specification sheet accompanying the asset."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -912,6 +923,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Specification Sheet Reference",
+                            r"de": r"Link zum technischen Spezifikationsblatt",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Reference to the technical specification sheet accompanying the asset."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -986,19 +1012,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"SafetyMeasure",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Safety Measure", r"de": r"Schutzeinrichtung"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Denotes whether the asset is part of a safety equipment."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1015,6 +1031,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Safety Measure", r"de": r"Schutzeinrichtung"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Denotes whether the asset is part of a safety equipment."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1149,19 +1177,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"RedundantAssets",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Redundant Assets", r"de": r"Redundanz vorhanden"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"References zero (if empty), one or more backup assets for redundancy purposes."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1178,6 +1196,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Redundant Assets",
+                            r"de": r"Redundanz vorhanden",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"References zero (if empty), one or more backup assets for redundancy purposes."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1303,19 +1336,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     ),
                     referred_semantic_id=None,
                 ),
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"SIL Category", r"de": r"SIL Kategorie"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Denotes the safety integrity level (SIL), categorized into four levels."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1332,6 +1355,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"SIL Category", r"de": r"SIL Kategorie"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Denotes the safety integrity level (SIL), categorized into four levels."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1465,22 +1500,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     ),
                     referred_semantic_id=None,
                 ),
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"FailureProbability",
-                        r"de": r"Fehlerwahrscheinlichkeit",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"VARIABLE",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Indicates the probability of a failure occurring, classified into three levels."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1497,6 +1519,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"FailureProbability",
+                            r"de": r"Fehlerwahrscheinlichkeit",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Indicates the probability of a failure occurring, classified into three levels."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1639,19 +1676,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     ),
                     referred_semantic_id=None,
                 ),
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Failure Severity", r"de": r"Fehlerschwere"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"VARIABLE",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Indicates the potential impact or seriousness of a failure, classified into three levels."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1668,6 +1695,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Failure Severity", r"de": r"Fehlerschwere"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Indicates the potential impact or seriousness of a failure, classified into three levels."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1810,22 +1849,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     ),
                     referred_semantic_id=None,
                 ),
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Criticality Category",
-                        r"de": r"Kritikalitätskategorie",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"VARIABLE",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"A computed value based on Failure Probability and Failure Severity, usually calculated automatically."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1842,6 +1868,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Criticality Category",
+                            r"de": r"Kritikalitätskategorie",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"A computed value based on Failure Probability and Failure Severity, usually calculated automatically."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1951,22 +1992,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"FurtherInformation",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"FurtherInformation",
-                        r"de": r"Weitere Angaben nach Bedarf",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Additional relevant details about the asset, such as maintenance schedules."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1983,6 +2011,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"FurtherInformation",
+                            r"de": r"Weitere Angaben nach Bedarf",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Additional relevant details about the asset, such as maintenance schedules."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2057,22 +2100,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"FurtherInformationReference",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Further Information Reference",
-                        r"de": r"Referenz auf weitere Informationen",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"A field for including references to supplementary information"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2089,6 +2119,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Further Information Reference",
+                            r"de": r"Referenz auf weitere Informationen",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"A field for including references to supplementary information"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2163,22 +2208,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"GeneralTask",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"General Task",
-                        r"de": r"Allgemeine Aufgabenstellung",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Detailed description of the task and installation or placement conditions of the specific asset."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2195,6 +2227,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"General Task",
+                            r"de": r"Allgemeine Aufgabenstellung",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Detailed description of the task and installation or placement conditions of the specific asset."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2284,17 +2331,9 @@ class PAMSpecificationSheet(aas.Submodel):
             ] = None,
             generalTask: Optional[Union[str, GeneralTask]] = None,
             id_short: Optional[str] = r"GeneralInformation",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"GeneralInformation", r"de": r"Allgemeine Angaben"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Provides details about the specific asset."}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2311,6 +2350,16 @@ class PAMSpecificationSheet(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"GeneralInformation", r"de": r"Allgemeine Angaben"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Provides details about the specific asset."}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2528,22 +2577,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"StatusConditionName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Status Condition Name",
-                            r"de": r"Zustands- und Fehlerbild",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Name of the asset's state, highlighting deviations from normal operations or reduced lifespan."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2560,6 +2596,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Status Condition Name",
+                                r"de": r"Zustands- und Fehlerbild",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Name of the asset's state, highlighting deviations from normal operations or reduced lifespan."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2634,22 +2685,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"MonitoringRequired",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Monitoring Required",
-                            r"de": r"Überwachung benötigt",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specifies whether the user is requiring monitoring."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2666,6 +2704,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Monitoring Required",
+                                r"de": r"Überwachung benötigt",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specifies whether the user is requiring monitoring."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2800,19 +2853,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Description",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Offers further information about the asset's status/fault profile or status monitoring."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2829,6 +2872,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Offers further information about the asset's status/fault profile or status monitoring."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -2903,19 +2958,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"MethodAbbreviation",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Method Abbreviation", r"de": r"Methode"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Captures the abbreviated name of the PAM method employed for monitoring purposes."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -2932,6 +2977,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Method Abbreviation", r"de": r"Methode"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Captures the abbreviated name of the PAM method employed for monitoring purposes."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3014,22 +3071,9 @@ class PAMSpecificationSheet(aas.Submodel):
                         ),
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"NE107Status",
-                            r"de": r"Status nach NAMUR-Empfehlung NE 107",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Status according to NAMUR recommendation NE 107."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3046,6 +3090,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"NE107Status",
+                                r"de": r"Status nach NAMUR-Empfehlung NE 107",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Status according to NAMUR recommendation NE 107."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3188,22 +3247,9 @@ class PAMSpecificationSheet(aas.Submodel):
                         ),
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"NE129 Alarm Category",
-                            r"de": r"Alarm-/Meldekategorie nach NAMUR Empfehlung NE129",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Alarm/signaling category according to NAMUR recommendation NE 129."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3220,6 +3266,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"NE129 Alarm Category",
+                                r"de": r"Alarm-/Meldekategorie nach NAMUR Empfehlung NE129",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Alarm/signaling category according to NAMUR recommendation NE 129."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -3346,22 +3407,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 nE107Status: Optional[Union[str, NE107Status]] = None,
                 nE129AlarmCategory: Optional[Union[str, NE129AlarmCategory]] = None,
                 id_short: Optional[str] = r"StatusCondition",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Status Condition",
-                        r"de": r"Zustands- und Fehlerbild",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Characteristics of the asset's operational and failure states."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3378,6 +3426,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Status Condition",
+                            r"de": r"Zustands- und Fehlerbild",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Characteristics of the asset's operational and failure states."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3503,19 +3566,9 @@ class PAMSpecificationSheet(aas.Submodel):
             self,
             statusCondition: Optional[Iterable[StatusCondition]] = None,
             id_short: Optional[str] = r"CompleteSystem",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Complete System", r"de": r"Komplettsystem"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Interconnected fields, incorporating status/fault profiles that apply to the entire asset rather than specific parts."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -3532,6 +3585,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Complete System", r"de": r"Komplettsystem"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Interconnected fields, incorporating status/fault profiles that apply to the entire asset rather than specific parts."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -3618,17 +3683,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"SubSystemName",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Subsystem Name", r"de": r"Teilsystem Name"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Specifies the name of the subsystem."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3645,6 +3702,16 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Subsystem Name", r"de": r"Teilsystem Name"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Specifies the name of the subsystem."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3719,19 +3786,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"FunctionalLocation",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Functional Location", r"de": r"Technischer Platz"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Indicates the subsystem's logical position within a piping and instrumentation diagram."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3748,6 +3805,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Functional Location",
+                            r"de": r"Technischer Platz",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Indicates the subsystem's logical position within a piping and instrumentation diagram."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3822,19 +3894,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 id_short: Optional[str] = r"TechnicalLocation",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Technical Location", r"de": r"Technischer Ort"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Specifies the actual location of the subsystem in the plant."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -3851,6 +3913,18 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Technical Location", r"de": r"Technischer Ort"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Specifies the actual location of the subsystem in the plant."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -3927,22 +4001,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"StatusConditionName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Status Condition Name",
-                            r"de": r"Zustands- und Fehlerbild",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Name of the subsystem's state, highlighting deviations from normal operations or reduced lifespan."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -3959,6 +4020,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Status Condition Name",
+                                r"de": r"Zustands- und Fehlerbild",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Name of the subsystem's state, highlighting deviations from normal operations or reduced lifespan."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4033,22 +4109,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"MonitoringRequired",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Monitoring Required",
-                            r"de": r"Überwachung benötigt",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specifies whether the user is requiring monitoring."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4065,6 +4128,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Monitoring Required",
+                                r"de": r"Überwachung benötigt",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specifies whether the user is requiring monitoring."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4199,19 +4277,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Description",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Offers further information about the subsystem's status/fault profile or status monitoring."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4228,6 +4296,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Offers further information about the subsystem's status/fault profile or status monitoring."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4302,19 +4382,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"MethodAbbreviation",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Method Abbreviation", r"de": r"Methode"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Captures the abbreviated name of the PAM method employed for monitoring purposes."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4331,6 +4401,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Method Abbreviation", r"de": r"Methode"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Captures the abbreviated name of the PAM method employed for monitoring purposes."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4413,22 +4495,9 @@ class PAMSpecificationSheet(aas.Submodel):
                         ),
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"NE 107 Status",
-                            r"de": r"Status nach NAMUR-Empfehlung NE 107",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Status according to NAMUR recommendation NE 107."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4445,6 +4514,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"NE 107 Status",
+                                r"de": r"Status nach NAMUR-Empfehlung NE 107",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Status according to NAMUR recommendation NE 107."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4587,22 +4671,9 @@ class PAMSpecificationSheet(aas.Submodel):
                         ),
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"NE 129 Alarm Category",
-                            r"de": r"Alarm-/Meldekategorie nach NAMUR Empfehlung",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Alarm/signaling category according to NAMUR recommendation NE 129."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -4619,6 +4690,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"NE 129 Alarm Category",
+                                r"de": r"Alarm-/Meldekategorie nach NAMUR Empfehlung",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Alarm/signaling category according to NAMUR recommendation NE 129."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -4754,22 +4840,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 nE107Status: Optional[Union[str, NE107Status]] = None,
                 nE129AlarmCategory: Optional[Union[str, NE129AlarmCategory]] = None,
                 id_short: Optional[str] = r"StatusCondition",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Status Condition",
-                        r"de": r"Zustands- und Fehlerbild",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": "Characteristics of the subsystems's operational and failure states."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4786,6 +4859,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Status Condition",
+                            r"de": r"Zustands- und Fehlerbild",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": "Characteristics of the subsystems's operational and failure states."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -4923,17 +5011,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     ),
                     referred_semantic_id=None,
                 ),
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Subsystem Reference", r"de": r"Subsystem Referenze"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Additional references associated to the subsystem."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -4950,6 +5030,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Subsystem Reference",
+                            r"de": r"Subsystem Referenze",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Additional references associated to the subsystem."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5015,22 +5110,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     ),
                     referred_semantic_id=None,
                 ),
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"PAM Specification Sheet Identification",
-                        r"de": r"PAM Spezifikationsblatt Identifikation",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"The distinct identifier for the PAM specification sheet for the subsystem."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5047,6 +5129,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"PAM Specification Sheet Identification",
+                            r"de": r"PAM Spezifikationsblatt Identifikation",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"The distinct identifier for the PAM specification sheet for the subsystem."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5112,22 +5209,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     ),
                     referred_semantic_id=None,
                 ),
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"PAM Specification Sheet Reference",
-                        r"de": r"PAM Spezifikationsblatt Referenz",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Links to relevant PAM specification documentation for the subsystem."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5144,6 +5228,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"PAM Specification Sheet Reference",
+                            r"de": r"PAM Spezifikationsblatt Referenz",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Links to relevant PAM specification documentation for the subsystem."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5207,17 +5306,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 Union[str, PAMSpecificationSheetReference]
             ] = None,
             id_short: Optional[str] = r"SubSystem",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Subsystem", r"de": r"Teilsystem"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Properties of the subsystem."}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -5234,6 +5325,16 @@ class PAMSpecificationSheet(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Subsystem", r"de": r"Teilsystem"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Properties of the subsystem."}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -5378,17 +5479,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"ParameterName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Parameter Name", r"de": r"Parametername"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Name of method parameter."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5405,6 +5498,16 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Parameter Name", r"de": r"Parametername"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Name of method parameter."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5479,19 +5582,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Description",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Provides a concise explanation of the parameter's purpose."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5508,6 +5601,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Provides a concise explanation of the parameter's purpose."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5582,22 +5687,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"StaticParameterValue",
                     value_type: aas.DataTypeDefXsd = float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Static Parameter Value",
-                            r"de": r"Statischer Parameter Wert",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"A static parameter value of a method used for monitoring of this subsystem."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5614,6 +5706,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Static Parameter Value",
+                                r"de": r"Statischer Parameter Wert",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"A static parameter value of a method used for monitoring of this subsystem."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5696,19 +5803,9 @@ class PAMSpecificationSheet(aas.Submodel):
                         ),
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"PhysicalUnit", r"de": r"Einheit"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specifies the physical unit of the static parameter."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5725,6 +5822,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"PhysicalUnit", r"de": r"Einheit"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specifies the physical unit of the static parameter."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -5798,17 +5907,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 physicalUnit: Union[str, PhysicalUnit],
                 description_: Optional[Union[str, Description]] = None,
                 id_short: Optional[str] = r"StaticParameters",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"en": r"Static Parameters", r"de": r"Statische Parameter"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"List of static parameters such as trigger limits."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -5825,6 +5926,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Static Parameters",
+                            r"de": r"Statische Parameter",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"List of static parameters such as trigger limits."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -5942,17 +6058,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"SignalName",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Signal Name", r"de": r"Signalname"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Name of the generated signal."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -5969,6 +6077,16 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Signal Name", r"de": r"Signalname"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Name of the generated signal."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6043,19 +6161,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Description",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides a concise explanation of the generated signal."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6072,6 +6180,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Provides a concise explanation of the generated signal."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6146,19 +6266,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"ValueRange",
                     value_type: aas.DataTypeDefXsd = float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Value Range", r"de": r"Wertebereich"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specifies the possible range of values for the generated signal."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6175,6 +6285,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Value Range", r"de": r"Wertebereich"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specifies the possible range of values for the generated signal."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6257,17 +6379,9 @@ class PAMSpecificationSheet(aas.Submodel):
                         ),
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"PhysicalUnit", r"de": r"Einheit"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Physical unit of the generated signal."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6284,6 +6398,16 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"PhysicalUnit", r"de": r"Einheit"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Physical unit of the generated signal."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6358,22 +6482,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"RecordingRequired",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Recording Required",
-                            r"de": r"Aufzeichnung im PAM-System",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Determines whether the signal is transmitted to the PAM system for long-term archiving."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6390,6 +6501,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Recording Required",
+                                r"de": r"Aufzeichnung im PAM-System",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Determines whether the signal is transmitted to the PAM system for long-term archiving."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6524,19 +6650,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"SignalType",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Signal Type", r"de": r"Signalart"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Indicates whether the generated signal from the method is a floating point, integer or binary value."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6553,6 +6669,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Signal Type", r"de": r"Signalart"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Indicates whether the generated signal from the method is a floating point, integer or binary value."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6688,20 +6816,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 valueRange: Optional[Union[float, ValueRange]] = None,
                 physicalUnit: Optional[Union[str, PhysicalUnit]] = None,
                 id_short: Optional[str] = r"GeneratedSignals",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Generated Signals",
-                        r"de": r"Generiertes Signal aus Methode",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"List of generated signals."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -6718,6 +6835,19 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Generated Signals",
+                            r"de": r"Generiertes Signal aus Methode",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"List of generated signals."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -6849,17 +6979,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Name",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Name", r"de": r"Eingangssignal-Name"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Name of the required input signal."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6876,6 +6998,16 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Name", r"de": r"Eingangssignal-Name"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Name of the required input signal."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -6950,19 +7082,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Description",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Description", r"de": r"Beschreibung"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Provides a concise explanation of the input signal."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -6979,6 +7101,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Description", r"de": r"Beschreibung"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Provides a concise explanation of the input signal."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7053,17 +7187,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"ValueRange",
                     value_type: aas.DataTypeDefXsd = float,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Value Range", r"de": r"Wertebereich"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Specifies the value range of the input signal."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7080,6 +7206,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Value Range", r"de": r"Wertebereich"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specifies the value range of the input signal."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7162,17 +7300,9 @@ class PAMSpecificationSheet(aas.Submodel):
                         ),
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Physical Unit", r"de": r"Einheit"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"Physical unit of the input signal."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7189,6 +7319,16 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Physical Unit", r"de": r"Einheit"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"Physical unit of the input signal."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7263,19 +7403,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Required",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Required", r"de": r"Benötigt"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Specifies whether the input signal is required for the method."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7292,6 +7422,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Required", r"de": r"Benötigt"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Specifies whether the input signal is required for the method."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7426,19 +7568,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"InputAvailable",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Input Available", r"de": r"Vorhanden"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Clarification whether this input signal for the method is already available."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7455,6 +7587,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Input Available", r"de": r"Vorhanden"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Clarification whether this input signal for the method is already available."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7589,22 +7733,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"FunctionalLocation",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Functional Location",
-                            r"de": r"Technischer Platz",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "Indicates the asset's logical position within a piping and instrumentation diagram"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7621,6 +7752,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Functional Location",
+                                r"de": r"Technischer Platz",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "Indicates the asset's logical position within a piping and instrumentation diagram"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7695,22 +7841,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"RecordingRequired",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Recording Required",
-                            r"de": r"Aufzeichnung im PAM-System",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Determines whether the values of the input signal are transmitted to the PAM system for long-term archiving."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -7727,6 +7860,21 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Recording Required",
+                                r"de": r"Aufzeichnung im PAM-System",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Determines whether the values of the input signal are transmitted to the PAM system for long-term archiving."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -7864,20 +8012,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 physicalUnit: Optional[Union[str, PhysicalUnit]] = None,
                 functionalLocation: Optional[Union[str, FunctionalLocation]] = None,
                 id_short: Optional[str] = r"RequiredInputSignals",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Required Input Signals",
-                        r"de": r"Vorhandene, benötigte Sensoren, Geräte",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"List of necessary input signals of the method."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -7894,6 +8031,19 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Required Input Signals",
+                            r"de": r"Vorhandene, benötigte Sensoren, Geräte",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"List of necessary input signals of the method."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -8035,19 +8185,9 @@ class PAMSpecificationSheet(aas.Submodel):
             staticParameters: Optional[Iterable[StaticParameters]] = None,
             requiredInputSignals: Optional[Iterable[RequiredInputSignals]] = None,
             id_short: Optional[str] = r"ApplicableMethod",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={r"en": r"Applicable Method", r"de": r"Anwendbare Methode"}
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Characteristics of the method used for state or fault detection."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -8064,6 +8204,18 @@ class PAMSpecificationSheet(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Applicable Method", r"de": r"Anwendbare Methode"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Characteristics of the method used for state or fault detection."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -8170,19 +8322,9 @@ class PAMSpecificationSheet(aas.Submodel):
                         ),
                         referred_semantic_id=None,
                     ),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Date", r"de": r"Datum"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Date of revision of the PAM specification sheet."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8199,6 +8341,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Date", r"de": r"Datum"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Date of revision of the PAM specification sheet."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8273,19 +8427,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Author",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Author", r"de": r"Verfasser"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": "The individual responsible for the document's revision."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8302,6 +8446,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Author", r"de": r"Verfasser"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": "The individual responsible for the document's revision."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8376,17 +8532,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Checked",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Checked", r"de": r"Geprüft"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": r"The person who has checked the document."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8403,6 +8551,16 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Checked", r"de": r"Geprüft"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": r"The person who has checked the document."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8477,19 +8635,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Released",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Released", r"de": r"Genehmigt"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The individual who has authorized the document for release."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8506,6 +8654,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Released", r"de": r"Genehmigt"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The individual who has authorized the document for release."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8580,20 +8740,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"DocumentVersion",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"en": r"Document Version",
-                            r"de": r"Dokumentenidentifikation",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={r"en": "Identifier for the document's version."}
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8610,6 +8759,19 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"en": r"Document Version",
+                                r"de": r"Dokumentenidentifikation",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={r"en": "Identifier for the document's version."}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8684,19 +8846,9 @@ class PAMSpecificationSheet(aas.Submodel):
                     id_short: Optional[str] = r"Company",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"en": r"Company", r"de": r"Firma"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The name of the company associated with the confirmation of the document."
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -8713,6 +8865,18 @@ class PAMSpecificationSheet(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"en": r"Company", r"de": r"Firma"}
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The name of the company associated with the confirmation of the document."
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -8788,22 +8952,9 @@ class PAMSpecificationSheet(aas.Submodel):
                 documentVersion: Optional[Union[str, DocumentVersion]] = None,
                 company: Optional[Union[str, Company]] = None,
                 id_short: Optional[str] = r"DocumentConfirmation",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"en": r"Document Confirmation",
-                        r"de": r"Dokument Bestätigung",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Information regarding the confirmation to the current status of the PAM specification sheet."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -8820,6 +8971,21 @@ class PAMSpecificationSheet(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"en": r"Document Confirmation",
+                            r"de": r"Dokument Bestätigung",
+                        }
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Information regarding the confirmation to the current status of the PAM specification sheet."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -8937,22 +9103,9 @@ class PAMSpecificationSheet(aas.Submodel):
             self,
             documentConfirmation: Iterable[DocumentConfirmation],
             id_short: Optional[str] = r"DocumentFooter",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"en": r"Document Footer",
-                    r"de": r"Dokumentenfuß Anwender und Anbieter",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Release information related to the complete PAM specification sheet."
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -8969,6 +9122,21 @@ class PAMSpecificationSheet(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"en": r"Document Footer",
+                        r"de": r"Dokumentenfuß Anwender und Anbieter",
+                    }
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Release information related to the complete PAM specification sheet."
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -9057,25 +9225,10 @@ class PAMSpecificationSheet(aas.Submodel):
         completeSystem: Optional[CompleteSystem] = None,
         subSystem: Optional[Iterable[SubSystem]] = None,
         id_short: Optional[str] = r"PAMSpecificationSheet",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"PAM Specification Sheet", r"de": r"PAM Spezificationsblatt"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = r"VARIABLE",
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"PAM Specification Sheet according to VDI/VDE GMA RL 2651-2 and specification of Plant Asset Management functions ",
-                r"de": r"Beschreibung und Spezifikation PAM Funktionen nach VDI GMA",
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02019-1-0",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#01-AGC973#003"),),
             type_=aas.Submodel,
@@ -9087,6 +9240,31 @@ class PAMSpecificationSheet(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={
+                    r"en": r"PAM Specification Sheet",
+                    r"de": r"PAM Spezificationsblatt",
+                }
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"PAM Specification Sheet according to VDI/VDE GMA RL 2651-2 and specification of Plant Asset Management functions ",
+                    r"de": r"Beschreibung und Spezifikation PAM Funktionen nach VDI GMA",
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02019-1-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = (

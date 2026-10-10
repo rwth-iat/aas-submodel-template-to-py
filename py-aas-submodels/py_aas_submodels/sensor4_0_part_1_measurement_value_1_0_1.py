@@ -15,15 +15,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Value",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Value"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"VARIABLE",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"The value of the of measured sensor output"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -40,6 +34,14 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Value"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"The value of the of measured sensor output"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -88,15 +90,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Unit",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Unit"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"The unit of the measured value"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -113,6 +109,14 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Unit"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"The unit of the measured value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -161,13 +165,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Kind",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Kind"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(dict_={r"en": r"Kind of measured value"}),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -194,6 +194,14 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Kind"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"Kind of measured value"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -240,15 +248,9 @@ class MeasurementValue(aas.Submodel):
             unit: Union[str, Unit],
             kind: Union[str, Kind],
             id_short: Optional[str] = r"MeasuredValue",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"This is the measured value of the sensor output"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -265,6 +267,16 @@ class MeasurementValue(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Measured Value"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"This is the measured value of the sensor output"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -336,15 +348,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Distance",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Distance"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"The measured length between two points."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -361,6 +367,14 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Distance"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"The measured length between two points."}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -405,15 +419,9 @@ class MeasurementValue(aas.Submodel):
             self,
             distance: Union[xsd.Float, Distance],
             id_short: Optional[str] = r"MeasuredValuePreDefined",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Measured Value Pre Defined"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"The predefined measured value of the sensor"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -430,6 +438,16 @@ class MeasurementValue(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Measured Value Pre Defined"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"The predefined measured value of the sensor"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -489,15 +507,9 @@ class MeasurementValue(aas.Submodel):
             id_short: Optional[str] = r"MeasurementTimestamp",
             value_type: aas.DataTypeDefXsd = xsd.DateTime,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Measurement Timestamp"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"VARIABLE",
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"Date and time when the measurement was taken."}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -524,6 +536,16 @@ class MeasurementValue(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Measurement Timestamp"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"Date and time when the measurement was taken."}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -574,15 +596,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Origin",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Origin"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"The origin of the semantic description"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -599,6 +615,14 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Origin"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"The origin of the semantic description"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -639,15 +663,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Version",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Version"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"The version of the semantic defintion used"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -664,6 +682,14 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Version"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"The version of the semantic defintion used"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -704,15 +730,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Identifier",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Identifier"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"The identifier of the semantic definition used"}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -729,6 +749,16 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"en": r"Identifier"}
+                    )
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={r"en": r"The identifier of the semantic definition used"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -767,17 +797,9 @@ class MeasurementValue(aas.Submodel):
             version: Optional[Union[str, Version]] = None,
             identifier: Optional[Union[str, Identifier]] = None,
             id_short: Optional[str] = r"Concept",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Concept"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"This collection defines which semantic definition is used for measuredvalue"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -794,6 +816,16 @@ class MeasurementValue(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(dict_={r"en": r"Concept"})
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"This collection defines which semantic definition is used for measuredvalue"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -867,17 +899,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Quality",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Quality"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"VARIABLE",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Quality of the measured value (e.g., Good, Bad, Uncertain and others like out of range)."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -894,6 +918,16 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Quality"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Quality of the measured value (e.g., Good, Bad, Uncertain and others like out of range)."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -959,15 +993,9 @@ class MeasurementValue(aas.Submodel):
                 max: xsd.Float,
                 id_short: Optional[str] = r"Range",
                 value_type: aas.DataTypeDefXsd = xsd.Float,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Range"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={r"en": r"Allowed minimum and maximum measurement limits."}
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -984,6 +1012,16 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Range"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Allowed minimum and maximum measurement limits."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1032,17 +1070,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Scale",
                 value_type: aas.DataTypeDefXsd = int,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Scale"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Factor used to convert or adjust the measured value."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1059,6 +1089,16 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Scale"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Factor used to convert or adjust the measured value."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1107,17 +1147,9 @@ class MeasurementValue(aas.Submodel):
                 id_short: Optional[str] = r"Tag",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(dict_={r"en": r"Tag"}),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Identifier linking the measurement to its source or device."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1134,6 +1166,16 @@ class MeasurementValue(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(dict_={r"en": r"Tag"})
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Identifier linking the measurement to its source or device."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1181,15 +1223,9 @@ class MeasurementValue(aas.Submodel):
             scale: Optional[Union[int, Scale]] = None,
             tag: Optional[Union[str, Tag]] = None,
             id_short: Optional[str] = r"MeasurementQualifier",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(dict_={r"en": r"Measurement Qualifier"}),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={r"en": r"The Qualifier of the measurement"}
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1206,6 +1242,16 @@ class MeasurementValue(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={r"en": r"Measurement Qualifier"}
+                )
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={r"en": r"The Qualifier of the measurement"}
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1281,13 +1327,9 @@ class MeasurementValue(aas.Submodel):
         measuredValuePreDefined: Optional[MeasuredValuePreDefined] = None,
         concept: Optional[Concept] = None,
         id_short: Optional[str] = r"MeasurementValue",
-        display_name: Optional[aas.MultiLanguageNameType] = aas.MultiLanguageNameType(
-            dict_={r"en": r"Measurement Value"}
-        ),
+        display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={r"en": r"The Submodel Template for Measurement Value"}
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
@@ -1304,6 +1346,16 @@ class MeasurementValue(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if display_name is None:
+            display_name = aas.MultiLanguageNameType(
+                dict_={r"en": r"Measurement Value"}
+            )
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={r"en": r"The Submodel Template for Measurement Value"}
+            )
 
         if qualifier is None:
             qualifier = ()

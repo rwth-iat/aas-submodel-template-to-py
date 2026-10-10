@@ -239,13 +239,7 @@ class Nameplate(aas.Submodel):
             id_short: Optional[str] = r"AddressInformation",
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r'Note: this set of information is defined by SMT drop-in "Address Information"'
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -290,6 +284,13 @@ class Nameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r'Note: this set of information is defined by SMT drop-in "Address Information"'
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1205,13 +1206,7 @@ class Nameplate(aas.Submodel):
             value_id: Optional[aas.Reference] = None,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Note: Country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -1238,6 +1233,13 @@ class Nameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Note: Country codes defined accord. to DIN EN ISO 3166-1 alpha-2 codes"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1511,13 +1513,7 @@ class Nameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: Approval identifier, reference to the certificate number, to be entered without spaces "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1544,6 +1540,13 @@ class Nameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: Approval identifier, reference to the certificate number, to be entered without spaces "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1594,13 +1597,7 @@ class Nameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1627,6 +1624,13 @@ class Nameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1677,13 +1681,7 @@ class Nameplate(aas.Submodel):
                     value_id: Optional[aas.Reference] = None,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1710,6 +1708,13 @@ class Nameplate(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Note: format by lexical representation: CCYY-MM-DD Note: to be specified to the day "
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1917,13 +1922,7 @@ class Nameplate(aas.Submodel):
                 id_short: Optional[str] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: CE marking is declared as mandatory according to the Blue Guide of the EU-Commission"
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -1950,6 +1949,13 @@ class Nameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: CE marking is declared as mandatory according to the Blue Guide of the EU-Commission"
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2070,13 +2076,7 @@ class Nameplate(aas.Submodel):
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
-            description: Optional[
-                aas.MultiLanguageTextType
-            ] = aas.MultiLanguageTextType(
-                dict_={
-                    r"en": r"Note: CE marking is declared as mandatory according to EU Blue Guide"
-                }
-            ),
+            description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                 key=(
                     aas.Key(
@@ -2103,6 +2103,13 @@ class Nameplate(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if description is None:
+                description = aas.MultiLanguageTextType(
+                    dict_={
+                        r"en": r"Note: CE marking is declared as mandatory according to EU Blue Guide"
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -2240,13 +2247,7 @@ class Nameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: Every property can be used. Note: The idShort is arbitrary Note: The use of a displayName is recommended."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2263,6 +2264,13 @@ class Nameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: Every property can be used. Note: The idShort is arbitrary Note: The use of a displayName is recommended."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2312,13 +2320,7 @@ class Nameplate(aas.Submodel):
                 value_id: Optional[aas.Reference] = None,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary Note: The use of a displayName is recommended."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2335,6 +2337,13 @@ class Nameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary Note: The use of a displayName is recommended."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2383,13 +2392,7 @@ class Nameplate(aas.Submodel):
                 content_type: Optional[str] = r"application/pdf",
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
-                description: Optional[
-                    aas.MultiLanguageTextType
-                ] = aas.MultiLanguageTextType(
-                    dict_={
-                        r"en": r"Note: Every file can be used. The idShort is arbitrary Note: The use of a displayName is recommended."
-                    }
-                ),
+                description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                     key=(
                         aas.Key(
@@ -2406,6 +2409,13 @@ class Nameplate(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if description is None:
+                    description = aas.MultiLanguageTextType(
+                        dict_={
+                            r"en": r"Note: Every file can be used. The idShort is arbitrary Note: The use of a displayName is recommended."
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -2526,13 +2536,7 @@ class Nameplate(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every property can be used. Note: The idShort is arbitrary Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2549,6 +2553,13 @@ class Nameplate(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every property can be used. Note: The idShort is arbitrary Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2598,13 +2609,7 @@ class Nameplate(aas.Submodel):
                         content_type: Optional[str] = r"image/png",
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every file can be used. The idShort is arbitrary Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2621,6 +2626,13 @@ class Nameplate(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every file can be used. The idShort is arbitrary Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -2669,13 +2681,7 @@ class Nameplate(aas.Submodel):
                         value_id: Optional[aas.Reference] = None,
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
-                        description: Optional[
-                            aas.MultiLanguageTextType
-                        ] = aas.MultiLanguageTextType(
-                            dict_={
-                                r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary Note: The use of a displayName is recommended."
-                            }
-                        ),
+                        description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                             key=(
                                 aas.Key(
@@ -2692,6 +2698,13 @@ class Nameplate(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if description is None:
+                            description = aas.MultiLanguageTextType(
+                                dict_={
+                                    r"en": r"Note: Every multilanguage property can be used. Note: The idShort is arbitrary Note: The use of a displayName is recommended."
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -3208,18 +3221,8 @@ class Nameplate(aas.Submodel):
         id_short: Optional[str] = r"Nameplate",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={r"en": r"Contains the nameplate information attached to the product"}
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"3",
-            revision=r"0",
-            creator=None,
-            template_id=r"https://admin-shell.io/idta-02006-3-0",
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
             key=(
                 aas.Key(
@@ -3235,6 +3238,22 @@ class Nameplate(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Contains the nameplate information attached to the product"
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"3",
+                revision=r"0",
+                creator=None,
+                template_id=r"https://admin-shell.io/idta-02006-3-0",
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()

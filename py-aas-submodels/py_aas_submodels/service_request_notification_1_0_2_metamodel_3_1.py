@@ -13,14 +13,7 @@ class ServiceRequestNotification(aas.Submodel):
             id_short: Optional[str] = r"NumberOfServiceRequestNotifications",
             value_type: aas.DataTypeDefXsd = int,
             value_id: Optional[aas.Reference] = None,
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"de": r"Anzahl Servicebedarfsmeldungen",
-                    r"en": r"Number Service Request Notification  ",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -39,6 +32,14 @@ class ServiceRequestNotification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"de": r"Anzahl Servicebedarfsmeldungen",
+                        r"en": r"Number Service Request Notification  ",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -83,11 +84,7 @@ class ServiceRequestNotification(aas.Submodel):
                     id_short: Optional[str] = r"CustomerNumber",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Kundennummer", r"en": r"Customer number"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -106,6 +103,11 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Kundennummer", r"en": r"Customer number"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -149,11 +151,7 @@ class ServiceRequestNotification(aas.Submodel):
                     statement: Iterable[aas.SubmodelElement] = (),
                     global_asset_id: Optional[str] = None,
                     specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Sendendes System", r"en": r"Sender system"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -172,6 +170,11 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Sendendes System", r"en": r"Sender system"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -213,14 +216,7 @@ class ServiceRequestNotification(aas.Submodel):
                     id_short: Optional[str] = r"NumberOfContacs",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Anzahl der Kontakte",
-                            r"en": r"Number of contacts",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -239,6 +235,14 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Anzahl der Kontakte",
+                                r"en": r"Number of contacts",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -276,22 +280,9 @@ class ServiceRequestNotification(aas.Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"ContactInformation",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Kontaktinformationen",
-                            r"en": r"Contact information",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The SMC “ContactInformation” contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -308,6 +299,21 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Kontaktinformationen",
+                                r"en": r"Contact information",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The SMC “ContactInformation” contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -361,11 +367,7 @@ class ServiceRequestNotification(aas.Submodel):
                 senderSystem: Optional[SenderSystem] = None,
                 numberOfContacs: Optional[Union[str, NumberOfContacs]] = None,
                 id_short: Optional[str] = r"ReportedBy",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Gemeldet von", r"en": r"Reported by"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -384,6 +386,11 @@ class ServiceRequestNotification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Gemeldet von", r"en": r"Reported by"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -463,14 +470,7 @@ class ServiceRequestNotification(aas.Submodel):
                 id_short: Optional[str] = r"ServiceRequestNotificationId",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"ID der Bedarfsmeldung",
-                        r"en": r"ID of Service Request Notification",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -489,6 +489,14 @@ class ServiceRequestNotification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"ID der Bedarfsmeldung",
+                            r"en": r"ID of Service Request Notification",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -588,14 +596,7 @@ class ServiceRequestNotification(aas.Submodel):
                 id_short: Optional[str] = r"Priority",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Priorität der Meldung",
-                        r"en": r"Priority of notification",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -614,6 +615,14 @@ class ServiceRequestNotification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Priorität der Meldung",
+                            r"en": r"Priority of notification",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -666,11 +675,7 @@ class ServiceRequestNotification(aas.Submodel):
                 statement: Iterable[aas.SubmodelElement] = (),
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Betroffenes Asset", r"en": r"Related Asset"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -689,6 +694,11 @@ class ServiceRequestNotification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={r"de": r"Betroffenes Asset", r"en": r"Related Asset"}
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -729,14 +739,7 @@ class ServiceRequestNotification(aas.Submodel):
                 value: aas.LangStringSet,
                 id_short: Optional[str] = r"ShortText",
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Kurztext zur Servicebedarfsmeldung",
-                        r"en": r"Short text of Service Request",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -755,6 +758,14 @@ class ServiceRequestNotification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Kurztext zur Servicebedarfsmeldung",
+                            r"en": r"Short text of Service Request",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -794,14 +805,7 @@ class ServiceRequestNotification(aas.Submodel):
                 id_short: Optional[str] = r"ServiceType",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Typ des notwendigen Service",
-                        r"en": r"Type of requested service",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -820,6 +824,14 @@ class ServiceRequestNotification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Typ des notwendigen Service",
+                            r"en": r"Type of requested service",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -861,14 +873,7 @@ class ServiceRequestNotification(aas.Submodel):
                     value: aas.LangStringSet,
                     id_short: Optional[str] = r"LongText",
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Langtext zur Servicebedarfsmeldung",
-                            r"en": r"Long text of Service Request ",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -887,6 +892,14 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Langtext zur Servicebedarfsmeldung",
+                                r"en": r"Long text of Service Request ",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -926,11 +939,7 @@ class ServiceRequestNotification(aas.Submodel):
                     id_short: Optional[str] = r"StartOfFault",
                     value_type: aas.DataTypeDefXsd = xsd.DateTime,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Beginn der Störung", r"en": r"Start of fault"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -949,6 +958,14 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Beginn der Störung",
+                                r"en": r"Start of fault",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -989,11 +1006,7 @@ class ServiceRequestNotification(aas.Submodel):
                     id_short: Optional[str] = r"ErrorCode",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Fehlercode", r"en": r"Error code"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1012,6 +1025,11 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Fehlercode", r"en": r"Error code"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1054,14 +1072,7 @@ class ServiceRequestNotification(aas.Submodel):
                         id_short: Optional[str] = r"NumberOfMedias",
                         value_type: aas.DataTypeDefXsd = int,
                         value_id: Optional[aas.Reference] = None,
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={
-                                r"de": r"Anzahl der Anhänge",
-                                r"en": r"Number of Media",
-                            }
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1080,6 +1091,14 @@ class ServiceRequestNotification(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={
+                                    r"de": r"Anzahl der Anhänge",
+                                    r"en": r"Number of Media",
+                                }
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1121,11 +1140,7 @@ class ServiceRequestNotification(aas.Submodel):
                             value: str,
                             id_short: Optional[str] = r"DigitalFile",
                             content_type: Optional[str] = r"image/jpeg",
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={r"de": r"Digitale Datei", r"en": r"Digital File"}
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1146,6 +1161,14 @@ class ServiceRequestNotification(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"de": r"Digitale Datei",
+                                        r"en": r"Digital File",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1184,14 +1207,7 @@ class ServiceRequestNotification(aas.Submodel):
                             value: aas.LangStringSet,
                             id_short: Optional[str] = r"Comment",
                             value_id: Optional[aas.Reference] = None,
-                            display_name: Optional[
-                                aas.MultiLanguageNameType
-                            ] = aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Anmerkdung zur Datei",
-                                    r"en": r"Comment to File",
-                                }
-                            ),
+                            display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
                             semantic_id: Optional[
@@ -1212,6 +1228,14 @@ class ServiceRequestNotification(aas.Submodel):
                                 aas.EmbeddedDataSpecification
                             ] = None,
                         ):
+
+                            if display_name is None:
+                                display_name = aas.MultiLanguageNameType(
+                                    dict_={
+                                        r"de": r"Anmerkdung zur Datei",
+                                        r"en": r"Comment to File",
+                                    }
+                                )
 
                             if qualifier is None:
                                 qualifier = (
@@ -1248,11 +1272,7 @@ class ServiceRequestNotification(aas.Submodel):
                         digitalFile: DigitalFile,
                         comment: Optional[Union[aas.LangStringSet, Comment]] = None,
                         id_short: Optional[str] = r"Media",
-                        display_name: Optional[
-                            aas.MultiLanguageNameType
-                        ] = aas.MultiLanguageNameType(
-                            dict_={r"de": r"Anhang", r"en": r"Media"}
-                        ),
+                        display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
                         semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1271,6 +1291,11 @@ class ServiceRequestNotification(aas.Submodel):
                             aas.EmbeddedDataSpecification
                         ] = None,
                     ):
+
+                        if display_name is None:
+                            display_name = aas.MultiLanguageNameType(
+                                dict_={r"de": r"Anhang", r"en": r"Media"}
+                            )
 
                         if qualifier is None:
                             qualifier = (
@@ -1329,11 +1354,7 @@ class ServiceRequestNotification(aas.Submodel):
                     media: Iterable[Media],
                     numberOfMedias: Optional[Union[int, NumberOfMedias]] = None,
                     id_short: Optional[str] = r"AttachedMedia",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Angehängte Dateien", r"en": r"Attached media"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1352,6 +1373,14 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Angehängte Dateien",
+                                r"en": r"Attached media",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1416,14 +1445,7 @@ class ServiceRequestNotification(aas.Submodel):
                 errorCode: Optional[Union[str, ErrorCode]] = None,
                 attachedMedia: Optional[AttachedMedia] = None,
                 id_short: Optional[str] = r"DetailedInformation",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={
-                        r"de": r"Detailinformationen zum Servicebedarf",
-                        r"en": r"Detailed information of service need",
-                    }
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1442,6 +1464,14 @@ class ServiceRequestNotification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Detailinformationen zum Servicebedarf",
+                            r"en": r"Detailed information of service need",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1519,11 +1549,7 @@ class ServiceRequestNotification(aas.Submodel):
                     id_short: Optional[str] = r"PartnerNumber",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={r"de": r"Partnernummer", r"en": r"Partner number"}
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1542,6 +1568,11 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Partnernummer", r"en": r"Partner number"}
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1582,14 +1613,7 @@ class ServiceRequestNotification(aas.Submodel):
                     id_short: Optional[str] = r"NumberOfContacts",
                     value_type: aas.DataTypeDefXsd = int,
                     value_id: Optional[aas.Reference] = None,
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Anzahl der Kontakte",
-                            r"en": r"Number of contacts ",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1608,6 +1632,14 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Anzahl der Kontakte",
+                                r"en": r"Number of contacts ",
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1645,22 +1677,9 @@ class ServiceRequestNotification(aas.Submodel):
                 def __init__(
                     self,
                     id_short: Optional[str] = r"ContactInformation",
-                    display_name: Optional[
-                        aas.MultiLanguageNameType
-                    ] = aas.MultiLanguageNameType(
-                        dict_={
-                            r"de": r"Kontaktinformationen",
-                            r"en": r"Contact information",
-                        }
-                    ),
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
-                    description: Optional[
-                        aas.MultiLanguageTextType
-                    ] = aas.MultiLanguageTextType(
-                        dict_={
-                            r"en": r"The SMC “ContactInformation” contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
-                        }
-                    ),
+                    description: Optional[aas.MultiLanguageTextType] = None,
                     semantic_id: Optional[aas.Reference] = aas.ExternalReference(
                         key=(
                             aas.Key(
@@ -1677,6 +1696,21 @@ class ServiceRequestNotification(aas.Submodel):
                         aas.EmbeddedDataSpecification
                     ] = None,
                 ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Kontaktinformationen",
+                                r"en": r"Contact information",
+                            }
+                        )
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"The SMC “ContactInformation” contains information on how to contact the manufacturer or an authorised service provider, e.g. when a maintenance service is required"
+                            }
+                        )
 
                     if qualifier is None:
                         qualifier = (
@@ -1729,11 +1763,7 @@ class ServiceRequestNotification(aas.Submodel):
                 partnerNumber: Optional[Union[str, PartnerNumber]] = None,
                 numberOfContacts: Optional[Union[int, NumberOfContacts]] = None,
                 id_short: Optional[str] = r"OnsiteContact",
-                display_name: Optional[
-                    aas.MultiLanguageNameType
-                ] = aas.MultiLanguageNameType(
-                    dict_={r"de": r"Ansprechpartner vor Ort", r"en": r"Onsite contact"}
-                ),
+                display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
                 semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1752,6 +1782,14 @@ class ServiceRequestNotification(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
+
+                if display_name is None:
+                    display_name = aas.MultiLanguageNameType(
+                        dict_={
+                            r"de": r"Ansprechpartner vor Ort",
+                            r"en": r"Onsite contact",
+                        }
+                    )
 
                 if qualifier is None:
                     qualifier = (
@@ -1832,14 +1870,7 @@ class ServiceRequestNotification(aas.Submodel):
             detailedInformation: Optional[DetailedInformation] = None,
             onsiteContact: Optional[OnsiteContact] = None,
             id_short: Optional[str] = r"ServiceRequestNotification",
-            display_name: Optional[
-                aas.MultiLanguageNameType
-            ] = aas.MultiLanguageNameType(
-                dict_={
-                    r"de": r"Servicebedarfsmeldung",
-                    r"en": r"Service request notification",
-                }
-            ),
+            display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
             semantic_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1858,6 +1889,14 @@ class ServiceRequestNotification(aas.Submodel):
                 aas.EmbeddedDataSpecification
             ] = None,
         ):
+
+            if display_name is None:
+                display_name = aas.MultiLanguageNameType(
+                    dict_={
+                        r"de": r"Servicebedarfsmeldung",
+                        r"en": r"Service request notification",
+                    }
+                )
 
             if qualifier is None:
                 qualifier = (
@@ -1957,20 +1996,8 @@ class ServiceRequestNotification(aas.Submodel):
         id_short: Optional[str] = r"ServiceRequestNotification",
         display_name: Optional[aas.MultiLanguageNameType] = None,
         category: Optional[str] = None,
-        description: Optional[aas.MultiLanguageTextType] = aas.MultiLanguageTextType(
-            dict_={
-                r"en": r"This submodel aims to standardize the description of a service request notification that can be used to create a service request notification for industrial assets or the asset creates it by itself."
-            }
-        ),
-        administration: Optional[
-            aas.AdministrativeInformation
-        ] = aas.AdministrativeInformation(
-            version=r"1",
-            revision=r"0",
-            creator=None,
-            template_id=None,
-            embedded_data_specifications=[],
-        ),
+        description: Optional[aas.MultiLanguageTextType] = None,
+        administration: Optional[aas.AdministrativeInformation] = None,
         semantic_id: Optional[aas.Reference] = aas.ModelReference(
             key=(aas.Key(type_=aas.KeyTypes.SUBMODEL, value=r"0173-1#01-AHX443#001"),),
             type_=aas.Submodel,
@@ -1982,6 +2009,22 @@ class ServiceRequestNotification(aas.Submodel):
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"This submodel aims to standardize the description of a service request notification that can be used to create a service request notification for industrial assets or the asset creates it by itself."
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"1",
+                revision=r"0",
+                creator=None,
+                template_id=None,
+                embedded_data_specifications=[],
+            )
 
         if qualifier is None:
             qualifier = ()
