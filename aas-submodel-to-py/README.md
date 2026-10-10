@@ -14,73 +14,93 @@ all the required submodel element-specific classes. Input files can be `.aasx`,
 
 ### Example of generated classes
 
-Here's a snippet of a generated Submodel class from
-the [DigitalNameplate](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Digital%20nameplate/2/0)
-Submodel Template:
+Here's a snippet of the classes generated from the
+[Digital Nameplate 3.0.1](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Digital%20nameplate/3/0/1)
+submodel template (`...` marks omitted lines). Each submodel element gets a class nested in the class of
+its submodel or collection, with the semantic ID, qualifiers and descriptions of the template as defaults:
 
 ```python
-class Nameplate(Submodel):
-    class ManufacturerName(MultiLanguageProperty):
+from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
+from basyx.aas import model as aas
+from basyx.aas.model import datatypes as xsd
+
+
+class Nameplate(aas.Submodel):
+
+    class URIOfTheProduct(aas.Property):
+        ...
+
+    class ManufacturerName(aas.MultiLanguageProperty):
+
         def __init__(
-                self,
-                value: LangStringSet,
-                id_short: str = "ManufacturerName",
-                value_id: Optional[Reference] = None,
-                category: Optional[str] = None,
-                description: Optional[LangStringSet] = None,
-                semantic_id: Optional[Reference] = Reference(
-                    key=(Key(type_=KeyElements.CONCEPT_DESCRIPTION,
-                             local=True,
-                             value="0173-1#02-AAO677#002",
-                             id_type=KeyType.IRDI, ),)),
-                qualifier: Optional[Set[Constraint]] = None,
-                kind: ModelingKind = ModelingKind.INSTANCE,
+            self,
+            value: aas.LangStringSet,
+            id_short: Optional[str] = r"ManufacturerName",
+            ...
+            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                key=(
+                    aas.Key(
+                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                        value=r"0112/2///61987#ABA565#009",
+                    ),
+                ),
+                referred_semantic_id=None,
+            ),
+            qualifier: Iterable[aas.Qualifier] = None,
+            ...
         ):
-            if description is None:
-                description = {
-                    "en": "Note: see also [IRDI] 0112/2///61987#ABA565#007 manufacturer Note: mandatory property according to EU Machine Directive 2006/42/EC. "}
 
             if qualifier is None:
-                qualifier = {
-                    Qualifier(type_="Multiplicity", value_type=str,
-                              value="One", value_id=None, semantic_id=None, )
-                }
-
-            super().__init__(
-                value=value,
-                id_short=id_short,
-                value_id=value_id,
-                category=category,
-                description=description,
-                semantic_id=semantic_id,
-                qualifier=qualifier,
-                kind=kind,
-            )
+                qualifier = (
+                    aas.Qualifier(
+                        type_=r"SMT/Cardinality",
+                        value_type=str,
+                        value=r"One",
+                        ...
+                    ),
+                )
+            ...
 
     ...
+
+    def __init__(
+        self,
+        id_: str,
+        uRIOfTheProduct: Union[xsd.AnyURI, URIOfTheProduct],
+        manufacturerName: Union[aas.LangStringSet, ManufacturerName],
+        ...
+        yearOfConstruction: Optional[Union[str, YearOfConstruction]] = None,
+        ...
+        markings: Optional[Union[Iterable[Markings.Markings_item], Markings]] = None,
+        ...
+    ):
+        ...
 ```
 
 ### Usage Example of the generated class
 
-Here's an example of instantiating the **DigitalNameplate** Submodel:
+Here's an example of instantiating the generated `Nameplate` submodel. The classes generated from
+Digital Nameplate 3.0.1 are part of [py-aas-submodels](../py-aas-submodels/README.md):
 
 ```python
+from basyx.aas.model import MultiLanguageTextType
+from py_aas_submodels.digital_nameplate_3_0_1 import Nameplate
+
 nameplate = Nameplate(
-    identification=Identifier(id_="www.example.com/ids/sm/1234", id_type=IdentifierType.IRI),
-    uRIOfTheProduct="https://www.domain-abc.com/Model-Nr-1234/Serial-Nr-5678",
-    manufacturerName={'de': 'Muster AG'},
-    manufacturerProductDesignation={'en': 'ABC-123'},
+    id_="https://example.com/ids/sm/nameplate-001",
+    uRIOfTheProduct="https://www.domain-abc.com/Model-Nr-1234",
+    manufacturerName=MultiLanguageTextType({"de": "Muster AG"}),
+    manufacturerProductDesignation=MultiLanguageTextType({"en": "ABC-123"}),
+    addressInformation=Nameplate.AddressInformation(),
+    orderCodeOfManufacturer="ABC-123-XYZ",
     yearOfConstruction="2022",
-    contactInformation=Nameplate.ContactInformation(
-        nationalCode={'en': 'DE'},
-        cityTown={'de': 'Musterstadt'},
-        street={'de': 'Musterstrasse 1'},
-        zipcode={'de': '12345'})
+    serialNumber=Nameplate.SerialNumber("12345678"),
 )
 ```
 
 All required submodel elements are positional arguments; optional elements default to `None`.
-Instead of submodel elements, raw values can be passed, e.g. `yearOfConstruction="2022"`.
+Instead of submodel elements (e.g. `Nameplate.SerialNumber("12345678")`), raw values can be passed
+(e.g. `yearOfConstruction="2022"`); multi-language values are passed as `MultiLanguageTextType`.
 Lists (`SubmodelElementList`) take an iterable of their items or raw values, e.g. `phases=["A1", "B2"]`.
 List items have no idShort by default, as it is optional since AAS metamodel 3.1.
 The output is auto-formatted with Black.
