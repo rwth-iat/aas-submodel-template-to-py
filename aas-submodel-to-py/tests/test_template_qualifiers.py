@@ -75,7 +75,8 @@ def types(element) -> list:
 
 
 def test_template_only_qualifiers_of_elements_are_not_taken_over(generated_module):
-    assert types(generated_module.QualifierTest.Name("x")) == ["unit", "Constraint", "Note"]
+    # "a" is an allowed value (FormChoices, SMT/AllowedValue, #44)
+    assert types(generated_module.QualifierTest.Name("a")) == ["unit", "Constraint", "Note"]
 
 
 def test_template_only_qualifiers_of_submodels_are_not_taken_over(generated_module):

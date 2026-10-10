@@ -20,6 +20,22 @@ def sample_value(value_type: type):
     raise ValueError(f"No sample value for {value_type}")
 
 
+def allowed_sample(element_cls: type):
+    """A value allowed by the class attributes ALLOWED_VALUES, ALLOWED_RANGE or ALLOWED_PATTERN of a
+    generated Property class, or None if it has none"""
+    if getattr(element_cls, "ALLOWED_VALUES", None):
+        return element_cls.ALLOWED_VALUES[0]
+    if getattr(element_cls, "ALLOWED_RANGE", None):
+        return element_cls.ALLOWED_RANGE[0]
+    pattern = getattr(element_cls, "ALLOWED_PATTERN", None)
+    if pattern:
+        value_type = inspect.signature(element_cls.__init__).parameters["value_type"].default
+        for candidate in (*SAMPLE_LEXICALS, pattern):
+            if re.fullmatch(pattern, candidate):
+                return datatypes.from_xsd(candidate, value_type)
+    return None
+
+
 def build_instance(cls: type, full: bool = False):
     """Instance of a generated class with sample values for all its required arguments, and if `full`,
     also for all optional arguments taking submodel elements (with one element if they take several).
@@ -30,7 +46,8 @@ def build_instance(cls: type, full: bool = False):
         if name == "self":
             continue
         if parameter.default is inspect.Parameter.empty or (full and takes_generated_class(cls, typehints[name])):
-            kwargs[name] = sample_argument(cls, name, typehints[name], full)
+            sample = allowed_sample(cls) if name == "value" else None
+            kwargs[name] = sample if sample is not None else sample_argument(cls, name, typehints[name], full)
     if issubclass(cls, model.Entity) and \
             inspect.signature(cls.__init__).parameters["entity_type"].default is model.EntityType.SELF_MANAGED_ENTITY:
         kwargs["global_asset_id"] = "https://example.com/ids/asset"  # AASd-014
@@ -58,6 +75,10 @@ def sample_argument(cls: type, name: str, typehint, full: bool = False):
     if name == "id_":
         return f"https://example.com/ids/sm/{cls.__name__}"
     elif origin is typing.Union:
+        # A raw value must be allowed by the generated class it is converted to
+        for arg in args:
+            if isinstance(arg, type) and arg.__module__ == cls.__module__ and allowed_sample(arg) is not None:
+                return allowed_sample(arg)
         # Raw values come first; lists of items without class (e.g. Iterable[aas.SubmodelElement]) can't be sampled
         for arg in args[:-1]:
             try:

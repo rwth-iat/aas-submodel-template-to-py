@@ -22,7 +22,8 @@ TYPING_IMPORTS = ("Any", "ForwardRef", "Iterable", "Optional", "Tuple", "Union")
 # Names generated code uses unqualified, which generated classes must not shadow
 RESERVED_CLS_NAMES = frozenset(TYPING_IMPORTS) | frozenset(dir(builtins)) | frozenset(keyword.kwlist)
 # Init arguments must not shadow the module aliases used in the init body
-RESERVED_ARG_NAMES = frozenset((MODEL_ALIAS, DATATYPES_ALIAS)) | frozenset(keyword.kwlist)
+# (and the module re, used for checking allowed values)
+RESERVED_ARG_NAMES = frozenset((MODEL_ALIAS, DATATYPES_ALIAS, "re")) | frozenset(keyword.kwlist)
 
 # Collections rendered as tuples in generated code (see StringHandler.reprify)
 TUPLE_TYPES = (tuple, NamespaceSet, ConstrainedList)

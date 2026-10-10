@@ -245,6 +245,8 @@ class SafetyInstrumentedSystem(aas.Submodel):
 
             class NetworkType(aas.Property):
 
+                ALLOWED_VALUES = (r"control network", r"safety network")
+
                 def __init__(
                     self,
                     value: str,
@@ -297,6 +299,11 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -313,6 +320,8 @@ class SafetyInstrumentedSystem(aas.Submodel):
                     )
 
             class TypeOfLinksHardwiredOrSoftware(aas.Property):
+
+                ALLOWED_VALUES = (r"hardwired", r"software")
 
                 def __init__(
                     self,
@@ -365,6 +374,11 @@ class SafetyInstrumentedSystem(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,

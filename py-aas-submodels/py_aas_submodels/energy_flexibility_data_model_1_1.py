@@ -4461,6 +4461,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class RegenerationDuration(aas.Property):
 
+                    ALLOWED_RANGE = (xsd.from_xsd(r"0.0", xsd.Float), None)
+
                     def __init__(
                         self,
                         value: xsd.Float,
@@ -4504,6 +4506,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and (
+                            value < self.ALLOWED_RANGE[0]
+                            or self.ALLOWED_RANGE[1] is not None
+                            and value > self.ALLOWED_RANGE[1]
+                        ):
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                            )
 
                         super().__init__(
                             value=value,
@@ -6397,6 +6408,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class EnergyLoss(aas.Property):
 
+                    ALLOWED_RANGE = (
+                        xsd.from_xsd(r"0", xsd.UnsignedShort),
+                        xsd.from_xsd(r"100", xsd.UnsignedShort),
+                    )
+
                     def __init__(
                         self,
                         value: xsd.UnsignedShort,
@@ -6440,6 +6456,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and (
+                            value < self.ALLOWED_RANGE[0]
+                            or self.ALLOWED_RANGE[1] is not None
+                            and value > self.ALLOWED_RANGE[1]
+                        ):
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                            )
 
                         super().__init__(
                             value=value,
@@ -11598,6 +11623,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class RegenerationDuration(aas.Property):
 
+                    ALLOWED_RANGE = (xsd.from_xsd(r"0.0", xsd.Float), None)
+
                     def __init__(
                         self,
                         value: xsd.Float,
@@ -11641,6 +11668,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and (
+                            value < self.ALLOWED_RANGE[0]
+                            or self.ALLOWED_RANGE[1] is not None
+                            and value > self.ALLOWED_RANGE[1]
+                        ):
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                            )
 
                         super().__init__(
                             value=value,
@@ -12534,6 +12570,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                     class VoltageLevel(aas.Property):
 
+                        ALLOWED_RANGE = (xsd.from_xsd(r"0.0", xsd.Float), None)
+
                         def __init__(
                             self,
                             value: xsd.Float,
@@ -12579,6 +12617,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            if value is not None and (
+                                value < self.ALLOWED_RANGE[0]
+                                or self.ALLOWED_RANGE[1] is not None
+                                and value > self.ALLOWED_RANGE[1]
+                            ):
+                                raise ValueError(
+                                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                                )
 
                             super().__init__(
                                 value=value,
@@ -13534,6 +13581,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class EnergyLoss(aas.Property):
 
+                    ALLOWED_RANGE = (
+                        xsd.from_xsd(r"0", xsd.UnsignedShort),
+                        xsd.from_xsd(r"100", xsd.UnsignedShort),
+                    )
+
                     def __init__(
                         self,
                         value: xsd.UnsignedShort,
@@ -13577,6 +13629,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and (
+                            value < self.ALLOWED_RANGE[0]
+                            or self.ALLOWED_RANGE[1] is not None
+                            and value > self.ALLOWED_RANGE[1]
+                        ):
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                            )
 
                         super().__init__(
                             value=value,
@@ -17282,6 +17343,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class RegenerationDuration(aas.Property):
 
+                    ALLOWED_RANGE = (xsd.from_xsd(r"0.0", xsd.Float), None)
+
                     def __init__(
                         self,
                         value: xsd.Float,
@@ -17325,6 +17388,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and (
+                            value < self.ALLOWED_RANGE[0]
+                            or self.ALLOWED_RANGE[1] is not None
+                            and value > self.ALLOWED_RANGE[1]
+                        ):
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                            )
 
                         super().__init__(
                             value=value,
@@ -18481,6 +18553,11 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                 class EnergyLoss(aas.Property):
 
+                    ALLOWED_RANGE = (
+                        xsd.from_xsd(r"0", xsd.UnsignedShort),
+                        xsd.from_xsd(r"100", xsd.UnsignedShort),
+                    )
+
                     def __init__(
                         self,
                         value: xsd.UnsignedShort,
@@ -18524,6 +18601,15 @@ class EnergyFlexibilityDataModel(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and (
+                            value < self.ALLOWED_RANGE[0]
+                            or self.ALLOWED_RANGE[1] is not None
+                            and value > self.ALLOWED_RANGE[1]
+                        ):
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                            )
 
                         super().__init__(
                             value=value,

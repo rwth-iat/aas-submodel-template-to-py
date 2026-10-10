@@ -241,6 +241,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
         class SIFType(aas.Property):
 
+            ALLOWED_VALUES = (r"local SIF", r"global SIF")
+
             def __init__(
                 self,
                 value: str,
@@ -291,6 +293,11 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -307,6 +314,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
         class ModeOfOperation(aas.Property):
+
+            ALLOWED_VALUES = (r"low demand", r"high demand", r"continuous demand")
 
             def __init__(
                 self,
@@ -359,6 +368,11 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -1542,6 +1556,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
         class SafetyIntegrityLevelRequirement(aas.Property):
 
+            ALLOWED_VALUES = (r"SIL 0", r"SIL 1", r"SIL 2", r"SIL 3", r"SIL 4")
+
             def __init__(
                 self,
                 value: str,
@@ -1594,6 +1610,11 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -1610,6 +1631,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
         class EnvironmentalIntegrityLevelRequirement(aas.Property):
+
+            ALLOWED_VALUES = (r"SIL 0", r"SIL 1", r"SIL 2", r"SIL 3", r"SIL 4")
 
             def __init__(
                 self,
@@ -1663,6 +1686,11 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -1679,6 +1707,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                 )
 
         class AssetIntegrityLevelRequirement(aas.Property):
+
+            ALLOWED_VALUES = (r"SIL 0", r"SIL 1", r"SIL 2", r"SIL 3", r"SIL 4")
 
             def __init__(
                 self,
@@ -1731,6 +1761,11 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -6673,6 +6708,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
             class TestLocation(aas.Property):
 
+                ALLOWED_VALUES = (r"in field", r"workshop", r"other")
+
                 def __init__(
                     self,
                     value: str,
@@ -6725,6 +6762,11 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -6741,6 +6783,8 @@ class SafetyInstrumentedFunction(aas.Submodel):
                     )
 
             class TestResultFailedOrPassed(aas.Property):
+
+                ALLOWED_VALUES = (r"failed", r"passed")
 
                 def __init__(
                     self,
@@ -6793,6 +6837,11 @@ class SafetyInstrumentedFunction(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,

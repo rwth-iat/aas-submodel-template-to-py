@@ -66,6 +66,20 @@ class SimulationModels(aas.Submodel):
 
             class PosSimPurpose(aas.Property):
 
+                ALLOWED_VALUES = (
+                    r"Concept evaluation",
+                    r"Sizing",
+                    r"Energy consumption",
+                    r"Control design",
+                    r"Behaviour in fault condition",
+                    r"Validation and testing",
+                    r"Virtual commissioning",
+                    r"Condition monitoring",
+                    r"Predictive maintenance",
+                    r"Operator Training",
+                    r"Teaching",
+                )
+
                 def __init__(
                     self,
                     value: str,
@@ -110,6 +124,11 @@ class SimulationModels(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -126,6 +145,20 @@ class SimulationModels(aas.Submodel):
                     )
 
             class NegSimPurpose(aas.Property):
+
+                ALLOWED_VALUES = (
+                    r"Concept evaluation",
+                    r"Sizing",
+                    r"Energy consumption",
+                    r"Control design",
+                    r"Behaviour in fault condition",
+                    r"Validation and testing",
+                    r"Virtual commissioning",
+                    r"Condition monitoring",
+                    r"Predictive maintenance",
+                    r"Operator Training",
+                    r"Teaching",
+                )
 
                 def __init__(
                     self,
@@ -170,6 +203,11 @@ class SimulationModels(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -291,6 +329,15 @@ class SimulationModels(aas.Submodel):
 
         class TypeOfModel(aas.Property):
 
+            ALLOWED_VALUES = (
+                r"Linear model",
+                r"Nonlinear model",
+                r"Data-driven model",
+                r"Lumped element model",
+                r"Fixed causality model",
+                r"Acausal model",
+            )
+
             def __init__(
                 self,
                 value: str,
@@ -335,6 +382,11 @@ class SimulationModels(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -351,6 +403,16 @@ class SimulationModels(aas.Submodel):
                 )
 
         class ScopeOfModel(aas.Property):
+
+            ALLOWED_VALUES = (
+                r"Logic and timing behaviour",
+                r"Geometry",
+                r"Kinematics",
+                r"Dynamics",
+                r"Distribution networks",
+                r"Network communication",
+                r"Visualization",
+            )
 
             def __init__(
                 self,
@@ -396,6 +458,11 @@ class SimulationModels(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -412,6 +479,8 @@ class SimulationModels(aas.Submodel):
                 )
 
         class LicenseModel(aas.Property):
+
+            ALLOWED_VALUES = (r"free", r"perpetual", r"subscription", r"volume-based")
 
             def __init__(
                 self,
@@ -457,6 +526,11 @@ class SimulationModels(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -473,6 +547,21 @@ class SimulationModels(aas.Submodel):
                 )
 
         class EngineeringDomain(aas.Property):
+
+            ALLOWED_VALUES = (
+                r"Hydraulic Engineering",
+                r"Electrical Engineering",
+                r"Pneumatic Engineering",
+                r"Mechanical Engineering",
+                r"Material Flow",
+                r"Robotics",
+                r"Image Processing",
+                r"Data Engineering",
+                r"Process Engineering",
+                r"Workflow Engineering",
+                r"HMI Engineering",
+                r"Control Engineering",
+            )
 
             def __init__(
                 self,
@@ -517,6 +606,11 @@ class SimulationModels(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -718,6 +812,8 @@ class SimulationModels(aas.Submodel):
 
             class VisualizationInformation(aas.Property):
 
+                ALLOWED_VALUES = (r"separately", r"integrated", r"none")
+
                 def __init__(
                     self,
                     value: str,
@@ -761,6 +857,11 @@ class SimulationModels(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -962,6 +1063,8 @@ class SimulationModels(aas.Submodel):
 
                     class StepSizeControlNeeded(aas.Property):
 
+                        ALLOWED_VALUES = (True, False)
+
                         def __init__(
                             self,
                             value: bool,
@@ -1007,6 +1110,11 @@ class SimulationModels(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            if value is not None and value not in self.ALLOWED_VALUES:
+                                raise ValueError(
+                                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                                )
 
                             super().__init__(
                                 value=value,
@@ -1088,6 +1196,8 @@ class SimulationModels(aas.Submodel):
 
                     class StiffSolverNeeded(aas.Property):
 
+                        ALLOWED_VALUES = (True, False)
+
                         def __init__(
                             self,
                             value: bool,
@@ -1132,6 +1242,11 @@ class SimulationModels(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            if value is not None and value not in self.ALLOWED_VALUES:
+                                raise ValueError(
+                                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                                )
+
                             super().__init__(
                                 value=value,
                                 id_short=id_short,
@@ -1148,6 +1263,8 @@ class SimulationModels(aas.Submodel):
                             )
 
                     class SolverIncluded(aas.Property):
+
+                        ALLOWED_VALUES = (True, False)
 
                         def __init__(
                             self,
@@ -1194,6 +1311,11 @@ class SimulationModels(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            if value is not None and value not in self.ALLOWED_VALUES:
+                                raise ValueError(
+                                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                                )
 
                             super().__init__(
                                 value=value,
@@ -2499,6 +2621,16 @@ class SimulationModels(aas.Submodel):
 
         class ParamMethod(aas.Property):
 
+            ALLOWED_VALUES = (
+                r'by using "technical data" of asset',
+                r'by using "technical data" and user',
+                r"by user interface",
+                r"by setting file",
+                r"not necessary",
+                r"by documentation file",
+                r"pre-parametrized",
+            )
+
             def __init__(
                 self,
                 value: str,
@@ -2542,6 +2674,11 @@ class SimulationModels(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -2619,6 +2756,15 @@ class SimulationModels(aas.Submodel):
 
         class InitStateMethod(aas.Property):
 
+            ALLOWED_VALUES = (
+                r"not necessary",
+                r"by user interface",
+                r"by setting file",
+                r"set states within simulation environment",
+                r"integrated in model",
+                r"by documentation file",
+            )
+
             def __init__(
                 self,
                 value: str,
@@ -2662,6 +2808,11 @@ class SimulationModels(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -3885,6 +4036,14 @@ class SimulationModels(aas.Submodel):
 
                     class VariableType(aas.Property):
 
+                        ALLOWED_VALUES = (
+                            r"Real",
+                            r"Integer",
+                            r"Boolean",
+                            r"String",
+                            r"ENUM",
+                        )
+
                         def __init__(
                             self,
                             value: str,
@@ -3930,6 +4089,11 @@ class SimulationModels(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            if value is not None and value not in self.ALLOWED_VALUES:
+                                raise ValueError(
+                                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                                )
 
                             super().__init__(
                                 value=value,
@@ -4007,6 +4171,19 @@ class SimulationModels(aas.Submodel):
 
                     class UnitList(aas.Property):
 
+                        ALLOWED_VALUES = (
+                            r"s",
+                            r"m",
+                            r"kg",
+                            r"N",
+                            r"m/s",
+                            r"m/s^2",
+                            r"V",
+                            r"A",
+                            r"K",
+                            r"none",
+                        )
+
                         def __init__(
                             self,
                             value: str,
@@ -4052,6 +4229,11 @@ class SimulationModels(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            if value is not None and value not in self.ALLOWED_VALUES:
+                                raise ValueError(
+                                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                                )
 
                             super().__init__(
                                 value=value,
@@ -4131,6 +4313,8 @@ class SimulationModels(aas.Submodel):
 
                     class VariableCausality(aas.Property):
 
+                        ALLOWED_VALUES = (r"input", r"output", r"acausal")
+
                         def __init__(
                             self,
                             value: str,
@@ -4177,6 +4361,11 @@ class SimulationModels(aas.Submodel):
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
 
+                            if value is not None and value not in self.ALLOWED_VALUES:
+                                raise ValueError(
+                                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                                )
+
                             super().__init__(
                                 value=value,
                                 id_short=id_short,
@@ -4193,6 +4382,8 @@ class SimulationModels(aas.Submodel):
                             )
 
                     class VariablePrefix(aas.Property):
+
+                        ALLOWED_VALUES = (r"Flow", r"Stream")
 
                         def __init__(
                             self,
@@ -4239,6 +4430,11 @@ class SimulationModels(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            if value is not None and value not in self.ALLOWED_VALUES:
+                                raise ValueError(
+                                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                                )
 
                             super().__init__(
                                 value=value,

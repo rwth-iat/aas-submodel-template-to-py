@@ -113,6 +113,8 @@ Instead of submodel elements (e.g. `Nameplate.SerialNumber("12345678")`), raw va
 Properties with a default value in the template (`SMT/DefaultValue`, else `SMT/InitialValue`) can be
 created without value, e.g. `PAMSpecificationSheet.GeneralInformation.SafetyMeasure()`.
 Of elements marked as alternatives (`SMT/EitherOr`), only one may be given; passing more raises a `ValueError`.
+Values restricted by the template (`SMT/AllowedValue`, `SMT/AllowedRange`, `FormChoices`, `enumeration`) are
+checked as well and available as class attributes, e.g. `SafetyMeasure.ALLOWED_VALUES == ("True", "False")`.
 Lists (`SubmodelElementList`) take an iterable of their items or raw values, e.g. `phases=["A1", "B2"]`.
 List items have no idShort by default, as it is optional since AAS metamodel 3.1.
 The output is auto-formatted with Black.

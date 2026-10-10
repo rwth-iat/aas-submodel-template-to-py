@@ -129,6 +129,8 @@ class SISDevice(aas.Submodel):
 
         class Subsystem(aas.Property):
 
+            ALLOWED_VALUES = (r"input element", r"logic solver", r"final element")
+
             def __init__(
                 self,
                 value: str,
@@ -182,6 +184,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -517,6 +524,8 @@ class SISDevice(aas.Submodel):
 
         class SystematicCapabilityRequirement(aas.Property):
 
+            ALLOWED_VALUES = (r"SIL 1", r"SIL 2", r"SIL 3", r"SIL 4")
+
             def __init__(
                 self,
                 value: str,
@@ -568,6 +577,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -714,6 +728,8 @@ class SISDevice(aas.Submodel):
 
         class InternalHFTRequirement(aas.Property):
 
+            ALLOWED_VALUES = (r"0", r"1", r"2", r"3", r"4", r"5", r"6", r"7", r"8")
+
             def __init__(
                 self,
                 value: str,
@@ -767,6 +783,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -1423,6 +1444,8 @@ class SISDevice(aas.Submodel):
 
                 class NumericFailCriterionOperator(aas.Property):
 
+                    ALLOWED_VALUES = (r">", r">=", r"<", r"<=", r"=")
+
                     def __init__(
                         self,
                         value: str,
@@ -1476,6 +1499,11 @@ class SISDevice(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and value not in self.ALLOWED_VALUES:
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                            )
 
                         super().__init__(
                             value=value,
@@ -2452,6 +2480,8 @@ class SISDevice(aas.Submodel):
 
                 class NumericFailCriterionComparison(aas.Property):
 
+                    ALLOWED_VALUES = (r">", r">=", r"<", r"<=", r"=")
+
                     def __init__(
                         self,
                         value: str,
@@ -2505,6 +2535,11 @@ class SISDevice(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and value not in self.ALLOWED_VALUES:
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                            )
 
                         super().__init__(
                             value=value,
@@ -3399,6 +3434,8 @@ class SISDevice(aas.Submodel):
 
         class TripEnergyMode(aas.Property):
 
+            ALLOWED_VALUES = (r"energized", r"de-energized")
+
             def __init__(
                 self,
                 value: str,
@@ -3450,6 +3487,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -4478,6 +4520,15 @@ class SISDevice(aas.Submodel):
 
             class ATEXZone(aas.Property):
 
+                ALLOWED_VALUES = (
+                    r"Zone 0",
+                    r"Zone 1",
+                    r"Zone 2",
+                    r"Zone 20",
+                    r"Zone 21",
+                    r"Zone 22",
+                )
+
                 def __init__(
                     self,
                     value: str,
@@ -4529,6 +4580,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -5272,6 +5328,8 @@ class SISDevice(aas.Submodel):
 
                 class FailurePhilosophy(aas.Property):
 
+                    ALLOWED_VALUES = (r"fail-safe", r"fail as-is")
+
                     def __init__(
                         self,
                         value: str,
@@ -5325,6 +5383,11 @@ class SISDevice(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and value not in self.ALLOWED_VALUES:
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                            )
 
                         super().__init__(
                             value=value,
@@ -6785,6 +6848,16 @@ class SISDevice(aas.Submodel):
 
                 class AlarmType(aas.Property):
 
+                    ALLOWED_VALUES = (
+                        r"analogue low",
+                        r"analogue low low",
+                        r"analogue high",
+                        r"analogue high high",
+                        r"digital high",
+                        r"level to level",
+                        r"other",
+                    )
+
                     def __init__(
                         self,
                         value: str,
@@ -6838,6 +6911,11 @@ class SISDevice(aas.Submodel):
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
+
+                        if value is not None and value not in self.ALLOWED_VALUES:
+                            raise ValueError(
+                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                            )
 
                         super().__init__(
                             value=value,
@@ -7689,6 +7767,8 @@ class SISDevice(aas.Submodel):
 
             class ResetAfterShutdownRequirement(aas.Property):
 
+                ALLOWED_VALUES = (r"reset in logic solver", r"reset in field")
+
                 def __init__(
                     self,
                     value: str,
@@ -7741,6 +7821,11 @@ class SISDevice(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -7757,6 +7842,13 @@ class SISDevice(aas.Submodel):
                     )
 
             class FinalElementFunction(aas.Property):
+
+                ALLOWED_VALUES = (
+                    r"start/open/connect/activate",
+                    r"stop/close/disconnect/deactivate",
+                    r"level to level",
+                    r"other",
+                )
 
                 def __init__(
                     self,
@@ -7811,6 +7903,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -8999,6 +9096,8 @@ class SISDevice(aas.Submodel):
 
         class SystematicCapabilitySpecified(aas.Property):
 
+            ALLOWED_VALUES = (r"SIL 4", r"SIL 3", r"SIL 2", r"SIL 1", r"no SIL")
+
             def __init__(
                 self,
                 value: str,
@@ -9053,6 +9152,11 @@ class SISDevice(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -9069,6 +9173,8 @@ class SISDevice(aas.Submodel):
                 )
 
         class InternalHFTSpecified(aas.Property):
+
+            ALLOWED_VALUES = (r"0", r"1", r"2", r"3", r"4", r"5", r"6", r"7", r"8")
 
             def __init__(
                 self,
@@ -9123,6 +9229,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -9326,6 +9437,8 @@ class SISDevice(aas.Submodel):
 
             class EnergizeSource(aas.Property):
 
+                ALLOWED_VALUES = (r"electrical", r"pneumatic", r"hydraulic")
+
                 def __init__(
                     self,
                     value: str,
@@ -9379,6 +9492,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -9622,6 +9740,8 @@ class SISDevice(aas.Submodel):
 
         class TypeAOrB(aas.Property):
 
+            ALLOWED_VALUES = (r"A", r"B", r"other")
+
             def __init__(
                 self,
                 value: str,
@@ -9675,6 +9795,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -10832,6 +10957,21 @@ class SISDevice(aas.Submodel):
 
         class Application(aas.Property):
 
+            ALLOWED_VALUES = (
+                r"ESD",
+                r"PSD",
+                r"ESD/PSD",
+                r"F&G",
+                r"HVAC",
+                r"EDP",
+                r"BPCS",
+                r"HIPPS",
+                r"PPS",
+                r"Equipment protection",
+                r"Offloading",
+                r"Monitoring",
+            )
+
             def __init__(
                 self,
                 value: str,
@@ -10886,6 +11026,11 @@ class SISDevice(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -10902,6 +11047,14 @@ class SISDevice(aas.Submodel):
                 )
 
         class ExternalExposure(aas.Property):
+
+            ALLOWED_VALUES = (
+                r"severe",
+                r"moderate",
+                r"shielded",
+                r"indoor",
+                r"outdoor",
+            )
 
             def __init__(
                 self,
@@ -10957,6 +11110,11 @@ class SISDevice(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -10973,6 +11131,8 @@ class SISDevice(aas.Submodel):
                 )
 
         class FluidSeverity(aas.Property):
+
+            ALLOWED_VALUES = (r"clean", r"medium", r"dirty")
 
             def __init__(
                 self,
@@ -11027,6 +11187,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -11169,6 +11334,8 @@ class SISDevice(aas.Submodel):
 
             class InterfaceMeasurement(aas.Property):
 
+                ALLOWED_VALUES = (r"liquid-gas", r"liquid-liquid", r"solid")
+
                 def __init__(
                     self,
                     value: str,
@@ -11222,6 +11389,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -12272,6 +12444,8 @@ class SISDevice(aas.Submodel):
 
             class VoltageClass(aas.Property):
 
+                ALLOWED_VALUES = (r"high", r"medium", r"low")
+
                 def __init__(
                     self,
                     value: str,
@@ -12325,6 +12499,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -14262,6 +14441,8 @@ class SISDevice(aas.Submodel):
 
             class AlarmSource(aas.Property):
 
+                ALLOWED_VALUES = (r"ASR", r"SAS", r"IMS", r"other")
+
                 def __init__(
                     self,
                     value: str,
@@ -14316,6 +14497,11 @@ class SISDevice(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -14332,6 +14518,15 @@ class SISDevice(aas.Submodel):
                     )
 
             class AlarmState(aas.Property):
+
+                ALLOWED_VALUES = (
+                    r"unacknowledged",
+                    r"acknowledged",
+                    r"return to normal unacknowledged",
+                    r"shelved",
+                    r"suppressed by design",
+                    r"out of service",
+                )
 
                 def __init__(
                     self,
@@ -14387,6 +14582,11 @@ class SISDevice(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -14403,6 +14603,8 @@ class SISDevice(aas.Submodel):
                     )
 
             class AlarmStatus(aas.Property):
+
+                ALLOWED_VALUES = (r"active", r"not active")
 
                 def __init__(
                     self,
@@ -14457,6 +14659,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -14875,6 +15082,14 @@ class SISDevice(aas.Submodel):
 
         class DeviceOperationalStatus(aas.Property):
 
+            ALLOWED_VALUES = (
+                r"activated / normally running",
+                r"standby",
+                r"blocked",
+                r"degraded",
+                r"failed",
+            )
+
             def __init__(
                 self,
                 value: str,
@@ -14926,6 +15141,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -15015,6 +15235,13 @@ class SISDevice(aas.Submodel):
 
         class FailureStatusSignal(aas.Property):
 
+            ALLOWED_VALUES = (
+                r"failure",
+                r"function check",
+                r"out of specificatoin",
+                r"maintenance request",
+            )
+
             def __init__(
                 self,
                 value: str,
@@ -15066,6 +15293,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -15658,6 +15890,13 @@ class SISDevice(aas.Submodel):
 
             class DemandClass(aas.Property):
 
+                ALLOWED_VALUES = (
+                    r"true demand",
+                    r"false demand",
+                    r"nuisance demand",
+                    r"spurious demand",
+                )
+
                 def __init__(
                     self,
                     value: str,
@@ -15709,6 +15948,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -16449,6 +16693,8 @@ class SISDevice(aas.Submodel):
 
             class DetectionMode(aas.Property):
 
+                ALLOWED_VALUES = (r"detected", r"undetected")
+
                 def __init__(
                     self,
                     value: str,
@@ -16502,6 +16748,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -16591,6 +16842,17 @@ class SISDevice(aas.Submodel):
 
             class FailureClass(aas.Property):
 
+                ALLOWED_VALUES = (
+                    r"DU",
+                    r"DD",
+                    r"SU",
+                    r"SD",
+                    r"S",
+                    r"Spurious",
+                    r"NONC",
+                    r"NA",
+                )
+
                 def __init__(
                     self,
                     value: str,
@@ -16644,6 +16906,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -16784,6 +17051,8 @@ class SISDevice(aas.Submodel):
 
             class IsSystematicOrRandomHardwareFailure(aas.Property):
 
+                ALLOWED_VALUES = (r"systematic", r"random hardware")
+
                 def __init__(
                     self,
                     value: str,
@@ -16837,6 +17106,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -18564,6 +18838,8 @@ class SISDevice(aas.Submodel):
 
         class TypeOfTest(aas.Property):
 
+            ALLOWED_VALUES = (r"complete test", r"partial stroke test", r"leakage test")
+
             def __init__(
                 self,
                 value: str,
@@ -18615,6 +18891,11 @@ class SISDevice(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -19302,6 +19583,8 @@ class SISDevice(aas.Submodel):
 
             class TestLocation(aas.Property):
 
+                ALLOWED_VALUES = (r"in field", r"workshop", r"other")
+
                 def __init__(
                     self,
                     value: str,
@@ -19354,6 +19637,11 @@ class SISDevice(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -19370,6 +19658,8 @@ class SISDevice(aas.Submodel):
                     )
 
             class TestResultFailedOrPassed(aas.Property):
+
+                ALLOWED_VALUES = (r"failed", r"passed")
 
                 def __init__(
                     self,
@@ -19422,6 +19712,11 @@ class SISDevice(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,

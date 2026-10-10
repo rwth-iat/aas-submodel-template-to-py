@@ -506,6 +506,8 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
         class CustomerRole(aas.Property):
 
+            ALLOWED_VALUES = (r"Purchaser", r"Consignee", r"ConsigneeOfCertificate")
+
             def __init__(
                 self,
                 value: str,
@@ -542,6 +544,11 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,

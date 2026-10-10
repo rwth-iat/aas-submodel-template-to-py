@@ -763,6 +763,8 @@ class HierarchicalStructures(aas.Submodel):
 
     class ArcheType(aas.Property):
 
+        ALLOWED_VALUES = (r"Full", r"OneDown", r"OneUp")
+
         def __init__(
             self,
             value: str,
@@ -801,6 +803,11 @@ class HierarchicalStructures(aas.Submodel):
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
+
+            if value is not None and value not in self.ALLOWED_VALUES:
+                raise ValueError(
+                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                )
 
             super().__init__(
                 value=value,

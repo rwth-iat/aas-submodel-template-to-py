@@ -48080,6 +48080,16 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         class Bacv_useService(aas.Property):
 
+                            ALLOWED_VALUES = (
+                                r"ReadProperty",
+                                r"WriteProperty",
+                                r"SubscribeCOV",
+                                r"GetEventInfo",
+                                r"AcknowlegeAlarm",
+                                r"AddListElement",
+                                r"RemoveListElement",
+                            )
+
                             def __init__(
                                 self,
                                 value: str,
@@ -48132,6 +48142,14 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
+
+                                if (
+                                    value is not None
+                                    and value not in self.ALLOWED_VALUES
+                                ):
+                                    raise ValueError(
+                                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                                    )
 
                                 super().__init__(
                                     value=value,
@@ -79934,6 +79952,11 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         class Canv_offset(aas.Property):
 
+                            ALLOWED_RANGE = (
+                                xsd.from_xsd(r"0", xsd.NonNegativeInteger),
+                                xsd.from_xsd(r"63", xsd.NonNegativeInteger),
+                            )
+
                             def __init__(
                                 self,
                                 value: xsd.NonNegativeInteger,
@@ -79977,6 +80000,15 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
 
+                                if value is not None and (
+                                    value < self.ALLOWED_RANGE[0]
+                                    or self.ALLOWED_RANGE[1] is not None
+                                    and value > self.ALLOWED_RANGE[1]
+                                ):
+                                    raise ValueError(
+                                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                                    )
+
                                 super().__init__(
                                     value=value,
                                     id_short=id_short,
@@ -79993,6 +80025,11 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                         class Canv_length(aas.Property):
+
+                            ALLOWED_RANGE = (
+                                xsd.from_xsd(r"1", xsd.NonNegativeInteger),
+                                xsd.from_xsd(r"64", xsd.NonNegativeInteger),
+                            )
 
                             def __init__(
                                 self,
@@ -80036,6 +80073,15 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
+
+                                if value is not None and (
+                                    value < self.ALLOWED_RANGE[0]
+                                    or self.ALLOWED_RANGE[1] is not None
+                                    and value > self.ALLOWED_RANGE[1]
+                                ):
+                                    raise ValueError(
+                                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                                    )
 
                                 super().__init__(
                                     value=value,
@@ -80607,6 +80653,11 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 class Canv_offset(aas.Property):
 
+                                    ALLOWED_RANGE = (
+                                        xsd.from_xsd(r"0", xsd.NonNegativeInteger),
+                                        xsd.from_xsd(r"63", xsd.NonNegativeInteger),
+                                    )
+
                                     def __init__(
                                         self,
                                         value: xsd.NonNegativeInteger,
@@ -80654,6 +80705,15 @@ class AssetInterfacesDescription(aas.Submodel):
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
 
+                                        if value is not None and (
+                                            value < self.ALLOWED_RANGE[0]
+                                            or self.ALLOWED_RANGE[1] is not None
+                                            and value > self.ALLOWED_RANGE[1]
+                                        ):
+                                            raise ValueError(
+                                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                                            )
+
                                         super().__init__(
                                             value=value,
                                             id_short=id_short,
@@ -80670,6 +80730,11 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                 class Canv_length(aas.Property):
+
+                                    ALLOWED_RANGE = (
+                                        xsd.from_xsd(r"1", xsd.NonNegativeInteger),
+                                        xsd.from_xsd(r"64", xsd.NonNegativeInteger),
+                                    )
 
                                     def __init__(
                                         self,
@@ -80717,6 +80782,15 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
+
+                                        if value is not None and (
+                                            value < self.ALLOWED_RANGE[0]
+                                            or self.ALLOWED_RANGE[1] is not None
+                                            and value > self.ALLOWED_RANGE[1]
+                                        ):
+                                            raise ValueError(
+                                                f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_RANGE}"
+                                            )
 
                                         super().__init__(
                                             value=value,

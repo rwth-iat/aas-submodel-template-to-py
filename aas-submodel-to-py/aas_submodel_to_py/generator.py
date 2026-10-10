@@ -1,5 +1,7 @@
+import decimal
 import os.path
 import pathlib
+import re
 import warnings
 from typing import Union, Iterable, Any, Optional
 
@@ -10,7 +12,8 @@ from basyx.aas.adapter.xml import read_aas_xml_file
 from basyx.aas.model import datatypes
 from basyx.aas.model import Property, Referable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictIdentifiableStore, MultiLanguageProperty, \
-    ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File, ModellingKind, Qualifiable, Entity
+    ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File, ModellingKind, Qualifiable, Entity, \
+    Qualifier
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -64,9 +67,10 @@ class SubmodelCodegen:
         if not submodels:
             raise NoSubmodelError("No submodel found in the object store.")
 
-        result = f"\n{self.generate_imports()}"
-        for submodel in submodels:
-            result = f"{result}\n\n{self.gen_cls_for_submodel(submodel)}"
+        # Modules imported by the generated classes, besides the standard imports
+        self.imported_modules = set()
+        classes = "\n\n".join(self.gen_cls_for_submodel(submodel) for submodel in submodels)
+        result = f"\n{self.generate_imports(self.imported_modules)}\n\n{classes}"
 
         try:
             # Format the rendered class using Black
@@ -77,9 +81,9 @@ class SubmodelCodegen:
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(result)
 
-    def generate_imports(self) -> str:
+    def generate_imports(self, modules: Iterable[str] = ()) -> str:
         template = self.env.get_template("imports.pyi")
-        imports = template.render(typing_imports=TYPING_IMPORTS)
+        imports = template.render(typing_imports=TYPING_IMPORTS, modules=sorted(modules))
         return imports
 
     def get_raw_value_typehint(self, se: SubmodelElement) -> Optional[str]:
@@ -319,7 +323,7 @@ class SubmodelCodegen:
                                                     include_in_args=["value"])
 
     def gen_cls_for_property(self, se: Property,
-                             template: str = 'base_class.pyi') -> str:
+                             template: str = 'property_class.pyi') -> str:
         default_value = self.get_default_value(se)
         if default_value is None:
             render_kwargs = self._default_referable_render_kwargs_with_value_in_args(se)
@@ -328,7 +332,103 @@ class SubmodelCodegen:
             render_kwargs = self.default_referable_render_kwargs(se, exclude_from_args=["value"])
             render_kwargs["kwargs"] = {"value": StringHandler.reprify(default_value), **render_kwargs["kwargs"]}
         render_kwargs["typehints"]["value"] = StringHandler.reprify(se.value_type)
+        constraints = self.get_value_constraints(se)
+        if "ALLOWED_PATTERN" in constraints:
+            getattr(self, "imported_modules", set()).add("re")
+        render_kwargs["value_constraints"] = {name: StringHandler.reprify(value) for name, value in constraints.items()}
         return self.render_cls_with_template(template, **render_kwargs)
+
+    @classmethod
+    def get_value_constraints(cls, se: Property) -> dict:
+        """Return the class attributes restricting the value of `se`, given by its qualifiers:
+        - ALLOWED_VALUES: tuple of values, from SMT/AllowedValue with a list of values (separated by ";" or "|"),
+          SMT/AllowedValue1, 2, ..., FormChoices (separated by ";" or ","), and enumeration (separated by ",")
+        - ALLOWED_PATTERN: regular expression from SMT/AllowedValue without separator
+        - ALLOWED_RANGE: (minimum, maximum or None) from SMT/AllowedRange ("[0,100]", "ZeroToInf") of numbers
+        Templates use these qualifiers inconsistently: constraints that can't be interpreted are ignored with a warning"""
+        constraints = {}
+        value_lists = []
+        indexed_values = []
+
+        def ignore(qualifier, reason):
+            warnings.warn(f"Ignoring {qualifier.type} {qualifier.value!r} of {se!r}: {reason}")
+
+        for qualifier in se.qualifier:
+            type_ = qualifier.type.strip().lower()
+            value = qualifier.value
+            if not isinstance(value, str) or not value.strip():
+                continue
+            if type_ == "smt/allowedvalue":
+                if ";" in value or "|" in value:
+                    value_lists.append((qualifier, re.split(r"[;|]", value)))
+                else:
+                    try:
+                        re.compile(value)
+                        constraints["ALLOWED_PATTERN"] = value
+                    except re.error as e:
+                        ignore(qualifier, f"no regular expression ({e})")
+            elif re.fullmatch(r"smt/allowedvalue\d+", type_):
+                indexed_values.append(value)
+            elif type_ in ("formchoices", "enumeration"):
+                values = re.split(r"[;,]" if type_ == "formchoices" else ",", value)
+                if len([v for v in values if v.strip()]) < 2:
+                    ignore(qualifier, "a single value isn't a list of allowed values")
+                else:
+                    value_lists.append((qualifier, values))
+            elif type_ == "smt/allowedrange":
+                try:
+                    constraints["ALLOWED_RANGE"] = cls.parse_range(value, se.value_type)
+                except ValueError as e:
+                    ignore(qualifier, str(e))
+        if indexed_values:
+            value_lists.append((Qualifier("SMT/AllowedValue<n>", str, value=";".join(indexed_values)), indexed_values))
+
+        allowed = None
+        for qualifier, values in value_lists:
+            try:
+                typed = [cls.to_value_type(v.strip(), se.value_type) for v in values if v.strip()]
+            except ValueError as e:
+                ignore(qualifier, str(e))
+                continue
+            typed = list(dict.fromkeys(typed))
+            # All lists restrict the value
+            allowed = typed if allowed is None else [v for v in allowed if v in typed]
+        if allowed:
+            constraints["ALLOWED_VALUES"] = tuple(allowed)
+        elif allowed is not None:
+            warnings.warn(f"Ignoring the allowed values of {se!r}: its lists of allowed values have no value in common")
+        return constraints
+
+    @staticmethod
+    def to_value_type(lexical: str, value_type: type):
+        """Convert an allowed value to `value_type`; booleans are given as True/False as well"""
+        if value_type is datatypes.Boolean:
+            if lexical.lower() in ("true", "false", "1", "0"):
+                return lexical.lower() in ("true", "1")
+            raise ValueError(f"{lexical!r} is no boolean")
+        try:
+            return datatypes.from_xsd(lexical, value_type)
+        except ValueError as e:
+            raise ValueError(f"{lexical!r} is no value of {value_type.__name__}") from e
+
+    @staticmethod
+    def parse_range(value: str, value_type: type) -> tuple:
+        """Return (minimum, maximum or None) of an allowed range, e.g. "[0,100]", "[0x00 , 0x1f]", "ZeroToInf" """
+        if value_type is datatypes.Boolean or not issubclass(value_type, (int, float, decimal.Decimal)):
+            raise ValueError(f"ranges only apply to numbers, not to {value_type.__name__}")
+        if value.strip().lower() == "zerotoinf":
+            return value_type(0), None
+        match = re.fullmatch(r"\s*\[\s*([^,\s]+)\s*,\s*([^\]\s]+)\s*\]\s*", value)
+        if not match:
+            raise ValueError("no range like [minimum,maximum]")
+        bounds = []
+        for bound in match.groups():
+            try:
+                bounds.append(value_type(int(bound, 0)) if re.fullmatch(r"[+-]?(0[xX][0-9a-fA-F]+|\d+)", bound)
+                              else datatypes.from_xsd(bound, value_type))
+            except ValueError as e:
+                raise ValueError(f"{bound!r} is no value of {value_type.__name__}") from e
+        return tuple(bounds)
 
     @staticmethod
     def get_either_or_groups(submodel_elements: Iterable[SubmodelElement], se_args: Iterable[str]) -> list:

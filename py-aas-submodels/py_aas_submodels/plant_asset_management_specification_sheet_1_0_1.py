@@ -1,3 +1,5 @@
+import re
+
 from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
 from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
@@ -619,6 +621,8 @@ class PAMSpecificationSheet(aas.Submodel):
 
         class SafetyMeasure(aas.Property):
 
+            ALLOWED_VALUES = (r"True", r"False")
+
             def __init__(
                 self,
                 value: str = r"False",
@@ -663,6 +667,11 @@ class PAMSpecificationSheet(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -679,6 +688,8 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
         class RedundantAssets(aas.Property):
+
+            ALLOWED_VALUES = (r"True", r"False")
 
             def __init__(
                 self,
@@ -727,6 +738,11 @@ class PAMSpecificationSheet(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -743,6 +759,8 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
         class SILCategory(aas.Property):
+
+            ALLOWED_VALUES = (r"0", r"1", r"2", r"3", r"4")
 
             def __init__(
                 self,
@@ -796,6 +814,11 @@ class PAMSpecificationSheet(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -812,6 +835,8 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
         class FailureProbability(aas.Property):
+
+            ALLOWED_VALUES = (r"low", r"medium", r"high", r"critical")
 
             def __init__(
                 self,
@@ -868,6 +893,11 @@ class PAMSpecificationSheet(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -884,6 +914,13 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
         class FailureSeverity(aas.Property):
+
+            ALLOWED_VALUES = (
+                r"no impact",
+                r"potential",
+                r"measureable",
+                r"significant",
+            )
 
             def __init__(
                 self,
@@ -937,6 +974,11 @@ class PAMSpecificationSheet(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
+
                 super().__init__(
                     value=value,
                     id_short=id_short,
@@ -953,6 +995,8 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
         class CriticalityCategory(aas.Property):
+
+            ALLOWED_VALUES = (r"low", r"medium", r"high", r"critical")
 
             def __init__(
                 self,
@@ -1008,6 +1052,11 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
+
+                if value is not None and value not in self.ALLOWED_VALUES:
+                    raise ValueError(
+                        f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                    )
 
                 super().__init__(
                     value=value,
@@ -1508,6 +1557,8 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class MonitoringRequired(aas.Property):
 
+                ALLOWED_VALUES = (r"True", r"False")
+
                 def __init__(
                     self,
                     value: str = r"False",
@@ -1554,6 +1605,11 @@ class PAMSpecificationSheet(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -1694,6 +1750,13 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class NE107Status(aas.Property):
 
+                ALLOWED_VALUES = (
+                    r"failure",
+                    r"function check",
+                    r"out of specification",
+                    r"maintenance request",
+                )
+
                 def __init__(
                     self,
                     value: str = r"failure",
@@ -1749,6 +1812,11 @@ class PAMSpecificationSheet(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -1765,6 +1833,12 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
             class NE129AlarmCategory(aas.Property):
+
+                ALLOWED_VALUES = (
+                    r"Asset-Alarm",
+                    r"Asset-Notification",
+                    r"Asset-State Chance",
+                )
 
                 def __init__(
                     self,
@@ -1820,6 +1894,11 @@ class PAMSpecificationSheet(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -2295,6 +2374,8 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class MonitoringRequired(aas.Property):
 
+                ALLOWED_VALUES = (r"True", r"False")
+
                 def __init__(
                     self,
                     value: str = r"True",
@@ -2341,6 +2422,11 @@ class PAMSpecificationSheet(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -2481,6 +2567,13 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class NE107Status(aas.Property):
 
+                ALLOWED_VALUES = (
+                    r"failure",
+                    r"function check",
+                    r"out of specification",
+                    r"maintenance request",
+                )
+
                 def __init__(
                     self,
                     value: str = r"failure",
@@ -2536,6 +2629,11 @@ class PAMSpecificationSheet(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -2552,6 +2650,12 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
             class NE129AlarmCategory(aas.Property):
+
+                ALLOWED_VALUES = (
+                    r"Asset-Alarm",
+                    r"Asset-Notification",
+                    r"Asset-State Chance",
+                )
 
                 def __init__(
                     self,
@@ -2607,6 +2711,11 @@ class PAMSpecificationSheet(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -3730,6 +3839,8 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class RecordingRequired(aas.Property):
 
+                ALLOWED_VALUES = (r"True", r"False")
+
                 def __init__(
                     self,
                     value: str = r"True",
@@ -3777,6 +3888,11 @@ class PAMSpecificationSheet(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -3793,6 +3909,8 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
             class SignalType(aas.Property):
+
+                ALLOWED_VALUES = (r"floating point", r"integer", r"binary")
 
                 def __init__(
                     self,
@@ -3837,6 +3955,11 @@ class PAMSpecificationSheet(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -4232,6 +4355,8 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class Required(aas.Property):
 
+                ALLOWED_VALUES = (r"True", r"False")
+
                 def __init__(
                     self,
                     value: str = r"True",
@@ -4276,6 +4401,11 @@ class PAMSpecificationSheet(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
                     super().__init__(
                         value=value,
                         id_short=id_short,
@@ -4292,6 +4422,8 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
             class InputAvailable(aas.Property):
+
+                ALLOWED_VALUES = (r"True", r"False")
 
                 def __init__(
                     self,
@@ -4336,6 +4468,11 @@ class PAMSpecificationSheet(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -4418,6 +4555,10 @@ class PAMSpecificationSheet(aas.Submodel):
 
             class RecordingRequired(aas.Property):
 
+                ALLOWED_PATTERN = r"True"
+
+                ALLOWED_VALUES = (r"True", r"False")
+
                 def __init__(
                     self,
                     value: str = r"True",
@@ -4464,6 +4605,18 @@ class PAMSpecificationSheet(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
+
+                    if value is not None and not re.fullmatch(
+                        self.ALLOWED_PATTERN, xsd.xsd_repr(value)
+                    ):
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_PATTERN}"
+                        )
 
                     super().__init__(
                         value=value,

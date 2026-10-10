@@ -272,6 +272,8 @@ class ControlComponentInstance(aas.Submodel):
 
             class Disabled(aas.Property):
 
+                ALLOWED_VALUES = (True, False)
+
                 def __init__(
                     self,
                     value: bool,
@@ -310,6 +312,11 @@ class ControlComponentInstance(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if value is not None and value not in self.ALLOWED_VALUES:
+                        raise ValueError(
+                            f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                        )
 
                     super().__init__(
                         value=value,
@@ -468,6 +475,8 @@ class ControlComponentInstance(aas.Submodel):
 
                     class Direction(aas.Property):
 
+                        ALLOWED_VALUES = (r"In", r"Out", r"InOut")
+
                         def __init__(
                             self,
                             value: str,
@@ -508,6 +517,11 @@ class ControlComponentInstance(aas.Submodel):
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
+
+                            if value is not None and value not in self.ALLOWED_VALUES:
+                                raise ValueError(
+                                    f"{value!r} is not an allowed value of {type(self).__name__}, allowed: {self.ALLOWED_VALUES}"
+                                )
 
                             super().__init__(
                                 value=value,
