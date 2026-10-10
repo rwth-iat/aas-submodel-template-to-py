@@ -8,13 +8,10 @@
 - An instance of every generated submodel class, built from sample values for its required
   arguments, passes these checks.
 """
-import collections.abc
 import importlib
-import inspect
 import io
 import json
 import pathlib
-import typing
 
 import aas_core3_1.jsonization as aas_jsonization
 import aas_core3_1.verification as aas_verification
@@ -26,6 +23,7 @@ from basyx.aas.adapter.xml import read_aas_xml_file, write_aas_xml_file
 from basyx.aas.model import datatypes
 
 import py_aas_submodels
+from instance_builder import build_instance
 from py_aas_submodels.digital_nameplate_3_0_1 import Nameplate
 
 
@@ -178,55 +176,6 @@ def test_nameplate_is_an_instance(nameplate):
 
 
 # Instances of all generated submodel classes
-
-SAMPLE_LEXICALS = ("1", "true", "2024-01-01", "2024-01-01T00:00:00Z", "P1D", "12:00:00Z", "x")
-
-
-def sample_value(value_type: type):
-    """A value of an XSD type, parsed from the first sample lexical representation it accepts"""
-    for lexical in SAMPLE_LEXICALS:
-        try:
-            return datatypes.from_xsd(lexical, value_type)
-        except ValueError:
-            pass
-    raise ValueError(f"No sample value for {value_type}")
-
-
-def build_instance(cls: type):
-    """Instance of a generated class with sample values for all its required arguments.
-    Raw values are preferred over instances of generated classes, so that both are built"""
-    typehints = typing.get_type_hints(cls.__init__)
-    kwargs = {name: sample_argument(cls, name, typehints[name])
-              for name, parameter in inspect.signature(cls.__init__).parameters.items()
-              if name != "self" and parameter.default is inspect.Parameter.empty}
-    if issubclass(cls, model.Entity) and \
-            inspect.signature(cls.__init__).parameters["entity_type"].default is model.EntityType.SELF_MANAGED_ENTITY:
-        kwargs["global_asset_id"] = "https://example.com/ids/asset"  # AASd-014
-    return cls(**kwargs)
-
-
-def sample_argument(cls: type, name: str, typehint):
-    origin, args = typing.get_origin(typehint), typing.get_args(typehint)
-    if name == "id_":
-        return f"https://example.com/ids/sm/{cls.__name__}"
-    elif origin is typing.Union:
-        return sample_argument(cls, name, args[0])
-    elif origin is collections.abc.Iterable:
-        return [sample_argument(cls, name, args[0])]
-    elif origin is tuple:
-        return tuple(sample_argument(cls, name, arg) for arg in args)
-    elif isinstance(typehint, type) and typehint.__module__ == cls.__module__:
-        return build_instance(typehint)
-    elif typehint is model.LangStringSet:
-        return model.MultiLanguageTextType({"en": "x"})
-    elif typehint is model.Reference:
-        return model.ExternalReference((model.Key(model.KeyTypes.GLOBAL_REFERENCE, "https://example.com/ids/x"),))
-    elif name == "content_type":
-        return "application/pdf"
-    elif isinstance(typehint, type):
-        return sample_value(typehint)
-    raise TypeError(f"No sample argument {cls.__qualname__}.{name}: {typehint}")
-
 
 def generated_submodel_classes():
     for path in sorted(pathlib.Path(py_aas_submodels.__file__).parent.glob("*.py")):

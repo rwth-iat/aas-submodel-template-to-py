@@ -103,6 +103,17 @@ pip install -e "./py-aas-submodels[test]"
 python -m pytest py-aas-submodels/tests
 ```
 
+`tests/test_template_conformance.py` compares instances of the generated classes with the template
+files they were generated from: every element of the template must be in the instance, with its
+semantic IDs, value type, descriptions and other metadata, and every mandatory element must be in an
+instance with only the required arguments. By default, it compares a few templates in `tests/data`.
+To compare all published templates, point `SUBMODEL_TEMPLATES_DIR` to the `published` directory of a
+clone of [admin-shell-io/submodel-templates](https://github.com/admin-shell-io/submodel-templates):
+
+```bash
+SUBMODEL_TEMPLATES_DIR=/path/to/submodel-templates/published python -m pytest py-aas-submodels/tests/test_template_conformance.py
+```
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.
