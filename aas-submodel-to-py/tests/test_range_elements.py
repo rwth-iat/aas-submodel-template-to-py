@@ -56,9 +56,9 @@ def test_ranges_built_from_raw_pairs(generated_module):
     )
     elements = elements_by_id_short(submodel)
 
-    assert isinstance(elements["ArbitraryRange0"], generated_module.RangeTest.ArbitraryRange)
-    assert (elements["ArbitraryRange0"].min, elements["ArbitraryRange0"].max) == ("a", "b")
-    assert (elements["ArbitraryRange1"].min, elements["ArbitraryRange1"].max) == ("c", "d")
+    assert isinstance(elements["ArbitraryRange00"], generated_module.RangeTest.ArbitraryRange)
+    assert (elements["ArbitraryRange00"].min, elements["ArbitraryRange00"].max) == ("a", "b")
+    assert (elements["ArbitraryRange01"].min, elements["ArbitraryRange01"].max) == ("c", "d")
     assert (elements["MeasuringRange"].min, elements["MeasuringRange"].max) == (0.5, 1.5)
     assert elements["TimeStamp"].max == datatypes.DateTime(2024, 12, 31)
 
@@ -75,8 +75,8 @@ def test_existing_range_objects_are_kept(generated_module):
     )
     elements = elements_by_id_short(submodel)
 
-    assert elements["ArbitraryRange0"] is existing_range
-    assert (elements["ArbitraryRange1"].min, elements["ArbitraryRange1"].max) == ("a", "b")
+    assert elements["ArbitraryRange00"] is existing_range
+    assert (elements["ArbitraryRange01"].min, elements["ArbitraryRange01"].max) == ("a", "b")
     assert elements["MeasuringRange"] is measuring_range
 
 
@@ -88,7 +88,7 @@ def test_properties_built_from_raw_values(generated_module):
     )
     elements = elements_by_id_short(submodel)
 
-    assert (elements["Keyword0"].value, elements["Keyword1"].value) == ("foo", "bar")
+    assert (elements["Keyword00"].value, elements["Keyword01"].value) == ("foo", "bar")
 
 
 def test_range_serialization_keeps_bounds_and_xsd_type(generated_module):

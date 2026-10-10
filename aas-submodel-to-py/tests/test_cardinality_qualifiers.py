@@ -79,8 +79,8 @@ def test_generated_arguments_follow_non_standard_cardinalities(generated_module)
         id_=SUBMODEL_ID, mandatory="m", atLeastTwo=["a", "b"], several=["x", "y"], interface=["i"])
 
     values = {se.id_short: se.value for se in submodel.submodel_element}
-    assert values == {"Mandatory": "m", "AtLeastTwo0": "a", "AtLeastTwo1": "b",
-                      "Several0": "x", "Several1": "y", "Interface0": "i"}
+    assert values == {"Mandatory": "m", "AtLeastTwo00": "a", "AtLeastTwo01": "b",
+                      "Several00": "x", "Several01": "y", "Interface00": "i"}
 
 
 def test_element_with_cardinality_two_to_many_is_required(generated_module):

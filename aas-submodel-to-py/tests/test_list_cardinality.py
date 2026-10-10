@@ -121,5 +121,5 @@ def test_several_elements_of_cardinality_zero_to_many_get_indexed_id_shorts(gene
     # Unchanged for elements other than lists
     submodel = build_submodel(generated_module, keyword=["foo", "bar"])
 
-    assert submodel.get_referable("Keyword0").value == "foo"
-    assert submodel.get_referable("Keyword1").value == "bar"
+    assert submodel.get_referable("Keyword00").value == "foo"
+    assert submodel.get_referable("Keyword01").value == "bar"

@@ -107,4 +107,4 @@ def test_default_id_short_without_collision(generated_module):
     cls = generated_module.SiblingTest
     submodel = cls(id_=SUBMODEL_ID, address=cls.Address(), document=["doc"])
 
-    assert submodel.get_referable("Document0").value == "doc"
+    assert submodel.get_referable("Document00").value == "doc"

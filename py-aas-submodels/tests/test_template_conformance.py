@@ -22,7 +22,7 @@ Intended differences:
 - Items of lists have no idShort (#23); they are built from the first item of the list in the template.
   Lists without item in the template take items of their typeValueListElement and valueTypeListElement.
 - Elements that may occur several times (cardinality ZeroToMany/OneToMany) get an index instead of
-  an iteration ending (e.g. Keyword{00} -> Keyword0); lists are always one list (#36). Other elements
+  an iteration ending (e.g. Keyword{00} -> Keyword00, Keyword01, ...; #46); lists are always one list (#36). Other elements
   may lose the placeholders {00} and __00__ of their idShort (kept if siblings would collide).
 
 The tests run with the templates in tests/data/published (CC BY 4.0, see the README there), or with
@@ -280,7 +280,7 @@ def match_children(template_children: list, instance_children: list, path: str, 
         if exact_id_shorts:
             matched = [child for child in remaining if child.get("idShort") == id_short]
         elif takes_several(template_child):
-            pattern = re.compile(re.escape(iteration_stem(id_short)) + r"\d+")
+            pattern = re.compile(re.escape(iteration_stem(id_short)) + r"\d{2,}")
             matched = [child for child in remaining if pattern.fullmatch(child.get("idShort", ""))]
         else:
             matched = [child for child in remaining if child.get("idShort") in (id_short, without_placeholder(id_short))]

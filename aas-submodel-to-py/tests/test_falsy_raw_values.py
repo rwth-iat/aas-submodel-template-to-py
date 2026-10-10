@@ -87,7 +87,7 @@ def test_falsy_raw_values_in_list(generated_module):
     submodel = build_submodel(generated_module, levels=[0, 1])
     elements = elements_by_id_short(submodel)
 
-    assert (elements["Levels0"].value, elements["Levels1"].value) == (0, 1)
+    assert (elements["Levels00"].value, elements["Levels01"].value) == (0, 1)
 
 
 def test_falsy_raw_value_in_collection(generated_module):
@@ -102,5 +102,5 @@ def test_all_falsy_raw_values_at_once(generated_module):
                    optionalCount=0, levels=[0], settings=cls.Settings(retries=0))
     elements = elements_by_id_short(submodel)
 
-    assert [elements[i].value for i in ("Count", "Ratio", "Enabled", "Comment", "OptionalCount", "Levels0")] == \
+    assert [elements[i].value for i in ("Count", "Ratio", "Enabled", "Comment", "OptionalCount", "Levels00")] == \
         [0, 0.0, False, "", 0, 0]

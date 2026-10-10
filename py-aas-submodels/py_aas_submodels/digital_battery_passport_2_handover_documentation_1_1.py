@@ -343,8 +343,9 @@ class HandoverDocumentation(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
+                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                 for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
+                                    element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
@@ -889,8 +890,9 @@ class HandoverDocumentation(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
+                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                 for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
+                                    element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
@@ -2033,8 +2035,9 @@ class HandoverDocumentation(aas.Submodel):
                             elif isinstance(se_arg, aas.SubmodelElement):
                                 embedded_submodel_elements.append(se_arg)
                             elif isinstance(se_arg, Iterable):
+                                # Number with two digits at least, as the placeholders {00} and __00__ of templates
                                 for n, element in enumerate(se_arg):
-                                    element.id_short = f"{element.id_short}{n}"
+                                    element.id_short = f"{element.id_short}{n:02d}"
                                     embedded_submodel_elements.append(element)
                             else:
                                 raise TypeError(
@@ -2347,8 +2350,9 @@ class HandoverDocumentation(aas.Submodel):
                     elif isinstance(se_arg, aas.SubmodelElement):
                         embedded_submodel_elements.append(se_arg)
                     elif isinstance(se_arg, Iterable):
+                        # Number with two digits at least, as the placeholders {00} and __00__ of templates
                         for n, element in enumerate(se_arg):
-                            element.id_short = f"{element.id_short}{n}"
+                            element.id_short = f"{element.id_short}{n:02d}"
                             embedded_submodel_elements.append(element)
                     else:
                         raise TypeError(
@@ -2621,8 +2625,9 @@ class HandoverDocumentation(aas.Submodel):
             elif isinstance(se_arg, aas.SubmodelElement):
                 embedded_submodel_elements.append(se_arg)
             elif isinstance(se_arg, Iterable):
+                # Number with two digits at least, as the placeholders {00} and __00__ of templates
                 for n, element in enumerate(se_arg):
-                    element.id_short = f"{element.id_short}{n}"
+                    element.id_short = f"{element.id_short}{n:02d}"
                     embedded_submodel_elements.append(element)
             else:
                 raise TypeError(

@@ -61,4 +61,4 @@ def test_elements_occurring_several_times_get_an_index(generated_module):
                    keyword=["a", "b"], applicationUri=["https://example.com/app"])
 
     assert sorted(se.id_short for se in submodel.submodel_element) == \
-        ["ApplicationUri0", "Keyword0", "Keyword1", "Mode", "Tank_1", "bacv_isISO8601"]
+        ["ApplicationUri00", "Keyword00", "Keyword01", "Mode", "Tank_1", "bacv_isISO8601"]
