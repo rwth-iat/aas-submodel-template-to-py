@@ -28,9 +28,6 @@ from basyx.aas.model import datatypes
 import py_aas_submodels
 from py_aas_submodels.digital_nameplate_3_0_1 import Nameplate
 
-# BaSyx <= 2.2.0 serializes Entities without specific asset IDs as an empty list, which
-# metamodel V3.1 doesn't allow (https://github.com/eclipse-basyx/basyx-python-sdk/issues/636)
-BASYX_EMPTY_SPECIFIC_ASSET_IDS = "Specific asset IDs must be either not set or have at least one item."
 
 
 def to_json(store: model.AbstractObjectStore) -> str:
@@ -46,8 +43,19 @@ def to_xml(store: model.AbstractObjectStore) -> bytes:
 
 
 def verification_errors(environment) -> list:
-    return [f"{error.path}: {error.cause}" for error in aas_verification.verify(environment)
-            if error.cause != BASYX_EMPTY_SPECIFIC_ASSET_IDS]
+    return [f"{error.path}: {error.cause}" for error in aas_verification.verify(environment)]
+
+
+def without_empty_specific_asset_ids(jsonable):
+    """BaSyx <= 2.2.0 serializes Entities without specific asset IDs as an empty list, which metamodel
+    V3.1 doesn't allow; aas-core3.1 then also reports AASd-014 for Entities with a global asset ID
+    (https://github.com/eclipse-basyx/basyx-python-sdk/issues/636). Remove these lists"""
+    if isinstance(jsonable, dict):
+        return {key: without_empty_specific_asset_ids(value) for key, value in jsonable.items()
+                if not (key == "specificAssetIds" and value == [])}
+    elif isinstance(jsonable, list):
+        return [without_empty_specific_asset_ids(item) for item in jsonable]
+    return jsonable
 
 
 def serialization_errors(submodel: model.Submodel) -> list:
@@ -56,7 +64,8 @@ def serialization_errors(submodel: model.Submodel) -> list:
     store = model.DictIdentifiableStore([submodel])
 
     json_text = to_json(store)
-    errors = verification_errors(aas_jsonization.environment_from_jsonable(json.loads(json_text)))
+    errors = verification_errors(aas_jsonization.environment_from_jsonable(
+        without_empty_specific_asset_ids(json.loads(json_text))))
     assert json.loads(to_json(read_aas_json_file(io.StringIO(json_text), failsafe=False))) == json.loads(json_text)
 
     xml = to_xml(store)
@@ -239,7 +248,4 @@ def test_instance_of_generated_submodel_class_is_valid_aas(submodel_cls):
             pytest.xfail("Issue #38: generated classes share default submodel elements between instances")
         raise
 
-    errors = serialization_errors(submodel)
-    if errors and all("AASd-014" in error for error in errors):
-        pytest.xfail("Issue #39: instances get the statements of the template's Entities")
-    assert errors == []
+    assert serialization_errors(submodel) == []

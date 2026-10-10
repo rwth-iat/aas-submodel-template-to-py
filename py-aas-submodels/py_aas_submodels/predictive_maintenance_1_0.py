@@ -9,13 +9,360 @@ class PredictiveMaintenance(aas.Submodel):
 
         class RemainingUsefulLifetime(aas.Entity):
 
+            class IndicationType(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"IndicationType",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PredictiveMaintenance/IndicationType/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Type of wear-relevant duration, e.g. time, cycles, distance, etc.",
+                                r"de": r"Art der verschleißrelevanten Dauer, z.B. Zeit, Zyklen, Wegstrecke, etc.",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class DurationValue(aas.Property):
+
+                def __init__(
+                    self,
+                    value: float,
+                    id_short: Optional[str] = r"DurationValue",
+                    value_type: aas.DataTypeDefXsd = float,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PredictiveMaintenance/DurationValue/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Value of duration in the wear relevant unit, e.g. time, operation cycles, distance, etc.",
+                                r"de": r"Zahlenwert der Dauer in der verschleißrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class EngineeringUnit(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"EngineeringUnit",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PredictiveMaintenance/EngineeringUnit/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Wear relevant physical unit, e.g. time, operation cycles, distance, etc.",
+                                r"de": r"Verschleißrelevante physikalische Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class StartValue(aas.Property):
+
+                def __init__(
+                    self,
+                    value: float,
+                    id_short: Optional[str] = r"StartValue",
+                    value_type: aas.DataTypeDefXsd = float,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PredictiveMaintenance/StartValue/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Starting value from which the duration is measured in the wear-relevant unit, e.g. time, cycles, distance, etc.",
+                                r"de": r"Startwert, von dem ab die Dauer gemessen wird in der verschleißrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class StartDateTime(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.DateTime,
+                    id_short: Optional[str] = r"StartDateTime",
+                    value_type: aas.DataTypeDefXsd = xsd.DateTime,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PredictiveMaintenance/StartDateTime/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Start date and time from which the duration is measured",
+                                r"de": r"Startdatum und -zeit, von der ab die Dauer gemessen wird",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class Description(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"Description",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = None,
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PredictiveMaintenance/Description/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if description is None:
+                        description = aas.MultiLanguageTextType(
+                            dict_={
+                                r"en": r"Description of the wear duration information",
+                                r"de": r"Beschreibung der Angabe zur verschleißrelevanten Dauer",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                indicationType: Union[str, IndicationType],
+                durationValue: Union[float, DurationValue],
+                engineeringUnit: Union[str, EngineeringUnit],
+                startValue: Union[float, StartValue],
+                startDateTime: Optional[Union[xsd.DateTime, StartDateTime]] = None,
+                description_: Optional[Union[str, Description]] = None,
                 id_short: Optional[str] = r"RemainingUsefulLifetime",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.CO_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -38,172 +385,6 @@ class PredictiveMaintenance(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"IndicationType",
-                            value_type=str,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=None,
-                            description=aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Type of wear-relevant duration, e.g. time, cycles, distance, etc.",
-                                    r"de": r"Art der verschleißrelevanten Dauer, z.B. Zeit, Zyklen, Wegstrecke, etc.",
-                                }
-                            ),
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/IndicationType/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"DurationValue",
-                            value_type=float,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=None,
-                            description=aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Value of duration in the wear relevant unit, e.g. time, operation cycles, distance, etc.",
-                                    r"de": r"Zahlenwert der Dauer in der verschleißrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
-                                }
-                            ),
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/DurationValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"EngineeringUnit",
-                            value_type=str,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=None,
-                            description=aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Wear relevant physical unit, e.g. time, operation cycles, distance, etc.",
-                                    r"de": r"Verschleißrelevante physikalische Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
-                                }
-                            ),
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/EngineeringUnit/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"StartValue",
-                            value_type=float,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=None,
-                            description=aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Starting value from which the duration is measured in the wear-relevant unit, e.g. time, cycles, distance, etc.",
-                                    r"de": r"Startwert, von dem ab die Dauer gemessen wird in der verschleißrelevanten Einheit, z.B. Zeit, Zyklen, Wegstrecke, etc.",
-                                }
-                            ),
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/StartValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"StartDateTime",
-                            value_type=xsd.DateTime,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=None,
-                            description=aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Start date and time from which the duration is measured",
-                                    r"de": r"Startdatum und -zeit, von der ab die Dauer gemessen wird",
-                                }
-                            ),
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/StartDateTime/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"Description",
-                            value_type=str,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=None,
-                            description=aas.MultiLanguageTextType(
-                                dict_={
-                                    r"en": r"Description of the wear duration information",
-                                    r"de": r"Beschreibung der Angabe zur verschleißrelevanten Dauer",
-                                }
-                            ),
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PredictiveMaintenance/Description/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if description is None:
                     description = aas.MultiLanguageTextType(
                         dict_={
@@ -218,10 +399,75 @@ class PredictiveMaintenance(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if indicationType is not None and not isinstance(
+                    indicationType, aas.SubmodelElement
+                ):
+                    indicationType = self.IndicationType(indicationType)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if durationValue is not None and not isinstance(
+                    durationValue, aas.SubmodelElement
+                ):
+                    durationValue = self.DurationValue(durationValue)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if engineeringUnit is not None and not isinstance(
+                    engineeringUnit, aas.SubmodelElement
+                ):
+                    engineeringUnit = self.EngineeringUnit(engineeringUnit)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if startValue is not None and not isinstance(
+                    startValue, aas.SubmodelElement
+                ):
+                    startValue = self.StartValue(startValue)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if startDateTime is not None and not isinstance(
+                    startDateTime, aas.SubmodelElement
+                ):
+                    startDateTime = self.StartDateTime(startDateTime)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if description_ is not None and not isinstance(
+                    description_, aas.SubmodelElement
+                ):
+                    description_ = self.Description(description_)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    indicationType,
+                    durationValue,
+                    engineeringUnit,
+                    startValue,
+                    startDateTime,
+                    description_,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,

@@ -4218,7 +4218,6 @@ class HandoverDocumentation(aas.Submodel):
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.CO_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = (),
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -4247,10 +4246,26 @@ class HandoverDocumentation(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in []:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,

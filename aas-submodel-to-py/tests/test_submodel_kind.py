@@ -7,7 +7,7 @@ https://github.com/rwth-iat/aas-submodel-template-to-py/issues/37
 Instances have kind=Instance. Template qualifiers (e.g. SMT/Cardinality, FormTitle for
 editors) are only allowed in templates (AASd-119 for submodels, AASd-129 for submodel
 elements), so they aren't taken over, also not in template objects used as defaults
-(e.g. Entity statements).
+(e.g. Operation variables).
 """
 import importlib.util
 
@@ -34,8 +34,8 @@ def generated_module(tmp_path_factory):
                 model.Qualifier("SMT/Cardinality", str, value="One", kind=model.QualifierKind.TEMPLATE_QUALIFIER),
                 model.Qualifier("Unit", str, value="kg", kind=model.QualifierKind.VALUE_QUALIFIER),
             ]),
-            model.Entity("Node", model.EntityType.CO_MANAGED_ENTITY, statement=[
-                model.Property("Weight", float, qualifier=[model.Qualifier(
+            model.Operation("Compute", input_variable=[
+                model.Property("Input", float, qualifier=[model.Qualifier(
                     "SMT/Cardinality", str, value="One", kind=model.QualifierKind.TEMPLATE_QUALIFIER)]),
             ]),
         ],
@@ -50,7 +50,7 @@ def generated_module(tmp_path_factory):
 
 
 def build_submodel(module, **kwargs):
-    return module.KindTest(id_=SUBMODEL_ID, name="x", node=module.KindTest.Node(), **kwargs)
+    return module.KindTest(id_=SUBMODEL_ID, name="x", compute=module.KindTest.Compute(), **kwargs)
 
 
 def test_instance_has_kind_instance(generated_module):
@@ -71,9 +71,9 @@ def test_template_qualifiers_of_elements_are_not_taken_over(generated_module):
 
 
 def test_template_qualifiers_of_default_elements_are_not_taken_over(generated_module):
-    weight = build_submodel(generated_module).get_referable("Node").get_referable("Weight")
+    [input_variable] = build_submodel(generated_module).get_referable("Compute").input_variable
 
-    assert list(weight.qualifier) == []
+    assert list(input_variable.qualifier) == []
 
 
 def test_kind_template_can_be_passed(generated_module):

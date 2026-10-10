@@ -5566,13 +5566,430 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class Fan(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 id_short: Optional[str] = r"Fan",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -5597,247 +6014,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Lüfter", r"en": r"Fan"}
@@ -5849,10 +6025,75 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -5867,13 +6108,430 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class Pump(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
                 id_short: Optional[str] = r"Pump",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -5898,247 +6556,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Pumpe", r"en": r"Pump"}
@@ -6150,10 +6567,75 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -6168,13 +6650,547 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class RotraryTable(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class StaticEccentricity(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"StaticEccentricity",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/StaticEccentricity/1/0",
+                            ),
+                        ),
+                        type_=aas.ConceptDescription,
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Exzentrität", r"en": r"Eccentricity"}
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class CentroidAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"CentroidAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CentroidAngle/1/0",
+                            ),
+                        ),
+                        type_=aas.ConceptDescription,
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Mittelpunktswinkel",
+                                r"en": r"Centroid angle",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
+                staticEccentricity: Optional[
+                    Union[xsd.Long, StaticEccentricity]
+                ] = None,
+                centroidAngle: Optional[Union[xsd.Long, CentroidAngle]] = None,
                 id_short: Optional[str] = r"RotraryTable",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -6199,300 +7215,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"StaticEccentricity",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={r"de": r"Exzentrität", r"en": r"Eccentricity"}
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/StaticEccentricity/1/0",
-                                    ),
-                                ),
-                                type_=aas.ConceptDescription,
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"CentroidAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Mittelpunktswinkel",
-                                    r"en": r"Centroid angle",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CentroidAngle/1/0",
-                                    ),
-                                ),
-                                type_=aas.ConceptDescription,
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Drehtisch", r"en": r"Rotrary table"}
@@ -6504,10 +7226,91 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if staticEccentricity is not None and not isinstance(
+                    staticEccentricity, aas.SubmodelElement
+                ):
+                    staticEccentricity = self.StaticEccentricity(staticEccentricity)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if centroidAngle is not None and not isinstance(
+                    centroidAngle, aas.SubmodelElement
+                ):
+                    centroidAngle = self.CentroidAngle(centroidAngle)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                    staticEccentricity,
+                    centroidAngle,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -6522,13 +7325,581 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class ChainConveyor(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FrictionCoefficient(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FrictionCoefficient",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Reibungskoeffizient",
+                                r"en": r"Coefficient of friction",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FeedConstant(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FeedConstant",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
+                frictionCoefficient: Optional[
+                    Union[xsd.Long, FrictionCoefficient]
+                ] = None,
+                feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"ChainConveyor",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -6553,337 +7924,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FrictionCoefficient",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Reibungskoeffizient",
-                                    r"en": r"Coefficient of friction",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FeedConstant",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Vorschubkonstante",
-                                    r"en": r"Feed Constant",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Kettenförderer", r"en": r"Chain conveyor"}
@@ -6895,10 +7935,91 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if frictionCoefficient is not None and not isinstance(
+                    frictionCoefficient, aas.SubmodelElement
+                ):
+                    frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if feedConstant is not None and not isinstance(
+                    feedConstant, aas.SubmodelElement
+                ):
+                    feedConstant = self.FeedConstant(feedConstant)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                    frictionCoefficient,
+                    feedConstant,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -6913,13 +8034,581 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class BeltConveyor(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FrictionCoefficient(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FrictionCoefficient",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Reibungskoeffizient",
+                                r"en": r"Coefficient of friction",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FeedConstant(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FeedConstant",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
+                frictionCoefficient: Optional[
+                    Union[xsd.Long, FrictionCoefficient]
+                ] = None,
+                feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"BeltConveyor",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -6944,337 +8633,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FrictionCoefficient",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Reibungskoeffizient",
-                                    r"en": r"Coefficient of friction",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FeedConstant",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Vorschubkonstante",
-                                    r"en": r"Feed Constant",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Bandförderer", r"en": r"Belt conveyor"}
@@ -7286,10 +8644,91 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if frictionCoefficient is not None and not isinstance(
+                    frictionCoefficient, aas.SubmodelElement
+                ):
+                    frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if feedConstant is not None and not isinstance(
+                    feedConstant, aas.SubmodelElement
+                ):
+                    feedConstant = self.FeedConstant(feedConstant)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                    frictionCoefficient,
+                    feedConstant,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -7304,13 +8743,581 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class RollerConveyor(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FrictionCoefficient(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FrictionCoefficient",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Reibungskoeffizient",
+                                r"en": r"Coefficient of friction",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FeedConstant(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FeedConstant",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
+                frictionCoefficient: Optional[
+                    Union[xsd.Long, FrictionCoefficient]
+                ] = None,
+                feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"RollerConveyor",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -7335,337 +9342,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FrictionCoefficient",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Reibungskoeffizient",
-                                    r"en": r"Coefficient of friction",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FeedConstant",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Vorschubkonstante",
-                                    r"en": r"Feed Constant",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Rollenbahn", r"en": r"Roller conveyor"}
@@ -7677,10 +9353,91 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if frictionCoefficient is not None and not isinstance(
+                    frictionCoefficient, aas.SubmodelElement
+                ):
+                    frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if feedConstant is not None and not isinstance(
+                    feedConstant, aas.SubmodelElement
+                ):
+                    feedConstant = self.FeedConstant(feedConstant)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                    frictionCoefficient,
+                    feedConstant,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -7695,13 +9452,581 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class BeltDrive(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FrictionCoefficient(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FrictionCoefficient",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Reibungskoeffizient",
+                                r"en": r"Coefficient of friction",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FeedConstant(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FeedConstant",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
+                frictionCoefficient: Optional[
+                    Union[xsd.Long, FrictionCoefficient]
+                ] = None,
+                feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"BeltDrive",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -7726,337 +10051,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FrictionCoefficient",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Reibungskoeffizient",
-                                    r"en": r"Coefficient of friction",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FeedConstant",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Vorschubkonstante",
-                                    r"en": r"Feed Constant",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Riemenantrieb", r"en": r"Belt drive"}
@@ -8068,10 +10062,91 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if frictionCoefficient is not None and not isinstance(
+                    frictionCoefficient, aas.SubmodelElement
+                ):
+                    frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if feedConstant is not None and not isinstance(
+                    feedConstant, aas.SubmodelElement
+                ):
+                    feedConstant = self.FeedConstant(feedConstant)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                    frictionCoefficient,
+                    feedConstant,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -8086,13 +10161,581 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class TravelingDrive(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FrictionCoefficient(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FrictionCoefficient",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Reibungskoeffizient",
+                                r"en": r"Coefficient of friction",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FeedConstant(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FeedConstant",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
+                frictionCoefficient: Optional[
+                    Union[xsd.Long, FrictionCoefficient]
+                ] = None,
+                feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"TravelingDrive",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -8117,337 +10760,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FrictionCoefficient",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Reibungskoeffizient",
-                                    r"en": r"Coefficient of friction",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FeedConstant",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Vorschubkonstante",
-                                    r"en": r"Feed Constant",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Fahrender Antrieb", r"en": r"Traveling drive"}
@@ -8459,10 +10771,91 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if frictionCoefficient is not None and not isinstance(
+                    frictionCoefficient, aas.SubmodelElement
+                ):
+                    frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if feedConstant is not None and not isinstance(
+                    feedConstant, aas.SubmodelElement
+                ):
+                    feedConstant = self.FeedConstant(feedConstant)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                    frictionCoefficient,
+                    feedConstant,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -8477,13 +10870,755 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class RackDrive(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FrictionCoefficient(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FrictionCoefficient",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Reibungskoeffizient",
+                                r"en": r"Coefficient of friction",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FeedConstant(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FeedConstant",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class DiameterPinion(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"DiameterPinion",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DiameterPinion/1/0",
+                            ),
+                        ),
+                        type_=aas.ConceptDescription,
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Durchmesser Ritzel",
+                                r"en": r"Diameter of pinion",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class HelixAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"HelixAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/HelixAngle/1/0",
+                            ),
+                        ),
+                        type_=aas.ConceptDescription,
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Schrägungswinkel der Verzahnung",
+                                r"en": r"Helix angle of the toothing",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MovingPart(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MovingPart",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RackMovingPart/1/0",
+                            ),
+                        ),
+                        type_=aas.ConceptDescription,
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Bewegtes Teil", r"en": r"Moving part"}
+                        )
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
+                frictionCoefficient: Optional[
+                    Union[xsd.Long, FrictionCoefficient]
+                ] = None,
+                feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
+                diameterPinion: Optional[Union[xsd.Long, DiameterPinion]] = None,
+                helixAngle: Optional[Union[xsd.Long, HelixAngle]] = None,
+                movingPart: Optional[Union[xsd.Long, MovingPart]] = None,
                 id_short: Optional[str] = r"RackDrive",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -8508,418 +11643,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FrictionCoefficient",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Reibungskoeffizient",
-                                    r"en": r"Coefficient of friction",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FeedConstant",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Vorschubkonstante",
-                                    r"en": r"Feed Constant",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"DiameterPinion",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Durchmesser Ritzel",
-                                    r"en": r"Diameter of pinion",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DiameterPinion/1/0",
-                                    ),
-                                ),
-                                type_=aas.ConceptDescription,
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"HelixAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Schrägungswinkel der Verzahnung",
-                                    r"en": r"Helix angle of the toothing",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/HelixAngle/1/0",
-                                    ),
-                                ),
-                                type_=aas.ConceptDescription,
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MovingPart",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={r"de": r"Bewegtes Teil", r"en": r"Moving part"}
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RackMovingPart/1/0",
-                                    ),
-                                ),
-                                type_=aas.ConceptDescription,
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Zahnstangenapplikation", r"en": r"Rack drive"}
@@ -8931,10 +11654,115 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if frictionCoefficient is not None and not isinstance(
+                    frictionCoefficient, aas.SubmodelElement
+                ):
+                    frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if feedConstant is not None and not isinstance(
+                    feedConstant, aas.SubmodelElement
+                ):
+                    feedConstant = self.FeedConstant(feedConstant)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if diameterPinion is not None and not isinstance(
+                    diameterPinion, aas.SubmodelElement
+                ):
+                    diameterPinion = self.DiameterPinion(diameterPinion)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if helixAngle is not None and not isinstance(
+                    helixAngle, aas.SubmodelElement
+                ):
+                    helixAngle = self.HelixAngle(helixAngle)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if movingPart is not None and not isinstance(
+                    movingPart, aas.SubmodelElement
+                ):
+                    movingPart = self.MovingPart(movingPart)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                    frictionCoefficient,
+                    feedConstant,
+                    diameterPinion,
+                    helixAngle,
+                    movingPart,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -8949,13 +11777,581 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class SpindleDrive(aas.Entity):
 
+            class Efficiency(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"Efficiency",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InertiaMotorSide(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InertiaMotorSide",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmAxialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmAxialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class LeverArmRadialForce(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"LeverArmRadialForce",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Hebelarm Axialkraft",
+                                r"en": r"Lever arm axial force",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class NoLoadTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"NoLoadTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Leerlaufdrehmoment",
+                                r"en": r"No-load Torque",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InclinationAngle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InclinationAngle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = ()
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FrictionCoefficient(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FrictionCoefficient",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Reibungskoeffizient",
+                                r"en": r"Coefficient of friction",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FeedConstant(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FeedConstant",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={r"de": r"Vorschubkonstante", r"en": r"Feed Constant"}
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                efficiency: Optional[Union[xsd.Long, Efficiency]] = None,
+                inertiaMotorSide: Optional[Union[xsd.Long, InertiaMotorSide]] = None,
+                leverArmAxialForce: Optional[
+                    Union[xsd.Long, LeverArmAxialForce]
+                ] = None,
+                leverArmRadialForce: Optional[
+                    Union[xsd.Long, LeverArmRadialForce]
+                ] = None,
+                noLoadTorque: Optional[Union[xsd.Long, NoLoadTorque]] = None,
+                inclinationAngle: Optional[Union[xsd.Long, InclinationAngle]] = None,
+                frictionCoefficient: Optional[
+                    Union[xsd.Long, FrictionCoefficient]
+                ] = None,
+                feedConstant: Optional[Union[xsd.Long, FeedConstant]] = None,
                 id_short: Optional[str] = r"SpindleDrive",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.SELF_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[
                     str
                 ] = r"https://admin-shell.io/idta/SelfManagedEntity/1/0",
@@ -8980,337 +12376,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                 ] = None,
             ):
 
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"Efficiency",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InertiaMotorSide",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmAxialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"LeverArmRadialForce",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Hebelarm Axialkraft",
-                                    r"en": r"Lever arm axial force",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"NoLoadTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Leerlaufdrehmoment",
-                                    r"en": r"No-load Torque",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InclinationAngle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FrictionCoefficient",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Reibungskoeffizient",
-                                    r"en": r"Coefficient of friction",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FeedConstant",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Vorschubkonstante",
-                                    r"en": r"Feed Constant",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
-
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
                         dict_={r"de": r"Spindelantrieb", r"en": r"Spindle drive"}
@@ -9322,10 +12387,91 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if efficiency is not None and not isinstance(
+                    efficiency, aas.SubmodelElement
+                ):
+                    efficiency = self.Efficiency(efficiency)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inertiaMotorSide is not None and not isinstance(
+                    inertiaMotorSide, aas.SubmodelElement
+                ):
+                    inertiaMotorSide = self.InertiaMotorSide(inertiaMotorSide)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmAxialForce is not None and not isinstance(
+                    leverArmAxialForce, aas.SubmodelElement
+                ):
+                    leverArmAxialForce = self.LeverArmAxialForce(leverArmAxialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if leverArmRadialForce is not None and not isinstance(
+                    leverArmRadialForce, aas.SubmodelElement
+                ):
+                    leverArmRadialForce = self.LeverArmRadialForce(leverArmRadialForce)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if noLoadTorque is not None and not isinstance(
+                    noLoadTorque, aas.SubmodelElement
+                ):
+                    noLoadTorque = self.NoLoadTorque(noLoadTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if inclinationAngle is not None and not isinstance(
+                    inclinationAngle, aas.SubmodelElement
+                ):
+                    inclinationAngle = self.InclinationAngle(inclinationAngle)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if frictionCoefficient is not None and not isinstance(
+                    frictionCoefficient, aas.SubmodelElement
+                ):
+                    frictionCoefficient = self.FrictionCoefficient(frictionCoefficient)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if feedConstant is not None and not isinstance(
+                    feedConstant, aas.SubmodelElement
+                ):
+                    feedConstant = self.FeedConstant(feedConstant)
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    efficiency,
+                    inertiaMotorSide,
+                    leverArmAxialForce,
+                    leverArmRadialForce,
+                    noLoadTorque,
+                    inclinationAngle,
+                    frictionCoefficient,
+                    feedConstant,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -9454,13 +12600,777 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class OverallSystem(aas.Entity):
 
+            class ManufacturerName(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ManufacturerName",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAO677#002",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerArticleNumber(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ManufacturerArticleNumber",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAO676#003",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerProductDesignation(aas.MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: aas.LangStringSet,
+                    id_short: Optional[str] = r"ManufacturerProductDesignation",
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAW338#001",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerOrderCode(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ManufacturerOrderCode",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r" 0173-1#02-AAO227#002",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ExternalMomentOfInertia(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"ExternalMomentOfInertia",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/ExternalMomentOfInertia/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class InternalMomentOfIntertia(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"InternalMomentOfIntertia",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InternalMomentOfInertia/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MassInertiaRatio(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MassInertiaRatio",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class DecelerationForEmergencyStop(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"DecelerationForEmergencyStop",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DecelerationForEmergencyStop/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class CurrentForEmergencyStop(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"CurrentForEmergencyStop",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CurrentForEmergencyStop/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class DisplacementDuringEmergencyStop(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"DisplacementDuringEmergencyStop",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DisplacementDuringEmergencyStop/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class EnergyConsumtionPerCycle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"EnergyConsumtionPerCycle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
+                            ),
+                        ),
+                        type_=aas.ConceptDescription,
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                manufacturerName: Optional[Union[str, ManufacturerName]] = None,
+                manufacturerArticleNumber: Optional[
+                    Union[str, ManufacturerArticleNumber]
+                ] = None,
+                manufacturerProductDesignation: Optional[
+                    Union[aas.LangStringSet, ManufacturerProductDesignation]
+                ] = None,
+                manufacturerOrderCode: Optional[
+                    Union[str, ManufacturerOrderCode]
+                ] = None,
+                externalMomentOfInertia: Optional[
+                    Union[xsd.Long, ExternalMomentOfInertia]
+                ] = None,
+                internalMomentOfIntertia: Optional[
+                    Union[xsd.Long, InternalMomentOfIntertia]
+                ] = None,
+                massInertiaRatio: Optional[Union[xsd.Long, MassInertiaRatio]] = None,
+                decelerationForEmergencyStop: Optional[
+                    Union[xsd.Long, DecelerationForEmergencyStop]
+                ] = None,
+                currentForEmergencyStop: Optional[
+                    Union[xsd.Long, CurrentForEmergencyStop]
+                ] = None,
+                displacementDuringEmergencyStop: Optional[
+                    Union[xsd.Long, DisplacementDuringEmergencyStop]
+                ] = None,
+                energyConsumtionPerCycle: Optional[
+                    Union[xsd.Long, EnergyConsumtionPerCycle]
+                ] = None,
                 id_short: Optional[str] = r"OverallSystem",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.CO_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -9482,452 +13392,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
-
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"ManufacturerName",
-                            value_type=str,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO677#002",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"ManufacturerArticleNumber",
-                            value_type=str,
-                            value=r"-",
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO676#003",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.MultiLanguageProperty(
-                            id_short=r"ManufacturerProductDesignation",
-                            value=aas.MultiLanguageTextType(
-                                dict_={r"en": r"ManufacturerProductDesignation"}
-                            ),
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAW338#001",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"ManufacturerOrderCode",
-                            value_type=str,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r" 0173-1#02-AAO227#002",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"ExternalMomentOfInertia",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/ExternalMomentOfInertia/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"InternalMomentOfIntertia",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InternalMomentOfInertia/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MassInertiaRatio",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"DecelerationForEmergencyStop",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DecelerationForEmergencyStop/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"CurrentForEmergencyStop",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CurrentForEmergencyStop/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"DisplacementDuringEmergencyStop",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DisplacementDuringEmergencyStop/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"EnergyConsumtionPerCycle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
-                                    ),
-                                ),
-                                type_=aas.ConceptDescription,
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
@@ -9958,10 +13422,137 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerName is not None and not isinstance(
+                    manufacturerName, aas.SubmodelElement
+                ):
+                    manufacturerName = self.ManufacturerName(manufacturerName)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerArticleNumber is not None and not isinstance(
+                    manufacturerArticleNumber, aas.SubmodelElement
+                ):
+                    manufacturerArticleNumber = self.ManufacturerArticleNumber(
+                        manufacturerArticleNumber
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerProductDesignation is not None and not isinstance(
+                    manufacturerProductDesignation, aas.SubmodelElement
+                ):
+                    manufacturerProductDesignation = (
+                        self.ManufacturerProductDesignation(
+                            manufacturerProductDesignation
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerOrderCode is not None and not isinstance(
+                    manufacturerOrderCode, aas.SubmodelElement
+                ):
+                    manufacturerOrderCode = self.ManufacturerOrderCode(
+                        manufacturerOrderCode
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if externalMomentOfInertia is not None and not isinstance(
+                    externalMomentOfInertia, aas.SubmodelElement
+                ):
+                    externalMomentOfInertia = self.ExternalMomentOfInertia(
+                        externalMomentOfInertia
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if internalMomentOfIntertia is not None and not isinstance(
+                    internalMomentOfIntertia, aas.SubmodelElement
+                ):
+                    internalMomentOfIntertia = self.InternalMomentOfIntertia(
+                        internalMomentOfIntertia
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if massInertiaRatio is not None and not isinstance(
+                    massInertiaRatio, aas.SubmodelElement
+                ):
+                    massInertiaRatio = self.MassInertiaRatio(massInertiaRatio)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if decelerationForEmergencyStop is not None and not isinstance(
+                    decelerationForEmergencyStop, aas.SubmodelElement
+                ):
+                    decelerationForEmergencyStop = self.DecelerationForEmergencyStop(
+                        decelerationForEmergencyStop
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if currentForEmergencyStop is not None and not isinstance(
+                    currentForEmergencyStop, aas.SubmodelElement
+                ):
+                    currentForEmergencyStop = self.CurrentForEmergencyStop(
+                        currentForEmergencyStop
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if displacementDuringEmergencyStop is not None and not isinstance(
+                    displacementDuringEmergencyStop, aas.SubmodelElement
+                ):
+                    displacementDuringEmergencyStop = (
+                        self.DisplacementDuringEmergencyStop(
+                            displacementDuringEmergencyStop
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if energyConsumtionPerCycle is not None and not isinstance(
+                    energyConsumtionPerCycle, aas.SubmodelElement
+                ):
+                    energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(
+                        energyConsumtionPerCycle
+                    )
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    manufacturerName,
+                    manufacturerArticleNumber,
+                    manufacturerProductDesignation,
+                    manufacturerOrderCode,
+                    externalMomentOfInertia,
+                    internalMomentOfIntertia,
+                    massInertiaRatio,
+                    decelerationForEmergencyStop,
+                    currentForEmergencyStop,
+                    displacementDuringEmergencyStop,
+                    energyConsumtionPerCycle,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -9976,13 +13567,2034 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class MainComponent(aas.Entity):
 
+            class MainComponentType(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"MainComponentType",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponentType/1/0",
+                            ),
+                        ),
+                        type_=aas.ConceptDescription,
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Typ der Hauptkomponente",
+                                r"en": r"Main component type",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"OneToMany",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerName(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ManufacturerName",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAO677#002",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerArticleNumber(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ManufacturerArticleNumber",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAO676#003",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerProductDesignation(aas.MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: aas.LangStringSet,
+                    id_short: Optional[str] = r"ManufacturerProductDesignation",
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAW338#001",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerOrderCode(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ManufacturerOrderCode",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r" 0173-1#02-AAO227#002",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"One",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxCurrentUtilizationPercentage(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxCurrentUtilizationPercentage",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilizationPercentage/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxCurrentUtilization(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxCurrentUtilization",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilization/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxThermalUtilizationPercentage(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxThermalUtilizationPercentage",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilizationPercentage/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxThermalUtilization(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxThermalUtilization",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilization/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class AveragePowerLosses(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"AveragePowerLosses",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AveragePowerLosses/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class AverageRegenerativePowerDcLink(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"AverageRegenerativePowerDcLink",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageRegenerativePowerDcLink/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxRegenerativePowerDcLink(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxRegenerativePowerDcLink",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRegenerativePowerDcLink/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class AverageFeedInPowerDcLink(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"AverageFeedInPowerDcLink",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerDcLink/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class AverageFeedInPowerMains(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"AverageFeedInPowerMains",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerMains/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxFeedInPowerMains(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxFeedInPowerMains",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxFeedInPowerMains/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ContinuousCurrent(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"ContinuousCurrent",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/ContinuousCurrent/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class RmsOfPower(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"RmsOfPower",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfPower/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxTorqueUtilizationPercentage(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxTorqueUtilizationPercentage",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilizationPercentage/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxTorqueUtilization(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxTorqueUtilization",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilization/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxRotationSpeedUtilizationPercentage(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxRotationSpeedUtilizationPercentage",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilizationPercentage/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MaxRotationSpeedUtilization(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MaxRotationSpeedUtilization",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilization/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class EffectiveUtilization(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"EffectiveUtilization",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"CONSTANT",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EffectiveUtilization/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class CalculatedServiceLife(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"CalculatedServiceLife",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CalculatedServiceLife/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class MassInertiaRatio(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"MassInertiaRatio",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class FrequencyAtMaxSpeed(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"FrequencyAtMaxSpeed",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrequencyAtMaxSpeed/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class PowerInRegenerativeOperation(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"PowerInRegenerativeOperation",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInRegenerativeOperation/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class PowerInMotorOperation(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"PowerInMotorOperation",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInMotorOperation/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class RmsOfMotorTorque(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"RmsOfMotorTorque",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfMotorTorque/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class EnergyConsumtionPerCycle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"EnergyConsumtionPerCycle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
+                            ),
+                        ),
+                        type_=aas.ConceptDescription,
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                mainComponentType: Iterable[Union[str, MainComponentType]],
+                manufacturerName: Union[str, ManufacturerName],
+                manufacturerArticleNumber: Union[str, ManufacturerArticleNumber],
+                manufacturerOrderCode: Union[str, ManufacturerOrderCode],
+                manufacturerProductDesignation: Optional[
+                    Union[aas.LangStringSet, ManufacturerProductDesignation]
+                ] = None,
+                maxCurrentUtilizationPercentage: Optional[
+                    Union[xsd.Long, MaxCurrentUtilizationPercentage]
+                ] = None,
+                maxCurrentUtilization: Optional[
+                    Union[xsd.Long, MaxCurrentUtilization]
+                ] = None,
+                maxThermalUtilizationPercentage: Optional[
+                    Union[xsd.Long, MaxThermalUtilizationPercentage]
+                ] = None,
+                maxThermalUtilization: Optional[
+                    Union[xsd.Long, MaxThermalUtilization]
+                ] = None,
+                averagePowerLosses: Optional[
+                    Union[xsd.Long, AveragePowerLosses]
+                ] = None,
+                averageRegenerativePowerDcLink: Optional[
+                    Union[xsd.Long, AverageRegenerativePowerDcLink]
+                ] = None,
+                maxRegenerativePowerDcLink: Optional[
+                    Union[xsd.Long, MaxRegenerativePowerDcLink]
+                ] = None,
+                averageFeedInPowerDcLink: Optional[
+                    Union[xsd.Long, AverageFeedInPowerDcLink]
+                ] = None,
+                averageFeedInPowerMains: Optional[
+                    Union[xsd.Long, AverageFeedInPowerMains]
+                ] = None,
+                maxFeedInPowerMains: Optional[
+                    Union[xsd.Long, MaxFeedInPowerMains]
+                ] = None,
+                continuousCurrent: Optional[Union[xsd.Long, ContinuousCurrent]] = None,
+                rmsOfPower: Optional[Union[xsd.Long, RmsOfPower]] = None,
+                maxTorqueUtilizationPercentage: Optional[
+                    Union[xsd.Long, MaxTorqueUtilizationPercentage]
+                ] = None,
+                maxTorqueUtilization: Optional[
+                    Union[xsd.Long, MaxTorqueUtilization]
+                ] = None,
+                maxRotationSpeedUtilizationPercentage: Optional[
+                    Union[xsd.Long, MaxRotationSpeedUtilizationPercentage]
+                ] = None,
+                maxRotationSpeedUtilization: Optional[
+                    Union[xsd.Long, MaxRotationSpeedUtilization]
+                ] = None,
+                effectiveUtilization: Optional[
+                    Union[xsd.Long, EffectiveUtilization]
+                ] = None,
+                calculatedServiceLife: Optional[
+                    Union[xsd.Long, CalculatedServiceLife]
+                ] = None,
+                massInertiaRatio: Optional[Union[xsd.Long, MassInertiaRatio]] = None,
+                frequencyAtMaxSpeed: Optional[
+                    Union[xsd.Long, FrequencyAtMaxSpeed]
+                ] = None,
+                powerInRegenerativeOperation: Optional[
+                    Union[xsd.Long, PowerInRegenerativeOperation]
+                ] = None,
+                powerInMotorOperation: Optional[
+                    Union[xsd.Long, PowerInMotorOperation]
+                ] = None,
+                rmsOfMotorTorque: Optional[Union[xsd.Long, RmsOfMotorTorque]] = None,
+                energyConsumtionPerCycle: Optional[
+                    Union[xsd.Long, EnergyConsumtionPerCycle]
+                ] = None,
                 id_short: Optional[str] = r"MainComponent",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.CO_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -10004,1176 +15616,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
-
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"MainComponentType",
-                            value_type=str,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Typ der Hauptkomponente",
-                                    r"en": r"Main component type",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponentType/1/0",
-                                    ),
-                                ),
-                                type_=aas.ConceptDescription,
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"OneToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"ManufacturerName",
-                            value_type=str,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO677#002",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"ManufacturerArticleNumber",
-                            value_type=str,
-                            value=r"5001xxxx-xx-x",
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO676#003",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.MultiLanguageProperty(
-                            id_short=r"ManufacturerProductDesignation",
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAW338#001",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"ManufacturerOrderCode",
-                            value_type=str,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r" 0173-1#02-AAO227#002",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxCurrentUtilizationPercentage",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilizationPercentage/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxCurrentUtilization",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilization/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxThermalUtilizationPercentage",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilizationPercentage/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxThermalUtilization",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilization/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"AveragePowerLosses",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AveragePowerLosses/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"AverageRegenerativePowerDcLink",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageRegenerativePowerDcLink/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxRegenerativePowerDcLink",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRegenerativePowerDcLink/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"AverageFeedInPowerDcLink",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerDcLink/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"AverageFeedInPowerMains",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"CONSTANT",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerMains/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxFeedInPowerMains",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxFeedInPowerMains/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"ContinuousCurrent",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/ContinuousCurrent/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"RmsOfPower",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfPower/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxTorqueUtilizationPercentage",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilizationPercentage/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxTorqueUtilization",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilization/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxRotationSpeedUtilizationPercentage",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilizationPercentage/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MaxRotationSpeedUtilization",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"CONSTANT",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilization/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"EffectiveUtilization",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"CONSTANT",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EffectiveUtilization/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"CalculatedServiceLife",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CalculatedServiceLife/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"MassInertiaRatio",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"FrequencyAtMaxSpeed",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrequencyAtMaxSpeed/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"PowerInRegenerativeOperation",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInRegenerativeOperation/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"PowerInMotorOperation",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInMotorOperation/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"RmsOfMotorTorque",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfMotorTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"EnergyConsumtionPerCycle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
-                                    ),
-                                ),
-                                type_=aas.ConceptDescription,
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
@@ -11204,10 +15646,324 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # A str would be split into its characters
+                if isinstance(mainComponentType, str):
+                    raise TypeError(
+                        "mainComponentType takes several elements, got a str"
+                    )
+
+                # Build submodel elements from raw values passed in the argument
+                if mainComponentType:
+                    mainComponentType = [
+                        (
+                            i
+                            if isinstance(i, aas.SubmodelElement)
+                            else self.MainComponentType(i)
+                        )
+                        for i in mainComponentType
+                    ]
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerName is not None and not isinstance(
+                    manufacturerName, aas.SubmodelElement
+                ):
+                    manufacturerName = self.ManufacturerName(manufacturerName)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerArticleNumber is not None and not isinstance(
+                    manufacturerArticleNumber, aas.SubmodelElement
+                ):
+                    manufacturerArticleNumber = self.ManufacturerArticleNumber(
+                        manufacturerArticleNumber
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerProductDesignation is not None and not isinstance(
+                    manufacturerProductDesignation, aas.SubmodelElement
+                ):
+                    manufacturerProductDesignation = (
+                        self.ManufacturerProductDesignation(
+                            manufacturerProductDesignation
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerOrderCode is not None and not isinstance(
+                    manufacturerOrderCode, aas.SubmodelElement
+                ):
+                    manufacturerOrderCode = self.ManufacturerOrderCode(
+                        manufacturerOrderCode
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if maxCurrentUtilizationPercentage is not None and not isinstance(
+                    maxCurrentUtilizationPercentage, aas.SubmodelElement
+                ):
+                    maxCurrentUtilizationPercentage = (
+                        self.MaxCurrentUtilizationPercentage(
+                            maxCurrentUtilizationPercentage
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if maxCurrentUtilization is not None and not isinstance(
+                    maxCurrentUtilization, aas.SubmodelElement
+                ):
+                    maxCurrentUtilization = self.MaxCurrentUtilization(
+                        maxCurrentUtilization
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if maxThermalUtilizationPercentage is not None and not isinstance(
+                    maxThermalUtilizationPercentage, aas.SubmodelElement
+                ):
+                    maxThermalUtilizationPercentage = (
+                        self.MaxThermalUtilizationPercentage(
+                            maxThermalUtilizationPercentage
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if maxThermalUtilization is not None and not isinstance(
+                    maxThermalUtilization, aas.SubmodelElement
+                ):
+                    maxThermalUtilization = self.MaxThermalUtilization(
+                        maxThermalUtilization
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if averagePowerLosses is not None and not isinstance(
+                    averagePowerLosses, aas.SubmodelElement
+                ):
+                    averagePowerLosses = self.AveragePowerLosses(averagePowerLosses)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if averageRegenerativePowerDcLink is not None and not isinstance(
+                    averageRegenerativePowerDcLink, aas.SubmodelElement
+                ):
+                    averageRegenerativePowerDcLink = (
+                        self.AverageRegenerativePowerDcLink(
+                            averageRegenerativePowerDcLink
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if maxRegenerativePowerDcLink is not None and not isinstance(
+                    maxRegenerativePowerDcLink, aas.SubmodelElement
+                ):
+                    maxRegenerativePowerDcLink = self.MaxRegenerativePowerDcLink(
+                        maxRegenerativePowerDcLink
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if averageFeedInPowerDcLink is not None and not isinstance(
+                    averageFeedInPowerDcLink, aas.SubmodelElement
+                ):
+                    averageFeedInPowerDcLink = self.AverageFeedInPowerDcLink(
+                        averageFeedInPowerDcLink
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if averageFeedInPowerMains is not None and not isinstance(
+                    averageFeedInPowerMains, aas.SubmodelElement
+                ):
+                    averageFeedInPowerMains = self.AverageFeedInPowerMains(
+                        averageFeedInPowerMains
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if maxFeedInPowerMains is not None and not isinstance(
+                    maxFeedInPowerMains, aas.SubmodelElement
+                ):
+                    maxFeedInPowerMains = self.MaxFeedInPowerMains(maxFeedInPowerMains)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if continuousCurrent is not None and not isinstance(
+                    continuousCurrent, aas.SubmodelElement
+                ):
+                    continuousCurrent = self.ContinuousCurrent(continuousCurrent)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if rmsOfPower is not None and not isinstance(
+                    rmsOfPower, aas.SubmodelElement
+                ):
+                    rmsOfPower = self.RmsOfPower(rmsOfPower)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if maxTorqueUtilizationPercentage is not None and not isinstance(
+                    maxTorqueUtilizationPercentage, aas.SubmodelElement
+                ):
+                    maxTorqueUtilizationPercentage = (
+                        self.MaxTorqueUtilizationPercentage(
+                            maxTorqueUtilizationPercentage
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if maxTorqueUtilization is not None and not isinstance(
+                    maxTorqueUtilization, aas.SubmodelElement
+                ):
+                    maxTorqueUtilization = self.MaxTorqueUtilization(
+                        maxTorqueUtilization
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if (
+                    maxRotationSpeedUtilizationPercentage is not None
+                    and not isinstance(
+                        maxRotationSpeedUtilizationPercentage, aas.SubmodelElement
+                    )
+                ):
+                    maxRotationSpeedUtilizationPercentage = (
+                        self.MaxRotationSpeedUtilizationPercentage(
+                            maxRotationSpeedUtilizationPercentage
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if maxRotationSpeedUtilization is not None and not isinstance(
+                    maxRotationSpeedUtilization, aas.SubmodelElement
+                ):
+                    maxRotationSpeedUtilization = self.MaxRotationSpeedUtilization(
+                        maxRotationSpeedUtilization
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if effectiveUtilization is not None and not isinstance(
+                    effectiveUtilization, aas.SubmodelElement
+                ):
+                    effectiveUtilization = self.EffectiveUtilization(
+                        effectiveUtilization
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if calculatedServiceLife is not None and not isinstance(
+                    calculatedServiceLife, aas.SubmodelElement
+                ):
+                    calculatedServiceLife = self.CalculatedServiceLife(
+                        calculatedServiceLife
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if massInertiaRatio is not None and not isinstance(
+                    massInertiaRatio, aas.SubmodelElement
+                ):
+                    massInertiaRatio = self.MassInertiaRatio(massInertiaRatio)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if frequencyAtMaxSpeed is not None and not isinstance(
+                    frequencyAtMaxSpeed, aas.SubmodelElement
+                ):
+                    frequencyAtMaxSpeed = self.FrequencyAtMaxSpeed(frequencyAtMaxSpeed)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if powerInRegenerativeOperation is not None and not isinstance(
+                    powerInRegenerativeOperation, aas.SubmodelElement
+                ):
+                    powerInRegenerativeOperation = self.PowerInRegenerativeOperation(
+                        powerInRegenerativeOperation
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if powerInMotorOperation is not None and not isinstance(
+                    powerInMotorOperation, aas.SubmodelElement
+                ):
+                    powerInMotorOperation = self.PowerInMotorOperation(
+                        powerInMotorOperation
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if rmsOfMotorTorque is not None and not isinstance(
+                    rmsOfMotorTorque, aas.SubmodelElement
+                ):
+                    rmsOfMotorTorque = self.RmsOfMotorTorque(rmsOfMotorTorque)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if energyConsumtionPerCycle is not None and not isinstance(
+                    energyConsumtionPerCycle, aas.SubmodelElement
+                ):
+                    energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(
+                        energyConsumtionPerCycle
+                    )
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    mainComponentType,
+                    manufacturerName,
+                    manufacturerArticleNumber,
+                    manufacturerProductDesignation,
+                    manufacturerOrderCode,
+                    maxCurrentUtilizationPercentage,
+                    maxCurrentUtilization,
+                    maxThermalUtilizationPercentage,
+                    maxThermalUtilization,
+                    averagePowerLosses,
+                    averageRegenerativePowerDcLink,
+                    maxRegenerativePowerDcLink,
+                    averageFeedInPowerDcLink,
+                    averageFeedInPowerMains,
+                    maxFeedInPowerMains,
+                    continuousCurrent,
+                    rmsOfPower,
+                    maxTorqueUtilizationPercentage,
+                    maxTorqueUtilization,
+                    maxRotationSpeedUtilizationPercentage,
+                    maxRotationSpeedUtilization,
+                    effectiveUtilization,
+                    calculatedServiceLife,
+                    massInertiaRatio,
+                    frequencyAtMaxSpeed,
+                    powerInRegenerativeOperation,
+                    powerInMotorOperation,
+                    rmsOfMotorTorque,
+                    energyConsumtionPerCycle,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,
@@ -11222,13 +15978,503 @@ class PowerDriveTrainSizing(aas.Submodel):
 
         class OtherComponent(aas.Entity):
 
+            class ManufacturerName(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ManufacturerName",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAO677#002",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerArticleNumber(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ManufacturerArticleNumber",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAO676#003",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerProductDesignation(aas.MultiLanguageProperty):
+
+                def __init__(
+                    self,
+                    value: aas.LangStringSet,
+                    id_short: Optional[str] = r"ManufacturerProductDesignation",
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"0173-1#02-AAW338#001",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class ManufacturerOrderCode(aas.Property):
+
+                def __init__(
+                    self,
+                    value: str,
+                    id_short: Optional[str] = r"ManufacturerOrderCode",
+                    value_type: aas.DataTypeDefXsd = str,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r" 0173-1#02-AAO227#002",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class QuantityOfParts(aas.Property):
+
+                def __init__(
+                    self,
+                    value: int,
+                    id_short: Optional[str] = r"QuantityOfParts",
+                    value_type: aas.DataTypeDefXsd = int,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/QuantityOfParts/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if display_name is None:
+                        display_name = aas.MultiLanguageNameType(
+                            dict_={
+                                r"de": r"Anzahl Einzelteile",
+                                r"en": r"Quantity of parts",
+                            }
+                        )
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class BulkCount(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.UnsignedLong,
+                    id_short: Optional[str] = r"BulkCount",
+                    value_type: aas.DataTypeDefXsd = xsd.UnsignedLong,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                value=r"https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0",
+                            ),
+                        ),
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
+            class EnergyConsumtionPerCycle(aas.Property):
+
+                def __init__(
+                    self,
+                    value: xsd.Long,
+                    id_short: Optional[str] = r"EnergyConsumtionPerCycle",
+                    value_type: aas.DataTypeDefXsd = xsd.Long,
+                    value_id: Optional[aas.Reference] = None,
+                    display_name: Optional[aas.MultiLanguageNameType] = None,
+                    category: Optional[str] = r"PARAMETER",
+                    description: Optional[aas.MultiLanguageTextType] = None,
+                    semantic_id: Optional[aas.Reference] = aas.ModelReference(
+                        key=(
+                            aas.Key(
+                                type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
+                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
+                            ),
+                        ),
+                        type_=aas.ConceptDescription,
+                        referred_semantic_id=None,
+                    ),
+                    qualifier: Iterable[aas.Qualifier] = None,
+                    extension: Iterable[aas.Extension] = (),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (),
+                    embedded_data_specifications: Iterable[
+                        aas.EmbeddedDataSpecification
+                    ] = None,
+                ):
+
+                    if qualifier is None:
+                        qualifier = (
+                            aas.Qualifier(
+                                type_=r"Cardinality",
+                                value_type=str,
+                                value=r"ZeroToOne",
+                                value_id=None,
+                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
+                                semantic_id=aas.ExternalReference(
+                                    key=(
+                                        aas.Key(
+                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
+                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
+                                        ),
+                                    ),
+                                    referred_semantic_id=None,
+                                ),
+                                supplemental_semantic_id=(),
+                            ),
+                        )
+
+                    if embedded_data_specifications is None:
+                        embedded_data_specifications = []
+
+                    super().__init__(
+                        value=value,
+                        id_short=id_short,
+                        value_type=value_type,
+                        value_id=value_id,
+                        display_name=display_name,
+                        category=category,
+                        description=description,
+                        semantic_id=semantic_id,
+                        qualifier=qualifier,
+                        extension=extension,
+                        supplemental_semantic_id=supplemental_semantic_id,
+                        embedded_data_specifications=embedded_data_specifications,
+                    )
+
             def __init__(
                 self,
+                manufacturerName: Optional[Union[str, ManufacturerName]] = None,
+                manufacturerArticleNumber: Optional[
+                    Union[str, ManufacturerArticleNumber]
+                ] = None,
+                manufacturerProductDesignation: Optional[
+                    Union[aas.LangStringSet, ManufacturerProductDesignation]
+                ] = None,
+                manufacturerOrderCode: Optional[
+                    Union[str, ManufacturerOrderCode]
+                ] = None,
+                quantityOfParts: Optional[Union[int, QuantityOfParts]] = None,
+                bulkCount: Optional[Union[xsd.UnsignedLong, BulkCount]] = None,
+                energyConsumtionPerCycle: Optional[
+                    Union[xsd.Long, EnergyConsumtionPerCycle]
+                ] = None,
                 id_short: Optional[str] = r"OtherComponent",
                 entity_type: Optional[
                     aas.EntityType
                 ] = aas.EntityType.CO_MANAGED_ENTITY,
-                statement: Iterable[aas.SubmodelElement] = None,
                 global_asset_id: Optional[str] = None,
                 specific_asset_id: Iterable[aas.SpecificAssetId] = (),
                 display_name: Optional[aas.MultiLanguageNameType] = None,
@@ -11250,297 +16496,6 @@ class PowerDriveTrainSizing(aas.Submodel):
                     aas.EmbeddedDataSpecification
                 ] = None,
             ):
-
-                if statement is None:
-                    statement = (
-                        aas.Property(
-                            id_short=r"ManufacturerName",
-                            value_type=str,
-                            value=r"Machine Builder GmbH",
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO677#002",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"ManufacturerArticleNumber",
-                            value_type=str,
-                            value=r"-",
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAO676#003",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.MultiLanguageProperty(
-                            id_short=r"ManufacturerProductDesignation",
-                            value=aas.MultiLanguageTextType(
-                                dict_={r"en": r"ManufacturerProductDesignation"}
-                            ),
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"0173-1#02-AAW338#001",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"ManufacturerOrderCode",
-                            value_type=str,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r" 0173-1#02-AAO227#002",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"QuantityOfParts",
-                            value_type=int,
-                            value=None,
-                            value_id=None,
-                            display_name=aas.MultiLanguageNameType(
-                                dict_={
-                                    r"de": r"Anzahl Einzelteile",
-                                    r"en": r"Quantity of parts",
-                                }
-                            ),
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/QuantityOfParts/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"BulkCount",
-                            value_type=xsd.UnsignedLong,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                        aas.Property(
-                            id_short=r"EnergyConsumtionPerCycle",
-                            value_type=xsd.Long,
-                            value=None,
-                            value_id=None,
-                            display_name=None,
-                            category=r"PARAMETER",
-                            description=None,
-                            semantic_id=aas.ModelReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.CONCEPT_DESCRIPTION,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnergyConsumtionPerCycle/1/0",
-                                    ),
-                                ),
-                                type_=aas.ConceptDescription,
-                                referred_semantic_id=None,
-                            ),
-                            qualifier=(
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            ),
-                            extension=(),
-                            supplemental_semantic_id=(),
-                            embedded_data_specifications=[],
-                        ),
-                    )
 
                 if display_name is None:
                     display_name = aas.MultiLanguageNameType(
@@ -11571,10 +16526,93 @@ class PowerDriveTrainSizing(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerName is not None and not isinstance(
+                    manufacturerName, aas.SubmodelElement
+                ):
+                    manufacturerName = self.ManufacturerName(manufacturerName)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerArticleNumber is not None and not isinstance(
+                    manufacturerArticleNumber, aas.SubmodelElement
+                ):
+                    manufacturerArticleNumber = self.ManufacturerArticleNumber(
+                        manufacturerArticleNumber
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerProductDesignation is not None and not isinstance(
+                    manufacturerProductDesignation, aas.SubmodelElement
+                ):
+                    manufacturerProductDesignation = (
+                        self.ManufacturerProductDesignation(
+                            manufacturerProductDesignation
+                        )
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if manufacturerOrderCode is not None and not isinstance(
+                    manufacturerOrderCode, aas.SubmodelElement
+                ):
+                    manufacturerOrderCode = self.ManufacturerOrderCode(
+                        manufacturerOrderCode
+                    )
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if quantityOfParts is not None and not isinstance(
+                    quantityOfParts, aas.SubmodelElement
+                ):
+                    quantityOfParts = self.QuantityOfParts(quantityOfParts)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if bulkCount is not None and not isinstance(
+                    bulkCount, aas.SubmodelElement
+                ):
+                    bulkCount = self.BulkCount(bulkCount)
+
+                # Build a submodel element if a raw value was passed in the argument
+
+                if energyConsumtionPerCycle is not None and not isinstance(
+                    energyConsumtionPerCycle, aas.SubmodelElement
+                ):
+                    energyConsumtionPerCycle = self.EnergyConsumtionPerCycle(
+                        energyConsumtionPerCycle
+                    )
+
+                # Add all passed/initialized submodel elements to a single list
+                embedded_submodel_elements = []
+                for se_arg in [
+                    manufacturerName,
+                    manufacturerArticleNumber,
+                    manufacturerProductDesignation,
+                    manufacturerOrderCode,
+                    quantityOfParts,
+                    bulkCount,
+                    energyConsumtionPerCycle,
+                ]:
+                    if se_arg is None:
+                        continue
+                    elif isinstance(se_arg, aas.SubmodelElement):
+                        embedded_submodel_elements.append(se_arg)
+                    elif isinstance(se_arg, Iterable):
+                        for n, element in enumerate(se_arg):
+                            element.id_short = f"{element.id_short}{n}"
+                            embedded_submodel_elements.append(element)
+                    else:
+                        raise TypeError(
+                            f"Unknown type of value in submodel_element_args: {se_arg.__class__}"
+                        )
+
                 super().__init__(
+                    statement=embedded_submodel_elements,
                     id_short=id_short,
                     entity_type=entity_type,
-                    statement=statement,
                     global_asset_id=global_asset_id,
                     specific_asset_id=specific_asset_id,
                     display_name=display_name,

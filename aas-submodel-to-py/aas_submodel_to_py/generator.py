@@ -8,7 +8,7 @@ from basyx.aas.adapter.json import read_aas_json_file
 from basyx.aas.adapter.xml import read_aas_xml_file
 from basyx.aas.model import Property, Referable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictIdentifiableStore, MultiLanguageProperty, \
-    ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File, ModellingKind, Qualifiable
+    ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File, ModellingKind, Qualifiable, Entity
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -196,6 +196,8 @@ class SubmodelCodegen:
             return self.gen_cls_for_range(se)
         elif isinstance(se, SubmodelElementCollection):
             return self.gen_cls_for_se_collection(se)
+        elif isinstance(se, Entity):
+            return self.gen_cls_for_entity(se)
         elif isinstance(se, SubmodelElementList):
             return self.gen_cls_for_se_list(se)
         elif isinstance(se, File):
@@ -283,18 +285,28 @@ class SubmodelCodegen:
     def gen_cls_for_se_collection(self,
                                   se_collection: SubmodelElementCollection,
                                   template: str = 'se_col_class.pyi') -> str:
-        # Define the variables for the template
-        render_kwargs = self.default_referable_render_kwargs(se_collection, exclude_from_args=["value"])
+        return self.gen_cls_with_se_args(se_collection, se_collection.value, "value", template)
 
-        # generate arg names for included items of collection
-        collection_items = [NamingGenerator.create_arg_name_for_referable(i) for i in se_collection]
-        # provide args of included items with typehints
-        for se, arg in zip(se_collection, collection_items):
+    def gen_cls_for_entity(self, entity: Entity, template: str = 'entity_class.pyi') -> str:
+        # The statements of an entity are its submodel elements, like the value of a collection
+        return self.gen_cls_with_se_args(entity, entity.statement, "statement", template)
+
+    def gen_cls_with_se_args(self, referable: Referable, submodel_elements: Iterable[SubmodelElement],
+                             elements_attr: str, template: str) -> str:
+        """Render the class of a collection or entity, which takes its `submodel_elements` (in the
+        attribute `elements_attr`) as arguments and has a nested class for each of them"""
+        # Define the variables for the template
+        render_kwargs = self.default_referable_render_kwargs(referable, exclude_from_args=[elements_attr])
+
+        # generate arg names for the submodel elements
+        se_args = [NamingGenerator.create_arg_name_for_referable(i) for i in submodel_elements]
+        # provide args of the submodel elements with typehints
+        for se, arg in zip(submodel_elements, se_args):
             self.add_se_arg_render_kwargs(render_kwargs, se, arg)
 
-        embedded_se_classes = "\n\n".join([self.gen_cls_for_se(se) for se in se_collection])
+        embedded_se_classes = "\n\n".join([self.gen_cls_for_se(se) for se in submodel_elements])
 
-        render_kwargs.update(before_init_content=embedded_se_classes, args_for_submodel_elements=collection_items)
+        render_kwargs.update(before_init_content=embedded_se_classes, args_for_submodel_elements=se_args)
         return self.render_cls_with_template(template, **render_kwargs)
 
     def _default_referable_render_kwargs_with_value_in_args(self, se: SubmodelElement):

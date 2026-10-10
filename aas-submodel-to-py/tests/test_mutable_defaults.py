@@ -49,14 +49,15 @@ def shared(first, second) -> set:
 
 
 def build_submodel(cls):
-    return cls(id_=SUBMODEL_ID, name="x", node=cls.Node(), compute=cls.Compute(), relation=cls.Relation())
+    return cls(id_=SUBMODEL_ID, name="x", node=cls.Node(weight=1.0), compute=cls.Compute(), relation=cls.Relation())
 
 
 def test_entity_statements_are_not_shared(generated_module):
+    # Statements are arguments (issue #39), so they can't be shared defaults any more
     node_cls = generated_module.DefaultsTest.Node
-    first, second = node_cls(), node_cls()
+    first, second = node_cls(weight=1.0), node_cls(weight=2.0)
 
-    assert [statement.id_short for statement in second.statement] == ["Weight"]
+    assert [statement.value for statement in second.statement] == [2.0]
     assert not shared(first.statement, second.statement)
 
 
