@@ -341,6 +341,11 @@ class MaterialComposition(aas.Submodel):
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
 
+                    if sum(arg is not None for arg in (componentName, componentId)) > 1:
+                        raise ValueError(
+                            "Only one of componentName, componentId may be given (SMT/EitherOr 'BatteryMaterialLocationComponent')"
+                        )
+
                     # Build a submodel element if a raw value was passed in the argument
 
                     if componentName is not None and not isinstance(
@@ -1404,6 +1409,11 @@ class MaterialComposition(aas.Submodel):
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
+
+                    if sum(arg is not None for arg in (componentName, componentId)) > 1:
+                        raise ValueError(
+                            "Only one of componentName, componentId may be given (SMT/EitherOr 'HazardousSubstanceLocationComponent')"
+                        )
 
                     # Build a submodel element if a raw value was passed in the argument
 

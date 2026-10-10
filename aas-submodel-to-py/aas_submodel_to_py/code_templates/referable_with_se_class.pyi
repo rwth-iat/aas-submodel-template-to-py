@@ -30,6 +30,12 @@
 
 {%- block in_init -%}
 
+{# Only one element of each SMT/EitherOr group may be given, see SubmodelCodegen.get_either_or_groups #}
+{% for group_args, message in either_or_groups | default([]) %}
+if sum(arg is not None for arg in ({{ group_args | join(", ") }})) > 1:
+    raise ValueError({{ message }})
+{% endfor %}
+
 {# Check if raw values were passed in args where SubmodelElements (e.g.Property) are expected #}
 {# Build from raw values SubmodelElements (e.g. from 123 build SpecificProperty(value=123))  #}
 {# raw_value_builders maps such args to the code building the SubmodelElement from a raw value, #}

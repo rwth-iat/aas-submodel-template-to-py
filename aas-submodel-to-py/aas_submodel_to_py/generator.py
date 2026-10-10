@@ -183,7 +183,8 @@ class SubmodelCodegen:
 
         # Render the template with the given variables
         render_kwargs.update(before_init_content=embedded_se_classes,
-                             args_for_submodel_elements=se_as_args)
+                             args_for_submodel_elements=se_as_args,
+                             either_or_groups=self.get_either_or_groups(submodel, se_as_args))
         return self.render_cls_with_template(template, **render_kwargs)
 
     def gen_cls_for_se(self, se: SubmodelElement,
@@ -308,7 +309,8 @@ class SubmodelCodegen:
 
         embedded_se_classes = "\n\n".join([self.gen_cls_for_se(se) for se in submodel_elements])
 
-        render_kwargs.update(before_init_content=embedded_se_classes, args_for_submodel_elements=se_args)
+        render_kwargs.update(before_init_content=embedded_se_classes, args_for_submodel_elements=se_args,
+                             either_or_groups=self.get_either_or_groups(submodel_elements, se_args))
         return self.render_cls_with_template(template, **render_kwargs)
 
     def _default_referable_render_kwargs_with_value_in_args(self, se: SubmodelElement):
@@ -327,6 +329,19 @@ class SubmodelCodegen:
             render_kwargs["kwargs"] = {"value": StringHandler.reprify(default_value), **render_kwargs["kwargs"]}
         render_kwargs["typehints"]["value"] = StringHandler.reprify(se.value_type)
         return self.render_cls_with_template(template, **render_kwargs)
+
+    @staticmethod
+    def get_either_or_groups(submodel_elements: Iterable[SubmodelElement], se_args: Iterable[str]) -> list:
+        """Return the arguments of each group of `submodel_elements` with the same SMT/EitherOr value, of
+        which only one may be given, and the code of the error message. A value of a single element isn't
+        a group (e.g. a list of values in Safety Instrumented Functions)"""
+        groups = {}
+        for se, arg in zip(submodel_elements, se_args):
+            for qualifier in se.qualifier:
+                if qualifier.type.strip().lower() == "smt/eitheror" and qualifier.value:
+                    groups.setdefault(qualifier.value, []).append(arg)
+        return [(args, StringHandler.reprify(f"Only one of {', '.join(args)} may be given (SMT/EitherOr {group!r})"))
+                for group, args in groups.items() if len(args) > 1]
 
     # Qualifiers giving the default value of a Property, by priority
     DEFAULT_VALUE_QUALIFIERS = ("smt/defaultvalue", "defaultvalue", "smt/initialvalue")

@@ -1,6 +1,7 @@
 """Build instances of generated classes with sample values, as used by the tests"""
 import collections.abc
 import inspect
+import re
 import typing
 
 from basyx.aas import model
@@ -33,7 +34,16 @@ def build_instance(cls: type, full: bool = False):
     if issubclass(cls, model.Entity) and \
             inspect.signature(cls.__init__).parameters["entity_type"].default is model.EntityType.SELF_MANAGED_ENTITY:
         kwargs["global_asset_id"] = "https://example.com/ids/asset"  # AASd-014
-    return cls(**kwargs)
+    while True:
+        try:
+            return cls(**kwargs)
+        except ValueError as e:
+            # Only one element of an SMT/EitherOr group may be given: keep the first one
+            match = re.match(r"Only one of (.+) may be given", str(e))
+            if not match:
+                raise
+            for arg in match.group(1).split(", ")[1:]:
+                kwargs.pop(arg, None)
 
 
 def takes_generated_class(cls: type, typehint) -> bool:

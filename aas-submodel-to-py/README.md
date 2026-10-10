@@ -112,6 +112,7 @@ Instead of submodel elements (e.g. `Nameplate.SerialNumber("12345678")`), raw va
 (e.g. `yearOfConstruction="2022"`); multi-language values are passed as `MultiLanguageTextType`.
 Properties with a default value in the template (`SMT/DefaultValue`, else `SMT/InitialValue`) can be
 created without value, e.g. `PAMSpecificationSheet.GeneralInformation.SafetyMeasure()`.
+Of elements marked as alternatives (`SMT/EitherOr`), only one may be given; passing more raises a `ValueError`.
 Lists (`SubmodelElementList`) take an iterable of their items or raw values, e.g. `phases=["A1", "B2"]`.
 List items have no idShort by default, as it is optional since AAS metamodel 3.1.
 The output is auto-formatted with Black.

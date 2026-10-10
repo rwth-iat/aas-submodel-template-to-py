@@ -4352,6 +4352,25 @@ class InspectionDocumentsOfSteelProducts(aas.Submodel):
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
 
+                if (
+                    sum(
+                        arg is not None
+                        for arg in (
+                            tube,
+                            rectangularTube,
+                            roundBar,
+                            hexagonalBar,
+                            rectangularBar,
+                            sheetMetal,
+                            profile,
+                        )
+                    )
+                    > 1
+                ):
+                    raise ValueError(
+                        "Only one of tube, rectangularTube, roundBar, hexagonalBar, rectangularBar, sheetMetal, profile may be given (SMT/EitherOr 'SemiFinishedProductSpecification')"
+                    )
+
                 # Add all passed/initialized submodel elements to a single list
                 embedded_submodel_elements = []
                 for se_arg in [

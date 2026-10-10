@@ -13,6 +13,7 @@ For every submodel of a template file and its generated class:
   content type, list attributes, display name, description, category, entity type, data
   specifications, extensions and qualifiers of the template.
 - A minimal instance (required arguments only) contains every mandatory element of the template.
+- Of elements of an SMT/EitherOr group, only one is in an instance (#45).
 
 Intended differences:
 - Instances have kind Instance and no qualifiers only describing the template (#37, #42): qualifiers
@@ -200,6 +201,11 @@ def takes_several(element: dict) -> bool:
     return element["modelType"] != "SubmodelElementList" and (cardinality(element) or "").endswith("tomany")
 
 
+def either_or(element: dict):
+    """The SMT/EitherOr group of `element`, or None"""
+    return next((q.get("value") for q in element.get("qualifiers") or [] if q.get("type") == "SMT/EitherOr"), None)
+
+
 def is_mandatory(element: dict) -> bool:
     return not (cardinality(element) or "").startswith("zero")
 
@@ -241,9 +247,11 @@ def compare(template: dict, instance: dict, path: str, errors: list, exact_id_sh
         compare_list_items(template, instance, path, errors, exact_id_shorts)
         return
 
-    for template_child, instance_children in match_children(children(template), children(instance), path, errors,
-                                                            exact_id_shorts):
-        if not instance_children:
+    matches = match_children(children(template), children(instance), path, errors, exact_id_shorts)
+    given_groups = {either_or(child) for child, instance_children in matches if instance_children}
+    for template_child, instance_children in matches:
+        # Only one element of an SMT/EitherOr group may be given
+        if not instance_children and (exact_id_shorts or either_or(template_child) not in given_groups):
             errors.append(f"{path}/{template_child.get('idShort')}: missing in the instance")
         for instance_child in instance_children:
             compare(template_child, instance_child, f"{path}/{instance_child.get('idShort')}", errors, exact_id_shorts)
