@@ -1,11 +1,13 @@
 import os.path
 import pathlib
+import warnings
 from typing import Union, Iterable, Any, Optional
 
 import black
 from basyx.aas.adapter.aasx import AASXReader, DictSupplementaryFileContainer
 from basyx.aas.adapter.json import read_aas_json_file
 from basyx.aas.adapter.xml import read_aas_xml_file
+from basyx.aas.model import datatypes
 from basyx.aas.model import Property, Referable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictIdentifiableStore, MultiLanguageProperty, \
     ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File, ModellingKind, Qualifiable, Entity
@@ -316,9 +318,35 @@ class SubmodelCodegen:
 
     def gen_cls_for_property(self, se: Property,
                              template: str = 'base_class.pyi') -> str:
-        render_kwargs = self._default_referable_render_kwargs_with_value_in_args(se)
+        default_value = self.get_default_value(se)
+        if default_value is None:
+            render_kwargs = self._default_referable_render_kwargs_with_value_in_args(se)
+        else:
+            # The value defaults to the default value of the template, as first keyword argument
+            render_kwargs = self.default_referable_render_kwargs(se, exclude_from_args=["value"])
+            render_kwargs["kwargs"] = {"value": StringHandler.reprify(default_value), **render_kwargs["kwargs"]}
         render_kwargs["typehints"]["value"] = StringHandler.reprify(se.value_type)
         return self.render_cls_with_template(template, **render_kwargs)
+
+    # Qualifiers giving the default value of a Property, by priority
+    DEFAULT_VALUE_QUALIFIERS = ("smt/defaultvalue", "defaultvalue", "smt/initialvalue")
+
+    @classmethod
+    def get_default_value(cls, se: Property):
+        """Return the default value of `se` given by its qualifiers SMT/DefaultValue, DefaultValue or
+        SMT/InitialValue, converted to its value type, or None if it has none"""
+        qualifiers = {q.type.strip().lower(): q for q in se.qualifier}
+        for qualifier_type in cls.DEFAULT_VALUE_QUALIFIERS:
+            qualifier = qualifiers.get(qualifier_type)
+            if qualifier is None or qualifier.value is None:
+                continue
+            lexical = qualifier.value if isinstance(qualifier.value, str) else datatypes.xsd_repr(qualifier.value)
+            try:
+                return datatypes.from_xsd(lexical, se.value_type)
+            except ValueError:
+                warnings.warn(f"Ignoring {qualifier.type} {lexical!r} of {se!r}, as it isn't a value of its value "
+                              f"type {se.value_type.__name__}")
+        return None
 
     def gen_cls_for_multilang_property(self, se: MultiLanguageProperty,
                              template: str = 'base_class.pyi') -> str:

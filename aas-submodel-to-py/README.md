@@ -110,6 +110,8 @@ nameplate = Nameplate(
 All required submodel elements are positional arguments; optional elements default to `None`.
 Instead of submodel elements (e.g. `Nameplate.SerialNumber("12345678")`), raw values can be passed
 (e.g. `yearOfConstruction="2022"`); multi-language values are passed as `MultiLanguageTextType`.
+Properties with a default value in the template (`SMT/DefaultValue`, else `SMT/InitialValue`) can be
+created without value, e.g. `PAMSpecificationSheet.GeneralInformation.SafetyMeasure()`.
 Lists (`SubmodelElementList`) take an iterable of their items or raw values, e.g. `phases=["A1", "B2"]`.
 List items have no idShort by default, as it is optional since AAS metamodel 3.1.
 The output is auto-formatted with Black.

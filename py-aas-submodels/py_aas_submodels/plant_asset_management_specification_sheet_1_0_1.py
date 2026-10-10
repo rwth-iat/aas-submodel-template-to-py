@@ -621,7 +621,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             def __init__(
                 self,
-                value: str,
+                value: str = r"False",
                 id_short: Optional[str] = r"SafetyMeasure",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
@@ -682,7 +682,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             def __init__(
                 self,
-                value: str,
+                value: str = r"False",
                 id_short: Optional[str] = r"RedundantAssets",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
@@ -746,7 +746,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             def __init__(
                 self,
-                value: str,
+                value: str = r"0",
                 id_short: Optional[str] = r"SILCategory",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -815,7 +815,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             def __init__(
                 self,
-                value: str,
+                value: str = r"low",
                 id_short: Optional[str] = r"FailureProbability",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -887,7 +887,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             def __init__(
                 self,
-                value: str,
+                value: str = r"significant",
                 id_short: Optional[str] = r"FailureSeverity",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -956,7 +956,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
             def __init__(
                 self,
-                value: str,
+                value: str = r"critical",
                 id_short: Optional[str] = r"CriticalityCategory",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1510,7 +1510,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"False",
                     id_short: Optional[str] = r"MonitoringRequired",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
@@ -1696,7 +1696,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"failure",
                     id_short: Optional[str] = r"NE107Status",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -1768,7 +1768,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"Asset-Alarm",
                     id_short: Optional[str] = r"NE129AlarmCategory",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2297,7 +2297,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"True",
                     id_short: Optional[str] = r"MonitoringRequired",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
@@ -2483,7 +2483,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"failure",
                     id_short: Optional[str] = r"NE107Status",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -2555,7 +2555,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"Asset-Alarm",
                     id_short: Optional[str] = r"NE129AlarmCategory",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = aas.ExternalReference(
@@ -3732,7 +3732,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"True",
                     id_short: Optional[str] = r"RecordingRequired",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
@@ -3796,7 +3796,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"floating point",
                     id_short: Optional[str] = r"SignalType",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
@@ -4234,7 +4234,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"True",
                     id_short: Optional[str] = r"Required",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
@@ -4295,7 +4295,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"True",
                     id_short: Optional[str] = r"InputAvailable",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,
@@ -4420,7 +4420,7 @@ class PAMSpecificationSheet(aas.Submodel):
 
                 def __init__(
                     self,
-                    value: str,
+                    value: str = r"True",
                     id_short: Optional[str] = r"RecordingRequired",
                     value_type: aas.DataTypeDefXsd = str,
                     value_id: Optional[aas.Reference] = None,

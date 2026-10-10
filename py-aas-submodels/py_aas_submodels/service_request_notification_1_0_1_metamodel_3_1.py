@@ -530,7 +530,7 @@ class ServiceRequestNotification(aas.Submodel):
 
             def __init__(
                 self,
-                value: str,
+                value: str = r"Medium",
                 id_short: Optional[str] = r"Priority",
                 value_type: aas.DataTypeDefXsd = str,
                 value_id: Optional[aas.Reference] = None,
