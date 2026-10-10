@@ -64,7 +64,8 @@ def generated_module(tmp_path_factory):
                 value_type=str,
                 description=model.MultiLanguageTextType(DESCRIPTION),
                 display_name=model.MultiLanguageNameType(DISPLAY_NAME),
-                qualifier=[model.Qualifier("ExampleValue", str, value=EXAMPLE_VALUE)],
+                # Qualifiers only describing the template (e.g. ExampleValue) aren't taken over (#42)
+                qualifier=[model.Qualifier("Note", str, value=EXAMPLE_VALUE)],
             ),
         ],
     )
@@ -82,4 +83,4 @@ def test_generated_strings_keep_values(generated_module):
 
     assert dict(currency.description) == DESCRIPTION
     assert dict(currency.display_name) == DISPLAY_NAME
-    assert currency.get_qualifier_by_type("ExampleValue").value == EXAMPLE_VALUE
+    assert currency.get_qualifier_by_type("Note").value == EXAMPLE_VALUE

@@ -2585,17 +2585,7 @@ class SafetyInstrumentedFunction(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2801,17 +2791,7 @@ class SafetyInstrumentedFunction(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []

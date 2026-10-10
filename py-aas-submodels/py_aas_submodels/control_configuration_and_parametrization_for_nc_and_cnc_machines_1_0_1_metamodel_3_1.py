@@ -39,35 +39,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"DigitalNameplate",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Submodel Element reference to the digital nameplate of the control.",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -121,44 +93,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"ControllerType",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"List of controller types.",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormChoices",
-                        value_type=str,
-                        value=r"Path controlled; Point controlled, Track controlled",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -212,35 +147,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"TimeUnit",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Time unit (s, ms, us)",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -294,35 +201,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"LengthType",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Length type of the CNC",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -376,35 +255,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"FieldbusType",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Fieldbus type of the CNC",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -458,35 +309,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"CNCCycleTime",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Cycle time of the CNC",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -540,35 +363,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"PLCCycleTime",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Cycle time of the PLC",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -622,35 +417,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"FieldbusCycleTime",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Cycle time of the fieldbus",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -704,35 +471,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Velocity unit",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Velocity unit of the CNC",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -788,35 +527,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Acceleration unit",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Acceleration unit of the CNC",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -870,35 +581,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Jerk unit",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Jerk unit of the CNC",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -954,35 +637,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"ControlConfigFileName",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Filename of the configuration file.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1035,35 +690,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"ConfigurationFile",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Configuration file of the controler.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1116,35 +743,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"ControlerConfigData",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Provide the configuration data for the controler.",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -1227,35 +826,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"ChannelIdentification",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Identification number of the channel",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1495,35 +1066,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Channel",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Channel",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1600,35 +1143,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Channels",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Provides access to the paramtization of the channels/axes/drives",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -1700,35 +1215,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"AxisName",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Name of the specific axis",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1782,35 +1269,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"AxisType",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Type of the specific axis",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1864,35 +1323,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"SimulationAxis",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Axis is a simulated or real one",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1946,35 +1377,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"SwLimitSwitchNeg",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Software limit switch negative",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2028,35 +1431,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"SwLimitSwitchPos",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Software limit switch positive",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2110,35 +1485,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"VelocityLimit",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Velocity limit of the axis",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2192,35 +1539,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"AccelerationLimit",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Acceleration limit of the axis",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2274,35 +1593,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"JerkLimit",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Jerk limit of the axis",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2358,35 +1649,7 @@ class ControlConfig(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"AxisConfigFilename",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Configuration filename of the axis",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2439,35 +1702,7 @@ class ControlConfig(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"AxisConfigFile",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Axis configuration file",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2519,35 +1754,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"AxisConfigData",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Collection of axis configuration data",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2623,35 +1830,7 @@ class ControlConfig(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"DriveManual",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Manual file of the drive",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2704,35 +1883,7 @@ class ControlConfig(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"TechnicalData",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Reference to the technical Data of the drive",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2790,35 +1941,7 @@ class ControlConfig(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"DriveConfigFileName",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Filename of of the configuration file",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2873,35 +1996,7 @@ class ControlConfig(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"DriveConfigFile",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Drive configuration file",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2955,35 +2050,7 @@ class ControlConfig(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"DriveConfigData",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Drive configuration data",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3060,35 +2127,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"Drive",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"To be filled; longer explanation",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3170,35 +2209,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Axis",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"List of axis specific configuration data",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3331,35 +2342,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Axes",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"List of axes of the specific channel",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"OneToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -3431,35 +2414,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"NCProgramFileType",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"File type (extension) of the NC program file",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3513,35 +2468,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"NCProgramSyntax",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Syntax of the NC program",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3594,35 +2521,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Machine code syntax manual file",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"The description of the synatx of the machine code implementation of the cnc machine",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3675,35 +2574,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"NCProgramConfig",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Provides NC program informations",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -3797,35 +2668,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"CommunicationType",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Type of the communication access to the CNC.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3879,35 +2722,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"CommunicationAdress",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Type of the communication access to the CNC.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3963,35 +2778,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"CommunicationInformationModel",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Information model of the communication configuration",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4102,35 +2889,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"CommunicationConfig",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Provides the communication information to access the CNC.",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -4287,35 +3046,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Tool",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"One tool of the CNC",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4388,35 +3119,7 @@ class ControlConfig(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Tools",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"List of tools",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"OneToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []

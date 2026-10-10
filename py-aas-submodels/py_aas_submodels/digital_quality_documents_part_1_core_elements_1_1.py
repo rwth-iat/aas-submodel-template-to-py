@@ -5448,17 +5448,7 @@ class DigitalQualityDocuments(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"SMT/AllowedValue",
-                                            value_type=str,
-                                            value=r"pass;fail",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []

@@ -637,17 +637,7 @@ class ControlComponentType(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"To be filled; normally same as idShort, might be with {00}",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []

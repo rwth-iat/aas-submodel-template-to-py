@@ -317,10 +317,28 @@ def get_kwargs_for_init(obj, exceptions: Tuple[str] = ("parent",)):
         kwargs[arg] = get_mapped_attr_of_arg(obj, arg)
     return kwargs
 
+# Types of qualifiers that only describe templates, also if they aren't of kind TemplateQualifier:
+# older names of qualifiers of the SMT specification and hints for template editors
+TEMPLATE_QUALIFIER_TYPES = frozenset((
+    "cardinality", "multiplicity", "examplevalue", "example", "defaultvalue",
+    "allowedidshort", "editidshort", "presetidshort", "editdescription",
+    "forminfo", "formtitle", "formchoices", "formurl", "formtag",
+))
+
+
+def is_template_qualifier(qualifier: Qualifier) -> bool:
+    """Return if `qualifier` only describes the template: qualifiers of kind TemplateQualifier, qualifiers
+    of the SMT specification (SMT/...) and their older names, and hints for template editors (Form...)"""
+    type_ = qualifier.type.strip().lower()
+    return qualifier.kind is QualifierKind.TEMPLATE_QUALIFIER or type_.startswith("smt/") \
+        or type_ in TEMPLATE_QUALIFIER_TYPES
+
+
 def instance_qualifiers(obj: Qualifiable) -> tuple:
     """Return the qualifiers of the template element `obj` that its instances take over: template
-    qualifiers (e.g. SMT/Cardinality) are only allowed in templates (AASd-119, AASd-129)"""
-    return tuple(q for q in obj.qualifier if q.kind is not QualifierKind.TEMPLATE_QUALIFIER)
+    qualifiers (e.g. SMT/Cardinality) are only allowed in templates (AASd-119, AASd-129), and other
+    qualifiers only describing the template (e.g. Multiplicity, FormInfo) don't belong to instances"""
+    return tuple(q for q in obj.qualifier if not is_template_qualifier(q))
 
 
 def get_typehints_for_args(obj, args):

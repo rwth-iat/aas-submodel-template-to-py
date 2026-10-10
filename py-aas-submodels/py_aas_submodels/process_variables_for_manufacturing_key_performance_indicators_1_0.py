@@ -167,17 +167,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual personnel work time shall be the time that a worker needs for the execution of a production order.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -448,17 +438,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual unit processing time shall be the actual production time plus the actual unit setup time.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -729,17 +709,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual unit busy time shall be the actual time that a work unit is used for the execution of a production order.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1010,17 +980,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual order execution time shall be the time difference between start time and end time of a production order. It includes the actual busy time, the actual transport time and the actual queuing time.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1291,17 +1251,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual personnel attendance time shall be the actual time that a worker is available to work on production orders. It does not include actual time for company authorized break periods (e.g. lunch). It shall be the difference between login and logout excluding breaks.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1572,17 +1522,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual production time shall be the actual time during which a work unit is producing. It includes only the value-adding functions.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1853,17 +1793,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual queuing time shall be the actual time when the work unit is not executing order production although its available.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2134,17 +2064,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual unit down time shall be the actual time when the work unit is not execution order production although it is available.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2415,17 +2335,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual unit delay time shall be the actual time associated with malfunction-caused interruptions, minor stoppages, and other unplanned time intervals that occur while tasks are being completed that lead to unwanted extension of the order processing time.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2696,17 +2606,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual unit setup time shall be the time consumed for the preparation of an order at a work unit.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2977,17 +2877,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The actual transport time shall be the actual time required for transport between work units.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3256,17 +3146,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"A good part shall be the count of individual identifiable parts, e.g. by serialization, which meets the quality requirements.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3533,17 +3413,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"An inspected part shall be the count of individual identifiable parts, e.g., by serialization, which was tested against the quality requirements.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3812,17 +3682,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The scrap quantity shall be the planned quantity of products for a production order (lot size, production order quantity).",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4091,17 +3951,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The good quantity shall be the produced quantity that meets quality requirements.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4372,17 +4222,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The rework quantity shall be the quantity that fails to meet the quantity requirements, but where these requirements can be met by subsequent work.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4653,17 +4493,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The produced quantity shall be the quantity that a work unit has produced in relation to a production order.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4934,17 +4764,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The planned busy time shall be the planned operation time minus the planned downtime.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -5215,17 +5035,7 @@ class ProcessVariablesForManufacturingKPICalculation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"The planned run time per item shall be the planned time for producing one quantity unit.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []

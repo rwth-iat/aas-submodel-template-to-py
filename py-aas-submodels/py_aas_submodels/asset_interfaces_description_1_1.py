@@ -46,17 +46,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -115,17 +105,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -184,17 +164,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -253,17 +223,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -324,17 +284,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -395,17 +345,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -535,17 +475,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -713,17 +643,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -780,17 +700,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -876,17 +786,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -949,17 +849,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1017,17 +907,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1120,17 +1000,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1193,17 +1063,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1266,17 +1126,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1339,17 +1189,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1409,17 +1249,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1524,17 +1354,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1611,17 +1431,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1789,17 +1599,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1953,17 +1753,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2023,17 +1813,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2148,17 +1928,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2221,17 +1991,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2294,17 +2054,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2367,17 +2117,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2437,17 +2177,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2552,17 +2282,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2625,17 +2345,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2698,17 +2408,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2767,17 +2467,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2877,17 +2567,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2950,17 +2630,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3023,17 +2693,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3096,17 +2756,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3169,17 +2819,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3240,17 +2880,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3360,17 +2990,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3433,17 +3053,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3506,17 +3116,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3579,17 +3179,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3652,17 +3242,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3725,17 +3305,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3798,17 +3368,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3871,17 +3431,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4013,17 +3563,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -4084,17 +3624,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -4157,17 +3687,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -4230,17 +3750,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -4309,17 +3819,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -4473,17 +3973,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -4546,17 +4036,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -4623,17 +4103,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4773,17 +4243,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4869,17 +4329,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4995,17 +4445,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -5068,17 +4508,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -5141,17 +4571,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -5214,17 +4634,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -5287,17 +4697,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -5360,17 +4760,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -5433,17 +4823,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -5526,15 +4906,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -5637,15 +5008,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -5730,17 +5092,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -5805,17 +5157,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -5880,17 +5222,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -5955,17 +5287,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -6030,17 +5352,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -6105,17 +5417,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -6200,15 +5502,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -6313,15 +5606,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for string-based values",
@@ -6402,17 +5686,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -6482,15 +5756,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -6673,15 +5938,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -6782,17 +6038,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -6861,17 +6107,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -6940,17 +6176,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -7019,17 +6245,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -7098,17 +6314,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -7177,17 +6383,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -7256,17 +6452,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -7355,15 +6541,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -7472,15 +6649,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -7569,17 +6737,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -7648,17 +6806,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -7727,17 +6875,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -7806,17 +6944,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -7885,17 +7013,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -7964,17 +7082,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -8063,15 +7171,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
                                                 aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
@@ -8180,15 +7279,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                         if qualifier is None:
                                             qualifier = (
                                                 aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                                aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
                                                     value=r"Only applicable for string-based values",
@@ -8273,17 +7363,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -8363,15 +7443,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -8568,15 +7639,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -8661,15 +7723,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -8773,17 +7826,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -8862,17 +7905,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -9044,15 +8077,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for object-based values",
@@ -9142,17 +8166,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -9217,17 +8231,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -9292,17 +8296,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -9367,17 +8361,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -9523,17 +8507,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -9703,15 +8677,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for HTTP binding",
@@ -9793,17 +8758,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"One",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -9872,17 +8827,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"One",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -9948,17 +8893,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"OneToMany",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -10072,15 +9007,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -10412,26 +9338,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Example",
-                                    value_type=str,
-                                    value=r"Current counter value",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10596,17 +9503,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -10684,17 +9581,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -10766,17 +9653,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -10859,17 +9736,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -11001,17 +9868,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -11105,17 +9962,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -11218,17 +10065,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -11287,17 +10124,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -11356,17 +10183,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -11425,17 +10242,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -11496,17 +10303,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -11567,17 +10364,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -11707,17 +10494,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -11885,17 +10662,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -11952,17 +10719,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12040,17 +10797,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -12127,15 +10874,6 @@ class AssetInterfacesDescription(aas.Submodel):
                     if qualifier is None:
                         qualifier = (
                             aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
                                 type_=r"Constraint",
                                 value_type=str,
                                 value=r"Only applicable for Modbus binding",
@@ -12206,15 +10944,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                     if qualifier is None:
                         qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
                             aas.Qualifier(
                                 type_=r"Constraint",
                                 value_type=str,
@@ -12292,17 +11021,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -12443,17 +11162,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -12516,17 +11225,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -12589,17 +11288,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -12662,17 +11351,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -12735,17 +11414,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -12808,17 +11477,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -12881,17 +11540,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -12974,15 +11623,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -13085,15 +11725,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -13178,17 +11809,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -13253,17 +11874,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -13328,17 +11939,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -13403,17 +12004,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -13478,17 +12069,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -13553,17 +12134,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -13648,15 +12219,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -13761,15 +12323,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for string-based values",
@@ -13850,17 +12403,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -13930,15 +12473,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -14121,15 +12655,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -14230,17 +12755,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -14309,17 +12824,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -14388,17 +12893,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -14467,17 +12962,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -14546,17 +13031,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -14625,17 +13100,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -14704,17 +13169,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -14803,15 +13258,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -14920,15 +13366,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -15017,17 +13454,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -15096,17 +13523,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -15175,17 +13592,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -15254,17 +13661,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -15333,17 +13730,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -15412,17 +13799,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -15511,15 +13888,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
                                                 aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
@@ -15628,15 +13996,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                         if qualifier is None:
                                             qualifier = (
                                                 aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                                aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
                                                     value=r"Only applicable for string-based values",
@@ -15721,17 +14080,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -15811,15 +14160,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -16016,15 +14356,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -16109,15 +14440,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -16221,17 +14543,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -16310,17 +14622,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -16492,15 +14794,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for object-based values",
@@ -16590,17 +14883,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -16665,17 +14948,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -16740,17 +15013,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -16815,17 +15078,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -16971,17 +15224,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -17151,15 +15394,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for Modbus binding",
@@ -17234,15 +15468,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -17319,15 +15544,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for Modbus binding",
@@ -17402,15 +15618,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -17487,15 +15694,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for Modbus binding",
@@ -17570,15 +15768,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -17655,15 +15844,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for Modbus binding",
@@ -17738,15 +15918,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -18052,17 +16223,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -18227,17 +16388,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -18315,17 +16466,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -18397,17 +16538,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -18490,17 +16621,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -18632,17 +16753,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -18736,17 +16847,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -18849,17 +16950,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -18918,17 +17009,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -18987,17 +17068,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -19056,17 +17127,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -19127,17 +17188,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -19198,17 +17249,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -19338,17 +17379,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -19516,17 +17547,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -19583,17 +17604,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -19679,17 +17690,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -19752,17 +17753,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -19820,17 +17811,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -19923,17 +17904,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -19996,17 +17967,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -20069,17 +18030,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -20142,17 +18093,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -20212,17 +18153,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -20327,17 +18258,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -20414,17 +18335,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -20592,17 +18503,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -20756,17 +18657,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -20826,17 +18717,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -20951,17 +18832,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21024,17 +18895,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21097,17 +18958,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21170,17 +19021,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21240,17 +19081,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -21355,17 +19186,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21428,17 +19249,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21501,17 +19312,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21570,17 +19371,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -21680,17 +19471,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21753,17 +19534,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21826,17 +19597,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21899,17 +19660,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -21972,17 +19723,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22043,17 +19784,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -22163,17 +19894,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22236,17 +19957,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22309,17 +20020,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22382,17 +20083,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22455,17 +20146,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22528,17 +20209,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22601,17 +20272,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22674,17 +20335,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -22816,17 +20467,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22887,17 +20528,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -22960,17 +20591,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -23033,17 +20654,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -23112,17 +20723,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -23276,17 +20877,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -23349,17 +20940,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -23426,17 +21007,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -23576,17 +21147,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -23672,17 +21233,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -23798,17 +21349,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -23871,17 +21412,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -23944,17 +21475,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -24017,17 +21538,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -24090,17 +21601,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -24163,17 +21664,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -24236,17 +21727,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -24329,15 +21810,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -24440,15 +21912,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -24533,17 +21996,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -24608,17 +22061,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -24683,17 +22126,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -24758,17 +22191,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -24833,17 +22256,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -24908,17 +22321,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -25003,15 +22406,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -25116,15 +22510,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for string-based values",
@@ -25205,17 +22590,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -25285,15 +22660,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -25476,15 +22842,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -25585,17 +22942,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -25664,17 +23011,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -25743,17 +23080,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -25822,17 +23149,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -25901,17 +23218,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -25980,17 +23287,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -26059,17 +23356,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -26158,15 +23445,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -26275,15 +23553,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -26372,17 +23641,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -26451,17 +23710,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -26530,17 +23779,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -26609,17 +23848,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -26688,17 +23917,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -26767,17 +23986,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -26866,15 +24075,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
                                                 aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
@@ -26983,15 +24183,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                         if qualifier is None:
                                             qualifier = (
                                                 aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                                aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
                                                     value=r"Only applicable for string-based values",
@@ -27076,17 +24267,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -27166,15 +24347,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -27371,15 +24543,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -27464,15 +24627,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -27576,17 +24730,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -27665,17 +24809,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -27847,15 +24981,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for object-based values",
@@ -27945,17 +25070,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -28020,17 +25135,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -28095,17 +25200,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -28170,17 +25265,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -28326,17 +25411,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -28506,15 +25581,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for MQTT binding",
@@ -28590,15 +25656,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for MQTT binding",
@@ -28673,15 +25730,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -28924,17 +25972,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -29099,17 +26137,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -29187,17 +26215,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -29269,17 +26287,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -29362,17 +26370,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -29504,17 +26502,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -29608,17 +26596,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -29721,17 +26699,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -29790,17 +26758,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -29859,17 +26817,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -29928,17 +26876,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -29999,17 +26937,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -30070,17 +26998,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -30210,17 +27128,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -30388,17 +27296,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -30455,17 +27353,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -30551,17 +27439,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -30624,17 +27502,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -30692,17 +27560,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -30795,17 +27653,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -30868,17 +27716,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -30941,17 +27779,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -31014,17 +27842,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -31084,17 +27902,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -31199,17 +28007,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -31286,17 +28084,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -31464,17 +28252,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -31628,17 +28406,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -31698,17 +28466,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -31823,17 +28581,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -31896,17 +28644,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -31969,17 +28707,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32042,17 +28770,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32112,17 +28830,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -32227,17 +28935,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32300,17 +28998,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32373,17 +29061,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32442,17 +29120,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -32552,17 +29220,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32625,17 +29283,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32698,17 +29346,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32771,17 +29409,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32844,17 +29472,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -32915,17 +29533,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -33035,17 +29643,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33108,17 +29706,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33181,17 +29769,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33254,17 +29832,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33327,17 +29895,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33400,17 +29958,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33473,17 +30021,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33546,17 +30084,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -33688,17 +30216,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33759,17 +30277,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33832,17 +30340,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33905,17 +30403,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -33984,17 +30472,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -34148,17 +30626,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -34221,17 +30689,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -34298,17 +30756,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -34448,17 +30896,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -34521,17 +30959,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -34594,17 +31022,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -34667,17 +31085,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -34737,17 +31145,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -34861,17 +31259,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -34934,17 +31322,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -35007,17 +31385,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -35078,17 +31446,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -35148,17 +31506,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -35274,17 +31622,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -35372,17 +31710,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -35498,17 +31826,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -35571,17 +31889,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -35644,17 +31952,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -35717,17 +32015,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -35790,17 +32078,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -35863,17 +32141,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -35936,17 +32204,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -36029,15 +32287,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -36140,15 +32389,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -36233,17 +32473,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -36308,17 +32538,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -36383,17 +32603,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -36458,17 +32668,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -36533,17 +32733,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -36608,17 +32798,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -36703,15 +32883,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -36816,15 +32987,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for string-based values",
@@ -36905,17 +33067,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -36985,15 +33137,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -37176,15 +33319,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -37285,17 +33419,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -37364,17 +33488,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -37443,17 +33557,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -37522,17 +33626,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -37601,17 +33695,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -37680,17 +33764,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -37759,17 +33833,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -37858,15 +33922,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -37975,15 +34030,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -38072,17 +34118,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -38151,17 +34187,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -38230,17 +34256,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -38309,17 +34325,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -38388,17 +34394,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -38467,17 +34463,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -38566,15 +34552,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
                                                 aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
@@ -38683,15 +34660,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                         if qualifier is None:
                                             qualifier = (
                                                 aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                                aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
                                                     value=r"Only applicable for string-based values",
@@ -38776,17 +34744,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -38866,15 +34824,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -39071,15 +35020,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -39164,15 +35104,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -39276,17 +35207,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -39365,17 +35286,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -39547,15 +35458,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for object-based values",
@@ -39645,17 +35547,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -39720,17 +35612,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -39795,17 +35677,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -39870,17 +35742,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -40026,17 +35888,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -40204,17 +36056,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -40425,17 +36267,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -40600,17 +36432,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -40688,17 +36510,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -40770,17 +36582,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -40863,17 +36665,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -41005,17 +36797,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -41109,17 +36891,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -41222,17 +36994,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -41291,17 +37053,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -41360,17 +37112,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -41429,17 +37171,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -41500,17 +37232,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -41571,17 +37293,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -41711,17 +37423,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -41889,17 +37591,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -41956,17 +37648,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -42052,17 +37734,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -42125,17 +37797,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -42193,17 +37855,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -42296,17 +37948,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -42369,17 +38011,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -42442,17 +38074,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -42515,17 +38137,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -42585,17 +38197,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -42700,17 +38302,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -42787,17 +38379,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -42965,17 +38547,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -43129,17 +38701,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -43199,17 +38761,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -43324,17 +38876,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -43397,17 +38939,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -43470,17 +39002,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -43543,17 +39065,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -43613,17 +39125,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -43728,17 +39230,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -43801,17 +39293,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -43874,17 +39356,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -43943,17 +39415,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -44053,17 +39515,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44126,17 +39578,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44199,17 +39641,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44272,17 +39704,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44345,17 +39767,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44416,17 +39828,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -44536,17 +39938,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44609,17 +40001,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44682,17 +40064,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44755,17 +40127,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44828,17 +40190,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44901,17 +40253,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -44974,17 +40316,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -45047,17 +40379,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -45189,17 +40511,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -45260,17 +40572,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -45333,17 +40635,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -45406,17 +40698,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -45485,17 +40767,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -45649,17 +40921,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -45722,17 +40984,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -45799,17 +41051,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -45949,17 +41191,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -46045,17 +41277,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -46171,17 +41393,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -46244,17 +41456,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -46317,17 +41519,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -46390,17 +41582,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -46463,17 +41645,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -46536,17 +41708,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -46609,17 +41771,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -46702,15 +41854,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -46813,15 +41956,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -46906,17 +42040,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -46981,17 +42105,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -47056,17 +42170,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -47131,17 +42235,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -47206,17 +42300,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -47281,17 +42365,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -47376,15 +42450,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -47489,15 +42554,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for string-based values",
@@ -47578,17 +42634,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -47658,15 +42704,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -47849,15 +42886,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -47958,17 +42986,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -48037,17 +43055,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -48116,17 +43124,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -48195,17 +43193,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -48274,17 +43262,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -48353,17 +43331,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -48432,17 +43400,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -48531,15 +43489,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -48648,15 +43597,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -48745,17 +43685,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -48824,17 +43754,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -48903,17 +43823,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -48982,17 +43892,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -49061,17 +43961,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -49140,17 +44030,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -49239,15 +44119,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
                                                 aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
@@ -49356,15 +44227,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                         if qualifier is None:
                                             qualifier = (
                                                 aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                                aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
                                                     value=r"Only applicable for string-based values",
@@ -49449,17 +44311,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -49539,15 +44391,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -49744,15 +44587,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -49837,15 +44671,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -49949,17 +44774,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -50038,17 +44853,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -50220,15 +45025,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for object-based values",
@@ -50318,17 +45114,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -50399,17 +45185,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -50478,17 +45254,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -50557,17 +45323,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -50636,17 +45392,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -50715,17 +45461,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -50794,17 +45530,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -50873,17 +45599,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -50972,15 +45688,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -51089,15 +45796,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -51186,17 +45884,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -51263,17 +45951,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -51340,17 +46018,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -51419,17 +46087,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -51498,17 +46156,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -51577,17 +46225,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -51656,17 +46294,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -51755,15 +46383,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
                                                 aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
@@ -51872,15 +46491,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                         if qualifier is None:
                                             qualifier = (
                                                 aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                                aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
                                                     value=r"Only applicable for string-based values",
@@ -51980,15 +46590,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -52185,15 +46786,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -52278,15 +46870,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -52390,17 +46973,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -52481,17 +47054,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -52663,15 +47226,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for object-based values",
@@ -52767,17 +47321,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -52842,17 +47386,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -52917,17 +47451,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -53073,17 +47597,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -53253,15 +47767,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Enumeration",
                                             value_type=str,
                                             value=r"ReadProperty, WriteProperty, SubscribeCOV, GetEventInfo, AcknowledgeAlarm, AddListElement,RemoveListElement",
@@ -53341,17 +47846,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -53424,17 +47919,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -53507,17 +47992,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -53592,17 +48067,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -53677,17 +48142,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"ZeroToOne",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -53760,17 +48215,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"ZeroToOne",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -53840,17 +48285,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"ZeroToOne",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -53957,17 +48392,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                         )
 
                                                     if qualifier is None:
-                                                        qualifier = (
-                                                            aas.Qualifier(
-                                                                type_=r"Cardinality",
-                                                                value_type=str,
-                                                                value=r"One",
-                                                                value_id=None,
-                                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                                semantic_id=None,
-                                                                supplemental_semantic_id=(),
-                                                            ),
-                                                        )
+                                                        qualifier = ()
 
                                                     if (
                                                         embedded_data_specifications
@@ -54051,17 +48476,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                         )
 
                                                     if qualifier is None:
-                                                        qualifier = (
-                                                            aas.Qualifier(
-                                                                type_=r"Cardinality",
-                                                                value_type=str,
-                                                                value=r"One",
-                                                                value_id=None,
-                                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                                semantic_id=None,
-                                                                supplemental_semantic_id=(),
-                                                            ),
-                                                        )
+                                                        qualifier = ()
 
                                                     if (
                                                         embedded_data_specifications
@@ -54142,17 +48557,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                         )
 
                                                     if qualifier is None:
-                                                        qualifier = (
-                                                            aas.Qualifier(
-                                                                type_=r"Cardinality",
-                                                                value_type=str,
-                                                                value=r"ZeroToOne",
-                                                                value_id=None,
-                                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                                semantic_id=None,
-                                                                supplemental_semantic_id=(),
-                                                            ),
-                                                        )
+                                                        qualifier = ()
 
                                                     if (
                                                         embedded_data_specifications
@@ -54258,17 +48663,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 if qualifier is None:
-                                                    qualifier = (
-                                                        aas.Qualifier(
-                                                            type_=r"Cardinality",
-                                                            value_type=str,
-                                                            value=r"ZerotoMany",
-                                                            value_id=None,
-                                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                            semantic_id=None,
-                                                            supplemental_semantic_id=(),
-                                                        ),
-                                                    )
+                                                    qualifier = ()
 
                                                 if embedded_data_specifications is None:
                                                     embedded_data_specifications = []
@@ -54413,17 +48808,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"One",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -54618,15 +49003,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     if qualifier is None:
                                                         qualifier = (
                                                             aas.Qualifier(
-                                                                type_=r"Cardinality",
-                                                                value_type=str,
-                                                                value=r"One",
-                                                                value_id=None,
-                                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                                semantic_id=None,
-                                                                supplemental_semantic_id=(),
-                                                            ),
-                                                            aas.Qualifier(
                                                                 type_=r"data type",
                                                                 value_type=str,
                                                                 value=r"one of xsd:integer, xsd:string or xsd:boolean",
@@ -54719,17 +49095,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                         )
 
                                                     if qualifier is None:
-                                                        qualifier = (
-                                                            aas.Qualifier(
-                                                                type_=r"Cardinality",
-                                                                value_type=str,
-                                                                value=r"One",
-                                                                value_id=None,
-                                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                                semantic_id=None,
-                                                                supplemental_semantic_id=(),
-                                                            ),
-                                                        )
+                                                        qualifier = ()
 
                                                     if (
                                                         embedded_data_specifications
@@ -54808,17 +49174,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 if qualifier is None:
-                                                    qualifier = (
-                                                        aas.Qualifier(
-                                                            type_=r"Cardinality",
-                                                            value_type=str,
-                                                            value=r"ZerotoMany",
-                                                            value_id=None,
-                                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                            semantic_id=None,
-                                                            supplemental_semantic_id=(),
-                                                        ),
-                                                    )
+                                                    qualifier = ()
 
                                                 if embedded_data_specifications is None:
                                                     embedded_data_specifications = []
@@ -54964,17 +49320,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"ZerotoOne",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -55165,17 +49511,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -55351,17 +49687,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 if qualifier is None:
-                                                    qualifier = (
-                                                        aas.Qualifier(
-                                                            type_=r"Cardinality",
-                                                            value_type=str,
-                                                            value=r"One",
-                                                            value_id=None,
-                                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                            semantic_id=None,
-                                                            supplemental_semantic_id=(),
-                                                        ),
-                                                    )
+                                                    qualifier = ()
 
                                                 if embedded_data_specifications is None:
                                                     embedded_data_specifications = []
@@ -55438,17 +49764,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 if qualifier is None:
-                                                    qualifier = (
-                                                        aas.Qualifier(
-                                                            type_=r"Cardinality",
-                                                            value_type=str,
-                                                            value=r"One",
-                                                            value_id=None,
-                                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                            semantic_id=None,
-                                                            supplemental_semantic_id=(),
-                                                        ),
-                                                    )
+                                                    qualifier = ()
 
                                                 if embedded_data_specifications is None:
                                                     embedded_data_specifications = []
@@ -55522,17 +49838,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 if qualifier is None:
-                                                    qualifier = (
-                                                        aas.Qualifier(
-                                                            type_=r"Cardinality",
-                                                            value_type=str,
-                                                            value=r"ZeroToOne",
-                                                            value_id=None,
-                                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                            semantic_id=None,
-                                                            supplemental_semantic_id=(),
-                                                        ),
-                                                    )
+                                                    qualifier = ()
 
                                                 if embedded_data_specifications is None:
                                                     embedded_data_specifications = []
@@ -55631,17 +49937,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"ZerotoMany",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -55782,17 +50078,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"One",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -55979,15 +50265,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 if qualifier is None:
                                                     qualifier = (
                                                         aas.Qualifier(
-                                                            type_=r"Cardinality",
-                                                            value_type=str,
-                                                            value=r"One",
-                                                            value_id=None,
-                                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                            semantic_id=None,
-                                                            supplemental_semantic_id=(),
-                                                        ),
-                                                        aas.Qualifier(
                                                             type_=r"data type",
                                                             value_type=str,
                                                             value=r"one of xsd:integer, xsd:string or xsd:boolean",
@@ -56073,17 +50350,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 if qualifier is None:
-                                                    qualifier = (
-                                                        aas.Qualifier(
-                                                            type_=r"Cardinality",
-                                                            value_type=str,
-                                                            value=r"One",
-                                                            value_id=None,
-                                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                            semantic_id=None,
-                                                            supplemental_semantic_id=(),
-                                                        ),
-                                                    )
+                                                    qualifier = ()
 
                                                 if embedded_data_specifications is None:
                                                     embedded_data_specifications = []
@@ -56155,17 +50422,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"ZerotoMany",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -56303,17 +50560,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZerotoOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -56500,17 +50747,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -56670,17 +50907,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"One",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -56753,17 +50980,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"One",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -56837,17 +51054,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"ZeroToOne",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -56942,17 +51149,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZerotoMany",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -57087,17 +51284,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"One",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -57273,15 +51460,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                             if qualifier is None:
                                                 qualifier = (
                                                     aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"One",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                    aas.Qualifier(
                                                         type_=r"data type",
                                                         value_type=str,
                                                         value=r"one of xsd:integer, xsd:string or xsd:boolean",
@@ -57363,17 +51541,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"One",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -57443,17 +51611,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZerotoMany",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -57589,17 +51747,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZerotoOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -57947,17 +52095,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -58243,17 +52381,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -58419,17 +52547,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -58507,17 +52625,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -58589,17 +52697,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -58682,17 +52780,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -58824,17 +52912,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -58928,17 +53006,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -59041,17 +53109,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -59110,17 +53168,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -59179,17 +53227,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -59248,17 +53286,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -59319,17 +53347,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -59390,17 +53408,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -59530,17 +53538,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -59708,17 +53706,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -59775,17 +53763,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -59871,17 +53849,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -59944,17 +53912,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -60012,17 +53970,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -60115,17 +54063,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -60188,17 +54126,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -60261,17 +54189,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -60334,17 +54252,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -60404,17 +54312,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -60519,17 +54417,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -60606,17 +54494,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -60784,17 +54662,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -60948,17 +54816,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -61018,17 +54876,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -61143,17 +54991,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -61216,17 +55054,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -61289,17 +55117,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -61362,17 +55180,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -61432,17 +55240,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -61547,17 +55345,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -61620,17 +55408,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -61693,17 +55471,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -61762,17 +55530,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -61872,17 +55630,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -61945,17 +55693,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62018,17 +55756,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62091,17 +55819,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62164,17 +55882,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62235,17 +55943,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -62355,17 +56053,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62428,17 +56116,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62501,17 +56179,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62574,17 +56242,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62647,17 +56305,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62720,17 +56368,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62793,17 +56431,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -62866,17 +56494,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -63008,17 +56626,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -63079,17 +56687,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -63152,17 +56750,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -63225,17 +56813,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -63304,17 +56882,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -63468,17 +57036,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -63541,17 +57099,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -63618,17 +57166,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -63768,17 +57306,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -63864,17 +57392,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -63990,17 +57508,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -64063,17 +57571,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -64136,17 +57634,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -64209,17 +57697,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -64282,17 +57760,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -64355,17 +57823,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -64428,17 +57886,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -64521,15 +57969,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -64632,15 +58071,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -64725,17 +58155,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -64800,17 +58220,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -64875,17 +58285,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -64950,17 +58350,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -65025,17 +58415,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -65100,17 +58480,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -65195,15 +58565,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
@@ -65308,15 +58669,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"Constraint",
                                             value_type=str,
                                             value=r"Only applicable for string-based values",
@@ -65397,17 +58749,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -65477,15 +58819,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
@@ -65668,15 +59001,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for string-based values",
@@ -65777,17 +59101,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -65856,17 +59170,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -65935,17 +59239,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -66014,17 +59308,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -66093,17 +59377,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -66172,17 +59446,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -66251,17 +59515,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -66350,15 +59604,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -66467,15 +59712,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -66564,17 +59800,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -66643,17 +59869,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -66722,17 +59938,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -66801,17 +60007,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -66880,17 +60076,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -66959,17 +60145,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -67058,15 +60234,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         if qualifier is None:
                                             qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
                                                 aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
@@ -67175,15 +60342,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                         if qualifier is None:
                                             qualifier = (
                                                 aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                                aas.Qualifier(
                                                     type_=r"Constraint",
                                                     value_type=str,
                                                     value=r"Only applicable for string-based values",
@@ -67268,17 +60426,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -67358,15 +60506,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -67563,15 +60702,6 @@ class AssetInterfacesDescription(aas.Submodel):
                                     if qualifier is None:
                                         qualifier = (
                                             aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                            aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
                                                 value=r"Only applicable for string-based values",
@@ -67656,15 +60786,6 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     if qualifier is None:
                                         qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
                                             aas.Qualifier(
                                                 type_=r"Constraint",
                                                 value_type=str,
@@ -67768,17 +60889,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZeroToOne",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -67857,17 +60968,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -68039,15 +61140,6 @@ class AssetInterfacesDescription(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"Constraint",
                                         value_type=str,
                                         value=r"Only applicable for object-based values",
@@ -68137,17 +61229,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -68212,17 +61294,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -68287,17 +61359,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -68362,17 +61424,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -68518,17 +61570,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -68696,17 +61738,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -68771,17 +61803,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -68846,17 +61868,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -68921,17 +61933,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -68996,17 +61998,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -69071,17 +62063,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -69146,17 +62128,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -69235,17 +62207,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"One",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -69318,17 +62280,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"One",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -69398,17 +62350,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         )
 
                                     if qualifier is None:
-                                        qualifier = (
-                                            aas.Qualifier(
-                                                type_=r"Cardinality",
-                                                value_type=str,
-                                                value=r"ZerotoMany",
-                                                value_id=None,
-                                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                semantic_id=None,
-                                                supplemental_semantic_id=(),
-                                            ),
-                                        )
+                                        qualifier = ()
 
                                     if embedded_data_specifications is None:
                                         embedded_data_specifications = []
@@ -69532,17 +62474,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -69711,17 +62643,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -69788,17 +62710,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -69867,17 +62779,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -69946,17 +62848,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -70025,17 +62917,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -70104,17 +62986,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -70197,17 +63069,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 if qualifier is None:
-                                                    qualifier = (
-                                                        aas.Qualifier(
-                                                            type_=r"Cardinality",
-                                                            value_type=str,
-                                                            value=r"One",
-                                                            value_id=None,
-                                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                            semantic_id=None,
-                                                            supplemental_semantic_id=(),
-                                                        ),
-                                                    )
+                                                    qualifier = ()
 
                                                 if embedded_data_specifications is None:
                                                     embedded_data_specifications = []
@@ -70284,17 +63146,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                     )
 
                                                 if qualifier is None:
-                                                    qualifier = (
-                                                        aas.Qualifier(
-                                                            type_=r"Cardinality",
-                                                            value_type=str,
-                                                            value=r"One",
-                                                            value_id=None,
-                                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                            semantic_id=None,
-                                                            supplemental_semantic_id=(),
-                                                        ),
-                                                    )
+                                                    qualifier = ()
 
                                                 if embedded_data_specifications is None:
                                                     embedded_data_specifications = []
@@ -70366,17 +63218,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                                 )
 
                                             if qualifier is None:
-                                                qualifier = (
-                                                    aas.Qualifier(
-                                                        type_=r"Cardinality",
-                                                        value_type=str,
-                                                        value=r"ZerotoMany",
-                                                        value_id=None,
-                                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                        semantic_id=None,
-                                                        supplemental_semantic_id=(),
-                                                    ),
-                                                )
+                                                qualifier = ()
 
                                             if embedded_data_specifications is None:
                                                 embedded_data_specifications = []
@@ -70518,17 +63360,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                             )
 
                                         if qualifier is None:
-                                            qualifier = (
-                                                aas.Qualifier(
-                                                    type_=r"Cardinality",
-                                                    value_type=str,
-                                                    value=r"ZeroToOne",
-                                                    value_id=None,
-                                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                                    semantic_id=None,
-                                                    supplemental_semantic_id=(),
-                                                ),
-                                            )
+                                            qualifier = ()
 
                                         if embedded_data_specifications is None:
                                             embedded_data_specifications = []
@@ -70903,17 +63735,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -71326,17 +64148,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -71501,17 +64313,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -71589,17 +64391,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -71671,17 +64463,7 @@ class AssetInterfacesDescription(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -71764,17 +64546,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -71906,17 +64678,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -72012,17 +64774,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []

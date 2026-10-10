@@ -15,7 +15,9 @@ For every submodel of a template file and its generated class:
 - A minimal instance (required arguments only) contains every mandatory element of the template.
 
 Intended differences:
-- Instances have kind Instance and no template qualifiers (#37).
+- Instances have kind Instance and no qualifiers only describing the template (#37, #42): qualifiers
+  of kind TemplateQualifier, of the SMT specification (SMT/...) and their older names, and hints for
+  template editors (Form...). Template-specific annotations (e.g. unit) are kept.
 - Values aren't compared: templates hold example values.
 - Items of lists have no idShort (#23); they are built from the first item of the list in the template.
   Lists without item in the template take items of their typeValueListElement and valueTypeListElement.
@@ -150,11 +152,22 @@ def xsd_value(value_type, lexical):
         return lexical
 
 
-def qualifiers(element: dict):
-    """Qualifiers except template qualifiers, which instances don't take over (AASd-119, AASd-129)"""
+TEMPLATE_QUALIFIER_TYPES = {"cardinality", "multiplicity", "examplevalue", "example", "defaultvalue", "allowedidshort",
+                            "editidshort", "presetidshort", "editdescription",
+                            "forminfo", "formtitle", "formchoices", "formurl", "formtag"}
+
+
+def is_template_qualifier(qualifier: dict) -> bool:
+    type_ = (qualifier.get("type") or "").strip().lower()
+    return qualifier.get("kind") == "TemplateQualifier" or type_.startswith("smt/") or type_ in TEMPLATE_QUALIFIER_TYPES
+
+
+def qualifiers(element: dict, of_instance: bool = False):
+    """Qualifiers of `element`; of templates without those only describing the template, as instances
+    don't take them over"""
     return sorted((q.get("type"), q.get("valueType"), str(xsd_value(q.get("valueType"), q.get("value"))),
                    q.get("kind", "ConceptQualifier"), reference(q.get("semanticId")), reference(q.get("valueId")))
-                  for q in element.get("qualifiers") or [] if q.get("kind") != "TemplateQualifier") or None
+                  for q in element.get("qualifiers") or [] if of_instance or not is_template_qualifier(q)) or None
 
 
 ATTRIBUTES = {
@@ -219,8 +232,10 @@ def compare(template: dict, instance: dict, path: str, errors: list, exact_id_sh
     # Files with an arbitrary content type take it as argument
     if template.get("contentType") not in (None, "", "{arbitrary}") and template.get("contentType") != instance.get("contentType"):
         errors.append(f"{path}: contentType {template.get('contentType')!r} != {instance.get('contentType')!r}")
-    if qualifiers(template) != qualifiers(instance):
-        errors.append(f"{path}: qualifiers {qualifiers(template)!r} != {qualifiers(instance)!r}")
+    # Templates as read by BaSyx keep all their qualifiers
+    expected, actual = qualifiers(template, of_instance=exact_id_shorts), qualifiers(instance, of_instance=True)
+    if expected != actual:
+        errors.append(f"{path}: qualifiers {expected!r} != {actual!r}")
 
     if template["modelType"] == "SubmodelElementList":
         compare_list_items(template, instance, path, errors, exact_id_shorts)

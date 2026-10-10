@@ -1091,17 +1091,7 @@ class SISDevice(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6893,17 +6883,7 @@ class SISDevice(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7804,15 +7784,6 @@ class SISDevice(aas.Submodel):
                     if qualifier is None:
                         qualifier = (
                             aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
                                 type_=r"enumeration",
                                 value_type=str,
                                 value=r"start/open/connect/activate, stop/close/disconnect/deactivate, level to level, other",
@@ -8126,17 +8097,7 @@ class SISDevice(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -11638,17 +11599,7 @@ class SISDevice(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -15138,17 +15089,7 @@ class SISDevice(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -15276,17 +15217,7 @@ class SISDevice(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -19250,17 +19181,7 @@ class SISDevice(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []

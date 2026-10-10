@@ -47,25 +47,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"Generic Manufacturing Corp.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -124,25 +106,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"Modular FireSafe Component X100",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -202,25 +166,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"ORD-XS-000123",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -281,25 +227,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"PAN-4587-AX9",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -486,25 +414,7 @@ class RailwayFireProtection(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/ExampleValue",
-                                    value_type=str,
-                                    value=r"Compliant: Hazard Level 3",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -567,25 +477,7 @@ class RailwayFireProtection(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/ExampleValue",
-                                        value_type=str,
-                                        value=r"file://report.pdf",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -808,25 +700,7 @@ class RailwayFireProtection(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/ExampleValue",
-                                    value_type=str,
-                                    value=r"R1 requirement for hazard level HL3 according to EN 45545-2",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1146,25 +1020,7 @@ class RailwayFireProtection(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/ExampleValue",
-                                    value_type=str,
-                                    value=r"/aasx/files/datasheet_en.pdf",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1232,25 +1088,7 @@ class RailwayFireProtection(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"SMT/ExampleValue",
-                                            value_type=str,
-                                            value=r"cone calorimeter test according to EN ISO 5660-1",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -1315,25 +1153,7 @@ class RailwayFireProtection(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"SMT/ExampleValue",
-                                            value_type=str,
-                                            value=r"requirement R1 fulfilled for hazard level HL3",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -1398,25 +1218,7 @@ class RailwayFireProtection(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"SMT/ExampleValue",
-                                            value_type=xsd.Date,
-                                            value=xsd.from_xsd(r"2026-07-22", xsd.Date),
-                                            value_id=None,
-                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -1481,25 +1283,7 @@ class RailwayFireProtection(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"SMT/ExampleValue",
-                                            value_type=str,
-                                            value=r"measured heat release rate and MARHE values within specified limits",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -1564,25 +1348,7 @@ class RailwayFireProtection(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"SMT/ExampleValue",
-                                            value_type=str,
-                                            value=r"FR-TEST-2026-00123",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -1914,25 +1680,7 @@ class RailwayFireProtection(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/ExampleValue",
-                                    value_type=str,
-                                    value=r"test results demonstrate compliance with EN 45545-2 requirements for the intended application",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1997,25 +1745,7 @@ class RailwayFireProtection(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/ExampleValue",
-                                        value_type=str,
-                                        value=r"Independent Fire Testing Laboratory Ltd.",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2162,25 +1892,7 @@ class RailwayFireProtection(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/ExampleValue",
-                                        value_type=str,
-                                        value=r"accredited according to ISO/IEC 17025 for fire testing methods (EN ISO 5660-1, EN ISO 5659-2)",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2243,25 +1955,7 @@ class RailwayFireProtection(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/ExampleValue",
-                                        value_type=str,
-                                        value=r"Fire Testing Laboratory Certification Body",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2747,25 +2441,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"flame-retardant polymer composite",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2819,25 +2495,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"Advanced Materials Solutions Ltd.",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2894,25 +2552,7 @@ class RailwayFireProtection(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=xsd.Float,
-                                value=xsd.from_xsd(r"12.324", xsd.Float),
-                                value_id=None,
-                                kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2968,25 +2608,7 @@ class RailwayFireProtection(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=xsd.Float,
-                                value=xsd.from_xsd(r"1.543", xsd.Float),
-                                value_id=None,
-                                kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3042,25 +2664,7 @@ class RailwayFireProtection(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"kg/m²",
-                                value_id=None,
-                                kind=aas.QualifierKind.VALUE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3271,25 +2875,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"multi-layer assembly consisting of polymer composite panel with surface coating and insulation substrate",
-                            value_id=None,
-                            kind=aas.QualifierKind.VALUE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []

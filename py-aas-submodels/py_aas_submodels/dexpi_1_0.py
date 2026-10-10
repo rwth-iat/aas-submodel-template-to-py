@@ -36,42 +36,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"oil-gas-inc",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -120,42 +85,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"Oil & Gas, Inc.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -204,42 +134,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"I-Chain",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -288,42 +183,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"Isophorone Chain",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -372,42 +232,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"10",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -456,42 +281,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"Utilities",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -540,42 +330,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"ABC",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -624,42 +379,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"ABC Plant",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -708,42 +428,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"a project",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -792,42 +477,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"P3.1415",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -876,42 +526,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"DC",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -960,42 +575,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"Dexpi City",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1044,42 +624,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"a sub-project",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1128,42 +673,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"P3.1415-SP2",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1204,42 +714,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"Plant Vendor",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1280,42 +755,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"2022-11-10",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1356,42 +796,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"7732-18-5",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1432,42 +837,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"ExampleValue",
-                            value_type=str,
-                            value=r"Water",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1537,25 +907,7 @@ class DEXPI(aas.Submodel):
         ):
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -1791,42 +1143,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"ExampleValue",
-                                value_type=str,
-                                value=r"2016-04-01",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1874,25 +1191,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1940,42 +1239,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"ExampleValue",
-                                value_type=str,
-                                value=r"XY923-463",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2024,42 +1288,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"ExampleValue",
-                                value_type=str,
-                                value=r"C. Hecker",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2108,42 +1337,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"ExampleValue",
-                                value_type=str,
-                                value=r"2016-04-01",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2192,42 +1386,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"ExampleValue",
-                                value_type=str,
-                                value=r"A. Creator",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2276,42 +1435,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"ExampleValue",
-                                value_type=str,
-                                value=r"D. E. Signer",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2360,42 +1484,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"ExampleValue",
-                                value_type=str,
-                                value=r"123/A93",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2443,25 +1532,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2509,42 +1580,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"ExampleValue",
-                                value_type=str,
-                                value=r"2016-04-02",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2604,25 +1640,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2767,25 +1785,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2832,25 +1832,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2902,25 +1884,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2969,25 +1933,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3036,25 +1982,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3101,25 +2029,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3205,25 +2115,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3272,25 +2164,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3339,25 +2213,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3404,25 +2260,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3508,25 +2346,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3575,25 +2395,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3642,25 +2444,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3707,25 +2491,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3811,25 +2577,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3878,25 +2626,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3945,25 +2675,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4010,25 +2722,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4114,25 +2808,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4181,25 +2857,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4248,25 +2906,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4313,25 +2953,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4417,25 +3039,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4484,25 +3088,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4551,25 +3137,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4616,25 +3184,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4720,25 +3270,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4787,25 +3319,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4854,25 +3368,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4919,25 +3415,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5023,25 +3501,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5090,25 +3550,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5157,25 +3599,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5222,25 +3646,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5326,25 +3732,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5393,25 +3781,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5460,25 +3830,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5525,25 +3877,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5629,25 +3963,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5696,25 +4012,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5763,25 +4061,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5828,25 +4108,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5932,25 +4194,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5999,25 +4243,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6066,25 +4292,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6131,25 +4339,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6235,25 +4425,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6302,25 +4474,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6369,25 +4523,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6434,25 +4570,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6538,25 +4656,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6605,25 +4705,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6672,25 +4754,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6739,25 +4803,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6805,25 +4851,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6916,25 +4944,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6983,25 +4993,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7050,25 +5042,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7117,25 +5091,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7183,25 +5139,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7294,25 +5232,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7361,25 +5281,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7428,25 +5330,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7495,25 +5379,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7561,25 +5427,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7672,25 +5520,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7739,25 +5569,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7806,25 +5618,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7873,25 +5667,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7939,25 +5715,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8050,25 +5808,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8117,25 +5857,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8184,25 +5906,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8251,25 +5955,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8317,25 +6003,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8428,25 +6096,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8495,25 +6145,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8562,25 +6194,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8629,25 +6243,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8695,25 +6291,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8806,25 +6384,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8873,25 +6433,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -8940,25 +6482,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9007,25 +6531,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9073,25 +6579,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -9184,25 +6672,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9251,25 +6721,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9318,25 +6770,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9385,25 +6819,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9451,25 +6867,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -9562,25 +6960,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9629,25 +7009,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9696,25 +7058,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9763,25 +7107,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -9829,25 +7155,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -9940,25 +7248,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10007,25 +7297,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10074,25 +7346,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10141,25 +7395,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10207,25 +7443,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -10318,25 +7536,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10385,25 +7585,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10452,25 +7634,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10519,25 +7683,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10585,25 +7731,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -10696,25 +7824,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10763,25 +7873,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10830,25 +7922,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10897,25 +7971,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -10963,25 +8019,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -11074,25 +8112,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11141,25 +8161,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11208,25 +8210,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11275,25 +8259,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11341,25 +8307,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -11452,25 +8400,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11519,25 +8449,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11586,25 +8498,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11653,25 +8547,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11719,25 +8595,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -11830,25 +8688,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11897,25 +8737,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -11964,25 +8786,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12031,25 +8835,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12097,25 +8883,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -12208,25 +8976,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12275,25 +9025,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12342,25 +9074,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12409,25 +9123,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12475,25 +9171,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -12586,25 +9264,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12653,25 +9313,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12720,25 +9362,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12787,25 +9411,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -12853,25 +9459,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -12964,25 +9552,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13031,25 +9601,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13098,25 +9650,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13165,25 +9699,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13231,25 +9747,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -13342,25 +9840,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13409,25 +9889,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13476,25 +9938,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13543,25 +9987,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13609,25 +10035,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -13720,25 +10128,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13787,25 +10177,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13854,25 +10226,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13921,25 +10275,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -13987,25 +10323,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -14098,25 +10416,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14165,25 +10465,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14232,25 +10514,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14299,25 +10563,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14365,25 +10611,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -14476,25 +10704,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14543,25 +10753,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14610,25 +10802,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14677,25 +10851,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14743,25 +10899,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -14854,25 +10992,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14921,25 +11041,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -14988,25 +11090,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15055,25 +11139,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15121,25 +11187,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -15232,25 +11280,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15299,25 +11329,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15366,25 +11378,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15433,25 +11427,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15499,25 +11475,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -15610,25 +11568,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15677,25 +11617,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15744,25 +11666,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15811,25 +11715,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -15877,25 +11763,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -15988,25 +11856,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16055,25 +11905,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16122,25 +11954,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16189,25 +12003,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16255,25 +12051,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -16366,25 +12144,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16433,25 +12193,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16500,25 +12242,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16567,25 +12291,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16633,25 +12339,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -16744,25 +12432,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16811,25 +12481,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16878,25 +12530,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -16945,25 +12579,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17011,25 +12627,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -17122,25 +12720,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17189,25 +12769,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17256,25 +12818,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17323,25 +12867,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17389,25 +12915,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -17500,25 +13008,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17567,25 +13057,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17634,25 +13106,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17701,25 +13155,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17767,25 +13203,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -17878,25 +13296,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -17945,25 +13345,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -18012,25 +13394,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -18079,25 +13443,7 @@ class DEXPI(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -18145,25 +13491,7 @@ class DEXPI(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -18300,25 +13628,7 @@ class DEXPI(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -18424,25 +13734,7 @@ class DEXPI(aas.Submodel):
         ):
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"Cardinality",
-                        value_type=str,
-                        value=r"OneToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []

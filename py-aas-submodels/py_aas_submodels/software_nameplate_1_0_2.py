@@ -4492,35 +4492,7 @@ class SoftwareNameplate(aas.Submodel):
             )
 
         if qualifier is None:
-            qualifier = (
-                aas.Qualifier(
-                    type_=r"FormTitle",
-                    value_type=str,
-                    value=r"A template for a software nameplate submodel, v0.15",
-                    value_id=None,
-                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                    semantic_id=None,
-                    supplemental_semantic_id=(),
-                ),
-                aas.Qualifier(
-                    type_=r"FormInfo",
-                    value_type=str,
-                    value=r"This form is based on Version 0.15",
-                    value_id=None,
-                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                    semantic_id=None,
-                    supplemental_semantic_id=(),
-                ),
-                aas.Qualifier(
-                    type_=r"FormUrl",
-                    value_type=str,
-                    value=r"https://admin-shell.io/idta/SoftwareNameplate_15",
-                    value_id=None,
-                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                    semantic_id=None,
-                    supplemental_semantic_id=(),
-                ),
-            )
+            qualifier = ()
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []

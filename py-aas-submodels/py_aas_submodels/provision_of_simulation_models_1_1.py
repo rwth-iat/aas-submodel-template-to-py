@@ -43,44 +43,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"summary",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Summary of the contents of the simulation model in text form. ",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"summary",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -142,53 +105,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"posSimPurpose",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"List of simulation purposes for which the model is intended.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value="posSimPurpose'{0:00}'",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"OneToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"Concept evaluation; Sizing; Energy consumption; Control design; Behaviour in fault condition; Validation and testing; Virtual commissioning; Condition monitoring; Predictive maintenance; Operator Training; Teaching",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -249,53 +166,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"negSimPurpose",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"List of simulation purposes for which the model is explicitly not suitable. ",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value="negSimPurpose'{0:00}'",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"ZeroToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"Concept evaluation; Sizing; Energy consumption; Control design; Behaviour in fault condition; Validation and testing; Virtual commissioning; Condition monitoring; Predictive maintenance; Operator Training; Teaching",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -353,44 +224,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"simPurpose",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"This characteristic describes the simulation purpose or suitability for different simulation goals.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"simPurpose",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -495,53 +329,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"typeOfModel",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"List of modeling approaches used for the model.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"typeOfModelDesc",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"Linear model; Nonlinear model; Data-driven model; Lumped element model; Fixed causality model; Acausal model ",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -602,53 +390,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"scopeOfModel",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"List of basic physical characteristics which are represented by the model.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"scopeOfModel",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"OneToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"Logic and timing behaviour; Geometry; Kinematics; Dynamics; Distribution networks; Network communication; Visualization",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -709,53 +451,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"licenseModel",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"If a simulation model usage will be charged and how it will be charged.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"licenseModel",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"free; perpetual; subscription; volume-based",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -816,53 +512,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"engineeringDomainList",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"List of engineering disciplines supported or mapped with the model. ",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value="engineeringDomainList'{0:00}'",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"Hydraulic Engineering; Electrical Engineering; Pneumatic Engineering; Mechanical Engineering; Material Flow; Robotics; Image Processing; Data Engineering; Process Engineering; Workflow Engineering; HMI Engineering; Control Engineering",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -925,44 +575,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"operatingSystem",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Name of the operating system including version and architecture (e.g. Windows 10 64bit)",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value="operatingSystem'{0:00}'",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1023,44 +636,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"toolEnvironment",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"List with required simulation tools, interpreters, model libraries or runtime libraries. In each case the exact designation of the software producer is given as free text.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value="toolEnvironment'{0:00}'",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"ZeroToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1120,44 +696,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"dependencyEnvironment",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Description of dependencies to associated hardware and software. ",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"dependencyEnvironment",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1217,53 +756,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"visualizationInformation",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Ability to use a visualization. This can be integrated in a model or the model offers capabilities for connection. The connection can be described in more detail under ports.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"visualizationInformation",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"separately; integrated; none",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1324,44 +817,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"simToolName",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Name of the simulation tool including version.",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"simToolName",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1420,44 +876,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"dependencySimTool",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Dependencies of Simulation Tools",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value="dependencySimTool'{0:00}'",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1518,44 +937,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"compiler",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Name of necessary compiler including version",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value="compiler'{0:00}'",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1620,53 +1002,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"stepSizeControlNeeded",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Solver with step size control recommended.",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"stepSizeControlNeeded",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormChoices",
-                                        value_type=str,
-                                        value=r"True; False",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1729,44 +1065,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"fixedStepSize",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Fixed integration step size, if there is no adaptive step size ",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"fixedStepSize",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1827,53 +1126,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"stiffSolverNeeded",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Stiff solver needed.",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"stiffSolverNeeded",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormChoices",
-                                        value_type=str,
-                                        value=r"True; False",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1936,53 +1189,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"solverIncluded",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Solver is integrated in the model (e.g. FMU for co-simulation)",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"solverIncluded",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormChoices",
-                                        value_type=str,
-                                        value=r"True; False",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2047,44 +1254,7 @@ class SimulationModels(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"FormTitle",
-                                            value_type=str,
-                                            value=r"solverAlgorithm",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
-                                            type_=r"FormInfo",
-                                            value_type=str,
-                                            value=r"validated solver",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
-                                            type_=r"PresetIdShort",
-                                            value_type=str,
-                                            value=r"solverAlgorithm",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -2153,44 +1323,7 @@ class SimulationModels(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"FormTitle",
-                                            value_type=str,
-                                            value=r"toolSolverFurtherDescription",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
-                                            type_=r"FormInfo",
-                                            value_type=str,
-                                            value=r"Further tool- and solver-specific information",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
-                                            type_=r"PresetIdShort",
-                                            value_type=str,
-                                            value=r"toolSolverFurtherDescription",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -2255,44 +1388,7 @@ class SimulationModels(aas.Submodel):
                                     )
 
                                 if qualifier is None:
-                                    qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"FormTitle",
-                                            value_type=str,
-                                            value=r"tolerance",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
-                                            type_=r"FormInfo",
-                                            value_type=str,
-                                            value=r"(relative) tolerance for theadaptive step size ",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
-                                            type_=r"PresetIdShort",
-                                            value_type=str,
-                                            value=r"tolerance",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
-                                            type_=r"Multiplicity",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                            semantic_id=None,
-                                            supplemental_semantic_id=(),
-                                        ),
-                                    )
+                                    qualifier = ()
 
                                 if embedded_data_specifications is None:
                                     embedded_data_specifications = []
@@ -2355,44 +1451,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"testedToolSolverAlgorithm",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"List of validated tool-solver combinations",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value="testedToolSolverAlgorithm'{0:00}'",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"ZeroToMany",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2501,44 +1560,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"solverAndTolerances",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Useful settings of the simulation environment. Includes e.g. solver settings. ",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"solverAndTolerances",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2658,44 +1680,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"simulationTool",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Eigenschaften des Modells bezüglich konkreter Simulationswerkzeuge.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value="simulationTool'{0:00}'",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"OneToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2818,44 +1803,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"environment",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Information about prerequisite environments or dependencies of underlying components on the target system.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"environment",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2979,44 +1927,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"refSimDocumentation",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Documentation of example simulations of the model can be supplied. This includes a solver setup and sample circuit and sample results. e.g. zip file, PDF, html, ...",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value="refSimDocumentation'{0:00}'",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3078,44 +1989,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"modelFileType",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r'"Designation of the exchange format of the model. E.G.: FMI 1.0, Co-Simulation, Platform / Source - Code. FMI 2.0.2, Model Exchange, Source - Code. S-function, Version 2, 64bit, mex - Format / or C-Code. Modelica 3, encoded. VHDL',
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"modelFileType",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3178,44 +2052,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"modelVersionId",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Version number of the model from the vendor.",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"modelVersionId",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3275,44 +2112,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"modelPreviewImage",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Image file to represent the model in user interfaces, e.g. in a search.",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"modelPreviewImage",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3369,44 +2169,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"digitalFile",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Deployment of the model file.",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"digitalFile",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3465,44 +2228,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"modelFileReleaseNotesTxt",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"contains information about this release",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"modelFileReleaseNotesTxt",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3559,44 +2285,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"modelFileReleaseNotesFile",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"release notes link or file",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"modelFileReleaseNotesFile",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -3660,44 +2349,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"modelFileVersion",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Provision of a version of the simulation model with information to distinguish the versions. The versions are primarily intended for bug fixes without content changes.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value="modelFileVersion'{0:00}'",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"OneToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3791,44 +2443,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"modelFile",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Providing versions of the simulation model and with characteristics to distinguish them.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"modelFile",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3916,53 +2531,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"paramMethod",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Indicates whether the model must be parameterized and if so, which method is required.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"paramMethod",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r'by using "technical data" of asset; by using "technical data" and user; by user interface; by setting file; not necessary; by documentation file; pre-parametrized',
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4022,44 +2591,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"paramFile",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"File for parameterization of the model. As parameter file or parameter documentation (e.g. pdf). ",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"paramFile",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4119,53 +2651,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"initStateMethod",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r'" Describes the state variables of the simulation model that must be initialized to start the simulation. For initial value problems, these quantities describe the system state at the start of the simulation. In this case, the system is in a state of equilibrium. Alternatively, a simulation model may include a method to determine consistent initial values at this step, e.g., at an operating point. ',
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"initStateMethod",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"not necessary, by user interface; by setting file; set states within simulation environment; integrated in model; by documentation file",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4225,44 +2711,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"initStateFile",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"File for parameterizing the initial states of the model. As parameter file or parameter documentation (e.g. pdf). ",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"initStateFile",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4320,44 +2769,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"defaultSimTime",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Predefined simulation period in seconds ",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"defaultSimTime",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4418,44 +2830,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"company",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"name of the company",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"company",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4514,44 +2889,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"language",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"available language",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value="language'{0:00}'",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"OneToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4614,44 +2952,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"typeOfEmailAddress",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"characterization of an e-mail address according to its location or usage",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"typeOfEmailAddress",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4712,44 +3013,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"emailAddress",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"electronic mail address of a business partner",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"emailAddress",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4810,44 +3074,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"typeOfPublicKey",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"characterization of a public key according to its encryption process",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"typeOfPublicKey",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4908,44 +3135,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"publicKey",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"public part of an unsymmetrical key pair to sign or encrypt text or messages",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"publicKey",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5003,44 +3193,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"email",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"E-mail address and encryption method",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"email",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5150,44 +3303,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"typeOfTelephone",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"characterization of a telephone according to its location or usage",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"typeOfTelephone",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5248,44 +3364,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"telephoneNumber",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"complete telephone number to be called to reach a business partner",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"telephoneNumber",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5346,44 +3425,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"availableTime",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Specification of the available time window",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"availableTime",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5440,44 +3482,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"phone",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Phone number including type",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"phone",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5572,44 +3577,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"simModManufacturerInformation",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Provide access to  simulation support service provided by the distributor via mail or phone",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value="simModManufacturerInformation'{0:00}'",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -5702,44 +3670,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"portConnectorName",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Name of the Connector Port.",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"portConnectorName",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5797,44 +3728,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"portConDescription",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Description of the Connector Port.",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"portConDescription",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -5896,44 +3790,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"variableName",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Name of the variable.",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"variableName",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -5996,44 +3853,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"range",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Range of values for the variable (e.g. [min, max], [min, max[, ]min, max], ]min, max[, {val1, val2, ...}).",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"range",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -6096,53 +3916,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"variableType",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Type of the variable (e.g. Real, Integer, Boolean, String or Enum).",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"variableType",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormChoices",
-                                        value_type=str,
-                                        value=r"Real; Integer; Boolean; String; ENUM",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -6202,44 +3976,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"variableDescription",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Description of the variable.",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"variableDescription",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -6301,53 +4038,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"unitList",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r'The most common units can be selected here. .. If "others" is selected, a free text can be entered.',
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"unitList",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormChoices",
-                                        value_type=str,
-                                        value=r"s; m; kg; N; m/s; m/s^2; V; A; K; none",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -6409,44 +4100,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"unitDescription",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"Text field for missing units of the list.",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"unitDescription",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -6508,53 +4162,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"variableCausality",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value=r"The causality of the variable: input to inputs, output to ouputs, acausal connections (e.g. mechanical connection) do not have causality.",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"variableCausality",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormChoices",
-                                        value_type=str,
-                                        value=r"input; output; acausal",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -6617,53 +4225,7 @@ class SimulationModels(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"FormTitle",
-                                        value_type=str,
-                                        value=r"variablePrefix",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormInfo",
-                                        value_type=str,
-                                        value='Prefix for acausal variable. Potential variables are set equal when connecting (no prefix). Stream variables are connected according to Kirchhoff\'s law, i.e. the sum of the variables equals zero. The bi-directional flow of matter is described with "stream" (e.g. for enthalpy).',
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"PresetIdShort",
-                                        value_type=str,
-                                        value=r"variablePrefix",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"Multiplicity",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
-                                        type_=r"FormChoices",
-                                        value_type=str,
-                                        value=r"Flow; Stream",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -6729,44 +4291,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"variable",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"List of variables of the port.",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"variable{0:00}",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -6910,44 +4435,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"portsConnector",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"List of ports of the model. These include a name, a description, a list of variables, and a list of ports.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value="portsConnector'{0:00}'",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"ZeroToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7040,44 +4528,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"binaryConName",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Binary interface name.",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"binConName",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7135,44 +4586,7 @@ class SimulationModels(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"binaryConDescription",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Binary interface description.",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"PresetIdShort",
-                                    value_type=str,
-                                    value=r"binaryConDescription",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"Multiplicity",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -7231,44 +4645,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"binaryConnector",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r'Binary interfaces (binaryType) based on the FMI 3.0 standard (https://fmi-standard.org/docs/3.0-dev/#definition-of-types). At this point the name (e.g. "Binary interface visualization") and the description (e.g. "Interface for binary transfer of visualization information") are specified.',
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value="binaryConnector'{0:00}'",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"ZeroToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7354,44 +4731,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"ports",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Interfaces of the model. This includes inputs, outputs as well as acausal connections (e.g. mechanical connections). In addition, it is specified here whether the model provides binary interfaces (e.g. for visualization).",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"ports",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -7476,44 +4816,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"usability",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value="The model's ease of use, adaptability, and user-friendliness, ensuring it is accessible and manageable for intended roles.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"usability",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7574,44 +4877,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"architecture",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"The structural design and organization of the model, defining how its components interact to support accurate and efficient simulation.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"architecture",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7672,44 +4938,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"validation",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"The process of confirming that the model accurately replicates real-world processes or behaviors, meeting specified requirements for its intended application.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"validation",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7769,44 +4998,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"qualityMetricFile",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"AML File containing the complete quality evaluation of the simulation model with all factors, criteria and attributes.",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"qualityMetricFile",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7865,44 +5057,7 @@ class SimulationModels(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"evaluationPerspective",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Role description indicating from which point of view the simulation model’s quality was evaluated (e.g., Model Provider, Model User, Model Consumer, Model Developer, etc.).",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"PresetIdShort",
-                                value_type=str,
-                                value=r"evaluationPerspective",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"Multiplicity",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7960,44 +5115,7 @@ class SimulationModels(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"quality",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value="The overall measure of a simulation model's ability to meet predefined standards and functional expectations, ensuring it accurately represents the intended system.",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"PresetIdShort",
-                            value_type=str,
-                            value=r"quality",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"Multiplicity",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -8120,44 +5238,7 @@ class SimulationModels(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"SimulationModel",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Merkmalssammlung zur Bereitstellung oder Anfrage von Simulationsmodellen. Die Modelle können von der Zielstellung und inhaltlich beschrieben werden.",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"PresetIdShort",
-                        value_type=str,
-                        value="To be filleSimulationModel'{0:00}'",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"Multiplicity",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -8334,26 +5415,7 @@ class SimulationModels(aas.Submodel):
             )
 
         if qualifier is None:
-            qualifier = (
-                aas.Qualifier(
-                    type_=r"FormTitle",
-                    value_type=str,
-                    value=r"Simulation Submodel v008",
-                    value_id=None,
-                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                    semantic_id=None,
-                    supplemental_semantic_id=(),
-                ),
-                aas.Qualifier(
-                    type_=r"FormInfo",
-                    value_type=str,
-                    value=r"Das Submodel kann ein oder meherer Simulationsmodelle bereitstellen, einen Service zur Generierung eines spezifischen Modells oder einen Zugang zu einer offenen oder spezifischen Anfrage.",
-                    value_id=None,
-                    kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                    semantic_id=None,
-                    supplemental_semantic_id=(),
-                ),
-            )
+            qualifier = ()
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []

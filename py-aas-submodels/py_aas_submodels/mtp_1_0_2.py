@@ -10142,25 +10142,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"AllowedIdShort",
-                                value_type=str,
-                                value=r"DiscoveryUrl[\d{2}]",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -10209,25 +10191,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"AllowedIdShort",
-                                value_type=str,
-                                value=r"ApplicationUri[\d{2}]",
-                                value_id=None,
-                                kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedIdShort/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
