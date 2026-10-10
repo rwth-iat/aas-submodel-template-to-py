@@ -43,7 +43,7 @@ def test_basyx_names_are_qualified(val, expected):
     ("Duration", "Duration"),
     ("Type", "Type"),
     ("Name", "Name"),
-    ("Document01", "Document"),
+    ("Document01", "Document01"),
     # Names imported directly or builtins used in generated code
     ("Optional", "Optional_"),
     ("Union", "Union_"),

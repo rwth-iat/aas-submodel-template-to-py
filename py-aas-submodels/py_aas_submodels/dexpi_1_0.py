@@ -4992,7 +4992,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class PlateHeatExchanger(aas.SubmodelElementCollection):
+            class PlateHeatExchanger_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -5200,7 +5200,7 @@ class DEXPI(aas.Submodel):
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"PlateHeatExchanger",
+                    id_short: Optional[str] = r"PlateHeatExchanger_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -5295,7 +5295,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class TubularHeatExchanger(aas.SubmodelElementCollection):
+            class TubularHeatExchanger_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -5503,7 +5503,7 @@ class DEXPI(aas.Submodel):
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"TubularHeatExchanger",
+                    id_short: Optional[str] = r"TubularHeatExchanger_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -5598,7 +5598,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class CentrifugalPump(aas.SubmodelElementCollection):
+            class CentrifugalPump_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -5806,7 +5806,7 @@ class DEXPI(aas.Submodel):
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"CentrifugalPump",
+                    id_short: Optional[str] = r"CentrifugalPump_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -5901,7 +5901,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class ReciprocatingPump(aas.SubmodelElementCollection):
+            class ReciprocatingPump_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -6109,7 +6109,7 @@ class DEXPI(aas.Submodel):
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"ReciprocatingPump",
+                    id_short: Optional[str] = r"ReciprocatingPump_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -6204,7 +6204,7 @@ class DEXPI(aas.Submodel):
                         embedded_data_specifications=embedded_data_specifications,
                     )
 
-            class Tank(aas.SubmodelElementCollection):
+            class Tank_1(aas.SubmodelElementCollection):
 
                 class TagName(aas.Property):
 
@@ -6412,7 +6412,7 @@ class DEXPI(aas.Submodel):
                     tagName: Union[str, TagName],
                     localId: Union[str, LocalId],
                     class_: Optional[Union[str, Class]] = None,
-                    id_short: Optional[str] = r"Tank",
+                    id_short: Optional[str] = r"Tank_1",
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
@@ -18242,11 +18242,11 @@ class DEXPI(aas.Submodel):
                 actuatingFunction_1: Optional[ActuatingFunction_1] = None,
                 actuatingFunction_2: Optional[ActuatingFunction_2] = None,
                 actuatingFunction_3: Optional[ActuatingFunction_3] = None,
-                plateHeatExchanger: Optional[PlateHeatExchanger] = None,
-                tubularHeatExchanger: Optional[TubularHeatExchanger] = None,
-                centrifugalPump: Optional[CentrifugalPump] = None,
-                reciprocatingPump: Optional[ReciprocatingPump] = None,
-                tank: Optional[Tank] = None,
+                plateHeatExchanger_1: Optional[PlateHeatExchanger_1] = None,
+                tubularHeatExchanger_1: Optional[TubularHeatExchanger_1] = None,
+                centrifugalPump_1: Optional[CentrifugalPump_1] = None,
+                reciprocatingPump_1: Optional[ReciprocatingPump_1] = None,
+                tank_1: Optional[Tank_1] = None,
                 controlledActuator_1: Optional[ControlledActuator_1] = None,
                 operatedValveReference_1: Optional[OperatedValveReference_1] = None,
                 controlledActuator_2: Optional[ControlledActuator_2] = None,
@@ -18333,11 +18333,11 @@ class DEXPI(aas.Submodel):
                     actuatingFunction_1,
                     actuatingFunction_2,
                     actuatingFunction_3,
-                    plateHeatExchanger,
-                    tubularHeatExchanger,
-                    centrifugalPump,
-                    reciprocatingPump,
-                    tank,
+                    plateHeatExchanger_1,
+                    tubularHeatExchanger_1,
+                    centrifugalPump_1,
+                    reciprocatingPump_1,
+                    tank_1,
                     controlledActuator_1,
                     operatedValveReference_1,
                     controlledActuator_2,

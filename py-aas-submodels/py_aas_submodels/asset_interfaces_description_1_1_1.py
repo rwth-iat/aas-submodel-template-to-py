@@ -47807,12 +47807,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                         class Bacv_hasDataType(aas.SubmodelElementCollection):
 
-                            class Bacv_isISO(aas.Property):
+                            class Bacv_isISO8601(aas.Property):
 
                                 def __init__(
                                     self,
                                     value: bool,
-                                    id_short: Optional[str] = r"bacv_isISO",
+                                    id_short: Optional[str] = r"bacv_isISO8601",
                                     value_type: aas.DataTypeDefXsd = bool,
                                     value_id: Optional[aas.Reference] = None,
                                     display_name: Optional[
@@ -47951,12 +47951,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                             class Bacv_hasMember(aas.SubmodelElementCollection):
 
-                                class Bacv_isISO(aas.Property):
+                                class Bacv_isISO8601(aas.Property):
 
                                     def __init__(
                                         self,
                                         value: bool,
-                                        id_short: Optional[str] = r"bacv_isISO",
+                                        id_short: Optional[str] = r"bacv_isISO8601",
                                         value_type: aas.DataTypeDefXsd = bool,
                                         value_id: Optional[aas.Reference] = None,
                                         display_name: Optional[
@@ -48099,12 +48099,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 class Bacv_hasMember(aas.SubmodelElementCollection):
 
-                                    class Bacv_isISO(aas.Property):
+                                    class Bacv_isISO8601(aas.Property):
 
                                         def __init__(
                                             self,
                                             value: bool,
-                                            id_short: Optional[str] = r"bacv_isISO",
+                                            id_short: Optional[str] = r"bacv_isISO8601",
                                             value_type: aas.DataTypeDefXsd = bool,
                                             value_id: Optional[aas.Reference] = None,
                                             display_name: Optional[
@@ -49464,8 +49464,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                             ],
                                             Bacv_hasNamedMember,
                                         ],
-                                        bacv_isISO: Optional[
-                                            Union[bool, Bacv_isISO]
+                                        bacv_isISO8601: Optional[
+                                            Union[bool, Bacv_isISO8601]
                                         ] = None,
                                         bacv_hasBinaryRepresentation: Optional[
                                             Union[bool, Bacv_hasBinaryRepresentation]
@@ -49528,10 +49528,15 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                         # Build a submodel element if a raw value was passed in the argument
 
-                                        if bacv_isISO is not None and not isinstance(
-                                            bacv_isISO, aas.SubmodelElement
+                                        if (
+                                            bacv_isISO8601 is not None
+                                            and not isinstance(
+                                                bacv_isISO8601, aas.SubmodelElement
+                                            )
                                         ):
-                                            bacv_isISO = self.Bacv_isISO(bacv_isISO)
+                                            bacv_isISO8601 = self.Bacv_isISO8601(
+                                                bacv_isISO8601
+                                            )
 
                                         # Build a submodel element if a raw value was passed in the argument
 
@@ -49589,7 +49594,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                         # Add all passed/initialized submodel elements to a single list
                                         embedded_submodel_elements = []
                                         for se_arg in [
-                                            bacv_isISO,
+                                            bacv_isISO8601,
                                             bacv_hasBinaryRepresentation,
                                             bacv_hasMember,
                                             bacv_hasNamedMember,
@@ -50695,8 +50700,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         ],
                                         Bacv_hasNamedMember,
                                     ],
-                                    bacv_isISO: Optional[
-                                        Union[bool, Bacv_isISO]
+                                    bacv_isISO8601: Optional[
+                                        Union[bool, Bacv_isISO8601]
                                     ] = None,
                                     bacv_hasBinaryRepresentation: Optional[
                                         Union[bool, Bacv_hasBinaryRepresentation]
@@ -50759,10 +50764,12 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                     # Build a submodel element if a raw value was passed in the argument
 
-                                    if bacv_isISO is not None and not isinstance(
-                                        bacv_isISO, aas.SubmodelElement
+                                    if bacv_isISO8601 is not None and not isinstance(
+                                        bacv_isISO8601, aas.SubmodelElement
                                     ):
-                                        bacv_isISO = self.Bacv_isISO(bacv_isISO)
+                                        bacv_isISO8601 = self.Bacv_isISO8601(
+                                            bacv_isISO8601
+                                        )
 
                                     # Build a submodel element if a raw value was passed in the argument
 
@@ -50815,7 +50822,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     # Add all passed/initialized submodel elements to a single list
                                     embedded_submodel_elements = []
                                     for se_arg in [
-                                        bacv_isISO,
+                                        bacv_isISO8601,
                                         bacv_hasBinaryRepresentation,
                                         bacv_hasMember,
                                         bacv_hasNamedMember,
@@ -51873,7 +51880,9 @@ class AssetInterfacesDescription(aas.Submodel):
                                     ],
                                     Bacv_hasNamedMember,
                                 ],
-                                bacv_isISO: Optional[Union[bool, Bacv_isISO]] = None,
+                                bacv_isISO8601: Optional[
+                                    Union[bool, Bacv_isISO8601]
+                                ] = None,
                                 bacv_hasBinaryRepresentation: Optional[
                                     Union[bool, Bacv_hasBinaryRepresentation]
                                 ] = None,
@@ -52103,10 +52112,10 @@ class AssetInterfacesDescription(aas.Submodel):
 
                                 # Build a submodel element if a raw value was passed in the argument
 
-                                if bacv_isISO is not None and not isinstance(
-                                    bacv_isISO, aas.SubmodelElement
+                                if bacv_isISO8601 is not None and not isinstance(
+                                    bacv_isISO8601, aas.SubmodelElement
                                 ):
-                                    bacv_isISO = self.Bacv_isISO(bacv_isISO)
+                                    bacv_isISO8601 = self.Bacv_isISO8601(bacv_isISO8601)
 
                                 # Build a submodel element if a raw value was passed in the argument
 
@@ -52156,7 +52165,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 # Add all passed/initialized submodel elements to a single list
                                 embedded_submodel_elements = []
                                 for se_arg in [
-                                    bacv_isISO,
+                                    bacv_isISO8601,
                                     bacv_hasBinaryRepresentation,
                                     bacv_hasMember,
                                     bacv_hasNamedMember,

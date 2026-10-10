@@ -56,17 +56,24 @@ def qualified_name(typ: type) -> str:
 class NamingGenerator:
     @classmethod
     def create_id_short_stem(cls, obj: Referable) -> Optional[str]:
-        """Return the idShort without its iteration ending (e.g. "Document01" -> "Document"),
-        unless siblings would get the same name (e.g. "AddressLine1", "AddressLine2")"""
+        """Return the idShort without its iteration ending (e.g. "Document01" -> "Document") if the element
+        may occur several times, as its instances get an index instead, else without placeholder (e.g.
+        "Mode__00__" -> "Mode"), unless siblings would get the same name (e.g. "AddressLine1", "AddressLine2")"""
         id_short = obj.id_short
         if id_short is None:
             return None
-        stem = StringHandler.remove_iteration_ending(id_short)
-        if stem != id_short and any(
-                cls._name_key(StringHandler.remove_iteration_ending(sibling.id_short)) == cls._name_key(stem)
-                for sibling in cls._siblings(obj)):
+        stem = cls._stem(obj)
+        if stem != id_short and any(cls._name_key(cls._stem(sibling)) == cls._name_key(stem)
+                                    for sibling in cls._siblings(obj)):
             return id_short
         return stem
+
+    @staticmethod
+    def _stem(obj: Referable) -> str:
+        # Trailing digits of elements occurring once are part of their name (e.g. "ISO8601", issue #41)
+        if isinstance(obj, Qualifiable) and ReferableHandler.takes_several(obj):
+            return StringHandler.remove_iteration_ending(obj.id_short)
+        return StringHandler.remove_placeholder(obj.id_short)
 
     @staticmethod
     def _name_key(name: str) -> str:
@@ -148,6 +155,11 @@ class StringHandler:
         if not val:
             return val
         return f"{val[0].lower()}{val[1:]}"
+
+    @classmethod
+    def remove_placeholder(cls, val: str):
+        # remove placeholders for numbers like {00} or __00__
+        return re.sub(r'(\{\d+\}|__\d+__)$', '', val)
 
     @classmethod
     def remove_iteration_ending(cls, val: str):
