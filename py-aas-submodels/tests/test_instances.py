@@ -163,8 +163,8 @@ def test_nameplate_json_holds_list_items(nameplate):
     assert semantic_id(first["MarkingName"]) == "0112/2///61987#ABA231#009"
 
 
-@pytest.mark.xfail(strict=True, reason="Issue #37: instances of generated submodel classes have kind Template")
 def test_nameplate_is_an_instance(nameplate):
+    # Instances of templates have kind Instance, which is also the default if kind is omitted
     assert to_jsonable(nameplate).get("kind", "Instance") == "Instance"
 
 

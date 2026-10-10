@@ -17,7 +17,9 @@ all the required submodel element-specific classes. Input files can be `.aasx`,
 Here's a snippet of the classes generated from the
 [Digital Nameplate 3.0.1](https://github.com/admin-shell-io/submodel-templates/tree/main/published/Digital%20nameplate/3/0/1)
 submodel template (`...` marks omitted lines). Each submodel element gets a class nested in the class of
-its submodel or collection, with the semantic ID, qualifiers and descriptions of the template as defaults:
+its submodel or collection, with the semantic IDs, descriptions and other metadata of the template as defaults.
+The classes build instances (`kind=Instance`), so template qualifiers like `SMT/Cardinality`, which are only
+allowed in templates, aren't taken over:
 
 ```python
 from typing import Any, ForwardRef, Iterable, Optional, Tuple, Union
@@ -46,19 +48,8 @@ class Nameplate(aas.Submodel):
                 ),
                 referred_semantic_id=None,
             ),
-            qualifier: Iterable[aas.Qualifier] = None,
             ...
         ):
-
-            if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        ...
-                    ),
-                )
             ...
 
     ...
@@ -73,7 +64,25 @@ class Nameplate(aas.Submodel):
         ...
         markings: Optional[Union[Iterable[Markings.Markings_item], Markings]] = None,
         ...
+        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
+        ...
     ):
+
+        if description is None:
+            description = aas.MultiLanguageTextType(
+                dict_={
+                    r"en": r"Contains the nameplate information attached to the product"
+                }
+            )
+
+        if administration is None:
+            administration = aas.AdministrativeInformation(
+                version=r"3",
+                revision=r"0",
+                ...
+                template_id=r"https://admin-shell.io/idta-02006-3-0",
+                ...
+            )
         ...
 ```
 

@@ -51,51 +51,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Unique identifier for the PAM specification sheet.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"PAM Specifications Sheet - Loop - 2014-04-28 - Version 1.00",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -159,51 +115,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Defines the general category of the asset described in the PAM specification sheet.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"Dosage control loop",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -267,51 +179,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value="Unique identifier for a general asset type's PAM specification sheet.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"Dosage Control Loop - 2014-04-28 - Version 1.00",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -372,43 +240,7 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Document Header",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Identifier for the asset type and associated PAM specification sheet.",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -519,51 +351,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value="Specifies the asset's logical position within a piping and instrumentation diagram.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"LEVNAMUR-V220-CA23-Y2233",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -624,51 +412,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Specifies the actual location of the asset within the plant.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"V220",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -729,51 +473,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value="Offers a concise explanation of the asset's primary function.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"SISO Control Loop for the dosing valve",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -832,51 +532,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Defines the specific subtype of the asset.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"SISO Control Loop",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -940,51 +596,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Reference to the technical specification sheet accompanying the asset.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"-",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1045,111 +657,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Denotes whether the asset is part of a safety equipment.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"True;False",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/InitialValue",
-                            value_type=str,
-                            value=r"False",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/DefaultValue",
-                            value_type=str,
-                            value=r"False",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/AllowedValue",
-                            value_type=str,
-                            value=r"True;False",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"False",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1213,94 +721,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"References zero (if empty), one or more backup assets for redundancy purposes.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/InitialValue",
-                            value_type=str,
-                            value=r"False",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/DefaultValue",
-                            value_type=str,
-                            value=r"False",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"False",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"True;False",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1369,102 +790,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"0;1;2;3;4",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/InitialValue",
-                            value_type=str,
-                            value=r"0",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/DefaultValue",
-                            value_type=str,
-                            value=r"0",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"2",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/AllowedValue",
-                            value_type=str,
-                            value=r"0;1;2;3;4",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1536,111 +862,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Indicates the probability of a failure occurring, classified into three levels.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"low;medium;high;critical",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/InitialValue",
-                            value_type=str,
-                            value=r"low",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/DefaultValue",
-                            value_type=str,
-                            value=r"low",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/AllowedValue",
-                            value_type=str,
-                            value=r"low;medium;high;critical",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"low",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1709,111 +931,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Indicates the potential impact or seriousness of a failure, classified into three levels.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"no impact;potential;measureable;significant",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/InitialValue",
-                            value_type=str,
-                            value=r"significant",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/DefaultValue",
-                            value_type=str,
-                            value=r"significant",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"significant",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/AllowedValue",
-                            value_type=str,
-                            value=r"no impact;potential;measureable;significant",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1885,86 +1003,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"A computed value based on Failure Probability and Failure Severity, usually calculated automatically.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormChoices",
-                            value_type=str,
-                            value=r"low;medium;high;critical",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/InitialValue",
-                            value_type=str,
-                            value=r"critical",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/DefaultValue",
-                            value_type=str,
-                            value=r"critical",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"critical",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2028,51 +1067,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"A field for including references to supplementary information.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"-",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2136,51 +1131,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"A field for including references to supplementary information.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"-",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2244,51 +1195,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Detailed description of the task and installation or placement conditions of the specific asset.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"control loop is used to control the ratio between two input product.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -2362,43 +1269,7 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"General Information",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Provides details about the specific asset.",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -2613,51 +1484,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value="Name of the asset's state, highlighting deviations from normal operations or reduced lifespan.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Friction in valve",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2721,111 +1548,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Specifies whether the user is requiring monitoring.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2886,51 +1609,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value="Offers further information about the asset's status/fault profile or status monitoring.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"-",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2991,51 +1670,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Captures the abbreviated name of the PAM method employed for monitoring purposes.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"friction_dect",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3107,111 +1742,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"failure;function check;out of specification;maintenance request",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"failure",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"failure",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"failure",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"failure;function check;out of specification;maintenance request",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Status according to NAMUR recommendation NE 107.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3283,102 +1814,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Asset-Alarm",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"Asset-Alarm",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"Asset-Alarm",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"Asset-Alarm;Asset-Notification;Asset-State Chance",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"Asset-Alarm;Asset-Notification;Asset-State Chance",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -3443,43 +1879,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Status Condition",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value="Characteristics of the asset's operational and failure states.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3599,43 +1999,7 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Complete System",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Interconnected fields, incorporating status/fault profiles that apply to the entire asset rather than specific parts.",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -3714,51 +2078,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Specifies the name of the subsystem.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"Control valve",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3822,51 +2142,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Specifies the actual location of the subsystem in the plant.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"LEVTDA-V220-AB13-WT013",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3927,51 +2203,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Specifies the actual location of the subsystem in the plant.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/ExampleValue",
-                            value_type=str,
-                            value=r"V220",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4037,51 +2269,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value="Name of the subsystem's state, highlighting deviations from normal operations or reduced lifespan.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Low temperature",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4145,111 +2333,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"To be filled; longer explanation",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4310,51 +2394,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value="Offers further information about the subsystem's status/fault profile or status monitoring.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Outlet temperature drops below threshold",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4415,51 +2455,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Captures the abbreviated name of the PAM method employed for monitoring purposes.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"OutletTemperatureMonitoring",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4531,111 +2527,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Status according to NAMUR recommendation NE 107.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"failure",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"failure;function check;out of specification;maintenance request",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"failure;function check;out of specification;maintenance request",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"failure",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"failure",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4707,111 +2599,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Alarm/signaling category according to NAMUR recommendation NE 129.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"Asset-Alarm;Asset-Notification;Asset-State Chance",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"Asset-Alarm;Asset-Notification;Asset-State Chance",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"Asset-Alarm",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"Asset-Alarm",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Asset-Alarm",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4876,43 +2664,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Status Condition",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value="Characteristics of the subsystems's operational and failure states.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -5047,34 +2799,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Additional references associated to the subsystem.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -5146,34 +2871,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"The distinct identifier for the PAM specification sheet for the subsystem.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -5245,34 +2943,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Links to relevant PAM specification documentation for the subsystem.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -5337,43 +3008,7 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Subsystem",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Properties of the subsystem.",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -5510,51 +3145,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Name of method parameter.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Warning limit for efficiency",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5615,51 +3206,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value="Provides a concise explanation of the parameter's purpose.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Falling below the limit triggers an alarm",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5723,51 +3270,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"A static parameter value of a method used for monitoring of this subsystem.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=float,
-                                value=75.0,
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5836,51 +3339,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Specifies the physical unit of the static parameter.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"%",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -5943,43 +3402,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Static Parameter",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"List of static parameters such as trigger limits.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -6089,51 +3512,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Name of the generated signal.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Efficiency Bad",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6194,51 +3573,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Provides a concise explanation of the generated signal.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Binary alarm signal",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6299,51 +3634,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Specifies the possible range of values for the generated signal (optional).",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=float,
-                                value=100.0,
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6410,51 +3701,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Physical unit of the generated signal.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"m",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6518,111 +3765,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Determines whether the signal is transmitted to the PAM system for long-term archiving.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6683,111 +3826,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"floating point;integer;binary",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"floating point;integer;binary",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"floating point",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"floating point",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"floating point",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Indicates whether the generated signal from the method is a floating point, integer or binary value.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -6850,43 +3889,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"OneToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Generated Signals",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"List of generated signals.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -7010,51 +4013,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Name of the required input signal.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Flow1",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7115,51 +4074,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Provides a concise explanation of the input signal.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"Primary flow",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7220,51 +4135,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Specifies the value range of the input signal (optional).",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=float,
-                                value=100.0,
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7331,51 +4202,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Physical unit of the input signal (optional).",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"m",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7436,111 +4263,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Specifies whether the input signal is required for the method.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7601,111 +4324,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Clarification whether this input signal for the method is already available.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7769,51 +4388,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value="Specifies the input signal's source.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"LEVTDA-V220-AB13-FV01",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -7877,111 +4452,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormChoices",
-                                value_type=str,
-                                value=r"True;False",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Determines whether the values of the input signal are transmitted to the PAM system for long-term archiving.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/InitialValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/InitialValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/DefaultValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/DefaultValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/AllowedValue",
-                                value_type=str,
-                                value=r"True",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/AllowedValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8046,43 +4517,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Requird Input Signals",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"List of necessary input signals of the method.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -8218,43 +4653,7 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"OneToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Applicable Method",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Characteristics of the method used for state or fault detection.",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -8355,51 +4754,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Date of revision of the PAM specification sheet.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"2024-05-17",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8460,51 +4815,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value="The individual responsible for the document's revision.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"H. Müller",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8563,51 +4874,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"The person who has checked the document.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"T. Mayer",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8668,51 +4935,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"The individual who has authorized the document for release.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"O. Boss",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8774,51 +4997,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value="Identifier for the document's version.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"V0.8",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8879,51 +5058,7 @@ class PAMSpecificationSheet(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"The name of the company associated with the confirmation of the document.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/ExampleValue",
-                                value_type=str,
-                                value=r"IDTA",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -8988,43 +5123,7 @@ class PAMSpecificationSheet(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Information regarding the confirmation to the current status of the PAM specification sheet.",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"Document Confirmation",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"OneToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -9139,43 +5238,7 @@ class PAMSpecificationSheet(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"FormInfo",
-                        value_type=str,
-                        value=r"Release information related to the complete PAM specification sheet.",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"FormTitle",
-                        value_type=str,
-                        value=r"Document Footer",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -9235,7 +5298,7 @@ class PAMSpecificationSheet(aas.Submodel):
             referred_semantic_id=None,
         ),
         qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -9267,43 +5330,7 @@ class PAMSpecificationSheet(aas.Submodel):
             )
 
         if qualifier is None:
-            qualifier = (
-                aas.Qualifier(
-                    type_=r"FormInfo",
-                    value_type=str,
-                    value=r"PAM Specification Sheet according to VDI/VDE GMA RL 2651-2 and specification of Plant Asset Management functions ",
-                    value_id=None,
-                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                    semantic_id=None,
-                    supplemental_semantic_id=(),
-                ),
-                aas.Qualifier(
-                    type_=r"SMT/Cardinality",
-                    value_type=str,
-                    value=r"One",
-                    value_id=None,
-                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                    semantic_id=aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    supplemental_semantic_id=(),
-                ),
-                aas.Qualifier(
-                    type_=r"FormTitle",
-                    value_type=str,
-                    value=r"PAM Specification Sheet",
-                    value_id=None,
-                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                    semantic_id=None,
-                    supplemental_semantic_id=(),
-                ),
-            )
+            qualifier = ()
 
         if embedded_data_specifications is None:
             embedded_data_specifications = []

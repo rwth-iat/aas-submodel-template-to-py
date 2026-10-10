@@ -58,15 +58,6 @@ class ControlConfig(aas.Submodel):
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
                 )
 
             if embedded_data_specifications is None:
@@ -137,15 +128,6 @@ class ControlConfig(aas.Submodel):
                         value=r"List of controller types.",
                         value_id=None,
                         kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -231,15 +213,6 @@ class ControlConfig(aas.Submodel):
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
                 )
 
             if embedded_data_specifications is None:
@@ -310,15 +283,6 @@ class ControlConfig(aas.Submodel):
                         value=r"Length type of the CNC",
                         value_id=None,
                         kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -395,15 +359,6 @@ class ControlConfig(aas.Submodel):
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
                 )
 
             if embedded_data_specifications is None:
@@ -474,15 +429,6 @@ class ControlConfig(aas.Submodel):
                         value=r"Cycle time of the CNC",
                         value_id=None,
                         kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -559,15 +505,6 @@ class ControlConfig(aas.Submodel):
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
                 )
 
             if embedded_data_specifications is None:
@@ -641,15 +578,6 @@ class ControlConfig(aas.Submodel):
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
                 )
 
             if embedded_data_specifications is None:
@@ -720,15 +648,6 @@ class ControlConfig(aas.Submodel):
                         value=r"Velocity unit of the CNC",
                         value_id=None,
                         kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -807,15 +726,6 @@ class ControlConfig(aas.Submodel):
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
                 )
 
             if embedded_data_specifications is None:
@@ -886,15 +796,6 @@ class ControlConfig(aas.Submodel):
                         value=r"Jerk unit of the CNC",
                         value_id=None,
                         kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -973,15 +874,6 @@ class ControlConfig(aas.Submodel):
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
                     )
 
                 if embedded_data_specifications is None:
@@ -1054,15 +946,6 @@ class ControlConfig(aas.Submodel):
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
                     )
 
                 if embedded_data_specifications is None:
@@ -1132,15 +1015,6 @@ class ControlConfig(aas.Submodel):
                         value=r"Provide the configuration data for the controler.",
                         value_id=None,
                         kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -1246,15 +1120,6 @@ class ControlConfig(aas.Submodel):
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
                         )
 
                     if embedded_data_specifications is None:
@@ -1311,43 +1176,7 @@ class ControlConfig(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"AxisName",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Unique axis name",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1399,43 +1228,7 @@ class ControlConfig(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"FormTitle",
-                                    value_type=str,
-                                    value=r"ReferenceToAxis",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"FormInfo",
-                                    value_type=str,
-                                    value=r"Reference to the axis",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1486,43 +1279,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"AxesReference",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Collection of referenced axes for the specific channel",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1622,15 +1379,6 @@ class ControlConfig(aas.Submodel):
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
                     )
 
                 if embedded_data_specifications is None:
@@ -1727,15 +1475,6 @@ class ControlConfig(aas.Submodel):
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
                 )
 
             if embedded_data_specifications is None:
@@ -1827,15 +1566,6 @@ class ControlConfig(aas.Submodel):
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
                         )
 
                     if embedded_data_specifications is None:
@@ -1906,15 +1636,6 @@ class ControlConfig(aas.Submodel):
                                 value=r"Type of the specific axis",
                                 value_id=None,
                                 kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -1991,15 +1712,6 @@ class ControlConfig(aas.Submodel):
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
                         )
 
                     if embedded_data_specifications is None:
@@ -2070,15 +1782,6 @@ class ControlConfig(aas.Submodel):
                                 value=r"Software limit switch negative",
                                 value_id=None,
                                 kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2155,15 +1858,6 @@ class ControlConfig(aas.Submodel):
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
                         )
 
                     if embedded_data_specifications is None:
@@ -2234,15 +1928,6 @@ class ControlConfig(aas.Submodel):
                                 value=r"Velocity limit of the axis",
                                 value_id=None,
                                 kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2319,15 +2004,6 @@ class ControlConfig(aas.Submodel):
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
                         )
 
                     if embedded_data_specifications is None:
@@ -2398,15 +2074,6 @@ class ControlConfig(aas.Submodel):
                                 value=r"Jerk limit of the axis",
                                 value_id=None,
                                 kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2485,15 +2152,6 @@ class ControlConfig(aas.Submodel):
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
                             )
 
                         if embedded_data_specifications is None:
@@ -2566,15 +2224,6 @@ class ControlConfig(aas.Submodel):
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
                             )
 
                         if embedded_data_specifications is None:
@@ -2643,15 +2292,6 @@ class ControlConfig(aas.Submodel):
                                 value=r"Collection of axis configuration data",
                                 value_id=None,
                                 kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -2750,15 +2390,6 @@ class ControlConfig(aas.Submodel):
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
                             )
 
                         if embedded_data_specifications is None:
@@ -2828,15 +2459,6 @@ class ControlConfig(aas.Submodel):
                                     value=r"Reference to the technical Data of the drive",
                                     value_id=None,
                                     kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -2917,15 +2539,6 @@ class ControlConfig(aas.Submodel):
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                 )
 
                             if embedded_data_specifications is None:
@@ -3000,15 +2613,6 @@ class ControlConfig(aas.Submodel):
                                         semantic_id=None,
                                         supplemental_semantic_id=(),
                                     ),
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=None,
-                                        supplemental_semantic_id=(),
-                                    ),
                                 )
 
                             if embedded_data_specifications is None:
@@ -3079,15 +2683,6 @@ class ControlConfig(aas.Submodel):
                                     value=r"Drive configuration data",
                                     value_id=None,
                                     kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                    semantic_id=None,
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                     semantic_id=None,
                                     supplemental_semantic_id=(),
                                 ),
@@ -3184,15 +2779,6 @@ class ControlConfig(aas.Submodel):
                                 value=r"To be filled; longer explanation",
                                 value_id=None,
                                 kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                                 semantic_id=None,
                                 supplemental_semantic_id=(),
                             ),
@@ -3294,15 +2880,6 @@ class ControlConfig(aas.Submodel):
                             value=r"List of axis specific configuration data",
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3458,15 +3035,6 @@ class ControlConfig(aas.Submodel):
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"OneToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
                 )
 
             if embedded_data_specifications is None:
@@ -3558,15 +3126,6 @@ class ControlConfig(aas.Submodel):
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
                     )
 
                 if embedded_data_specifications is None:
@@ -3637,15 +3196,6 @@ class ControlConfig(aas.Submodel):
                             value=r"Syntax of the NC program",
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -3721,15 +3271,6 @@ class ControlConfig(aas.Submodel):
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
                     )
 
                 if embedded_data_specifications is None:
@@ -3799,15 +3340,6 @@ class ControlConfig(aas.Submodel):
                         value=r"Provides NC program informations",
                         value_id=None,
                         kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -3924,15 +3456,6 @@ class ControlConfig(aas.Submodel):
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
                     )
 
                 if embedded_data_specifications is None:
@@ -4003,15 +3526,6 @@ class ControlConfig(aas.Submodel):
                             value=r"Type of the communication access to the CNC.",
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -4090,15 +3604,6 @@ class ControlConfig(aas.Submodel):
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
                     )
 
                 if embedded_data_specifications is None:
@@ -4153,43 +3658,7 @@ class ControlConfig(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"FormTitle",
-                            value_type=str,
-                            value=r"OPCUAServerDataSheet",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"FormInfo",
-                            value_type=str,
-                            value=r"Reference to the OPCUA server datasheet Submodel",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4262,15 +3731,6 @@ class ControlConfig(aas.Submodel):
                         value=r"Provides the communication information to access the CNC.",
                         value_id=None,
                         kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
@@ -4381,43 +3841,7 @@ class ControlConfig(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"FormTitle",
-                                value_type=str,
-                                value=r"ToolDescription",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"FormInfo",
-                                value_type=str,
-                                value=r"Reference to the tool description Submodel of the specific tool.",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=None,
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4483,15 +3907,6 @@ class ControlConfig(aas.Submodel):
                             value=r"One tool of the CNC",
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=None,
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
                             semantic_id=None,
                             supplemental_semantic_id=(),
                         ),
@@ -4587,15 +4002,6 @@ class ControlConfig(aas.Submodel):
                         semantic_id=None,
                         supplemental_semantic_id=(),
                     ),
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"OneToMany",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=None,
-                        supplemental_semantic_id=(),
-                    ),
                 )
 
             if embedded_data_specifications is None:
@@ -4670,7 +4076,7 @@ class ControlConfig(aas.Submodel):
             referred_semantic_id=None,
         ),
         qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,

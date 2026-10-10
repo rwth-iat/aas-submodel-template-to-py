@@ -8,7 +8,7 @@ from basyx.aas.adapter.json import read_aas_json_file
 from basyx.aas.adapter.xml import read_aas_xml_file
 from basyx.aas.model import Property, Referable, Submodel, \
     SubmodelElement, SubmodelElementCollection, DictIdentifiableStore, MultiLanguageProperty, \
-    ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File
+    ReferenceElement, AbstractObjectStore, SubmodelElementList, Range, File, ModellingKind, Qualifiable
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -166,8 +166,9 @@ class SubmodelCodegen:
     def gen_cls_for_submodel(self, submodel: Submodel,
                              template: str = 'submodel_class.pyi') -> str:
         # Define the variables for the template
+        # Generated classes build instances of the template
         render_kwargs = self.default_referable_render_kwargs(
-            submodel, exclude_from_args=["submodel_element"])
+            submodel, exclude_from_args=["submodel_element"], defaults={"kind": ModellingKind.INSTANCE})
 
         se_as_args = [NamingGenerator.create_arg_name_for_referable(i) for i in submodel]
         for se, arg in zip(submodel, se_as_args):
@@ -211,7 +212,10 @@ class SubmodelCodegen:
     def default_referable_render_kwargs(self, referable: Referable,
                                         exclude_from_args: Iterable[str] = None,
                                         include_in_args: Iterable[str] = None,
-                                        remove_numeric_ending_from_id_short = True) -> dict:
+                                        remove_numeric_ending_from_id_short = True,
+                                        defaults: Optional[dict] = None) -> dict:
+        """Return the variables for rendering the class of `referable`. Its attributes are the defaults
+        of the init arguments, except for those given in `defaults`"""
         exceptions = ["parent"]
         if exclude_from_args is not None:
             exceptions.extend(exclude_from_args)
@@ -223,6 +227,9 @@ class SubmodelCodegen:
             # IdShorts of list items are optional since metamodel V3.1 (AASd-120 was removed),
             # but must be unique: a default idShort would be the same for all items
             referable_kwargs["id_short"] = None
+        if isinstance(referable, Qualifiable):
+            referable_kwargs["qualifier"] = util.instance_qualifiers(referable)
+        referable_kwargs.update(defaults or {})
 
         # Find and save args with mutable defaults to kwargs_with_mutable_defaults
         # Set defaults of these args to None

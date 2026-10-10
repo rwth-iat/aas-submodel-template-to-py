@@ -64,23 +64,6 @@ class HandoverDocumentation(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"https://domain.com/...",
@@ -168,23 +151,6 @@ class HandoverDocumentation(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"XF90-884",
@@ -271,23 +237,6 @@ class HandoverDocumentation(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
@@ -388,25 +337,7 @@ class HandoverDocumentation(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"OneToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -526,25 +457,7 @@ class HandoverDocumentation(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -709,23 +622,6 @@ class HandoverDocumentation(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"03-02",
@@ -808,23 +704,6 @@ class HandoverDocumentation(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
@@ -911,23 +790,6 @@ class HandoverDocumentation(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
@@ -1026,25 +888,7 @@ class HandoverDocumentation(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"OneToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -1160,25 +1004,7 @@ class HandoverDocumentation(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1347,23 +1173,6 @@ class HandoverDocumentation(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"OneToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"ExampleValue",
                                             value_type=str,
                                             value=r"en",
@@ -1446,25 +1255,7 @@ class HandoverDocumentation(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -1637,23 +1428,6 @@ class HandoverDocumentation(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"V1.2",
@@ -1740,23 +1514,6 @@ class HandoverDocumentation(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"Examplary title@en",
@@ -1838,23 +1595,6 @@ class HandoverDocumentation(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
@@ -1941,23 +1681,6 @@ class HandoverDocumentation(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"Abstract@en",
@@ -2039,23 +1762,6 @@ class HandoverDocumentation(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
@@ -2142,23 +1848,6 @@ class HandoverDocumentation(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
@@ -2247,23 +1936,6 @@ class HandoverDocumentation(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"Released",
@@ -2340,23 +2012,6 @@ class HandoverDocumentation(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
@@ -2445,23 +2100,6 @@ class HandoverDocumentation(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"Example company Ltd.",
@@ -2532,23 +2170,6 @@ class HandoverDocumentation(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"OneToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"AllowedIdShort",
                                             value_type=str,
@@ -2637,25 +2258,7 @@ class HandoverDocumentation(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2812,23 +2415,6 @@ class HandoverDocumentation(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"OneToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"AllowedIdShort",
                                             value_type=str,
                                             value=r"BasedOn[\d{2,3}]",
@@ -2916,25 +2502,7 @@ class HandoverDocumentation(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3099,23 +2667,6 @@ class HandoverDocumentation(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"OneToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"AllowedIdShort",
                                             value_type=str,
                                             value=r"TranslationOf[\d{2,3}]",
@@ -3203,25 +2754,7 @@ class HandoverDocumentation(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3387,23 +2920,6 @@ class HandoverDocumentation(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"OneToMany",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"ExampleValue",
                                             value_type=str,
                                             value=r"docu_cecc_fullmanual_DE.PDF",
@@ -3507,25 +3023,7 @@ class HandoverDocumentation(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/ExampleValue/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -3686,23 +3184,6 @@ class HandoverDocumentation(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"ExampleValue",
                                         value_type=str,
                                         value=r"docu_cecc_fullmanual_DE.jpg",
@@ -3855,25 +3336,7 @@ class HandoverDocumentation(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"OneToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4116,25 +3579,7 @@ class HandoverDocumentation(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4273,25 +3718,7 @@ class HandoverDocumentation(aas.Submodel):
                     ):
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"OneToMany",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -4340,25 +3767,7 @@ class HandoverDocumentation(aas.Submodel):
                 ):
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"ZeroToOne",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -4548,25 +3957,7 @@ class HandoverDocumentation(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"OneToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4712,25 +4103,7 @@ class HandoverDocumentation(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -4869,25 +4242,7 @@ class HandoverDocumentation(aas.Submodel):
             ):
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"OneToMany",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -4937,25 +4292,7 @@ class HandoverDocumentation(aas.Submodel):
         ):
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"ZeroToOne",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -5076,7 +4413,7 @@ class HandoverDocumentation(aas.Submodel):
             referred_semantic_id=None,
         ),
         qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (
             aas.ExternalReference(

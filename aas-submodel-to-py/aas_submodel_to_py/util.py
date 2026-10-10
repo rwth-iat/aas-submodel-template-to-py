@@ -256,6 +256,8 @@ class StringHandler:
             return res
         else:
             kwargs = get_kwargs_for_init(val)
+            if isinstance(val, Qualifiable):
+                kwargs["qualifier"] = instance_qualifiers(val)
             kwargs = cls.reprify_kwarg_values(kwargs)
             kwargs_repr = ", ".join([f"{arg}={kwargs[arg]}" for arg in kwargs])
             typ = cls.reprify(type(val))
@@ -302,6 +304,12 @@ def get_kwargs_for_init(obj, exceptions: Tuple[str] = ("parent",)):
             continue
         kwargs[arg] = get_mapped_attr_of_arg(obj, arg)
     return kwargs
+
+def instance_qualifiers(obj: Qualifiable) -> tuple:
+    """Return the qualifiers of the template element `obj` that its instances take over: template
+    qualifiers (e.g. SMT/Cardinality) are only allowed in templates (AASd-119, AASd-129)"""
+    return tuple(q for q in obj.qualifier if q.kind is not QualifierKind.TEMPLATE_QUALIFIER)
+
 
 def get_typehints_for_args(obj, args):
     args_typehints = {}

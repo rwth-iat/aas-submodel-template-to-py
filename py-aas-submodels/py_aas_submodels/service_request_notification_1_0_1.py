@@ -2004,7 +2004,7 @@ class ServiceRequestNotification(aas.Submodel):
             referred_semantic_id=None,
         ),
         qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,

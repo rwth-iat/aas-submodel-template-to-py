@@ -4,7 +4,9 @@
 automatically generated from official [IDTA](https://industrialdigitaltwin.org/) templates
 using [aas-submodel-to-py](../aas-submodel-to-py/). The classes extend the
 [BaSyx Python SDK](https://github.com/eclipse-basyx/basyx-python-sdk) base classes and
-pre-fill semantic metadata (semantic IDs, descriptions, qualifiers) from the templates.
+pre-fill semantic metadata (semantic IDs, descriptions, administrative information) from the
+templates. They build submodel instances (`kind=Instance`) without the template qualifiers
+(e.g. `SMT/Cardinality`), which are only allowed in templates.
 
 ## Installation
 

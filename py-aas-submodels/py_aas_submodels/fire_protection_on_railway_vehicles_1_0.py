@@ -49,23 +49,6 @@ class RailwayFireProtection(aas.Submodel):
                 if qualifier is None:
                     qualifier = (
                         aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
                             type_=r"SMT/ExampleValue",
                             value_type=str,
                             value=r"Generic Manufacturing Corp.",
@@ -142,23 +125,6 @@ class RailwayFireProtection(aas.Submodel):
 
                 if qualifier is None:
                     qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
                         aas.Qualifier(
                             type_=r"SMT/ExampleValue",
                             value_type=str,
@@ -238,23 +204,6 @@ class RailwayFireProtection(aas.Submodel):
                 if qualifier is None:
                     qualifier = (
                         aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
                             type_=r"SMT/ExampleValue",
                             value_type=str,
                             value=r"ORD-XS-000123",
@@ -333,23 +282,6 @@ class RailwayFireProtection(aas.Submodel):
 
                 if qualifier is None:
                     qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
                         aas.Qualifier(
                             type_=r"SMT/ExampleValue",
                             value_type=str,
@@ -431,25 +363,7 @@ class RailwayFireProtection(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -574,23 +488,6 @@ class RailwayFireProtection(aas.Submodel):
                         if qualifier is None:
                             qualifier = (
                                 aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
                                     type_=r"SMT/ExampleValue",
                                     value_type=str,
                                     value=r"Compliant: Hazard Level 3",
@@ -672,23 +569,6 @@ class RailwayFireProtection(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"OneToMany",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"SMT/ExampleValue",
                                         value_type=str,
                                         value=r"file://report.pdf",
@@ -766,25 +646,7 @@ class RailwayFireProtection(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -948,23 +810,6 @@ class RailwayFireProtection(aas.Submodel):
                         if qualifier is None:
                             qualifier = (
                                 aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
                                     type_=r"SMT/ExampleValue",
                                     value_type=str,
                                     value=r"R1 requirement for hazard level HL3 according to EN 45545-2",
@@ -1045,25 +890,7 @@ class RailwayFireProtection(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"OneToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -1165,25 +992,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -1339,23 +1148,6 @@ class RailwayFireProtection(aas.Submodel):
                         if qualifier is None:
                             qualifier = (
                                 aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
                                     type_=r"SMT/ExampleValue",
                                     value_type=str,
                                     value=r"/aasx/files/datasheet_en.pdf",
@@ -1442,23 +1234,6 @@ class RailwayFireProtection(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"SMT/ExampleValue",
                                             value_type=str,
                                             value=r"cone calorimeter test according to EN ISO 5660-1",
@@ -1541,23 +1316,6 @@ class RailwayFireProtection(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"SMT/ExampleValue",
                                             value_type=str,
@@ -1642,23 +1400,6 @@ class RailwayFireProtection(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"SMT/ExampleValue",
                                             value_type=xsd.Date,
                                             value=xsd.from_xsd(r"2026-07-22", xsd.Date),
@@ -1741,23 +1482,6 @@ class RailwayFireProtection(aas.Submodel):
 
                                 if qualifier is None:
                                     qualifier = (
-                                        aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"ZeroToOne",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
                                         aas.Qualifier(
                                             type_=r"SMT/ExampleValue",
                                             value_type=str,
@@ -1842,23 +1566,6 @@ class RailwayFireProtection(aas.Submodel):
                                 if qualifier is None:
                                     qualifier = (
                                         aas.Qualifier(
-                                            type_=r"SMT/Cardinality",
-                                            value_type=str,
-                                            value=r"One",
-                                            value_id=None,
-                                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                            semantic_id=aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            supplemental_semantic_id=(),
-                                        ),
-                                        aas.Qualifier(
                                             type_=r"SMT/ExampleValue",
                                             value_type=str,
                                             value=r"FR-TEST-2026-00123",
@@ -1938,25 +1645,7 @@ class RailwayFireProtection(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"OneToMany",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2074,25 +1763,7 @@ class RailwayFireProtection(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2245,23 +1916,6 @@ class RailwayFireProtection(aas.Submodel):
                         if qualifier is None:
                             qualifier = (
                                 aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"ZeroToOne",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                                aas.Qualifier(
                                     type_=r"SMT/ExampleValue",
                                     value_type=str,
                                     value=r"test results demonstrate compliance with EN 45545-2 requirements for the intended application",
@@ -2344,23 +1998,6 @@ class RailwayFireProtection(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"SMT/ExampleValue",
                                         value_type=str,
@@ -2448,25 +2085,7 @@ class RailwayFireProtection(aas.Submodel):
                                 )
 
                             if qualifier is None:
-                                qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"One",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                )
+                                qualifier = ()
 
                             if embedded_data_specifications is None:
                                 embedded_data_specifications = []
@@ -2544,23 +2163,6 @@ class RailwayFireProtection(aas.Submodel):
 
                             if qualifier is None:
                                 qualifier = (
-                                    aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
                                     aas.Qualifier(
                                         type_=r"SMT/ExampleValue",
                                         value_type=str,
@@ -2643,23 +2245,6 @@ class RailwayFireProtection(aas.Submodel):
                             if qualifier is None:
                                 qualifier = (
                                     aas.Qualifier(
-                                        type_=r"SMT/Cardinality",
-                                        value_type=str,
-                                        value=r"ZeroToOne",
-                                        value_id=None,
-                                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                        semantic_id=aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        supplemental_semantic_id=(),
-                                    ),
-                                    aas.Qualifier(
                                         type_=r"SMT/ExampleValue",
                                         value_type=str,
                                         value=r"Fire Testing Laboratory Certification Body",
@@ -2736,25 +2321,7 @@ class RailwayFireProtection(aas.Submodel):
                             )
 
                         if qualifier is None:
-                            qualifier = (
-                                aas.Qualifier(
-                                    type_=r"SMT/Cardinality",
-                                    value_type=str,
-                                    value=r"One",
-                                    value_id=None,
-                                    kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                    semantic_id=aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    supplemental_semantic_id=(),
-                                ),
-                            )
+                            qualifier = ()
 
                         if embedded_data_specifications is None:
                             embedded_data_specifications = []
@@ -2854,25 +2421,7 @@ class RailwayFireProtection(aas.Submodel):
                         )
 
                     if qualifier is None:
-                        qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"OneToMany",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                        )
+                        qualifier = ()
 
                     if embedded_data_specifications is None:
                         embedded_data_specifications = []
@@ -2961,25 +2510,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3127,25 +2658,7 @@ class RailwayFireProtection(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -3236,23 +2749,6 @@ class RailwayFireProtection(aas.Submodel):
                 if qualifier is None:
                     qualifier = (
                         aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                        aas.Qualifier(
                             type_=r"SMT/ExampleValue",
                             value_type=str,
                             value=r"flame-retardant polymer composite",
@@ -3324,23 +2820,6 @@ class RailwayFireProtection(aas.Submodel):
 
                 if qualifier is None:
                     qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
                         aas.Qualifier(
                             type_=r"SMT/ExampleValue",
                             value_type=str,
@@ -3417,23 +2896,6 @@ class RailwayFireProtection(aas.Submodel):
                     if qualifier is None:
                         qualifier = (
                             aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
                                 type_=r"SMT/ExampleValue",
                                 value_type=xsd.Float,
                                 value=xsd.from_xsd(r"12.324", xsd.Float),
@@ -3507,23 +2969,6 @@ class RailwayFireProtection(aas.Submodel):
 
                     if qualifier is None:
                         qualifier = (
-                            aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
                             aas.Qualifier(
                                 type_=r"SMT/ExampleValue",
                                 value_type=xsd.Float,
@@ -3599,23 +3044,6 @@ class RailwayFireProtection(aas.Submodel):
                     if qualifier is None:
                         qualifier = (
                             aas.Qualifier(
-                                type_=r"SMT/Cardinality",
-                                value_type=str,
-                                value=r"One",
-                                value_id=None,
-                                kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                                semantic_id=aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                supplemental_semantic_id=(),
-                            ),
-                            aas.Qualifier(
                                 type_=r"SMT/ExampleValue",
                                 value_type=str,
                                 value=r"kg/m²",
@@ -3686,25 +3114,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3800,25 +3210,7 @@ class RailwayFireProtection(aas.Submodel):
                     )
 
                 if qualifier is None:
-                    qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"One",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
-                    )
+                    qualifier = ()
 
                 if embedded_data_specifications is None:
                     embedded_data_specifications = []
@@ -3880,23 +3272,6 @@ class RailwayFireProtection(aas.Submodel):
 
                 if qualifier is None:
                     qualifier = (
-                        aas.Qualifier(
-                            type_=r"SMT/Cardinality",
-                            value_type=str,
-                            value=r"ZeroToOne",
-                            value_id=None,
-                            kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            supplemental_semantic_id=(),
-                        ),
                         aas.Qualifier(
                             type_=r"SMT/ExampleValue",
                             value_type=str,
@@ -3981,25 +3356,7 @@ class RailwayFireProtection(aas.Submodel):
                 )
 
             if qualifier is None:
-                qualifier = (
-                    aas.Qualifier(
-                        type_=r"SMT/Cardinality",
-                        value_type=str,
-                        value=r"One",
-                        value_id=None,
-                        kind=aas.QualifierKind.TEMPLATE_QUALIFIER,
-                        semantic_id=aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SubmodelTemplates/Cardinality/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        supplemental_semantic_id=(),
-                    ),
-                )
+                qualifier = ()
 
             if embedded_data_specifications is None:
                 embedded_data_specifications = []
@@ -4094,7 +3451,7 @@ class RailwayFireProtection(aas.Submodel):
             referred_semantic_id=None,
         ),
         qualifier: Iterable[aas.Qualifier] = None,
-        kind: aas.ModellingKind = aas.ModellingKind.TEMPLATE,
+        kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
