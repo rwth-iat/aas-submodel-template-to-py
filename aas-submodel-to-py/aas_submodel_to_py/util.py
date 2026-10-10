@@ -2,6 +2,7 @@ import builtins
 import enum
 import keyword
 import pydoc
+import types
 import typing
 from basyx.aas import model as aas_model
 from basyx.aas.model import *
@@ -170,6 +171,31 @@ class StringHandler:
         return re.sub(r"\w+(\.\w+)+", name_in_generated_module, typehint)
 
     @classmethod
+    def typehint_repr(cls, typehint) -> str:
+        """Return the code of a typehint (e.g. "Optional[aas.Reference]"), built from its origin and
+        arguments the same way on every Python version. Since Python 3.14, Optional[X] and Union[X, Y]
+        are represented as "X | None", which can't be evaluated with forward references"""
+        origin, args = typing.get_origin(typehint), typing.get_args(typehint)
+        if origin is typing.Union or origin is types.UnionType:
+            if len(args) == 2 and type(None) in args:
+                return f"Optional[{cls.typehint_repr(next(arg for arg in args if arg is not type(None)))}]"
+            return f"Union[{', '.join(cls.typehint_repr(arg) for arg in args)}]"
+        elif origin is not None:
+            # Generic alias, e.g. typing.Iterable[...] or basyx.aas.model.base.ModelReference[...]
+            name = cls.qualify_names_in_typehint(repr(typehint).split("[", 1)[0])
+            return f"{name}[{', '.join(cls.typehint_repr(arg) for arg in args)}]" if args else name
+        elif isinstance(typehint, typing.ForwardRef):
+            return cls.qualify_names_in_typehint(f"ForwardRef({typehint.__forward_arg__!r})")
+        elif typehint is type(None):
+            return "None"
+        elif typehint is Ellipsis:
+            return "..."
+        elif isinstance(typehint, type):
+            return qualified_name(typehint)
+        # e.g. TypeVars
+        return cls.qualify_names_in_typehint(repr(typehint))
+
+    @classmethod
     def reprify(cls, val):
         typehint_reprs = {
             DataTypeDefXsd: f"{MODEL_ALIAS}.DataTypeDefXsd",
@@ -187,8 +213,8 @@ class StringHandler:
 
         if val is None:
             return "None"
-        elif isinstance(val, typing._GenericAlias):
-            return cls.qualify_names_in_typehint(repr(val))
+        elif typing.get_origin(val) is not None:
+            return cls.typehint_repr(val)
         elif type(val) is str:
             # Prefer raw string literals, which keep backslashes (e.g. in regex patterns)
             # readable. They can't contain the quote or line breaks, nor end with a backslash

@@ -10,7 +10,8 @@ generated list items default to None.
 """
 import importlib.util
 import json
-import pathlib
+import typing
+from typing import Iterable, Optional, Union
 
 import pytest
 from basyx.aas import model
@@ -88,11 +89,11 @@ def test_list_item_default_id_short_is_none(generated_module):
 
 
 def test_list_items_typehint_is_iterable(generated_module):
-    # Compare the source, as evaluating all annotations fails on Python 3.14 (issue #24)
-    source = "".join(pathlib.Path(generated_module.__file__).read_text().split())
+    cls = generated_module.ListTest
+    items = Iterable[Union[str, cls.Phases.Phases_item]]
 
-    assert "phases_items:Iterable[Union[str,Phases_item]]," in source
-    assert "phases:Optional[Union[Iterable[Union[str,Phases.Phases_item]],Phases]]=None," in source
+    assert typing.get_type_hints(cls.Phases.__init__)["phases_items"] == items
+    assert typing.get_type_hints(cls.__init__)["phases"] == Optional[Union[items, cls.Phases]]
 
 
 def test_list_built_from_several_items(generated_module):

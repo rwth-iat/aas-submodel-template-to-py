@@ -11,7 +11,8 @@ Strings passed to arguments taking several items raise a TypeError instead of
 being split into characters.
 """
 import importlib.util
-import pathlib
+import typing
+from typing import Iterable, Optional, Union
 
 import pytest
 from basyx.aas import model
@@ -93,11 +94,11 @@ def test_list_without_item_with_cardinality_zero_to_many_is_one_list(generated_m
 
 
 def test_typehints_of_lists_with_cardinality_to_many(generated_module):
-    # Compare the source, as evaluating all annotations fails on Python 3.14 (issue #24)
-    source = "".join(pathlib.Path(generated_module.__file__).read_text().split())
+    cls = generated_module.ListCardinalityTest
+    typehints = typing.get_type_hints(cls.__init__)
 
-    assert "methods:Union[Iterable[Union[str,Methods.Methods_item]],Methods]," in source
-    assert "images:Optional[Union[Iterable[Union[str,Images.Images_item]],Images]]=None," in source
+    assert typehints["methods"] == Union[Iterable[Union[str, cls.Methods.Methods_item]], cls.Methods]
+    assert typehints["images"] == Optional[Union[Iterable[Union[str, cls.Images.Images_item]], cls.Images]]
 
 
 @pytest.mark.parametrize("arg, value", [
