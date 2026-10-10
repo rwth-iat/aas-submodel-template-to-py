@@ -81,7 +81,7 @@ jobs:
           # The repository has no tracked .gitignore; don't leave files the commit step could pick up
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          pip install pytest
+          pip install pytest "aas-core3.1>=1.0.0"
           PYTHONPATH=py-aas-submodels python -m pytest -p no:cacheprovider py-aas-submodels/tests
 
       - name: Write hash marker for cache

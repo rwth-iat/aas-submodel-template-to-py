@@ -24,7 +24,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-test = ["pytest"]
+# aas-core3.1 verifies serialized instances independently of BaSyx (tests/test_instances.py)
+test = ["pytest", "aas-core3.1>=1.0.0"]
 
 [tool.setuptools.packages.find]
 where = ["."]

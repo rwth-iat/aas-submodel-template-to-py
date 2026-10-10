@@ -87,11 +87,14 @@ The script:
 A GitHub Actions workflow (`.github/workflows/regenerate-submodels.yml`) runs this
 automatically whenever files under `aas-submodel-to-py/**` change on `master`, and daily
 (on schedule) to pick up newly published submodels. It commits the
-regenerated modules only if all of them import.
+regenerated modules only if all [tests](#running-tests) pass.
 
 ## Running Tests
 
-Check that every module imports and defines a submodel class:
+The tests check that every module imports and defines a submodel class, and that instances of the
+generated classes are valid AAS: they are serialized to JSON and XML with BaSyx, read back without
+loss, and verified by [aas-core3.1](https://github.com/eclipse-aascw/aas-core3.1-python), an AAS SDK
+independent of BaSyx:
 
 ```bash
 pip install -e "./py-aas-submodels[test]"
