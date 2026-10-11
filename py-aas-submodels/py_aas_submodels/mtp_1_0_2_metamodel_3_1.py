@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class AssetIdentification(aas.Submodel):
 
     class Manufacturer(aas.Property):
@@ -16,10 +21,7 @@ class AssetIdentification(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#002"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -122,15 +124,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -169,14 +163,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -216,14 +204,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -263,14 +245,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -310,14 +286,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -359,14 +329,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -406,14 +370,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -452,14 +410,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -497,14 +449,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -542,14 +488,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -588,14 +528,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -635,14 +569,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -682,15 +610,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -729,14 +649,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -776,14 +690,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -822,14 +730,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -874,14 +776,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -999,12 +895,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -1092,15 +983,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -1139,14 +1022,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1186,14 +1063,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1233,14 +1104,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1280,14 +1145,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1329,14 +1188,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1376,14 +1229,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1422,14 +1269,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1467,14 +1308,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1512,14 +1347,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1558,14 +1387,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1605,14 +1428,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1652,15 +1469,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -1699,14 +1508,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1746,14 +1549,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1792,14 +1589,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1844,14 +1635,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1969,12 +1754,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2062,15 +1842,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2109,14 +1881,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2156,14 +1922,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2203,14 +1963,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2250,14 +2004,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2299,14 +2047,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2346,14 +2088,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2392,14 +2128,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2437,14 +2167,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2482,14 +2206,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2528,14 +2246,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2575,14 +2287,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2622,15 +2328,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2669,14 +2367,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2716,14 +2408,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2762,14 +2448,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2814,14 +2494,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2939,12 +2613,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3032,15 +2701,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3079,14 +2740,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3126,14 +2781,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3173,14 +2822,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3220,14 +2863,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3269,14 +2906,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3316,14 +2947,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3362,14 +2987,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3407,14 +3026,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3452,14 +3065,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3498,14 +3105,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3545,14 +3146,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3592,15 +3187,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3639,14 +3226,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3686,14 +3267,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3732,14 +3307,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3784,14 +3353,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3909,12 +3472,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -4002,15 +3560,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -4049,14 +3599,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4096,14 +3640,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4143,14 +3681,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4190,14 +3722,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4239,14 +3765,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4286,14 +3806,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4332,14 +3846,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4377,14 +3885,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4422,14 +3924,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4468,14 +3964,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4515,14 +4005,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4562,15 +4046,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -4609,14 +4085,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4656,14 +4126,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4702,14 +4166,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4754,14 +4212,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4879,12 +4331,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -4972,15 +4419,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -5019,14 +4458,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5066,14 +4499,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5113,14 +4540,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5160,14 +4581,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5209,14 +4624,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5256,14 +4665,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5302,14 +4705,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5347,14 +4744,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5392,14 +4783,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5438,14 +4823,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5485,14 +4864,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5532,15 +4905,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -5579,14 +4944,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5626,14 +4985,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5672,14 +5025,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5724,14 +5071,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5849,12 +5190,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -5942,15 +5278,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -5989,14 +5317,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -6036,14 +5358,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -6083,14 +5399,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -6130,14 +5440,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -6179,14 +5483,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6226,14 +5524,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6273,14 +5565,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6319,14 +5605,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6364,14 +5644,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6409,14 +5683,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6455,14 +5723,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6502,14 +5764,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6549,15 +5805,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -6596,14 +5844,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6643,14 +5885,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6689,14 +5925,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6742,14 +5972,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -6873,12 +6097,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -6966,15 +6185,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -7013,14 +6224,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -7060,14 +6265,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -7107,14 +6306,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -7154,14 +6347,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -7203,14 +6390,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7250,14 +6431,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7296,14 +6471,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7341,14 +6510,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7386,14 +6549,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7432,14 +6589,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7479,14 +6630,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7526,15 +6671,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -7573,14 +6710,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7620,14 +6751,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7666,14 +6791,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7718,14 +6837,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -7843,12 +6956,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -7936,15 +7044,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -7983,14 +7083,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -8030,14 +7124,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -8077,14 +7165,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -8124,14 +7206,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -8173,14 +7249,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8220,14 +7290,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8266,14 +7330,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8311,14 +7369,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8356,14 +7408,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8402,14 +7448,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8449,14 +7489,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8496,15 +7530,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -8543,14 +7569,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8590,14 +7610,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8636,14 +7650,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8688,14 +7696,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -8813,12 +7815,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -8983,14 +7980,8 @@ class AssetIdentification(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"http://opcfoundation.org/UA/DI/1.1/DeviceType/Serialnumber",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"http://opcfoundation.org/UA/DI/1.1/DeviceType/Serialnumber"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -9030,10 +8021,7 @@ class AssetIdentification(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#002"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9139,14 +8127,8 @@ class ModuleTypePackage(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/vdi/2658/1/0/MTPSUCLib/ModuleTypePackage",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/vdi/2658/1/0/MTPSUCLib/ModuleTypePackage"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -9207,15 +8189,7 @@ class ModuleTypePackage(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/vdi/2658/1/0/MTPReference",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/vdi/2658/1/0/MTPReference"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9249,14 +8223,7 @@ class ModuleTypePackage(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/vdi/2658/1/0/MTPReferences"
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/vdi/2658/1/0/MTPReferences"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9309,14 +8276,7 @@ class ModuleTypePackage(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/vdi/2658/1/0/MTPReferences"
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/vdi/2658/1/0/MTPReferences"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9443,14 +8403,8 @@ class ProcessEquipmentAssembly(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/vdi/2658/1/0/MTPSUCLib/ModuleTypePackage",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/vdi/2658/1/0/MTPSUCLib/ModuleTypePackage"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -9493,14 +8447,8 @@ class ProcessEquipmentAssembly(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"VARIABLE",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/opcua-server-datasheet/1/0/discovery-url",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/opcua-server-datasheet/1/0/discovery-url"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -9540,14 +8488,8 @@ class ProcessEquipmentAssembly(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/opcua-server-datasheet/1/0/application-uri",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/opcua-server-datasheet/1/0/application-uri"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -9584,14 +8526,8 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/vdi/2658/1/0/MTPCommunicationSUCLib/ServerAssembly/OPCUAServer",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/vdi/2658/1/0/MTPCommunicationSUCLib/ServerAssembly/OPCUAServer"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -9660,14 +8596,8 @@ class ProcessEquipmentAssembly(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/vdi/2658/1/0/MTPSUCLib/CommunicationSet/SourceList",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/vdi/2658/1/0/MTPSUCLib/CommunicationSet/SourceList"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -9723,14 +8653,8 @@ class ProcessEquipmentAssembly(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/vdi/2658/1/0/PEASubmodel/DisplayName",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/vdi/2658/1/0/PEASubmodel/DisplayName"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -9768,14 +8692,8 @@ class ProcessEquipmentAssembly(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"PARAMETER",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/vdi/2658/1/0/PEASubmodel/Description",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/vdi/2658/1/0/PEASubmodel/Description"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -9833,15 +8751,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/vdi/2658/1/0/MTPReference",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/vdi/2658/1/0/MTPReference"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9875,14 +8785,7 @@ class ProcessEquipmentAssembly(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/vdi/2658/1/0/MTPReferences"
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/vdi/2658/1/0/MTPReferences"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -10020,15 +8923,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -10067,14 +8962,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -10114,14 +9003,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -10161,14 +9044,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -10208,14 +9085,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -10257,14 +9128,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10304,14 +9169,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10350,14 +9209,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10395,14 +9248,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10440,14 +9287,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10486,14 +9327,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10533,14 +9368,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10580,15 +9409,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -10627,14 +9448,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10674,14 +9489,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10720,14 +9529,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10772,14 +9575,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -10897,12 +9694,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -10990,15 +9782,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11037,14 +9821,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -11084,14 +9862,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -11131,14 +9903,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -11178,14 +9944,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -11227,14 +9987,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11274,14 +10028,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11320,14 +10068,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11365,14 +10107,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11410,14 +10146,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11456,14 +10186,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11503,14 +10227,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11550,15 +10268,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11597,14 +10307,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11644,14 +10348,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11690,14 +10388,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11742,14 +10434,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -11867,12 +10553,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11960,15 +10641,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -12007,14 +10680,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -12054,14 +10721,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -12101,14 +10762,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -12148,14 +10803,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -12197,14 +10846,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12244,14 +10887,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12290,14 +10927,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12335,14 +10966,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12380,14 +11005,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12426,14 +11045,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12473,14 +11086,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12520,15 +11127,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -12567,14 +11166,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12614,14 +11207,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12660,14 +11247,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12712,14 +11293,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -12837,12 +11412,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -12930,15 +11500,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -12977,14 +11539,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -13024,14 +11580,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -13071,14 +11621,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -13118,14 +11662,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -13167,14 +11705,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13214,14 +11746,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13260,14 +11786,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13305,14 +11825,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13350,14 +11864,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13396,14 +11904,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13443,14 +11945,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13490,15 +11986,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -13537,14 +12025,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13584,14 +12066,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13630,14 +12106,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -13682,14 +12152,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -13807,12 +12271,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -13900,15 +12359,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -13947,14 +12398,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -13994,14 +12439,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -14041,14 +12480,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -14088,14 +12521,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -14137,14 +12564,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14184,14 +12605,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14230,14 +12645,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14275,14 +12684,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14320,14 +12723,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14366,14 +12763,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14413,14 +12804,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14460,15 +12845,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -14507,14 +12884,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14554,14 +12925,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14600,14 +12965,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14652,14 +13011,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -14777,12 +13130,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -14870,15 +13218,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -14917,14 +13257,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -14964,14 +13298,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -15011,14 +13339,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -15058,14 +13380,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -15107,14 +13423,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15154,14 +13464,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15200,14 +13504,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15245,14 +13543,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15290,14 +13582,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15336,14 +13622,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15383,14 +13663,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15430,15 +13704,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15477,14 +13743,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15524,14 +13784,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15570,14 +13824,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15622,14 +13870,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -15747,12 +13989,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15840,15 +14077,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15887,14 +14116,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -15934,14 +14157,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -15981,14 +14198,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -16028,14 +14239,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -16077,14 +14282,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16124,14 +14323,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16171,14 +14364,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16217,14 +14404,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16262,14 +14443,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16307,14 +14482,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16353,14 +14522,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16400,14 +14563,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16447,15 +14604,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -16494,14 +14643,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16541,14 +14684,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16587,14 +14724,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -16640,14 +14771,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -16771,12 +14896,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -16864,15 +14984,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -16911,14 +15023,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -16958,14 +15064,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -17005,14 +15105,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -17052,14 +15146,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -17101,14 +15189,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17148,14 +15230,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17194,14 +15270,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17239,14 +15309,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17284,14 +15348,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17330,14 +15388,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17377,14 +15429,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17424,15 +15470,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -17471,14 +15509,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17518,14 +15550,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17564,14 +15590,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17616,14 +15636,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -17741,12 +15755,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -17834,15 +15843,7 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/DocumentId/Id"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -17881,14 +15882,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentId/isPrimary"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -17928,14 +15923,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassId"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -17975,14 +15964,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassName"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -18022,14 +16005,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentClassification/ClassificationSystem"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -18071,14 +16048,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/Language"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18118,14 +16089,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion/DocumentVersionId"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18164,14 +16129,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Description/Title",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Description/Title"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18209,14 +16168,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/Summary"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18254,14 +16207,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/DocumentDescription/KeyWords"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18300,14 +16247,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/SetDate"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18347,14 +16288,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/LifeCycleStatus/StatusValue"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18394,15 +16329,7 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Party/Role",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Party/Role"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -18441,14 +16368,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18488,14 +16409,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/Organization/OrganizationOfficialName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18534,14 +16449,8 @@ class Documentation(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"http://admin-shell.io/vdi/2770/1/0/StoredDocumentRepresentation/DigitalFile"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18586,14 +16495,8 @@ class Documentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"http://admin-shell.io/vdi/2770/1/0/DocumentVersion"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -18711,12 +16614,7 @@ class Documentation(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = r"CONSTANT",
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://admin-shell.io/vdi/2770/1/0/Document"),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"http://admin-shell.io/vdi/2770/1/0/Document"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),

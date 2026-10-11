@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class PowerDriveTrainSizing(aas.Submodel):
 
     class SizingProjectInformation(aas.SubmodelElementCollection):
@@ -18,14 +23,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/ClientName/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/ClientName/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -65,14 +64,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectName/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectName/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -112,14 +105,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectAxisReference/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectAxisReference/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -158,14 +145,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"CONSTANT",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectDescription/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectDescription/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -203,14 +184,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectLink/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectLink/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -249,14 +224,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingToolName/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingToolName/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -296,14 +265,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DateCreated/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/DateCreated/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -343,14 +306,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DateChanged/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/DateChanged/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -387,14 +344,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/ContactInformation"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -447,14 +398,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmlDriveConfigVersion/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmlDriveConfigVersion/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -499,14 +444,8 @@ class PowerDriveTrainSizing(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectInformation1/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingProjectInformation1/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -629,14 +568,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternName/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternName/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -680,14 +613,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -737,14 +664,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -784,14 +705,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -841,14 +756,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -888,14 +797,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -945,14 +848,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MomentOfInertiaOfLoad/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MomentOfInertiaOfLoad/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -992,14 +889,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1051,14 +942,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1098,14 +983,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularPosition/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularPosition/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1145,14 +1024,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularVelocity/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularVelocity/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1192,14 +1065,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularAcceleration/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularAcceleration/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1239,14 +1106,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularJerk/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AngularJerk/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1286,14 +1147,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionTorque/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1343,14 +1198,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/AxialForce/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1400,14 +1249,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"CONSTANT",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/RadialForce/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1457,14 +1300,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"CONSTANT",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadTorque/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1518,14 +1355,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataRotativeMotionFile/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataRotativeMotionFile/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1636,14 +1467,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1686,14 +1511,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RotativeMotionPatternSection/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/RotativeMotionPatternSection/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1795,14 +1614,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1842,14 +1655,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1899,14 +1706,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CompensationForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/CompensationForce/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1956,14 +1757,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadMass/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadMass/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2003,14 +1798,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2060,14 +1849,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"CONSTANT",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CounterMass/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/CounterMass/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2109,14 +1892,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"VARIABLE",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/TimeSeries/RelativePointInTime/1/1"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -2156,14 +1933,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Position/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/Position/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -2203,14 +1974,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearVelocity/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearVelocity/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -2250,14 +2015,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearAcceleration/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearAcceleration/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -2297,14 +2056,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearJerk/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearJerk/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -2344,14 +2097,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"CONSTANT",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionForce/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -2401,14 +2148,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = r"PARAMETER",
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/LoadSideForce/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -2460,14 +2201,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataLinearMotionFile/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MetadataLinearMotionFile/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2566,14 +2301,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionSectionFile/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2615,14 +2344,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearMotionPatternSection/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/LinearMotionPatternSection/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2711,14 +2434,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternSections/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPatternSections/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2776,14 +2493,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPattern/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/MotionPattern/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2843,10 +2554,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ614#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAZ614#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2885,10 +2593,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR865#004"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR865#004"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2927,10 +2632,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR866#004"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAR866#004"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2969,14 +2671,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureController/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureController/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3016,14 +2712,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureMotor/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AmbientTemperatureMotor/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3063,14 +2753,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnvironmentalRequirements/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/EnvironmentalRequirements/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3162,14 +2846,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DcLinkCoupling/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/DcLinkCoupling/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3209,10 +2887,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAE085#007"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-BAE085#007"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3251,10 +2926,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF822#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF822#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3293,10 +2965,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAH167#006"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAH167#006"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3335,10 +3004,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN329#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAN329#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3377,10 +3043,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAE122#007"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-BAE122#007"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3419,10 +3082,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAG342#007"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-BAG342#007"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3461,10 +3121,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-BAB392#018"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-BAB392#018"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3508,10 +3165,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH715#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH715#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3559,14 +3213,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystemRequirements/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystemRequirements/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3676,14 +3324,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CyclesPerMinute/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/CyclesPerMinute/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3723,14 +3365,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingHoursPerDay/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingHoursPerDay/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3770,14 +3406,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingDaysPerYear/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/OperatingDaysPerYear/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3815,14 +3445,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/UsageProfile/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/UsageProfile/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3889,14 +3513,8 @@ class PowerDriveTrainSizing(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/ApplicationRequirements/1/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/PowerDriveTrainSizing/ApplicationRequirements/1/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -3958,14 +3576,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4005,14 +3617,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4052,14 +3658,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4104,14 +3704,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4156,14 +3750,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4208,14 +3796,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4259,14 +3841,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Fan/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/Fan/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4364,14 +3940,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4411,14 +3981,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4458,14 +4022,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4510,14 +4068,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4562,14 +4114,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4614,14 +4160,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4665,14 +4205,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Pump/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/Pump/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4770,14 +4304,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4817,14 +4345,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4864,14 +4386,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4916,14 +4432,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4968,14 +4478,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5020,14 +4524,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5177,14 +4675,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RotraryTable/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/RotraryTable/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5294,14 +4786,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5341,14 +4827,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5388,14 +4868,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5440,14 +4914,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5492,14 +4960,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5544,14 +5006,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5591,14 +5047,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5643,14 +5093,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5701,14 +5145,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/ChainConveyor/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/ChainConveyor/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5818,14 +5256,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5865,14 +5297,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5912,14 +5338,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5964,14 +5384,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6016,14 +5430,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6068,14 +5476,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6115,14 +5517,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6167,14 +5563,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6225,14 +5615,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/BeltConveyor/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/BeltConveyor/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -6342,14 +5726,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6389,14 +5767,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6436,14 +5808,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6488,14 +5854,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6540,14 +5900,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6592,14 +5946,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6639,14 +5987,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6691,14 +6033,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6749,14 +6085,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RollerConveyor/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/RollerConveyor/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -6866,14 +6196,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6913,14 +6237,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -6960,14 +6278,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7012,14 +6324,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7064,14 +6370,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7116,14 +6416,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7163,14 +6457,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7215,14 +6503,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7273,14 +6555,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/BeltDrive/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/BeltDrive/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -7390,14 +6666,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7437,14 +6707,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7484,14 +6748,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7536,14 +6794,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7588,14 +6840,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7640,14 +6886,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7687,14 +6927,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7739,14 +6973,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7797,14 +7025,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/TravelingDrive/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/TravelingDrive/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -7916,14 +7138,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7963,14 +7179,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8010,14 +7220,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8062,14 +7266,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8114,14 +7312,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8166,14 +7358,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8213,14 +7399,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8265,14 +7445,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8483,14 +7657,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RackDrive/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/RackDrive/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -8620,14 +7788,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Efficiency/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8667,14 +7829,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InertiaMotorSide/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8714,14 +7870,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmAxialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8766,14 +7916,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/LeverArmRadialForce/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8818,14 +7962,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/NoLoadTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8870,14 +8008,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InclinationAngle/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8917,14 +8049,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrictionCoefficient/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8969,14 +8095,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FeedConstant/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -9027,14 +8147,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/SpindleDrive/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/SpindleDrive/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -9147,14 +8261,8 @@ class PowerDriveTrainSizing(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/TransformationMechanism/1/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/PowerDriveTrainSizing/TransformationMechanism/1/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -9234,10 +8342,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9276,10 +8381,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO676#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO676#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9317,10 +8419,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#001"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAW338#001"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9358,10 +8457,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r" 0173-1#02-AAO227#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-AAO227#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9400,14 +8496,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/ExternalMomentOfInertia/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/ExternalMomentOfInertia/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -9447,14 +8537,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/InternalMomentOfInertia/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/InternalMomentOfInertia/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -9494,14 +8578,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -9541,14 +8619,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DecelerationForEmergencyStop/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/DecelerationForEmergencyStop/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -9588,14 +8660,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CurrentForEmergencyStop/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/CurrentForEmergencyStop/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -9635,14 +8701,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/DisplacementDuringEmergencyStop/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/DisplacementDuringEmergencyStop/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -9741,14 +8801,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystem/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/OverallSystem/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -9943,10 +8997,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9985,10 +9036,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO676#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO676#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -10026,10 +9074,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#001"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAW338#001"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -10067,10 +9112,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r" 0173-1#02-AAO227#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-AAO227#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -10109,14 +9151,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilizationPercentage/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilizationPercentage/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10156,14 +9192,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilization/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxCurrentUtilization/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10203,14 +9233,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilizationPercentage/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilizationPercentage/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10250,14 +9274,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilization/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxThermalUtilization/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10297,14 +9315,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AveragePowerLosses/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AveragePowerLosses/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10344,14 +9356,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageRegenerativePowerDcLink/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageRegenerativePowerDcLink/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10391,14 +9397,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRegenerativePowerDcLink/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRegenerativePowerDcLink/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10438,14 +9438,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerDcLink/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerDcLink/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10485,14 +9479,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerMains/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/AverageFeedInPowerMains/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10532,14 +9520,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxFeedInPowerMains/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxFeedInPowerMains/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10579,14 +9561,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/ContinuousCurrent/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/ContinuousCurrent/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10626,14 +9602,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfPower/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfPower/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10673,14 +9643,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilizationPercentage/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilizationPercentage/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10720,14 +9684,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilization/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxTorqueUtilization/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10767,14 +9725,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilizationPercentage/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilizationPercentage/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10814,14 +9766,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilization/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MaxRotationSpeedUtilization/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10861,14 +9807,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"CONSTANT",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/EffectiveUtilization/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/EffectiveUtilization/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10908,14 +9848,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CalculatedServiceLife/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/CalculatedServiceLife/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10955,14 +9889,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/MassInertiaRatio/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11002,14 +9930,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrequencyAtMaxSpeed/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/FrequencyAtMaxSpeed/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11049,14 +9971,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInRegenerativeOperation/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInRegenerativeOperation/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11096,14 +10012,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInMotorOperation/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/PowerInMotorOperation/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11143,14 +10053,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfMotorTorque/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/RmsOfMotorTorque/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11269,14 +10173,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponent/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/MainComponent/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -11550,10 +10448,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11592,10 +10487,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO676#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO676#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11633,10 +10525,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#001"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAW338#001"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11674,10 +10563,7 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r" 0173-1#02-AAO227#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r" 0173-1#02-AAO227#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11716,14 +10602,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/QuantityOfParts/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/QuantityOfParts/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11768,14 +10648,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/HierarchicalStructures/BulkCount/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -11870,14 +10744,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/OtherComponent/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/OtherComponent/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -11989,14 +10857,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/CriticalityOfMessage/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/CriticalityOfMessage/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -12040,14 +10902,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/MessageText/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/PowerDriveTrainSizing/MessageText/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -12088,14 +10944,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Message/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/PowerDriveTrainSizing/Message/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -12157,14 +11007,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/Messages/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/Messages/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -12223,14 +11067,8 @@ class PowerDriveTrainSizing(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/TextStatement/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/PowerDriveTrainSizing/TextStatement/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -12272,14 +11110,8 @@ class PowerDriveTrainSizing(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingResult/1/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/PowerDriveTrainSizing/SizingResult/1/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),

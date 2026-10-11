@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class ControlComponentType(aas.Submodel):
 
     class Interfaces(aas.SubmodelElementCollection):
@@ -20,14 +25,8 @@ class ControlComponentType(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/ControlComponent/Type/Interface/Profile/2/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/ControlComponent/Type/Interface/Profile/2/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -72,14 +71,8 @@ class ControlComponentType(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/ControlComponent/Type/Interface/ProfileSupplement/2/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/ControlComponent/Type/Interface/ProfileSupplement/2/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -122,14 +115,8 @@ class ControlComponentType(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/ControlComponent/Type/Interface/Reference/2/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/ControlComponent/Type/Interface/Reference/2/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -172,14 +159,8 @@ class ControlComponentType(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/ControlComponent/Type/Interface/2/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/ControlComponent/Type/Interface/2/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -248,14 +229,8 @@ class ControlComponentType(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/ControlComponent/Type/Interfaces/2/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/ControlComponent/Type/Interfaces/2/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -323,14 +298,8 @@ class ControlComponentType(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/ControlComponent/Type/Error/Code/2/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/ControlComponent/Type/Error/Code/2/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -369,14 +338,8 @@ class ControlComponentType(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/ControlComponent/Type/Error/2/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/ControlComponent/Type/Error/2/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -433,14 +396,8 @@ class ControlComponentType(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/ControlComponent/Type/Errors/2/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/ControlComponent/Type/Errors/2/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -508,14 +465,8 @@ class ControlComponentType(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/ControlComponent/Skill/Disabled/2/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/ControlComponent/Skill/Disabled/2/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -569,14 +520,8 @@ class ControlComponentType(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/ControlComponent/Skill/Mode/2/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/ControlComponent/Skill/Mode/2/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -619,14 +564,8 @@ class ControlComponentType(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/ControlComponent/Skill/Modes/2/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/ControlComponent/Skill/Modes/2/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -700,14 +639,8 @@ class ControlComponentType(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Direction/2/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Direction/2/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -759,14 +692,8 @@ class ControlComponentType(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Type/2/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Type/2/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -808,14 +735,8 @@ class ControlComponentType(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Values/2/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/ControlComponent/Skill/Parameter/Values/2/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -875,14 +796,8 @@ class ControlComponentType(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/ControlComponent/Skill/Parameter/2/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/ControlComponent/Skill/Parameter/2/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -946,14 +861,8 @@ class ControlComponentType(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/ControlComponent/Skill/Parameters/2/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/ControlComponent/Skill/Parameters/2/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1015,14 +924,8 @@ class ControlComponentType(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/ControlComponent/Skill/ErrorReference/2/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/ControlComponent/Skill/ErrorReference/2/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1061,14 +964,8 @@ class ControlComponentType(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/ControlComponent/Skill/Errors/2/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/ControlComponent/Skill/Errors/2/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1138,14 +1035,8 @@ class ControlComponentType(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/ControlComponent/Skill/SkillReference/2/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/ControlComponent/Skill/SkillReference/2/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1184,14 +1075,8 @@ class ControlComponentType(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/ControlComponent/Skill/Uses/2/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/ControlComponent/Skill/Uses/2/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1259,14 +1144,8 @@ class ControlComponentType(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/ControlComponent/Skill/2/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/ControlComponent/Skill/2/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1327,14 +1206,8 @@ class ControlComponentType(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/ControlComponent/Skills/2/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/ControlComponent/Skills/2/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),

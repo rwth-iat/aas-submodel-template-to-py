@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class AssetInterfacesMappingConfiguration(aas.Submodel):
 
     class MappingConfigurations(aas.SubmodelElementList):
@@ -20,14 +25,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/DefaultPollingInterval"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -76,14 +75,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Transformation"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -134,14 +127,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/Source"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -189,14 +176,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/PollingInterval",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/PollingInterval"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -246,14 +227,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source/SourceId"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -301,14 +276,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -380,28 +349,16 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     sources_items: Iterable[Sources_item],
                     id_short: Optional[str] = r"Sources",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Source"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = False,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sources"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -533,14 +490,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/Sink"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -588,14 +539,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink/SinkId"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -642,14 +587,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -714,28 +653,16 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                     sinks_items: Iterable[Sinks_item],
                     id_short: Optional[str] = r"Sinks",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sink"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration/Sinks"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -864,14 +791,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -951,28 +872,16 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
             mappingconfigurations_items: Optional[Iterable[Mappingconfigurations_item]] = None,
             id_short: Optional[str] = r"MappingConfigurations",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/MappingConfiguration"
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = False,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/1/0/MappingConfigurations",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/1/0/MappingConfigurations"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -1100,14 +1009,8 @@ class AssetInterfacesMappingConfiguration(aas.Submodel):
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                    value=r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/Submodel",
-                ),
-            ),
-            referred_semantic_id=None,
+        semantic_id: Optional[aas.Reference] = global_ref(
+            r"https://admin-shell.io/idta/AssetInterfacesMappingConfiguration/2/0/Submodel"
         ),
         qualifier: Iterable[aas.Qualifier] = None,
         kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,

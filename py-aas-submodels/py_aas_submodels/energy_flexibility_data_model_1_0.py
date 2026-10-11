@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class EnergyFlexibilityDataModel(aas.Submodel):
 
     class FlexibleLoadMeasuresPackage(aas.SubmodelElementCollection):
@@ -77,14 +82,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -131,14 +130,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -184,14 +177,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -236,14 +223,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -318,14 +299,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -419,14 +394,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -501,14 +470,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -606,14 +569,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -771,14 +728,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -886,14 +837,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -943,14 +888,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/reward",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/reward"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1109,14 +1048,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerState",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerState"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1191,14 +1124,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/loadChangeProfiles",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/loadChangeProfiles"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1326,14 +1253,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoad",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoad"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1425,14 +1346,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadMeasures",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadMeasures"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1557,14 +1472,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadMeasuresPackage",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadMeasuresPackage"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -1697,14 +1606,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1751,14 +1654,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1804,14 +1701,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1856,14 +1747,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1938,14 +1823,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2039,14 +1918,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2121,14 +1994,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2222,14 +2089,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2443,14 +2304,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modellingScope",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modellingScope"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2502,14 +2357,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/externallyTradeable",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/externallyTradeable"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2559,14 +2408,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/autoTradeable",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/autoTradeable"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2613,14 +2456,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/trading",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/trading"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2691,14 +2528,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/utilizationContext",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/utilizationContext"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2773,14 +2604,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2830,10 +2655,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAV535#002"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2884,10 +2706,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF198#001"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF198#001"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2936,10 +2755,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF198#001"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF198#001"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2988,14 +2804,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/temporalType",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/temporalType"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -3043,14 +2853,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/validity",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/validity"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -3132,10 +2936,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAZ820#001"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3184,10 +2985,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ203#001"),),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAQ203#001"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3236,10 +3034,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAZ820#001"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3574,14 +3369,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/usageNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/usageNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -3631,14 +3420,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modulationNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modulationNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -3862,14 +3645,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerGradients",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerGradients"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -3957,10 +3734,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAV535#002"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -4020,14 +3794,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/CostPerEnergyConverted",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/CostPerEnergyConverted"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4075,14 +3843,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/CostPerUsage",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/CostPerUsage"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4130,14 +3892,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/fixedCost",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/fixedCost"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4185,14 +3941,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadCosts",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadCosts"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -4379,14 +4129,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/orderConfirmationDeadline",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/orderConfirmationDeadline"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -4469,14 +4213,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/PricePerEnergyConverted",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/PricePerEnergyConverted"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4524,14 +4262,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/PricePerUsage",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/PricePerUsage"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4579,14 +4311,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/fixedPrice",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/fixedPrice"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4630,14 +4356,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/prices",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/prices"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -4717,14 +4437,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/MeterPointDesignation",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/MeterPointDesignation"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4774,14 +4488,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/GridVoltageLevel",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/GridVoltageLevel"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4828,14 +4536,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/location",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/location"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5035,14 +4737,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoads",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoads"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5174,14 +4870,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5399,14 +5089,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/storageCosts",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/storageCosts"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5484,14 +5168,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5541,14 +5219,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5598,14 +5270,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5657,14 +5323,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyContentLossPerHour",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyContentLossPerHour"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5727,14 +5387,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -5784,14 +5438,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyConversionEfficiency",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyConversionEfficiency"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -5836,14 +5484,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/supplier",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/supplier"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -5916,14 +5558,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/suppliers",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/suppliers"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -6156,14 +5792,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/drain",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/drain"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -6236,14 +5866,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/drains",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/drains"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -6645,14 +6269,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -6700,10 +6318,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ203#001"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAQ203#001"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -6756,14 +6371,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comparator",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comparator"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6811,14 +6420,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/formulaRight",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/formulaRight"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6868,14 +6471,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/formulaLeft",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/formulaLeft"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6923,14 +6520,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/applicabilityCondition",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/applicabilityCondition"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -7006,14 +6597,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/applicabilityConditions",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/applicabilityConditions"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -7203,14 +6788,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -7257,14 +6836,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/triggeringFlexibleLoad",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/triggeringFlexibleLoad"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -7524,14 +7097,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/logicalType",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/logicalType"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -7828,14 +7395,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibilitySpace_operationalPotential",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibilitySpace_operationalPotential"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -7986,14 +7547,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8040,14 +7595,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8093,14 +7642,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8145,14 +7688,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8227,14 +7764,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8328,14 +7859,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8410,14 +7935,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8515,14 +8034,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8736,14 +8249,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modellingScope",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modellingScope"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8795,14 +8302,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/externallyTradeable",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/externallyTradeable"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8852,14 +8353,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/autoTradeable",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/autoTradeable"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8906,14 +8401,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/trading",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/trading"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8984,14 +8473,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/utilizationContext",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/utilizationContext"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -9066,14 +8549,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -9123,10 +8600,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAV535#002"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9177,10 +8651,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF198#001"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF198#001"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9229,10 +8700,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABF198#001"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABF198#001"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9281,14 +8749,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/temporalType",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/temporalType"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9336,14 +8798,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/validity",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/validity"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -9425,10 +8881,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAZ820#001"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9477,10 +8930,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ203#001"),),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAQ203#001"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9587,10 +9037,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAZ820#001"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -9867,14 +9314,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/usageNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/usageNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -9924,14 +9365,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modulationNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modulationNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -10155,14 +9590,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerGradients",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerGradients"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -10250,10 +9679,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAV535#002"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -10313,14 +9739,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/CostPerEnergyConverted",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/CostPerEnergyConverted"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10368,14 +9788,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/CostPerUsage",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/CostPerUsage"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10423,14 +9837,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/fixedCost",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/fixedCost"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10478,14 +9886,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadCosts",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadCosts"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -10672,14 +10074,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/orderConfirmationDeadline",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/orderConfirmationDeadline"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -10762,14 +10158,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/PricePerEnergyConverted",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/PricePerEnergyConverted"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10817,14 +10207,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/PricePerUsage",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/PricePerUsage"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10872,14 +10256,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/fixedPrice",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/fixedPrice"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10923,14 +10301,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/prices",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/prices"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -11010,14 +10382,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/MeterPointDesignation",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/MeterPointDesignation"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -11069,14 +10435,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/GridVoltageLevel",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/GridVoltageLevel"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -11132,14 +10492,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/location",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/location"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -11339,14 +10693,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoads",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoads"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -11478,14 +10826,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -11703,14 +11045,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/storageCosts",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/storageCosts"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -11788,14 +11124,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -11845,14 +11175,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -11902,14 +11226,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -11961,14 +11279,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyContentLossPerHour",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyContentLossPerHour"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -12031,14 +11343,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -12088,14 +11394,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyConversionEfficiency",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyConversionEfficiency"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -12140,14 +11440,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/supplier",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/supplier"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -12220,14 +11514,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/suppliers",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/suppliers"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -12460,14 +11748,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/drain",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/drain"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -12540,14 +11822,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/drains",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/drains"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -12949,14 +12225,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -13004,10 +12274,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ203#001"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAQ203#001"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -13060,14 +12327,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comparator",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comparator"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -13115,14 +12376,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/formulaRight",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/formulaRight"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -13172,14 +12427,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/formulaLeft",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/formulaLeft"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -13227,14 +12476,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/applicabilityCondition",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/applicabilityCondition"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -13310,14 +12553,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/applicabilityConditions",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/applicabilityConditions"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -13507,14 +12744,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -13561,14 +12792,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/triggeringFlexibleLoad",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/triggeringFlexibleLoad"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -13828,14 +13053,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/logicalType",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/logicalType"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -14132,14 +13351,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibilitySpace_applicationTailoredPotential",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibilitySpace_applicationTailoredPotential"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -14292,14 +13505,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14346,14 +13553,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -14399,14 +13600,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -14451,14 +13646,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14533,14 +13722,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -14634,14 +13817,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14716,14 +13893,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -14817,14 +13988,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15038,14 +14203,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modellingScope",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modellingScope"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15092,14 +14251,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/utilizationContext",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/utilizationContext"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -15174,14 +14327,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -15231,10 +14378,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAV535#002"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15285,10 +14429,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV535#002"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAV535#002"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15520,14 +14661,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerGradients",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerGradients"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -15613,14 +14748,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modulationNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modulationNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -15674,10 +14803,7 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAZ820#001"),),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAZ820#001"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -16048,14 +15174,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoads",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoads"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -16187,14 +15307,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -16244,14 +15358,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -16301,14 +15409,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/ElectricalEnergyStorageContent"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -16360,14 +15462,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyContentLossPerHour",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyContentLossPerHour"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -16430,14 +15526,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -16487,14 +15577,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyConversionEfficiency",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/EnergyConversionEfficiency"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -16539,14 +15623,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/supplier",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/supplier"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16619,14 +15697,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/suppliers",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/suppliers"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -16995,14 +16067,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibilitySpace_generalTechnicalPotential",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibilitySpace_generalTechnicalPotential"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -17146,14 +16212,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/comment"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17200,14 +16260,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/versionNumber"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -17253,14 +16307,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/schemaLink"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -17305,14 +16353,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/efdmVersion"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17387,14 +16429,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -17488,14 +16524,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/origin"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17570,14 +16600,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -17671,14 +16695,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/modification"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -17836,14 +16854,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/UUID"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -17893,14 +16905,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/reward",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/reward"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -17950,14 +16956,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/exceptions",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/exceptions"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -18117,14 +17117,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/referencePoint",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/referencePoint"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -18168,14 +17162,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerState",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/powerState"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -18255,14 +17243,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/loadChangeProfiles",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/loadChangeProfiles"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -18391,14 +17373,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/executionLogEntry00",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/executionLogEntry00"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18483,14 +17459,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/executionLogEntries",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/executionLogEntries"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -18617,14 +17587,8 @@ class EnergyFlexibilityDataModel(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadMeasureExecutionLog",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/EnergyFlexibilityDataModel/1/0/flexibleLoadMeasureExecutionLog"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),

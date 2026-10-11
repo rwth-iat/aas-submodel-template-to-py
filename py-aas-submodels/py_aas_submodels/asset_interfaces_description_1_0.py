@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class AssetInterfacesDescription(aas.Submodel):
 
     class InterfaceTemplateForHTTP(aas.SubmodelElementCollection):
@@ -18,10 +23,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#title"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#title"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -60,10 +62,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/created"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://purl.org/dc/terms/created"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -102,10 +101,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/modified"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://purl.org/dc/terms/modified"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -144,14 +140,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#supportContact"
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#supportContact"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -192,14 +181,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#baseURI"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#baseURI"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -238,14 +220,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/hypermedia#forContentType",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/hypermedia#forContentType"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -316,28 +292,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -467,14 +431,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -510,14 +468,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#NoSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#NoSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -577,14 +529,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -624,14 +570,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -668,14 +608,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#AutoSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#AutoSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -740,14 +674,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -787,14 +715,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -834,14 +756,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -881,14 +797,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -927,14 +837,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#BasicSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#BasicSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1009,14 +913,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1052,28 +950,16 @@ class AssetInterfacesDescription(aas.Submodel):
                             oneof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#allOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#allOf"
                             ),
                             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#oneOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#oneOf"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1191,28 +1077,16 @@ class AssetInterfacesDescription(aas.Submodel):
                             allof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#allOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#allOf"
                             ),
                             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#allOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#allOf"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1334,14 +1208,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1380,14 +1248,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#ComboSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#ComboSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1470,14 +1332,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1517,14 +1373,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1564,14 +1414,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1611,14 +1455,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1657,14 +1495,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#APIKeySecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#APIKeySecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1739,14 +1571,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1786,14 +1612,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#identity",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#identity"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1833,14 +1653,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1878,14 +1692,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#PSKSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#PSKSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1955,14 +1763,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2002,14 +1804,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2049,14 +1845,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2096,14 +1886,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#qop",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#qop"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2143,14 +1927,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2190,14 +1968,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#DigestSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#DigestSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2277,14 +2049,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2324,14 +2090,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2371,14 +2131,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2418,14 +2172,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#authorization",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#authorization"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2465,14 +2213,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#alg",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#alg"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2512,14 +2254,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#format",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#format"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2559,14 +2295,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2608,14 +2338,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#BearerSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#BearerSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2705,14 +2429,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2752,14 +2470,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#token",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#token"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2799,14 +2511,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#refresh",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#refresh"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2846,14 +2552,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#authorization",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#authorization"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2893,14 +2593,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#scopes",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#scopes"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2940,14 +2634,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#flow",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#flow"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -2987,14 +2675,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -3036,14 +2718,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#OAuth2SecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#OAuth2SecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -3135,14 +2811,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#definesSecurityScheme",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#definesSecurityScheme"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3204,14 +2874,8 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3289,27 +2953,13 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#name",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/td#name"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -3346,14 +2996,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -3393,15 +3037,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#title",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#title"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3440,14 +3076,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/td#isObservable"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -3487,14 +3117,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#const"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -3534,14 +3158,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#default"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -3581,12 +3199,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"https://schema.org/unitCode"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3625,36 +3238,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -3710,36 +3301,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -3797,14 +3366,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -3844,14 +3407,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"https://schema.org/unitCode"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3890,14 +3446,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/json-schema#default"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -3937,14 +3487,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/json-schema#const"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -3984,14 +3528,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#isObservable"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -4031,14 +3569,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#title",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#title"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -4078,36 +3610,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                                 ),
                                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
@@ -4163,36 +3673,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                                 ),
                                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
@@ -4246,14 +3734,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -4295,14 +3777,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#items",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#items"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4422,36 +3898,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#minItems",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#maxItems",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#minItems"),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#maxItems"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -4511,14 +3965,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -4558,14 +4006,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -4605,14 +4047,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/td#title",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/td#title"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -4652,14 +4088,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/td#isObservable"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -4699,14 +4129,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#const"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -4746,14 +4170,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#default"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -4793,15 +4211,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://schema.org/unitCode",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    semantic_id: Optional[aas.Reference] = global_ref(r"https://schema.org/unitCode"),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -4840,36 +4250,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                                     ),
                                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
@@ -4925,36 +4313,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                                     ),
                                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
@@ -5012,14 +4378,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -5057,14 +4417,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -5102,14 +4456,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://schema.org/unitCode",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://schema.org/unitCode"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -5149,14 +4497,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/json-schema#default"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -5196,14 +4538,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/json-schema#const"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -5243,14 +4579,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/td#isObservable"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -5290,14 +4620,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/td#title",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/td#title"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -5337,36 +4661,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                                         ),
                                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
@@ -5422,36 +4724,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                                         ),
                                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
@@ -5511,14 +4791,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#items",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#items"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -5640,36 +4914,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#minItems",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#maxItems",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#minItems"),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#maxItems"),
                                     ),
                                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
@@ -5722,14 +4974,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#propertyName",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#propertyName"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -5801,14 +5047,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -5854,14 +5094,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#propertyName",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/json-schema#propertyName"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -5990,14 +5224,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#properties",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#properties"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -6064,14 +5292,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -6111,14 +5333,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/hypermedia#hasTarget",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/hypermedia#hasTarget"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6158,14 +5374,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/hypermedia#forContentType",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/hypermedia#forContentType"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6236,28 +5446,16 @@ class AssetInterfacesDescription(aas.Submodel):
                                 security_items: Iterable[Union[aas.Reference, Security_item]],
                                 id_short: Optional[str] = r"security",
                                 type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                                 ),
                                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                                 order_relevant: bool = True,
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6386,14 +5584,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2011/http#methodName",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2011/http#methodName"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6447,14 +5639,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2011/http#fieldName",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2011/http#fieldName"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -6494,14 +5680,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2011/http#fieldValue",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2011/http#fieldValue"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -6538,14 +5718,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2011/http#headers",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2011/http#headers"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -6606,28 +5780,16 @@ class AssetInterfacesDescription(aas.Submodel):
                                 htv_headers_items: Iterable[Htv_headers_item],
                                 id_short: Optional[str] = r"htv_headers",
                                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2011/http#headers",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2011/http#headers"
                                 ),
                                 value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
                                 order_relevant: bool = True,
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2011/http#headers",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2011/http#headers"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6759,14 +5921,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#hasForm",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/td#hasForm"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -6863,27 +6019,13 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"https://www.w3.org/2019/wot/td#name"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -7008,14 +6150,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#PropertyAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#PropertyAffordance"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7069,14 +6205,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#ActionAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#ActionAffordance"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7126,14 +6256,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#EventAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#EventAffordance"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7184,27 +6308,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/InteractionMetadata",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/InteractionMetadata"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#InteractionAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"https://www.w3.org/2019/wot/td#InteractionAffordance"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -7255,14 +6365,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/externalDescriptorName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/externalDescriptorName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7297,14 +6401,8 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/ExternalDescriptor",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/ExternalDescriptor"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -7359,26 +6457,14 @@ class AssetInterfacesDescription(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Interface",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Interface"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://www.w3.org/2011/http"),),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td"),),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"http://www.w3.org/2011/http"),
+                global_ref(r"https://www.w3.org/2019/wot/td"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -7458,10 +6544,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#title"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#title"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -7500,10 +6583,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/created"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://purl.org/dc/terms/created"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -7542,10 +6622,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/modified"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://purl.org/dc/terms/modified"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -7584,12 +6661,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#support"),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#support"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -7630,12 +6702,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#base"),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#base"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -7674,14 +6741,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/hypermedia#forContentType",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/hypermedia#forContentType"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7752,28 +6813,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -7903,14 +6952,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -7946,14 +6989,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#NoSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#NoSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8013,14 +7050,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8060,14 +7091,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8104,14 +7129,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#AutoSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#AutoSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8176,14 +7195,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8223,14 +7236,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8270,14 +7277,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8317,14 +7318,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8363,14 +7358,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#BasicSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#BasicSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8445,14 +7434,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8488,28 +7471,16 @@ class AssetInterfacesDescription(aas.Submodel):
                             oneof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#oneOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#oneOf"
                             ),
                             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#oneOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#oneOf"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8627,28 +7598,16 @@ class AssetInterfacesDescription(aas.Submodel):
                             allof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#allOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#allOf"
                             ),
                             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#allOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#allOf"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8770,14 +7729,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8816,14 +7769,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#ComboSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#ComboSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -8906,14 +7853,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -8953,14 +7894,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9000,14 +7935,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9047,14 +7976,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9093,14 +8016,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#APIKeySecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#APIKeySecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -9175,14 +8092,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9222,14 +8133,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#identity",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#identity"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9269,14 +8174,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9314,14 +8213,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#PSKSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#PSKSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -9391,14 +8284,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9438,14 +8325,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9485,14 +8366,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9532,14 +8407,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#qop",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#qop"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9579,14 +8448,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9626,14 +8489,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#DigestSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#DigestSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -9713,14 +8570,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9760,14 +8611,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9807,14 +8652,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9854,14 +8693,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#authorization",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#authorization"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9901,14 +8734,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#alg",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#alg"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9948,14 +8775,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#format",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#format"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -9995,14 +8816,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10044,14 +8859,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#BearerSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#BearerSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -10141,14 +8950,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10188,14 +8991,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#token",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#token"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10235,14 +9032,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#refresh",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#refresh"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10282,14 +9073,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#authorization",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#authorization"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10329,14 +9114,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#scopes",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#scopes"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10376,14 +9155,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#flow",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#flow"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10423,14 +9196,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10472,14 +9239,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#OAuth2SecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#OAuth2SecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -10571,14 +9332,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#definesSecurityScheme",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#definesSecurityScheme"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10641,14 +9396,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/modbus#hasMostSignificantByte",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/modbus#hasMostSignificantByte"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10698,14 +9447,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/modbus#hasMostSignificantWord",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/modbus#hasMostSignificantWord"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -10756,14 +9499,8 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -10862,27 +9599,13 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#name",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/td#name"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -10919,14 +9642,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -10966,15 +9683,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#title",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#title"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11013,14 +9722,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/td#isObservable"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -11060,14 +9763,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#const"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -11107,14 +9804,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#default"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -11154,12 +9845,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"https://schema.org/unitCode"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11198,36 +9884,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -11283,36 +9947,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -11370,14 +10012,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -11417,14 +10053,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"https://schema.org/unitCode"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -11463,14 +10092,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/json-schema#default"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -11510,14 +10133,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/json-schema#const"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -11557,14 +10174,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#isObservable"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -11604,14 +10215,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#title",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#title"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -11651,36 +10256,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                                 ),
                                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
@@ -11736,36 +10319,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                                 ),
                                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
@@ -11819,14 +10380,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -11868,14 +10423,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#items",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#items"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -11995,36 +10544,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#minItems",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#maxItems",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#minItems"),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#maxItems"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -12084,14 +10611,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -12131,14 +10652,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -12178,14 +10693,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/td#title",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/td#title"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -12225,14 +10734,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/td#isObservable"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -12272,14 +10775,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#const"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -12319,14 +10816,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#default"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -12366,15 +10857,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://schema.org/unitCode",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    semantic_id: Optional[aas.Reference] = global_ref(r"https://schema.org/unitCode"),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -12413,36 +10896,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                                     ),
                                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
@@ -12498,36 +10959,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                                     ),
                                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
@@ -12585,14 +11024,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -12630,14 +11063,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -12675,14 +11102,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://schema.org/unitCode",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://schema.org/unitCode"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -12722,14 +11143,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/json-schema#default"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -12769,14 +11184,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/json-schema#const"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -12816,14 +11225,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/td#isObservable"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -12863,14 +11266,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/td#title",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/td#title"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -12910,36 +11307,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                                         ),
                                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
@@ -12995,36 +11370,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                                         ),
                                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
@@ -13084,14 +11437,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#items",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#items"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -13213,36 +11560,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#minItems",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#maxItems",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#minItems"),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#maxItems"),
                                     ),
                                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
@@ -13295,14 +11620,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#propertyName",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#propertyName"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -13374,14 +11693,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -13427,14 +11740,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#propertyName",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/json-schema#propertyName"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -13563,14 +11870,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#properties",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#properties"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -13637,14 +11938,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -13684,14 +11979,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/hypermedia#hasTarget",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/hypermedia#hasTarget"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -13731,14 +12020,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/hypermedia#forContentType",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/hypermedia#forContentType"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -13809,28 +12092,16 @@ class AssetInterfacesDescription(aas.Submodel):
                                 security_items: Iterable[Union[aas.Reference, Security_item]],
                                 id_short: Optional[str] = r"security",
                                 type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                                 ),
                                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                                 order_relevant: bool = True,
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -13959,14 +12230,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/modbus#hasFunction",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/modbus#hasFunction"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -14016,14 +12281,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/modbus#hasEntity",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/modbus#hasEntity"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -14073,14 +12332,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/modbus#hasZeroBasedAddressingFlag",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/modbus#hasZeroBasedAddressingFlag"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -14130,14 +12383,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/modbus#hasPollingTime",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/modbus#hasPollingTime"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -14187,14 +12434,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/modbus#hasTimeout",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/modbus#hasTimeout"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -14244,14 +12485,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/modbus#hasPayloadDataType",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/modbus#hasPayloadDataType"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -14301,14 +12536,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/modbus#hasMostSignificantByte",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/modbus#hasMostSignificantByte"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -14358,14 +12587,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/modbus#hasMostSignificantWord",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/modbus#hasMostSignificantWord"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -14421,14 +12644,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#hasForm",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/td#hasForm"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -14569,27 +12786,13 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"https://www.w3.org/2019/wot/td#name"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -14714,14 +12917,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#PropertyAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#PropertyAffordance"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14775,14 +12972,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#ActionAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#ActionAffordance"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14832,14 +13023,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#EventAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#EventAffordance"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -14890,27 +13075,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/InteractionMetadata",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/InteractionMetadata"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#InteractionAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"https://www.w3.org/2019/wot/td#InteractionAffordance"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -14961,14 +13132,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/externalDescriptorName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/externalDescriptorName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15003,14 +13168,8 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/ExternalDescriptor",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/ExternalDescriptor"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -15065,26 +13224,14 @@ class AssetInterfacesDescription(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Interface",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Interface"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://www.w3.org/2011/modbus"),),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td"),),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"http://www.w3.org/2011/modbus"),
+                global_ref(r"https://www.w3.org/2019/wot/td"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -15164,10 +13311,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#title"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#title"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15206,10 +13350,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/created"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://purl.org/dc/terms/created"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15248,10 +13389,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://purl.org/dc/terms/modified"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"http://purl.org/dc/terms/modified"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15290,12 +13428,7 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#support"),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#support"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15336,12 +13469,7 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td#base"),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#base"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -15380,14 +13508,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/hypermedia#forContentType",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/hypermedia#forContentType"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15458,28 +13580,16 @@ class AssetInterfacesDescription(aas.Submodel):
                     security_items: Iterable[Union[aas.Reference, Security_item]],
                     id_short: Optional[str] = r"security",
                     type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -15609,14 +13719,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -15652,14 +13756,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#NoSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#NoSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -15719,14 +13817,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -15766,14 +13858,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -15810,14 +13896,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#AutoSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#AutoSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -15882,14 +13962,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -15929,14 +14003,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -15976,14 +14044,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16023,14 +14085,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16069,14 +14125,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#BasicSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#BasicSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -16151,14 +14201,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16194,28 +14238,16 @@ class AssetInterfacesDescription(aas.Submodel):
                             oneof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"oneOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#oneOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#oneOf"
                             ),
                             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#oneOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#oneOf"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16333,28 +14365,16 @@ class AssetInterfacesDescription(aas.Submodel):
                             allof_items: Optional[Iterable[aas.SubmodelElement]] = None,
                             id_short: Optional[str] = r"allOf",
                             type_value_list_element: aas.SubmodelElement = aas.SubmodelElement,
-                            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#allOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#allOf"
                             ),
                             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                             order_relevant: bool = True,
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#allOf",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#allOf"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16476,14 +14496,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16522,14 +14536,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#ComboSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#ComboSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -16612,14 +14620,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16659,14 +14661,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16706,14 +14702,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16753,14 +14743,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16799,14 +14783,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#APIKeySecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#APIKeySecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -16881,14 +14859,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16928,14 +14900,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#identity",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#identity"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -16975,14 +14941,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17020,14 +14980,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#PSKSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#PSKSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -17097,14 +15051,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17144,14 +15092,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17191,14 +15133,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17238,14 +15174,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#qop",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#qop"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17285,14 +15215,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17332,14 +15256,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#DigestSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#DigestSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -17419,14 +15337,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17466,14 +15378,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#name"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17513,14 +15419,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#in",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#in"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17560,14 +15460,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#authorization",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#authorization"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17607,14 +15501,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#alg",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#alg"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17654,14 +15542,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#format",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#format"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17701,14 +15583,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17750,14 +15626,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#BearerSecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#BearerSecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -17847,14 +15717,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#SecurityScheme",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#SecurityScheme"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17894,14 +15758,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#token",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#token"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17941,14 +15799,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#refresh",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#refresh"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -17988,14 +15840,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#authorization",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#authorization"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -18035,14 +15881,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#scopes",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#scopes"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -18082,14 +15922,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#flow",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#flow"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -18129,14 +15963,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/security#proxy",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/security#proxy"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -18178,14 +16006,8 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://www.w3.org/2019/wot/security#OAuth2SecurityScheme",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://www.w3.org/2019/wot/security#OAuth2SecurityScheme"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -18277,14 +16099,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#definesSecurityScheme",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#definesSecurityScheme"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -18346,14 +16162,8 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/EndpointMetadata"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -18431,27 +16241,13 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#name",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/td#name"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -18488,14 +16284,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -18535,15 +16325,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#title",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"https://www.w3.org/2019/wot/td#title"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -18582,14 +16364,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/td#isObservable"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -18629,14 +16405,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#const"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -18676,14 +16446,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#default"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -18723,12 +16487,7 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"https://schema.org/unitCode"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -18767,36 +16526,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -18852,36 +16589,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -18939,14 +16654,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -18986,14 +16695,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/unitCode"
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"https://schema.org/unitCode"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -19032,14 +16734,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/json-schema#default"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -19079,14 +16775,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/json-schema#const"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -19126,14 +16816,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#isObservable"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -19173,14 +16857,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#title",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#title"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -19220,36 +16898,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                                 ),
                                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
@@ -19305,36 +16961,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                    global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                                 ),
                                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
@@ -19388,14 +17022,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -19437,14 +17065,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#items",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#items"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -19564,36 +17186,14 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#minItems",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#maxItems",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#minItems"),
+                                global_ref(r"https://www.w3.org/2019/wot/json-schema#maxItems"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -19653,14 +17253,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/key"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -19700,14 +17294,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -19747,14 +17335,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/td#title",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/td#title"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -19794,14 +17376,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/td#isObservable"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -19841,14 +17417,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#const"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -19888,14 +17458,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#default"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -19935,15 +17499,7 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://schema.org/unitCode",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    semantic_id: Optional[aas.Reference] = global_ref(r"https://schema.org/unitCode"),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -19982,36 +17538,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                                     ),
                                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
@@ -20067,36 +17601,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                                     ),
                                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
@@ -20154,14 +17666,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/1999/02/22-rdf-syntax-ns#type"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -20199,14 +17705,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -20244,14 +17744,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://schema.org/unitCode",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://schema.org/unitCode"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -20291,14 +17785,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#default",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/json-schema#default"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -20338,14 +17826,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#const",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/json-schema#const"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -20385,14 +17867,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/td#isObservable",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/td#isObservable"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -20432,14 +17908,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/td#title",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://www.w3.org/2019/wot/td#title"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -20479,36 +17949,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/minMaxRange"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#minimum",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#maximum",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#minimum"),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#maximum"),
                                         ),
                                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
@@ -20564,36 +18012,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/lengthRange"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
                                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#minLength",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
-                                            aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://www.w3.org/2019/wot/json-schema#maxLength",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
-                                            ),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#minLength"),
+                                            global_ref(r"https://www.w3.org/2019/wot/json-schema#maxLength"),
                                         ),
                                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                     ):
@@ -20653,14 +18079,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#items",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#items"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -20782,36 +18202,14 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/itemsRange"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
                                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#minItems",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
-                                        aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://www.w3.org/2019/wot/json-schema#maxItems",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
-                                        ),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#minItems"),
+                                        global_ref(r"https://www.w3.org/2019/wot/json-schema#maxItems"),
                                     ),
                                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                                 ):
@@ -20864,14 +18262,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://www.w3.org/2019/wot/json-schema#propertyName",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://www.w3.org/2019/wot/json-schema#propertyName"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -20943,14 +18335,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -20996,14 +18382,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/json-schema#propertyName",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/json-schema#propertyName"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -21132,14 +18512,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/json-schema#properties",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/json-schema#properties"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -21206,14 +18580,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/valueSemantics"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -21253,14 +18621,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/hypermedia#hasTarget",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/hypermedia#hasTarget"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -21300,14 +18662,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/hypermedia#forContentType",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/hypermedia#forContentType"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -21378,28 +18734,16 @@ class AssetInterfacesDescription(aas.Submodel):
                                 security_items: Iterable[Union[aas.Reference, Security_item]],
                                 id_short: Optional[str] = r"security",
                                 type_value_list_element: aas.SubmodelElement = aas.ReferenceElement,
-                                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                                 ),
                                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                                 order_relevant: bool = True,
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/td#hasSecurityConfiguration"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -21528,14 +18872,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/mqtt#hasRetainFlag",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/mqtt#hasRetainFlag"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -21585,14 +18923,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/mqtt#ControlPacket",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/mqtt#ControlPacket"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -21642,14 +18974,8 @@ class AssetInterfacesDescription(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://www.w3.org/2019/wot/mqtt#hasQoSFlag",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://www.w3.org/2019/wot/mqtt#hasQoSFlag"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -21700,14 +19026,8 @@ class AssetInterfacesDescription(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#hasForm",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://www.w3.org/2019/wot/td#hasForm"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -21805,27 +19125,13 @@ class AssetInterfacesDescription(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/AssetInterfaceDescription/1/0/PropertyDefinition"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://www.w3.org/2019/wot/td#name",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"https://www.w3.org/2019/wot/td#name"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -21950,14 +19256,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#PropertyAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#PropertyAffordance"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -22011,14 +19311,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#ActionAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#ActionAffordance"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -22068,14 +19362,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#EventAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://www.w3.org/2019/wot/td#EventAffordance"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -22126,27 +19414,13 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/InteractionMetadata",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/InteractionMetadata"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://www.w3.org/2019/wot/td#InteractionAffordance",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"https://www.w3.org/2019/wot/td#InteractionAffordance"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -22197,14 +19471,8 @@ class AssetInterfacesDescription(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/externalDescriptorName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/externalDescriptorName"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -22239,14 +19507,8 @@ class AssetInterfacesDescription(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/ExternalDescriptor",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/ExternalDescriptor"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -22301,26 +19563,14 @@ class AssetInterfacesDescription(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Interface",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Interface"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"http://www.w3.org/2011/mqtt"),),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://www.w3.org/2019/wot/td"),),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"http://www.w3.org/2011/mqtt"),
+                global_ref(r"https://www.w3.org/2019/wot/td"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -22398,14 +19648,8 @@ class AssetInterfacesDescription(aas.Submodel):
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                    value=r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Submodel",
-                ),
-            ),
-            referred_semantic_id=None,
+        semantic_id: Optional[aas.Reference] = global_ref(
+            r"https://admin-shell.io/idta/AssetInterfacesDescription/1/0/Submodel"
         ),
         qualifier: Iterable[aas.Qualifier] = None,
         kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,

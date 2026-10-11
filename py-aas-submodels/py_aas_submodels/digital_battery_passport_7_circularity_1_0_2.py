@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class Circularity(aas.Submodel):
 
     class DismantlingAndRemovalInformation(aas.SubmodelElementList):
@@ -18,14 +23,8 @@ class Circularity(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -68,14 +67,8 @@ class Circularity(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#dismantlingAndRemovalInformation",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#dismantlingAndRemovalInformation"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -208,23 +201,12 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#company",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#company"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAW001#001"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-AAW001#001"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -263,26 +245,13 @@ class Circularity(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#nationalCode",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#nationalCode"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO134#002"
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"urn:irdi:0173-1#02-AAO134#002"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -322,34 +291,14 @@ class Circularity(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#postalCode",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#postalCode"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/postalCode"
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO129#002"
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"https://schema.org/postalCode"),
+                            global_ref(r"urn:irdi:0173-1#02-AAO129#002"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -387,34 +336,14 @@ class Circularity(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#street",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#street"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/streetAddress"
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO128#002"
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"https://schema.org/streetAddress"),
+                            global_ref(r"urn:irdi:0173-1#02-AAO128#002"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -451,24 +380,13 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#addressOfSupplier"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://schema.org/PostalAddress"),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"https://schema.org/PostalAddress"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -538,26 +456,13 @@ class Circularity(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#emailAddress",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#emailAddress"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO198#002"
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"urn:irdi:0173-1#02-AAO198#002"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -596,26 +501,13 @@ class Circularity(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#publicKey",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#publicKey"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO200#002"
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"urn:irdi:0173-1#02-AAO200#002"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -661,26 +553,13 @@ class Circularity(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfEmailAddress",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfEmailAddress"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO199#003"
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"urn:irdi:0173-1#02-AAO199#003"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -719,26 +598,13 @@ class Circularity(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfPublicKey",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#typeOfPublicKey"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAO201#002"
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"urn:irdi:0173-1#02-AAO201#002"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -776,23 +642,12 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#email",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#email"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAQ836#005"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-AAQ836#005"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -866,23 +721,12 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#addressOfAdditionalLink",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.contact_information:1.0.0#addressOfAdditionalLink"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-AAQ326#002"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-AAQ326#002"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -925,14 +769,8 @@ class Circularity(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partName",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partName"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -975,14 +813,8 @@ class Circularity(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partNumber",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#partNumber"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -1022,14 +854,8 @@ class Circularity(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Component"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1098,14 +924,8 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#components"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1228,14 +1048,8 @@ class Circularity(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#SparePartSupplier"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1316,14 +1130,8 @@ class Circularity(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#sparePartSources"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -1450,14 +1258,8 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#preConsumerShare",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#preConsumerShare"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1500,14 +1302,8 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledMaterial",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledMaterial"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1550,14 +1346,8 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#postConsumerShare",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#postConsumerShare"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1598,14 +1388,8 @@ class Circularity(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#RecycledContent"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1676,14 +1460,8 @@ class Circularity(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledContent",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#recycledContent"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -1810,14 +1588,8 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1860,14 +1632,8 @@ class Circularity(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyInstructions",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyInstructions"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1999,14 +1765,8 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgent",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#ExtinguishingAgent"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2049,14 +1809,8 @@ class Circularity(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#extinguishingAgents",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#extinguishingAgents"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2187,14 +1941,8 @@ class Circularity(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyMeasures",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#safetyMeasures"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -2272,14 +2020,8 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2322,23 +2064,12 @@ class Circularity(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#wastePrevention",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#wastePrevention"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL855#001"),),
-                        referred_semantic_id=None,
-                    ),
-                ),
+                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL855#001"),),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
@@ -2466,14 +2197,8 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2516,23 +2241,12 @@ class Circularity(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#separateCollection",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#separateCollection"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL854#001"),),
-                        referred_semantic_id=None,
-                    ),
-                ),
+                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL854#001"),),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
@@ -2660,14 +2374,8 @@ class Circularity(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2710,23 +2418,12 @@ class Circularity(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#informationOnCollection",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#informationOnCollection"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL856#001"),),
-                        referred_semantic_id=None,
-                    ),
-                ),
+                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL856#001"),),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
@@ -2854,14 +2551,8 @@ class Circularity(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#endOfLifeInformation",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#endOfLifeInformation"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -2944,23 +2635,12 @@ class Circularity(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#renewableContent",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#renewableContent"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"urn:irdi:0173-1#02-ABL867#001"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"urn:irdi:0173-1#02-ABL867#001"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -3007,14 +2687,8 @@ class Circularity(aas.Submodel):
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                    value=r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity",
-                ),
-            ),
-            referred_semantic_id=None,
+        semantic_id: Optional[aas.Reference] = global_ref(
+            r"urn:samm:io.admin-shell.idta.batterypass.circularity:1.0.0#Circularity"
         ),
         qualifier: Iterable[aas.Qualifier] = None,
         kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,

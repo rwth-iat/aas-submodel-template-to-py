@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class Nameplate(aas.Submodel):
 
     class URIOfTheProduct(aas.Property):
@@ -16,18 +21,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN590#002"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABN590#002"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH173#003"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABH173#003"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -62,18 +59,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA565#009"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA565#009"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#004"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAO677#004"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -107,18 +96,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA567#009"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA567#009"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAW338#003"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAW338#003"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -150,39 +131,15 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS002#001"),),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ837#008/0173-1#01-ADR448#008"
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"),
+                global_ref(r"0112/2///61360_7#AAS002#001"),
+                global_ref(r"0173-1#02-AAQ837#008/0173-1#01-ADR448#008"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -232,25 +189,14 @@ class Nameplate(aas.Submodel):
             self,
             value: aas.LangStringSet,
             id_short: Optional[str] = r"ManufacturerProductRoot",
-            value_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABP464#002"),),
-                referred_semantic_id=None,
-            ),
+            value_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABP464#002"),
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS011#001"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61360_7#AAS011#001"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAU732#003"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAU732#003"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -284,18 +230,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABP464#002"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABP464#002"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAU731#003"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAU731#003"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -330,18 +268,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA300#008"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA300#008"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO057#004"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAO057#004"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -377,18 +307,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA950#008"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA950#008"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO227#004"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAO227#004"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -424,18 +346,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA581#007"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA581#007"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO676#005"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAO676#005"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -471,18 +385,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA951#009"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA951#009"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAM556#004"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAM556#004"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -518,18 +424,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABP000#002"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABP000#002"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAP906#003"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAP906#003"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -565,18 +463,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABB757#007"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABB757#007"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR972#004"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAR972#004"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -612,18 +502,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA926#008"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA926#008"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN270#004"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAN270#004"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -659,18 +541,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA302#006"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA302#006"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAM985#004"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAM985#004"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -706,18 +580,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA601#008"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA601#008"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAM737#004"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAM737#004"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -753,18 +619,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABP462#001"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABP462#001"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO259#007"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAO259#007"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -805,14 +663,8 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/nameplate/3/0/UniqueFacilityIdentifier",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/nameplate/3/0/UniqueFacilityIdentifier"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -851,18 +703,10 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABP463#001"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABP463#001"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI776#002"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABI776#002"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -901,18 +745,10 @@ class Nameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA231#009"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA231#009"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI190#003"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABI190#003"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -948,18 +784,10 @@ class Nameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABH783#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABH783#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI975#002"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABI975#002"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -1002,18 +830,10 @@ class Nameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABO097#001"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABO097#001"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL774#001"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABL774#001"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -1056,18 +876,10 @@ class Nameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABH830#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABH830#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL775#001"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABL775#001"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -1109,18 +921,10 @@ class Nameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABO100#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABO100#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI191#003"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABI191#003"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -1155,18 +959,10 @@ class Nameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABB146#007"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABB146#007"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI192#003"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABI192#003"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -1203,21 +999,11 @@ class Nameplate(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS009#001"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61360_7#AAS009#001"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI564#003/0173-1#01-AHF850#003"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"0173-1#02-ABI564#003/0173-1#01-AHF850#003"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -1316,21 +1102,11 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS006#001"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61360_7#AAS006#001"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI563#003/0173-1#01-AHF849#003"
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"0173-1#02-ABI563#003/0173-1#01-AHF849#003"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -1454,15 +1230,7 @@ class Nameplate(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/SMT/General/ArbitraryProp",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/SMT/General/ArbitraryProp"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -1505,15 +1273,7 @@ class Nameplate(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/SMT/General/ArbitraryMLP",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/SMT/General/ArbitraryMLP"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -1555,15 +1315,7 @@ class Nameplate(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/SMT/General/ArbitraryFile",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/SMT/General/ArbitraryFile"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -1610,10 +1362,7 @@ class Nameplate(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO856#002"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO856#002"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -1652,14 +1401,8 @@ class Nameplate(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SMT/General/ArbitraryProp",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/SMT/General/ArbitraryProp"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1703,14 +1446,8 @@ class Nameplate(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SMT/General/ArbitraryFile",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/SMT/General/ArbitraryFile"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1753,14 +1490,8 @@ class Nameplate(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/SMT/General/ArbitraryMLP",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/SMT/General/ArbitraryMLP"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1803,10 +1534,7 @@ class Nameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AHD205#004"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#01-AHD205#004"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -1892,14 +1620,7 @@ class Nameplate(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI219#003/0173-1#01-AHD205#004"
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI219#003/0173-1#01-AHD205#004"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2021,10 +1742,7 @@ class Nameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI218#003/0173-1#01-AGZ672#004"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI218#003/0173-1#01-AGZ672#004"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2126,14 +1844,7 @@ class Nameplate(aas.Submodel):
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/nameplate/3/0/Nameplate"
-                ),
-            ),
-            referred_semantic_id=None,
-        ),
+        semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/nameplate/3/0/Nameplate"),
         qualifier: Iterable[aas.Qualifier] = None,
         kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
         extension: Iterable[aas.Extension] = (),

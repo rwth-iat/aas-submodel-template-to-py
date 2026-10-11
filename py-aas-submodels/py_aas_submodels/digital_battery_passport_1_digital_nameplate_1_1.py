@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class BatteryNameplate(aas.Submodel):
 
     class URIOfTheProduct(aas.Property):
@@ -16,26 +21,12 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABN590#002"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABN590#002"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH173#003"),),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#uriOfTheProduct",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"0173-1#02-ABH173#003"),
+                global_ref(r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#uriOfTheProduct"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -81,26 +72,12 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA565#009"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA565#009"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#004"),),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#manufacturerName",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"0173-1#02-AAO677#004"),
+                global_ref(r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#manufacturerName"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -143,48 +120,16 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/zvei/nameplate/1/0/ContactInformations/AddressInformation"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS002#001"),),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAQ837#008/0173-1#01-ADR448#008"
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#addressInformation",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"https://admin-shell.io/smt-dropin/smt-dropin-use/1/0"),
+                global_ref(r"0112/2///61360_7#AAS002#001"),
+                global_ref(r"0173-1#02-AAQ837#008/0173-1#01-ADR448#008"),
+                global_ref(r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#addressInformation"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -244,26 +189,12 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA951#009"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA951#009"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAM556#004"),),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#serialNumber",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"0173-1#02-AAM556#004"),
+                global_ref(r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#serialNumber"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -310,26 +241,12 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABB757#007"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABB757#007"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR972#004"),),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#dateOfManufacture",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"0173-1#02-AAR972#004"),
+                global_ref(r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#dateOfManufacture"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -376,14 +293,8 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#dateOfPuttingIntoService",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#dateOfPuttingIntoService"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -426,31 +337,14 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/nameplate/3/0/UniqueFacilityIdentifier",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/nameplate/3/0/UniqueFacilityIdentifier"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#uniqueFacilityIdentifier",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAV646#003"),),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#uniqueFacilityIdentifier"),
+                global_ref(r"0173-1#02-AAV646#003"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -497,22 +391,11 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL841#001"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABL841#001"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#batteryStatus",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#batteryStatus"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -559,14 +442,8 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#operatorIdentifier",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#operatorIdentifier"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -609,14 +486,8 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#manufacturerIdentifier",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#manufacturerIdentifier"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -663,26 +534,12 @@ class BatteryNameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA231#009"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA231#009"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI190#003"),),
-                            referred_semantic_id=None,
-                        ),
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#markingName",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"0173-1#02-ABI190#003"),
+                        global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#markingName"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -729,26 +586,12 @@ class BatteryNameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABH783#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABH783#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI975#002"),),
-                            referred_semantic_id=None,
-                        ),
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#designationOfCertificateOrApproval",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"0173-1#02-ABI975#002"),
+                        global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#designationOfCertificateOrApproval"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -797,26 +640,12 @@ class BatteryNameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABO097#001"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABO097#001"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL774#001"),),
-                            referred_semantic_id=None,
-                        ),
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#issueDate",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"0173-1#02-ABL774#001"),
+                        global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#issueDate"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -863,26 +692,12 @@ class BatteryNameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABH830#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABH830#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL775#001"),),
-                            referred_semantic_id=None,
-                        ),
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#expiryDate",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"0173-1#02-ABL775#001"),
+                        global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#expiryDate"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -928,26 +743,12 @@ class BatteryNameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABO100#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABO100#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI191#003"),),
-                            referred_semantic_id=None,
-                        ),
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#markingFile",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"0173-1#02-ABI191#003"),
+                        global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#markingFile"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -986,26 +787,12 @@ class BatteryNameplate(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABB146#007"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABB146#007"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI192#003"),),
-                            referred_semantic_id=None,
-                        ),
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#markingAdditionalText",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"0173-1#02-ABI192#003"),
+                        global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#markingAdditionalText"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -1053,30 +840,12 @@ class BatteryNameplate(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS009#001"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61360_7#AAS009#001"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI564#003/0173-1#01-AHF850#003"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#Marking",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"0173-1#02-ABI564#003/0173-1#01-AHF850#003"),
+                    global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#Marking"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -1178,30 +947,12 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61360_7#AAS006"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61360_7#AAS006"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI563#003/0173-1#01-AHF849#003"
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#markings",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"0173-1#02-ABI563#003/0173-1#01-AHF849#003"),
+                global_ref(r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0#markings"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -1330,14 +1081,8 @@ class BatteryNameplate(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1387,23 +1132,12 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#euDeclarationOfConformity",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#euDeclarationOfConformity"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABA889#003"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABA889#003"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -1536,14 +1270,8 @@ class BatteryNameplate(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentIdentifier"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1595,23 +1323,12 @@ class BatteryNameplate(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#resultsOfTestReportsProvingCompliance",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0#resultsOfTestReportsProvingCompliance"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
-            supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABA705#003"),),
-                    referred_semantic_id=None,
-                ),
-            ),
+            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABA705#003"),),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
 
@@ -1759,46 +1476,16 @@ class BatteryNameplate(aas.Submodel):
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                    value=r"https://admin-shell.io/idta/digitalbatterypassport/nameplate/1/0/Nameplate",
-                ),
-            ),
-            referred_semantic_id=None,
+        semantic_id: Optional[aas.Reference] = global_ref(
+            r"https://admin-shell.io/idta/digitalbatterypassport/nameplate/1/0/Nameplate"
         ),
         qualifier: Iterable[aas.Qualifier] = None,
         kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (
-            aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0",
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
-            aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0",
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
-            aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/nameplate/3/0/Nameplate",
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
+            global_ref(r"urn:samm:io.admin-shell.idta.digital_nameplate:3.0.0"),
+            global_ref(r"urn:samm:io.admin-shell.idta.batterypass.digital_nameplate:1.0.0"),
+            global_ref(r"https://admin-shell.io/idta/nameplate/3/0/Nameplate"),
         ),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):

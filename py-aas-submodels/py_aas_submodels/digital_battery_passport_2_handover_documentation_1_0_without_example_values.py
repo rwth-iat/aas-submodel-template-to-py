@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class HandoverDocumentation(aas.Submodel):
 
     class Documents(aas.SubmodelElementList):
@@ -23,31 +28,12 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABJ219#002"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABJ219#002"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABJ219-002",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#className",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABJ219-002"),
+                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#className"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -88,31 +74,12 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH996#003"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH996#003"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABH996-003",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classId",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH996-003"),
+                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classId"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -154,30 +121,13 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH997#003"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH997#003"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABH997-003",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classificationSystem",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH997-003"),
+                                global_ref(
+                                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#classificationSystem"
                                 ),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -218,15 +168,7 @@ class HandoverDocumentation(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABI502#003/0173-1#01-AHF581#003",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI502#003/0173-1#01-AHF581#003"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
@@ -243,14 +185,8 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentClassification",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            global_ref(
+                                r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentClassification"
                             ),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -324,43 +260,21 @@ class HandoverDocumentation(aas.Submodel):
                     documentclassifications_items: Iterable[Documentclassifications_item],
                     id_short: Optional[str] = r"DocumentClassifications",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI502#003/0173-1#01-AHF581#003"
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"0173-1#02-ABI502#003/0173-1#01-AHF581#003"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI502#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI502#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://api.eclass-cdp.com/0173-1-02-ABI502-003",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentClassifications",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI502-003"),
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentClassifications"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -487,30 +401,13 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH994#003"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH994#003"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABH994-003",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentDomainId",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH994-003"),
+                                global_ref(
+                                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentDomainId"
                                 ),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -553,30 +450,13 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO099#004"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO099#004"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-AAO099-004",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIdentifier",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAO099-004"),
+                                global_ref(
+                                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIdentifier"
                                 ),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -619,30 +499,13 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH995#003"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH995#003"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABH995-003",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIsPrimary",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH995-003"),
+                                global_ref(
+                                    r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIsPrimary"
                                 ),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -683,15 +546,7 @@ class HandoverDocumentation(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABI501#003/0173-1#01-AHF580#003",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI501#003/0173-1#01-AHF580#003"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
@@ -708,15 +563,7 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentId",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
-                            ),
+                            global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#DocumentId"),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
@@ -787,44 +634,20 @@ class HandoverDocumentation(aas.Submodel):
                     documentids_items: Iterable[Documentids_item],
                     id_short: Optional[str] = r"DocumentIds",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI501#003/0173-1#01-AHF580#003"
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"0173-1#02-ABI501#003/0173-1#01-AHF580#003"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI501#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI501#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://api.eclass-cdp.com/0173-1-02-ABI501-003",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIds",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI501-003"),
+                        global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#documentIds"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -948,29 +771,15 @@ class HandoverDocumentation(aas.Submodel):
                                 value: str,
                                 id_short: Optional[str] = None,
                                 value_type: aas.DataTypeDefXsd = str,
-                                value_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#07-AAS045#003"),),
-                                    referred_semantic_id=None,
-                                ),
+                                value_id: Optional[aas.Reference] = global_ref(r"0173-1#07-AAS045#003"),
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN468#008"),),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAN468#008"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#Locale",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    global_ref(r"urn:samm:org.eclipse.esmf.samm:characteristic:2.1.0#Locale"),
                                 ),
                                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
@@ -1012,31 +821,12 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN468#008"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAN468#008"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-AAN468-008",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#languages",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAN468-008"),
+                                global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#languages"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -1165,31 +955,12 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAP003#005"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAP003#005"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-AAP003-005",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#version",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAP003-005"),
+                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#version"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -1230,31 +1001,12 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABG940#003"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABG940#003"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABG940-003",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#title",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABG940-003"),
+                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#title"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -1294,31 +1046,12 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABH998#003"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABH998#003"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABH998-003",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#subtitle",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABH998-003"),
+                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#subtitle"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -1358,31 +1091,12 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAN466#004"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAN466#004"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-AAN466-004",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#description",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAN466-004"),
+                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#description"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -1424,22 +1138,11 @@ class HandoverDocumentation(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK126#002"),),
-                                    referred_semantic_id=None,
-                                ),
+                                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABK126#002"),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
                                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                                    aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#ResourceWithContentType",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
-                                    ),
+                                    global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#ResourceWithContentType"),
                                 ),
                                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                             ):
@@ -1483,31 +1186,12 @@ class HandoverDocumentation(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK126#002"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABK126#002"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://api.eclass-cdp.com/0173-1-02-ABK126-002",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
-                                aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#digtialFiles",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
-                                ),
+                                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABK126-002"),
+                                global_ref(r"urn:samm:io.admin-shell.idta.handover_documentation:2.0.0#digtialFiles"),
                             ),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
@@ -1632,15 +1316,7 @@ class HandoverDocumentation(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"0173-1#02-ABI503#003/0173-1#01-AHF582#003",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI503#003/0173-1#01-AHF582#003"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (
@@ -1657,14 +1333,8 @@ class HandoverDocumentation(aas.Submodel):
                                 ),
                                 referred_semantic_id=None,
                             ),
-                            aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#DocumentVersion",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#DocumentVersion"
                             ),
                         ),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -1752,43 +1422,21 @@ class HandoverDocumentation(aas.Submodel):
                     documentversions_items: Iterable[Documentversions_item],
                     id_short: Optional[str] = r"DocumentVersions",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI503#003/0173-1#01-AHF582#003"
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"0173-1#02-ABI503#003/0173-1#01-AHF582#003"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI503#003"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI503#003"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://api.eclass-cdp.com/0173-1-02-ABI503-003",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documentVersions",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI503-003"),
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documentVersions"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -1911,14 +1559,7 @@ class HandoverDocumentation(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI500#003/0173-1#01-AHF579#003"
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI500#003/0173-1#01-AHF579#003"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
@@ -1935,15 +1576,7 @@ class HandoverDocumentation(aas.Submodel):
                         ),
                         referred_semantic_id=None,
                     ),
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#Document",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#Document"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -2024,40 +1657,20 @@ class HandoverDocumentation(aas.Submodel):
             documents_items: Iterable[Documents_item],
             id_short: Optional[str] = r"Documents",
             type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI500#003/0173-1#01-AHF579#003"),),
-                referred_semantic_id=None,
+            semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                r"0173-1#02-ABI500#003/0173-1#01-AHF579#003"
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI500#003"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI500#003"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://api.eclass-cdp.com/0173-1-02-ABI500-003",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documents",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI500-003"),
+                global_ref(r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#documents"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -2186,23 +1799,8 @@ class HandoverDocumentation(aas.Submodel):
         kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (
-            aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://api.eclass-cdp.com/0173-1-01-AHF578-003"
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
-            aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#HandoverDocumentation",
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
+            global_ref(r"https://api.eclass-cdp.com/0173-1-01-AHF578-003"),
+            global_ref(r"urn:samm:io.admin-shell.idta.batterypass.handover_documentation:1.0.0#HandoverDocumentation"),
         ),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):

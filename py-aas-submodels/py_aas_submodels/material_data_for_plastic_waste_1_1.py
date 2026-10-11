@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
 
     class DataQuality(aas.SubmodelElementCollection):
@@ -18,14 +23,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/DataQualityLevel/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/DataQualityLevel/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -69,14 +68,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/en18065materialdata/DataQuality/1/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/en18065materialdata/DataQuality/1/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -142,14 +135,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -191,28 +178,16 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             ] = None,
             id_short: Optional[str] = r"ApplicationSpecificStandards",
             type_value_list_element: aas.SubmodelElement = aas.Property,
-            semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0"
             ),
             value_type_list_element: Optional[aas.DataTypeDefXsd] = str,
             order_relevant: bool = True,
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/en18065materialdata/ApplicationSpecificStandards/1/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/en18065materialdata/ApplicationSpecificStandards/1/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -349,14 +324,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/MainMaterialType/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/MainMaterialType/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -380,14 +349,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"1", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -422,14 +385,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/TypeOfPackaging/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/TypeOfPackaging/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -455,14 +412,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"1", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -497,14 +448,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/ColorByVisualInspection/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/ColorByVisualInspection/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -530,14 +475,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"1", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -572,14 +511,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/Form/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/Form/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -605,14 +538,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"1", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -647,14 +574,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/TradeName/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/TradeName/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -676,14 +597,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"1", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -720,14 +635,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/RecycledContent/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/RecycledContent/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -753,14 +662,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"1", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -804,14 +707,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/ChainOfCustody/AttributionModel/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/ChainOfCustody/AttributionModel/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -857,14 +754,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/ChainOfCustody/RelevantEuropeanOrInternationalNorm/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/ChainOfCustody/RelevantEuropeanOrInternationalNorm/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -911,14 +802,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/ChainOfCustody/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/ChainOfCustody/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -944,14 +829,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -1013,14 +892,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/RecyclingMethod/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/RecyclingMethod/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1044,14 +917,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -1086,14 +953,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/Source/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/Source/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1119,14 +980,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -1165,14 +1020,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/en18065materialdata/TypesOfFillers/Filler/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/en18065materialdata/TypesOfFillers/Filler/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1220,14 +1069,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/en18065materialdata/TypesOfFillers/FillerMassPercentage/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/en18065materialdata/TypesOfFillers/FillerMassPercentage/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -1279,14 +1122,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/TypeOfFiller/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/TypeOfFiller/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1349,28 +1186,16 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 typesoffillers_items: Optional[Iterable[Typesoffillers_item]] = None,
                 id_short: Optional[str] = r"TypesOfFillers",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/TypeOfFiller/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/TypeOfFiller/1/0"
                 ),
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/TypesOfFillers/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/TypesOfFillers/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1392,14 +1217,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -1514,14 +1333,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/LotNumber/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/LotNumber/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1543,14 +1356,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -1587,14 +1394,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/CertificateOfAnalysis/TypeOfInspectionCertificate/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/CertificateOfAnalysis/TypeOfInspectionCertificate/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1643,14 +1444,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/CertificateOfAnalysis/Documentation/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/CertificateOfAnalysis/Documentation/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -1694,14 +1489,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/CertificateOfAnalysis/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/CertificateOfAnalysis/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1725,14 +1514,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -1789,14 +1572,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/ContentOfTheMainPlasticType/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/ContentOfTheMainPlasticType/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1820,14 +1597,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"3", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -1871,14 +1642,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/PercentConfidenceOfCertificateOfAnalysis/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/PercentConfidenceOfCertificateOfAnalysis/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1906,14 +1671,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"3", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -1957,14 +1716,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/CoefficientOfVariationWRTCertificateOfAnalysis/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/CoefficientOfVariationWRTCertificateOfAnalysis/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -1992,14 +1745,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"3", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -2045,14 +1792,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/ModifyingAdditive/ModifyingAdditiveName/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/ModifyingAdditive/ModifyingAdditiveName/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2098,14 +1839,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/ModifyingAdditive/ModifyingAdditiveCASNumber/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/ModifyingAdditive/ModifyingAdditiveCASNumber/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2150,14 +1885,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/ModifyingAdditive/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/ModifyingAdditive/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2222,28 +1951,16 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 presenceofmodifyingadditives_items: Optional[Iterable[Presenceofmodifyingadditives_item]] = None,
                 id_short: Optional[str] = r"PresenceOfModifyingAdditives",
                 type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/ModifyingAdditive/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/ModifyingAdditive/1/0"
                 ),
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/PresenceOfModifyingAdditives/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2267,14 +1984,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -2389,14 +2100,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/OriginalUseOfMaterial/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/OriginalUseOfMaterial/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2422,14 +2127,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"4", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -2464,14 +2163,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/OriginalUseOfMaterial/RecyclingFeedstockConversionTechnology/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/OriginalUseOfMaterial/RecyclingFeedstockConversionTechnology/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -2497,14 +2190,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"4", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -2561,14 +2248,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/en18065materialdata/InformationCharacteristics/1/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/en18065materialdata/InformationCharacteristics/1/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
@@ -2751,14 +2432,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2806,14 +2481,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"VARIABLE",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/measurementvalue/value/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/measurementvalue/value/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2861,10 +2530,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62720#UBA000"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -2909,18 +2575,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACI144"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                                referred_semantic_id=None,
-                            ),
-                        ),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0112/2///62683#ACI144"),),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
@@ -2960,14 +2618,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3040,14 +2692,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/Viscosity/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/Viscosity/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3073,14 +2719,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"1", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -3135,14 +2775,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3190,14 +2824,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"VARIABLE",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/measurementvalue/value/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/measurementvalue/value/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -3245,10 +2873,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62720#UBA000"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3293,18 +2918,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACI144"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                                referred_semantic_id=None,
-                            ),
-                        ),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0112/2///62683#ACI144"),),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
@@ -3344,14 +2961,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3424,14 +3035,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/AshContent/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/AshContent/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3455,14 +3060,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -3517,14 +3116,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3572,14 +3165,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"VARIABLE",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/measurementvalue/value/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/measurementvalue/value/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -3627,10 +3214,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62720#UBA000"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -3675,18 +3259,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACI144"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                                referred_semantic_id=None,
-                            ),
-                        ),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0112/2///62683#ACI144"),),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
@@ -3726,14 +3302,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3806,14 +3376,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/ResidualHumidity/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/ResidualHumidity/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -3839,14 +3403,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -3901,14 +3459,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3956,14 +3508,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"VARIABLE",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/measurementvalue/value/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/measurementvalue/value/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -4011,10 +3557,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62720#UBA000"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -4059,18 +3602,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACI144"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                                referred_semantic_id=None,
-                            ),
-                        ),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0112/2///62683#ACI144"),),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
@@ -4110,14 +3645,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4190,14 +3719,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/Density/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/Density/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4221,14 +3744,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"2", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -4283,14 +3800,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4338,14 +3849,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"VARIABLE",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/measurementvalue/value/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/measurementvalue/value/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -4393,10 +3898,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62720#UBA000"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -4441,18 +3943,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACI144"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                                referred_semantic_id=None,
-                            ),
-                        ),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0112/2///62683#ACI144"),),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
@@ -4492,14 +3986,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4572,14 +4060,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/BulkDensity/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/BulkDensity/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4605,14 +4087,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"3", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -4667,14 +4143,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4722,14 +4192,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"VARIABLE",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/measurementvalue/value/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/measurementvalue/value/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -4777,10 +4241,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62720#UBA000"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
                         supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -4825,18 +4286,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = r"PARAMETER",
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                            referred_semantic_id=None,
-                        ),
+                        semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACI144"),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
-                        supplemental_semantic_id: Iterable[aas.Reference] = (
-                            aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                                referred_semantic_id=None,
-                            ),
-                        ),
+                        supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0112/2///62683#ACI144"),),
                         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                     ):
 
@@ -4876,14 +4329,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4956,14 +4403,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/ParticleSizeDistribution/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/ParticleSizeDistribution/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -4989,14 +4430,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"4", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -5055,14 +4490,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"VARIABLE",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/measurementvalue/value/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/measurementvalue/value/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -5110,10 +4539,7 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62720#UBA000"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62720#UBA000"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
                             supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -5160,18 +4586,10 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = r"PARAMETER",
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                                referred_semantic_id=None,
-                            ),
+                            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///62683#ACI144"),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///62683#ACI144"),),
-                                    referred_semantic_id=None,
-                                ),
-                            ),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0112/2///62683#ACI144"),),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
@@ -5211,14 +4629,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5288,28 +4700,16 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     measuredvalues_items: Iterable[Measuredvalues_item],
                     id_short: Optional[str] = r"MeasuredValues",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/measurementvalue/measuredvalue/1/0"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/MeasuredValues/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/MeasuredValues/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5437,14 +4837,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/StandardOrNorm/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5487,14 +4881,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/TensileProperties/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/TensileProperties/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5520,14 +4908,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"4", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -5592,14 +4974,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/FTIR/Documentation/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/FTIR/Documentation/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5637,14 +5013,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/FTIR/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/FTIR/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5706,14 +5076,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/DSC/Documentation/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/DSC/Documentation/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5751,14 +5115,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/DSC/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/DSC/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5822,14 +5180,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"https://admin-shell.io/idta/en18065materialdata/MaterialIdentification/1/0"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -5855,14 +5207,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
                             value=xsd.from_xsd(r"4", xsd.PositiveInteger),
                             value_id=None,
                             kind=aas.QualifierKind.CONCEPT_QUALIFIER,
-                            semantic_id=aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id=global_ref(
+                                r"https://admin-shell.io/SubmodelTemplates/en18065materialdata/RequiredAtDQL"
                             ),
                             supplemental_semantic_id=(),
                         ),
@@ -5913,14 +5259,8 @@ class MaterialDataForEN18065ClassificationOfPlastics(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"https://admin-shell.io/idta/en18065materialdata/PropertyCharacteristics/1/0",
-                    ),
-                ),
-                referred_semantic_id=None,
+            semantic_id: Optional[aas.Reference] = global_ref(
+                r"https://admin-shell.io/idta/en18065materialdata/PropertyCharacteristics/1/0"
             ),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),

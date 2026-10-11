@@ -27,6 +27,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class Nameplate(aas.Submodel):
 
     class URIOfTheProduct(aas.Property):
@@ -39,10 +44,7 @@ class Nameplate(aas.Submodel):
             value: aas.LangStringSet,
             id_short: Optional[str] = r"ManufacturerName",
             ...
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0112/2///61987#ABA565#009"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0112/2///61987#ABA565#009"),
             ...
         ):
             ...

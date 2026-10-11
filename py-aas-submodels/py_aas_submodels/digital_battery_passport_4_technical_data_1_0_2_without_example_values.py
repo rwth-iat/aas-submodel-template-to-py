@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class TechnicalData(aas.Submodel):
 
     class GeneralInformation(aas.SubmodelElementCollection):
@@ -18,31 +23,12 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = r"PARAMETER",
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#004"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-AAO677#004"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://api.eclass-cdp.com/0173-1-02-AAO677-004",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerName",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-AAO677-004"),
+                    global_ref(r"urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#manufacturerName"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -85,31 +71,12 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABI776#002"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABI776#002"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://api.eclass-cdp.com/0173-1-02-ABI776-002",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#companyLogo",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABI776-002"),
+                    global_ref(r"urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#companyLogo"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -150,14 +117,8 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#manufacturerIdentifier",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#manufacturerIdentifier"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
@@ -197,23 +158,12 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#batteryCategory",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#batteryCategory"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAR724#007"),),
-                        referred_semantic_id=None,
-                    ),
-                ),
+                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAR724#007"),),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
@@ -268,12 +218,7 @@ class TechnicalData(aas.Submodel):
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAF040#010"),),
-                        referred_semantic_id=None,
-                    ),
-                ),
+                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAF040#010"),),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
@@ -310,26 +255,11 @@ class TechnicalData(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.shared:3.1.0#ResourceWithContentType",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"urn:samm:io.admin-shell.idta.shared:3.1.0#ResourceWithContentType"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -364,44 +294,20 @@ class TechnicalData(aas.Submodel):
                 productimages_items: Iterable[Productimages_item],
                 id_short: Optional[str] = r"ProductImages",
                 type_value_list_element: aas.SubmodelElement = aas.File,
-                semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                    r"0173-1#02-ABM220#001/0173-1#01-AHY911#001"
                 ),
                 value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                 order_relevant: bool = True,
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABM220#001"),),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABM220#001"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://api.eclass-cdp.com/0173-1-02-ABM220-001",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productImages",
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABM220-001"),
+                    global_ref(r"urn:samm:io.admin-shell.idta.generic.technical_data:2.0.0#productImages"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -527,23 +433,12 @@ class TechnicalData(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#warrantyPeriod",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#warrantyPeriod"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAX540#004"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAX540#004"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -578,23 +473,12 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#warrantyInformation",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.1#warrantyInformation"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
-                supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-AAO677#004"),),
-                        referred_semantic_id=None,
-                    ),
-                ),
+                supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-AAO677#004"),),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
 
@@ -653,22 +537,11 @@ class TechnicalData(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK161#002/0173-1#01-AHX838#002"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABK161#002/0173-1#01-AHX838#002"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#generalInformation",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#generalInformation"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -767,15 +640,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#nominalVoltage",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#nominalVoltage"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -825,15 +690,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#minimumVoltage",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#minimumVoltage"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -883,15 +740,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#maximumVoltage",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#maximumVoltage"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -941,15 +790,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ratedCapacity",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ratedCapacity"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -999,15 +840,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityFade",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityFade"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -1057,15 +890,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ratedEnergy",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#ratedEnergy"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -1110,26 +935,13 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityEnergyVoltage",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityEnergyVoltage"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -1235,14 +1047,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialRoundTripEnergyEfficiency",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialRoundTripEnergyEfficiency"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -1295,14 +1101,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#roundTripEfficiencyAt50PercentCycleLife",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#roundTripEfficiencyAt50PercentCycleLife"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -1355,14 +1155,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#energyRoundTripEfficiencyFade",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#energyRoundTripEfficiencyFade"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -1415,14 +1209,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialSelfDischargingRate",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialSelfDischargingRate"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -1468,26 +1256,13 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#roundTripEnergyEfficiency",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#roundTripEnergyEfficiency"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -1593,14 +1368,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryCell",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryCell"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -1653,14 +1422,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryPack",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryPack"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -1713,14 +1476,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryModule",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryModule"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -1777,12 +1534,7 @@ class TechnicalData(aas.Submodel):
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL831#002"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABL831#002"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -1825,23 +1577,12 @@ class TechnicalData(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#internalResistanceIncreaseOfBatteryPack",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#internalResistanceIncreaseOfBatteryPack"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL831#001"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABL831#001"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -1884,23 +1625,12 @@ class TechnicalData(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryModule",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#initialInternalResistanceOfBatteryModule"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL836#001"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABL836#001"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -1949,26 +1679,13 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#resistance",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#resistance"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -2098,14 +1815,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#maximumPermittedBatteryPower",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#maximumPermittedBatteryPower"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -2158,15 +1869,7 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerFade",
-                                ),
-                            ),
-                            referred_semantic_id=None,
-                        ),
+                        global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerFade"),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
@@ -2208,14 +1911,8 @@ class TechnicalData(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = r"PARAMETER",
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapabilityRatio",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapabilityRatio"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2259,23 +1956,12 @@ class TechnicalData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#atSoC",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#atSoC"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL821#001"),),
-                                    referred_semantic_id=None,
-                                ),
-                            ),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABL821#001"),),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
@@ -2311,23 +1997,12 @@ class TechnicalData(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapabilityAt",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapabilityAt"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
-                            supplemental_semantic_id: Iterable[aas.Reference] = (
-                                aas.ExternalReference(
-                                    key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL853#001"),),
-                                    referred_semantic_id=None,
-                                ),
-                            ),
+                            supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABL853#001"),),
                             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                         ):
 
@@ -2360,14 +2035,8 @@ class TechnicalData(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -2431,35 +2100,20 @@ class TechnicalData(aas.Submodel):
                     originalpowercapability_items: Iterable[Originalpowercapability_item],
                     id_short: Optional[str] = r"OriginalPowerCapability",
                     type_value_list_element: aas.SubmodelElement = aas.SubmodelElementCollection,
-                    semantic_id_list_element: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id_list_element: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#PowerCapabilityAt"
                     ),
                     value_type_list_element: Optional[aas.DataTypeDefXsd] = None,
                     order_relevant: bool = True,
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL853#002"),),
-                        referred_semantic_id=None,
-                    ),
+                    semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABL853#002"),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#originalPowerCapability",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#originalPowerCapability"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -2580,26 +2234,13 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapability",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#powerCapability"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -2701,14 +2342,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperatureRangeIdleStateLowerBoundary",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperatureRangeIdleStateLowerBoundary"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -2761,14 +2396,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperatureRangeIdleStateUpperBoundary",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperatureRangeIdleStateUpperBoundary"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -2810,26 +2439,13 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperature",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#temperature"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -2906,14 +2522,8 @@ class TechnicalData(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#expectedLifetime",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#expectedLifetime"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -2953,23 +2563,12 @@ class TechnicalData(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#expectedNumberOfCycles",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#expectedNumberOfCycles"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
-                    supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL830#001"),),
-                            referred_semantic_id=None,
-                        ),
-                    ),
+                    supplemental_semantic_id: Iterable[aas.Reference] = (global_ref(r"0173-1#02-ABL830#001"),),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
                 ):
 
@@ -3013,14 +2612,8 @@ class TechnicalData(aas.Submodel):
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
                     supplemental_semantic_id: Iterable[aas.Reference] = (
-                        aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityThresholdForExhaustion",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        global_ref(
+                            r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#capacityThresholdForExhaustion"
                         ),
                     ),
                     embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
@@ -3068,14 +2661,8 @@ class TechnicalData(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#cRateLifeCycleTest",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#cRateLifeCycleTest"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -3121,26 +2708,13 @@ class TechnicalData(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#lifetime",
-                        ),
-                    ),
-                    referred_semantic_id=None,
+                semantic_id: Optional[aas.Reference] = global_ref(
+                    r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#lifetime"
                 ),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (
-                    aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"
-                            ),
-                        ),
-                        referred_semantic_id=None,
-                    ),
+                    global_ref(r"0173-1#02-ABL358#002/0173-1#01-AHX773#002"),
                 ),
                 embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
             ):
@@ -3231,31 +2805,12 @@ class TechnicalData(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#02-ABK163#002"),),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"0173-1#02-ABK163#002"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://api.eclass-cdp.com/0173-1-02-ABK163-002",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
-                aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#technicalPropertyAreas",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                global_ref(r"https://api.eclass-cdp.com/0173-1-02-ABK163-002"),
+                global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#technicalPropertyAreas"),
             ),
             embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
         ):
@@ -3311,32 +2866,15 @@ class TechnicalData(aas.Submodel):
         category: Optional[str] = None,
         description: Optional[aas.MultiLanguageTextType] = None,
         administration: Optional[aas.AdministrativeInformation] = None,
-        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-            key=(
-                aas.Key(
-                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                    value=r"https://admin-shell.io/idta/digitalbatterypassport/TechnicalData/1/0",
-                ),
-            ),
-            referred_semantic_id=None,
+        semantic_id: Optional[aas.Reference] = global_ref(
+            r"https://admin-shell.io/idta/digitalbatterypassport/TechnicalData/1/0"
         ),
         qualifier: Iterable[aas.Qualifier] = None,
         kind: aas.ModellingKind = aas.ModellingKind.INSTANCE,
         extension: Iterable[aas.Extension] = (),
         supplemental_semantic_id: Iterable[aas.Reference] = (
-            aas.ExternalReference(
-                key=(aas.Key(type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"0173-1#01-AHX837#002"),),
-                referred_semantic_id=None,
-            ),
-            aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                        value=r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#TechnicalData",
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
+            global_ref(r"0173-1#01-AHX837#002"),
+            global_ref(r"urn:samm:io.admin-shell.idta.batterypass.technical_data:1.0.0#TechnicalData"),
         ),
         embedded_data_specifications: Iterable[aas.EmbeddedDataSpecification] = None,
     ):

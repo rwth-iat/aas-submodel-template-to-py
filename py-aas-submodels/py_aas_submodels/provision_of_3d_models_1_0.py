@@ -3,6 +3,11 @@ from basyx.aas import model as aas
 from basyx.aas.model import datatypes as xsd
 
 
+def global_ref(value: str) -> aas.ExternalReference:
+    """External reference to the global identifier `value`, e.g. a semantic ID"""
+    return aas.ExternalReference((aas.Key(aas.KeyTypes.GLOBAL_REFERENCE, value),))
+
+
 class Models3D(aas.Submodel):
 
     class Model3D(aas.SubmodelElementList):
@@ -26,14 +31,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/FileDomaniId/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/FileDomaniId/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -73,14 +72,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/ValueId/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/ValueId/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -120,14 +113,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/IsPrimary/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/IsPrimary/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -165,14 +152,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -247,14 +228,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileId/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -377,14 +352,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/Title/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/Title/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -423,14 +392,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileName/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileName/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -470,14 +433,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileVersionID/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileVersionID/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -517,14 +474,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/StatusValue/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/StatusValue/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -564,14 +515,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SetDate/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SetDate/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -611,14 +556,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/BasedOn/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/BasedOn/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -656,14 +595,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/BasedOn/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/BasedOn/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -792,14 +725,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/RefersTo/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/RefersTo/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -837,14 +764,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/RefersTo/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/RefersTo/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -972,14 +893,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/PreviewFile/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/PreviewFile/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1017,14 +932,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/DigitalFile/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/DigitalFile/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1067,14 +976,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/ExternalUrl/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/ExternalUrl/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -1114,14 +1017,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/FileIdentifier/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/FileIdentifier/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -1163,14 +1060,8 @@ class Models3D(aas.Submodel):
                                             display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
                                             description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationName/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
+                                            semantic_id: Optional[aas.Reference] = global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationName/1/0"
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
@@ -1212,14 +1103,8 @@ class Models3D(aas.Submodel):
                                             display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
                                             description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationOfficialName/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
+                                            semantic_id: Optional[aas.Reference] = global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/OrganizationOfficialName/1/0"
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
@@ -1258,14 +1143,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/HostOrganization/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -1340,14 +1219,8 @@ class Models3D(aas.Submodel):
                                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                                 category: Optional[str] = None,
                                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                    key=(
-                                                        aas.Key(
-                                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiVersion/1/0",
-                                                        ),
-                                                    ),
-                                                    referred_semantic_id=None,
+                                                semantic_id: Optional[aas.Reference] = global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiVersion/1/0"
                                                 ),
                                                 qualifier: Iterable[aas.Qualifier] = None,
                                                 extension: Iterable[aas.Extension] = (),
@@ -1389,14 +1262,8 @@ class Models3D(aas.Submodel):
                                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                                 category: Optional[str] = None,
                                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                    key=(
-                                                        aas.Key(
-                                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiDocumentationUrl/1/0",
-                                                        ),
-                                                    ),
-                                                    referred_semantic_id=None,
+                                                semantic_id: Optional[aas.Reference] = global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiDocumentationUrl/1/0"
                                                 ),
                                                 qualifier: Iterable[aas.Qualifier] = None,
                                                 extension: Iterable[aas.Extension] = (),
@@ -1438,14 +1305,8 @@ class Models3D(aas.Submodel):
                                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                                 category: Optional[str] = None,
                                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                    key=(
-                                                        aas.Key(
-                                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiSpecificationUrl/1/0",
-                                                        ),
-                                                    ),
-                                                    referred_semantic_id=None,
+                                                semantic_id: Optional[aas.Reference] = global_ref(
+                                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/ApiSpecificationUrl/1/0"
                                                 ),
                                                 qualifier: Iterable[aas.Qualifier] = None,
                                                 extension: Iterable[aas.Extension] = (),
@@ -1485,14 +1346,8 @@ class Models3D(aas.Submodel):
                                             display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
                                             description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
+                                            semantic_id: Optional[aas.Reference] = global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0"
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
@@ -1570,14 +1425,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/Api/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -1698,14 +1547,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -1781,14 +1624,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ExternalFile/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -1912,14 +1749,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatName/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatName/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -1959,14 +1790,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatVersion/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatVersion/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -2006,14 +1831,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatQualifier/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/FormatQualifier/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -2051,14 +1870,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/FileFormat/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -2130,14 +1943,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationName/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationName/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -2177,14 +1984,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationVersion/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationVersion/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -2224,14 +2025,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationQualifier/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/ApplicationQualifier/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -2275,14 +2070,8 @@ class Models3D(aas.Submodel):
                                             display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
                                             description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiVersion/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
+                                            semantic_id: Optional[aas.Reference] = global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiVersion/1/0"
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
@@ -2324,14 +2113,8 @@ class Models3D(aas.Submodel):
                                             display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
                                             description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiDocumentationUrl/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
+                                            semantic_id: Optional[aas.Reference] = global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiDocumentationUrl/1/0"
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
@@ -2373,14 +2156,8 @@ class Models3D(aas.Submodel):
                                             display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
                                             description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiSpecificationUrl/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
+                                            semantic_id: Optional[aas.Reference] = global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/ApiSpecificationUrl/1/0"
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
@@ -2420,14 +2197,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -2501,14 +2272,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/Api/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -2632,14 +2397,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationName/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationName/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -2679,14 +2438,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationOfficialName/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/OrganizationOfficialName/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -2723,14 +2476,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/VendorOrganization/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -2801,14 +2548,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/SourceApplication/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -2899,14 +2640,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/OrganizationName/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/OrganizationName/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -2946,14 +2681,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization//OrganizationOfficialName/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization//OrganizationOfficialName/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -2990,14 +2719,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/ProvidingOrganization/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -3080,14 +2803,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -3208,14 +2925,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileVersion/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -3339,14 +3050,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationName/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationName/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -3386,14 +3091,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationVersion/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationVersion/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -3433,14 +3132,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationQualifier1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/ApplicationQualifier1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -3482,14 +3175,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationName/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationName/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -3529,14 +3216,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationOfficialName/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/OrganizationOfficialName/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -3573,14 +3254,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/VendorOrganization/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -3653,14 +3328,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiVersion/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiVersion/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -3700,14 +3369,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiDocumentationUrl/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiDocumentationUrl/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -3747,14 +3410,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiSpecificationUrl/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/ApiSpecificationUrl/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -3792,14 +3449,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -3873,14 +3524,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/Api/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -4002,14 +3647,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4098,14 +3737,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/File/ConsumingApplication/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -4229,14 +3862,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassId/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassId/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -4275,14 +3902,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassName/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/ClassName/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -4321,14 +3942,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/File/ClassificationSystem/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/File/ClassificationSystem/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -4366,14 +3981,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4445,14 +4054,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/File/FileClassification/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -4573,14 +4176,8 @@ class Models3D(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/Models3D/Model3D/File/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/Models3D/Model3D/File/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -4673,14 +4270,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/PosModelPurpose/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/PosModelPurpose/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4720,14 +4311,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/PosModelPurpose/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/PosModelPurpose/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -4856,14 +4441,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/NegModelPurpos/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/NegModelPurpos/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -4903,14 +4482,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/NegModelPurpos/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/NegModelPurpos/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5039,14 +4612,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/EmbeddedInfo/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/EmbeddedInfo/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -5086,14 +4653,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/EmbeddedInfo/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/EmbeddedInfo/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5222,14 +4783,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/State/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/State/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -5269,14 +4824,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/State/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/State/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5402,14 +4951,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/ObjectType/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/ObjectType/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5449,14 +4992,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Origin/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Origin/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5498,14 +5035,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/LevelDescription/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/LevelDescription/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -5547,14 +5078,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/ReducedElements/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/ReducedElements/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -5594,14 +5119,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/ReducedElements/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/ReducedElements/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -5728,14 +5247,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/DerivedFrom/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/DerivedFrom/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -5773,14 +5286,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Capability/Simplification/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -5858,14 +5365,8 @@ class Models3D(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Capability/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/Models3D/Model3D/Capability/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -5974,14 +5475,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/Representation/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/Representation/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -6021,14 +5516,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/LengthUnit/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/LengthUnit/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -6072,14 +5561,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/BoundingBoxKind/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/BoundingBoxKind/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6123,14 +5606,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/X/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/X/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -6170,14 +5647,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Y/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Y/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -6217,14 +5688,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Z/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/Z/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -6262,14 +5727,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/CartOffsetVector/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -6343,14 +5802,8 @@ class Models3D(aas.Submodel):
                                             display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
                                             description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/X/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
+                                            semantic_id: Optional[aas.Reference] = global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/X/1/0"
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
@@ -6392,14 +5845,8 @@ class Models3D(aas.Submodel):
                                             display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
                                             description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Y/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
+                                            semantic_id: Optional[aas.Reference] = global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Y/1/0"
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
@@ -6441,14 +5888,8 @@ class Models3D(aas.Submodel):
                                             display_name: Optional[aas.MultiLanguageNameType] = None,
                                             category: Optional[str] = None,
                                             description: Optional[aas.MultiLanguageTextType] = None,
-                                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                                key=(
-                                                    aas.Key(
-                                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Z/1/0",
-                                                    ),
-                                                ),
-                                                referred_semantic_id=None,
+                                            semantic_id: Optional[aas.Reference] = global_ref(
+                                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/Z/1/0"
                                             ),
                                             qualifier: Iterable[aas.Qualifier] = None,
                                             extension: Iterable[aas.Extension] = (),
@@ -6488,14 +5929,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -6565,14 +6000,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/NormOrientationVector/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -6696,14 +6125,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartRefSystem/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6771,14 +6194,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/X/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/X/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -6818,14 +6235,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Y/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Y/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -6865,14 +6276,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Z/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/Z/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -6910,14 +6315,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/CartBoundingVector/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -6985,14 +6384,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -7052,14 +6445,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartBoundingBox/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -7185,14 +6572,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/X/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/X/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -7232,14 +6613,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Y/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Y/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -7279,14 +6654,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Z/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/Z/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -7324,14 +6693,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/CartOffsetVector/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -7405,14 +6768,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/X/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/X/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -7452,14 +6809,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Y/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Y/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -7499,14 +6850,8 @@ class Models3D(aas.Submodel):
                                         display_name: Optional[aas.MultiLanguageNameType] = None,
                                         category: Optional[str] = None,
                                         description: Optional[aas.MultiLanguageTextType] = None,
-                                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                            key=(
-                                                aas.Key(
-                                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Z/1/0",
-                                                ),
-                                            ),
-                                            referred_semantic_id=None,
+                                        semantic_id: Optional[aas.Reference] = global_ref(
+                                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/Z/1/0"
                                         ),
                                         qualifier: Iterable[aas.Qualifier] = None,
                                         extension: Iterable[aas.Extension] = (),
@@ -7544,14 +6889,8 @@ class Models3D(aas.Submodel):
                                     display_name: Optional[aas.MultiLanguageNameType] = None,
                                     category: Optional[str] = None,
                                     description: Optional[aas.MultiLanguageTextType] = None,
-                                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                        key=(
-                                            aas.Key(
-                                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0",
-                                            ),
-                                        ),
-                                        referred_semantic_id=None,
+                                    semantic_id: Optional[aas.Reference] = global_ref(
+                                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0"
                                     ),
                                     qualifier: Iterable[aas.Qualifier] = None,
                                     extension: Iterable[aas.Extension] = (),
@@ -7621,14 +6960,8 @@ class Models3D(aas.Submodel):
                                 display_name: Optional[aas.MultiLanguageNameType] = None,
                                 category: Optional[str] = None,
                                 description: Optional[aas.MultiLanguageTextType] = None,
-                                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                    key=(
-                                        aas.Key(
-                                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                            value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0",
-                                        ),
-                                    ),
-                                    referred_semantic_id=None,
+                                semantic_id: Optional[aas.Reference] = global_ref(
+                                    r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/NormOrientationVector/1/0"
                                 ),
                                 qualifier: Iterable[aas.Qualifier] = None,
                                 extension: Iterable[aas.Extension] = (),
@@ -7749,14 +7082,8 @@ class Models3D(aas.Submodel):
                             display_name: Optional[aas.MultiLanguageNameType] = None,
                             category: Optional[str] = None,
                             description: Optional[aas.MultiLanguageTextType] = None,
-                            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                                key=(
-                                    aas.Key(
-                                        type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                        value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0",
-                                    ),
-                                ),
-                                referred_semantic_id=None,
+                            semantic_id: Optional[aas.Reference] = global_ref(
+                                r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0"
                             ),
                             qualifier: Iterable[aas.Qualifier] = None,
                             extension: Iterable[aas.Extension] = (),
@@ -7822,14 +7149,8 @@ class Models3D(aas.Submodel):
                         display_name: Optional[aas.MultiLanguageNameType] = None,
                         category: Optional[str] = None,
                         description: Optional[aas.MultiLanguageTextType] = None,
-                        semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                            key=(
-                                aas.Key(
-                                    type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                    value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0",
-                                ),
-                            ),
-                            referred_semantic_id=None,
+                        semantic_id: Optional[aas.Reference] = global_ref(
+                            r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/CartRefSystem/1/0"
                         ),
                         qualifier: Iterable[aas.Qualifier] = None,
                         extension: Iterable[aas.Extension] = (),
@@ -7950,14 +7271,8 @@ class Models3D(aas.Submodel):
                     display_name: Optional[aas.MultiLanguageNameType] = None,
                     category: Optional[str] = None,
                     description: Optional[aas.MultiLanguageTextType] = None,
-                    semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                        key=(
-                            aas.Key(
-                                type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                                value=r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/1/0",
-                            ),
-                        ),
-                        referred_semantic_id=None,
+                    semantic_id: Optional[aas.Reference] = global_ref(
+                        r"https://admin-shell.io/idta/Models3D/Model3D/Geometry/1/0"
                     ),
                     qualifier: Iterable[aas.Qualifier] = None,
                     extension: Iterable[aas.Extension] = (),
@@ -8036,15 +7351,7 @@ class Models3D(aas.Submodel):
                 display_name: Optional[aas.MultiLanguageNameType] = None,
                 category: Optional[str] = None,
                 description: Optional[aas.MultiLanguageTextType] = None,
-                semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                    key=(
-                        aas.Key(
-                            type_=aas.KeyTypes.GLOBAL_REFERENCE,
-                            value=r"https://admin-shell.io/idta/Models3D/Model3D/1/0",
-                        ),
-                    ),
-                    referred_semantic_id=None,
-                ),
+                semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/1/0"),
                 qualifier: Iterable[aas.Qualifier] = None,
                 extension: Iterable[aas.Extension] = (),
                 supplemental_semantic_id: Iterable[aas.Reference] = (),
@@ -8096,14 +7403,7 @@ class Models3D(aas.Submodel):
             display_name: Optional[aas.MultiLanguageNameType] = None,
             category: Optional[str] = None,
             description: Optional[aas.MultiLanguageTextType] = None,
-            semantic_id: Optional[aas.Reference] = aas.ExternalReference(
-                key=(
-                    aas.Key(
-                        type_=aas.KeyTypes.GLOBAL_REFERENCE, value=r"https://admin-shell.io/idta/Models3D/Model3D/1/0"
-                    ),
-                ),
-                referred_semantic_id=None,
-            ),
+            semantic_id: Optional[aas.Reference] = global_ref(r"https://admin-shell.io/idta/Models3D/Model3D/1/0"),
             qualifier: Iterable[aas.Qualifier] = None,
             extension: Iterable[aas.Extension] = (),
             supplemental_semantic_id: Iterable[aas.Reference] = (),

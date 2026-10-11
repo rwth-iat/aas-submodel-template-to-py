@@ -21,9 +21,11 @@ DATATYPES_ALIAS = "xsd"
 TYPING_IMPORTS = ("Any", "ForwardRef", "Iterable", "Optional", "Tuple", "Union")
 # Names generated code uses unqualified, which generated classes must not shadow
 RESERVED_CLS_NAMES = frozenset(TYPING_IMPORTS) | frozenset(dir(builtins)) | frozenset(keyword.kwlist)
+# Helper of generated modules creating references to global identifiers (see code_templates/imports.pyi)
+GLOBAL_REF_HELPER = "global_ref"
 # Init arguments must not shadow the module aliases used in the init body
-# (and the module re, used for checking allowed values)
-RESERVED_ARG_NAMES = frozenset((MODEL_ALIAS, DATATYPES_ALIAS, "re")) | frozenset(keyword.kwlist)
+# (and the module re, used for checking allowed values, and the helper global_ref)
+RESERVED_ARG_NAMES = frozenset((MODEL_ALIAS, DATATYPES_ALIAS, "re", GLOBAL_REF_HELPER)) | frozenset(keyword.kwlist)
 
 # Collections rendered as tuples in generated code (see StringHandler.reprify)
 TUPLE_TYPES = (tuple, NamespaceSet, ConstrainedList)
@@ -267,6 +269,9 @@ class StringHandler:
             if len(val) == 1:
                 res = f"{res[:-1]},)"
             return res
+        elif is_global_reference(val):
+            # Rendered compactly, as semantic IDs are such references
+            return f"{GLOBAL_REF_HELPER}({cls.reprify(val.key[0].value)})"
         else:
             kwargs = get_kwargs_for_init(val)
             if isinstance(val, Qualifiable):
@@ -333,6 +338,13 @@ def is_template_qualifier(qualifier: Qualifier) -> bool:
     type_ = qualifier.type.strip().lower()
     return qualifier.kind is QualifierKind.TEMPLATE_QUALIFIER or type_.startswith("smt/") \
         or type_ in TEMPLATE_QUALIFIER_TYPES
+
+
+def is_global_reference(obj) -> bool:
+    """Return if `obj` is an external reference to a global identifier, created by the helper global_ref() of
+    generated modules: a single key of type GlobalReference, no referred semantic ID"""
+    return type(obj) is ExternalReference and len(obj.key) == 1 \
+        and obj.key[0].type is KeyTypes.GLOBAL_REFERENCE and obj.referred_semantic_id is None
 
 
 def instance_qualifiers(obj: Qualifiable) -> tuple:
