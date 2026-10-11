@@ -215,7 +215,7 @@ python -m pytest aas-submodel-to-py/tests
 ```
 
 The [Tests workflow](../.github/workflows/tests.yml) runs these tests, and the import checks of all
-modules in [py-aas-submodels](../py-aas-submodels/README.md#running-tests), on Python 3.10 and 3.14
+modules in [py-aas-submodels](../py-aas-submodels/README.md#running-tests), on Python 3.11 and 3.14
 for every push to `master`/`develop` and every pull request.
 
 ## Support and Contribution

@@ -16,8 +16,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # 3.10: oldest supported version, used by the regeneration workflow; 3.14: newest version
-        python-version: ["3.10", "3.14"]
+        # 3.11: oldest supported version, used by the regeneration workflow; 3.14: newest version
+        python-version: ["3.11", "3.14"]
 
     steps:
       - uses: actions/checkout@v7
